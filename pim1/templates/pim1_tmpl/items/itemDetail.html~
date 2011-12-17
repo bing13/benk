@@ -1,0 +1,52 @@
+{% extends "pim1_tmpl/pim1_base.html" %}
+
+{% block content %}
+
+{% if current_items %}
+
+    <table class="item_table">
+    <tr><th>id</th><th>p/f:c
+
+        </th><th class="titlecol">title</th><th>priority</th><th>status</th><th>note</th></tr>
+    
+    {% for ci in current_items %}
+    {% ifchanged %}<tr><td class="projheader" colspan="6">{{ ci.projectForOrdering }}</td></tr>{% endifchanged %}
+        <tr class="items">
+
+	 <td class="itemtd actionArrows">{{ci.id}}&nbsp;<a href="/item/add/{{ ci.id }}">&harr;</a><a href="/item/promote/{{ ci.id }}">&larr;</a><a href="/item/demote/{{ ci.id }}">&rarr;</a><a href="/item/moveup/{{ ci.id }}">&uarr;</a><a href="/item/movedown/{{ ci.id }}">&darr;</a><a href="/item/delete/{{ ci.id }}">&otimes;</a></td>
+
+	 <td class="itemd">{{ci.parent}}/{{ci.follows}}:<span class="indent">{{ci.indent}}</span></td>
+{% comment %}
+	 <td class="itemtd">
+	   <ul class="projname">
+	     {% for px in ci.projects %}
+	         <li>{{ px }}</li>
+	     {% endfor %}
+	   </ul>
+	</td>
+{% endcomment %}
+        <td class="itemtd">{{ci.indentString|safe}}&bull; <a href="/admin/pengine/item/{{ci.id}}/">{{ ci.title }}</a></td>
+        <td class="itemtd">{{ ci.priority }}:{{ci.priorityText}}
+	</td>
+        <td class="itemtd">{{ ci.status }}:{{ci.statusText}}</td>
+        <td class="itemtd notecell">
+	  {% if ci.HTMLnoteBody|length > 2 %}
+
+	    <span onClick='detailpop("{{ci.id}}")'>new window</span> 
+  	    <span onClick="toggleLI('notebody_{{ci.id}}');" class="noteplus"><img src="/static/images/itemlistwidget.gif"></span>
+	    <span id="notebody_{{ci.id}}" class="noteBody">{{ ci.HTMLnoteBody|safe|default:" --- " }}</span>
+          {% endif %}
+      </td>
+        
+
+        </tr>
+    {% endfor %}
+    </table>
+{% else %}
+    <p>No items are available.</p>
+{% endif %}
+
+
+
+{% endblock %}
+ 

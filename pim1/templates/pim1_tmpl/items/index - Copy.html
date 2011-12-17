@@ -1,0 +1,35 @@
+{% extends "pim1_tmpl/pim1_base.html" %}
+
+{% block content %}
+
+{% if current_items %}
+
+    <table class="item_table">
+    <tr><th>id</th><th>p/f:c</th><th>project</th><th>title</th><th>priority</th><th>status</th><th>note</th></tr>
+    
+    {% for ci in current_items %}
+        <tr class="items">
+	 <td class="itemtd">{{ci.id}}</td>
+	 <td class="itemd">{{ci.parent}}/{{ci.follows}}:{{ci.indent}}</td>
+	 <td class="itemtd">
+	   <ul class="projname">
+	     {% for px in ci.projects %}
+	         <li>{{ px }}</li>
+	     {% endfor %}
+	   </ul>
+	</td>
+        <td class="itemtd">{{ci.indentString|safe}}&bull; <a href="/admin/pengine/item/{{ci.id}}/">{{ ci.title }}</a></td>
+        <td class="itemtd">{{ ci.priority }}:{{ci.priorityText}}
+	</td>
+        <td class="itemtd">{{ ci.status }}:{{ci.statusText}}</td>
+        <td class="itemtd">{{ ci.HTMLnoteBody|safe }}</td>
+        
+
+        </tr>
+    {% endfor %}
+    </table>
+{% else %}
+    <p>No items are available.</p>
+{% endif %}
+{% endblock %}
+ 

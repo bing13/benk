@@ -1,0 +1,78 @@
+<html>
+<head>
+<title>bernardhecker.com</title>
+
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-22766026-1']);
+  _gaq.push(['_setDomainName', 'none']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+<script>
+
+
+function loadMe() {
+  t=document.getElementById('tx');
+  p=document.getElementById('pos');
+  t.innerHTML="bernardhecker.com";
+  p.innerHTML=""
+
+}
+
+function moveMe(image) {
+  //  document.getElementById(image).width="900";
+  //   e.style.background=colorx;
+  image1 = document.getElementById(image);
+  //image1.width="600";
+  image1.style.position="absolute";
+  x=90*Math.random()+"%";
+  y=90*Math.random()+"%";
+  image1.style.top=y
+  image1.style.left=x
+
+  //p.innerHTML="pos:"+x+" " +y;
+}
+
+</script>
+
+<style>
+
+body {
+   background: black;
+}
+
+#imx12 {
+   position: relative;
+   padding-top: 56px;
+   padding-bottom: 56px;
+   padding-left: 6px;
+   padding-right: 6px;
+}
+
+#tx {
+  color: grey;
+  border: 2px;
+  font-family: sans-serif;
+}
+</style>
+
+</head>
+
+<body onload="loadMe()">
+<h2 id='tx'></h2>
+<div id='pos'></div>
+<img src="images/bh_by_BR-icon.jpg" id="imx1" onClick="moveMe('imx1')"/>
+
+
+</body>
+</html>

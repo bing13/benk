@@ -1,0 +1,44 @@
+{% extends "pim1_tmpl/pim1_base.html" %}
+
+{% block content %}
+
+{% if subtitle %}
+
+   <span class="headline">{{ subtitle }}</span>
+
+{% endif %}
+
+<div class="mainGrid">
+
+{% if current_items %}
+
+    <div class="throwaway"><div class="throwaway">
+    
+    {% for ci in current_items %}
+        {% ifchanged %}
+            </div></div>
+            <div class="gridCell">
+              <div class="projheader">{{ ci.projectForOrdering }}</div>
+	      <div class="gridItemList">
+        {% endifchanged %}
+
+  	         <div class="itemd">{{ci.parent}}/{{ci.follows}}:
+                   <a href="/admin/pengine/item/{{ci.id}}/">{{ ci.title }}</a> :
+                   <span class="gridDetail">{{ ci.priority }}:{{ci.priorityText}} /{{ ci.status }}:{{ci.statusText}}</span>
+	         </div>
+    {% endfor %}
+  
+</div></div>
+
+</div>
+
+<p class="gridFooter"> <img src="/static/images/itemlistwidget.gif"></p>
+
+{% else %}
+    <p>No items are available.</p>
+{% endif %}
+
+
+
+{% endblock %}
+ 

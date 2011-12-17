@@ -1,0 +1,4 @@
+AuthUserFile /home/bhadmin13/dx.bernardhecker.com/.dx_passwd/.htpasswd
+AuthName "Restricted Access."
+AuthType Basic
+Require djuser

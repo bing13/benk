@@ -1,0 +1,191 @@
+/**********************************************************
+ * "Global Whitespace Reset"
+ * Technique for normalizing spacing across different browsers
+ * See: http://leftjustified.net/journal/2004/10/19/global-ws-reset/
+ **********************************************************/
+* {
+	padding:0;
+	margin:0
+}
+
+h1, h2, h3, h4, h5, h6, p, pre, blockquote, label, ul, ol, dl, fieldset, address {
+/*	margin: 1em 5%; */
+}
+li, dd, ul, old {
+/*	margin-left: 8%; */
+}
+fieldset {
+	padding: .5em;
+}
+
+/********************************************************/ 
+
+A:link { text-decoration: none ; font-weight: plain; color: #888888; }
+A:visited { text-decoration: none ; font-weight: plain; color: #888888; }
+A:active { text-decoration: none ; font-weight: plain;  }
+A:hover { color: #ff3333; font-weight: none; text-decoration: none; }
+
+body	{
+	        font-size: 12px;
+	        font-family: arial, sans-serif;
+        	color: #888888;
+		letter-spacing: 2px;
+		margin-left: 5%; 
+	}
+
+li {
+	padding: 1px; 
+}
+
+.workindex img  {
+	border: 0 ;
+	height: 450px;   
+}
+
+.mainindex img, .workindex_toowide img {
+	border: 0 ; 
+}
+
+
+img#3chances { width: 836px; height: 190px ;  }
+
+img#lifedream, img#pray { width: 700px; }
+
+
+img#073, img#074 { width: 700px;       }
+img#marina { width: 844px; height: 473px ;      }
+
+h2 {
+	display: inline;
+
+}
+
+#name1 {
+	position:relative; 
+	top:25px; 
+/*	margin-left: 5%; */
+}
+
+.menu1 {
+	/*position:absolute; top:10px; left:700px;*/
+	position:relative; 
+	top:24px;  
+	left:80px; 
+
+}
+
+.menu1 ul  {
+	display: inline; 
+
+} 
+
+.menu1 li {
+	/* border: 2px dotted  #cccccc; */ 
+	display: inline;
+	font-weight: bold;	
+	margin-left: 20px; 
+	
+}
+
+.overlay2 {
+	color: white; 
+	position:absolute; top:10px; left:700px;
+}
+.overlay {
+	background-color: white;
+	position:absolute; top:300px; left:700px;
+	width: 100%;  
+}
+
+.bigback {
+	height: 750px;
+	width: 959px; 
+
+	background-image: url(http://rachelhecker.net/image1/studio_5-07.jpg);
+	background-repeat: no-repeat;
+}
+
+.copyright {
+	text-align: left;
+	width: 50%;
+	/*float: left;*/
+	letter-spacing: 0px; 
+}
+.mainindex ul li, .workindex ul li, .workindex_toowide ul li {
+	letter-spacing: 0px; 
+	margin-left: 0%; 
+}
+
+.mainindex, .workindex, .workindex_toowide {
+	margin-top: 50px; 
+}
+.mainindex ul, .workindex ul, .workindex_toowide ul {
+/*	margin-left: 5%; */
+	list-style-type: none;
+}
+
+.mainindex p, .workindex p, .workindex_toowide p {
+	margin-bottom: 20px;
+}
+
+.mainindex .copy, .workindex .copy, .workindex_toowide .copy {
+	font-size: 90%; 
+}
+.mainindex h1, .workindex h1, .workindex_toowide h1 { 
+	font-size: 120%;
+}
+.mainindex h2, .workindex h2, .workindex_toowide h2 ,h3 { 
+	font-size: 100%;
+	display: block; 
+}
+.mainindex .workhead2, .workindex .workhead2, .workindex_toowide .workhead2 {
+	margin-top: 40px;
+	margin-bottom: 20px;
+	/* border-top: dashed 1px; */
+	color: #555555;
+	width: 100%;
+}
+
+.workhead_main  {
+	margin-top: 40px;
+	margin-bottom: 20px;
+	color: #555555;
+	width: 100%;
+}
+
+
+.mainindex .title, .workindex .title, .workindex_toowide .title  {
+	font-style: italic; 
+	text-align: left;
+	display: inline;
+	letter-spacing: 0px; 
+}
+
+.mainindex .artist, .workindex .artist, .workindex_toowide .artist {
+	letter-spacing: 0px;
+}
+
+.tabletitle {
+	font-style: italic; 
+	text-align: left;
+	display: block;
+	letter-spacing: 0px; 
+
+}
+
+.workindex table {
+/*	margin: 1em 5%; */
+}
+
+.workindex td {
+	padding: 0px 30px 30px 0px;
+	vertical-align: bottom; 
+	text-align: left; 
+	font-size: 12px;
+}
+
+.info {
+	width: 30%;
+	text-align: right;
+
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <link rel="stylesheet" href="http://media.bernardhecker.com/pim1/static/css/main_style.css" />
+    <script type="text/javascript" src="http://media.bernardhecker.com/pim1/static/js/items.js"></script>
+                             
+    <title>{% block title %}benk item list{% endblock %}</title>
+</head>
+
+<body onLoad="hideClass('noteBody')" > 
+
+    <div id="headerx">
+        {% block headerx %}
+          <div class="hxtitle">benk</div>
+
+	  <div id="pagecrumb">{{ pagecrumb }}</div>
+
+	  <ul class="hxbuttons">
+	     <li><a href="/pim1/">home</a> | </li>
+	     <li><a href="/list-items/">outline</a> | </li>
+	     <li><a href="/grid-view/">grid view</a> | </li>
+	     <li>sort [<a href="/psd/date_created">dc</a> 
+	       <a href="/psd/date_mod">dm</a> 
+	       <a href="/psd/goo_date">gd</a>
+	       <a href="/psd/status">s</a> 
+	       <a href="/psd/priority">p</a>] &nbsp;&nbsp;&nbsp;&nbsp;
+	       <a href="/item/gooUpdate">gTask update</a> | </li>
+	     <li><a href="/importfile">import</a> | </li>
+	     <li><a href="/admin">admin</a></li>
+	  </ul>
+        {% endblock %}
+    </div>
+
+ <div id="mainContainer">
+    <div id="sidebar">
+        {% block sidebar %}
+        <h5>projects</h5>
+ 
+<!-- here's the default project list, which can be overridden  -->    
+<!-- in the calling html template -->
+
+  {% block projlist %}
+     {% if current_projs %}
+        <ul>  
+           {% for px in current_projs %}
+
+	      <li><a href="/projdetail/{{px.id}}">{{ px }}</a></li>
+           {% endfor %}
+              <li>[<a href="/list-items">all projects</a>]</li>
+       </ul>
+
+      {% else %}
+           <p>No projects are available.</p>
+      {% endif %}
+
+     {% endblock %}
+ 
+   {% endblock %}
+    </div>
+
+    <div id="mcontent">
+        {% block content %}{% endblock %}
+    </div>
+
+ </div>
+
+<div class="time">
+{{ nowx }}
+</div>
+
+</body>
+</html>

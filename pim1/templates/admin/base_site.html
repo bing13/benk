@@ -1,0 +1,17 @@
+{% extends "admin/base.html" %}
+{% load i18n %}
+
+{% block title %}{{ title }} | {% trans 'benk - the new pim' %}{% endblock %}
+
+{% block branding %}
+<h1 id="site-name">{% trans 'benk' %}</h1>
+
+	  <ul class="hxbuttons">
+	     <li><a href="/pim1">home</a></li>
+	     <li><a href="/list-items/">outline</a></li>
+	     <li><a href="/admin">admin</a></li>
+	  </ul>
+
+{% endblock %}
+
+{% block nav-global %}{% endblock %}

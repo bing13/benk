@@ -1,0 +1,113 @@
+Content-Type: text/enriched
+Text-Width: 70
+
+MISC =======================================================
+- catch phrase: "What do you think?"
+
+- Load serious data
+
+
+QUESTIONS =======================================================
+
+a. Hoist is huge.
+
+   - Display rule: If an item is hoisted, that's your organizing principle. Otherwise, so first N items.
+
+   - Offer to hoist me or my parent
+
+   - Hoist may require significant rewrite of buildlist.
+
+
+b. how to limit display to reasonable # of items?
+
+c. What is a "project" from Infoselect import? "PMO", or "PMO/CHOICE"? Handwork?
+
+d. beware IS import w/HTML in titles, etc
+
+e. how to search?  search result as regular flat list? then a search result item could be hoisted in an outline view
+
+
+
+MODELING ================================================
+
+++. IMPORT WON'T WORK PAST FIRST LOADING, unless before the second run, you delete or reformat all the IS_import_IDs. That's because thay are only unique for each IS HTML export.
+
+
+   
+
+
+BUGS ============================================================
++ check for intelligent deletions
+- moving up past top problematic (parent/follow corruption)
+- reformat app links on the admin interface [very odd, tried unsuccessfully]
+- add logical page titles
+
+
+DESIGN====================================================================
+
+
++ Browse Levels: (1) project list, (2) all items in a project, (3) hoisted list
+
+* Bread crumbs: show item, parent, parent's parent, etc.
+
+
+MAJOR NEW MODE: Grid view
+
+
++  Grid mode improves on the misused model of gooTasks imposed above
+   calendar days. Rarely are those actual day to-do's.  Within each
+   cell, tasks that can be reordered simply by dragging. fastest
+   cross-project scanning possible, with one-click item adding.
+
+
++ build JS outline view (dynamic, popup, draggable)
+- It would be more flexible to redesign buildlist such that it accepted a list of
+  objects or ids. Right now it operates on the entire item collection only.  
+  it would be easier to reuse its code if the calling routine provided a list of
+  objects or ids (buildlist could still default to showing all..)
+- decide handling of Actions vis-a-vis Projects (ex., can cross boundaries or not, etc)
+
+
+? make status, priority optional? (or default them?)
++ improve data entry, esp. adding a new item - shouldn't have to go to project edit screen to add the item to a project there.
++ check out the "inline admin" model, which lets you edit models on the same page as a parent model. These are called "inlines"
+file:///C:/django-docs-1.3-en/ref/contrib/admin/index.html#inlinemodeladmin-objects
+
+
+POSIT:  moves up and down *only* happen with relation to your peers, and are bounded by your peer group. Children always follow.
+
+
+* imports, etc in library probably need review
+
+
+* need to set up system path, etc, so the library can be found by the views.py file
+
+
+
+==========================================
+DONE
+DB MODS TO MAKE NEXT:
+.0. blank=TRUE on goodate HTMLnoteBody
+.0. make the google calendar date optional
+.0. position & parent parameters
+.+ change "date_create" to "date_created"
+. + Date created, date modified should be automatically generated (please!)
+. on page list, move Project from a column, to a row divider.
+,+ add buttons for adding an item, and moving an item
+.+ add views by hierarchy (.outline) | date | priority | status
+.+ would like note hiding widget to only appear if the item has a text note, otherwise not.
+.+ move sidebar to top, w/pulldown menu (forms) (??multiple selection??) [time to accept project should be one-to-many, and modify the forms]
+.- change list item li bullet to vary if an item is a parent
+.! save project in git. 
+.- moveup needs to take children with it-
+.- movedown: truncates if you try to move parent1 with kids down past parent2 with kids (p2 happened to be the last parent)
+.-. movedown: crash if you try to move last parent (w/kids) down (no corruption)
+. Update tasks rather global upload. Need to track which items are which. 
+  	 - post a parseable benk ID into gtasks
+	 - when you post a gTask, you get back a gID. Stash the gID in a dedicated gID field. 
+  already exists, and create any task that doesn't. 
+  Note that this REQUIRES that we add a GOOGLEID field to the model. :-p
+.x- move up pulls kids along, and move down abandons them
+.- Move down can corrupt the first item in list ([0,0]->[0,1])
+- promoting: does not promote children
+
