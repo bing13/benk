@@ -3,11 +3,10 @@ Text-Width: 70
 
 NEW ========================================================
 
+- concern that adding items is busted, at least after an import. 
 
 * implement Django-native a/c, rather than apache at top level
 * limit results to 200 items, w/option to show all
-* hoist option
-=> Basically, you want to be able to pass starting item, # of results to display, and view, and have the right thing happen. Probably means genralizing buildlist, so a big deal. But worth it.
 * use includes in url.py - which can handle multiple applications - to make it more modular
 * move all of benk under /pim1?
 =========================
@@ -131,3 +130,5 @@ DB MODS TO MAKE NEXT:
 .- Move down can corrupt the first item in list ([0,0]->[0,1])
 - promoting: does not promote children
 
+.* hoist option
+. Basically, you want to be able to pass starting item, # of results to display, and view, and have the right thing happen. Probably means genralizing buildlist, so a big deal. But worth it.

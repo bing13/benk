@@ -16,9 +16,13 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
 
     url(r'^pim1/$','pim1.pengine.views.homepage'),
+    url(r'^pim1/index.html','pim1.pengine.views.homepage'),
+    url(r'^$', 'pim1.pengine.views.homepage'),
+
     url(r'^list-items/$','pim1.pengine.views.itemlist',{'proj_id':'0'}),
     url(r'^grid-view/$','pim1.pengine.views.gridview'),
-    #url(r'^$', 'pim1.pengine.views.homepage'),
+    url(r'^list-items/hoist/(?P<pItem>\d+)/$','pim1.pengine.views.hoistItem'),
+
     url(r'^psd/(?P<pSort>\w+)/$','pim1.pengine.views.psd'),
 
     ## see https://docs.djangoproject.com/en/1.3/intro/tutorial03/#design-your-urls               

@@ -19,7 +19,7 @@
     {% ifchanged %}<tr><td class="projheader" colspan="6">{{ ci.projectForOrdering }}</td></tr>{% endifchanged %}
         <tr class="items">
 
-	 <td class="itemtd actionArrows">{{ci.id}}&nbsp;<a href="/item/add/{{ ci.id }}">&harr;</a><a href="/item/promote/{{ ci.id }}">&larr;</a><a href="/item/demote/{{ ci.id }}">&rarr;</a><a href="/item/moveup/{{ ci.id }}">&uarr;</a><a href="/item/movedown/{{ ci.id }}">&darr;</a><a href="/item/delete/{{ ci.id }}">&otimes;</a></td>
+	 <td class="itemtd actionArrows"><a class="ilid" href="/list-items/hoist/{{ci.id}}">{{ci.id}}</a>&nbsp;<a href="/item/add/{{ ci.id }}">&harr;</a><a href="/item/promote/{{ ci.id }}">&larr;</a><a href="/item/demote/{{ ci.id }}">&rarr;</a><a href="/item/moveup/{{ ci.id }}">&uarr;</a><a href="/item/movedown/{{ ci.id }}">&darr;</a><a href="/item/delete/{{ ci.id }}">&otimes;</a></td>
 
 	 <td class="itemd">{{ci.parent}}/{{ci.follows}}:<span class="indent">{{ci.indent}}</span></td>
 {% comment %}

@@ -41,7 +41,7 @@ def homepage(request):
 def itemlist(request,proj_id):
     ##current_items=Item.objects.all()
     current_projs = Project.objects.order_by('name')
-    displayList = buildDisplayList(current_projs, proj_id,'follows',0)
+    displayList = buildDisplayList(current_projs, proj_id,'follows')
 
     t = loader.get_template('pim1_tmpl/items/index.html')
                        
@@ -49,83 +49,35 @@ def itemlist(request,proj_id):
         'pagecrumb':'main item list',
         'current_items':displayList,
         'current_projs':current_projs, 
-        'nowx':datetime.datetime.now().strftime("%Y/%m/%d  %H:%M:%S"),
-        'pagecrumb':'item list'
+        'nowx':datetime.datetime.now().strftime("%Y/%m/%d  %H:%M:%S")
 
     })
     return HttpResponse(t.render(c))
 ##################################################################
-def allMyChildren(targetID, resultList):
+
+def buildDisplayList(projectx, projID, ordering):
     
-    children= Item.objects.filter(parent=targetID)
-    for cx in children:
-        resultList.append(cx.id)
-        allMyChildren(cx.id, resultList)
-    
-    return(resultList)    
-
-##################################################################
-
-def hoistItem(request,pItem):
-    ## hoistList takes a target item ID
-    ## and builds an array of all of its children
-    ##   1. can't just truncate, or you get the entire rest of the file
-    ##   2. need to find all children, and then draw children and their children
-    ## Fourth buildlist arg is hoist ID #. BuildDisplayList calls allMyChildren
-    
-    current_projs = Project.objects.order_by('name')
-
-    hoistProj=Item.objects.get(pk=pItem).project_id 
-    
-    displayList=buildDisplayList(current_projs, hoistProj, 'follows', pItem)
-
-    t = loader.get_template('pim1_tmpl/items/index.html')
-    c = Context({
-        'current_items':displayList,
-        'current_projs':current_projs,
-        'nowx':datetime.datetime.now().strftime("%Y/%m/%d  %H:%M:%S"),
-        'pagecrumb':'item list (hoist)'
-    })
-    return HttpResponse(t.render(c))
-
-
-##################################################################
-def buildDisplayList(projectx, projID, ordering, hoistID):
-
-    #hoistID = 55
-
-    ### Select the items to operate on: all, or just those from 1 project
-    if hoistID != 0:
-        resultList=[hoistID] ## insures that the target item appears in the final list.
-        resultList=allMyChildren(hoistID,resultList)
-        ## get querySet that only has items with those IDs in it
-        items2List=Item.objects.filter(id__in=resultList).order_by( ordering)
-        projlist=Project.objects.get(pk=projID)
- 
-
-
-    elif projID != '0': 
+    if projID != '0': 
         ##specified project
         items2List=Item.objects.filter(project__id=projID).order_by( ordering)
         projlist=Project.objects.get(pk=projID)
-                    
     else:
         ##all projects, requires project sort
         items2List=Item.objects.all().order_by( ordering)
         projlist=projectx
 
-    ### Build the parent list
-    ## pzero=[] ## list of top-level items // commented out 12/17/2011
     ixList=[]
     jxHash={}
-
+    pzero=[] ## list of top-level items
     parentList=[] ## list of all items that are parents
     for px in items2List:
         if px.parent not in parentList: parentList.append(px.parent)
 
-
-    ### get project string to where it can be displayed    
     for ix in items2List:
+        #get project string to where it can be displayed
+        ## COMMENTED OUT 10/23
+        #ix.project=ix.project 
+
         ### count the number of ancestors to determine indent level
         ix.indent=countIndent(ix)
         if ordering=='follows':
@@ -136,7 +88,7 @@ def buildDisplayList(projectx, projID, ordering, hoistID):
         ix.projectForOrdering=ix.project.name
         ixList.append(ix)
         jxHash[ix.id]=ix
-        #if ix.parent==0: pzero.append(ix) // commented out 12/17/2011
+        if ix.parent==0: pzero.append(ix)
 
         ## inControl uses a triangle for parents, dots for others
         if ix.id in parentList:
@@ -144,25 +96,20 @@ def buildDisplayList(projectx, projID, ordering, hoistID):
         else:
             ix.outlineBullet="&bull;"
 
-
-
     displayList=[]
     followHash={}
     
     if ordering=='follows':
-        ## generate outline-ordered and formatted output list
         for f2 in ixList:
             if followHash.has_key(f2.follows): 
                 print "\n\n=====> WARNING!! followHash duplicate", f2, f2.follows
 
-            ## this is the critial line for list-building
             followHash[f2.follows] = f2.id
-
+        #print "Orig followHash = ", followHash
         ## If the minimum followHash index (i.e., field ID if field to be followed) != 0,
         ## the first item won't list, b/c it's "parent" never comes up in the chain
         ## So if there is no key=0 (ex., for listing on a single project), add one, with a
         ## value of the field ID of the first item.
-
         if min(followHash.keys()) != 0:
             # commented 10/23/2011, added two lines below
             #followHash[0]=min(followHash.keys())
@@ -175,13 +122,12 @@ def buildDisplayList(projectx, projID, ordering, hoistID):
         while  followHash.has_key(currentID):
             #print "current ID=%s, followHash[currentID]=%s" % (currentID, followHash)
             #print jxHash
-            # followHash[currentID]
+# followHash[currentID]
             displayList.append(jxHash[followHash[currentID]])
             currentID=followHash[currentID]
 
         # theoretically, having no followHash key for currentID means you're on the last item
         # but beware re: data integrity / lost items
-        
     else:
 
         displayList=ixList
@@ -257,6 +203,9 @@ def actionItem(request, pItem, action):
             if followingMe.parent==clickedItem.id:
                 followingMe.parent=clickedItem.parent
             followingMe.save()
+
+        # https://docs.djangoproject.com/en/1.3/ref/models/relations/#django.db.models.fields.related.RelatedManager.remove
+        # method only available if null=True
 
         # remove entry from Projects
         projObjc.item_set.remove(clickedItem)
@@ -384,7 +333,7 @@ def actionItem(request, pItem, action):
 
     ## let's restrict default view to the clicked item project
     print "cp=",current_projs," cpn=",clickedProjNum
-    displayList = buildDisplayList(current_projs,clickedProjNum, 'follows',0)
+    displayList = buildDisplayList(current_projs,clickedProjNum, 'follows')
     print "+++DISPLAY LIST BUILT+++"
     t = loader.get_template('pim1_tmpl/items/index.html')
 
@@ -431,7 +380,7 @@ def psd(request,pSort):
     elif  pSort=="date_gootask_display":
         pSort="-"+pSort
 
-    displayList =  buildDisplayList(current_projs,'0',pSort,0)
+    displayList =  buildDisplayList(current_projs,'0',pSort)
 
 
     t = loader.get_template('pim1_tmpl/items/psd.html')
@@ -447,7 +396,7 @@ def psd(request,pSort):
 
 def gridview(request):
     current_projs = Project.objects.order_by('name')
-    displayList =  buildDisplayList(current_projs,'0', 'follows',0)
+    displayList =  buildDisplayList(current_projs,'0', 'follows')
 
     t = loader.get_template('pim1_tmpl/items/gridview.html')
     c = Context({
@@ -526,7 +475,7 @@ def gooTaskUpdate(request):
     # ...oops, we need to adorn it with project and ???
     
     current_projs = Project.objects.order_by('name')
-    displayList =  buildDisplayList(current_projs,'0','-date_gootask_display',0)
+    displayList =  buildDisplayList(current_projs,'0','-date_gootask_display')
     
     t = loader.get_template('pim1_tmpl/items/psd.html')
     c = Context({
