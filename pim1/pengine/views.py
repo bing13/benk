@@ -176,7 +176,7 @@ def buildDisplayList(projectx, projID, ordering, hoistID, useList):
         ## generate outline-ordered and formatted output list
         for f2 in ixList:
             if followHash.has_key(f2.follows): 
-                logThis( "\n\n=====> WARNING!! followHash duplicate " + f2 +" " + f2.follows)
+                logThis( "\n\n=====> WARNING!! followHash duplicate [" + str(f2) +" " + str(f2.follows)+']')
 
             ## this is the critial line for list-building
             followHash[f2.follows] = f2.id
@@ -193,9 +193,15 @@ def buildDisplayList(projectx, projID, ordering, hoistID, useList):
         ##  Deduce it: FollowHash[N] has a value of the item that follows it. and FollowHash
         ##  *includes the item preceding the first item*.
         ##  So look for item with index X, where X does not appear as a value in FollowHash.
+        ##    
+        ##  IMPORTANT CHANGE: Allows each project to have a follower of item 0, as well as parent =0
+        ##  This allows for unambiguous starting point for all list operations.
+            
+        ##  ALSO REQUIRED that we stop using the original all-project view, since it assumes
+        ##  only one follower of "0"
             
         #logThis('ixList='+str(ixList))    
-        #logThis('followHash'+str(followHash))
+        logThis('followHash'+str(followHash))
         if min(followHash.keys()) != 0:
             # commented 10/23/2011, added two lines below
             #followHash[0]=min(followHash.keys())
@@ -206,8 +212,10 @@ def buildDisplayList(projectx, projID, ordering, hoistID, useList):
                     continue
                 else:
                     break
-
-            followHash[0]=fhk
+            logThis("FHK is="+str(fhk))
+            followHash[0]=followHash[fhk]
+            followHash.pop(fhk)
+            logThis('new followhash'+str(followHash))
             
         currentID = 0
 
@@ -240,12 +248,14 @@ def countIndent(anItem):
     return(indentCount)
 ##################################################################
 
-def getLastItemID():
+def getLastItemID(projID):
     listOfFollowers=[] ## a list of all IDs that appear in item.follows
-    for itemx in Item.objects.all():
+    thisProjItems = Item.objects.filter(project__id=projID)
+    ## 12/18/2011 limited search to one projID.
+    for itemx in thisProjItems:
         listOfFollowers.append(itemx.follows)
     lastItemIDs = []
-    for itemx in Item.objects.all():
+    for itemx in thisProjItems:
         if itemx.id not in listOfFollowers:
             lastItemIDs.append(itemx.id)
     if len(lastItemIDs)!= 1:
@@ -259,11 +269,13 @@ def getLastItemID():
 def actionItem(request, pItem, action):
     logThis( "item "+ pItem + " to " + action);
 
-    lastItemID=getLastItemID()
+
     current_projs = Project.objects.order_by('name')
     clickedItem = Item.objects.get(pk=pItem)
     clickedProjNum=clickedItem.project.id
+    lastItemID=getLastItemID(clickedProjNum)
 
+    
     #assigning project [many to many]...convoluted?.... 
     projIDc=clickedItem.project.id
     projObjc=Project.objects.get(pk=projIDc)
@@ -683,7 +695,7 @@ def importISdata(importFile,newProjectID):
     INFILE=open(startdir+importFile,'r')
     allLines=INFILE.readlines()
     currentISid = 0
-    previousNewItemBenkID=getLastItemID()
+    previousNewItemBenkID=getLastItemID(newProjectID)
     firstRecord = 'yes'
     logThis( "+++ b2 importISdata")
     for lx in allLines[:]:

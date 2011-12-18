@@ -118,3 +118,102 @@ cp=[<Project: Benk dev>, <Project: Misc>, <Project: PMO>] cpn=3
 2011:12:18  15:06:09: cp=[<Project: Benk dev>, <Project: Misc>, <Project: PMO>] cpn=1
 2011:12:18  15:06:09: +++DISPLAY LIST BUILT+++
 2011:12:18  15:06:52: Search term=very
+2011:12:18  15:15:54: FHK is=13
+2011:12:18  15:17:13: FHK is=13
+2011:12:18  15:20:56: followHash{10L: 14L, 12L: 10L, 13L: 12L}
+2011:12:18  15:20:56: FHK is=13
+2011:12:18  15:20:56: new followhash{0: 12L, 10L: 14L, 12L: 10L}
+2011:12:18  15:21:32: followHash{0L: 29L}
+2011:12:18  15:21:37: followHash{0L: 1L, 1L: 28L, 28L: 30L, 30L: 31L, 31L: 32L}
+2011:12:18  15:21:45: item 30 to promote
+2011:12:18  15:21:45: ===== BAD LAST ITEM IDs, should only be one. Instead: [29L, 32L, 26L]
+2011:12:18  15:23:53: followHash{0L: 29L}
+2011:12:18  15:23:54: followHash{0L: 1L, 1L: 28L, 28L: 30L, 30L: 31L, 31L: 32L}
+2011:12:18  15:23:56: followHash{0L: 2L, 2L: 3L, 3L: 4L, 4L: 5L, 5L: 6L, 6L: 7L, 7L: 13L, 10L: 14L, 12L: 10L, 13L: 12L, 14L: 15L, 15L: 16L, 16L: 18L, 18L: 19L, 19L: 20L, 20L: 21L, 21L: 23L, 23L: 25L, 25L: 26L}
+2011:12:18  15:32:00: followHash{0L: 29L}
+2011:12:18  15:32:03: followHash{0L: 1L, 1L: 28L, 28L: 30L, 30L: 31L, 31L: 32L}
+2011:12:18  15:32:06: followHash{0L: 2L, 2L: 3L, 3L: 4L, 4L: 5L, 5L: 6L, 6L: 7L, 7L: 13L, 10L: 14L, 12L: 10L, 13L: 12L, 14L: 15L, 15L: 16L, 16L: 18L, 18L: 19L, 19L: 20L, 20L: 21L, 21L: 23L, 23L: 25L, 25L: 26L}
+2011:12:18  15:32:14: followHash{10L: 14L, 12L: 10L, 13L: 12L}
+2011:12:18  15:32:14: FHK is=13
+2011:12:18  15:32:14: new followhash{0: 12L, 10L: 14L, 12L: 10L}
+2011:12:18  15:32:18: followHash{0L: 2L, 2L: 3L, 3L: 4L, 4L: 5L, 5L: 6L, 6L: 7L, 7L: 13L, 10L: 14L, 12L: 10L, 13L: 12L, 14L: 15L, 15L: 16L, 16L: 18L, 18L: 19L, 19L: 20L, 20L: 21L, 21L: 23L, 23L: 25L, 25L: 26L}
+2011:12:18  15:32:24: followHash{0L: 1L, 1L: 28L, 28L: 30L, 30L: 31L, 31L: 32L}
+2011:12:18  15:32:32: item 31 to demote
+2011:12:18  15:32:32: ===== BAD LAST ITEM IDs, should only be one. Instead: [2L, 3L, 4L, 5L, 6L, 7L, 10L, 12L, 13L, 14L, 15L, 16L, 29L, 18L, 19L, 20L, 21L, 23L, 32L, 25L, 26L]
+2011:12:18  15:34:54: followHash{0L: 1L, 1L: 28L, 28L: 30L, 30L: 31L, 31L: 32L}
+2011:12:18  15:35:03: item 31 to demote
+2011:12:18  15:35:03: ===== BAD LAST ITEM IDs, should only be one. Instead: [2L, 3L, 4L, 5L, 6L, 7L, 10L, 12L, 13L, 14L, 15L, 16L, 29L, 18L, 19L, 20L, 21L, 23L, 32L, 25L, 26L]
+2011:12:18  15:36:44: followHash{0L: 1L, 1L: 28L, 28L: 30L, 30L: 31L, 31L: 32L}
+2011:12:18  15:36:49: item 31 to demote
+2011:12:18  15:36:49: Last item ID:32
+2011:12:18  15:36:49: countIndent=1  1<==
+2011:12:18  15:36:49: cp=[<Project: Benk dev>, <Project: Misc>, <Project: PMO>] cpn=1
+2011:12:18  15:36:50: followHash{0L: 1L, 1L: 28L, 28L: 30L, 30L: 31L, 31L: 32L}
+2011:12:18  15:36:50: +++DISPLAY LIST BUILT+++
+2011:12:18  15:36:52: item 31 to promote
+2011:12:18  15:36:52: Last item ID:32
+2011:12:18  15:36:52: Executing promote 2 of id=31
+2011:12:18  15:36:52: 2   2<==
+2011:12:18  15:36:52: 1  2<==++
+2011:12:18  15:36:52: cp=[<Project: Benk dev>, <Project: Misc>, <Project: PMO>] cpn=1
+2011:12:18  15:36:52: followHash{0L: 1L, 1L: 28L, 28L: 30L, 30L: 31L, 31L: 32L}
+2011:12:18  15:36:52: +++DISPLAY LIST BUILT+++
+2011:12:18  15:36:56: followHash{0L: 29L}
+2011:12:18  15:36:57: followHash{0L: 1L, 1L: 28L, 28L: 30L, 30L: 31L, 31L: 32L}
+2011:12:18  15:36:59: item 30 to add
+2011:12:18  15:36:59: Last item ID:32
+2011:12:18  15:36:59: cp=[<Project: Benk dev>, <Project: Misc>, <Project: PMO>] cpn=1
+2011:12:18  15:36:59: followHash{0L: 1L, 1L: 28L, 33L: 31L, 28L: 30L, 30L: 33L, 31L: 32L}
+2011:12:18  15:36:59: +++DISPLAY LIST BUILT+++
+2011:12:18  15:38:12: 
+
+=====> WARNING!! followHash duplicate PMO  0
+2011:12:18  15:38:12: 
+
+=====> WARNING!! followHash duplicate New last time 0
+2011:12:18  15:38:12: followHash{0L: 29L, 1L: 28L, 2L: 3L, 3L: 4L, 4L: 5L, 5L: 6L, 6L: 7L, 7L: 13L, 10L: 14L, 12L: 10L, 13L: 12L, 14L: 15L, 15L: 16L, 16L: 18L, 18L: 19L, 19L: 20L, 20L: 21L, 21L: 23L, 23L: 25L, 25L: 26L, 28L: 30L, 30L: 33L, 31L: 32L, 33L: 31L}
+2011:12:18  15:40:31: followHash{0L: 1L, 1L: 28L, 33L: 31L, 28L: 30L, 30L: 33L, 31L: 32L}
+2011:12:18  15:40:40: followHash{0L: 29L}
+2011:12:18  15:40:53: followHash{0L: 1L, 1L: 28L, 33L: 31L, 28L: 30L, 30L: 33L, 31L: 32L}
+2011:12:18  15:40:58: followHash{0L: 2L, 2L: 3L, 3L: 4L, 4L: 5L, 5L: 6L, 6L: 7L, 7L: 13L, 10L: 14L, 12L: 10L, 13L: 12L, 14L: 15L, 15L: 16L, 16L: 18L, 18L: 19L, 19L: 20L, 20L: 21L, 21L: 23L, 23L: 25L, 25L: 26L}
+2011:12:18  15:41:01: followHash{10L: 14L, 12L: 10L, 13L: 12L}
+2011:12:18  15:41:01: FHK is=13
+2011:12:18  15:41:01: new followhash{0: 12L, 10L: 14L, 12L: 10L}
+2011:12:18  15:41:04: followHash{0L: 1L, 1L: 28L, 33L: 31L, 28L: 30L, 30L: 33L, 31L: 32L}
+2011:12:18  15:41:08: item 33 to demote
+2011:12:18  15:41:08: Last item ID:32
+2011:12:18  15:41:08: cp=[<Project: Benk dev>, <Project: Misc>, <Project: PMO>] cpn=1
+2011:12:18  15:41:08: followHash{0L: 1L, 1L: 28L, 33L: 31L, 28L: 30L, 30L: 33L, 31L: 32L}
+2011:12:18  15:41:08: +++DISPLAY LIST BUILT+++
+2011:12:18  15:41:11: item 33 to promote
+2011:12:18  15:41:11: Last item ID:32
+2011:12:18  15:41:11: EXECUTING PROMOT 1 F 33
+2011:12:18  15:41:11: cp=[<Project: Benk dev>, <Project: Misc>, <Project: PMO>] cpn=1
+2011:12:18  15:41:11: followHash{0L: 1L, 1L: 28L, 33L: 31L, 28L: 30L, 30L: 33L, 31L: 32L}
+2011:12:18  15:41:11: +++DISPLAY LIST BUILT+++
+2011:12:18  15:41:15: item 33 to promote
+2011:12:18  15:41:15: Last item ID:32
+2011:12:18  15:41:15: Executing promote 2 of id=33
+2011:12:18  15:41:15: 2   2<==
+2011:12:18  15:41:15: 1  2<==++
+2011:12:18  15:41:15: cp=[<Project: Benk dev>, <Project: Misc>, <Project: PMO>] cpn=1
+2011:12:18  15:41:15: followHash{0L: 1L, 1L: 28L, 33L: 31L, 28L: 30L, 30L: 33L, 31L: 32L}
+2011:12:18  15:41:15: +++DISPLAY LIST BUILT+++
+2011:12:18  15:41:21: item 33 to delete
+2011:12:18  15:41:21: Last item ID:32
+2011:12:18  15:41:21: ===pItem, lastItemID============33  32==============
+2011:12:18  15:41:21: cp=[<Project: Benk dev>, <Project: Misc>, <Project: PMO>] cpn=1
+2011:12:18  15:41:21: followHash{0L: 1L, 1L: 28L, 28L: 30L, 30L: 31L, 31L: 32L}
+2011:12:18  15:41:21: +++DISPLAY LIST BUILT+++
+2011:12:18  15:43:00: followHash{0L: 1L, 1L: 28L, 28L: 30L, 30L: 31L, 31L: 32L}
+2011:12:18  15:43:02: followHash{0L: 29L}
+2011:12:18  15:43:03: followHash{0L: 2L, 2L: 3L, 3L: 4L, 4L: 5L, 5L: 6L, 6L: 7L, 7L: 13L, 10L: 14L, 12L: 10L, 13L: 12L, 14L: 15L, 15L: 16L, 16L: 18L, 18L: 19L, 19L: 20L, 20L: 21L, 21L: 23L, 23L: 25L, 25L: 26L}
+2011:12:18  15:43:09: followHash{18L: 19L, 19L: 20L}
+2011:12:18  15:43:09: FHK is=18
+2011:12:18  15:43:09: new followhash{0: 19L, 19L: 20L}
+2011:12:18  15:43:13: followHash{0L: 29L}
+2011:12:18  15:43:14: followHash{0L: 2L, 2L: 3L, 3L: 4L, 4L: 5L, 5L: 6L, 6L: 7L, 7L: 13L, 10L: 14L, 12L: 10L, 13L: 12L, 14L: 15L, 15L: 16L, 16L: 18L, 18L: 19L, 19L: 20L, 20L: 21L, 21L: 23L, 23L: 25L, 25L: 26L}
+2011:12:18  15:43:25: Search term=mee
+2011:12:18  15:43:36: followHash{10L: 14L, 12L: 10L, 13L: 12L}
+2011:12:18  15:43:36: FHK is=13
+2011:12:18  15:43:36: new followhash{0: 12L, 10L: 14L, 12L: 10L}
