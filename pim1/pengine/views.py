@@ -82,12 +82,12 @@ def hoistItem(request,pItem):
     ##   1. can't just truncate, or you get the entire rest of the file
     ##   2. need to find all children, and then draw children and their children
     ## Fourth buildlist arg is hoist ID #. BuildDisplayList calls allMyChildren
-    
+    hoistID=pItem
     current_projs = Project.objects.order_by('name')
 
-    hoistProj=Item.objects.get(pk=pItem).project_id 
+    hoistProj=Item.objects.get(pk=hoistID).project_id 
     
-    displayList=buildDisplayList(current_projs, hoistProj, 'follows', pItem,[])
+    displayList=buildDisplayList(current_projs, hoistProj, 'follows', hoistID,[])
 
     t = loader.get_template('pim1_tmpl/items/index.html')
     c = Context({
@@ -118,8 +118,11 @@ def buildDisplayList(projectx, projID, ordering, hoistID, useList):
         items2List=Item.objects.filter(id__in=useList).order_by(ordering)
 
     elif hoistID != 0:
-        resultList=[hoistID] ## insures that the target item appears in the final list.
+        ## insures that the target item appears in the final list.
+        resultList=[] 
         resultList=allMyChildren(hoistID,resultList)
+        resultList.append(hoistID)
+ 
         ## get querySet that only has items with those IDs in it
         items2List=Item.objects.filter(id__in=resultList).order_by( ordering)
         projlist=Project.objects.get(pk=projID)
@@ -183,12 +186,29 @@ def buildDisplayList(projectx, projID, ordering, hoistID, useList):
         ## So if there is no key=0 (ex., for listing on a single project), add one, with a
         ## value of the field ID of the first item.
 
+        ## WRONG. The IDs could be in any order whatsoever, ex. from moving, deleting, creating
+        ## items. Confusing, because they generally ARE in numeric order.
+        ## Can't rely on numerical minimum of followHash index. Must find first one in
+        ## "natural" benk order ,and see that.
+        ##  Deduce it: FollowHash[N] has a value of the item that follows it. and FollowHash
+        ##  *includes the item preceding the first item*.
+        ##  So look for item with index X, where X does not appear as a value in FollowHash.
+            
+        #logThis('ixList='+str(ixList))    
+        #logThis('followHash'+str(followHash))
         if min(followHash.keys()) != 0:
             # commented 10/23/2011, added two lines below
             #followHash[0]=min(followHash.keys())
-            minfhk=min(followHash.keys())
-            followHash[0]=followHash.pop(minfhk)
+            #minfhk=min(followHash.keys())
+            #followHash[0]=followHash.pop(minfhk)
+            for fhk in followHash.keys():
+                if fhk in followHash.values():
+                    continue
+                else:
+                    break
 
+            followHash[0]=fhk
+            
         currentID = 0
 
         ## OK, now follow the chain of who follows whom, starting with whoever follows Parent ID = 0
@@ -577,7 +597,8 @@ def example_task():
 def ssearch(request):
     current_projs = Project.objects.order_by('name')
     c = {}
-    c.update(csrf(request))	  
+    c.update(csrf(request))
+    error_message=''
      
     if request.method == 'GET':
         sform = ssearchForm(request.GET)
@@ -595,8 +616,12 @@ def ssearch(request):
                 totalHits.append(h.id)
             for h in noteHits:
                 totalHits.append(h.id)
-            displayList=buildDisplayList(current_projs, 0, 'id', 0, totalHits)
-            #buildDisplayList(projectx, projID, ordering, hoistID, useList):
+            if totalHits != []:
+                displayList=buildDisplayList(current_projs, 0, 'id', 0, totalHits)
+                #buildDisplayList(projectx, projID, ordering, hoistID, useList):
+            else:
+                ## no hits
+                displayList=[]
 
         else:
             error_message="Form was not valid, search term = "
@@ -608,7 +633,8 @@ def ssearch(request):
         'current_projs':current_projs,
         'nowx':datetime.datetime.now().strftime("%Y/%m/%d  %H:%M:%S"),
         'pagecrumb':'search result',
-        'error_message':error_message
+        'error_message':error_message,
+        'is_search_result':'true'
     })
     return HttpResponse(t.render(c))
             

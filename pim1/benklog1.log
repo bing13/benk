@@ -66,3 +66,55 @@ cp=[<Project: Benk dev>, <Project: Misc>, <Project: PMO>] cpn=3
 2011:12:18  11:42:58: Search term=bernie
 2011:12:18  11:43:27: Search term=staff
 2011:12:18  11:44:20: Search term=pmo
+2011:12:18  11:47:46: Search term=angie
+2011:12:18  11:49:01: Search term=ppop
+2011:12:18  11:51:00: Search term=mahesh
+2011:12:18  11:51:32: Search term=mahesh
+2011:12:18  11:51:38: Search term=kjhkjh
+2011:12:18  11:52:28: Search term=654654
+2011:12:18  11:54:22: Search term=pmo
+2011:12:18  13:32:01: Search term=margo
+2011:12:18  13:48:13: Search term=me
+2011:12:18  13:48:42: Search term=lkjlkj
+2011:12:18  13:51:06: Search term=654654
+2011:12:18  13:51:45: Search term=99999
+2011:12:18  13:51:59: Search term=787878
+2011:12:18  13:52:20: item 30 to add
+2011:12:18  13:52:20: Last item ID:29
+2011:12:18  13:52:20: cp=[<Project: Benk dev>, <Project: Misc>, <Project: PMO>] cpn=1
+2011:12:18  13:52:20: +++DISPLAY LIST BUILT+++
+2011:12:18  13:53:09: item 30 to demote
+2011:12:18  13:53:09: Last item ID:29
+2011:12:18  13:53:09: cp=[<Project: Benk dev>, <Project: Misc>, <Project: PMO>] cpn=1
+2011:12:18  13:53:09: +++DISPLAY LIST BUILT+++
+2011:12:18  13:53:14: Search term=child
+2011:12:18  13:56:47: Search term=pmo
+2011:12:18  13:59:27: item 14 to demote
+2011:12:18  13:59:27: Last item ID:29
+2011:12:18  13:59:27: countIndent=2  2<==
+2011:12:18  13:59:27: cp=[<Project: Benk dev>, <Project: Misc>, <Project: PMO>] cpn=3
+2011:12:18  13:59:27: +++DISPLAY LIST BUILT+++
+2011:12:18  14:11:07: Hoist resultList=[10L, 14L, u'12']
+2011:12:18  14:11:57: Hoist resultList=[10L, 14L]
+2011:12:18  14:28:36: followHash{0L: 1L, 1L: 28L, 28L: 30L, 30L: 31L}
+2011:12:18  14:29:08: followHash{1L: 28L, 28L: 30L}
+2011:12:18  14:33:31: followHash{0L: 1L, 1L: 28L, 28L: 30L, 30L: 31L}
+2011:12:18  14:33:34: followHash{26L: 29L}
+2011:12:18  14:33:51: followHash{26L: 29L}
+2011:12:18  14:33:52: followHash{0L: 1L, 1L: 28L, 28L: 30L, 30L: 31L}
+2011:12:18  14:33:57: followHash{1L: 28L, 28L: 30L}
+2011:12:18  14:34:04: followHash{2L: 3L, 3L: 4L, 4L: 5L, 5L: 6L, 6L: 7L, 7L: 13L, 10L: 14L, 12L: 10L, 13L: 12L, 14L: 15L, 15L: 16L, 16L: 18L, 18L: 19L, 19L: 20L, 20L: 21L, 21L: 23L, 23L: 25L, 25L: 26L, 31L: 2L}
+2011:12:18  14:34:09: followHash{5L: 6L, 6L: 7L, 7L: 13L, 10L: 14L, 12L: 10L, 13L: 12L, 14L: 15L, 15L: 16L, 16L: 18L, 18L: 19L, 19L: 20L, 20L: 21L, 21L: 23L, 23L: 25L, 25L: 26L}
+2011:12:18  14:34:12: followHash{0L: 1L, 1L: 28L, 2L: 3L, 3L: 4L, 4L: 5L, 5L: 6L, 6L: 7L, 7L: 13L, 10L: 14L, 12L: 10L, 13L: 12L, 14L: 15L, 15L: 16L, 16L: 18L, 18L: 19L, 19L: 20L, 20L: 21L, 21L: 23L, 23L: 25L, 25L: 26L, 26L: 29L, 28L: 30L, 30L: 31L, 31L: 2L}
+2011:12:18  14:34:19: followHash{18L: 19L, 19L: 20L}
+2011:12:18  14:34:29: followHash{10L: 14L, 12L: 10L, 13L: 12L}
+2011:12:18  14:36:06: followHash{10L: 14L, 12L: 10L, 13L: 12L}
+2011:12:18  14:44:02: ixList=[<Item: == ANCHOR ITEM ==>, <Item: Child of anchor>, <Item: e6420 >, <Item: rollout manager 11/22/2011  >, <Item: ddt 11/17/2011  >, <Item: PMO General >, <Item: PMO meeting wEd >, <Item: Mahesh info >, <Item: Margo, AB, LT staffing chats 11/22/2011  >, <Item: pmo meeting w RL et al. 11/30/2011  >, <Item: PMO meeting 11/28/2011  >, <Item: PMO meeting 11/21/2011  >, <Item: M-site meeting with Matt 11/21/2011  >, <Item: Angie call 11/16/2011  >, <Item: Road Map big meeting 11/16/2011  >, <Item: staffing model for Q1 2012 11/15/2011 >, <Item: join.me , really easy screen sharing site.  >, <Item: PMO meeting 11/14/2011  >, <Item: Warp (stke mobile; jbjsbr keyword editing) 11/10/2011 >, <Item: h2O oversight meeting 11/9/2011  >, <Item: New last time>, <Item: another child of anchor>, <Item: Third child of the anchor item very nice.>, <Item: PMO >]
+2011:12:18  14:44:02: followHash{0L: 1L, 1L: 28L, 2L: 3L, 3L: 4L, 4L: 5L, 5L: 6L, 6L: 7L, 7L: 13L, 10L: 14L, 12L: 10L, 13L: 12L, 14L: 15L, 15L: 16L, 16L: 18L, 18L: 19L, 19L: 20L, 20L: 21L, 21L: 23L, 23L: 25L, 25L: 26L, 26L: 29L, 28L: 30L, 30L: 31L, 31L: 2L}
+2011:12:18  14:44:17: ixList=[<Item: Margo, AB, LT staffing chats 11/22/2011  >, <Item: pmo meeting w RL et al. 11/30/2011  >, <Item: PMO meeting 11/28/2011  >]
+2011:12:18  14:44:17: followHash{10L: 14L, 12L: 10L, 13L: 12L}
+2011:12:18  15:06:09: item 31 to add
+2011:12:18  15:06:09: Last item ID:29
+2011:12:18  15:06:09: cp=[<Project: Benk dev>, <Project: Misc>, <Project: PMO>] cpn=1
+2011:12:18  15:06:09: +++DISPLAY LIST BUILT+++
+2011:12:18  15:06:52: Search term=very
