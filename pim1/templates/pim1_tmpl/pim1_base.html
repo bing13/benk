@@ -35,6 +35,7 @@
  <div id="mainContainer">
     <div id="sidebar">
         {% block sidebar %}
+	<div class="sideProjList">
         <h5>projects</h5>
  
 <!-- here's the default project list, which can be overridden  -->    
@@ -53,8 +54,22 @@
       {% else %}
            <p>No projects are available.</p>
       {% endif %}
-
+       </div>
      {% endblock %}
+
+
+	   <div class="ssearch">
+	     <form action="/pim1/search/" method="get">
+	       {% csrf_token %}
+	        <input type="text" name="searchfx" id="searchfx" />
+
+	       <input type="submit" value="search" />
+	     </form>
+           </div>
+
+	   <div class="errormsg">
+	     {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+	   </div>
  
    {% endblock %}
     </div>

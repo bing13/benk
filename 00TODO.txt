@@ -3,9 +3,13 @@ Text-Width: 70
 
 NEW ========================================================
 
-+ PROBLEM.  I have two MISC items, one is 0,0, one is #27 0/26. The MISC view only shows
+- if no hits, search errors
 
-  the first. This might be a general problem. 
+- search result display should *not* have action arrows.
+
+
+
++ PROBLEM. oNLY SAFE way to add items is from the interface. Awkward for adding first items in new projects
 
 
 + I think one problem is that once imported, adding the first item to the next project
@@ -142,3 +146,4 @@ DB MODS TO MAKE NEXT:
 
 .* hoist option
 . Basically, you want to be able to pass starting item, # of results to display, and view, and have the right thing happen. Probably means genralizing buildlist, so a big deal. But worth it.
+. fix logging - write to dx.*.* log file, not bh.com. AND OPEN as APPEND .seem to be losing history.

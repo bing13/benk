@@ -38,8 +38,7 @@ urlpatterns = patterns('',
     url(r'^item/movedown/(?P<pItem>\d+)/$','pim1.pengine.views.actionItem',{'action':'movedown'}),
 
     url(r'^importfile/$','pim1.pengine.views.importfile'),
-
-
+    url(r'^pim1/search/$','pim1.pengine.views.ssearch'),                       
 
     url(r'^item/gooUpdate$','pim1.pengine.views.gooTaskUpdate'),
 

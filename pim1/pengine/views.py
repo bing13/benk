@@ -22,8 +22,8 @@ from django.views.decorators.csrf import csrf_protect
 from django.template import RequestContext
 from django import forms
 
-LOGFILE = '/home/bhadmin13/bernardhecker.com/pim1/benklog1.log'
-LOGOUT = open(LOGFILE, 'w')
+LOGFILE = '/home/bhadmin13/dx.bernardhecker.com/pim1/benklog1.log'
+#LOGOUT = open(LOGFILE, 'a')
 
 
 ## https://docs.djangoproject.com/en/1.3/intro/tutorial04/
@@ -31,7 +31,13 @@ class ImportForm(forms.Form):
     fileToImport=forms.CharField(max_length=300)
     projectToAdd=forms.IntegerField()
 
+class ssearchForm(forms.Form):
+    searchfx=forms.CharField(max_length=200)
+
 @csrf_protect
+
+
+
 ##################################################################
 def homepage(request):
     current_projs = Project.objects.all()
@@ -45,7 +51,7 @@ def homepage(request):
 def itemlist(request,proj_id):
     ##current_items=Item.objects.all()
     current_projs = Project.objects.order_by('name')
-    displayList = buildDisplayList(current_projs, proj_id,'follows',0)
+    displayList = buildDisplayList(current_projs, proj_id,'follows',0,[])
 
     t = loader.get_template('pim1_tmpl/items/index.html')
                        
@@ -81,7 +87,7 @@ def hoistItem(request,pItem):
 
     hoistProj=Item.objects.get(pk=pItem).project_id 
     
-    displayList=buildDisplayList(current_projs, hoistProj, 'follows', pItem)
+    displayList=buildDisplayList(current_projs, hoistProj, 'follows', pItem,[])
 
     t = loader.get_template('pim1_tmpl/items/index.html')
     c = Context({
@@ -92,22 +98,32 @@ def hoistItem(request,pItem):
     })
     return HttpResponse(t.render(c))
 
+##################################################################
+def logThis(s):
+    LX = open(LOGFILE, 'a')
+    t = datetime.datetime.now().strftime("%Y:%m:%d  %H:%M:%S")
+    LX.write(t+": "+s+'\n')
+    LX.close
+    return()
+
 
 ##################################################################
-def buildDisplayList(projectx, projID, ordering, hoistID):
+def buildDisplayList(projectx, projID, ordering, hoistID, useList):
 
     #hoistID = 55
 
     ### Select the items to operate on: all, or just those from 1 project
-    if hoistID != 0:
+
+    if useList != []:
+        items2List=Item.objects.filter(id__in=useList).order_by(ordering)
+
+    elif hoistID != 0:
         resultList=[hoistID] ## insures that the target item appears in the final list.
         resultList=allMyChildren(hoistID,resultList)
         ## get querySet that only has items with those IDs in it
         items2List=Item.objects.filter(id__in=resultList).order_by( ordering)
         projlist=Project.objects.get(pk=projID)
  
-
-
     elif projID != '0': 
         ##specified project
         items2List=Item.objects.filter(project__id=projID).order_by( ordering)
@@ -157,7 +173,7 @@ def buildDisplayList(projectx, projID, ordering, hoistID):
         ## generate outline-ordered and formatted output list
         for f2 in ixList:
             if followHash.has_key(f2.follows): 
-                LOGOUT.write( "\n\n=====> WARNING!! followHash duplicate " + f2 +" " + f2.follows)
+                logThis( "\n\n=====> WARNING!! followHash duplicate " + f2 +" " + f2.follows)
 
             ## this is the critial line for list-building
             followHash[f2.follows] = f2.id
@@ -213,15 +229,15 @@ def getLastItemID():
         if itemx.id not in listOfFollowers:
             lastItemIDs.append(itemx.id)
     if len(lastItemIDs)!= 1:
-        LOGOUT.write( "===== BAD LAST ITEM IDs, should only be one. Instead: "+ str(lastItemIDs))
+        logThis( "===== BAD LAST ITEM IDs, should only be one. Instead: "+ str(lastItemIDs))
         exit()
     else:
-        LOGOUT.write( "Last item ID:"+ str(lastItemIDs[0]))
+        logThis( "Last item ID:"+ str(lastItemIDs[0]))
         return(lastItemIDs[0])
 ##################################################################
 
 def actionItem(request, pItem, action):
-    LOGOUT.write( "item "+ str(pItem) + " to " + action)
+    logThis( "item "+ pItem + " to " + action);
 
     lastItemID=getLastItemID()
     current_projs = Project.objects.order_by('name')
@@ -238,7 +254,7 @@ def actionItem(request, pItem, action):
             oldFollower = Item.objects.get(follows=pItem)
             follower=True
         except:
-            LOGOUT.write( "Item has no follower: ID" + str(pItem))
+            logThis( "Item has no follower: ID" + str(pItem))
             follower=False
 
         newItem = Item(title="[NEW ITEM]",priority='0', status='0', \
@@ -255,7 +271,7 @@ def actionItem(request, pItem, action):
     elif action=='delete':
         if int(pItem) != lastItemID:
             
-            LOGOUT.write( "===pItem, lastItemID============"+str(pItem)+ '  '+str(lastItemID)+"==============")
+            logThis( "===pItem, lastItemID============"+str(pItem)+ '  '+str(lastItemID)+"==============")
             followingMe = Item.objects.get(follows=pItem)
             followingMe.follows=clickedItem.follows
             if followingMe.parent==clickedItem.id:
@@ -270,7 +286,7 @@ def actionItem(request, pItem, action):
     ###DEMOTE###################################################################
     elif action=='demote':
         if clickedItem.parent==clickedItem.follows:
-            LOGOUT.write( "Can't demote further, item "+str(clickedItem.id))
+            logThis( "Can't demote further, item "+str(clickedItem.id))
         elif clickedItem.parent==Item.objects.get(pk=clickedItem.follows).parent:
             clickedItem.parent=clickedItem.follows
             clickedItem.save()
@@ -278,39 +294,39 @@ def actionItem(request, pItem, action):
             indx=Item.objects.get(pk=clickedItem.follows)
             while countIndent(indx)> countIndent(clickedItem):
                 indx=Item.objects.get(pk=indx.follows)
-            LOGOUT.write( "countIndent="+str(countIndent(indx))+ '  ' +str(countIndent(clickedItem))+"<==")
+            logThis( "countIndent="+str(countIndent(indx))+ '  ' +str(countIndent(clickedItem))+"<==")
             clickedItem.parent=indx.id
             clickedItem.save()
         else: 
-            LOGOUT.write( "===WARNING!========= DEMOTE CONDITION MISSED. pItem:"+str(pItem))
+            logThis( "===WARNING!========= DEMOTE CONDITION MISSED. pItem:"+str(pItem))
 
     ###PROMOTE##################################################################
     elif action=='promote': 
         if clickedItem.parent ==  0:
-            LOGOUT.write( "CAN'T PROMOTE TOP-LEVEL "+ str(pItem))
+            logThis( "CAN'T PROMOTE TOP-LEVEL "+ str(pItem))
         elif countIndent(clickedItem) > countIndent(Item.objects.get(pk=clickedItem.follows)):
-            LOGOUT.write( "EXECUTING PROMOT 1 F "+str(clickedItem.id))
+            logThis( "EXECUTING PROMOT 1 F "+str(clickedItem.id))
             clickedItem.parent=Item.objects.get(pk=clickedItem.follows).parent
             clickedItem.save()
 
         elif countIndent(clickedItem) <= countIndent(Item.objects.get(pk=clickedItem.follows)):
-            LOGOUT.write( "Executing promote 2 of id="+ str(pItem))
+            logThis( "Executing promote 2 of id="+ str(pItem))
             indx=Item.objects.get(pk=clickedItem.follows)
             while countIndent(indx)>= countIndent(clickedItem):
-                LOGOUT.write( str(countIndent(indx))+"   "+str(countIndent(clickedItem))+"<==")
+                logThis( str(countIndent(indx))+"   "+str(countIndent(clickedItem))+"<==")
                 indx=Item.objects.get(pk=indx.follows)
-            LOGOUT.write( str(countIndent(indx))+"  "+str(countIndent(clickedItem))+"<==++")
+            logThis( str(countIndent(indx))+"  "+str(countIndent(clickedItem))+"<==++")
             clickedItem.parent=indx.parent
             clickedItem.save()
                                                         
         else:
-            LOGOUT.write( "====WARNING!=== COULDN'T PROMOTE, REASON UNKNOWN:" + str(pItem))
+            logThis( "====WARNING!=== COULDN'T PROMOTE, REASON UNKNOWN:" + str(pItem))
 
     ###MOVE UP##################################################################
     elif action=='moveup':
 
         if clickedItem.follows==0:
-            LOGOUT.write( "CAN'T MOVE UP TOP item "+ str(pItem))
+            logThis( "CAN'T MOVE UP TOP item "+ str(pItem))
         else:
             hasFollower=False             
             lastKid=findLastKid(clickedItem,lastItemID)
@@ -350,7 +366,7 @@ def actionItem(request, pItem, action):
         ### may wish to remodel so it looks like "moveup", which uses the findLastKid method
         lastKidofCI=findLastKid(clickedItem,lastItemID)
         if clickedItem.id == lastItemID or lastKidofCI == lastItemID:
-            LOGOUT.write( "==> Clicked item is last item or last parent, no move:ci, lk, liID "+str(clickedItem.id) +"  " + str(lastKidofCI) + '  ' + str(lastItemID))
+            logThis( "==> Clicked item is last item or last parent, no move:ci, lk, liID "+str(clickedItem.id) +"  " + str(lastKidofCI) + '  ' + str(lastItemID))
         else:
             #ciFollower=Item.objects.get(follows=clickedItem.id)
             if lastKidofCI !=0:
@@ -383,13 +399,13 @@ def actionItem(request, pItem, action):
     ###UNKNOWN ACTION###########################################################
 
     else:
-        LOGOUT.write( "===WARNING!=========== \nUnknown action=" + action)
+        logThis( "===WARNING!=========== \nUnknown action=" + action)
         exit()
 
     ## let's restrict default view to the clicked item project
-    LOGOUT.write( "cp="+str(current_projs)+" cpn="+str(clickedProjNum))
-    displayList = buildDisplayList(current_projs,clickedProjNum, 'follows',0)
-    LOGOUT.write( "+++DISPLAY LIST BUILT+++")
+    logThis( "cp="+str(current_projs)+" cpn="+str(clickedProjNum))
+    displayList = buildDisplayList(current_projs,clickedProjNum, 'follows',0,[])
+    logThis( "+++DISPLAY LIST BUILT+++")
     t = loader.get_template('pim1_tmpl/items/index.html')
 
     c = Context({
@@ -414,12 +430,12 @@ def findLastKid(itemx, lastItemID):
         else:
             prev_id=indx.id  ## need to define, in case we don't enter while block
             while (countIndent(indx) > countIndent(itemx)) and (indx.id != lastItemID):
-                LOGOUT.write( str(countIndent(indx))+"  "+str(countIndent(itemx))+"<=md=")
+                logThis( str(countIndent(indx))+"  "+str(countIndent(itemx))+"<=md=")
                 prev_id=indx.id
                 indx=Item.objects.get(follows=indx.id)
 
             lastKid=prev_id
-            LOGOUT.write( "indx.follows/ itemx.follows/ indx.id/  prev_id" + str(indx.follows) +' '+ str(itemx.follows) +' '+ str(indx.id) +' '+ str(prev_id))
+            logThis( "indx.follows/ itemx.follows/ indx.id/  prev_id" + str(indx.follows) +' '+ str(itemx.follows) +' '+ str(indx.id) +' '+ str(prev_id))
 
     return(lastKid)
 
@@ -435,7 +451,7 @@ def psd(request,pSort):
     elif  pSort=="date_gootask_display":
         pSort="-"+pSort
 
-    displayList =  buildDisplayList(current_projs,'0',pSort,0)
+    displayList =  buildDisplayList(current_projs,'0',pSort,0,[])
 
 
     t = loader.get_template('pim1_tmpl/items/psd.html')
@@ -451,7 +467,7 @@ def psd(request,pSort):
 
 def gridview(request):
     current_projs = Project.objects.order_by('name')
-    displayList =  buildDisplayList(current_projs,'0', 'follows',0)
+    displayList =  buildDisplayList(current_projs,'0', 'follows',0,[])
 
     t = loader.get_template('pim1_tmpl/items/gridview.html')
     c = Context({
@@ -496,7 +512,7 @@ def gooTaskUpdate(request):
     for g in gootasks['items']:
         gooTaskIdList.append(g['id'])
 
-    LOGOUT.write( "gooTaskIdList="+str(gooTaskIdList))
+    logThis( "gooTaskIdList="+str(gooTaskIdList))
 
     ## update all items that have google task display dates
     pushableItems=Item.objects.filter(date_gootask_display__gte=datetime.date(2000, 1, 1))
@@ -530,7 +546,7 @@ def gooTaskUpdate(request):
     # ...oops, we need to adorn it with project and ???
     
     current_projs = Project.objects.order_by('name')
-    displayList =  buildDisplayList(current_projs,'0','-date_gootask_display',0)
+    displayList =  buildDisplayList(current_projs,'0','-date_gootask_display',0,[])
     
     t = loader.get_template('pim1_tmpl/items/psd.html')
     c = Context({
@@ -558,6 +574,46 @@ def example_task():
     return(result)
 
 #############################################################################
+def ssearch(request):
+    current_projs = Project.objects.order_by('name')
+    c = {}
+    c.update(csrf(request))	  
+     
+    if request.method == 'GET':
+        sform = ssearchForm(request.GET)
+        if sform.is_valid():
+            searchTerm=sform.cleaned_data['searchfx']
+            logThis("Search term="+searchTerm)
+
+            ## Execute the search ##
+            ## get the querySets
+            titleHits=Item.objects.filter(title__icontains=searchTerm)
+            noteHits=Item.objects.filter(HTMLnoteBody__icontains=searchTerm)
+            ## enumerate the hit IDs
+            totalHits=[]
+            for h in titleHits:
+                totalHits.append(h.id)
+            for h in noteHits:
+                totalHits.append(h.id)
+            displayList=buildDisplayList(current_projs, 0, 'id', 0, totalHits)
+            #buildDisplayList(projectx, projID, ordering, hoistID, useList):
+
+        else:
+            error_message="Form was not valid, search term = "
+            displayList=['Form not valid, no results to display']
+
+    t = loader.get_template('pim1_tmpl/items/index.html')
+    c = Context({
+        'current_items':displayList,
+        'current_projs':current_projs,
+        'nowx':datetime.datetime.now().strftime("%Y/%m/%d  %H:%M:%S"),
+        'pagecrumb':'search result',
+        'error_message':error_message
+    })
+    return HttpResponse(t.render(c))
+            
+                                         
+#############################################################################
 
 def importfile(request):
     current_projs = Project.objects.order_by('name')
@@ -570,10 +626,10 @@ def importfile(request):
             # Process the data in form.cleaned_data
             fileToImport=form.cleaned_data['fileToImport']
             projectToAdd=form.cleaned_data['projectToAdd']
-            LOGOUT.write( "fileToImport="+fileToImport)
-            LOGOUT.write( "projectToAdd="+str(projectToAdd))
+            logThis( "fileToImport="+fileToImport)
+            logThis( "projectToAdd="+str(projectToAdd))
 
-            LOGOUT.write( "+++ departing to importISdata")
+            logThis( "+++ departing to importISdata")
             importISdata(fileToImport,projectToAdd)
 
 
@@ -597,13 +653,13 @@ def importISdata(importFile,newProjectID):
 
     startdir='/home/bhadmin13/dx.bernardhecker.com/pim1/pengine/imports/'
     textAccumulator = ''
-    LOGOUT.write( "+++ b1 importISdata")
+    logThis( "+++ b1 importISdata")
     INFILE=open(startdir+importFile,'r')
     allLines=INFILE.readlines()
     currentISid = 0
     previousNewItemBenkID=getLastItemID()
     firstRecord = 'yes'
-    LOGOUT.write( "+++ b2 importISdata")
+    logThis( "+++ b2 importISdata")
     for lx in allLines[:]:
         if lx[0:4] != '@@!!':  # we assume it's a continuing note body
             textAccumulator += lx
@@ -663,4 +719,4 @@ def importISdata(importFile,newProjectID):
                 pass;
 
             else:
-                LOGOUT.write( "* * * * RECORD MISSED * * * *:"+ str(lx))
+                logThis( "* * * * RECORD MISSED * * * *:"+ str(lx))

@@ -1,0 +1,68 @@
+item 24 to delete
+Last item ID:26
+item 22 to delete
+Last item ID:26
+item 17 to moveup
+Last item ID:26
+cp=[<Project: Benk dev>, <Project: Misc>, <Project: PMO>] cpn=3
++++DISPLAY LIST BUILT+++
+item 17 to demote
+Last item ID:26
+cp=[<Project: Benk dev>, <Project: Misc>, <Project: PMO>] cpn=3
++++DISPLAY LIST BUILT+++
+item 17 to delete
+Last item ID:26
+===pItem, lastItemID============17  26==============
+cp=[<Project: Benk dev>, <Project: Misc>, <Project: PMO>] cpn=3
++++DISPLAY LIST BUILT+++
+item 12 to moveup
+Last item ID:26
+cp=[<Project: Benk dev>, <Project: Misc>, <Project: PMO>] cpn=3
++++DISPLAY LIST BUILT+++
+item 10 to moveup
+Last item ID:26
+cp=[<Project: Benk dev>, <Project: Misc>, <Project: PMO>] cpn=3
++++DISPLAY LIST BUILT+++
+item 12 to moveup
+Last item ID:26
+cp=[<Project: Benk dev>, <Project: Misc>, <Project: PMO>] cpn=3
++++DISPLAY LIST BUILT+++
+item 10 to movedown
+Last item ID:26
+cp=[<Project: Benk dev>, <Project: Misc>, <Project: PMO>] cpn=3
++++DISPLAY LIST BUILT+++
+item 10 to demote
+Last item ID:26
+cp=[<Project: Benk dev>, <Project: Misc>, <Project: PMO>] cpn=3
++++DISPLAY LIST BUILT+++
+2011:12:18  08:30:16: item 28 to add
+2011:12:18  08:30:16: Last item ID:29
+2011:12:18  08:30:16: cp=[<Project: Benk dev>, <Project: Misc>, <Project: PMO>] cpn=1
+2011:12:18  08:30:16: +++DISPLAY LIST BUILT+++
+2011:12:18  08:30:55: item 10 to promote
+2011:12:18  08:30:55: Last item ID:29
+2011:12:18  08:30:55: EXECUTING PROMOT 1 F 10
+2011:12:18  08:30:55: cp=[<Project: Benk dev>, <Project: Misc>, <Project: PMO>] cpn=3
+2011:12:18  08:30:55: +++DISPLAY LIST BUILT+++
+2011:12:18  08:31:06: item 13 to moveup
+2011:12:18  08:31:06: Last item ID:29
+2011:12:18  08:31:07: cp=[<Project: Benk dev>, <Project: Misc>, <Project: PMO>] cpn=3
+2011:12:18  08:31:07: +++DISPLAY LIST BUILT+++
+2011:12:18  10:15:07: item 10 to demote
+2011:12:18  10:15:07: Last item ID:29
+2011:12:18  10:15:07: cp=[<Project: Benk dev>, <Project: Misc>, <Project: PMO>] cpn=3
+2011:12:18  10:15:08: +++DISPLAY LIST BUILT+++
+2011:12:18  11:35:16: Search term=pmo
+2011:12:18  11:38:02: Search term=pmo
+2011:12:18  11:38:41: Search term=pmo
+2011:12:18  11:38:59: Search term=pmo
+2011:12:18  11:39:22: Search term=meet
+2011:12:18  11:39:37: Search term=angie
+2011:12:18  11:39:49: Search term=matt
+2011:12:18  11:40:55: Search term=matt
+2011:12:18  11:41:26: Search term=h20
+2011:12:18  11:42:21: Search term=bernard
+2011:12:18  11:42:52: Search term=lklkj
+2011:12:18  11:42:58: Search term=bernie
+2011:12:18  11:43:27: Search term=staff
+2011:12:18  11:44:20: Search term=pmo
