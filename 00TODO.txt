@@ -3,6 +3,16 @@ Text-Width: 70
 
 NEW ========================================================
 
++ PROBLEM.  I have two MISC items, one is 0,0, one is #27 0/26. The MISC view only shows
+
+  the first. This might be a general problem. 
+
+
++ I think one problem is that once imported, adding the first item to the next project
+
+  is hard, b/c when I do it by hand, it's easy to link it wrongly.
+
+
 - concern that adding items is busted, at least after an import. 
 
 * implement Django-native a/c, rather than apache at top level

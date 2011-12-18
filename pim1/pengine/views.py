@@ -22,6 +22,10 @@ from django.views.decorators.csrf import csrf_protect
 from django.template import RequestContext
 from django import forms
 
+LOGFILE = '/home/bhadmin13/bernardhecker.com/pim1/benklog1.log'
+LOGOUT = open(LOGFILE, 'w')
+
+
 ## https://docs.djangoproject.com/en/1.3/intro/tutorial04/
 class ImportForm(forms.Form):
     fileToImport=forms.CharField(max_length=300)
@@ -153,7 +157,7 @@ def buildDisplayList(projectx, projID, ordering, hoistID):
         ## generate outline-ordered and formatted output list
         for f2 in ixList:
             if followHash.has_key(f2.follows): 
-                print "\n\n=====> WARNING!! followHash duplicate", f2, f2.follows
+                LOGOUT.write( "\n\n=====> WARNING!! followHash duplicate " + f2 +" " + f2.follows)
 
             ## this is the critial line for list-building
             followHash[f2.follows] = f2.id
@@ -209,15 +213,15 @@ def getLastItemID():
         if itemx.id not in listOfFollowers:
             lastItemIDs.append(itemx.id)
     if len(lastItemIDs)!= 1:
-        print "===== BAD LAST ITEM IDs, should only be one. Instead:", lastItemIDs
+        LOGOUT.write( "===== BAD LAST ITEM IDs, should only be one. Instead: "+ str(lastItemIDs))
         exit()
     else:
-        print "Last item ID:", lastItemIDs[0]
+        LOGOUT.write( "Last item ID:"+ str(lastItemIDs[0]))
         return(lastItemIDs[0])
 ##################################################################
 
 def actionItem(request, pItem, action):
-    print "item ", pItem, "to", action
+    LOGOUT.write( "item "+ str(pItem) + " to " + action)
 
     lastItemID=getLastItemID()
     current_projs = Project.objects.order_by('name')
@@ -234,7 +238,7 @@ def actionItem(request, pItem, action):
             oldFollower = Item.objects.get(follows=pItem)
             follower=True
         except:
-            print "Item %s has no follower" % pItem
+            LOGOUT.write( "Item has no follower: ID" + str(pItem))
             follower=False
 
         newItem = Item(title="[NEW ITEM]",priority='0', status='0', \
@@ -251,7 +255,7 @@ def actionItem(request, pItem, action):
     elif action=='delete':
         if int(pItem) != lastItemID:
             
-            print "===pItem, lastItemID============",pItem,lastItemID,"=============="
+            LOGOUT.write( "===pItem, lastItemID============"+str(pItem)+ '  '+str(lastItemID)+"==============")
             followingMe = Item.objects.get(follows=pItem)
             followingMe.follows=clickedItem.follows
             if followingMe.parent==clickedItem.id:
@@ -266,7 +270,7 @@ def actionItem(request, pItem, action):
     ###DEMOTE###################################################################
     elif action=='demote':
         if clickedItem.parent==clickedItem.follows:
-            print "Can't demote further, item ",clickedItem.id
+            LOGOUT.write( "Can't demote further, item "+str(clickedItem.id))
         elif clickedItem.parent==Item.objects.get(pk=clickedItem.follows).parent:
             clickedItem.parent=clickedItem.follows
             clickedItem.save()
@@ -274,39 +278,39 @@ def actionItem(request, pItem, action):
             indx=Item.objects.get(pk=clickedItem.follows)
             while countIndent(indx)> countIndent(clickedItem):
                 indx=Item.objects.get(pk=indx.follows)
-            print countIndent(indx),countIndent(clickedItem),"<=="
+            LOGOUT.write( "countIndent="+str(countIndent(indx))+ '  ' +str(countIndent(clickedItem))+"<==")
             clickedItem.parent=indx.id
             clickedItem.save()
         else: 
-            print "===WARNING!========= DEMOTE CONDITION MISSED",pItem
+            LOGOUT.write( "===WARNING!========= DEMOTE CONDITION MISSED. pItem:"+str(pItem))
 
     ###PROMOTE##################################################################
     elif action=='promote': 
         if clickedItem.parent ==  0:
-            print "CAN'T PROMOTE TOP-LEVEL ", pItem
+            LOGOUT.write( "CAN'T PROMOTE TOP-LEVEL "+ str(pItem))
         elif countIndent(clickedItem) > countIndent(Item.objects.get(pk=clickedItem.follows)):
-            print "EXECUTING PROMOT 1 F ",clickedItem.id
+            LOGOUT.write( "EXECUTING PROMOT 1 F "+str(clickedItem.id))
             clickedItem.parent=Item.objects.get(pk=clickedItem.follows).parent
             clickedItem.save()
 
         elif countIndent(clickedItem) <= countIndent(Item.objects.get(pk=clickedItem.follows)):
-            print "Executing promote 2 of id=", pItem
+            LOGOUT.write( "Executing promote 2 of id="+ str(pItem))
             indx=Item.objects.get(pk=clickedItem.follows)
             while countIndent(indx)>= countIndent(clickedItem):
-                print countIndent(indx),countIndent(clickedItem),"<=="
+                LOGOUT.write( str(countIndent(indx))+"   "+str(countIndent(clickedItem))+"<==")
                 indx=Item.objects.get(pk=indx.follows)
-            print countIndent(indx),countIndent(clickedItem),"<==++"
+            LOGOUT.write( str(countIndent(indx))+"  "+str(countIndent(clickedItem))+"<==++")
             clickedItem.parent=indx.parent
             clickedItem.save()
                                                         
         else:
-            print "====WARNING!=== COULDN'T PROMOTE, REASON UNKNOWN" % pItem
+            LOGOUT.write( "====WARNING!=== COULDN'T PROMOTE, REASON UNKNOWN:" + str(pItem))
 
     ###MOVE UP##################################################################
     elif action=='moveup':
 
         if clickedItem.follows==0:
-            print "CAN'T MOVE UP TOP item ", pItem
+            LOGOUT.write( "CAN'T MOVE UP TOP item "+ str(pItem))
         else:
             hasFollower=False             
             lastKid=findLastKid(clickedItem,lastItemID)
@@ -346,7 +350,7 @@ def actionItem(request, pItem, action):
         ### may wish to remodel so it looks like "moveup", which uses the findLastKid method
         lastKidofCI=findLastKid(clickedItem,lastItemID)
         if clickedItem.id == lastItemID or lastKidofCI == lastItemID:
-            print "==> Clicked item is last item or last parent, no move:ci, lk, liID",clickedItem.id, lastKidofCI, lastItemID
+            LOGOUT.write( "==> Clicked item is last item or last parent, no move:ci, lk, liID "+str(clickedItem.id) +"  " + str(lastKidofCI) + '  ' + str(lastItemID))
         else:
             #ciFollower=Item.objects.get(follows=clickedItem.id)
             if lastKidofCI !=0:
@@ -379,13 +383,13 @@ def actionItem(request, pItem, action):
     ###UNKNOWN ACTION###########################################################
 
     else:
-        print "===WARNING!=========== \nUnknown action=",action
+        LOGOUT.write( "===WARNING!=========== \nUnknown action=" + action)
         exit()
 
     ## let's restrict default view to the clicked item project
-    print "cp=",current_projs," cpn=",clickedProjNum
+    LOGOUT.write( "cp="+str(current_projs)+" cpn="+str(clickedProjNum))
     displayList = buildDisplayList(current_projs,clickedProjNum, 'follows',0)
-    print "+++DISPLAY LIST BUILT+++"
+    LOGOUT.write( "+++DISPLAY LIST BUILT+++")
     t = loader.get_template('pim1_tmpl/items/index.html')
 
     c = Context({
@@ -410,12 +414,12 @@ def findLastKid(itemx, lastItemID):
         else:
             prev_id=indx.id  ## need to define, in case we don't enter while block
             while (countIndent(indx) > countIndent(itemx)) and (indx.id != lastItemID):
-                print countIndent(indx),countIndent(itemx),"<=md="
+                LOGOUT.write( str(countIndent(indx))+"  "+str(countIndent(itemx))+"<=md=")
                 prev_id=indx.id
                 indx=Item.objects.get(follows=indx.id)
 
             lastKid=prev_id
-            print "indx.follows=%s, itemx.follows=%s, indx.id=%s, prev_id=%s" % (indx.follows, itemx.follows, indx.id, prev_id)
+            LOGOUT.write( "indx.follows/ itemx.follows/ indx.id/  prev_id" + str(indx.follows) +' '+ str(itemx.follows) +' '+ str(indx.id) +' '+ str(prev_id))
 
     return(lastKid)
 
@@ -492,7 +496,7 @@ def gooTaskUpdate(request):
     for g in gootasks['items']:
         gooTaskIdList.append(g['id'])
 
-    print "gooTaskIdList=",gooTaskIdList
+    LOGOUT.write( "gooTaskIdList="+str(gooTaskIdList))
 
     ## update all items that have google task display dates
     pushableItems=Item.objects.filter(date_gootask_display__gte=datetime.date(2000, 1, 1))
@@ -566,10 +570,10 @@ def importfile(request):
             # Process the data in form.cleaned_data
             fileToImport=form.cleaned_data['fileToImport']
             projectToAdd=form.cleaned_data['projectToAdd']
-            print "fileToImport=",fileToImport
-            print "projectToAdd=",projectToAdd
+            LOGOUT.write( "fileToImport="+fileToImport)
+            LOGOUT.write( "projectToAdd="+str(projectToAdd))
 
-            print "+++ departing to importISdata"
+            LOGOUT.write( "+++ departing to importISdata")
             importISdata(fileToImport,projectToAdd)
 
 
@@ -591,15 +595,15 @@ def importISdata(importFile,newProjectID):
 #    import dircache
 #    print "default level=",dircache.listdir('.')
 
-    startdir='/home/bhadmin13/bernardhecker.com/pim1/pengine/imports/'
+    startdir='/home/bhadmin13/dx.bernardhecker.com/pim1/pengine/imports/'
     textAccumulator = ''
-    print "+++ b1 importISdata"
+    LOGOUT.write( "+++ b1 importISdata")
     INFILE=open(startdir+importFile,'r')
     allLines=INFILE.readlines()
     currentISid = 0
     previousNewItemBenkID=getLastItemID()
     firstRecord = 'yes'
-    print "+++ b2 importISdata"
+    LOGOUT.write( "+++ b2 importISdata")
     for lx in allLines[:]:
         if lx[0:4] != '@@!!':  # we assume it's a continuing note body
             textAccumulator += lx
@@ -659,4 +663,4 @@ def importISdata(importFile,newProjectID):
                 pass;
 
             else:
-                print "* * * * RECORD MISSED * * * *:", lx
+                LOGOUT.write( "* * * * RECORD MISSED * * * *:"+ str(lx))
