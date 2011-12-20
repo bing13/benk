@@ -455,9 +455,9 @@ def findLastKid(itemx, lastItemID):
     if itemx.id == lastItemID:
         lastKid=0
     else:
-        itemxFollower=Item.objects.get(follows=itemx.id)
-        indx=itemxFollower
-        if itemx.parent==indx.parent:
+        indx=Item.objects.get(follows=itemx.id)
+        if itemx.parent==indx.parent  or countIndent(indx) < countIndent(itemx):
+            ## if we both have same parent, or follow is low indent level 
             lastKid=0  ## special value for "no kids"
         else:
             prev_id=indx.id  ## need to define, in case we don't enter while block
@@ -467,8 +467,8 @@ def findLastKid(itemx, lastItemID):
                 indx=Item.objects.get(follows=indx.id)
 
             lastKid=prev_id
-            logThis( "indx.follows/ itemx.follows/ indx.id/  prev_id" + str(indx.follows) +' '+ str(itemx.follows) +' '+ str(indx.id) +' '+ str(prev_id))
-
+            logThis( "indx.follows/ itemx.follows/ indx.id/  prev_id= " + str(indx.follows) +' '+ str(itemx.follows) +' '+ str(indx.id) +' '+ str(prev_id))
+    logThis("findLastKid method: lastKid="+str(lastKid))
     return(lastKid)
 
 ##################################################################
@@ -658,7 +658,7 @@ def importfile(request):
     c = {}
     c.update(csrf(request))	  
  
-    if request.method == 'POST': # If the form has been submitted...
+    if request.method == 'POST': # If the form has been posted...
         form = ImportForm(request.POST) # A form bound to the POST data
         if form.is_valid(): # All validation rules pass
             # Process the data in form.cleaned_data
@@ -670,12 +670,11 @@ def importfile(request):
             logThis( "+++ departing to importISdata")
             importISdata(fileToImport,projectToAdd)
 
-
-            # ...
-            return HttpResponseRedirect('/list-items/') # Redirect after POST
+            # Redirect after POST
+            return HttpResponseRedirect('/projdetail/'+str(projectToAdd)) 
     else:
         form = ImportForm() # An unbound form
-    ## lastly removed , c
+
     return render_to_response('pim1_tmpl/importIS.html', {
                 'form':form,
                 'pagecrumb':'import',

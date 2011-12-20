@@ -3,35 +3,26 @@ Text-Width: 70
 
 NEW ========================================================
 
-- if no hits, search errors
-
-- search result display should *not* have action arrows.
-
-
+- move up, when complex (ex., tree moving over tree) isn't robust
 
 + PROBLEM. oNLY SAFE way to add items is from the interface. Awkward for adding first items in new projects
-
 
 + I think one problem is that once imported, adding the first item to the next project
 
   is hard, b/c when I do it by hand, it's easy to link it wrongly.
 
-
 - concern that adding items is busted, at least after an import. 
 
-* implement Django-native a/c, rather than apache at top level
+
+
 * limit results to 200 items, w/option to show all
 * use includes in url.py - which can handle multiple applications - to make it more modular
+* import seems to leave the last record unimported.
+
+* implement Django-native a/c, rather than apache at top level
+
 * move all of benk under /pim1?
 =========================
-displayList = buildDisplayList(current_projs,'0','-date_gootask_display')
-    
-def buildDisplayList(projectx, projID, ordering):
-   
-projectx - not used
-projID 0 if "all", otherwise a project__id
-ordering "follows" (i.e., outline, w/indents)  // often pSort as passed
-
 
 
 MISC =======================================================
@@ -48,17 +39,12 @@ a. Hoist is huge.
 
    - Offer to hoist me or my parent
 
-   - Hoist may require significant rewrite of buildlist.
-
 
 b. how to limit display to reasonable # of items?
 
 c. What is a "project" from Infoselect import? "PMO", or "PMO/CHOICE"? Handwork?
 
 d. beware IS import w/HTML in titles, etc
-
-e. how to search?  search result as regular flat list? then a search result item could be hoisted in an outline view
-
 
 
 MODELING ================================================
@@ -147,3 +133,9 @@ DB MODS TO MAKE NEXT:
 .* hoist option
 . Basically, you want to be able to pass starting item, # of results to display, and view, and have the right thing happen. Probably means genralizing buildlist, so a big deal. But worth it.
 . fix logging - write to dx.*.* log file, not bh.com. AND OPEN as APPEND .seem to be losing history.
+. if no hits, search errors
+
+. search result display should *not* have action arrows.
+
+
+. "move up" is strangely busted, possibly when it is the last child of the parent. "move up" is confused about end-of-parent as well. :-p
