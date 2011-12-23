@@ -306,7 +306,7 @@ def actionItem(request, pItem, action):
             follower=False
 
         newItem = Item(title="[NEW ITEM]",priority='0', status='0', \
-           follows=pItem, parent=clickedItem.parent)
+           follows=pItem, parent=clickedItem.parent, indentLevel=clickedItem.indentLevel)
         newItem.project=clickedItem.project
 
         newItem.save()
@@ -335,40 +335,85 @@ def actionItem(request, pItem, action):
     elif action=='demote':
         if clickedItem.parent==clickedItem.follows:
             logThis( "Can't demote further, item "+str(clickedItem.id))
-        elif clickedItem.parent==Item.objects.get(pk=clickedItem.follows).parent:
+        else:
+            #clickedItem.parent==Item.objects.get(pk=clickedItem.follows).parent:
+            ## if CI and the item following it have same parent, just shift CI parent, and indent CI
+            
             clickedItem.parent=clickedItem.follows
+            clickedItem.indentLevel += 1
             clickedItem.save()
-        elif countIndent(Item.objects.get(pk=clickedItem.follows))>countIndent(clickedItem):
-            indx=Item.objects.get(pk=clickedItem.follows)
-            while countIndent(indx)> countIndent(clickedItem):
-                indx=Item.objects.get(pk=indx.follows)
-            logThis( "countIndent="+str(countIndent(indx))+ '  ' +str(countIndent(clickedItem))+"<==")
-            clickedItem.parent=indx.id
-            clickedItem.save()
-        else: 
-            logThis( "===WARNING!========= DEMOTE CONDITION MISSED. pItem:"+str(pItem))
+            
+            lastKidID=findLastKid(clickedItem, lastItemID)
+
+            if lastKidID != 0:
+                thisItem = clickedItem
+
+                while thisItem.id != lastKidID:
+                    thisItem=Item.objects.get(follows=thisItem.id)
+                    thisItem.indentLevel += 1;
+                    thisItem.save()
+
+                #pick up the last child
+                #thisItem.indentLevel += 1
+                #thisItem.save()
+            
+
+##        else: 
+##            logThis( "===WARNING!========= DEMOTE CONDITION MISSED. pItem:"+str(pItem))
 
     ###PROMOTE##################################################################
-    elif action=='promote': 
+
+    ## promote 9 promoted all items above 9
+    elif action=='promote':
+        runKids='no'
         if clickedItem.parent ==  0:
             logThis( "CAN'T PROMOTE TOP-LEVEL "+ str(pItem))
-        elif countIndent(clickedItem) > countIndent(Item.objects.get(pk=clickedItem.follows)):
+        elif clickedItem.indentLevel > Item.objects.get(pk=clickedItem.follows).indentLevel:
+            
+            ## clicked item was a child of the item above
             logThis( "EXECUTING PROMOT 1 F "+str(clickedItem.id))
             clickedItem.parent=Item.objects.get(pk=clickedItem.follows).parent
+            clickedItem.indentLevel -= 1
             clickedItem.save()
 
-        elif countIndent(clickedItem) <= countIndent(Item.objects.get(pk=clickedItem.follows)):
-            logThis( "Executing promote 2 of id="+ str(pItem))
+            runKids='yes'
+
+
+        elif clickedItem.indentLevel <= Item.objects.get(pk=clickedItem.follows).indentLevel:
+            ## if CI is equal or superior to the item it follows
+            ## traverse up, until you find the first item that is superior to the CI
             indx=Item.objects.get(pk=clickedItem.follows)
-            while countIndent(indx)>= countIndent(clickedItem):
-                logThis( str(countIndent(indx))+"   "+str(countIndent(clickedItem))+"<==")
+            while indx.indentLevel >= clickedItem.indentLevel:
                 indx=Item.objects.get(pk=indx.follows)
-            logThis( str(countIndent(indx))+"  "+str(countIndent(clickedItem))+"<==++")
+                
             clickedItem.parent=indx.parent
+            clickedItem.indentLevel -= 1
             clickedItem.save()
+
+            runKids='yes'
+            
                                                         
         else:
             logThis( "====WARNING!=== COULDN'T PROMOTE, REASON UNKNOWN:" + str(pItem))
+
+
+        if runKids == 'yes':
+            ## now go get the kids
+            lastKidID=findLastKid(clickedItem, lastItemID)
+            if lastKidID != 0:
+                thisItem=Item.objects.get(follows=clickedItem.id)
+                #clickedItem.id
+                while thisItem.id != lastKidID:
+                    #thisItem=Item.objects.get(pk=thisItemID)
+                    thisItem.indentLevel -= 1;
+                    thisItem=Item.objects.get(follows=thisItem.id)
+                    #thisItem.follows
+                    thisItem.save()
+
+                #pick up the last child, since it increments after the action
+                thisItem.indentLevel -= 1
+                thisItem.save()
+  
 
     ###MOVE UP##################################################################
     elif action=='moveup':
@@ -472,13 +517,13 @@ def findLastKid(itemx, lastItemID):
         lastKid=0
     else:
         indx=Item.objects.get(follows=itemx.id)
-        if itemx.parent==indx.parent  or countIndent(indx) < countIndent(itemx):
+        if itemx.parent==indx.parent  or indx.indentLevel < itemx.indentLevel:
             ## if we both have same parent, or follow is low indent level 
             lastKid=0  ## special value for "no kids"
         else:
             prev_id=indx.id  ## need to define, in case we don't enter while block
-            while (countIndent(indx) > countIndent(itemx)) and (indx.id != lastItemID):
-                logThis("findLastKid =>"+ str(countIndent(indx))+"  "+str(countIndent(itemx))+"<=md=")
+            while (indx.indentLevel > itemx.indentLevel) and (indx.id != lastItemID):
+                logThis("findLastKid =>"+ str(indx.indentLevel)+"  "+str(itemx.indentLevel)+"<=md=")
                 prev_id=indx.id
                 indx=Item.objects.get(follows=indx.id)
 
