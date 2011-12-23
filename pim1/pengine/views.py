@@ -49,6 +49,8 @@ def homepage(request):
 ##################################################################
 
 def itemlist(request,proj_id):
+    logThis("Entering itemlist <====================")
+    
     ##current_items=Item.objects.all()
     current_projs = Project.objects.order_by('name')
     displayList = buildDisplayList(current_projs, proj_id,'follows',0,[])
@@ -66,7 +68,8 @@ def itemlist(request,proj_id):
     return HttpResponse(t.render(c))
 ##################################################################
 def allMyChildren(targetID, resultList):
-    
+    logThis("Entering allMyChildren <====================")
+
     children= Item.objects.filter(parent=targetID)
     for cx in children:
         resultList.append(cx.id)
@@ -109,7 +112,7 @@ def logThis(s):
 
 ##################################################################
 def buildDisplayList(projectx, projID, ordering, hoistID, useList):
-
+    logThis("Entering buildDisplayList <====================")
     #hoistID = 55
 
     ### Select the items to operate on: all, or just those from 1 project
@@ -141,18 +144,24 @@ def buildDisplayList(projectx, projID, ordering, hoistID, useList):
     ## pzero=[] ## list of top-level items // commented out 12/17/2011
     ixList=[]
     jxHash={}
+    logThis("..queries done...")
+
 
     parentList=[] ## list of all items that are parents
     for px in items2List:
         if px.parent not in parentList: parentList.append(px.parent)
 
-
+    ###SLOW BLOCK BEGINS########################################################################
+        
+    logThis("....parent list built...")
     ### get project string to where it can be displayed    
     for ix in items2List:
         ### count the number of ancestors to determine indent level
-        ix.indent=countIndent(ix)
+        ### THIS CALL IS VERY SLOW, accounting for 39sec out of 47sec total
+        #ix.indent=countIndent(ix)
+        
         if ordering=='follows':
-            ix.indentString=ix.indent*4*'&nbsp;'  
+            ix.indentString=ix.indentLevel*4*'&nbsp;'  
         else:
             ix.indentString=''
 
@@ -166,8 +175,9 @@ def buildDisplayList(projectx, projID, ordering, hoistID, useList):
             ix.outlineBullet="+"
         else:
             ix.outlineBullet="&bull;"
+            
 
-
+    logThis( ".....ix built.....")
 
     displayList=[]
     followHash={}
@@ -201,7 +211,10 @@ def buildDisplayList(projectx, projID, ordering, hoistID, useList):
         ##  only one follower of "0"
             
         #logThis('ixList='+str(ixList))    
-        logThis('followHash'+str(followHash))
+
+        # Can be voluminous!
+        #logThis('followHash'+str(followHash))
+
         if min(followHash.keys()) != 0:
             # commented 10/23/2011, added two lines below
             #followHash[0]=min(followHash.keys())
@@ -215,9 +228,11 @@ def buildDisplayList(projectx, projID, ordering, hoistID, useList):
             logThis("FHK is="+str(fhk))
             followHash[0]=followHash[fhk]
             followHash.pop(fhk)
-            logThis('new followhash'+str(followHash))
+            ###logThis('new followhash'+str(followHash))
             
         currentID = 0
+
+        logThis("...built followhash....")
 
         ## OK, now follow the chain of who follows whom, starting with whoever follows Parent ID = 0
         while  followHash.has_key(currentID):
@@ -229,15 +244,16 @@ def buildDisplayList(projectx, projID, ordering, hoistID, useList):
 
         # theoretically, having no followHash key for currentID means you're on the last item
         # but beware re: data integrity / lost items
-        
+        logThis(".....displayList built...")
     else:
 
         displayList=ixList
-
+    logThis("Exiting buildDisplayList ========>")
     return(displayList)
 ##################################################################
 
 def countIndent(anItem):
+    
     indentCount=0
     
     while anItem.parent != 0: 
@@ -462,7 +478,7 @@ def findLastKid(itemx, lastItemID):
         else:
             prev_id=indx.id  ## need to define, in case we don't enter while block
             while (countIndent(indx) > countIndent(itemx)) and (indx.id != lastItemID):
-                logThis( str(countIndent(indx))+"  "+str(countIndent(itemx))+"<=md=")
+                logThis("findLastKid =>"+ str(countIndent(indx))+"  "+str(countIndent(itemx))+"<=md=")
                 prev_id=indx.id
                 indx=Item.objects.get(follows=indx.id)
 
@@ -606,7 +622,10 @@ def example_task():
     return(result)
 
 #############################################################################
+
 def ssearch(request):
+    logThis("Entering ssearch <====================")
+
     current_projs = Project.objects.order_by('name')
     c = {}
     c.update(csrf(request))
@@ -717,6 +736,9 @@ def importISdata(importFile,newProjectID):
                     else:
                         newItem.parent=Item.objects.get(IS_import_ID=ISparentFirst).id
                     newItem.project=Project.objects.get(pk=newProjectID)
+
+                    ##added 12/22/2011
+                    newItem.indentLevel=countIndent(newItem)
 
                     newItem.save()
                     ### PURGE PREVIOUS VALUES ###

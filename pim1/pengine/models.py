@@ -30,6 +30,8 @@ class Item(models.Model):
     follows = models.IntegerField(null=True, blank=True)
     parent = models.IntegerField(null=True, blank=True)
 
+    indentLevel = models.IntegerField(null=True, blank=True)
+
     PRIORITY_CHOICES = (
         ('1', 'Urgent'),
         ('2', 'Important'),

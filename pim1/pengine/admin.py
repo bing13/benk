@@ -11,10 +11,10 @@ admin.site.register(Project, ProjAdmin)
 
     
 class ItemAdmin(admin.ModelAdmin):
-    fields = [ 'id', 'project', 'title','parent','follows', 'IS_import_ID', 'priority', 'status',\
+    fields = [ 'id', 'project', 'title','parent','follows','indentLevel', 'IS_import_ID', 'priority', 'status',\
                'date_gootask_display','HTMLnoteBody', \
                'date_created', 'date_mod']
-    list_display = ('id','project', 'parent','follows', 'IS_import_ID','title', 'date_mod', 'date_gootask_display')
+    list_display = ('id','project', 'parent','follows', 'indentLevel','IS_import_ID','title', 'date_mod', 'date_gootask_display')
     search_fields = ['HTMLnoteBody', 'title']
     date_hierarchy = 'date_mod'
 
