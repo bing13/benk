@@ -1,4 +1,10 @@
-# Create your views here.
+################################################################
+## views.py
+################################################################
+
+### to clear out ex. all but item 1, for reloading
+##  Item.objects.exclude(id = 1).delete()
+##  or Item.objects.filter(project=1).exclude(id = 1).delete()
 
 from django.http import HttpResponse, HttpResponseRedirect
 from pim1.pengine.models import Item, Project
@@ -337,13 +343,21 @@ def actionItem(request, pItem, action):
             logThis( "Can't demote further, item "+str(clickedItem.id))
         else:
             ## if CI and the item following it have same parent, just shift CI parent, and indent CI
-            
-            clickedItem.parent=clickedItem.follows
-            clickedItem.indentLevel += 1
-            clickedItem.save()
-            
+
             lastKidID=findLastKid(clickedItem, lastItemID)
 
+
+            ## if CI and item above it had same parent, now CI becomes child of item above
+            if clickedItem.parent == Item.objects.get(id=clickedItem.follows).parent:
+                clickedItem.parent = clickedItem.follows
+            else:
+                ## otherwise, CI gets same parent as the item above it
+                clickedItem.parent = Item.objects.get(id=clickedItem.follows).parent
+            clickedItem.indentLevel += 1
+            clickedItem.save()
+
+
+            ## fix the indentLevel of the item's children
             if lastKidID != 0:
                 thisItem = clickedItem
 
@@ -361,8 +375,6 @@ def actionItem(request, pItem, action):
 ##            logThis( "===WARNING!========= DEMOTE CONDITION MISSED. pItem:"+str(pItem))
 
     ###PROMOTE##################################################################
-
-    ## promote 9 promoted all items above 9
     elif action=='promote':
         runKids='no'
         lastKidID=findLastKid(clickedItem, lastItemID)
@@ -371,55 +383,50 @@ def actionItem(request, pItem, action):
         if clickedItem.parent ==  0:
             logThis( "CAN'T PROMOTE TOP-LEVEL "+ str(pItem))
 
-        elif clickedItem.indentLevel > Item.objects.get(pk=clickedItem.follows).indentLevel:
-            ## clicked item was a child of the item above
-            logThis( "EXECUTING PROMOT 1 F "+str(clickedItem.id))
-            clickedItem.parent=Item.objects.get(pk=clickedItem.follows).parent
-            clickedItem.indentLevel -= 1
-            clickedItem.save()
-
-            runKids='yes'
-  
-        elif clickedItem.indentLevel <= Item.objects.get(pk=clickedItem.follows).indentLevel:
-            ## if CI is equal or superior to the item it follows
-            ## traverse up, until you find the first item that is superior to the CI
-            logThis("Promoting: " +str(clickedItem.id))
-
-            
-            indx=Item.objects.get(pk=clickedItem.follows)
-            while indx.indentLevel >= clickedItem.indentLevel:
-                indx=Item.objects.get(pk=indx.follows)
-                
-            clickedItem.parent=indx.parent
-            clickedItem.indentLevel -= 1
-            clickedItem.save()
-            runKids='yes'
-
-                                                        
         else:
-            logThis( "====WARNING!=== COULDN'T PROMOTE, REASON UNKNOWN:" + str(pItem))
+            ### Deal with parent assignments first
+            
+            if clickedItem.indentLevel > Item.objects.get(pk=clickedItem.follows).indentLevel:
+                ## clicked item was a child of the item above
+                logThis( "Promotion from child status: "+str(clickedItem.id))
+                clickedItem.parent=Item.objects.get(pk=clickedItem.follows).parent
+  
+            else:
+                ## if CI is equal or superior to the item it follows
+                ## for parent, traverse up, until you find the first item that is superior to the CI
+                logThis("Promoting: " +str(clickedItem.id))
+                indx=Item.objects.get(pk=clickedItem.follows)
+                while indx.indentLevel >= clickedItem.indentLevel:
+                    indx=Item.objects.get(pk=indx.follows)
+                    clickedItem.parent=indx.parent
+
+            ### Now promote the parent
+            clickedItem.indentLevel -= 1
+            clickedItem.save()
+            runKids='yes'
+
+        #logThis("CI following ID:"+str(Item.objects.get(follows=clickedItem.id))+" following item's parent:"+str(Item.objects.get(follows=clickedItem.id.parent))+  "//    CIid:"+str(clickedItem.id)+"  ciParent:"+str(clickedItem.parent))
 
         if runKids == 'yes':
 
-            ## now go get the kids
+            ## now deal with  the kids
 
             # if items following the promotee are of the same level, we have to turn
-            # the consecutive run of a same level/parent items into children.
-
-            #logThis("CI following ID:"+str(Item.objects.get(follows=clickedItem.id))+" following item's parent:"+str(Item.objects.get(follows=clickedItem.id.parent))+  "//    CIid:"+str(clickedItem.id)+"  ciParent:"+str(clickedItem.parent))
-            
+            # the consecutive run of a same level/parent items into children (parent, indent)
             if Item.objects.get(follows=clickedItem.id).parent == CIoriginalParent:
                 logThis("converting subsequent items to children...")
                 indx = Item.objects.get(follows=clickedItem.id)
                 while indx.parent == CIoriginalParent:
                     indx.parent=clickedItem.id
-                    indx.indentLevel +=1
+                    #indx.indentLevel -=1 # in this case, the to-be children stay at same level
                     indx.save()
-                    indx=Item.objects.get(follows=indx.id)
+                    if indx.id != lastItemID:
+                        indx=Item.objects.get(follows=indx.id)
+                    else:
+                        indx.parent='LAST ITEM - BAIL'
 
             else:
-                #runKids='no'
-
+                # promotee has real kids
                 logThis("k-promote: LastKidID="+str(lastKidID))
                 if lastKidID != 0:
                     thisItem=Item.objects.get(follows=clickedItem.id)
@@ -430,7 +437,7 @@ def actionItem(request, pItem, action):
 
                     #pick up the last child, since it increments after the action
                     thisItem.indentLevel -= 1
-                thisItem.save()
+                    thisItem.save()
   
 
     ###MOVE UP##################################################################
