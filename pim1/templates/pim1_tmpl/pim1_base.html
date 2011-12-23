@@ -53,7 +53,7 @@
         <ul>  
            {% for px in current_projs %}
 
-	      <li><a href="/projdetail/{{px.id}}">{{ px }}</a></li>
+	      <li><a href="/projdetail/{{px.id}}">{{ px }}</a> | <a href="/drag/{{px.id}}">d</a> </li>
            {% endfor %}
              {# <li>[<a href="/list-items">all projects</a>]</li> #}
        </ul>

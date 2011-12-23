@@ -843,7 +843,7 @@ def importISdata(importFile,newProjectID):
 ##################################################################
 
 def draglist(request, proj_id):
-    logThis("Entering drag list <====================")
+    logThis("Entering drag list <====================, Project="+str(proj_id))
     
     current_projs = Project.objects.order_by('name')
     displayList = buildDisplayList(current_projs, proj_id,'follows',0,[])
