@@ -366,13 +366,6 @@ def actionItem(request, pItem, action):
                     thisItem.indentLevel += 1;
                     thisItem.save()
 
-                #pick up the last child
-                #thisItem.indentLevel += 1
-                #thisItem.save()
-            
-
-##        else: 
-##            logThis( "===WARNING!========= DEMOTE CONDITION MISSED. pItem:"+str(pItem))
 
     ###PROMOTE##################################################################
     elif action=='promote':
@@ -405,8 +398,6 @@ def actionItem(request, pItem, action):
             clickedItem.save()
             runKids='yes'
 
-        #logThis("CI following ID:"+str(Item.objects.get(follows=clickedItem.id))+" following item's parent:"+str(Item.objects.get(follows=clickedItem.id.parent))+  "//    CIid:"+str(clickedItem.id)+"  ciParent:"+str(clickedItem.parent))
-
         if runKids == 'yes':
 
             ## now deal with  the kids
@@ -418,7 +409,6 @@ def actionItem(request, pItem, action):
                 indx = Item.objects.get(follows=clickedItem.id)
                 while indx.parent == CIoriginalParent:
                     indx.parent=clickedItem.id
-                    #indx.indentLevel -=1 # in this case, the to-be children stay at same level
                     indx.save()
                     if indx.id != lastItemID:
                         indx=Item.objects.get(follows=indx.id)
@@ -849,3 +839,23 @@ def importISdata(importFile,newProjectID):
 
             else:
                 logThis( "* * * * RECORD MISSED * * * *:"+ str(lx))
+
+##################################################################
+
+def draglist(request, proj_id):
+    logThis("Entering drag list <====================")
+    
+    current_projs = Project.objects.order_by('name')
+    displayList = buildDisplayList(current_projs, proj_id,'follows',0,[])
+
+    t = loader.get_template('pim1_tmpl/items/dragdrop.html')
+                       
+    c = Context({
+        'pagecrumb':'main item list',
+        'current_items':displayList,
+        'current_projs':current_projs, 
+        'nowx':datetime.datetime.now().strftime("%Y/%m/%d  %H:%M:%S"),
+        'pagecrumb':'item list'
+
+    })
+    return HttpResponse(t.render(c))

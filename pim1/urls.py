@@ -20,7 +20,13 @@ urlpatterns = patterns('',
     url(r'^$', 'pim1.pengine.views.homepage'),
 
     url(r'^list-items/$','pim1.pengine.views.itemlist',{'proj_id':'0'}),
+    url(r'^drag/$','pim1.pengine.views.draglist',{'proj_id':'0'}),                       
+
+
     url(r'^grid-view/$','pim1.pengine.views.gridview'),
+
+
+                       
     url(r'^list-items/hoist/(?P<pItem>\d+)/$','pim1.pengine.views.hoistItem'),
 
     url(r'^psd/(?P<pSort>\w+)/$','pim1.pengine.views.psd'),
