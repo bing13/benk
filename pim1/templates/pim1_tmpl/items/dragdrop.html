@@ -58,12 +58,12 @@ $.get("/xhr_move", {
           <span class="itemdrag stat">{{ ci.status }}:{{ci.statusText}}</span>
           <span class="itemdrag notecell">
 	  {% if ci.HTMLnoteBody|length > 2 %}
-	    <a onClick="toggleLI('notebody_{{ci.id}}');" class="noteplus">&oplus;</a>
-	    <a onClick='detailpop("{{ci.id}}")' class="notearr">&rArr;</a> 
-	    <span id="notebody_{{ci.id}}" class="noteBody">{{ ci.HTMLnoteBody|safe|default:" --- " }}</span>
+ 	    <a onClick="toggleLI('notebody_{{ci.id}}');" class="noteplus">&oplus;</a>
+	    <a onClick='detailpop("{{ci.id}}")' class="notearr">&rArr;</a> </span>
+	    <div id="notebody_{{ci.id}}" class="noteBody">{{ ci.HTMLnoteBody|safe|default:" --- " }}</div>
 	  {% else %}
 	    ---
-          {% endif %}</span>
+          {% endif %}
         
 
        </div>

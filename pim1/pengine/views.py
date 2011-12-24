@@ -3,8 +3,7 @@
 ################################################################
 
 ### to clear out ex. all but item 1, for reloading
-##  Item.objects.exclude(id = 1).delete()
-##  or Item.objects.filter(project=1).exclude(id = 1).delete()
+##  ex., Item.objects.filter(project=1).exclude(id = 1).delete()
 
 from django.http import HttpResponse, HttpResponseRedirect
 from pim1.pengine.models import Item, Project
@@ -192,7 +191,10 @@ def buildDisplayList(projectx, projID, ordering, hoistID, useList):
         ## generate outline-ordered and formatted output list
         for f2 in ixList:
             if followHash.has_key(f2.follows): 
-                logThis( "\n\n=====> WARNING!! followHash duplicate [" + str(f2) +" " + str(f2.follows)+']')
+                logThis( "\n\n=====> WARNING!! followHash duplicate")
+                fh1=Item.objects.get(pk=followHash[f2.follows])
+                logThis("ID:"+str(fh1.id)+":" + str(fh1) +"  follows=" + str(fh1.follows)+']')
+                logThis("ID:"+str(f2.id)+":" + str(f2) +"  follows=" + str(f2.follows)+']')
 
             ## this is the critial line for list-building
             followHash[f2.follows] = f2.id
@@ -281,7 +283,8 @@ def getLastItemID(projID):
         if itemx.id not in listOfFollowers:
             lastItemIDs.append(itemx.id)
     if len(lastItemIDs)!= 1:
-        logThis( "===== BAD LAST ITEM IDs, should only be one. Instead: "+ str(lastItemIDs))
+        logThis( "===== getLastItemID: BAD LAST ITEM IDs, should only be one. Instead: "+ str(lastItemIDs))
+        logThis( "===== BAILING getlastItemID=====" )
         exit()
     else:
         logThis( "Last item ID:"+ str(lastItemIDs[0]))
@@ -513,7 +516,7 @@ def actionItem(request, pItem, action):
     ## let's restrict default view to the clicked item project
     logThis( "cp="+str(current_projs)+" cpn="+str(clickedProjNum))
     displayList = buildDisplayList(current_projs,clickedProjNum, 'follows',0,[])
-    logThis( "+++DISPLAY LIST BUILT+++")
+
     t = loader.get_template('pim1_tmpl/items/index.html')
 
     c = Context({
@@ -538,13 +541,13 @@ def findLastKid(itemx, lastItemID):
         else:
             prev_id=indx.id  ## need to define, in case we don't enter while block
             while (indx.indentLevel > itemx.indentLevel) and (indx.id != lastItemID):
-                logThis("findLastKid =>"+ str(indx.indentLevel)+"  "+str(itemx.indentLevel)+"<=md=")
+                #logThis("findLastKid =>"+ str(indx.indentLevel)+"  "+str(itemx.indentLevel)+"<=md=")
                 prev_id=indx.id
                 indx=Item.objects.get(follows=indx.id)
 
             lastKid=prev_id
-            logThis( "indx.follows/ itemx.follows/ indx.id/  prev_id= " + str(indx.follows) +' '+ str(itemx.follows) +' '+ str(indx.id) +' '+ str(prev_id))
-    logThis("findLastKid method: lastKid="+str(lastKid))
+            #logThis( "findLastKid => indx.follows/ itemx.follows/ indx.id/  prev_id= " + str(indx.follows) +' '+ str(itemx.follows) +' '+ str(indx.id) +' '+ str(prev_id))
+    logThis("=> findLastKid lastKid="+str(lastKid))
     return(lastKid)
 
 ##################################################################
@@ -889,7 +892,7 @@ def xhr_move(request):
         message = "Not an AJAX request"
     logThis("xhr_move, message="+message)
     returnMsg=drag_move(int(moveRequest['ci']), int(moveRequest['ti']))
-    logThis("drag move msg: "+returnMsg)
+    logThis("drag move complete: "+returnMsg)
     
     return HttpResponse(message)
 
@@ -897,17 +900,12 @@ def xhr_move(request):
 def drag_move(CIid, TIid):
     # clicked item ID, target item ID
 
-
-    ##RIGHT NOW THE MOVE CORRUPTS THE TABLE
-
-
     CI=Item.objects.get(pk=CIid)
     TI=Item.objects.get(pk=TIid)
-    logThis(str(CIid)+":"+str(TIid)+"from drag_move")
+    logThis("======dragmove=> CIid:TIid"+str(CIid)+":"+str(TIid))
  
     lastItemID=getLastItemID(CI.project_id)
 
-    logThis(str(CIid)+":"+str(TIid)+"from drag_move2")
     origCIparent=CI.parent
     origCIfollow=CI.follows
 
@@ -916,22 +914,30 @@ def drag_move(CIid, TIid):
 
     lastKidID=findLastKid(CI, lastItemID)
 
-    ## stitch up the item that followed the CI, and the one that preceded it
-    Item.objects.filter(follows=CIid).follows=CI.follows
+    ## stitch up the item that followed the CI (or its last kid), and the one that preceded it
+    if CIid != lastItemID:
+        if lastKidID == 0:
+            followedCIorKid = Item.objects.get(follows=CIid)
+        else:
+            followedCIorKid = Item.objects.get(follows=lastKidID)
+            followedCIorKid.follows = origCIfollow
+        followedCIorKid.save()
 
     ## now insert the moved item into it's new position
-    CI.follows=origTIfollow
-    CI.parent=origTIparent
+    CI.parent = origTIparent
+    CI.follows = TIid
 
-
-    targetFollower = Item.objects.filter(follows=TIid)
+    ## item that followed the target now must follow the CI, or the CI's last child (if any)
+    targetFollower = Item.objects.get(follows=TIid)
+    logThis('dragmove=> targetFollowerID:'+str(targetFollower.id)+'  targetFollower.follows:'+str(targetFollower.follows) + '  lastkid:'+str(lastKidID))
+    
     if lastKidID == 0:
         targetFollower.follows=CI.id
     else:
         targetFollower.follows=lastKidID
 
+    logThis('dragmove=> assignment made, targetFollower.follows='+str(targetFollower.follows))
     CI.save()
-    TI.save()
+
     targetFollower.save()
-        
     return("move completed")
