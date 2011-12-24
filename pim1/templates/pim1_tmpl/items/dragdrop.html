@@ -2,6 +2,30 @@
 
 {% block content %}
 
+
+<script type="text/javascript">
+function testjax(ci, ti) {
+$.get("/xhr_test", 
+    function(data) {
+        alert(data);
+    });
+};
+function othertestjax(cix, tix) {
+$.get("/xhr_test", {
+        ci:cix, ti:tix
+      },
+
+    function(data) {
+        alert(data);
+    });
+};
+
+</script>
+
+<p><button onclick="testjax(22, 55)">test me</button></p>
+<p><button onclick="othertestjax(22, 55)">also test me</button></p>
+
+
 {% if subtitle %}
 
    <span class="headline">{{ subtitle }}</span>

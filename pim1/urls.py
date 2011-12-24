@@ -40,6 +40,11 @@ urlpatterns = patterns('',
     url(r'^pim1/search/$','pim1.pengine.views.ssearch'),                       
 
     url(r'^item/gooUpdate$','pim1.pengine.views.gooTaskUpdate'),
+    url(r'^xhr_test$','pim1.pengine.views.xhr_test'),
+    #url(r'^xhr_test(?P<ci>\d+)$','pim1.pengine.views.xhr_test'),
+
+    #(r'^(?P<year>\d{4})/(?P<month>[a-z]{3})/$','archive_month'),
+
 
                    
 )

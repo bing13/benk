@@ -859,3 +859,21 @@ def draglist(request, proj_id):
 
     })
     return HttpResponse(t.render(c))
+
+######################################################################
+def xhr_test(request):
+    myRequest=request.GET
+    logThis("xhr_test entered........")
+
+    logThis("request.GET="+str(myRequest))
+    message = 'nix'
+    if request.is_ajax():
+        message = "Request is from AJAX"
+        #message = "Hello AJAX. ci="+str(ci)+"  ti="+str(ti)
+    else:
+        message = "Hello"
+    logThis("xhr_test, message="+message)
+    return HttpResponse(message)
+
+# Your URL pattern could be as simple as
+#(r'^xhr_test$','your_project.your_app.views.xhr_test'),
