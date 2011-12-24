@@ -347,7 +347,7 @@ def actionItem(request, pItem, action):
         else:
             ## if CI and the item following it have same parent, just shift CI parent, and indent CI
 
-            lastKidID=findLastKid(clickedItem, lastItemID)
+            lastKidID,kidList=findLastKid(clickedItem, lastItemID)
 
 
             ## if CI and item above it had same parent, now CI becomes child of item above
@@ -440,7 +440,7 @@ def actionItem(request, pItem, action):
             logThis( "CAN'T MOVE UP TOP item "+ str(pItem))
         else:
             hasFollower=False             
-            lastKid=findLastKid(clickedItem,lastItemID)
+            lastKid,kidList=findLastKid(clickedItem,lastItemID)
 
             targetToSwap=Item.objects.get(pk=clickedItem.follows)
 
@@ -475,7 +475,7 @@ def actionItem(request, pItem, action):
   
     elif action=='movedown':
         ### may wish to remodel so it looks like "moveup", which uses the findLastKid method
-        lastKidofCI=findLastKid(clickedItem,lastItemID)
+        lastKidofCI,kidList=findLastKid(clickedItem,lastItemID)
         if clickedItem.id == lastItemID or lastKidofCI == lastItemID:
             logThis( "==> Clicked item is last item or last parent, no move:ci, lk, liID "+str(clickedItem.id) +"  " + str(lastKidofCI) + '  ' + str(lastItemID))
         else:
@@ -484,7 +484,7 @@ def actionItem(request, pItem, action):
                 fciFollower=Item.objects.get(follows=lastKidofCI)
             else:
                 fciFollower=Item.objects.get(follows=clickedItem.id)
-            lastKidOfFollower=findLastKid(fciFollower, lastItemID)
+            lastKidOfFollower,kidList=findLastKid(fciFollower, lastItemID)
             if lastKidOfFollower==0:
                 bottomToSwap= fciFollower
             else:
@@ -531,6 +531,7 @@ def actionItem(request, pItem, action):
 
 def findLastKid(itemx, lastItemID):
     ###   look for first item below you with =< level of indent
+    kidList=[]
     if itemx.id == lastItemID:
         lastKid=0
     else:
@@ -541,14 +542,14 @@ def findLastKid(itemx, lastItemID):
         else:
             prev_id=indx.id  ## need to define, in case we don't enter while block
             while (indx.indentLevel > itemx.indentLevel) and (indx.id != lastItemID):
-                #logThis("findLastKid =>"+ str(indx.indentLevel)+"  "+str(itemx.indentLevel)+"<=md=")
+                kidList.append((indx.id, indx.follows))
                 prev_id=indx.id
                 indx=Item.objects.get(follows=indx.id)
 
             lastKid=prev_id
-            #logThis( "findLastKid => indx.follows/ itemx.follows/ indx.id/  prev_id= " + str(indx.follows) +' '+ str(itemx.follows) +' '+ str(indx.id) +' '+ str(prev_id))
+
     logThis("=> findLastKid lastKid="+str(lastKid))
-    return(lastKid)
+    return(lastKid,kidList)
 
 ##################################################################
 
@@ -891,10 +892,10 @@ def xhr_move(request):
     else:
         message = "Not an AJAX request"
     logThis("xhr_move, message="+message)
-    returnMsg=drag_move(int(moveRequest['ci']), int(moveRequest['ti']))
-    logThis("drag move complete: "+returnMsg)
-    
-    return HttpResponse(message)
+    returnMsg,kidList=drag_move(int(moveRequest['ci']), int(moveRequest['ti']))
+    logThis("drag move complete: "+returnMsg+' building kidlist for return')
+
+    return HttpResponse(kidList)
 
 ######################################################################
 def drag_move(CIid, TIid):
@@ -912,7 +913,7 @@ def drag_move(CIid, TIid):
     origTIparent=TI.parent
     origTIfollow=TI.follows
 
-    lastKidID=findLastKid(CI, lastItemID)
+    lastKidID,kidList=findLastKid(CI, lastItemID)
 
     ## stitch up the item that followed the CI (or its last kid), and the one that preceded it
     if CIid != lastItemID:
@@ -920,7 +921,7 @@ def drag_move(CIid, TIid):
             followedCIorKid = Item.objects.get(follows=CIid)
         else:
             followedCIorKid = Item.objects.get(follows=lastKidID)
-            followedCIorKid.follows = origCIfollow
+        followedCIorKid.follows = origCIfollow
         followedCIorKid.save()
 
     ## now insert the moved item into it's new position
@@ -940,4 +941,6 @@ def drag_move(CIid, TIid):
     CI.save()
 
     targetFollower.save()
-    return("move completed")
+
+    logThis('dragmove=> kidlist: ' + str(kidList) )
+    return(kidList)
