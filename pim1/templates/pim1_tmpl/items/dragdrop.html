@@ -4,14 +4,9 @@
 
 
 <script type="text/javascript">
-function testjax(ci, ti) {
-$.get("/xhr_test", 
-    function(data) {
-        alert(data);
-    });
-};
+
 function othertestjax(cix, tix) {
-$.get("/xhr_test", {
+$.get("/xhr_move", {
         ci:cix, ti:tix
       },
 
@@ -22,7 +17,7 @@ $.get("/xhr_test", {
 
 </script>
 
-<p><button onclick="testjax(22, 55)">test me</button></p>
+
 <p><button onclick="othertestjax(22, 55)">also test me</button></p>
 
 
@@ -36,8 +31,8 @@ $.get("/xhr_test", {
 
 {% if current_items %}
 
-    <div class="itemdrag_table benk">
-    <div class="header itemsdrag  ">
+    <div class="itemdrag_table benk" >
+    <div class="header itemsdrag">
       <span class= "itemdrag actionArrows">id</span>
       <span class="itemdrag id">p/f/i</span>
       <span class="itemdrag ti">title</span>
@@ -51,7 +46,7 @@ $.get("/xhr_test", {
 
 
         <!-- removed this class from below div: ui-widget-headerx -->
-        <div class="itemsdrag bhdraggable dropx">
+        <div class="itemsdrag bhdraggable dropx"  id="{{ ci.id }}">
 
  	  <span class="itemdrag actionArrows"><a class="ilid" href="/list-items/hoist/{{ci.id}}">{{ci.id}}</a>&nbsp;<a href="/item/add/{{ ci.id }}">&harr;</a><a href="/item/promote/{{ ci.id }}">&larr;</a><a href="/item/demote/{{ ci.id }}">&rarr;</a><a href="/item/moveup/{{ ci.id }}">&uarr;</a><a href="/item/movedown/{{ ci.id }}">&darr;</a><a href="/item/delete/{{ ci.id }}">&otimes;</a>
           </span>

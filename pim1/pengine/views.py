@@ -868,12 +868,26 @@ def xhr_test(request):
     logThis("request.GET="+str(myRequest))
     message = 'nix'
     if request.is_ajax():
-        message = "Request is from AJAX"
-        #message = "Hello AJAX. ci="+str(ci)+"  ti="+str(ti)
+        #message = "Request is from AJAX"
+        message = "AJAX request, ci="+str(myRequest['ci'])+"  ti="+str(myRequest['ti'])
     else:
         message = "Hello"
     logThis("xhr_test, message="+message)
     return HttpResponse(message)
 
-# Your URL pattern could be as simple as
 #(r'^xhr_test$','your_project.your_app.views.xhr_test'),
+######################################################################
+def xhr_move(request):
+    moveRequest=request.GET
+    logThis("xhr_move entered........")
+    logThis("request.GET="+str(moveRequest))
+    message = 'nix'
+    if request.is_ajax():
+        #message = "Request is from AJAX"
+        message = "AJAX request, ci="+str(moveRequest['ci'])+"  ti="+str(moveRequest['ti'])
+    else:
+        message = "Not an AJAX request"
+    logThis("xhr_move, message="+message)
+    return HttpResponse(message)
+
+######################################################################
