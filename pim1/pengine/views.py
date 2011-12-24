@@ -879,8 +879,8 @@ def xhr_test(request):
 ######################################################################
 def xhr_move(request):
     moveRequest=request.GET
-    logThis("xhr_move entered........")
-    logThis("request.GET="+str(moveRequest))
+    #logThis("xhr_move entered........")
+    #logThis("request.GET="+str(moveRequest))
     message = 'nix'
     if request.is_ajax():
         #message = "Request is from AJAX"
@@ -888,6 +888,50 @@ def xhr_move(request):
     else:
         message = "Not an AJAX request"
     logThis("xhr_move, message="+message)
+    returnMsg=drag_move(int(moveRequest['ci']), int(moveRequest['ti']))
+    logThis("drag move msg: "+returnMsg)
+    
     return HttpResponse(message)
 
 ######################################################################
+def drag_move(CIid, TIid):
+    # clicked item ID, target item ID
+
+
+    ##RIGHT NOW THE MOVE CORRUPTS THE TABLE
+
+
+    CI=Item.objects.get(pk=CIid)
+    TI=Item.objects.get(pk=TIid)
+    logThis(str(CIid)+":"+str(TIid)+"from drag_move")
+ 
+    lastItemID=getLastItemID(CI.project_id)
+
+    logThis(str(CIid)+":"+str(TIid)+"from drag_move2")
+    origCIparent=CI.parent
+    origCIfollow=CI.follows
+
+    origTIparent=TI.parent
+    origTIfollow=TI.follows
+
+    lastKidID=findLastKid(CI, lastItemID)
+
+    ## stitch up the item that followed the CI, and the one that preceded it
+    Item.objects.filter(follows=CIid).follows=CI.follows
+
+    ## now insert the moved item into it's new position
+    CI.follows=origTIfollow
+    CI.parent=origTIparent
+
+
+    targetFollower = Item.objects.filter(follows=TIid)
+    if lastKidID == 0:
+        targetFollower.follows=CI.id
+    else:
+        targetFollower.follows=lastKidID
+
+    CI.save()
+    TI.save()
+    targetFollower.save()
+        
+    return("move completed")
