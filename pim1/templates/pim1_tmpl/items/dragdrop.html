@@ -38,7 +38,7 @@ function heightFix(itemID) {
 
 </script>
 
-<p><button onclick="othertestjax(222, 555)">ajax</button> &nbsp; <button onclick="heightFix(484)">height</button></p> 
+{# <p><button onclick="othertestjax(222, 555)">ajax</button> &nbsp; <button onclick="heightFix(484)">height</button></p> #}
 
 
 {% if subtitle %}
@@ -54,11 +54,12 @@ function heightFix(itemID) {
     <div class="itemdrag_table benk" >
     <div class="header itemsdrag">
       <span class= "itemdrag actionArrows">id</span>
-      <span class="itemdrag id">p/f/i</span>
+      <span class= "itemdrag prio">priority status</span>
+
       <span class="itemdrag ti">title</span>
-      <span class="itemdrag prio">prio</span>
-      <span class="itemdrag stat">stat</span>
+
       <span class="itemdrag notecell">note</span>
+      <span class="itemdrag pfi id">p/f/i</span>
     </div>
     
     {% for ci in current_items %}
@@ -71,20 +72,22 @@ function heightFix(itemID) {
  	  <span class="itemdrag actionArrows"><a class="ilid" href="/list-items/hoist/{{ci.id}}">{{ci.id}}</a>&nbsp;<a href="/item/add/{{ ci.id }}">&harr;</a><a href="/item/promote/{{ ci.id }}">&larr;</a><a href="/item/demote/{{ ci.id }}">&rarr;</a><a href="/item/moveup/{{ ci.id }}">&uarr;</a><a href="/item/movedown/{{ ci.id }}">&darr;</a><a href="/item/delete/{{ ci.id }}">&otimes;</a>
           </span>
 
-	  <span class="itemdrag id">{{ci.parent}}/{{ci.follows}}:{{ci.indentLevel}}</span>
+	  <span class="prio priority_{{ ci.priority }}">{{ci.statusText|default:"&nbsp;"}}</span>
+
 
           <span class="itemdrag ti">{{ci.indentString|safe}}{{ ci.outlineBullet|safe }} <a href="/admin/pengine/item/{{ci.id}}/">{{ ci.title }}</a></span>
-          <span class="itemdrag prio">{{ci.priorityText|default:"&nbsp;"}} </span>
-	   <span class="itemdrag stat"> {{ci.statusText|default:"&nbsp;"}}</span>
+
           <span class="itemdrag notecell">
 	  {% if ci.HTMLnoteBody|length > 2 %}
  	    <a onClick="toggleLI('notebody_{{ci.id}}');" class="noteplus">&oplus;</a>
 	    <a onClick='detailpop("{{ci.id}}")' class="notearr">&rArr;</a> </span>
 	    <div id="notebody_{{ci.id}}" class="noteBody">{{ ci.HTMLnoteBody|safe|default:" --- " }}</div>
 	  {% else %}
-	    ---
+	    ---</span>
           {% endif %}
-        
+        	  <span class="itemdrag id pfi">{{ci.parent}}/{{ci.follows}}:{{ci.indentLevel}}</span>
+
+  
 
        </div>
     {% endfor %}
