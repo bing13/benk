@@ -10,6 +10,8 @@ from pim1.pengine.models import Item, Project
 # ++ was "pengine.models"
 from django.template import Context, loader
 import datetime, sys;
+import simplejson
+
 #D410 sys.path.append('C:\\Documents and Settings\\Owner\\My Documents\\Python\\library');
 #D610 #sys.path.append('C:\\Documents and Settings\\Bernard Hecker\\My Documents\\python\\lib')
 #DreamHost - UNIX
@@ -870,32 +872,35 @@ def xhr_test(request):
     logThis("xhr_test entered........")
 
     logThis("request.GET="+str(myRequest))
+
+    a=[(1,11),(2,22),(3,33),(4,44), (5,55)]
+    jsona=simplejson.dumps(a)
+    
     message = 'nix'
     if request.is_ajax():
-        #message = "Request is from AJAX"
-        message = "AJAX request, ci="+str(myRequest['ci'])+"  ti="+str(myRequest['ti'])
+        message = "Request is from AJAX"
+        
     else:
-        message = "Hello"
+        message = "not ajax"
     logThis("xhr_test, message="+message)
-    return HttpResponse(message)
+    
+    mimetypex = 'application/javascript'
+    return HttpResponse(jsona,mimetype=mimetypex)
 
 #(r'^xhr_test$','your_project.your_app.views.xhr_test'),
 ######################################################################
 def xhr_move(request):
     moveRequest=request.GET
-    #logThis("xhr_move entered........")
-    #logThis("request.GET="+str(moveRequest))
     message = 'nix'
     if request.is_ajax():
-        #message = "Request is from AJAX"
         message = "AJAX request, ci="+str(moveRequest['ci'])+"  ti="+str(moveRequest['ti'])
     else:
         message = "Not an AJAX request"
     logThis("xhr_move, message="+message)
-    returnMsg,kidList=drag_move(int(moveRequest['ci']), int(moveRequest['ti']))
-    logThis("drag move complete: "+returnMsg+' building kidlist for return')
+    kidList=drag_move(int(moveRequest['ci']), int(moveRequest['ti']))
+    jsonKid=simplejson.dumps(kidList)
 
-    return HttpResponse(kidList)
+    return HttpResponse(jsonKid)
 
 ######################################################################
 def drag_move(CIid, TIid):

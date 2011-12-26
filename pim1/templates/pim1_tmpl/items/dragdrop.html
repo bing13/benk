@@ -5,21 +5,28 @@
 
 <script type="text/javascript">
 
-function othertestjax(cix, tix) {
-$.get("/xhr_move", {
-        ci:cix, ti:tix
+  function othertestjax(cix, tix) {
+      $.get("/xhr_test", {
+      ci:cix, ti:tix
       },
 
+
     function(data) {
-        alert(data);
-    });
-};
+          alert("Data:"+data);
+          for (i=0;i<data.length;i++)
+	       {
+	       alert(data[i][0]+":"+data[i][1]);
+
+	       }
+
+    },"json"  );
+  };
+
+
 
 </script>
 
-
-<p><button onclick="othertestjax(22, 55)">also test me</button></p>
-
+{#  <p><button onclick="othertestjax(222, 555)">also test me</button></p>  #}
 
 {% if subtitle %}
 
@@ -54,8 +61,8 @@ $.get("/xhr_move", {
 	  <span class="itemdrag id">{{ci.parent}}/{{ci.follows}}:{{ci.indentLevel}}</span>
 
           <span class="itemdrag ti">{{ci.indentString|safe}}{{ ci.outlineBullet|safe }} <a href="/admin/pengine/item/{{ci.id}}/">{{ ci.title }}</a></span>
-          <span class="itemdrag prio">{{ ci.priority }}:{{ci.priorityText}}  </span>
-          <span class="itemdrag stat">{{ ci.status }}:{{ci.statusText}}</span>
+          <span class="itemdrag prio">{{ci.priorityText|default:"&nbsp;"}} </span>
+	   <span class="itemdrag stat"> {{ci.statusText|default:"&nbsp;"}}</span>
           <span class="itemdrag notecell">
 	  {% if ci.HTMLnoteBody|length > 2 %}
  	    <a onClick="toggleLI('notebody_{{ci.id}}');" class="noteplus">&oplus;</a>
