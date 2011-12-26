@@ -23,10 +23,23 @@
   };
 
 
+function heightFix(itemID) {
+	h=$("#484 .itemdrag.ti").css( "height" );
+        //alert("h="+h);
+        $("#484 .itemdrag.id").css( "height", h);
+        $("#484 .itemdrag.ti").css( "height", h);
+        $("#484 .itemdrag.prio").css( "height", h);
+        $("#484 .itemdrag.stat").css( "height", h);
+        $("#484 .itemdrag.notecell").css( "height", h);
+
+
+}
+
 
 </script>
 
-{#  <p><button onclick="othertestjax(222, 555)">also test me</button></p>  #}
+<p><button onclick="othertestjax(222, 555)">ajax</button> &nbsp; <button onclick="heightFix(484)">height</button></p> 
+
 
 {% if subtitle %}
 
