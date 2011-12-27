@@ -3,9 +3,38 @@ Text-Width: 70
 
 NEW ========================================================
 
+
+!! drag move with children needs to UPDATE INDENT levels display
+
+
+. => perhaps it becomes the new first child of the target item,
+
+      and it's children indent accordingly. that retains their
+      identity as a family.
+
+
+- drag view loading is slow with 1800 items
+
+- nonchild drag to a superior itme doesn't  handle parent assignment correctly (it retains its old parentabe and follower). drag to cross levels in genral is problematic maybe.
+
+!! just need to refresh p/f/i after drag, it appears, for some of this. 
+
+
+- indent only with CSS
+
+. modify display: priority / status can be mroe discrete;
+
++ provide a "new project" function, that creates the project and an anchor item
+
+
+- slowness - countIndent was big, more needed
+
+- when you've hoisted an item, and try to move a child up/down/l/r, it then reloads the entire project listing, rather than the hoist. need to preserve state.  Other similar instances.
+
+  
+
 - move up, when complex (ex., tree moving over tree) isn't robust
 
-+ PROBLEM. oNLY SAFE way to add items is from the interface. Awkward for adding first items in new projects
 
 + I think one problem is that once imported, adding the first item to the next project
 
@@ -45,6 +74,10 @@ b. how to limit display to reasonable # of items?
 c. What is a "project" from Infoselect import? "PMO", or "PMO/CHOICE"? Handwork?
 
 d. beware IS import w/HTML in titles, etc
+
+e. InfoSelect's intuitive drag/drop includes moving w/children if an item is CLOSED, and without
+
+  children otherwise (iirc)
 
 
 MODELING ================================================
@@ -139,3 +172,10 @@ DB MODS TO MAKE NEXT:
 
 
 . "move up" is strangely busted, possibly when it is the last child of the parent. "move up" is confused about end-of-parent as well. :-p
+.- IMPLEMENT AJAX
+
+
+. HTMLbody can open *under* the clicked item.
+
+
+.  Build an new data item on Item for "indentLevel", and keep it updated.

@@ -1,0 +1,39 @@
+@@!! NEW_RECORD =====================================
+@@!! ID 3000
+@@!! FOLLOWS 
+@@!! PARENTS 
+@@!! SELECTOR Simple Test data 
+@@!! NEW_RECORD =====================================
+@@!! ID 3001
+@@!! FOLLOWS 3000
+@@!! PARENTS 3000
+@@!! SELECTOR First regular item - parent
+@@!! NEW_RECORD =====================================
+@@!! ID 3002
+@@!! FOLLOWS 3001
+@@!! PARENTS 3001
+@@!! SELECTOR First child of first parent
+@@!! NOTE nothing
+@@!! NEW_RECORD =====================================
+@@!! ID 3003
+@@!! FOLLOWS 3002
+@@!! PARENTS 3001
+@@!! SELECTOR 2nd child of 1st parent
+@@!! NOTE also nothing
+@@!! NEW_RECORD =====================================
+@@!! ID 3004
+@@!! FOLLOWS 3003
+@@!! PARENTS 3000
+@@!! SELECTOR Second regular item - parent
+@@!! NEW_RECORD =====================================
+@@!! ID 3005
+@@!! FOLLOWS 3004
+@@!! PARENTS 3004
+@@!! SELECTOR First child of second regular item
+@@!! NOTE nothing
+@@!! NEW_RECORD =====================================
+@@!! ID 3006
+@@!! FOLLOWS 3005
+@@!! PARENTS 3004
+@@!! SELECTOR second child of second regular item
+@@!! NOTE this is the last imported item.

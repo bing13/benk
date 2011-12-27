@@ -543,10 +543,14 @@ def findLastKid(itemx, lastItemID):
             lastKid=0  ## special value for "no kids"
         else:
             prev_id=indx.id  ## need to define, in case we don't enter while block
-            while (indx.indentLevel > itemx.indentLevel) and (indx.id != lastItemID):
+            lastItemFlag='no'
+            while (indx.indentLevel > itemx.indentLevel) and lastItemFlag == 'no':
                 kidList.append((indx.id, indx.follows))
                 prev_id=indx.id
-                indx=Item.objects.get(follows=indx.id)
+                if indx.id == lastItemID:
+                    lastItemFlag='yes'
+                else:
+                    indx=Item.objects.get(follows=indx.id)
 
             lastKid=prev_id
 
@@ -845,7 +849,7 @@ def importISdata(importFile,newProjectID):
 
             else:
                 logThis( "* * * * RECORD MISSED * * * *:"+ str(lx))
-
+    newItem.save()
 ##################################################################
 
 def draglist(request, proj_id):
@@ -908,7 +912,7 @@ def drag_move(CIid, TIid):
 
     CI=Item.objects.get(pk=CIid)
     TI=Item.objects.get(pk=TIid)
-    logThis("======dragmove=> CIid:TIid"+str(CIid)+":"+str(TIid))
+    logThis("\n======dragmove=> CIid:TIid    "+str(CIid)+":"+str(TIid))
  
     lastItemID=getLastItemID(CI.project_id)
 
@@ -918,23 +922,27 @@ def drag_move(CIid, TIid):
     origTIparent=TI.parent
     origTIfollow=TI.follows
 
+    targetFollower = Item.objects.get(follows=TIid)
+
     lastKidID,kidList=findLastKid(CI, lastItemID)
 
     ## stitch up the item that followed the CI (or its last kid), and the one that preceded it
-    if CIid != lastItemID:
+    if CIid != lastItemID and lastKidID != lastItemID:
         if lastKidID == 0:
             followedCIorKid = Item.objects.get(follows=CIid)
         else:
             followedCIorKid = Item.objects.get(follows=lastKidID)
         followedCIorKid.follows = origCIfollow
         followedCIorKid.save()
-
+    #logThis("DragMove=> stitch around CI done")
     ## now insert the moved item into it's new position
-    CI.parent = origTIparent
-    CI.follows = TIid
-
+    CI.parent = TIid;  ## was origTIparent
+    CI.follows = TIid;
+    CI.indentLevel = TI.indentLevel+1
+    CI.save()
+    logThis("DragMove=> CI saved")
     ## item that followed the target now must follow the CI, or the CI's last child (if any)
-    targetFollower = Item.objects.get(follows=TIid)
+
     logThis('dragmove=> targetFollowerID:'+str(targetFollower.id)+'  targetFollower.follows:'+str(targetFollower.follows) + '  lastkid:'+str(lastKidID))
     
     if lastKidID == 0:
@@ -942,8 +950,13 @@ def drag_move(CIid, TIid):
     else:
         targetFollower.follows=lastKidID
 
+        ## also correct indentLevel, since parent indent might have changed
+        for kidPair in kidList:
+            thisKid=Item.objects.get(pk=kidPair[0])
+            thisKid.indentLevel=countIndent(thisKid)
+            thisKid.save()
+
     logThis('dragmove=> assignment made, targetFollower.follows='+str(targetFollower.follows))
-    CI.save()
 
     targetFollower.save()
 
