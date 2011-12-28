@@ -28,6 +28,7 @@ urlpatterns = patterns('',
     url(r'^projdetail/(?P<proj_id>\d+)/$','pim1.pengine.views.itemlist'),       
 
     url(r'^item/detail/(?P<pItem>\d+)/$','pim1.pengine.views.detailItem'),
+    url(r'^item/edititem/(?P<pItem>\d+)/$','pim1.pengine.views.editItem'),
 
     url(r'^item/add/(?P<pItem>\d+)/$','pim1.pengine.views.actionItem',{'action':'add'}),
     url(r'^item/delete/(?P<pItem>\d+)/$','pim1.pengine.views.actionItem',{'action':'delete'}),

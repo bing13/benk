@@ -29,11 +29,12 @@ from django.core.context_processors import csrf
 from django.views.decorators.csrf import csrf_protect
 from django.template import RequestContext
 from django import forms
+from django.forms.models import modelformset_factory 
 
 LOGFILE = '/home/bhadmin13/dx.bernardhecker.com/pim1/benklog1.log'
 #LOGOUT = open(LOGFILE, 'a')
 
-
+## https://docs.djangoproject.com/en/1.2/topics/forms/
 ## https://docs.djangoproject.com/en/1.3/intro/tutorial04/
 class ImportForm(forms.Form):
     fileToImport=forms.CharField(max_length=300)
@@ -41,6 +42,12 @@ class ImportForm(forms.Form):
 
 class ssearchForm(forms.Form):
     searchfx=forms.CharField(max_length=200)
+
+
+#class ItemEditForm(forms.ModelForm):
+#    class Meta:
+#        model = Item
+    
 
 @csrf_protect
 
@@ -352,15 +359,19 @@ def actionItem(request, pItem, action):
 
             lastKidID,kidList=findLastKid(clickedItem, lastItemID)
 
+            ## find the first preceeding item is the same level as the demoted CI,
+            ## and adopt the same parent
+            ##indx=clickedItem;
+            ##while indx.indentLevel != clickedItem.indentLevel+1:
+            ##    indx=Item.objects.get(pk=indx.follows)
+            ##clickedItem.parent=indx.parent
 
-            ## if CI and item above it had same parent, now CI becomes child of item above
-##             if clickedItem.parent == Item.objects.get(id=clickedItem.follows).parent:
-##                 clickedItem.parent = clickedItem.follows
-##             else:
-##                 ## otherwise, CI gets same parent as the item above it
-##### ABOVE BLOCK NOT NEEDED <<<<<<<<<<<<<<<<<<<<<<<<<<<<<?????? IF SO, REINDENT FIRRST LINE BELOW
-            
-            clickedItem.parent = clickedItem.follows
+
+            # find first preceeding item at same level, make it CI's parent
+            indx=Item.objects.get(pk=clickedItem.follows)
+            while indx.indentLevel != clickedItem.indentLevel:
+                indx=Item.objects.get(pk=indx.follows)
+            clickedItem.parent=indx.id
             clickedItem.indentLevel += 1
             clickedItem.save()
 
@@ -387,18 +398,6 @@ def actionItem(request, pItem, action):
         else:
             ### Deal with parent assignments first
             
-##             if clickedItem.parent == 99999:
-##                 # don't think this branch is needed <<<<<<<<<<<<<<<<<<<<?????
-            
-##                 # clickedItem.follows:
-##                 # was clickedItem.indentLevel > Item.objects.get(pk=clickedItem.follows).indentLevel:
-##                 ## clicked item was a child of the item immediately above
-##                 logThis( "Promotion from child status: "+str(clickedItem.id))
-##                 clickedItem.parent=Item.objects.get(pk=clickedItem.follows).parent
-  
-##             else:
-##                 ## if CI is equal or superior to the item it follows
-##                 ## for parent, traverse up, until you find the first item that is superior to the CI
             logThis("Promoting: " +str(clickedItem.id))
             indx=Item.objects.get(pk=clickedItem.follows)
             while indx.indentLevel >= clickedItem.indentLevel:
@@ -410,7 +409,7 @@ def actionItem(request, pItem, action):
             clickedItem.save()
             runKids='yes'
 
-        if runKids == 'yes':
+        if runKids == 'yes' and clickedItem.id != lastItemID:
 
             ## now deal with  the kids
 
@@ -516,14 +515,15 @@ def actionItem(request, pItem, action):
             fciFollower.save()
 
 
-    ###UNKNOWN ACTION###########################################################
+    ###ACTION UNKNOWN########
 
     else:
         logThis( "===WARNING!=========== \nUnknown action=" + action)
         exit()
 
+    ###########################################################################
     ## let's restrict default view to the clicked item project
-    logThis( "cp="+str(current_projs)+" cpn="+str(clickedProjNum))
+    logThis( "Action done. current project #"+str(clickedProjNum)+ " " + current_projs.get(pk=clickedProjNum).name)
     displayList = buildDisplayList(current_projs,clickedProjNum, 'follows',0,[])
 
     t = loader.get_template('pim1_tmpl/items/index.html')
@@ -536,7 +536,7 @@ def actionItem(request, pItem, action):
     })
     return HttpResponse(t.render(c))
 
-##################################################################
+################################################################################
 
 def findLastKid(itemx, lastItemID):
     ###   look for first item below you with =< level of indent
@@ -746,6 +746,39 @@ def ssearch(request):
     })
     return HttpResponse(t.render(c))
             
+
+#############################################################################
+
+def editItem(request, pItem):
+    #dispPage, dispStart, dispLength):
+    # dispPage, dispStart and dispLength allow us to restore the listing page to what it was
+    current_projs = Project.objects.order_by('name')
+    #c = {}
+    #c.update(csrf(request))	  
+
+    # model formsets
+    ###https://docs.djangoproject.com/en/1.2/topics/forms/modelforms/#using-a-model-formset-in-a-view
+    
+    itemFormSet = modelformset_factory(Item)  ## "field" and "exclude" operands supported
+    if request.method == 'POST':
+        formset=itemFormSet(request.POST, request.FILES)
+        changedInstances=formset.save()
+        log("Formset saved: "+str(changedInstances))
+    else:
+        formset = itemFormSet(queryset=Item.objects.filter(pk=pItem))
+        logThis("Formset generated, pItem="+str(pItem))
+
+        formsetOut = formset.as_table()
+        
+    return render_to_response("pim1_tmpl/items/editItem.html", {
+        "pItem": pItem,
+        "formset": formsetOut,
+        'pagecrumb':'edit an item',
+        'current_projs':current_projs,
+        'nowx':datetime.datetime.now().strftime("%Y/%m/%d  %H:%M:%S")
+        }, context_instance=RequestContext(request) )
+
+##
                                          
 #############################################################################
 
@@ -786,13 +819,16 @@ def importISdata(importFile,newProjectID):
 
     startdir='/home/bhadmin13/dx.bernardhecker.com/pim1/pengine/imports/'
     textAccumulator = ''
-    logThis( "+++ b1 importISdata")
+    logThis( "+++ b1 importISdata from " + startdir + importFile)
     INFILE=open(startdir+importFile,'r')
     allLines=INFILE.readlines()
     currentISid = 0
     previousNewItemBenkID=getLastItemID(newProjectID)
     firstRecord = 'yes'
     logThis( "+++ b2 importISdata")
+
+    importedRecordIDs = []
+    
     for lx in allLines[:]:
         if lx[0:4] != '@@!!':  # we assume it's a continuing note body
             textAccumulator += lx
@@ -814,10 +850,10 @@ def importISdata(importFile,newProjectID):
                         newItem.parent=Item.objects.get(IS_import_ID=ISparentFirst).id
                     newItem.project=Project.objects.get(pk=newProjectID)
 
-                    ##added 12/22/2011
                     newItem.indentLevel=countIndent(newItem)
 
                     newItem.save()
+                    importedRecordIDs.append(newItem.id)
                     ### PURGE PREVIOUS VALUES ###
 
                     textAccumulator = ''                   
@@ -857,6 +893,14 @@ def importISdata(importFile,newProjectID):
             else:
                 logThis( "* * * * RECORD MISSED * * * *:"+ str(lx))
     newItem.save()
+    importedRecordIDs.append(newItem.id)
+
+    ### now clear out all the IS_import_ID's to make way for future imports
+    for importID in importedRecordIDs:
+        cleanUp=Item.objects.get(pk=importID)
+        cleanUp.IS_import_ID=-999
+        cleanUp.save()
+    
 ##################################################################
 
 def draglist(request, proj_id):
@@ -941,6 +985,7 @@ def drag_move(CIid, TIid):
             followedCIorKid = Item.objects.get(follows=lastKidID)
         followedCIorKid.follows = origCIfollow
         followedCIorKid.save()
+        
     #logThis("DragMove=> stitch around CI done")
     ## now insert the moved item into it's new position
     CI.parent = TIid;  ## was origTIparent

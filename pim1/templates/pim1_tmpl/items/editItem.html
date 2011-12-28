@@ -1,0 +1,26 @@
+{% extends "pim1_tmpl/pim1_base.html" %}
+
+{% block content %}
+
+{% if formset %}
+
+<h3>Editing {{ pItem }}</h3>
+
+   <form action="/item/edititem/000/" method="post" action="">
+   {% csrf_token %}
+   <table>
+   {{ formset }}
+   </table>
+   <br/>
+   <input type="submit" value="Submit" />
+   </form>
+
+
+{% else %}
+    <p>No formset available.</p>
+{% endif %}
+
+
+
+{% endblock %}
+ 

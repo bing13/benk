@@ -1,0 +1,16 @@
+{% extends "pim1_tmpl/pim1_base.html" %}
+
+{% block content %}
+
+{% if formset %}
+
+   {{ formset }}
+
+{% else %}
+    <p>No formset available.</p>
+{% endif %}
+
+
+
+{% endblock %}
+ 
