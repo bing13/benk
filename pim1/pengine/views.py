@@ -1,3 +1,4 @@
+
 ################################################################
 ## views.py
 ################################################################
@@ -353,11 +354,13 @@ def actionItem(request, pItem, action):
 
 
             ## if CI and item above it had same parent, now CI becomes child of item above
-            if clickedItem.parent == Item.objects.get(id=clickedItem.follows).parent:
-                clickedItem.parent = clickedItem.follows
-            else:
-                ## otherwise, CI gets same parent as the item above it
-                clickedItem.parent = Item.objects.get(id=clickedItem.follows).parent
+##             if clickedItem.parent == Item.objects.get(id=clickedItem.follows).parent:
+##                 clickedItem.parent = clickedItem.follows
+##             else:
+##                 ## otherwise, CI gets same parent as the item above it
+##### ABOVE BLOCK NOT NEEDED <<<<<<<<<<<<<<<<<<<<<<<<<<<<<?????? IF SO, REINDENT FIRRST LINE BELOW
+            
+            clickedItem.parent = clickedItem.follows
             clickedItem.indentLevel += 1
             clickedItem.save()
 
@@ -375,7 +378,7 @@ def actionItem(request, pItem, action):
     ###PROMOTE##################################################################
     elif action=='promote':
         runKids='no'
-        lastKidID=findLastKid(clickedItem, lastItemID)
+        lastKidID,kidList=findLastKid(clickedItem, lastItemID)
         CIoriginalParent=clickedItem.parent
         
         if clickedItem.parent ==  0:
@@ -384,19 +387,23 @@ def actionItem(request, pItem, action):
         else:
             ### Deal with parent assignments first
             
-            if clickedItem.indentLevel > Item.objects.get(pk=clickedItem.follows).indentLevel:
-                ## clicked item was a child of the item above
-                logThis( "Promotion from child status: "+str(clickedItem.id))
-                clickedItem.parent=Item.objects.get(pk=clickedItem.follows).parent
+##             if clickedItem.parent == 99999:
+##                 # don't think this branch is needed <<<<<<<<<<<<<<<<<<<<?????
+            
+##                 # clickedItem.follows:
+##                 # was clickedItem.indentLevel > Item.objects.get(pk=clickedItem.follows).indentLevel:
+##                 ## clicked item was a child of the item immediately above
+##                 logThis( "Promotion from child status: "+str(clickedItem.id))
+##                 clickedItem.parent=Item.objects.get(pk=clickedItem.follows).parent
   
-            else:
-                ## if CI is equal or superior to the item it follows
-                ## for parent, traverse up, until you find the first item that is superior to the CI
-                logThis("Promoting: " +str(clickedItem.id))
-                indx=Item.objects.get(pk=clickedItem.follows)
-                while indx.indentLevel >= clickedItem.indentLevel:
-                    indx=Item.objects.get(pk=indx.follows)
-                    clickedItem.parent=indx.parent
+##             else:
+##                 ## if CI is equal or superior to the item it follows
+##                 ## for parent, traverse up, until you find the first item that is superior to the CI
+            logThis("Promoting: " +str(clickedItem.id))
+            indx=Item.objects.get(pk=clickedItem.follows)
+            while indx.indentLevel >= clickedItem.indentLevel:
+                indx=Item.objects.get(pk=indx.follows)
+            clickedItem.parent=indx.parent
 
             ### Now promote the parent
             clickedItem.indentLevel -= 1
