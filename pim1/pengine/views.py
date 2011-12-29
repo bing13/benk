@@ -29,7 +29,7 @@ from django.core.context_processors import csrf
 from django.views.decorators.csrf import csrf_protect
 from django.template import RequestContext
 from django import forms
-from django.forms.models import modelformset_factory 
+#from django.forms.models import modelformset_factory 
 
 LOGFILE = '/home/bhadmin13/dx.bernardhecker.com/pim1/benklog1.log'
 #LOGOUT = open(LOGFILE, 'a')
@@ -526,13 +526,17 @@ def actionItem(request, pItem, action):
     logThis( "Action done. current project #"+str(clickedProjNum)+ " " + current_projs.get(pk=clickedProjNum).name)
     displayList = buildDisplayList(current_projs,clickedProjNum, 'follows',0,[])
 
-    t = loader.get_template('pim1_tmpl/items/index.html')
-
+    #t = loader.get_template('pim1_tmpl/items/index.html')
+    #t = loader.get_template('/drag/'+str(clickedProjNum)+'/#'+str(pItem))
+    t = loader.get_template('pim1_tmpl/items/dragdrop.html')
+ 
     c = Context({
         'current_items':displayList,
         'current_projs':current_projs, 
         'nowx':datetime.datetime.now().strftime("%Y/%m/%d  %H:%M:%S"),
-        'pagecrumb': "Action Item List"
+        'pagecrumb': "Action Item List",
+        'pItem':pItem,
+        'projectNum':clickedProjNum,
     })
     return HttpResponse(t.render(c))
 
@@ -750,25 +754,32 @@ def ssearch(request):
 #############################################################################
 
 def editItem(request, pItem):
+    itemProject=Item.objects.get(pk=pItem).project_id
     #dispPage, dispStart, dispLength):
     # dispPage, dispStart and dispLength allow us to restore the listing page to what it was
     current_projs = Project.objects.order_by('name')
-    #c = {}
-    #c.update(csrf(request))	  
 
     # model formsets
     ###https://docs.djangoproject.com/en/1.2/topics/forms/modelforms/#using-a-model-formset-in-a-view
     
-    itemFormSet = modelformset_factory(Item)  ## "field" and "exclude" operands supported
+    itemFormSet = forms.models.modelformset_factory(Item, max_num=0, exclude=('IS_import_ID','date_gootask_display', 'gtask_id', 'project'))
+    ## "field" and "exclude" operands supported
+
     if request.method == 'POST':
         formset=itemFormSet(request.POST, request.FILES)
         changedInstances=formset.save()
-        log("Formset saved: "+str(changedInstances))
+        logThis("Formset saved: "+str(changedInstances))
+
+        ## POST completed, now redirect to the reconstructed view
+        return HttpResponseRedirect('/drag/'+str(itemProject)+'/#'+str(pItem))
+    
     else:
         formset = itemFormSet(queryset=Item.objects.filter(pk=pItem))
-        logThis("Formset generated, pItem="+str(pItem))
+
 
         formsetOut = formset.as_table()
+        logThis("Formset generated, pItem="+str(pItem))
+        ##logThis(formsetOut)
         
     return render_to_response("pim1_tmpl/items/editItem.html", {
         "pItem": pItem,
@@ -778,9 +789,8 @@ def editItem(request, pItem):
         'nowx':datetime.datetime.now().strftime("%Y/%m/%d  %H:%M:%S")
         }, context_instance=RequestContext(request) )
 
-##
-                                         
-#############################################################################
+                                     
+############################################################################
 
 def importfile(request):
     current_projs = Project.objects.order_by('name')

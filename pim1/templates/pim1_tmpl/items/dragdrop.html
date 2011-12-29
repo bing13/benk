@@ -69,13 +69,13 @@ function heightFix(itemID) {
         <!-- removed this class from below div: ui-widget-headerx -->
         <div class="itemsdrag bhdraggable dropx"  id="{{ ci.id }}">
 
- 	  <span class="itemdrag actionArrows"><a href="/item/edititem/{{ ci.id }}">E</a><a class="ilid" href="/list-items/hoist/{{ci.id}}">{{ci.id}}</a>&nbsp;<a href="/item/add/{{ ci.id }}">&harr;</a><a href="/item/promote/{{ ci.id }}">&larr;</a><a href="/item/demote/{{ ci.id }}">&rarr;</a><a href="/item/moveup/{{ ci.id }}">&uarr;</a><a href="/item/movedown/{{ ci.id }}">&darr;</a><a href="/item/delete/{{ ci.id }}">&otimes;</a>
+ 	  <span class="itemdrag actionArrows"><a class="ilid" href="/list-items/hoist/{{ci.id}}">{{ci.id}}</a>&nbsp;<a href="/item/add/{{ ci.id }}">&harr;</a><a href="/item/promote/{{ ci.id }}">&larr;</a><a href="/item/demote/{{ ci.id }}">&rarr;</a><a href="/item/moveup/{{ ci.id }}">&uarr;</a><a href="/item/movedown/{{ ci.id }}">&darr;</a><a href="/item/delete/{{ ci.id }}">&otimes;</a>
           </span>
 
 	  <span class="prio priority_{{ ci.priority }}">{{ci.statusText|default:"&nbsp;"}}</span>
 
 
-          <span class="itemdrag ti">{#{ci.indentString|safe}#}<span class="indent_{{ci.indentLevel}}">{{ ci.outlineBullet|safe }} <a href="/admin/pengine/item/{{ci.id}}/">{{ ci.title }}</a></span></span>
+          <span class="itemdrag ti">{#{ci.indentString|safe}#}<span class="indent_{{ci.indentLevel}}">{{ ci.outlineBullet|safe }} <a href="/item/edititem/{{ ci.id }}">{{ ci.title }}</a></span></span>
 
           <span class="itemdrag notecell">
 	  {% if ci.HTMLnoteBody|length > 2 %}

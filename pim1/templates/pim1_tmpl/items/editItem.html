@@ -6,7 +6,9 @@
 
 <h3>Editing {{ pItem }}</h3>
 
-   <form action="/item/edititem/000/" method="post" action="">
+<p><a href="/admin/pengine/item/{{ pItem }}">Admin edit</a> for this record.</p>
+
+   <form action="/item/edititem/{{ pItem }}/" method="post" action="">
    {% csrf_token %}
    <table>
    {{ formset }}
