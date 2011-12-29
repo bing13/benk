@@ -107,14 +107,28 @@ def hoistItem(request,pItem):
     
     displayList=buildDisplayList(current_projs, hoistProj, 'follows', hoistID,[])
 
-    t = loader.get_template('pim1_tmpl/items/index.html')
+   ##  t = loader.get_template('pim1_tmpl/items/index.html')
+##     c = Context({
+##         'current_items':displayList,
+##         'current_projs':current_projs,
+##         'nowx':datetime.datetime.now().strftime("%Y/%m/%d  %H:%M:%S"),
+##         'pagecrumb':'item list (hoist)'
+##     })
+##     return HttpResponse(t.render(c))
+
+
+    t = loader.get_template('pim1_tmpl/items/dragdrop.html')
+ 
     c = Context({
         'current_items':displayList,
-        'current_projs':current_projs,
+        'current_projs':current_projs, 
         'nowx':datetime.datetime.now().strftime("%Y/%m/%d  %H:%M:%S"),
-        'pagecrumb':'item list (hoist)'
+        'pagecrumb': "Action Item List",
+        'pItem':pItem,
+        'projectNum':hoistProj,
     })
     return HttpResponse(t.render(c))
+
 
 ##################################################################
 def logThis(s):
@@ -596,12 +610,22 @@ def psd(request,pSort):
 
 def gridview(request):
     current_projs = Project.objects.order_by('name')
-    displayList =  buildDisplayList(current_projs,'0', 'follows',0,[])
+
+    displayList = [] ; 
+
+    for thisProject in current_projs:
+    
+        dx = buildDisplayList(current_projs,thisProject.id, 'follows',0,[])
+        #logThis("displayList:"+str(dx[:10]))
+        displayList += dx[:10];  #.append(dx[:10])
+        
+        #logThis("gridview thisProject.id:"+str(thisProject.id)+" "+str( displayListDict[thisProject.id][:5])+" ")
+        #logThis("displayList:"+str(displayList))
 
     t = loader.get_template('pim1_tmpl/items/gridview.html')
     c = Context({
         'pagecrumb':'grid view',
-        'current_items':displayList,
+        'displayList':displayList,
         'current_projs':current_projs,
         'nowx':datetime.datetime.now().strftime("%Y/%m/%d  %H:%M:%S")
     })

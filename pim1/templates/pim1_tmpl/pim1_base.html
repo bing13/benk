@@ -53,9 +53,9 @@
         <ul>  
            {% for px in current_projs %}
 
-	      <li><a href="/projdetail/{{px.id}}">{{ px }}</a> | <a href="/drag/{{px.id}}">d</a> </li>
+	      <li> <a href="/drag/{{px.id}}">{{ px.name }} {{ px.id }}</a> | <a href="/projdetail/{{px.id}}">s</a> </li>
            {% endfor %}
-             {# <li>[<a href="/list-items">all projects</a>]</li> #}
+
        </ul>
 
       {% else %}

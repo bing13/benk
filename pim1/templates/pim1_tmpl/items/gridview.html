@@ -10,11 +10,11 @@
 
 <div class="mainGrid">
 
-{% if current_items %}
+{% if displayList %}
 
-    <div class="throwaway"><div class="throwaway">
-    
-    {% for ci in current_items %}
+  <div class="throwaway"><div class="throwaway">
+
+    {% for ci in displayList %}
         {% ifchanged %}
             </div></div>
             <div class="gridCell">
@@ -22,17 +22,17 @@
 	      <div class="gridItemList">
         {% endifchanged %}
 
-  	         <div class="itemd">{{ci.parent}}/{{ci.follows}}:
-                   <a href="/admin/pengine/item/{{ci.id}}/">{{ ci.title }}</a> :
-                   <span class="gridDetail">{{ ci.priority }}:{{ci.priorityText}} /{{ ci.status }}:{{ci.statusText}}</span>
+  	         <div class="itemd">{{ ci.id }}:
+                   <a href="/admin/pengine/item/{{ci.id}}/">{{ ci.title }}</a> 
+		   {# <span class="gridDetail">{{ ci.priority }}:{{ci.priorityText}} /{{ ci.status }}:{{ci.statusText}}</span> #}
 	         </div>
     {% endfor %}
-  
-</div></div>
 
-</div>
+   </div></div>
 
-<p class="gridFooter"> <img src="http://media.bernardhecker.com/pim1/static/images/itemlistwidget.gif"></p>
+   </div>
+
+   <p class="gridFooter"> <img src="http://media.bernardhecker.com/pim1/static/images/itemlistwidget.gif"></p>
 
 {% else %}
     <p>No items are available.</p>
