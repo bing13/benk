@@ -1,0 +1,45 @@
+@@!! NEW_RECORD =====================================
+@@!! ID 2384
+@@!! FOLLOWS 0
+@@!! PARENTS 0
+@@!! INDENT_LEVEL 0
+@@!! SELECTOR == anchor for 2 ==
+@@!! PROJECT CHOICE
+@@!! PRIORITY 4
+@@!! STATUS 3
+@@!! DATE_CREATED 2011-12-26 18:21:53
+@@!! DATE_MODIFIED 2011-12-27 19:18:57
+@@!! DATE_GOO_TASK None
+@@!! GOO_TASK_ID 
+@@!! NOTE follows 
+
+@@!! NEW_RECORD =====================================
+@@!! ID 4384
+@@!! FOLLOWS 2384
+@@!! PARENTS 0
+@@!! INDENT_LEVEL 0
+@@!! SELECTOR TCCG - updates
+@@!! PROJECT CHOICE
+@@!! PRIORITY 3
+@@!! STATUS 2
+@@!! DATE_CREATED 2011-12-29 08:57:01
+@@!! DATE_MODIFIED 2011-12-29 08:57:20
+@@!! DATE_GOO_TASK None
+@@!! GOO_TASK_ID 
+@@!! NOTE follows 
+
+@@!! NEW_RECORD =====================================
+@@!! ID 4387
+@@!! FOLLOWS 4384
+@@!! PARENTS 0
+@@!! INDENT_LEVEL 0
+@@!! SELECTOR alerts write-up verification
+@@!! PROJECT CHOICE
+@@!! PRIORITY 1
+@@!! STATUS 2
+@@!! DATE_CREATED 2011-12-29 09:45:19
+@@!! DATE_MODIFIED 2011-12-29 09:46:10
+@@!! DATE_GOO_TASK None
+@@!! GOO_TASK_ID 
+@@!! NOTE follows 
+get the write-up approved, and out

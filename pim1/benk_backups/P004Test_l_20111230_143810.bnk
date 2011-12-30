@@ -1,0 +1,438 @@
+@@!! NEW_RECORD =====================================
+@@!! ID 4301
+@@!! FOLLOWS 0
+@@!! PARENTS 0
+@@!! INDENT_LEVEL 0
+@@!! SELECTOR == ANCHOR for 4 ==
+@@!! PROJECT Test list
+@@!! PRIORITY 2
+@@!! STATUS 2
+@@!! DATE_CREATED 2011-12-27 19:34:14
+@@!! DATE_MODIFIED 2011-12-29 13:22:11
+@@!! DATE_GOO_TASK 2011-12-27 19:34:11
+@@!! GOO_TASK_ID 
+@@!! NOTE follows 
+It's a happy day. 
+@@!! NEW_RECORD =====================================
+@@!! ID 4348
+@@!! FOLLOWS 4301
+@@!! PARENTS 0
+@@!! INDENT_LEVEL 0
+@@!! SELECTOR Simple Test data 
+@@!! PROJECT Test list
+@@!! PRIORITY 0
+@@!! STATUS 0
+@@!! DATE_CREATED 2011-12-28 08:06:17
+@@!! DATE_MODIFIED 2011-12-28 08:06:17
+@@!! DATE_GOO_TASK None
+@@!! GOO_TASK_ID 
+@@!! NOTE follows 
+
+@@!! NEW_RECORD =====================================
+@@!! ID 4349
+@@!! FOLLOWS 4348
+@@!! PARENTS 4348
+@@!! INDENT_LEVEL 1
+@@!! SELECTOR First regular item - parent
+@@!! PROJECT Test list
+@@!! PRIORITY 1
+@@!! STATUS 3
+@@!! DATE_CREATED 2011-12-28 08:06:17
+@@!! DATE_MODIFIED 2011-12-28 11:32:45
+@@!! DATE_GOO_TASK 2011-12-28 11:32:44
+@@!! GOO_TASK_ID 
+@@!! NOTE follows 
+this poor little item needs a note. 
+
+this is a note.
+
+lorem ipsumthis poor little item needs a note. 
+
+this is a note.
+
+lorem ipsumthis poor little item needs a note. 
+
+this is a note.
+
+lorem ipsumthis poor little item needs a note. 
+
+this is a note.
+
+lorem ipsumthis poor little item needs a note. 
+
+this is a note.
+
+lorem ipsumthis poor little item needs a note. 
+
+this is a note.
+
+lorem ipsum
+@@!! NEW_RECORD =====================================
+@@!! ID 4350
+@@!! FOLLOWS 4349
+@@!! PARENTS 4348
+@@!! INDENT_LEVEL 1
+@@!! SELECTOR First child of first parent, note w/table
+@@!! PROJECT Test list
+@@!! PRIORITY 4
+@@!! STATUS 5
+@@!! DATE_CREATED 2011-12-28 08:06:17
+@@!! DATE_MODIFIED 2011-12-29 20:12:23
+@@!! DATE_GOO_TASK 2011-12-28 11:32:58
+@@!! GOO_TASK_ID 
+@@!! NOTE follows 
+<table>
+<tr><td>OH MY GOSH!</td></tr>
+<tr><td>this poor little item needs a note. 
+
+this is a note.
+
+lorem ipsumthis poor little item needs a note. 
+
+this is a note.
+
+lorem ipsumthis poor little item needs a note. 
+
+this is a note.
+
+lorem ipsumthis poor little item needs a note. 
+
+this is a note.
+
+lorem ipsumthis poor little item needs a note. 
+
+this is a note.
+
+lorem ipsumthis poor little item needs a note. 
+
+this is a note.
+
+lorem ipsum
+</td></tr></table>
+@@!! NEW_RECORD =====================================
+@@!! ID 4367
+@@!! FOLLOWS 4350
+@@!! PARENTS 4350
+@@!! INDENT_LEVEL 2
+@@!! SELECTOR This is a vital new item
+@@!! PROJECT Test list
+@@!! PRIORITY 3
+@@!! STATUS 5
+@@!! DATE_CREATED 2011-12-28 17:16:04
+@@!! DATE_MODIFIED 2011-12-29 20:12:23
+@@!! DATE_GOO_TASK None
+@@!! GOO_TASK_ID 
+@@!! NOTE follows 
+important new data available here.
+
+<p>no, here.</p>
+@@!! NEW_RECORD =====================================
+@@!! ID 4368
+@@!! FOLLOWS 4367
+@@!! PARENTS 4367
+@@!! INDENT_LEVEL 3
+@@!! SELECTOR This little guy is IMPROVED!!
+@@!! PROJECT Test list
+@@!! PRIORITY 2
+@@!! STATUS 6
+@@!! DATE_CREATED 2011-12-28 17:16:56
+@@!! DATE_MODIFIED 2011-12-29 20:12:23
+@@!! DATE_GOO_TASK None
+@@!! GOO_TASK_ID 
+@@!! NOTE follows 
+well, it needs some text, too.
+@@!! NEW_RECORD =====================================
+@@!! ID 4351
+@@!! FOLLOWS 4368
+@@!! PARENTS 4349
+@@!! INDENT_LEVEL 2
+@@!! SELECTOR 2nd child of 1st parent
+@@!! PROJECT Test list
+@@!! PRIORITY 0
+@@!! STATUS 0
+@@!! DATE_CREATED 2011-12-28 08:06:17
+@@!! DATE_MODIFIED 2011-12-28 17:35:34
+@@!! DATE_GOO_TASK None
+@@!! GOO_TASK_ID 
+@@!! NOTE follows 
+
+@@!! NEW_RECORD =====================================
+@@!! ID 4352
+@@!! FOLLOWS 4351
+@@!! PARENTS 4348
+@@!! INDENT_LEVEL 1
+@@!! SELECTOR Second regular item - parent
+@@!! PROJECT Test list
+@@!! PRIORITY 0
+@@!! STATUS 0
+@@!! DATE_CREATED 2011-12-28 08:06:17
+@@!! DATE_MODIFIED 2011-12-28 08:06:17
+@@!! DATE_GOO_TASK None
+@@!! GOO_TASK_ID 
+@@!! NOTE follows 
+
+@@!! NEW_RECORD =====================================
+@@!! ID 4354
+@@!! FOLLOWS 4352
+@@!! PARENTS 4352
+@@!! INDENT_LEVEL 2
+@@!! SELECTOR second child of second regular item
+@@!! PROJECT Test list
+@@!! PRIORITY 0
+@@!! STATUS 0
+@@!! DATE_CREATED 2011-12-28 08:06:17
+@@!! DATE_MODIFIED 2011-12-28 17:39:57
+@@!! DATE_GOO_TASK None
+@@!! GOO_TASK_ID 
+@@!! NOTE follows 
+
+@@!! NEW_RECORD =====================================
+@@!! ID 4353
+@@!! FOLLOWS 4354
+@@!! PARENTS 4352
+@@!! INDENT_LEVEL 2
+@@!! SELECTOR First child of second regular item
+@@!! PROJECT Test list
+@@!! PRIORITY 2
+@@!! STATUS 5
+@@!! DATE_CREATED 2011-12-28 08:06:17
+@@!! DATE_MODIFIED 2011-12-28 17:40:06
+@@!! DATE_GOO_TASK 2011-12-28 11:32:07
+@@!! GOO_TASK_ID 
+@@!! NOTE follows 
+this poor little item needs a note. 
+
+this is a note.
+
+lorem ipsumthis poor little item needs a note. 
+
+this is a note.
+
+lorem ipsumthis poor little item needs a note. 
+
+this is a note.
+
+lorem ipsumthis poor little item needs a note. 
+
+this is a note.
+
+lorem ipsumthis poor little item needs a note. 
+
+this is a note.
+
+lorem ipsumthis poor little item needs a note. 
+
+this is a note.
+
+lorem ipsum
+@@!! NEW_RECORD =====================================
+@@!! ID 4355
+@@!! FOLLOWS 4353
+@@!! PARENTS 4348
+@@!! INDENT_LEVEL 1
+@@!! SELECTOR Wait!! LAST IMPORTED ITEM - Now, new and improved!!!!
+@@!! PROJECT Test list
+@@!! PRIORITY 1
+@@!! STATUS 9
+@@!! DATE_CREATED 2011-12-28 08:06:17
+@@!! DATE_MODIFIED 2011-12-28 17:43:25
+@@!! DATE_GOO_TASK None
+@@!! GOO_TASK_ID 
+@@!! NOTE follows 
+Like this others, this is an adventure in customized editing. I'm feeling a bit more positive again. 
+
+Although I can see this display will warrant much xxx-polishing.
+@@!! NEW_RECORD =====================================
+@@!! ID 4369
+@@!! FOLLOWS 4355
+@@!! PARENTS 4355
+@@!! INDENT_LEVEL 2
+@@!! SELECTOR Well my goodness another new item.
+@@!! PROJECT Test list
+@@!! PRIORITY 3
+@@!! STATUS 2
+@@!! DATE_CREATED 2011-12-28 17:18:02
+@@!! DATE_MODIFIED 2011-12-28 19:17:08
+@@!! DATE_GOO_TASK None
+@@!! GOO_TASK_ID 
+@@!! NOTE follows 
+<h4>the importance of html support</h4>
+
+<p>It <em>is</em> nice to be able to use HTML - if you aren't required</p>
+
+<ol>
+<li>it's nice</li>
+<li>it's portable</li>
+</ol>
+@@!! NEW_RECORD =====================================
+@@!! ID 4365
+@@!! FOLLOWS 4369
+@@!! PARENTS 4355
+@@!! INDENT_LEVEL 2
+@@!! SELECTOR extra super special item
+@@!! PROJECT Test list
+@@!! PRIORITY 4
+@@!! STATUS 6
+@@!! DATE_CREATED 2011-12-28 12:06:53
+@@!! DATE_MODIFIED 2011-12-28 19:17:08
+@@!! DATE_GOO_TASK None
+@@!! GOO_TASK_ID 
+@@!! NOTE follows 
+<h4>greetings!</h4>
+
+<p>I'm pressing my luck now.</p>
+@@!! NEW_RECORD =====================================
+@@!! ID 4366
+@@!! FOLLOWS 4365
+@@!! PARENTS 4365
+@@!! INDENT_LEVEL 3
+@@!! SELECTOR Oh, this is a SUPER title
+@@!! PROJECT Test list
+@@!! PRIORITY 1
+@@!! STATUS 2
+@@!! DATE_CREATED 2011-12-28 12:07:34
+@@!! DATE_MODIFIED 2011-12-28 16:29:24
+@@!! DATE_GOO_TASK None
+@@!! GOO_TASK_ID 999
+@@!! NOTE follows 
+<b>I'M SO HAPPY!</b>
+I finally figured out that the extra form could be stoppe with a max_num=0 on the modelformset instantiation
+@@!! NEW_RECORD =====================================
+@@!! ID 4356
+@@!! FOLLOWS 4366
+@@!! PARENTS 0
+@@!! INDENT_LEVEL 0
+@@!! SELECTOR Simple Test data 
+@@!! PROJECT Test list
+@@!! PRIORITY 0
+@@!! STATUS 0
+@@!! DATE_CREATED 2011-12-28 08:06:30
+@@!! DATE_MODIFIED 2011-12-28 12:45:24
+@@!! DATE_GOO_TASK None
+@@!! GOO_TASK_ID 
+@@!! NOTE follows 
+
+@@!! NEW_RECORD =====================================
+@@!! ID 4357
+@@!! FOLLOWS 4356
+@@!! PARENTS 4356
+@@!! INDENT_LEVEL 1
+@@!! SELECTOR First regular item - parent
+@@!! PROJECT Test list
+@@!! PRIORITY 0
+@@!! STATUS 0
+@@!! DATE_CREATED 2011-12-28 08:06:30
+@@!! DATE_MODIFIED 2011-12-28 08:06:30
+@@!! DATE_GOO_TASK None
+@@!! GOO_TASK_ID 
+@@!! NOTE follows 
+
+@@!! NEW_RECORD =====================================
+@@!! ID 4358
+@@!! FOLLOWS 4357
+@@!! PARENTS 4357
+@@!! INDENT_LEVEL 2
+@@!! SELECTOR First child of first parent
+@@!! PROJECT Test list
+@@!! PRIORITY 0
+@@!! STATUS 0
+@@!! DATE_CREATED 2011-12-28 08:06:30
+@@!! DATE_MODIFIED 2011-12-28 17:07:41
+@@!! DATE_GOO_TASK None
+@@!! GOO_TASK_ID 
+@@!! NOTE follows 
+
+@@!! NEW_RECORD =====================================
+@@!! ID 4359
+@@!! FOLLOWS 4358
+@@!! PARENTS 4358
+@@!! INDENT_LEVEL 3
+@@!! SELECTOR 2nd child of 1st parent - Now EVEN BETTER!
+@@!! PROJECT Test list
+@@!! PRIORITY 2
+@@!! STATUS 3
+@@!! DATE_CREATED 2011-12-28 08:06:30
+@@!! DATE_MODIFIED 2011-12-28 17:07:41
+@@!! DATE_GOO_TASK None
+@@!! GOO_TASK_ID 
+@@!! NOTE follows 
+Django grew from a very practical need: World Online, a newspaper Web operation, is responsible for building intensive Web applications on journalism deadlines. In the fast-paced newsroom, World Online often has only a matter of hours to take a complicated Web application from concept to public launch.
+
+At the same time, the World Online Web developers have consistently been perfectionists when it comes to following best practices of Web development.
+
+In fall 2003, the World Online developers (Adrian Holovaty and Simon Willison) ditched PHP and began using Python to develop its Web sites. As they built intensive, richly interactive sites such as Lawrence.com, they began to extract a generic Web development framework that let them build Web applications more and more quickly. They tweaked this framework constantly, adding improvements over two years.
+@@!! NEW_RECORD =====================================
+@@!! ID 4360
+@@!! FOLLOWS 4359
+@@!! PARENTS 4356
+@@!! INDENT_LEVEL 1
+@@!! SELECTOR Second regular item - parent
+@@!! PROJECT Test list
+@@!! PRIORITY 0
+@@!! STATUS 0
+@@!! DATE_CREATED 2011-12-28 08:06:30
+@@!! DATE_MODIFIED 2011-12-28 17:07:41
+@@!! DATE_GOO_TASK None
+@@!! GOO_TASK_ID 
+@@!! NOTE follows 
+
+@@!! NEW_RECORD =====================================
+@@!! ID 4362
+@@!! FOLLOWS 4360
+@@!! PARENTS 4360
+@@!! INDENT_LEVEL 2
+@@!! SELECTOR BETTER!! second child of second regular item
+@@!! PROJECT Test list
+@@!! PRIORITY 3
+@@!! STATUS 6
+@@!! DATE_CREATED 2011-12-28 08:06:30
+@@!! DATE_MODIFIED 2011-12-28 17:06:32
+@@!! DATE_GOO_TASK 2011-12-28 11:58:09
+@@!! GOO_TASK_ID 
+@@!! NOTE follows 
+OH, what a good time!
+@@!! NEW_RECORD =====================================
+@@!! ID 4361
+@@!! FOLLOWS 4362
+@@!! PARENTS 4360
+@@!! INDENT_LEVEL 2
+@@!! SELECTOR First child of second regular item
+@@!! PROJECT Test list
+@@!! PRIORITY 0
+@@!! STATUS 0
+@@!! DATE_CREATED 2011-12-28 08:06:30
+@@!! DATE_MODIFIED 2011-12-28 17:07:07
+@@!! DATE_GOO_TASK None
+@@!! GOO_TASK_ID 
+@@!! NOTE follows 
+
+@@!! NEW_RECORD =====================================
+@@!! ID 4364
+@@!! FOLLOWS 4361
+@@!! PARENTS 4360
+@@!! INDENT_LEVEL 2
+@@!! SELECTOR this used to be a [NEW ITEM]
+@@!! PROJECT Test list
+@@!! PRIORITY 1
+@@!! STATUS 1
+@@!! DATE_CREATED 2011-12-28 12:00:35
+@@!! DATE_MODIFIED 2011-12-28 17:10:58
+@@!! DATE_GOO_TASK 2011-12-28 17:10:53
+@@!! GOO_TASK_ID 
+@@!! NOTE follows 
+
+@@!! NEW_RECORD =====================================
+@@!! ID 4363
+@@!! FOLLOWS 4364
+@@!! PARENTS 4356
+@@!! INDENT_LEVEL 1
+@@!! SELECTOR LAST IMPORTED ITEM
+@@!! PROJECT Test list
+@@!! PRIORITY 0
+@@!! STATUS 0
+@@!! DATE_CREATED 2011-12-28 08:06:30
+@@!! DATE_MODIFIED 2011-12-28 12:00:36
+@@!! DATE_GOO_TASK None
+@@!! GOO_TASK_ID 
+@@!! NOTE follows 
+

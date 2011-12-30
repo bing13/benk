@@ -1,0 +1,195 @@
+@@!! NEW_RECORD =====================================
+@@!! ID 4375
+@@!! FOLLOWS 0
+@@!! PARENTS 0
+@@!! INDENT_LEVEL 0
+@@!! SELECTOR === ANCHOR - benk meta ===
+@@!! PROJECT zz Benk meta
+@@!! PRIORITY 0
+@@!! STATUS 0
+@@!! DATE_CREATED 2011-12-28 20:39:53
+@@!! DATE_MODIFIED 2011-12-28 20:39:53
+@@!! DATE_GOO_TASK None
+@@!! GOO_TASK_ID 
+@@!! NOTE follows 
+
+@@!! NEW_RECORD =====================================
+@@!! ID 4380
+@@!! FOLLOWS 4375
+@@!! PARENTS 0
+@@!! INDENT_LEVEL 0
+@@!! SELECTOR provide "new project" function
+@@!! PROJECT zz Benk meta
+@@!! PRIORITY 1
+@@!! STATUS 3
+@@!! DATE_CREATED 2011-12-28 20:43:49
+@@!! DATE_MODIFIED 2011-12-29 20:47:35
+@@!! DATE_GOO_TASK None
+@@!! GOO_TASK_ID 
+@@!! NOTE follows 
+includes creating an anchor item
+@@!! NEW_RECORD =====================================
+@@!! ID 4394
+@@!! FOLLOWS 4380
+@@!! PARENTS 0
+@@!! INDENT_LEVEL 0
+@@!! SELECTOR Provide one-click backups
+@@!! PROJECT zz Benk meta
+@@!! PRIORITY 1
+@@!! STATUS 2
+@@!! DATE_CREATED 2011-12-29 13:24:26
+@@!! DATE_MODIFIED 2011-12-29 13:39:17
+@@!! DATE_GOO_TASK None
+@@!! GOO_TASK_ID 
+@@!! NOTE follows 
+
+@@!! NEW_RECORD =====================================
+@@!! ID 4377
+@@!! FOLLOWS 4394
+@@!! PARENTS 0
+@@!! INDENT_LEVEL 0
+@@!! SELECTOR introduce paging
+@@!! PROJECT zz Benk meta
+@@!! PRIORITY 0
+@@!! STATUS 0
+@@!! DATE_CREATED 2011-12-28 20:42:22
+@@!! DATE_MODIFIED 2011-12-29 13:39:28
+@@!! DATE_GOO_TASK None
+@@!! GOO_TASK_ID 
+@@!! NOTE follows 
+
+@@!! NEW_RECORD =====================================
+@@!! ID 4378
+@@!! FOLLOWS 4377
+@@!! PARENTS 0
+@@!! INDENT_LEVEL 0
+@@!! SELECTOR recover list display after edit, move, etc
+@@!! PROJECT zz Benk meta
+@@!! PRIORITY 0
+@@!! STATUS 0
+@@!! DATE_CREATED 2011-12-28 20:42:23
+@@!! DATE_MODIFIED 2011-12-28 20:43:24
+@@!! DATE_GOO_TASK None
+@@!! GOO_TASK_ID 
+@@!! NOTE follows 
+
+@@!! NEW_RECORD =====================================
+@@!! ID 4379
+@@!! FOLLOWS 4378
+@@!! PARENTS 0
+@@!! INDENT_LEVEL 0
+@@!! SELECTOR update the drag display after local operations
+@@!! PROJECT zz Benk meta
+@@!! PRIORITY 0
+@@!! STATUS 0
+@@!! DATE_CREATED 2011-12-28 20:43:28
+@@!! DATE_MODIFIED 2011-12-28 20:43:46
+@@!! DATE_GOO_TASK None
+@@!! GOO_TASK_ID 
+@@!! NOTE follows 
+
+@@!! NEW_RECORD =====================================
+@@!! ID 4381
+@@!! FOLLOWS 4379
+@@!! PARENTS 0
+@@!! INDENT_LEVEL 0
+@@!! SELECTOR anchor items: hide or protect?
+@@!! PROJECT zz Benk meta
+@@!! PRIORITY 0
+@@!! STATUS 0
+@@!! DATE_CREATED 2011-12-28 20:44:25
+@@!! DATE_MODIFIED 2011-12-29 13:23:58
+@@!! DATE_GOO_TASK None
+@@!! GOO_TASK_ID 
+@@!! NOTE follows 
+
+@@!! NEW_RECORD =====================================
+@@!! ID 4390
+@@!! FOLLOWS 4381
+@@!! PARENTS 0
+@@!! INDENT_LEVEL 0
+@@!! SELECTOR eliminate interstitial [NEW ITEM] step
+@@!! PROJECT zz Benk meta
+@@!! PRIORITY 0
+@@!! STATUS 0
+@@!! DATE_CREATED 2011-12-29 13:22:29
+@@!! DATE_MODIFIED 2011-12-29 13:22:52
+@@!! DATE_GOO_TASK None
+@@!! GOO_TASK_ID 
+@@!! NOTE follows 
+
+@@!! NEW_RECORD =====================================
+@@!! ID 4391
+@@!! FOLLOWS 4390
+@@!! PARENTS 0
+@@!! INDENT_LEVEL 0
+@@!! SELECTOR grid view item click takes you to non-drag view
+@@!! PROJECT zz Benk meta
+@@!! PRIORITY 0
+@@!! STATUS 0
+@@!! DATE_CREATED 2011-12-29 13:22:55
+@@!! DATE_MODIFIED 2011-12-29 13:23:14
+@@!! DATE_GOO_TASK None
+@@!! GOO_TASK_ID 
+@@!! NOTE follows 
+
+@@!! NEW_RECORD =====================================
+@@!! ID 4392
+@@!! FOLLOWS 4391
+@@!! PARENTS 0
+@@!! INDENT_LEVEL 0
+@@!! SELECTOR on edit forms, title field is too short
+@@!! PROJECT zz Benk meta
+@@!! PRIORITY 0
+@@!! STATUS 0
+@@!! DATE_CREATED 2011-12-29 13:23:17
+@@!! DATE_MODIFIED 2011-12-29 13:23:29
+@@!! DATE_GOO_TASK None
+@@!! GOO_TASK_ID 
+@@!! NOTE follows 
+
+@@!! NEW_RECORD =====================================
+@@!! ID 4396
+@@!! FOLLOWS 4392
+@@!! PARENTS 4392
+@@!! INDENT_LEVEL 1
+@@!! SELECTOR don't seem to be able to drag onto the last time
+@@!! PROJECT zz Benk meta
+@@!! PRIORITY 0
+@@!! STATUS 0
+@@!! DATE_CREATED 2011-12-29 13:37:20
+@@!! DATE_MODIFIED 2011-12-29 13:39:32
+@@!! DATE_GOO_TASK None
+@@!! GOO_TASK_ID 
+@@!! NOTE follows 
+
+@@!! NEW_RECORD =====================================
+@@!! ID 4393
+@@!! FOLLOWS 4396
+@@!! PARENTS 0
+@@!! INDENT_LEVEL 0
+@@!! SELECTOR I celebrate the backup
+@@!! PROJECT zz Benk meta
+@@!! PRIORITY 1
+@@!! STATUS 1
+@@!! DATE_CREATED 2011-12-29 13:24:12
+@@!! DATE_MODIFIED 2011-12-30 10:59:35
+@@!! DATE_GOO_TASK None
+@@!! GOO_TASK_ID 
+@@!! NOTE follows 
+
+@@!! NEW_RECORD =====================================
+@@!! ID 4376
+@@!! FOLLOWS 4393
+@@!! PARENTS 0
+@@!! INDENT_LEVEL 0
+@@!! SELECTOR grid view busted
+@@!! PROJECT zz Benk meta
+@@!! PRIORITY 0
+@@!! STATUS 9
+@@!! DATE_CREATED 2011-12-28 20:42:19
+@@!! DATE_MODIFIED 2011-12-29 13:40:14
+@@!! DATE_GOO_TASK None
+@@!! GOO_TASK_ID 
+@@!! NOTE follows 
+
