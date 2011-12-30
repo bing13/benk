@@ -70,6 +70,8 @@ def itemlist(request,proj_id):
     current_projs = Project.objects.order_by('name')
     displayList = buildDisplayList(current_projs, proj_id,'follows',0,[])
 
+    titleCrumbBlurb = str(proj_id)+':'+Project.objects.get(pk=proj_id).name
+
     t = loader.get_template('pim1_tmpl/items/index.html')
                        
     c = Context({
@@ -77,7 +79,7 @@ def itemlist(request,proj_id):
         'current_items':displayList,
         'current_projs':current_projs, 
         'nowx':datetime.datetime.now().strftime("%Y/%m/%d  %H:%M:%S"),
-        'pagecrumb':'item list'
+        'pagecrumb':titleCrumbBlurb
 
     })
     return HttpResponse(t.render(c))
@@ -123,7 +125,7 @@ def hoistItem(request,pItem):
         'current_items':displayList,
         'current_projs':current_projs, 
         'nowx':datetime.datetime.now().strftime("%Y/%m/%d  %H:%M:%S"),
-        'pagecrumb': "Action Item List",
+        'pagecrumb': str(pItem)+"Hoist",
         'pItem':pItem,
         'projectNum':hoistProj,
     })
@@ -144,11 +146,13 @@ def buildDisplayList(projectx, projID, ordering, hoistID, useList):
     logThis("Entering buildDisplayList <====================")
     #hoistID = 55
 
-    ### Select the items to operate on: all, or just those from 1 project
+    ### Select the items to operate on ###############
 
+    ## items in the explicit useList (used by search0
     if useList != []:
         items2List=Item.objects.filter(id__in=useList).order_by(ordering)
 
+    ## the hoist ID
     elif hoistID != 0:
         ## insures that the target item appears in the final list.
         resultList=[] 
@@ -158,19 +162,20 @@ def buildDisplayList(projectx, projID, ordering, hoistID, useList):
         ## get querySet that only has items with those IDs in it
         items2List=Item.objects.filter(id__in=resultList).order_by( ordering)
         projlist=Project.objects.get(pk=projID)
- 
+
+    ## the projID
     elif projID != '0': 
         ##specified project
         items2List=Item.objects.filter(project__id=projID).order_by( ordering)
         projlist=Project.objects.get(pk=projID)
-                    
+
+    ## otherwise, all
     else:
         ##all projects, requires project sort
         items2List=Item.objects.all().order_by( ordering)
         projlist=projectx
 
     ### Build the parent list
-    ## pzero=[] ## list of top-level items // commented out 12/17/2011
     ixList=[]
     jxHash={}
     logThis("..queries done...")
@@ -543,12 +548,15 @@ def actionItem(request, pItem, action):
     #t = loader.get_template('pim1_tmpl/items/index.html')
     #t = loader.get_template('/drag/'+str(clickedProjNum)+'/#'+str(pItem))
     t = loader.get_template('pim1_tmpl/items/dragdrop.html')
+
+    titleCrumbBlurb = str(clickedProjNum)+':'+Project.objects.get(pk=clickedProjNum).name
+
  
     c = Context({
         'current_items':displayList,
         'current_projs':current_projs, 
         'nowx':datetime.datetime.now().strftime("%Y/%m/%d  %H:%M:%S"),
-        'pagecrumb': "Action Item List",
+        'pagecrumb': titleCrumbBlurb,
         'pItem':pItem,
         'projectNum':clickedProjNum,
     })
@@ -609,18 +617,34 @@ def psd(request,pSort):
 ###################################################################
 
 def gridview(request):
+    ITEMS_PER_CELL = 10;
     current_projs = Project.objects.order_by('name')
 
     displayList = [] ; 
 
     for thisProject in current_projs:
-    
-        dx = buildDisplayList(current_projs,thisProject.id, 'follows',0,[])
-        #logThis("displayList:"+str(dx[:10]))
-        displayList += dx[:10];  #.append(dx[:10])
+        cellItems = [];
+        #(projlist, projID, ordering, hoistID, useList)
+        j = 0 ; ##Item.objects.filter(project=thisProject.id).get(follows=0).id
+
+        limit = min(10, len(Item.objects.filter(project=thisProject.id)))
+
+        for i in range(0,limit):
+            thisItem=Item.objects.filter(project=thisProject).get(follows=j)
+            cellItems.append(thisItem.id)
+            j = thisItem.id
+            
+                    
+
+#        cellObjects = Item.objects.filter(project=thisProject.id).order_by('follows')[:ITEMS_PER_CELL]
+#        for c in cellObjects:
+#            cellItems.append(c.id)
+        #logThis("Gridview  thisProject.id:"+str(thisProject.id)+" "+str(cellItems))
+        dx =   buildDisplayList(current_projs,thisProject.id, 'follows',0,cellItems)
+        displayList = displayList + dx
+
+
         
-        #logThis("gridview thisProject.id:"+str(thisProject.id)+" "+str( displayListDict[thisProject.id][:5])+" ")
-        #logThis("displayList:"+str(displayList))
 
     t = loader.get_template('pim1_tmpl/items/gridview.html')
     c = Context({
@@ -943,14 +967,17 @@ def draglist(request, proj_id):
     current_projs = Project.objects.order_by('name')
     displayList = buildDisplayList(current_projs, proj_id,'follows',0,[])
 
+    titleCrumbBlurb = str(proj_id)+':'+Project.objects.get(pk=proj_id).name
+
+
     t = loader.get_template('pim1_tmpl/items/dragdrop.html')
                        
     c = Context({
-        'pagecrumb':'main item list',
+        'pagecrumb':titleCrumbBlurb,
         'current_items':displayList,
         'current_projs':current_projs, 
         'nowx':datetime.datetime.now().strftime("%Y/%m/%d  %H:%M:%S"),
-        'pagecrumb':'item list'
+
 
     })
     return HttpResponse(t.render(c))
