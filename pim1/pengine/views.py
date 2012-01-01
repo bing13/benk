@@ -46,20 +46,7 @@ class ssearchForm(forms.Form):
     searchfx=forms.CharField(max_length=200)
 
 
-## BACKUPCHOICES = (('1','First',),('2','Second',),('3','thurd',))
-
-## class serializeForm(forms.Form):
-##     BackupTheseProjects=forms.MultipleChoiceField(required=False, widget=CheckboxSelectMultiple, choices=BACKUPCHOICES)
-
-
-
-#class ItemEditForm(forms.ModelForm):
-#    class Meta:
-#        model = Item
-    
-
 @csrf_protect
-
 
 
 ##################################################################
@@ -153,7 +140,6 @@ def logThis(s):
 ##################################################################
 def buildDisplayList(projectx, projID, ordering, hoistID, useList):
     logThis("Entering buildDisplayList <====================")
-    #hoistID = 55
 
     ### Select the items to operate on ###############
 
@@ -256,16 +242,7 @@ def buildDisplayList(projectx, projID, ordering, hoistID, useList):
         ##  ALSO REQUIRED that we stop using the original all-project view, since it assumes
         ##  only one follower of "0"
             
-        #logThis('ixList='+str(ixList))    
-
-        # Can be voluminous!
-        #logThis('followHash'+str(followHash))
-
         if min(followHash.keys()) != 0:
-            # commented 10/23/2011, added two lines below
-            #followHash[0]=min(followHash.keys())
-            #minfhk=min(followHash.keys())
-            #followHash[0]=followHash.pop(minfhk)
             for fhk in followHash.keys():
                 if fhk in followHash.values():
                     continue
@@ -282,9 +259,6 @@ def buildDisplayList(projectx, projID, ordering, hoistID, useList):
 
         ## OK, now follow the chain of who follows whom, starting with whoever follows Parent ID = 0
         while  followHash.has_key(currentID):
-            #print "current ID=%s, followHash[currentID]=%s" % (currentID, followHash)
-            #print jxHash
-            # followHash[currentID]
             displayList.append(jxHash[followHash[currentID]])
             currentID=followHash[currentID]
 
@@ -551,7 +525,9 @@ def actionItem(request, pItem, action):
 
     ###########################################################################
     ## let's restrict default view to the clicked item project
-    logThis( "Action done. current project #"+str(clickedProjNum)+ " " + current_projs.get(pk=clickedProjNum).name)
+        
+    logThis( "Action done. current project #"+str(clickedProjNum)+ " " +\
+             current_projs.get(pk=clickedProjNum).name)
     displayList = buildDisplayList(current_projs,clickedProjNum, 'follows',0,[])
 
     #t = loader.get_template('pim1_tmpl/items/index.html')
@@ -571,7 +547,7 @@ def actionItem(request, pItem, action):
     })
     return HttpResponse(t.render(c))
 
-################################################################################
+#################################################################(end of actionItem)########
 
 def findLastKid(itemx, lastItemID):
     ###   look for first item below you with =< level of indent
