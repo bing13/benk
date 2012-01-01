@@ -7,32 +7,34 @@
 ##  ex., Item.objects.filter(project=1).exclude(id = 1).delete()
 
 from django.http import HttpResponse, HttpResponseRedirect
-from pim1.pengine.models import Item, Project
-# ++ was "pengine.models"
 from django.template import Context, loader
-import datetime, sys;
-import simplejson
-
-#D410 sys.path.append('C:\\Documents and Settings\\Owner\\My Documents\\Python\\library');
-#D610 #sys.path.append('C:\\Documents and Settings\\Bernard Hecker\\My Documents\\python\\lib')
-#DreamHost - UNIX
-sys.path.append('/home/bhadmin13/bernardhecker.com/pim1/library');
-
-#Battlestar
-#sys.path.append('C:\\Users\\Bernard\\Documents\\python64\\library');
-
-import gooOps;
-from rfc3339 import rfc3339;
-
 from django.shortcuts import render_to_response
 from django.core.context_processors import csrf
 from django.views.decorators.csrf import csrf_protect
 from django.template import RequestContext
+
 from django import forms
+from django.forms.fields import DateField, ChoiceField, MultipleChoiceField
+from django.forms.widgets import CheckboxSelectMultiple
 #from django.forms.models import modelformset_factory 
 
+# ++ was "pengine.models"
+from pim1.pengine.models import Item, Project
+
+import datetime, sys, simplejson, codecs
+
+#D410 sys.path.append('C:\\Documents and Settings\\Owner\\My Documents\\Python\\library');
+#D610 #sys.path.append('C:\\Documents and Settings\\Bernard Hecker\\My Documents\\python\\lib')
+#Battlestar
+#sys.path.append('C:\\Users\\Bernard\\Documents\\python64\\library');
+
+#DreamHost - UNIX
+sys.path.append('/home/bhadmin13/dx.bernardhecker.com/pim1/library');
+
+import gooOps, dirlist;
+from rfc3339 import rfc3339;
+
 LOGFILE = '/home/bhadmin13/dx.bernardhecker.com/pim1/benklog1.log'
-#LOGOUT = open(LOGFILE, 'a')
 
 ## https://docs.djangoproject.com/en/1.2/topics/forms/
 ## https://docs.djangoproject.com/en/1.3/intro/tutorial04/
@@ -42,6 +44,13 @@ class ImportForm(forms.Form):
 
 class ssearchForm(forms.Form):
     searchfx=forms.CharField(max_length=200)
+
+
+## BACKUPCHOICES = (('1','First',),('2','Second',),('3','thurd',))
+
+## class serializeForm(forms.Form):
+##     BackupTheseProjects=forms.MultipleChoiceField(required=False, widget=CheckboxSelectMultiple, choices=BACKUPCHOICES)
+
 
 
 #class ItemEditForm(forms.ModelForm):
@@ -819,7 +828,7 @@ def editItem(request, pItem):
         logThis("Formset saved: "+str(changedInstances))
 
         ## POST completed, now redirect to the reconstructed view
-        return HttpResponseRedirect('/drag/'+str(itemProject)+'/#'+str(pItem))
+        return HttpResponseRedirect('/pim1/drag/'+str(itemProject)+'/#'+str(pItem))
     
     else:
         formset = itemFormSet(queryset=Item.objects.filter(pk=pItem))
@@ -858,7 +867,7 @@ def importfile(request):
             importISdata(fileToImport,projectToAdd)
 
             # Redirect after POST
-            return HttpResponseRedirect('/projdetail/'+str(projectToAdd)) 
+            return HttpResponseRedirect('/pim1/projdetail/'+str(projectToAdd)) 
     else:
         form = ImportForm() # An unbound form
 
@@ -1015,7 +1024,8 @@ def xhr_move(request):
     logThis("xhr_move, message="+message)
     kidList=drag_move(int(moveRequest['ci']), int(moveRequest['ti']))
     jsonKid=simplejson.dumps(kidList)
-
+    logThis("xhr_move, returning="+jsonKid)
+ 
     return HttpResponse(jsonKid)
 
 ######################################################################
@@ -1025,6 +1035,12 @@ def drag_move(CIid, TIid):
     CI=Item.objects.get(pk=CIid)
     TI=Item.objects.get(pk=TIid)
     logThis("\n======dragmove=> CIid:TIid    "+str(CIid)+":"+str(TIid))
+    
+    if CI.follows == TI.id:
+        ## invalid move
+        logThis('\n== WARNING: move of item onto item it follows is invalid. Not executing.')
+        return([])
+
  
     lastItemID=getLastItemID(CI.project_id)
 
@@ -1069,9 +1085,102 @@ def drag_move(CIid, TIid):
             thisKid.indentLevel=countIndent(thisKid)
             thisKid.save()
 
-    logThis('dragmove=> assignment made, targetFollower.follows='+str(targetFollower.follows))
+            #extend kidPair -- add the info JS refreshItem function will need
+            itemData=[thisKid.title, thisKid.parent, thisKid.indentLevel, thisKid.priority, thisKid.status, thisKid.HTMLnoteBody]
+            kidPair=kidPair+itemData
+
+
 
     targetFollower.save()
+    logThis('dragmove=> assignment made, targetFollower.follows='+str(targetFollower.follows))
+    
+    parentKidUpdate = []
+    parentKidUpdate.append([CI.id, CI.follows, CI.title, CI.parent, CI.indentLevel,CI.priority, CI.status, CI.HTMLnoteBody] )
+    parentKidUpdate.append([TI.id, TI.follows, TI.title, TI.parent, TI.indentLevel,TI.priority, TI.status,  TI.HTMLnoteBody] )
+    parentKidUpdate += kidList
+    
+    logThis('dragmove=> parentKidUpdate: ' + str(parentKidUpdate) )
+    return(parentKidUpdate)
 
-    logThis('dragmove=> kidlist: ' + str(kidList) )
-    return(kidList)
+######################################################################
+def backupdata(request):
+    # projlist=0 is default value, overridden by passed parameters
+
+    BACKUPDIR='/home/bhadmin13/dx.bernardhecker.com/pim1/benk_backups/'
+
+    current_projs = Project.objects.order_by('name')
+
+
+
+    #BackupTheseProjects = []
+    if request.method == 'POST': # If the form has been posted...
+        #form = ImportForm(request.POST) # A form bound to the POST data
+        #if form.is_valid(): # All validation rules pass
+        # Process the data in form.cleaned_data
+        if "BackupTheseProjects" in request.POST:
+            BackupTheseProjects=request.POST['BackupTheseProjects']
+            logThis('backup ==> projlist:'+ str(BackupTheseProjects))
+
+
+            for thisBackupID in BackupTheseProjects:
+                count=0
+                fhandle=Project.objects.get(pk=thisBackupID).name[:6].replace(' ','_')
+                pnum="%03d" % int(thisBackupID)
+                filename="P"+pnum+fhandle+'_'+datetime.datetime.now().strftime("%Y%m%d_%H%M%S")+'.bnk'
+                ## open in a way that handles UTF-8
+                OUTX = codecs.open(BACKUPDIR+filename,'w',encoding='utf-8')
+                
+                
+                # no, gotta save them in outline order, for sanity's sake
+                #thisProjItems=Item.objects.filter(project=thisBackupID)
+
+                ThisProjItems = Item.objects.filter(project=thisBackupID)
+                lx = len(ThisProjItems)
+                j=0
+
+                # this array will store item IDs in Outline order for this project
+                projItemsIDs=[]
+                for i in range(0,lx):
+                    thisItem=ThisProjItems.get(follows=j)
+                    projItemsIDs.append(thisItem.id)
+                    j = thisItem.id
+            
+                for tx in projItemsIDs:
+                    thisItem=ThisProjItems.get(pk=tx)
+                    OUTX.write('@@!! NEW_RECORD =====================================\n')
+                    OUTX.write('@@!! ID '+str(thisItem.id)+'\n')
+                    OUTX.write('@@!! FOLLOWS '+str(thisItem.follows)+'\n')
+                    OUTX.write('@@!! PARENTS '+str(thisItem.parent)+'\n')
+                    OUTX.write('@@!! INDENT_LEVEL '+str(thisItem.indentLevel)+'\n')
+                    OUTX.write('@@!! SELECTOR '+thisItem.title+'\n')
+                    OUTX.write('@@!! PROJECT '+str(thisItem.project)+'\n')
+                    OUTX.write('@@!! PRIORITY '+str(thisItem.priority)+'\n')
+                    OUTX.write('@@!! STATUS '+str(thisItem.status)+'\n')
+
+                    OUTX.write('@@!! DATE_CREATED '+str(thisItem.date_created)+'\n')
+                    OUTX.write('@@!! DATE_MODIFIED '+str(thisItem.date_mod)+'\n')
+
+                    OUTX.write('@@!! DATE_GOO_TASK '+str(thisItem.date_gootask_display)+'\n')
+                    OUTX.write('@@!! GOO_TASK_ID '+thisItem.gtask_id+'\n')
+                    OUTX.write('@@!! NOTE follows \n')
+                    OUTX.write(thisItem.HTMLnoteBody+'\n')
+
+                    count += 1
+
+                logThis("Project "+str(thisBackupID)+": "+str(count)+" items backed up to "+filename)
+                OUTX.close()
+            #return HttpResponseRedirect('/serialize/')
+    else:
+        #form = serializeForm() # An unbound form
+        pass
+
+
+
+
+    return render_to_response('pim1_tmpl/serialize.html', {
+        'dirlist':dirlist.dirlist(BACKUPDIR),
+        'backupdir':BACKUPDIR,
+        'pagecrumb':'serialize/backup',
+        'current_projs':current_projs,
+        'nowx':datetime.datetime.now().strftime("%Y/%m/%d  %H:%M:%S")
+        }, context_instance=RequestContext(request) )

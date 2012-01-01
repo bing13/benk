@@ -11,11 +11,11 @@
 <div class="homecontent">
 
 
-<h4>Import from Info Select</h4>
+<h4>Backup Benk Data</h4>
 
-<p>Imports digested Info Select files. Place files to import into the "import" folder.</p>
+<p>Saves to dx.bernardhecker.com/pim1/benk_backups</p>
 
-<form action="/pim1/importfile/" method="post">
+<form action="/importfile/" method="post">
 {% csrf_token %}
 {{ form.as_p }}
 <input type="submit" value="Submit" />
@@ -24,7 +24,7 @@
 <p>20111203_PMO_T4pu.txt</p>
 <p>shortie.txt</p>
 <p>PMO project= '3'</p>
-<p><strong>Be sure to neutralize the IS_import_IDs before a second importation.</strong> Beware hogging too much CPU. Try using <b>update</b> instead of x.save().</p>
+<p><strong>Be sure to neutralize the IS_import_IDs before a second importation.</strong></p>
 <hr/>
 <h2>Instructions</h2>
 <p>To import Info Select items....</p>

@@ -7,7 +7,7 @@
     <table class="item_table">
     {% for ci in current_items %}
 
-     <tr class="items"><td class="titlecol itemtd" colspan="2">({{ci.id}}) <a href="/admin/pengine/item/{{ci.id}}/">{{ ci.title }}</a></td></tr>
+     <tr class="items"><td class="titlecol itemtd" colspan="2">({{ci.id}}) <a href="/pim1/admin/pengine/item/{{ci.id}}/">{{ ci.title }}</a></td></tr>
 
      <tr class="items"><td class="itemtd">projects:
 	     {% for px in ci.projects %}
@@ -17,7 +17,7 @@
 	</td>
 
      <td class="itemtd">p/f:i {{ci.parent}}/{{ci.follows}}:<span class="indent">{{ci.indent}}</span>  
-     <span "actionArrows">delete? <a href="/item/delete/{{ ci.id }}">&otimes;</a></span></td
+     <span "actionArrows">delete? <a href="/pim1/item/delete/{{ ci.id }}">&otimes;</a></span></td
 </tr>
 
      <tr class="items"><td class="itemtd">priority: {{ ci.priority }}:{{ci.priorityText}}	</td><td class="itemtd">status: {{ ci.status }}:{{ci.statusText}}</td></tr>

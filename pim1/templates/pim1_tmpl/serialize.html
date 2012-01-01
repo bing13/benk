@@ -1,0 +1,43 @@
+{% extends "pim1_tmpl/pim1_base.html" %}
+
+
+
+{% block content %}
+<div class="backupfilesmain">
+
+
+<h4>Backup Benk Data</h4>
+
+
+<form action="/serialize/" method="post">
+{% csrf_token %}
+
+<p>Select projects to back up:</p>
+
+
+
+
+
+<ul>
+{% for px in current_projs %}
+
+<li><label for="id_BackupTheseProjects_{{px.id}}"><input type="checkbox" name="BackupTheseProjects" value="{{px.id}}" id="id_BackupTheseProjects_{{px.id}}" /> {{ px.name }} ( {{ px.id }}</label></li>
+
+
+{% endfor %}
+
+</ul>
+
+
+<input type="submit" value="Submit" />
+</form>
+
+
+<hr/>
+
+<div class= "backUpFileList">
+{{ dirlist|safe }}
+
+</div>
+{% endblock %}
+ 
