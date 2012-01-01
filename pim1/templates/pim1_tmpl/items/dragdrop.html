@@ -75,7 +75,7 @@ function heightFix(itemID) {
 	  <span class="prio priority_{{ ci.priority }}">{{ci.statusText|default:"&nbsp;"}}</span>
 
 
-          <span class="itemdrag ti">{#{ci.indentString|safe}#}<span class="indent_{{ci.indentLevel}}">{{ ci.outlineBullet|safe }} <a href="/pim1/item/edititem/{{ ci.id }}" class="{{ci.statusText}} titlelink">{{ ci.title }}</a></span></span>
+          <span class="itemdrag ti">{#{ci.indentString|safe}#}<span class="indent_{{ci.indentLevel}}"><span class="marker">{{ ci.outlineBullet|safe }} </span><a href="/pim1/item/edititem/{{ ci.id }}" class="{{ci.statusText}} titlelink">{{ ci.title }}</a></span></span>
 
 
 

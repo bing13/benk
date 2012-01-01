@@ -554,7 +554,10 @@ def actionItem(request, pItem, action):
         })
         return HttpResponse(t.render(c))
     else:
-        ## for all of these operations, we may need to refresh CI, ci.follows, ci.parent, ci children, the item that follows CI
+        ## for all of these operations, we may need to refresh CI, ci.follows, ci.parent, ci children, the item that follows CI 445544
+
+        
+        itemData=[thisKid.title, thisKid.parent, thisKid.indentLevel, thisKid.priority, thisKid.status, thisKid.HTMLnoteBody, returnMarker(thisKid)]
         return (clickedItem.id)
 
 
