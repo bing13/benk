@@ -40,6 +40,8 @@ import drag_actions, sharedMD;
 
 
 LOGFILE = '/home/bhadmin13/dx.bernardhecker.com/pim1/benklog1.log'
+IMPORTDIR='/home/bhadmin13/dx.bernardhecker.com/pim1/benk_imports/'
+BACKUPDIR='/home/bhadmin13/dx.bernardhecker.com/pim1/benk_backups/'
 
 ## https://docs.djangoproject.com/en/1.2/topics/forms/
 ## https://docs.djangoproject.com/en/1.3/intro/tutorial04/
@@ -145,7 +147,7 @@ def RETIREDlogThis(s):
 
 ##################################################################
 def buildDisplayList(projectx, projID, ordering, hoistID, useList):
-    sharedMD.logThis("Entering buildDisplayList <====================")
+    sharedMD.logThis("Entering buildDisplayList <=====")
 
     ### Select the items to operate on ###############
 
@@ -191,8 +193,10 @@ def buildDisplayList(projectx, projID, ordering, hoistID, useList):
     sharedMD.logThis("....parent list built...")
     ### get project string to where it can be displayed    
     for ix in items2List:
+        
         ### count the number of ancestors to determine indent level
-        ### THIS CALL IS VERY SLOW, accounting for 39sec out of 47sec total
+        ### THIS CALL IS VERY SLOW, accounting for 39sec out of 47sec total. Removed.
+        ### indentLevel is now stored in model, countIndent only used for single items
         #ix.indent=countIndent(ix)
         
         if ordering=='follows':
@@ -828,6 +832,8 @@ def editItem(request, pItem):
     ###https://docs.djangoproject.com/en/1.2/topics/forms/modelforms/#using-a-model-formset-in-a-view
     
     itemFormSet = forms.models.modelformset_factory(Item, max_num=0, exclude=('IS_import_ID','date_gootask_display', 'gtask_id', 'project'))
+
+    
     ## "field" and "exclude" operands supported
 
     if request.method == 'POST':
@@ -848,6 +854,8 @@ def editItem(request, pItem):
         
     return render_to_response("pim1_tmpl/items/editItem.html", {
         "pItem": pItem,
+        "rawform": formset,
+        
         "formset": formsetOut,
         'pagecrumb':'edit an item',
         'current_projs':current_projs,
@@ -858,6 +866,7 @@ def editItem(request, pItem):
 ############################################################################
 
 def importfile(request):
+
     current_projs = Project.objects.order_by('name')
     c = {}
     c.update(csrf(request))	  
@@ -875,11 +884,12 @@ def importfile(request):
             importISdata(fileToImport,projectToAdd)
 
             # Redirect after POST
-            return HttpResponseRedirect('/pim1/projdetail/'+str(projectToAdd)) 
+            return HttpResponseRedirect('/pim1/drag/'+str(projectToAdd)) 
     else:
         form = ImportForm() # An unbound form
 
     return render_to_response('pim1_tmpl/importIS.html', {
+                'dirlist':dirlist.dirlist(IMPORTDIR),
                 'form':form,
                 'pagecrumb':'import',
                 'current_projs':current_projs,
@@ -892,10 +902,11 @@ def importISdata(importFile,newProjectID):
 #    import dircache
 #    print "default level=",dircache.listdir('.')
 
-    startdir='/home/bhadmin13/dx.bernardhecker.com/pim1/pengine/imports/'
+
+    #startdir='/home/bhadmin13/dx.bernardhecker.com/pim1/pengine/imports/'
     textAccumulator = ''
-    sharedMD.logThis( "+++ b1 importISdata from " + startdir + importFile)
-    INFILE=open(startdir+importFile,'r')
+    sharedMD.logThis( "+++ b1 importISdata from " + IMPORTDIR + importFile)
+    INFILE=open(IMPORTDIR + importFile,'r')
     allLines=INFILE.readlines()
     currentISid = 0
     previousNewItemBenkID=getLastItemID(newProjectID)
@@ -1023,6 +1034,8 @@ def xhr_test(request):
 #(r'^xhr_test$','your_project.your_app.views.xhr_test'),
 ######################################################################
 def xhr_actions(request):
+
+    mimetypex = 'application/javascript'
     sharedMD.logThis('Entering xhr_actions...')
     
     actionRequest=request.GET
@@ -1047,8 +1060,9 @@ def xhr_actions(request):
     ## to dragmove #################################
 
     if actionRequest['ajaxAction'] == 'dragmove':
-        ParKidList=drag_move(int(actionRequest['ci']), int(actionRequest['ti']))
-        refreshThese=simplejson.dumps(ParKidList)
+        #ParKidList=
+        refreshThese= drag_move(int(actionRequest['ci']), int(actionRequest['ti']))
+        #refreshThese=simplejson.dumps(ParKidList)
         #sharedMD.logThis("---> xhr_actions, dragmove, returning="+str(jsonParKid))
         #return HttpResponse(jsonParKid)
     
@@ -1064,6 +1078,10 @@ def xhr_actions(request):
     elif actionRequest['ajaxAction']== 'demote':
         refreshThese=DRAGACTIONS.demote(clickedItem, lastItemID)
 
+    elif actionRequest['ajaxAction']== 'delete':
+        # javascript on the form already deleted the item from the DOM
+        refreshThese=DRAGACTIONS.delete(clickedItem, lastItemID)
+
 
     else:
         sharedMD.logThis("+++ERROR+++. Uncaught actionRequest['ajaxAction']:"+actionRequest['ajaxAction'])
@@ -1071,7 +1089,7 @@ def xhr_actions(request):
 
     sharedMD.logThis("  REFRESH: "+str(refreshThese))
     jRefresh=simplejson.dumps(refreshThese)
-    return HttpResponse(jRefresh)
+    return HttpResponse(jRefresh, mimetype=mimetypex)
         
 
 ######################################################################
@@ -1121,6 +1139,9 @@ def drag_move(CIid, TIid):
 
     sharedMD.logThis('dragmove=> targetFollowerID:'+str(targetFollower.id)+'  targetFollower.follows:'+str(targetFollower.follows) + '  lastkid:'+str(lastKidID))
     ## at this point tF.follows is previous one, 
+
+
+    kidItems=[]
     
     if lastKidID == 0:
         targetFollower.follows=CI.id
@@ -1131,18 +1152,18 @@ def drag_move(CIid, TIid):
 
         ## also correct indentLevel, since parent indent might have changed
         sharedMD.logThis(' dm=>kidList = '+str(kidList))
-        for kidPair in kidList:
-            thisKid=Item.objects.get(pk=kidPair[0])
-            
 
+
+        
+        for kidx in kidList:
+            #kidx used to be kidpair[]
+            thisKid=Item.objects.get(pk=kidx)
             thisKid.indentLevel=countIndent(thisKid)
             thisKid.save()
             
-            #extend kidPair -- add the info JS refreshItem function will need
-
-            itemData=[thisKid.title, thisKid.parent, thisKid.indentLevel, thisKid.priority, thisKid.status, thisKid.HTMLnoteBody, returnMarker(thisKid)]
+            #extend kidItems (formerly kidPair( -- add the info JS refreshItem function will need
             
-            kidPair += itemData
+            kidItems.append([thisKid.id, thisKid.follows, thisKid.title, thisKid.parent, thisKid.indentLevel, thisKid.priority, thisKid.status, thisKid.HTMLnoteBody, returnMarker(thisKid)])
             #sharedMD.logThis(' => kidPair '+str(thisKid.id)+": "+str(kidPair))
 
     
@@ -1152,17 +1173,21 @@ def drag_move(CIid, TIid):
 
     parentKidUpdate.append([CI.id, CI.follows, CI.title, CI.parent, CI.indentLevel,CI.priority, CI.status, CI.HTMLnoteBody,returnMarker(CI) ] )
 
-    parentKidUpdate.append([TI.id, TI.follows, TI.title, TI.parent, TI.indentLevel,TI.priority, TI.status,  TI.HTMLnoteBody, returnMarker(TI) ] )
+    ## when drag-moving in CLOSE QUARTERS, and item like TI might go stale, b/c
+    ## it was changed by, ex., b/c it was ALSO CI follower or some such. SO for
+    ## now, let's get a fresh TI to write out.
+
+    newTI=Item.objects.get(pk=TI.id)
+
+    parentKidUpdate.append([newTI.id, newTI.follows, newTI.title, newTI.parent, newTI.indentLevel,newTI.priority, newTI.status,  newTI.HTMLnoteBody, returnMarker(newTI) ] )
 
     ## have to refresh the CI's parent, in case it's marker has changed w/ the move
     CIparent=Item.objects.get(pk=origCIparent)
     
     parentKidUpdate.append([CIparent.id, CIparent.follows, CIparent.title, CIparent.parent, CIparent.indentLevel, CIparent.priority, CIparent.status, CIparent.HTMLnoteBody, returnMarker(CIparent) ] )
    
+    parentKidUpdate += kidItems
     
-    parentKidUpdate += kidList
-    
-    sharedMD.logThis('dragmove=> parentKidUpdate: ' + str(parentKidUpdate) )
     return(parentKidUpdate)
 
 #############################################################################
@@ -1177,7 +1202,7 @@ def returnMarker(Itemx):
 def backupdata(request):
     # projlist=0 is default value, overridden by passed parameters
 
-    BACKUPDIR='/home/bhadmin13/dx.bernardhecker.com/pim1/benk_backups/'
+
 
     current_projs = Project.objects.order_by('name')
 

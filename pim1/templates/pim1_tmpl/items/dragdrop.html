@@ -69,7 +69,7 @@ function heightFix(itemID) {
         <!-- removed this class from below div: ui-widget-headerx --> 
         <div class="itemsdrag bhdraggable dropx"  id="{{ ci.id }}">
 
- 	  <span class="itemdrag actionArrows"><a class="ilid" href="/pim1/list-items/hoist/{{ci.id}}">{{ci.id}}</a>&nbsp;<a href="/pim1/item/add/{{ ci.id }}">&harr;</a><a href="#" onClick='actionJax({{ ci.id }},0,"promote")' >&larr;</a><a href="#"  onClick='actionJax({{ ci.id }},0,"demote")'>&rarr;</a><a href="#" onClick='actionJax({{ ci.id }},0,"moveUp")'>&uarr;</a><a href="#" onClick='actionJax({{ ci.id }},0,"moveDown")'>&darr;</a><a href="/pim1/item/delete/{{ ci.id }}">&otimes;</a>
+ 	  <span class="itemdrag actionArrows"><a class="ilid" href="/pim1/list-items/hoist/{{ci.id}}">{{ci.id}}</a>&nbsp;<a href="/pim1/item/add/{{ ci.id }}">&harr;</a><a href="#" onClick='actionJax({{ ci.id }},0,"promote")' >&larr;</a><a href="#"  onClick='actionJax({{ ci.id }},0,"demote")'>&rarr;</a><a href="#" onClick='actionJax({{ ci.id }},0,"moveUp")'>&uarr;</a><a href="#" onClick='actionJax({{ ci.id }},0,"moveDown")'>&darr;</a><a href="#" onClick='deleteMe({{ ci.id }});actionJax({{ ci.id }},0,"delete")'>&otimes;</a>
           </span>
 
 	  <span class="prio priority_{{ ci.priority }}">{{ci.statusText|default:"&nbsp;"}}</span>
@@ -79,7 +79,7 @@ function heightFix(itemID) {
 
           <span class="itemdrag notecell">
 	  {% if ci.HTMLnoteBody|length > 2 %}
- 	    <a onClick="toggleLI('notebody_{{ci.id}}');" class="noteplus">&oplus;</a>
+ 	    <a onClick="toggleNoteBody('notebody_{{ci.id}}');" class="noteplus">&oplus;</a>
 	    <a onClick='detailpop("{{ci.id}}")' class="notearr">&rArr;</a> </span>
 	   
 	  {% else %}
@@ -96,7 +96,7 @@ function heightFix(itemID) {
     {% endfor %}
     </div>
 
-<p><img src="http://media.bernardhecker.com/pim1/static/images/itemlistwidget.gif"></p>
+<p class="ilid"> {{ current_items|length }}<img src="http://media.bernardhecker.com/pim1/static/images/itemlistwidget.gif"></p>
 
 {% else %}
    

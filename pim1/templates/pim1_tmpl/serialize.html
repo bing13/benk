@@ -9,7 +9,7 @@
 <h4>Backup Benk Data</h4>
 
 
-<form action="/serialize/" method="post">
+<form action="/pim1/serialize/" method="post">
 {% csrf_token %}
 
 <p>Select projects to back up:</p>
@@ -21,7 +21,7 @@
 <ul>
 {% for px in current_projs %}
 
-<li><label for="id_BackupTheseProjects_{{px.id}}"><input type="checkbox" name="BackupTheseProjects" value="{{px.id}}" id="id_BackupTheseProjects_{{px.id}}" /> {{ px.name }} ( {{ px.id }}</label></li>
+<li><label for="id_BackupTheseProjects_{{px.id}}"><input type="checkbox" name="BackupTheseProjects" value="{{px.id}}" id="id_BackupTheseProjects_{{px.id}}" /> {{ px.name }} ( {{ px.id }} )</label></li>
 
 
 {% endfor %}

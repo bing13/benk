@@ -6,7 +6,14 @@
 
 <h3>Editing {{ pItem }}</h3>
 
-<p><a href="/pim1/admin/pengine/item/{{ pItem }}">Admin edit</a> for this record.</p>
+
+
+
+   {% if formset.errors %}
+      <h5>Please correct the error {{ formset.errors|pluralize }} below.</h5>
+
+   {% endif %}
+
 
    <form action="/pim1/item/edititem/{{ pItem }}/" method="post" action="">
    {% csrf_token %}
@@ -22,6 +29,7 @@
     <p>No formset available.</p>
 {% endif %}
 
+<p><a href="/pim1/admin/pengine/item/{{ pItem }}">Admin edit</a> for this record.</p>
 
 
 {% endblock %}

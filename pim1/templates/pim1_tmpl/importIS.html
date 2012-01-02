@@ -21,31 +21,40 @@
 <input type="submit" value="Submit" />
 </form>
 
-<p>20111203_PMO_T4pu.txt</p>
-<p>shortie.txt</p>
-<p>PMO project= '3'</p>
-<p><strong>Be sure to neutralize the IS_import_IDs before a second importation.</strong> Beware hogging too much CPU. Try using <b>update</b> instead of x.save().</p>
+
+<div class= "backUpFileList">
+{{ dirlist|safe }}
+
+</div>
+
+
+
+
+
 <hr/>
-<h2>Instructions</h2>
-<p>To import Info Select items....</p>
+<h3>Instructions To import Info Select items....</h3>
+<p><em>Notes</em></p>
 <ol>
 <li>You can delete existing items (in proj 3) with: Item.objects.filter(project__id=3).delete()</li>
-<li>Thne, be <strong>sure to create an anchor item, parent=0, follower=0</li>
-<li>if you have already imported IS files, you need to <b>CLEAR THE EXISTING IS IDS THAT WERE IMPORTED THE FIRST TIME.</b> That's because they are not unique across imports. There is not a built-in mechanism to do this yet.
+<li>Then, be sure to create an anchor item for the project, parent=0, follower=0</li>
+<li>Import depends upon importISid's, which are cleared after each import</li>
+<li>Beware hogging too much CPU. Try using <b>update</b> instead of x.save()?</li>
 
+</ol>
+<p>Procedure</p>
+<ol>
 <li>export a chunk of an IS file to HTML</li>
 <li>move that to the same directory with <i>parseIShtml.py</i>.  The main selector file should be in that directory, and the supporting files in a subdirectory of that directory. </li>
 <li>run parseIShtml.py over the tree of web pages</li>
 <li>use the resulting output file to enter here</li>
-<li>before you run the import, be sure to create the Project in Benk that you want the 
-import to fall under, and note the number equivalent for this form.</li>
-<li>run it and wait. PMO, 1832 items, took about five minutes</li>
-<li>rejoice</li>
+<li>before you run the import, create the Project and its anchor item in Benk.</li>
+<li>run it and wait. 1832 items, took about five minutes</li>
 
 </ol>
 
 
 
 </div>
+
 {% endblock %}
  

@@ -1,0 +1,46 @@
+@@!! NEW_RECORD =====================================
+@@!! ID 4000
+@@!! FOLLOWS 
+@@!! PARENTS 
+@@!! SELECTOR Simple Test data 
+@@!! NEW_RECORD =====================================
+@@!! ID 4001
+@@!! FOLLOWS 4000
+@@!! PARENTS 4000
+@@!! SELECTOR First regular item - parent
+@@!! NEW_RECORD =====================================
+@@!! ID 4002
+@@!! FOLLOWS 4001
+@@!! PARENTS 4001
+@@!! SELECTOR First child of first parent
+@@!! NOTE nothing
+@@!! NEW_RECORD =====================================
+@@!! ID 4003
+@@!! FOLLOWS 4002
+@@!! PARENTS 4001
+@@!! SELECTOR 2nd child of 1st parent
+@@!! NOTE also nothing
+@@!! NEW_RECORD =====================================
+@@!! ID 4004
+@@!! FOLLOWS 4003
+@@!! PARENTS 4000
+@@!! SELECTOR Second regular item - parent
+@@!! NEW_RECORD =====================================
+@@!! ID 4005
+@@!! FOLLOWS 4004
+@@!! PARENTS 4004
+@@!! SELECTOR First child of second regular item
+@@!! NOTE nothing
+@@!! NEW_RECORD =====================================
+@@!! ID 4006
+@@!! FOLLOWS 4005
+@@!! PARENTS 4004
+@@!! SELECTOR second child of second regular item
+@@!! NOTE this is the last imported item.
+@@!! NEW_RECORD =====================================
+@@!! ID 4007
+@@!! FOLLOWS 4006
+@@!! PARENTS 4000
+@@!! SELECTOR LAST IMPORTED ITEM
+@@!! NOTE this is the last imported item.
+@@!! NEW_RECORD =====================================

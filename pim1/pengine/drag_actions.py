@@ -23,8 +23,9 @@ class dragOps():
     def updateIDsDecorate(self, IDlist):
         decoratedItems=[]
         for id in IDlist:
-            thisItem=Item.objects.get(pk=id)
-            decoratedItems.append([thisItem.id, thisItem.follows, thisItem.title, thisItem.parent, thisItem.indentLevel, thisItem.priority, thisItem.status, thisItem.HTMLnoteBody, self.DAreturnMarker(thisItem)])
+            if id != 0 :
+                thisItem=Item.objects.get(pk=id)
+                decoratedItems.append([thisItem.id, thisItem.follows, thisItem.title, thisItem.parent, thisItem.indentLevel, thisItem.priority, thisItem.status, thisItem.HTMLnoteBody, self.DAreturnMarker(thisItem)])
         return(decoratedItems)
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
@@ -222,7 +223,7 @@ class dragOps():
         return(self.updateIDsDecorate(updateListIDs))
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-#demote
+# demote
     def demote(self,  clickedItem,  lastItemID):
 
         if clickedItem.parent==clickedItem.follows:
@@ -285,5 +286,36 @@ class dragOps():
             oldFollower.save()
 
         return(newItem)
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# delete ##
     
-##
+    def delete(self, clickedItem, lastItemID):
+
+        ghostsParentID = clickedItem.parent
+        ghostsID = clickedItem.id
+
+        
+        if clickedItem.id != lastItemID:
+            
+            sharedMD.logThis( "==> deleting "+str(clickedItem.id))
+            
+            followingMe = Item.objects.get(follows=clickedItem.id)
+            followingMe.follows=clickedItem.follows
+            if followingMe.parent==clickedItem.id:
+                followingMe.parent=clickedItem.parent
+            followingMe.save()
+
+        # remove entry from Projects
+        # clickedItem.project is a project object, another dot to get id
+        projObjc=Project.objects.get(pk=clickedItem.project.id)
+        projObjc.item_set.remove(clickedItem)
+
+        # pull this before the item is deleted
+        toUpdate = self.updateIDsDecorate([ghostsParentID, followingMe.id, ghostsID]) 
+
+        # remove item
+        clickedItem.delete()
+        
+        return(toUpdate)
