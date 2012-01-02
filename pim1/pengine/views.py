@@ -34,7 +34,10 @@ sys.path.append('/home/bhadmin13/dx.bernardhecker.com/pim1/library');
 import gooOps, dirlist;
 from rfc3339 import rfc3339;
 
-import drag_actions;
+import drag_actions, sharedMD;
+
+#import test1;
+
 
 LOGFILE = '/home/bhadmin13/dx.bernardhecker.com/pim1/benklog1.log'
 
@@ -63,7 +66,7 @@ def homepage(request):
 ##################################################################
 
 def itemlist(request,proj_id):
-    logThis("Entering itemlist <====================")
+    sharedMD.logThis("Entering itemlist <====================")
     
     ##current_items=Item.objects.all()
     current_projs = Project.objects.order_by('name')
@@ -84,7 +87,7 @@ def itemlist(request,proj_id):
     return HttpResponse(t.render(c))
 ##################################################################
 def allMyChildren(targetID, resultList):
-    logThis("Entering allMyChildren <====================")
+    sharedMD.logThis("Entering allMyChildren <====================")
 
     children= Item.objects.filter(parent=targetID)
     for cx in children:
@@ -132,7 +135,7 @@ def hoistItem(request,pItem):
 
 
 ##################################################################
-def logThis(s):
+def RETIREDlogThis(s):
     LX = open(LOGFILE, 'a')
     t = datetime.datetime.now().strftime("%Y:%m:%d  %H:%M:%S")
     LX.write(t+": "+s+'\n')
@@ -142,7 +145,7 @@ def logThis(s):
 
 ##################################################################
 def buildDisplayList(projectx, projID, ordering, hoistID, useList):
-    logThis("Entering buildDisplayList <====================")
+    sharedMD.logThis("Entering buildDisplayList <====================")
 
     ### Select the items to operate on ###############
 
@@ -176,7 +179,7 @@ def buildDisplayList(projectx, projID, ordering, hoistID, useList):
     ### Build the parent list
     ixList=[]
     jxHash={}
-    logThis("..queries done...")
+    sharedMD.logThis("..queries done...")
 
 
     parentList=[] ## list of all items that are parents
@@ -185,7 +188,7 @@ def buildDisplayList(projectx, projID, ordering, hoistID, useList):
 
     ###SLOW BLOCK BEGINS########################################################################
         
-    logThis("....parent list built...")
+    sharedMD.logThis("....parent list built...")
     ### get project string to where it can be displayed    
     for ix in items2List:
         ### count the number of ancestors to determine indent level
@@ -209,7 +212,7 @@ def buildDisplayList(projectx, projID, ordering, hoistID, useList):
             ix.outlineBullet="&bull;"
             
 
-    logThis( ".....ix built.....")
+    sharedMD.logThis( ".....ix built.....")
 
     displayList=[]
     followHash={}
@@ -218,10 +221,10 @@ def buildDisplayList(projectx, projID, ordering, hoistID, useList):
         ## generate outline-ordered and formatted output list
         for f2 in ixList:
             if followHash.has_key(f2.follows): 
-                logThis( "\n=====> WARNING!! followHash duplicate")
+                sharedMD.logThis( "\n=====> WARNING!! followHash duplicate")
                 fh1=Item.objects.get(pk=followHash[f2.follows])
-                logThis("=====>ID:"+str(fh1.id)+":" + str(fh1) +"  follows=" + str(fh1.follows)+']')
-                logThis("=====>ID:"+str(f2.id)+":" + str(f2) +"  follows=" + str(f2.follows)+']\n')
+                sharedMD.logThis("=====>ID:"+str(fh1.id)+":" + str(fh1) +"  follows=" + str(fh1.follows)+']')
+                sharedMD.logThis("=====>ID:"+str(f2.id)+":" + str(f2) +"  follows=" + str(f2.follows)+']\n')
 
             ## this is the critial line for list-building
             followHash[f2.follows] = f2.id
@@ -251,14 +254,14 @@ def buildDisplayList(projectx, projID, ordering, hoistID, useList):
                     continue
                 else:
                     break
-            logThis("FHK is="+str(fhk))
+            sharedMD.logThis("FHK is="+str(fhk))
             followHash[0]=followHash[fhk]
             followHash.pop(fhk)
-            ###logThis('new followhash'+str(followHash))
+            ###sharedMD.logThis('new followhash'+str(followHash))
             
         currentID = 0
 
-        logThis("...built followhash....")
+        sharedMD.logThis("...built followhash....")
 
         ## OK, now follow the chain of who follows whom, starting with whoever follows Parent ID = 0
         while  followHash.has_key(currentID):
@@ -267,11 +270,11 @@ def buildDisplayList(projectx, projID, ordering, hoistID, useList):
 
         # theoretically, having no followHash key for currentID means you're on the last item
         # but beware re: data integrity / lost items
-        logThis(".....displayList built...")
+        sharedMD.logThis(".....displayList built...")
     else:
 
         displayList=ixList
-    logThis("Exiting buildDisplayList ========>")
+    sharedMD.logThis("Exiting buildDisplayList ========>")
     return(displayList)
 ##################################################################
 
@@ -298,23 +301,23 @@ def getLastItemID(projID):
         if itemx.id not in listOfFollowers:
             lastItemIDs.append(itemx.id)
     if len(lastItemIDs)!= 1:
-        logThis( "===== getLastItemID: BAD LAST ITEM IDs, should only be one. Instead: "+ str(lastItemIDs))
-        logThis( "===== BAILING getlastItemID=====" )
+        sharedMD.logThis( "===== getLastItemID: BAD LAST ITEM IDs, should only be one. Instead: "+ str(lastItemIDs))
+        sharedMD.logThis( "===== BAILING getlastItemID=====" )
         exit()
     else:
-        logThis( "Last item ID:"+ str(lastItemIDs[0]))
+        sharedMD.logThis( "Last item ID:"+ str(lastItemIDs[0]))
         return(lastItemIDs[0])
 ##################################################################
 
 def actionItem(request, pItem, action):
-    #logThis( "item "+ pItem + " to " + action);
-    #logThis( "actionItem request:" + str(request))
+    #sharedMD.logThis( "item "+ pItem + " to " + action);
+    #sharedMD.logThis( "actionItem request:" + str(request))
 
     if request.is_ajax():
-        logThis( "AJAX request,item " + pItem + " to " + action);
+        sharedMD.logThis( "AJAX request,item " + pItem + " to " + action);
         ajaxRequest = True
     else:
-        logThis( "Not an AJAX request"+ pItem + " to " + action);
+        sharedMD.logThis( "Not an AJAX request"+ pItem + " to " + action);
         ajaxRequest = False
 
     current_projs = Project.objects.order_by('name')
@@ -322,7 +325,7 @@ def actionItem(request, pItem, action):
     clickedProjNum=clickedItem.project.id
     lastItemID=getLastItemID(clickedProjNum)
 
-    origlastKidofCI,origkidList=findLastKid(clickedItem,lastItemID)
+    origlastKidofCI,origkidList=sharedMD.findLastKid(clickedItem,lastItemID)
         
     #assigning project [many to many]...convoluted?.... 
     projIDc=clickedItem.project.id
@@ -334,7 +337,7 @@ def actionItem(request, pItem, action):
             oldFollower = Item.objects.get(follows=pItem)
             follower=True
         except:
-            logThis( "Item has no follower: ID" + str(pItem))
+            sharedMD.logThis( "Item has no follower: ID" + str(pItem))
             follower=False
 
         newItem = Item(title="[NEW ITEM]",priority='0', status='0', \
@@ -351,7 +354,7 @@ def actionItem(request, pItem, action):
     elif action=='delete':
         if int(pItem) != lastItemID:
             
-            logThis( "===pItem, lastItemID============"+str(pItem)+ '  '+str(lastItemID)+"==============")
+            sharedMD.logThis( "===pItem, lastItemID============"+str(pItem)+ '  '+str(lastItemID)+"==============")
             followingMe = Item.objects.get(follows=pItem)
             followingMe.follows=clickedItem.follows
             if followingMe.parent==clickedItem.id:
@@ -366,11 +369,11 @@ def actionItem(request, pItem, action):
     ###DEMOTE###################################################################
     elif action=='demote':
         if clickedItem.parent==clickedItem.follows:
-            logThis( "Can't demote further, item "+str(clickedItem.id))
+            sharedMD.logThis( "Can't demote further, item "+str(clickedItem.id))
         else:
             ## if CI and the item following it have same parent, just shift CI parent, and indent CI
 
-            lastKidID,kidList=findLastKid(clickedItem, lastItemID)
+            lastKidID,kidList=sharedMD.findLastKid(clickedItem, lastItemID)
 
             ## find the first preceeding item is the same level as the demoted CI,
             ## and adopt the same parent
@@ -402,16 +405,16 @@ def actionItem(request, pItem, action):
     ###PROMOTE##################################################################
     elif action=='promote':
         runKids='no'
-        lastKidID,kidList=findLastKid(clickedItem, lastItemID)
+        lastKidID,kidList=sharedMD.findLastKid(clickedItem, lastItemID)
         CIoriginalParent=clickedItem.parent
         
         if clickedItem.parent ==  0:
-            logThis( "CAN'T PROMOTE TOP-LEVEL "+ str(pItem))
+            sharedMD.logThis( "CAN'T PROMOTE TOP-LEVEL "+ str(pItem))
 
         else:
             ### Deal with parent assignments first
             
-            logThis("Promoting: " +str(clickedItem.id))
+            sharedMD.logThis("Promoting: " +str(clickedItem.id))
             indx=Item.objects.get(pk=clickedItem.follows)
             while indx.indentLevel >= clickedItem.indentLevel:
                 indx=Item.objects.get(pk=indx.follows)
@@ -429,7 +432,7 @@ def actionItem(request, pItem, action):
             # if items following the promotee are of the same level, we have to turn
             # the consecutive run of a same level/parent items into children (parent, indent)
             if Item.objects.get(follows=clickedItem.id).parent == CIoriginalParent:
-                logThis("converting subsequent items to children...")
+                sharedMD.logThis("converting subsequent items to children...")
                 indx = Item.objects.get(follows=clickedItem.id)
                 while indx.parent == CIoriginalParent:
                     indx.parent=clickedItem.id
@@ -441,7 +444,7 @@ def actionItem(request, pItem, action):
 
             else:
                 # promotee has real kids
-                logThis("k-promote: LastKidID="+str(lastKidID))
+                sharedMD.logThis("k-promote: LastKidID="+str(lastKidID))
                 if lastKidID != 0:
                     thisItem=Item.objects.get(follows=clickedItem.id)
                     while thisItem.id != lastKidID:
@@ -458,10 +461,10 @@ def actionItem(request, pItem, action):
     elif action=='moveup':
 
         if clickedItem.follows==0:
-            logThis( "CAN'T MOVE UP TOP item "+ str(pItem))
+            sharedMD.logThis( "CAN'T MOVE UP TOP item "+ str(pItem))
         else:
             hasFollower=False             
-            lastKid,kidList=findLastKid(clickedItem,lastItemID)
+            lastKid,kidList=sharedMD.findLastKid(clickedItem,lastItemID)
 
             targetToSwap=Item.objects.get(pk=clickedItem.follows)
 
@@ -495,17 +498,18 @@ def actionItem(request, pItem, action):
     ### MOVE DOWN ################################################################
   
     elif action=='movedown':
+        
         ### may wish to remodel so it looks like "moveup", which uses the findLastKid method
-        lastKidofCI,kidList=findLastKid(clickedItem,lastItemID)
+        lastKidofCI,kidList=sharedMD.findLastKid(clickedItem,lastItemID)
         if clickedItem.id == lastItemID or lastKidofCI == lastItemID:
-            logThis( "==> Clicked item is last item or last parent, no move:ci, lk, liID "+str(clickedItem.id) +"  " + str(lastKidofCI) + '  ' + str(lastItemID))
+            sharedMD.logThis( "==> Clicked item is last item or last parent, no move:ci, lk, liID "+str(clickedItem.id) +"  " + str(lastKidofCI) + '  ' + str(lastItemID))
         else:
             #ciFollower=Item.objects.get(follows=clickedItem.id)
             if lastKidofCI !=0:
                 fciFollower=Item.objects.get(follows=lastKidofCI)
             else:
                 fciFollower=Item.objects.get(follows=clickedItem.id)
-            lastKidOfFollower,kidList=findLastKid(fciFollower, lastItemID)
+            lastKidOfFollower,kidList=sharedMD.findLastKid(fciFollower, lastItemID)
             if lastKidOfFollower==0:
                 bottomToSwap= fciFollower
             else:
@@ -531,16 +535,16 @@ def actionItem(request, pItem, action):
     ###ACTION UNKNOWN########
 
     else:
-        logThis( "===WARNING!=========== \nUnknown action=" + action)
+        sharedMD.logThis( "===WARNING!=========== \nUnknown action=" + action)
         exit()
 
     ###########################################################################
     ## let's restrict default view to the clicked item project
         
-    logThis( "Action done. current project #"+str(clickedProjNum)+ " " +\
+    sharedMD.logThis( "Action done. current project #"+str(clickedProjNum)+ " " +\
              current_projs.get(pk=clickedProjNum).name + "Ajax:"+str(ajaxRequest))
 
-    if ajaxRequest:
+    if not ajaxRequest:
         displayList = buildDisplayList(current_projs,clickedProjNum, 'follows',0,[])
 
         #t = loader.get_template('pim1_tmpl/items/index.html')
@@ -562,9 +566,9 @@ def actionItem(request, pItem, action):
         return (clickedItem.id)
 
 
-#################################################################(end of actionItem)########
+#####################################################(end of actionItem)########
 
-def findLastKid(itemx, lastItemID):
+def RETIREDfind_LastKid(itemx, lastItemID):
     ###   look for first item below you with =< level of indent
     kidList=[]
     if itemx.id == lastItemID:
@@ -587,7 +591,7 @@ def findLastKid(itemx, lastItemID):
 
             lastKid=prev_id
 
-    logThis("=> findLastKid lastKid="+str(lastKid))
+    sharedMD.logThis("=> sharedMD.findLastKid lastKid="+str(lastKid))
     return(lastKid,kidList)
 
 ##################################################################
@@ -639,7 +643,7 @@ def gridview(request):
 #        cellObjects = Item.objects.filter(project=thisProject.id).order_by('follows')[:ITEMS_PER_CELL]
 #        for c in cellObjects:
 #            cellItems.append(c.id)
-        #logThis("Gridview  thisProject.id:"+str(thisProject.id)+" "+str(cellItems))
+        #sharedMD.logThis("Gridview  thisProject.id:"+str(thisProject.id)+" "+str(cellItems))
         dx =   buildDisplayList(current_projs,thisProject.id, 'follows',0,cellItems)
         displayList = displayList + dx
 
@@ -689,7 +693,7 @@ def gooTaskUpdate(request):
     for g in gootasks['items']:
         gooTaskIdList.append(g['id'])
 
-    logThis( "gooTaskIdList="+str(gooTaskIdList))
+    sharedMD.logThis( "gooTaskIdList="+str(gooTaskIdList))
 
     ## update all items that have google task display dates
     pushableItems=Item.objects.filter(date_gootask_display__gte=datetime.date(2000, 1, 1))
@@ -753,7 +757,7 @@ def example_task():
 #############################################################################
 
 def ssearch(request):
-    logThis("Entering ssearch <====================")
+    sharedMD.logThis("Entering ssearch <====================")
 
     current_projs = Project.objects.order_by('name')
     c = {}
@@ -764,7 +768,7 @@ def ssearch(request):
         sform = ssearchForm(request.GET)
         if sform.is_valid():
             searchTerm=sform.cleaned_data['searchfx']
-            logThis("Search term="+searchTerm)
+            sharedMD.logThis("Search term="+searchTerm)
 
             ## Execute the search ##
             ## get the querySets
@@ -801,6 +805,19 @@ def ssearch(request):
 
 #############################################################################
 
+def addItem(request, pItem):
+    # don't think we can use xhr, b/c ajax probably can't redirect the page
+    # but we'll leave the routine in dragactions.
+
+    clickedItem=Item.objects.get(pk=pItem)
+    lastItemID=getLastItemID(clickedItem.project_id)
+    newItem=DRAGACTIONS.addItem(clickedItem, lastItemID)
+    sharedMD.logThis('edit new item: ' + str(newItem.id))
+    #follow does not work, no idea why
+    return HttpResponseRedirect('/pim1/item/edititem/'+str(newItem.id))
+
+#############################################################################
+
 def editItem(request, pItem):
     itemProject=Item.objects.get(pk=pItem).project_id
     #dispPage, dispStart, dispLength):
@@ -816,7 +833,7 @@ def editItem(request, pItem):
     if request.method == 'POST':
         formset=itemFormSet(request.POST, request.FILES)
         changedInstances=formset.save()
-        logThis("Formset saved: "+str(changedInstances))
+        sharedMD.logThis("Formset saved: "+str(changedInstances))
 
         ## POST completed, now redirect to the reconstructed view
         return HttpResponseRedirect('/pim1/drag/'+str(itemProject)+'/#'+str(pItem))
@@ -826,8 +843,8 @@ def editItem(request, pItem):
 
 
         formsetOut = formset.as_table()
-        logThis("Formset generated, pItem="+str(pItem))
-        ##logThis(formsetOut)
+        sharedMD.logThis("Formset generated, pItem="+str(pItem))
+        ##sharedMD.logThis(formsetOut)
         
     return render_to_response("pim1_tmpl/items/editItem.html", {
         "pItem": pItem,
@@ -851,10 +868,10 @@ def importfile(request):
             # Process the data in form.cleaned_data
             fileToImport=form.cleaned_data['fileToImport']
             projectToAdd=form.cleaned_data['projectToAdd']
-            logThis( "fileToImport="+fileToImport)
-            logThis( "projectToAdd="+str(projectToAdd))
+            sharedMD.logThis( "fileToImport="+fileToImport)
+            sharedMD.logThis( "projectToAdd="+str(projectToAdd))
 
-            logThis( "+++ departing to importISdata")
+            sharedMD.logThis( "+++ departing to importISdata")
             importISdata(fileToImport,projectToAdd)
 
             # Redirect after POST
@@ -877,13 +894,13 @@ def importISdata(importFile,newProjectID):
 
     startdir='/home/bhadmin13/dx.bernardhecker.com/pim1/pengine/imports/'
     textAccumulator = ''
-    logThis( "+++ b1 importISdata from " + startdir + importFile)
+    sharedMD.logThis( "+++ b1 importISdata from " + startdir + importFile)
     INFILE=open(startdir+importFile,'r')
     allLines=INFILE.readlines()
     currentISid = 0
     previousNewItemBenkID=getLastItemID(newProjectID)
     firstRecord = 'yes'
-    logThis( "+++ b2 importISdata")
+    sharedMD.logThis( "+++ b2 importISdata")
 
     importedRecordIDs = []
     
@@ -949,7 +966,7 @@ def importISdata(importFile,newProjectID):
                 pass;
 
             else:
-                logThis( "* * * * RECORD MISSED * * * *:"+ str(lx))
+                sharedMD.logThis( "* * * * RECORD MISSED * * * *:"+ str(lx))
     newItem.save()
     importedRecordIDs.append(newItem.id)
 
@@ -962,7 +979,7 @@ def importISdata(importFile,newProjectID):
 ##################################################################
 
 def draglist(request, proj_id):
-    logThis("Entering drag list <====================, Project="+str(proj_id))
+    sharedMD.logThis("Entering drag list <====================, Project="+str(proj_id))
     
     current_projs = Project.objects.order_by('name')
     displayList = buildDisplayList(current_projs, proj_id,'follows',0,[])
@@ -985,9 +1002,9 @@ def draglist(request, proj_id):
 ######################################################################
 def xhr_test(request):
     myRequest=request.GET
-    logThis("xhr_test entered........")
+    sharedMD.logThis("xhr_test entered........")
 
-    logThis("request.GET="+str(myRequest))
+    sharedMD.logThis("request.GET="+str(myRequest))
 
     a=[(1,11),(2,22),(3,33),(4,44), (5,55)]
     jsona=simplejson.dumps(a)
@@ -998,23 +1015,25 @@ def xhr_test(request):
         
     else:
         message = "not ajax"
-    logThis("xhr_test, message="+message)
+    sharedMD.logThis("xhr_test, message="+message)
     
     mimetypex = 'application/javascript'
     return HttpResponse(jsona,mimetype=mimetypex)
 
 #(r'^xhr_test$','your_project.your_app.views.xhr_test'),
 ######################################################################
-def xhr_move(request):
+def xhr_actions(request):
+    sharedMD.logThis('Entering xhr_actions...')
+    
     actionRequest=request.GET
     message = 'nix'
     
     if request.is_ajax():
-        message = "AJAX request, ci="+str(actionRequest['ci'])+"  ti="+str(actionRequest['ti']+"  ajaxAction:"+actionRequest['ajaxAction'])
+        message = "AJAX request, ci="+str(actionRequest['ci'])+"  ti='"+str(actionRequest['ti']+"'  ajaxAction:"+actionRequest['ajaxAction'])
     else:
         message = "Not an AJAX request"
 
-    logThis("\n------> xhr_move, message="+message)
+    sharedMD.logThis("\n------> xhr_actions, message="+message)
 
     ## dragmove should also get refactored to the external library
     clickedItem=Item.objects.get(pk=actionRequest['ci'])
@@ -1022,39 +1041,38 @@ def xhr_move(request):
     lastItemID=getLastItemID(clickedItem.project_id)
 
 
-    logThis("++MADE IT++")
-    lastKid,kidList=findLastKid(clickedItem,lastItemID)
+    sharedMD.logThis("++MADE IT++")
+#    lastKid,kidList=findLastKid(clickedItem,lastItemID)
+
+    ## to dragmove #################################
 
     if actionRequest['ajaxAction'] == 'dragmove':
         ParKidList=drag_move(int(actionRequest['ci']), int(actionRequest['ti']))
-        jsonParKid=simplejson.dumps(ParKidList)
-        logThis("---> xhr_move, dragmove, returning="+jsonParKid)
-        return HttpResponse(jsonParKid)
+        refreshThese=simplejson.dumps(ParKidList)
+        #sharedMD.logThis("---> xhr_actions, dragmove, returning="+str(jsonParKid))
+        #return HttpResponse(jsonParKid)
     
     elif actionRequest['ajaxAction']== 'moveUp':
-        refreshThese=DRAGACTIONS.moveUp(clickedItem, lastKid, kidList)
-        return(refreshThese)
+        refreshThese=DRAGACTIONS.moveUp(clickedItem,  lastItemID)
 
+    elif actionRequest['ajaxAction']== 'moveDown':
+        refreshThese=DRAGACTIONS.moveDown(clickedItem, lastItemID)
 
-    ## NEXT QUESTION: pass the request to actionItem, so it can determine what's
-    ## an ajax call, OR just pass as parameter, and modify URL.py ((latter))
+    elif actionRequest['ajaxAction']== 'promote':
+        refreshThese=DRAGACTIONS.promote(clickedItem, lastItemID)
 
-        
-    elif actionRequest['ajaxAction']== '':
-        pass
-    elif actionRequest['ajaxAction']== '':
-        pass
-    elif actionRequest['ajaxAction']== '':
-        pass
-    elif actionRequest['ajaxAction']== '':
-        pass
-    elif actionRequest['ajaxAction']== '':
-        return('xxxx')
-        pass
-    
+    elif actionRequest['ajaxAction']== 'demote':
+        refreshThese=DRAGACTIONS.demote(clickedItem, lastItemID)
+
 
     else:
-        logThis("+++ERROR+++. Uncaught actionRequest['ajaxAction']:"+actionRequest['ajaxAction'])
+        sharedMD.logThis("+++ERROR+++. Uncaught actionRequest['ajaxAction']:"+actionRequest['ajaxAction'])
+        refreshThese=[]
+
+    sharedMD.logThis("  REFRESH: "+str(refreshThese))
+    jRefresh=simplejson.dumps(refreshThese)
+    return HttpResponse(jRefresh)
+        
 
 ######################################################################
 def drag_move(CIid, TIid):
@@ -1062,11 +1080,11 @@ def drag_move(CIid, TIid):
 
     CI=Item.objects.get(pk=CIid)
     TI=Item.objects.get(pk=TIid)
-    logThis("\n======dragmove=> CIid:TIid    "+str(CIid)+":"+str(TIid))
+    sharedMD.logThis("\n======dragmove=> CIid:TIid    "+str(CIid)+":"+str(TIid))
     
     if CI.follows == TI.id:
         ## invalid move
-        logThis('\n== WARNING: move of item onto item it follows is invalid. Not executing.')
+        sharedMD.logThis('\n== WARNING: move of item onto item it follows is invalid. Not executing.')
         return([])
 
  
@@ -1080,7 +1098,7 @@ def drag_move(CIid, TIid):
 
     targetFollower = Item.objects.get(follows=TIid)
 
-    lastKidID,kidList=findLastKid(CI, lastItemID)
+    lastKidID,kidList=sharedMD.findLastKid(CI, lastItemID)
 
     ## stitch up the item that followed the CI (or its last kid), and the one that preceded it
     if CIid != lastItemID and lastKidID != lastItemID:
@@ -1091,17 +1109,17 @@ def drag_move(CIid, TIid):
         followedCIorKid.follows = origCIfollow
         followedCIorKid.save()
         
-    #logThis("DragMove=> stitch around CI done")
+    #sharedMD.logThis("DragMove=> stitch around CI done")
     ## now insert the moved item into it's new position
     CI.parent = TIid;  ## was origTIparent
     CI.follows = TIid;
     CI.indentLevel = TI.indentLevel+1
     CI.save()
-    logThis("DragMove=> CI saved")
+    sharedMD.logThis("DragMove=> CI saved")
     
     ## item that followed the target now must follow the CI, or the CI's last child (if any)
 
-    logThis('dragmove=> targetFollowerID:'+str(targetFollower.id)+'  targetFollower.follows:'+str(targetFollower.follows) + '  lastkid:'+str(lastKidID))
+    sharedMD.logThis('dragmove=> targetFollowerID:'+str(targetFollower.id)+'  targetFollower.follows:'+str(targetFollower.follows) + '  lastkid:'+str(lastKidID))
     ## at this point tF.follows is previous one, 
     
     if lastKidID == 0:
@@ -1112,7 +1130,7 @@ def drag_move(CIid, TIid):
         targetFollower.save()
 
         ## also correct indentLevel, since parent indent might have changed
-        logThis(' dm=>kidList = '+str(kidList))
+        sharedMD.logThis(' dm=>kidList = '+str(kidList))
         for kidPair in kidList:
             thisKid=Item.objects.get(pk=kidPair[0])
             
@@ -1125,10 +1143,10 @@ def drag_move(CIid, TIid):
             itemData=[thisKid.title, thisKid.parent, thisKid.indentLevel, thisKid.priority, thisKid.status, thisKid.HTMLnoteBody, returnMarker(thisKid)]
             
             kidPair += itemData
-            #logThis(' => kidPair '+str(thisKid.id)+": "+str(kidPair))
+            #sharedMD.logThis(' => kidPair '+str(thisKid.id)+": "+str(kidPair))
 
     
-    logThis(' => targetFollower.follows='+str(targetFollower.follows))
+    sharedMD.logThis(' => targetFollower.follows='+str(targetFollower.follows))
     
     parentKidUpdate = []
 
@@ -1144,7 +1162,7 @@ def drag_move(CIid, TIid):
     
     parentKidUpdate += kidList
     
-    logThis('dragmove=> parentKidUpdate: ' + str(parentKidUpdate) )
+    sharedMD.logThis('dragmove=> parentKidUpdate: ' + str(parentKidUpdate) )
     return(parentKidUpdate)
 
 #############################################################################
@@ -1172,7 +1190,7 @@ def backupdata(request):
         # Process the data in form.cleaned_data
         if "BackupTheseProjects" in request.POST:
             BackupTheseProjects=request.POST['BackupTheseProjects']
-            logThis('backup ==> projlist:'+ str(BackupTheseProjects))
+            sharedMD.logThis('backup ==> projlist:'+ str(BackupTheseProjects))
 
 
             for thisBackupID in BackupTheseProjects:
@@ -1220,7 +1238,7 @@ def backupdata(request):
 
                     count += 1
 
-                logThis("Project "+str(thisBackupID)+": "+str(count)+" items backed up to "+filename)
+                sharedMD.logThis("Project "+str(thisBackupID)+": "+str(count)+" items backed up to "+filename)
                 OUTX.close()
             #return HttpResponseRedirect('/serialize/')
     else:

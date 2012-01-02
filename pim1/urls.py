@@ -30,7 +30,7 @@ urlpatterns = patterns('',
     url(r'^pim1/item/detail/(?P<pItem>\d+)/$','pim1.pengine.views.detailItem'),
     url(r'^pim1/item/edititem/(?P<pItem>\d+)/$','pim1.pengine.views.editItem'),
 
-    url(r'^pim1/item/add/(?P<pItem>\d+)/$','pim1.pengine.views.actionItem',{'action':'add'}),
+    url(r'^pim1/item/add/(?P<pItem>\d+)/$','pim1.pengine.views.addItem'),
     url(r'^pim1/item/delete/(?P<pItem>\d+)/$','pim1.pengine.views.actionItem',{'action':'delete'}),
     url(r'^pim1/item/demote/(?P<pItem>\d+)/$','pim1.pengine.views.actionItem',{'action':'demote'}),
     url(r'^pim1/item/promote/(?P<pItem>\d+)/$','pim1.pengine.views.actionItem',{'action':'promote'}),
@@ -44,7 +44,7 @@ urlpatterns = patterns('',
 
     url(r'^pim1/item/gooUpdate$','pim1.pengine.views.gooTaskUpdate'),
     url(r'^pim1/xhr_test$','pim1.pengine.views.xhr_test'),
-    url(r'^pim1/xhr_move$','pim1.pengine.views.xhr_move'),
+    url(r'^pim1/xhr_actions$','pim1.pengine.views.xhr_actions'),
 
 
                    
