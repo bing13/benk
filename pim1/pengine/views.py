@@ -34,6 +34,8 @@ sys.path.append('/home/bhadmin13/dx.bernardhecker.com/pim1/library');
 import gooOps, dirlist;
 from rfc3339 import rfc3339;
 
+import drag_actions;
+
 LOGFILE = '/home/bhadmin13/dx.bernardhecker.com/pim1/benklog1.log'
 
 ## https://docs.djangoproject.com/en/1.2/topics/forms/
@@ -45,6 +47,7 @@ class ImportForm(forms.Form):
 class ssearchForm(forms.Form):
     searchfx=forms.CharField(max_length=200)
 
+DRAGACTIONS=drag_actions.dragOps();
 
 @csrf_protect
 
@@ -309,17 +312,18 @@ def actionItem(request, pItem, action):
 
     if request.is_ajax():
         logThis( "AJAX request,item " + pItem + " to " + action);
-        ajaxRequest = TRUE
+        ajaxRequest = True
     else:
         logThis( "Not an AJAX request"+ pItem + " to " + action);
-        ajaxRequest = FALSE
+        ajaxRequest = False
 
     current_projs = Project.objects.order_by('name')
     clickedItem = Item.objects.get(pk=pItem)
     clickedProjNum=clickedItem.project.id
     lastItemID=getLastItemID(clickedProjNum)
 
-    
+    origlastKidofCI,origkidList=findLastKid(clickedItem,lastItemID)
+        
     #assigning project [many to many]...convoluted?.... 
     projIDc=clickedItem.project.id
     projObjc=Project.objects.get(pk=projIDc)
@@ -1002,18 +1006,55 @@ def xhr_test(request):
 #(r'^xhr_test$','your_project.your_app.views.xhr_test'),
 ######################################################################
 def xhr_move(request):
-    moveRequest=request.GET
+    actionRequest=request.GET
     message = 'nix'
+    
     if request.is_ajax():
-        message = "AJAX request, ci="+str(moveRequest['ci'])+"  ti="+str(moveRequest['ti'])
+        message = "AJAX request, ci="+str(actionRequest['ci'])+"  ti="+str(actionRequest['ti']+"  ajaxAction:"+actionRequest['ajaxAction'])
     else:
         message = "Not an AJAX request"
-    logThis("\n====> xhr_move, message="+message)
-    ParKidList=drag_move(int(moveRequest['ci']), int(moveRequest['ti']))
-    jsonParKid=simplejson.dumps(ParKidList)
-    logThis("xhr_move, returning="+jsonParKid)
- 
-    return HttpResponse(jsonParKid)
+
+    logThis("\n------> xhr_move, message="+message)
+
+    ## dragmove should also get refactored to the external library
+    clickedItem=Item.objects.get(pk=actionRequest['ci'])
+
+    lastItemID=getLastItemID(clickedItem.project_id)
+
+
+    logThis("++MADE IT++")
+    lastKid,kidList=findLastKid(clickedItem,lastItemID)
+
+    if actionRequest['ajaxAction'] == 'dragmove':
+        ParKidList=drag_move(int(actionRequest['ci']), int(actionRequest['ti']))
+        jsonParKid=simplejson.dumps(ParKidList)
+        logThis("---> xhr_move, dragmove, returning="+jsonParKid)
+        return HttpResponse(jsonParKid)
+    
+    elif actionRequest['ajaxAction']== 'moveUp':
+        refreshThese=DRAGACTIONS.moveUp(clickedItem, lastKid, kidList)
+        return(refreshThese)
+
+
+    ## NEXT QUESTION: pass the request to actionItem, so it can determine what's
+    ## an ajax call, OR just pass as parameter, and modify URL.py ((latter))
+
+        
+    elif actionRequest['ajaxAction']== '':
+        pass
+    elif actionRequest['ajaxAction']== '':
+        pass
+    elif actionRequest['ajaxAction']== '':
+        pass
+    elif actionRequest['ajaxAction']== '':
+        pass
+    elif actionRequest['ajaxAction']== '':
+        return('xxxx')
+        pass
+    
+
+    else:
+        logThis("+++ERROR+++. Uncaught actionRequest['ajaxAction']:"+actionRequest['ajaxAction'])
 
 ######################################################################
 def drag_move(CIid, TIid):
