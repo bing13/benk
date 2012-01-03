@@ -37627,3 +37627,1329 @@ META:{'CSRF_COOKIE': 'b8d1d90ee78de3e480ce155f0ef960b7',
 2012:01:02  13:46:54:: ...built followhash....
 2012:01:02  13:46:54:: .....displayList built...
 2012:01:02  13:46:54:: Exiting buildDisplayList ========>
+2012:01:02  13:47:37:: Entering drag list <====================, Project=5
+2012:01:02  13:47:37:: Entering buildDisplayList <=====
+2012:01:02  13:47:37:: ..queries done...
+2012:01:02  13:47:37:: ....parent list built...
+2012:01:02  13:47:37:: .....ix built.....
+2012:01:02  13:47:37:: ...built followhash....
+2012:01:02  13:47:37:: .....displayList built...
+2012:01:02  13:47:37:: Exiting buildDisplayList ========>
+2012:01:02  13:54:12:: Entering buildDisplayList <=====
+2012:01:02  13:54:12:: ..queries done...
+2012:01:02  13:54:12:: ....parent list built...
+2012:01:02  13:54:12:: .....ix built.....
+2012:01:02  13:54:12:: ...built followhash....
+2012:01:02  13:54:12:: .....displayList built...
+2012:01:02  13:54:12:: Exiting buildDisplayList ========>
+2012:01:02  13:54:12:: Entering buildDisplayList <=====
+2012:01:02  13:54:12:: ..queries done...
+2012:01:02  13:54:12:: ....parent list built...
+2012:01:02  13:54:12:: .....ix built.....
+2012:01:02  13:54:12:: ...built followhash....
+2012:01:02  13:54:12:: .....displayList built...
+2012:01:02  13:54:12:: Exiting buildDisplayList ========>
+2012:01:02  13:54:12:: Entering buildDisplayList <=====
+2012:01:02  13:54:12:: ..queries done...
+2012:01:02  13:54:12:: ....parent list built...
+2012:01:02  13:54:12:: .....ix built.....
+2012:01:02  13:54:12:: ...built followhash....
+2012:01:02  13:54:12:: .....displayList built...
+2012:01:02  13:54:12:: Exiting buildDisplayList ========>
+2012:01:02  13:54:12:: Entering buildDisplayList <=====
+2012:01:02  13:54:12:: ..queries done...
+2012:01:02  13:54:12:: ....parent list built...
+2012:01:02  13:54:12:: .....ix built.....
+2012:01:02  13:54:12:: ...built followhash....
+2012:01:02  13:54:12:: .....displayList built...
+2012:01:02  13:54:12:: Exiting buildDisplayList ========>
+2012:01:02  13:54:14:: Entering buildDisplayList <=====
+2012:01:02  13:54:14:: ..queries done...
+2012:01:02  13:54:14:: ....parent list built...
+2012:01:02  13:54:14:: .....ix built.....
+2012:01:02  13:54:14:: ...built followhash....
+2012:01:02  13:54:14:: .....displayList built...
+2012:01:02  13:54:14:: Exiting buildDisplayList ========>
+2012:01:02  13:54:14:: Entering buildDisplayList <=====
+2012:01:02  13:54:14:: ..queries done...
+2012:01:02  13:54:14:: ....parent list built...
+2012:01:02  13:54:14:: .....ix built.....
+2012:01:02  13:54:14:: ...built followhash....
+2012:01:02  13:54:14:: .....displayList built...
+2012:01:02  13:54:14:: Exiting buildDisplayList ========>
+2012:01:02  14:34:33:: Entering xhr_actions...
+2012:01:02  14:34:33:: 
+------> xhr_actions, message=AJAX request, ci=4377  ti='4399'  ajaxAction:dragmove
+2012:01:02  14:34:33:: Last item ID:4376
+2012:01:02  14:34:33:: ++MADE IT++
+2012:01:02  14:34:33:: 
+======dragmove=> CIid:TIid    4377:4399
+2012:01:02  14:34:33:: Last item ID:4376
+2012:01:02  14:34:33:: => findLastKid lastKid=0
+2012:01:02  14:34:33:: DragMove=> CI saved
+2012:01:02  14:34:33:: dragmove=> targetFollowerID:4380  targetFollower.follows:4399  lastkid:0
+2012:01:02  14:34:33::  => targetFollower.follows=4377
+2012:01:02  14:34:37:: Entering xhr_actions...
+2012:01:02  14:34:37:: 
+------> xhr_actions, message=AJAX request, ci=4377  ti='4375'  ajaxAction:dragmove
+2012:01:02  14:34:37:: Last item ID:4376
+2012:01:02  14:34:37:: ++MADE IT++
+2012:01:02  14:34:37:: 
+======dragmove=> CIid:TIid    4377:4375
+2012:01:02  14:34:37:: Last item ID:4376
+2012:01:02  14:34:37:: => findLastKid lastKid=0
+2012:01:02  14:34:37:: DragMove=> CI saved
+2012:01:02  14:34:37:: dragmove=> targetFollowerID:4379  targetFollower.follows:4375  lastkid:0
+2012:01:02  14:34:37::  => targetFollower.follows=4377
+2012:01:02  14:34:37::   REFRESH: [[4377L, 4375, u'introduce paging', 4375, 1L, u'0', u'0', u'', '&bull;'], [4375L, 0L, u'=== ANCHOR - benk meta ===', 0L, 0L, u'0', u'0', u'', '+'], [4399L, 4396L, u'organize grid view on priority', 0L, 0L, u'2', u'2', u'', '&bull;']]
+2012:01:02  14:34:39:: Entering xhr_actions...
+2012:01:02  14:34:39:: 
+------> xhr_actions, message=AJAX request, ci=4377  ti='0'  ajaxAction:promote
+2012:01:02  14:34:39:: Last item ID:4376
+2012:01:02  14:34:39:: ++MADE IT++
+2012:01:02  14:34:39:: => findLastKid lastKid=0
+2012:01:02  14:34:39:: Promoting: 4377
+2012:01:02  14:34:39:: k-promote: LastKidID=0
+2012:01:02  14:34:39::   REFRESH: [[4377L, 4375L, u'introduce paging', 0L, 0L, u'0', u'0', u'', '&bull;'], [4375L, 0L, u'=== ANCHOR - benk meta ===', 0L, 0L, u'0', u'0', u'', '&bull;']]
+2012:01:02  14:34:40:: Formset generated, pItem=4377
+2012:01:02  14:36:46:: Formset saved: [<Item: introduce paging>]
+2012:01:02  14:36:46:: Entering drag list <====================, Project=5
+2012:01:02  14:36:46:: Entering buildDisplayList <=====
+2012:01:02  14:36:46:: ..queries done...
+2012:01:02  14:36:46:: ....parent list built...
+2012:01:02  14:36:47:: .....ix built.....
+2012:01:02  14:36:47:: ...built followhash....
+2012:01:02  14:36:47:: .....displayList built...
+2012:01:02  14:36:47:: Exiting buildDisplayList ========>
+2012:01:02  14:36:55:: Entering xhr_actions...
+2012:01:02  14:36:55:: 
+------> xhr_actions, message=AJAX request, ci=4379  ti='0'  ajaxAction:moveDown
+2012:01:02  14:36:56:: Last item ID:4376
+2012:01:02  14:36:56:: ++MADE IT++
+2012:01:02  14:36:56:: => findLastKid lastKid=0
+2012:01:02  14:36:56:: => findLastKid lastKid=4396
+2012:01:02  14:36:56::   REFRESH: [[4379L, 4396L, u'priority/status js updates', 0L, 0L, u'1', u'1', u'', '&bull;'], [4396L, 4531L, u"don't seem to be able to drag onto the last item", 4531L, 1L, u'0', u'0', u'', '&bull;'], [4396L, 4531L, u"don't seem to be able to drag onto the last item", 4531L, 1L, u'0', u'0', u'', '&bull;'], [4399L, 4379L, u'organize grid view on priority', 0L, 0L, u'2', u'2', u'', '&bull;'], [4396L, 4531L, u"don't seem to be able to drag onto the last item", 4531L, 1L, u'0', u'0', u'', '&bull;'], [4531L, 4377L, u'bugs: moving', 0L, 0L, u'2', u'3', u"1. if you move a tree whose last child is the last item on the project, that last child seems to be abandoned.\r\n\r\n2. dragging onto last item doesn't work\r\n\r\n3. ddragging to parent, whose lastKid=lastItemID doesn't work on benk item # 4574, but does on other tests?", '+']]
+2012:01:02  14:37:55:: Formset generated, pItem=4381
+2012:01:02  14:39:08:: Formset saved: [<Item: anchor items: hide or protect?>]
+2012:01:02  14:39:08:: Entering drag list <====================, Project=5
+2012:01:02  14:39:08:: Entering buildDisplayList <=====
+2012:01:02  14:39:08:: ..queries done...
+2012:01:02  14:39:08:: ....parent list built...
+2012:01:02  14:39:08:: .....ix built.....
+2012:01:02  14:39:08:: ...built followhash....
+2012:01:02  14:39:08:: .....displayList built...
+2012:01:02  14:39:08:: Exiting buildDisplayList ========>
+2012:01:02  14:39:33:: Entering xhr_actions...
+2012:01:02  14:39:33:: 
+------> xhr_actions, message=AJAX request, ci=4379  ti='4399'  ajaxAction:dragmove
+2012:01:02  14:39:33:: Last item ID:4376
+2012:01:02  14:39:33:: ++MADE IT++
+2012:01:02  14:39:33:: 
+======dragmove=> CIid:TIid    4379:4399
+2012:01:02  14:39:33:: Last item ID:4376
+2012:01:02  14:39:33:: => findLastKid lastKid=0
+2012:01:02  14:39:33:: DragMove=> CI saved
+2012:01:02  14:39:33:: dragmove=> targetFollowerID:4380  targetFollower.follows:4399  lastkid:0
+2012:01:02  14:39:33::  => targetFollower.follows=4379
+2012:01:02  14:39:41:: Entering drag list <====================, Project=5
+2012:01:02  14:39:41:: Entering buildDisplayList <=====
+2012:01:02  14:39:41:: ..queries done...
+2012:01:02  14:39:41:: ....parent list built...
+2012:01:02  14:39:41:: .....ix built.....
+2012:01:02  14:39:41:: ...built followhash....
+2012:01:02  14:39:41:: .....displayList built...
+2012:01:02  14:39:41:: Exiting buildDisplayList ========>
+2012:01:02  14:39:44:: Entering xhr_actions...
+2012:01:02  14:39:44:: 
+------> xhr_actions, message=AJAX request, ci=4379  ti='0'  ajaxAction:promote
+2012:01:02  14:39:44:: Last item ID:4376
+2012:01:02  14:39:44:: ++MADE IT++
+2012:01:02  14:39:44:: => findLastKid lastKid=0
+2012:01:02  14:39:44:: Promoting: 4379
+2012:01:02  14:39:45:: k-promote: LastKidID=0
+2012:01:02  14:39:45::   REFRESH: [[4379L, 4399L, u'priority/status js updates', 0L, 0L, u'1', u'1', u'', '&bull;'], [4399L, 4396L, u'organize grid view on priority', 0L, 0L, u'2', u'2', u'', '&bull;']]
+2012:01:02  14:39:57:: Entering itemlist <====================
+2012:01:02  14:39:57:: Entering buildDisplayList <=====
+2012:01:02  14:39:57:: ..queries done...
+2012:01:02  14:39:57:: ....parent list built...
+2012:01:02  14:39:57:: .....ix built.....
+2012:01:02  14:39:57:: ...built followhash....
+2012:01:02  14:39:57:: .....displayList built...
+2012:01:02  14:39:57:: Exiting buildDisplayList ========>
+2012:01:02  14:40:03:: Entering drag list <====================, Project=5
+2012:01:02  14:40:03:: Entering buildDisplayList <=====
+2012:01:02  14:40:03:: ..queries done...
+2012:01:02  14:40:03:: ....parent list built...
+2012:01:02  14:40:04:: .....ix built.....
+2012:01:02  14:40:04:: ...built followhash....
+2012:01:02  14:40:04:: .....displayList built...
+2012:01:02  14:40:04:: Exiting buildDisplayList ========>
+2012:01:02  17:13:14:: Last item ID:4376
+2012:01:02  17:13:14:: edit new item: 4577
+2012:01:02  17:13:14:: Formset generated, pItem=4577
+2012:01:02  17:13:38:: Formset saved: [<Item: TEST TEST 1 1 1>]
+2012:01:02  17:13:38:: Entering drag list <====================, Project=5
+2012:01:02  17:13:38:: Entering buildDisplayList <=====
+2012:01:02  17:13:38:: ..queries done...
+2012:01:02  17:13:38:: ....parent list built...
+2012:01:02  17:13:38:: .....ix built.....
+2012:01:02  17:13:38:: ...built followhash....
+2012:01:02  17:13:38:: .....displayList built...
+2012:01:02  17:13:38:: Exiting buildDisplayList ========>
+2012:01:02  17:13:46:: Formset generated, pItem=4574
+2012:01:02  17:13:50:: Formset saved: [<Item: Done items ==========>]
+2012:01:02  17:13:50:: Entering drag list <====================, Project=5
+2012:01:02  17:13:50:: Entering buildDisplayList <=====
+2012:01:02  17:13:50:: ..queries done...
+2012:01:02  17:13:50:: ....parent list built...
+2012:01:02  17:13:50:: .....ix built.....
+2012:01:02  17:13:50:: ...built followhash....
+2012:01:02  17:13:50:: .....displayList built...
+2012:01:02  17:13:50:: Exiting buildDisplayList ========>
+2012:01:02  17:13:53:: Formset generated, pItem=4390
+2012:01:02  17:13:57:: Formset saved: [<Item: eliminate interstitial [NEW ITEM] step>]
+2012:01:02  17:13:57:: Entering drag list <====================, Project=5
+2012:01:02  17:13:57:: Entering buildDisplayList <=====
+2012:01:02  17:13:57:: ..queries done...
+2012:01:02  17:13:57:: ....parent list built...
+2012:01:02  17:13:57:: .....ix built.....
+2012:01:02  17:13:57:: ...built followhash....
+2012:01:02  17:13:57:: .....displayList built...
+2012:01:02  17:13:57:: Exiting buildDisplayList ========>
+2012:01:02  17:14:06:: Entering xhr_actions...
+2012:01:02  17:14:06:: 
+------> xhr_actions, message=AJAX request, ci=4577  ti='4574'  ajaxAction:dragmove
+2012:01:02  17:14:06:: Last item ID:4376
+2012:01:02  17:14:06:: ++MADE IT++
+2012:01:02  17:14:06:: 
+======dragmove=> CIid:TIid    4577:4574
+2012:01:02  17:14:06:: Last item ID:4376
+2012:01:02  17:14:06:: => findLastKid lastKid=0
+2012:01:02  17:14:06:: DragMove=> CI saved
+2012:01:02  17:14:06:: dragmove=> targetFollowerID:4392  targetFollower.follows:4574  lastkid:0
+2012:01:02  17:14:06::  => targetFollower.follows=4577
+2012:01:02  17:15:42:: Entering drag list <====================, Project=5
+2012:01:02  17:15:42:: Entering buildDisplayList <=====
+2012:01:02  17:15:42:: ..queries done...
+2012:01:02  17:15:42:: ....parent list built...
+2012:01:02  17:15:42:: .....ix built.....
+2012:01:02  17:15:42:: ...built followhash....
+2012:01:02  17:15:42:: .....displayList built...
+2012:01:02  17:15:42:: Exiting buildDisplayList ========>
+2012:01:02  17:16:37:: Entering xhr_actions...
+2012:01:02  17:16:37:: 
+------> xhr_actions, message=AJAX request, ci=4577  ti='4531'  ajaxAction:dragmove
+2012:01:02  17:16:37:: Last item ID:4376
+2012:01:02  17:16:37:: ++MADE IT++
+2012:01:02  17:16:37:: 
+======dragmove=> CIid:TIid    4577:4531
+2012:01:02  17:16:37:: Last item ID:4376
+2012:01:02  17:16:37:: => findLastKid lastKid=0
+2012:01:02  17:16:37:: DragMove=> CI saved
+2012:01:02  17:16:37:: dragmove=> targetFollowerID:4396  targetFollower.follows:4531  lastkid:0
+2012:01:02  17:16:37::  => targetFollower.follows=4577
+2012:01:02  17:16:37::   REFRESH: [[4577L, 4531, u'TEST TEST 1 1 1', 4531, 1L, u'4', u'6', u'', '&bull;'], [4531L, 4377L, u'bugs: moving', 0L, 0L, u'2', u'3', u"1. if you move a tree whose last child is the last item on the project, that last child seems to be abandoned.\r\n\r\n2. dragging onto last item doesn't work\r\n\r\n3. ddragging to parent, whose lastKid=lastItemID doesn't work on benk item # 4574, but does on other tests?", '+'], [4574L, 4381L, u'Done items ==========', 0L, 0L, u'0', u'9', u'', '+']]
+2012:01:02  17:16:42:: Entering xhr_actions...
+2012:01:02  17:16:42:: 
+------> xhr_actions, message=AJAX request, ci=4577  ti='4392'  ajaxAction:dragmove
+2012:01:02  17:16:42:: Last item ID:4376
+2012:01:02  17:16:42:: ++MADE IT++
+2012:01:02  17:16:42:: 
+======dragmove=> CIid:TIid    4577:4392
+2012:01:02  17:16:42:: Last item ID:4376
+2012:01:02  17:16:42:: => findLastKid lastKid=0
+2012:01:02  17:16:42:: DragMove=> CI saved
+2012:01:02  17:16:42:: dragmove=> targetFollowerID:4398  targetFollower.follows:4392  lastkid:0
+2012:01:02  17:16:42::  => targetFollower.follows=4577
+2012:01:02  17:16:42::   REFRESH: [[4577L, 4392, u'TEST TEST 1 1 1', 4392, 2L, u'4', u'6', u'', '&bull;'], [4392L, 4574L, u'on edit forms, title field is too short', 4574L, 1L, u'0', u'9', u'', '+'], [4531L, 4377L, u'bugs: moving', 0L, 0L, u'2', u'3', u"1. if you move a tree whose last child is the last item on the project, that last child seems to be abandoned.\r\n\r\n2. dragging onto last item doesn't work\r\n\r\n3. ddragging to parent, whose lastKid=lastItemID doesn't work on benk item # 4574, but does on other tests?", '+']]
+2012:01:02  17:16:47:: Entering xhr_actions...
+2012:01:02  17:16:47:: 
+------> xhr_actions, message=AJAX request, ci=4577  ti='4377'  ajaxAction:dragmove
+2012:01:02  17:16:47:: Last item ID:4376
+2012:01:02  17:16:47:: ++MADE IT++
+2012:01:02  17:16:47:: 
+======dragmove=> CIid:TIid    4577:4377
+2012:01:02  17:16:47:: Last item ID:4376
+2012:01:02  17:16:47:: => findLastKid lastKid=0
+2012:01:02  17:16:47:: DragMove=> CI saved
+2012:01:02  17:16:47:: dragmove=> targetFollowerID:4531  targetFollower.follows:4377  lastkid:0
+2012:01:02  17:16:47::  => targetFollower.follows=4577
+2012:01:02  17:16:47::   REFRESH: [[4577L, 4377, u'TEST TEST 1 1 1', 4377, 1L, u'4', u'6', u'', '&bull;'], [4377L, 4375L, u'introduce paging', 0L, 0L, u'1', u'2', u"1. smart paging - don't truncate in middle of children\r\n\r\n2. Javacript will need to check if an item is in the DOM before refreshing\r\n\r\n3. buildlist could be passed starting item, and length/threshold #.\r\n\r\n4. Hard part will be keeping track of the next item. Well, fussy, not hard.", '+'], [4392L, 4574L, u'on edit forms, title field is too short', 4574L, 1L, u'0', u'9', u'', '&bull;']]
+2012:01:02  17:16:50:: Entering xhr_actions...
+2012:01:02  17:16:50:: 
+------> xhr_actions, message=AJAX request, ci=4577  ti='4574'  ajaxAction:dragmove
+2012:01:02  17:16:50:: Last item ID:4376
+2012:01:02  17:16:50:: ++MADE IT++
+2012:01:02  17:16:50:: 
+======dragmove=> CIid:TIid    4577:4574
+2012:01:02  17:16:50:: Last item ID:4376
+2012:01:02  17:16:50:: => findLastKid lastKid=0
+2012:01:02  17:16:50:: DragMove=> CI saved
+2012:01:02  17:16:50:: dragmove=> targetFollowerID:4392  targetFollower.follows:4574  lastkid:0
+2012:01:02  17:16:50::  => targetFollower.follows=4577
+2012:01:02  17:16:50::   REFRESH: [[4577L, 4574, u'TEST TEST 1 1 1', 4574, 1L, u'4', u'6', u'', '&bull;'], [4574L, 4381L, u'Done items ==========', 0L, 0L, u'0', u'9', u'', '+'], [4377L, 4375L, u'introduce paging', 0L, 0L, u'1', u'2', u"1. smart paging - don't truncate in middle of children\r\n\r\n2. Javacript will need to check if an item is in the DOM before refreshing\r\n\r\n3. buildlist could be passed starting item, and length/threshold #.\r\n\r\n4. Hard part will be keeping track of the next item. Well, fussy, not hard.", '&bull;']]
+2012:01:02  17:17:52:: Entering xhr_actions...
+2012:01:02  17:17:52:: 
+------> xhr_actions, message=AJAX request, ci=4577  ti='4379'  ajaxAction:dragmove
+2012:01:02  17:17:52:: Last item ID:4376
+2012:01:02  17:17:52:: ++MADE IT++
+2012:01:02  17:17:52:: 
+======dragmove=> CIid:TIid    4577:4379
+2012:01:02  17:17:52:: Last item ID:4376
+2012:01:02  17:17:52:: => findLastKid lastKid=0
+2012:01:02  17:17:52:: DragMove=> CI saved
+2012:01:02  17:17:52:: dragmove=> targetFollowerID:4380  targetFollower.follows:4379  lastkid:0
+2012:01:02  17:17:52::  => targetFollower.follows=4577
+2012:01:02  17:17:52::   REFRESH: [[4577L, 4379, u'TEST TEST 1 1 1', 4379, 1L, u'4', u'6', u'', '&bull;'], [4379L, 4399L, u'priority/status js updates', 0L, 0L, u'1', u'1', u'', '+'], [4574L, 4381L, u'Done items ==========', 0L, 0L, u'0', u'9', u'', '+']]
+2012:01:02  17:17:56:: Entering drag list <====================, Project=5
+2012:01:02  17:17:56:: Entering buildDisplayList <=====
+2012:01:02  17:17:56:: ..queries done...
+2012:01:02  17:17:56:: ....parent list built...
+2012:01:02  17:17:56:: .....ix built.....
+2012:01:02  17:17:56:: ...built followhash....
+2012:01:02  17:17:56:: .....displayList built...
+2012:01:02  17:17:56:: Exiting buildDisplayList ========>
+2012:01:02  17:18:02:: Entering xhr_actions...
+2012:01:02  17:18:02:: 
+------> xhr_actions, message=AJAX request, ci=4577  ti='4390'  ajaxAction:dragmove
+2012:01:02  17:18:02:: Last item ID:4376
+2012:01:02  17:18:02:: ++MADE IT++
+2012:01:02  17:18:02:: 
+======dragmove=> CIid:TIid    4577:4390
+2012:01:02  17:18:02:: Last item ID:4376
+2012:01:02  17:18:02:: => findLastKid lastKid=0
+2012:01:02  17:18:02:: DragMove=> CI saved
+2012:01:02  17:18:02:: dragmove=> targetFollowerID:4449  targetFollower.follows:4390  lastkid:0
+2012:01:02  17:18:02::  => targetFollower.follows=4577
+2012:01:02  17:18:03::   REFRESH: [[4577L, 4390, u'TEST TEST 1 1 1', 4390, 2L, u'4', u'6', u'', '&bull;'], [4390L, 4398L, u'eliminate interstitial [NEW ITEM] step', 4574L, 1L, u'0', u'9', u'', '+'], [4379L, 4399L, u'priority/status js updates', 0L, 0L, u'1', u'1', u'', '&bull;']]
+2012:01:02  17:18:06:: Entering xhr_actions...
+2012:01:02  17:18:06:: 
+------> xhr_actions, message=AJAX request, ci=4577  ti='4574'  ajaxAction:dragmove
+2012:01:02  17:18:06:: Last item ID:4376
+2012:01:02  17:18:06:: ++MADE IT++
+2012:01:02  17:18:06:: 
+======dragmove=> CIid:TIid    4577:4574
+2012:01:02  17:18:06:: Last item ID:4376
+2012:01:02  17:18:06:: => findLastKid lastKid=0
+2012:01:02  17:18:06:: DragMove=> CI saved
+2012:01:02  17:18:06:: dragmove=> targetFollowerID:4392  targetFollower.follows:4574  lastkid:0
+2012:01:02  17:18:06::  => targetFollower.follows=4577
+2012:01:02  17:18:06::   REFRESH: [[4577L, 4574, u'TEST TEST 1 1 1', 4574, 1L, u'4', u'6', u'', '&bull;'], [4574L, 4381L, u'Done items ==========', 0L, 0L, u'0', u'9', u'', '+'], [4390L, 4398L, u'eliminate interstitial [NEW ITEM] step', 4574L, 1L, u'0', u'9', u'', '&bull;']]
+2012:01:02  17:18:10:: Entering xhr_actions...
+2012:01:02  17:18:10:: 
+------> xhr_actions, message=AJAX request, ci=4577  ti='4399'  ajaxAction:dragmove
+2012:01:02  17:18:10:: Last item ID:4376
+2012:01:02  17:18:10:: ++MADE IT++
+2012:01:02  17:18:10:: 
+======dragmove=> CIid:TIid    4577:4399
+2012:01:02  17:18:10:: Last item ID:4376
+2012:01:02  17:18:10:: => findLastKid lastKid=0
+2012:01:02  17:18:10:: DragMove=> CI saved
+2012:01:02  17:18:10:: dragmove=> targetFollowerID:4379  targetFollower.follows:4399  lastkid:0
+2012:01:02  17:18:10::  => targetFollower.follows=4577
+2012:01:02  17:18:10::   REFRESH: [[4577L, 4399, u'TEST TEST 1 1 1', 4399, 1L, u'4', u'6', u'', '&bull;'], [4399L, 4396L, u'organize grid view on priority', 0L, 0L, u'2', u'2', u'', '+'], [4574L, 4381L, u'Done items ==========', 0L, 0L, u'0', u'9', u'', '+']]
+2012:01:02  17:18:14:: Entering xhr_actions...
+2012:01:02  17:18:14:: 
+------> xhr_actions, message=AJAX request, ci=4577  ti='4574'  ajaxAction:dragmove
+2012:01:02  17:18:15:: Last item ID:4376
+2012:01:02  17:18:15:: ++MADE IT++
+2012:01:02  17:18:15:: 
+======dragmove=> CIid:TIid    4577:4574
+2012:01:02  17:18:15:: Last item ID:4376
+2012:01:02  17:18:15:: => findLastKid lastKid=0
+2012:01:02  17:18:15:: DragMove=> CI saved
+2012:01:02  17:18:15:: dragmove=> targetFollowerID:4392  targetFollower.follows:4574  lastkid:0
+2012:01:02  17:18:15::  => targetFollower.follows=4577
+2012:01:02  17:18:15::   REFRESH: [[4577L, 4574, u'TEST TEST 1 1 1', 4574, 1L, u'4', u'6', u'', '&bull;'], [4574L, 4381L, u'Done items ==========', 0L, 0L, u'0', u'9', u'', '+'], [4399L, 4396L, u'organize grid view on priority', 0L, 0L, u'2', u'2', u'', '&bull;']]
+2012:01:02  17:18:21:: Entering drag list <====================, Project=5
+2012:01:02  17:18:21:: Entering buildDisplayList <=====
+2012:01:02  17:18:21:: ..queries done...
+2012:01:02  17:18:21:: ....parent list built...
+2012:01:02  17:18:21:: .....ix built.....
+2012:01:02  17:18:21:: ...built followhash....
+2012:01:02  17:18:21:: .....displayList built...
+2012:01:02  17:18:21:: Exiting buildDisplayList ========>
+2012:01:02  17:18:25:: Entering xhr_actions...
+2012:01:02  17:18:25:: 
+------> xhr_actions, message=AJAX request, ci=4577  ti='4399'  ajaxAction:dragmove
+2012:01:02  17:18:26:: Last item ID:4376
+2012:01:02  17:18:26:: ++MADE IT++
+2012:01:02  17:18:26:: 
+======dragmove=> CIid:TIid    4577:4399
+2012:01:02  17:18:26:: Last item ID:4376
+2012:01:02  17:18:26:: => findLastKid lastKid=0
+2012:01:02  17:18:26:: DragMove=> CI saved
+2012:01:02  17:18:26:: dragmove=> targetFollowerID:4379  targetFollower.follows:4399  lastkid:0
+2012:01:02  17:18:26::  => targetFollower.follows=4577
+2012:01:02  17:18:26::   REFRESH: [[4577L, 4399, u'TEST TEST 1 1 1', 4399, 1L, u'4', u'6', u'', '&bull;'], [4399L, 4396L, u'organize grid view on priority', 0L, 0L, u'2', u'2', u'', '+'], [4574L, 4381L, u'Done items ==========', 0L, 0L, u'0', u'9', u'', '+']]
+2012:01:02  17:18:30:: Entering xhr_actions...
+2012:01:02  17:18:30:: 
+------> xhr_actions, message=AJAX request, ci=4577  ti='0'  ajaxAction:promote
+2012:01:02  17:18:30:: Last item ID:4376
+2012:01:02  17:18:30:: ++MADE IT++
+2012:01:02  17:18:30:: => findLastKid lastKid=0
+2012:01:02  17:18:30:: Promoting: 4577
+2012:01:02  17:18:30:: k-promote: LastKidID=0
+2012:01:02  17:18:30::   REFRESH: [[4577L, 4399L, u'TEST TEST 1 1 1', 0L, 0L, u'4', u'6', u'', '&bull;'], [4399L, 4396L, u'organize grid view on priority', 0L, 0L, u'2', u'2', u'', '&bull;']]
+2012:01:02  17:18:35:: Entering xhr_actions...
+2012:01:02  17:18:35:: 
+------> xhr_actions, message=AJAX request, ci=4577  ti='4574'  ajaxAction:dragmove
+2012:01:02  17:18:35:: Last item ID:4376
+2012:01:02  17:18:35:: ++MADE IT++
+2012:01:02  17:18:35:: 
+======dragmove=> CIid:TIid    4577:4574
+2012:01:02  17:18:35:: Last item ID:4376
+2012:01:02  17:18:35:: => findLastKid lastKid=0
+2012:01:02  17:18:35:: DragMove=> CI saved
+2012:01:02  17:18:35:: dragmove=> targetFollowerID:4392  targetFollower.follows:4574  lastkid:0
+2012:01:02  17:18:35::  => targetFollower.follows=4577
+2012:01:02  17:22:21:: Entering xhr_actions...
+2012:01:02  17:22:21:: 
+------> xhr_actions, message=AJAX request, ci=4577  ti='4531'  ajaxAction:dragmove
+2012:01:02  17:22:21:: Last item ID:4376
+2012:01:02  17:22:21:: ++MADE IT++
+2012:01:02  17:22:21:: 
+======dragmove=> CIid:TIid    4577:4531
+2012:01:02  17:22:21:: Last item ID:4376
+2012:01:02  17:22:21:: => findLastKid lastKid=0
+2012:01:02  17:22:21:: DragMove=> CI saved
+2012:01:02  17:22:21:: dragmove=> targetFollowerID:4396  targetFollower.follows:4531  lastkid:0
+2012:01:02  17:22:21::  => targetFollower.follows=4577
+2012:01:02  17:23:05:: Entering xhr_actions...
+2012:01:02  17:23:05:: 
+------> xhr_actions, message=Not an AJAX request
+2012:01:02  17:23:05:: Last item ID:4376
+2012:01:02  17:23:05:: ++MADE IT++
+2012:01:02  17:23:05:: 
+======dragmove=> CIid:TIid    4577:4574
+2012:01:02  17:23:05:: Last item ID:4376
+2012:01:02  17:23:05:: => findLastKid lastKid=0
+2012:01:02  17:23:05:: DragMove=> CI saved
+2012:01:02  17:23:05:: dragmove=> targetFollowerID:4392  targetFollower.follows:4574  lastkid:0
+2012:01:02  17:23:05::  => targetFollower.follows=4577
+2012:01:02  17:23:19:: Entering xhr_actions...
+2012:01:02  17:23:19:: 
+------> xhr_actions, message=Not an AJAX request
+2012:01:02  17:23:19:: Last item ID:4376
+2012:01:02  17:23:19:: ++MADE IT++
+2012:01:02  17:23:19:: 
+======dragmove=> CIid:TIid    4577:4531
+2012:01:02  17:23:19:: Last item ID:4376
+2012:01:02  17:23:19:: => findLastKid lastKid=0
+2012:01:02  17:23:19:: DragMove=> CI saved
+2012:01:02  17:23:19:: dragmove=> targetFollowerID:4396  targetFollower.follows:4531  lastkid:0
+2012:01:02  17:23:19::  => targetFollower.follows=4577
+2012:01:02  17:23:27:: Entering drag list <====================, Project=5
+2012:01:02  17:23:27:: Entering buildDisplayList <=====
+2012:01:02  17:23:27:: ..queries done...
+2012:01:02  17:23:27:: ....parent list built...
+2012:01:02  17:23:27:: .....ix built.....
+2012:01:02  17:23:27:: ...built followhash....
+2012:01:02  17:23:27:: .....displayList built...
+2012:01:02  17:23:27:: Exiting buildDisplayList ========>
+2012:01:02  17:23:39:: Entering xhr_actions...
+2012:01:02  17:23:39:: 
+------> xhr_actions, message=AJAX request, ci=4577  ti='4380'  ajaxAction:dragmove
+2012:01:02  17:23:39:: Last item ID:4376
+2012:01:02  17:23:39:: ++MADE IT++
+2012:01:02  17:23:39:: 
+======dragmove=> CIid:TIid    4577:4380
+2012:01:02  17:23:39:: Last item ID:4376
+2012:01:02  17:23:39:: => findLastKid lastKid=0
+2012:01:02  17:23:39:: DragMove=> CI saved
+2012:01:02  17:23:39:: dragmove=> targetFollowerID:4381  targetFollower.follows:4380  lastkid:0
+2012:01:02  17:23:39::  => targetFollower.follows=4577
+2012:01:02  17:23:49:: Entering xhr_actions...
+2012:01:02  17:23:49:: 
+------> xhr_actions, message=Not an AJAX request
+2012:01:02  17:23:49:: Last item ID:4376
+2012:01:02  17:23:49:: ++MADE IT++
+2012:01:02  17:23:49:: 
+======dragmove=> CIid:TIid    4577:4574
+2012:01:02  17:23:49:: Last item ID:4376
+2012:01:02  17:23:49:: => findLastKid lastKid=0
+2012:01:02  17:23:49:: DragMove=> CI saved
+2012:01:02  17:23:49:: dragmove=> targetFollowerID:4392  targetFollower.follows:4574  lastkid:0
+2012:01:02  17:23:49::  => targetFollower.follows=4577
+2012:01:02  17:24:00:: Entering drag list <====================, Project=5
+2012:01:02  17:24:00:: Entering buildDisplayList <=====
+2012:01:02  17:24:00:: ..queries done...
+2012:01:02  17:24:00:: ....parent list built...
+2012:01:02  17:24:00:: .....ix built.....
+2012:01:02  17:24:00:: ...built followhash....
+2012:01:02  17:24:00:: .....displayList built...
+2012:01:02  17:24:00:: Exiting buildDisplayList ========>
+2012:01:02  17:24:08:: Entering xhr_actions...
+2012:01:02  17:24:08:: 
+------> xhr_actions, message=AJAX request, ci=4577  ti='4396'  ajaxAction:dragmove
+2012:01:02  17:24:08:: Last item ID:4376
+2012:01:02  17:24:08:: ++MADE IT++
+2012:01:02  17:24:08:: 
+======dragmove=> CIid:TIid    4577:4396
+2012:01:02  17:24:08:: Last item ID:4376
+2012:01:02  17:24:08:: => findLastKid lastKid=0
+2012:01:02  17:24:08:: DragMove=> CI saved
+2012:01:02  17:24:08:: dragmove=> targetFollowerID:4399  targetFollower.follows:4396  lastkid:0
+2012:01:02  17:24:08::  => targetFollower.follows=4577
+2012:01:02  17:24:08:: ((ROAMER)) [[4577L, 4396, u'TEST TEST 1 1 1', 4396, 2L, u'4', u'6', u'', '&bull;'], [4396L, 4531L, u"don't seem to be able to drag onto the last item", 4531L, 1L, u'0', u'0', u'', '+'], [4574L, 4381L, u'Done items ==========', 0L, 0L, u'0', u'9', u'', '+']]
+2012:01:02  17:24:08::   REFRESH: [[4577L, 4396, u'TEST TEST 1 1 1', 4396, 2L, u'4', u'6', u'', '&bull;'], [4396L, 4531L, u"don't seem to be able to drag onto the last item", 4531L, 1L, u'0', u'0', u'', '+'], [4574L, 4381L, u'Done items ==========', 0L, 0L, u'0', u'9', u'', '+']]
+2012:01:02  17:24:18:: Entering xhr_actions...
+2012:01:02  17:24:18:: 
+------> xhr_actions, message=AJAX request, ci=4577  ti='4574'  ajaxAction:dragmove
+2012:01:02  17:24:18:: Last item ID:4376
+2012:01:02  17:24:18:: ++MADE IT++
+2012:01:02  17:24:18:: 
+======dragmove=> CIid:TIid    4577:4574
+2012:01:02  17:24:18:: Last item ID:4376
+2012:01:02  17:24:18:: => findLastKid lastKid=0
+2012:01:02  17:24:18:: DragMove=> CI saved
+2012:01:02  17:24:18:: dragmove=> targetFollowerID:4392  targetFollower.follows:4574  lastkid:0
+2012:01:02  17:24:18::  => targetFollower.follows=4577
+2012:01:02  17:24:18:: ((ROAMER)) [[4577L, 4574, u'TEST TEST 1 1 1', 4574, 1L, u'4', u'6', u'', '&bull;'], [4574L, 4381L, u'Done items ==========', 0L, 0L, u'0', u'9', u'', '+'], [4396L, 4531L, u"don't seem to be able to drag onto the last item", 4531L, 1L, u'0', u'0', u'', '&bull;']]
+2012:01:02  17:24:18::   REFRESH: [[4577L, 4574, u'TEST TEST 1 1 1', 4574, 1L, u'4', u'6', u'', '&bull;'], [4574L, 4381L, u'Done items ==========', 0L, 0L, u'0', u'9', u'', '+'], [4396L, 4531L, u"don't seem to be able to drag onto the last item", 4531L, 1L, u'0', u'0', u'', '&bull;']]
+2012:01:02  17:24:35:: Entering xhr_actions...
+2012:01:02  17:24:35:: 
+------> xhr_actions, message=AJAX request, ci=4577  ti='4399'  ajaxAction:dragmove
+2012:01:02  17:24:35:: Last item ID:4376
+2012:01:02  17:24:35:: ++MADE IT++
+2012:01:02  17:24:35:: 
+======dragmove=> CIid:TIid    4577:4399
+2012:01:02  17:24:35:: Last item ID:4376
+2012:01:02  17:24:36:: => findLastKid lastKid=0
+2012:01:02  17:24:36:: DragMove=> CI saved
+2012:01:02  17:24:36:: dragmove=> targetFollowerID:4379  targetFollower.follows:4399  lastkid:0
+2012:01:02  17:24:36::  => targetFollower.follows=4577
+2012:01:02  17:24:36:: ((ROAMER)) [[4577L, 4399, u'TEST TEST 1 1 1', 4399, 1L, u'4', u'6', u'', '&bull;'], [4399L, 4396L, u'organize grid view on priority', 0L, 0L, u'2', u'2', u'', '+'], [4574L, 4381L, u'Done items ==========', 0L, 0L, u'0', u'9', u'', '+']]
+2012:01:02  17:24:36::   REFRESH: [[4577L, 4399, u'TEST TEST 1 1 1', 4399, 1L, u'4', u'6', u'', '&bull;'], [4399L, 4396L, u'organize grid view on priority', 0L, 0L, u'2', u'2', u'', '+'], [4574L, 4381L, u'Done items ==========', 0L, 0L, u'0', u'9', u'', '+']]
+2012:01:02  17:24:47:: Entering xhr_actions...
+2012:01:02  17:24:47:: 
+------> xhr_actions, message=AJAX request, ci=4577  ti='0'  ajaxAction:promote
+2012:01:02  17:24:47:: Last item ID:4376
+2012:01:02  17:24:47:: ++MADE IT++
+2012:01:02  17:24:47:: => findLastKid lastKid=0
+2012:01:02  17:24:47:: Promoting: 4577
+2012:01:02  17:24:47:: k-promote: LastKidID=0
+2012:01:02  17:24:47::   REFRESH: [[4577L, 4399L, u'TEST TEST 1 1 1', 0L, 0L, u'4', u'6', u'', '&bull;'], [4399L, 4396L, u'organize grid view on priority', 0L, 0L, u'2', u'2', u'', '&bull;']]
+2012:01:02  17:25:13:: Entering xhr_actions...
+2012:01:02  17:25:13:: 
+------> xhr_actions, message=AJAX request, ci=4577  ti='4574'  ajaxAction:dragmove
+2012:01:02  17:25:13:: Last item ID:4376
+2012:01:02  17:25:13:: ++MADE IT++
+2012:01:02  17:25:13:: 
+======dragmove=> CIid:TIid    4577:4574
+2012:01:02  17:25:13:: Last item ID:4376
+2012:01:02  17:25:14:: => findLastKid lastKid=0
+2012:01:02  17:25:14:: DragMove=> CI saved
+2012:01:02  17:25:14:: dragmove=> targetFollowerID:4392  targetFollower.follows:4574  lastkid:0
+2012:01:02  17:25:14::  => targetFollower.follows=4577
+2012:01:02  17:25:25:: Entering xhr_actions...
+2012:01:02  17:25:25:: 
+------> xhr_actions, message=AJAX request, ci=4577  ti='4396'  ajaxAction:dragmove
+2012:01:02  17:25:25:: Last item ID:4376
+2012:01:02  17:25:25:: ++MADE IT++
+2012:01:02  17:25:25:: 
+======dragmove=> CIid:TIid    4577:4396
+2012:01:02  17:25:25:: Last item ID:4376
+2012:01:02  17:25:25:: => findLastKid lastKid=0
+2012:01:02  17:25:25:: DragMove=> CI saved
+2012:01:02  17:25:25:: dragmove=> targetFollowerID:4399  targetFollower.follows:4396  lastkid:0
+2012:01:02  17:25:25::  => targetFollower.follows=4577
+2012:01:02  17:25:25:: ((ROAMER)) [[4577L, 4396, u'TEST TEST 1 1 1', 4396, 2L, u'4', u'6', u'', '&bull;'], [4396L, 4531L, u"don't seem to be able to drag onto the last item", 4531L, 1L, u'0', u'0', u'', '+'], [4574L, 4381L, u'Done items ==========', 0L, 0L, u'0', u'9', u'', '+']]
+2012:01:02  17:25:25::   REFRESH: [[4577L, 4396, u'TEST TEST 1 1 1', 4396, 2L, u'4', u'6', u'', '&bull;'], [4396L, 4531L, u"don't seem to be able to drag onto the last item", 4531L, 1L, u'0', u'0', u'', '+'], [4574L, 4381L, u'Done items ==========', 0L, 0L, u'0', u'9', u'', '+']]
+2012:01:02  17:25:31:: Entering xhr_actions...
+2012:01:02  17:25:31:: 
+------> xhr_actions, message=AJAX request, ci=4577  ti='4574'  ajaxAction:dragmove
+2012:01:02  17:25:31:: Last item ID:4376
+2012:01:02  17:25:31:: ++MADE IT++
+2012:01:02  17:25:31:: 
+======dragmove=> CIid:TIid    4577:4574
+2012:01:02  17:25:31:: Last item ID:4376
+2012:01:02  17:25:31:: => findLastKid lastKid=0
+2012:01:02  17:25:31:: DragMove=> CI saved
+2012:01:02  17:25:31:: dragmove=> targetFollowerID:4392  targetFollower.follows:4574  lastkid:0
+2012:01:02  17:25:31::  => targetFollower.follows=4577
+2012:01:02  17:25:31:: ((ROAMER)) [[4577L, 4574, u'TEST TEST 1 1 1', 4574, 1L, u'4', u'6', u'', '&bull;'], [4574L, 4381L, u'Done items ==========', 0L, 0L, u'0', u'9', u'', '+'], [4396L, 4531L, u"don't seem to be able to drag onto the last item", 4531L, 1L, u'0', u'0', u'', '&bull;']]
+2012:01:02  17:25:31::   REFRESH: [[4577L, 4574, u'TEST TEST 1 1 1', 4574, 1L, u'4', u'6', u'', '&bull;'], [4574L, 4381L, u'Done items ==========', 0L, 0L, u'0', u'9', u'', '+'], [4396L, 4531L, u"don't seem to be able to drag onto the last item", 4531L, 1L, u'0', u'0', u'', '&bull;']]
+2012:01:02  17:26:15:: Entering xhr_actions...
+2012:01:02  17:26:15:: 
+------> xhr_actions, message=AJAX request, ci=4577  ti='4379'  ajaxAction:dragmove
+2012:01:02  17:26:15:: Last item ID:4376
+2012:01:02  17:26:15:: ++MADE IT++
+2012:01:02  17:26:15:: 
+======dragmove=> CIid:TIid    4577:4379
+2012:01:02  17:26:15:: Last item ID:4376
+2012:01:02  17:26:15:: => findLastKid lastKid=0
+2012:01:02  17:26:15:: DragMove=> CI saved
+2012:01:02  17:26:15:: dragmove=> targetFollowerID:4380  targetFollower.follows:4379  lastkid:0
+2012:01:02  17:26:15::  => targetFollower.follows=4577
+2012:01:02  17:26:15:: ((ROAMER)) [[4577L, 4379, u'TEST TEST 1 1 1', 4379, 1L, u'4', u'6', u'', '&bull;'], [4379L, 4399L, u'priority/status js updates', 0L, 0L, u'1', u'1', u'', '+'], [4574L, 4381L, u'Done items ==========', 0L, 0L, u'0', u'9', u'', '+']]
+2012:01:02  17:26:15::   REFRESH: [[4577L, 4379, u'TEST TEST 1 1 1', 4379, 1L, u'4', u'6', u'', '&bull;'], [4379L, 4399L, u'priority/status js updates', 0L, 0L, u'1', u'1', u'', '+'], [4574L, 4381L, u'Done items ==========', 0L, 0L, u'0', u'9', u'', '+']]
+2012:01:02  17:26:19:: Entering xhr_actions...
+2012:01:02  17:26:19:: 
+------> xhr_actions, message=AJAX request, ci=4577  ti='0'  ajaxAction:promote
+2012:01:02  17:26:19:: Last item ID:4376
+2012:01:02  17:26:19:: ++MADE IT++
+2012:01:02  17:26:19:: => findLastKid lastKid=0
+2012:01:02  17:26:19:: Promoting: 4577
+2012:01:02  17:26:19:: k-promote: LastKidID=0
+2012:01:02  17:26:19::   REFRESH: [[4577L, 4379L, u'TEST TEST 1 1 1', 0L, 0L, u'4', u'6', u'', '&bull;'], [4379L, 4399L, u'priority/status js updates', 0L, 0L, u'1', u'1', u'', '&bull;']]
+2012:01:02  17:26:25:: Entering xhr_actions...
+2012:01:02  17:26:25:: 
+------> xhr_actions, message=AJAX request, ci=4577  ti='4574'  ajaxAction:dragmove
+2012:01:02  17:26:25:: Last item ID:4376
+2012:01:02  17:26:25:: ++MADE IT++
+2012:01:02  17:26:25:: 
+======dragmove=> CIid:TIid    4577:4574
+2012:01:02  17:26:25:: Last item ID:4376
+2012:01:02  17:26:25:: => findLastKid lastKid=0
+2012:01:02  17:26:25:: DragMove=> CI saved
+2012:01:02  17:26:25:: dragmove=> targetFollowerID:4392  targetFollower.follows:4574  lastkid:0
+2012:01:02  17:26:25::  => targetFollower.follows=4577
+2012:01:02  17:28:42:: Entering drag list <====================, Project=5
+2012:01:02  17:28:42:: Entering buildDisplayList <=====
+2012:01:02  17:28:42:: ..queries done...
+2012:01:02  17:28:42:: ....parent list built...
+2012:01:02  17:28:42:: .....ix built.....
+2012:01:02  17:28:42:: ...built followhash....
+2012:01:02  17:28:42:: .....displayList built...
+2012:01:02  17:28:42:: Exiting buildDisplayList ========>
+2012:01:02  17:28:47:: Entering xhr_actions...
+2012:01:02  17:28:47:: 
+------> xhr_actions, message=AJAX request, ci=4577  ti='4377'  ajaxAction:dragmove
+2012:01:02  17:28:47:: Last item ID:4376
+2012:01:02  17:28:47:: ++MADE IT++
+2012:01:02  17:28:47:: 
+======dragmove=> CIid:TIid    4577:4377
+2012:01:02  17:28:47:: Last item ID:4376
+2012:01:02  17:28:47:: => findLastKid lastKid=0
+2012:01:02  17:28:47:: DragMove=> CI saved
+2012:01:02  17:28:47:: dragmove=> targetFollowerID:4531  targetFollower.follows:4377  lastkid:0
+2012:01:02  17:28:48::  => targetFollower.follows=4577
+2012:01:02  17:28:48:: ((drag_move ROAMER)) [[4577L, 4377, u'TEST TEST 1 1 1', 4377, 1L, u'4', u'6', u'', '&bull;'], [4377L, 4375L, u'introduce paging', 0L, 0L, u'1', u'2', u"1. smart paging - don't truncate in middle of children\r\n\r\n2. Javacript will need to check if an item is in the DOM before refreshing\r\n\r\n3. buildlist could be passed starting item, and length/threshold #.\r\n\r\n4. Hard part will be keeping track of the next item. Well, fussy, not hard.", '+'], [4574L, 4381L, u'Done items ==========', 0L, 0L, u'0', u'9', u'', '+']]
+2012:01:02  17:28:48::   REFRESH: [[4577L, 4377, u'TEST TEST 1 1 1', 4377, 1L, u'4', u'6', u'', '&bull;'], [4377L, 4375L, u'introduce paging', 0L, 0L, u'1', u'2', u"1. smart paging - don't truncate in middle of children\r\n\r\n2. Javacript will need to check if an item is in the DOM before refreshing\r\n\r\n3. buildlist could be passed starting item, and length/threshold #.\r\n\r\n4. Hard part will be keeping track of the next item. Well, fussy, not hard.", '+'], [4574L, 4381L, u'Done items ==========', 0L, 0L, u'0', u'9', u'', '+']]
+2012:01:02  17:28:49:: Entering xhr_actions...
+2012:01:02  17:28:49:: 
+------> xhr_actions, message=AJAX request, ci=4577  ti='0'  ajaxAction:promote
+2012:01:02  17:28:49:: Last item ID:4376
+2012:01:02  17:28:49:: ++MADE IT++
+2012:01:02  17:28:49:: => findLastKid lastKid=0
+2012:01:02  17:28:49:: Promoting: 4577
+2012:01:02  17:28:49:: k-promote: LastKidID=0
+2012:01:02  17:28:49::   REFRESH: [[4577L, 4377L, u'TEST TEST 1 1 1', 0L, 0L, u'4', u'6', u'', '&bull;'], [4377L, 4375L, u'introduce paging', 0L, 0L, u'1', u'2', u"1. smart paging - don't truncate in middle of children\r\n\r\n2. Javacript will need to check if an item is in the DOM before refreshing\r\n\r\n3. buildlist could be passed starting item, and length/threshold #.\r\n\r\n4. Hard part will be keeping track of the next item. Well, fussy, not hard.", '&bull;']]
+2012:01:02  17:28:56:: Entering xhr_actions...
+2012:01:02  17:28:56:: 
+------> xhr_actions, message=AJAX request, ci=4577  ti='4574'  ajaxAction:dragmove
+2012:01:02  17:28:56:: Last item ID:4376
+2012:01:02  17:28:56:: ++MADE IT++
+2012:01:02  17:28:56:: 
+======dragmove=> CIid:TIid    4577:4574
+2012:01:02  17:28:56:: Last item ID:4376
+2012:01:02  17:28:56:: => findLastKid lastKid=0
+2012:01:02  17:28:56:: DragMove=> CI saved
+2012:01:02  17:28:56:: dragmove=> targetFollowerID:4392  targetFollower.follows:4574  lastkid:0
+2012:01:02  17:28:56::  => targetFollower.follows=4577
+2012:01:02  17:29:30:: Entering xhr_actions...
+2012:01:02  17:29:30:: 
+------> xhr_actions, message=Not an AJAX request
+2012:01:02  17:29:30:: Last item ID:4376
+2012:01:02  17:29:30:: ++MADE IT++
+2012:01:02  17:29:30:: 
+======dragmove=> CIid:TIid    4577:4574
+2012:01:02  17:29:30:: 
+== WARNING: move of item onto item it follows is invalid. Not executing.
+2012:01:02  17:29:30::   REFRESH: []
+2012:01:02  17:29:35:: Entering xhr_actions...
+2012:01:02  17:29:35:: 
+------> xhr_actions, message=Not an AJAX request
+2012:01:02  17:29:35:: Last item ID:4376
+2012:01:02  17:29:35:: ++MADE IT++
+2012:01:02  17:29:35:: 
+======dragmove=> CIid:TIid    4577:4531
+2012:01:02  17:29:35:: Last item ID:4376
+2012:01:02  17:29:35:: => findLastKid lastKid=0
+2012:01:02  17:29:35:: DragMove=> CI saved
+2012:01:02  17:29:35:: dragmove=> targetFollowerID:4396  targetFollower.follows:4531  lastkid:0
+2012:01:02  17:29:35::  => targetFollower.follows=4577
+2012:01:02  17:29:35:: ((drag_move ROAMER)) [[4577L, 4531, u'TEST TEST 1 1 1', 4531, 1L, u'4', u'6', u'', '&bull;'], [4531L, 4377L, u'bugs: moving', 0L, 0L, u'2', u'3', u"1. if you move a tree whose last child is the last item on the project, that last child seems to be abandoned.\r\n\r\n2. dragging onto last item doesn't work\r\n\r\n3. ddragging to parent, whose lastKid=lastItemID doesn't work on benk item # 4574, but does on other tests?", '+'], [4574L, 4381L, u'Done items ==========', 0L, 0L, u'0', u'9', u'', '+']]
+2012:01:02  17:29:35::   REFRESH: [[4577L, 4531, u'TEST TEST 1 1 1', 4531, 1L, u'4', u'6', u'', '&bull;'], [4531L, 4377L, u'bugs: moving', 0L, 0L, u'2', u'3', u"1. if you move a tree whose last child is the last item on the project, that last child seems to be abandoned.\r\n\r\n2. dragging onto last item doesn't work\r\n\r\n3. ddragging to parent, whose lastKid=lastItemID doesn't work on benk item # 4574, but does on other tests?", '+'], [4574L, 4381L, u'Done items ==========', 0L, 0L, u'0', u'9', u'', '+']]
+2012:01:02  17:32:04:: Entering drag list <====================, Project=5
+2012:01:02  17:32:04:: Entering buildDisplayList <=====
+2012:01:02  17:32:04:: ..queries done...
+2012:01:02  17:32:04:: ....parent list built...
+2012:01:02  17:32:04:: .....ix built.....
+2012:01:02  17:32:04:: ...built followhash....
+2012:01:02  17:32:04:: .....displayList built...
+2012:01:02  17:32:04:: Exiting buildDisplayList ========>
+2012:01:02  17:32:15:: Entering xhr_actions...
+2012:01:02  17:32:15:: 
+------> xhr_actions, message=AJAX request, ci=4577  ti='4399'  ajaxAction:dragmove
+2012:01:02  17:32:15:: Last item ID:4376
+2012:01:02  17:32:15:: ++MADE IT++
+2012:01:02  17:32:15:: 
+======dragmove=> CIid:TIid    4577:4399
+2012:01:02  17:32:15:: Last item ID:4376
+2012:01:02  17:32:15:: => findLastKid lastKid=0
+2012:01:02  17:32:15:: DragMove=> CI saved
+2012:01:02  17:32:15:: dragmove=> targetFollowerID:4379  targetFollower.follows:4399  lastkid:0
+2012:01:02  17:32:15::  => targetFollower.follows=4577
+2012:01:02  17:32:15:: ((drag_move ROAMER1)) [[4577L, 4399, u'TEST TEST 1 1 1', 4399, 1L, u'4', u'6', u'', '&bull;']]
+2012:01:02  17:32:15:: ((drag_move ROAMER2)) [[4577L, 4399, u'TEST TEST 1 1 1', 4399, 1L, u'4', u'6', u'', '&bull;'], [4399L, 4396L, u'organize grid view on priority', 0L, 0L, u'2', u'2', u'', '+']]
+2012:01:02  17:32:15:: ((drag_move ROAMER3)) [[4577L, 4399, u'TEST TEST 1 1 1', 4399, 1L, u'4', u'6', u'', '&bull;'], [4399L, 4396L, u'organize grid view on priority', 0L, 0L, u'2', u'2', u'', '+'], [4531L, 4377L, u'bugs: moving', 0L, 0L, u'2', u'3', u"1. if you move a tree whose last child is the last item on the project, that last child seems to be abandoned.\r\n\r\n2. dragging onto last item doesn't work\r\n\r\n3. ddragging to parent, whose lastKid=lastItemID doesn't work on benk item # 4574, but does on other tests?", '+']]
+2012:01:02  17:32:15::   REFRESH: [[4577L, 4399, u'TEST TEST 1 1 1', 4399, 1L, u'4', u'6', u'', '&bull;'], [4399L, 4396L, u'organize grid view on priority', 0L, 0L, u'2', u'2', u'', '+'], [4531L, 4377L, u'bugs: moving', 0L, 0L, u'2', u'3', u"1. if you move a tree whose last child is the last item on the project, that last child seems to be abandoned.\r\n\r\n2. dragging onto last item doesn't work\r\n\r\n3. ddragging to parent, whose lastKid=lastItemID doesn't work on benk item # 4574, but does on other tests?", '+']]
+2012:01:02  17:32:33:: Entering xhr_actions...
+2012:01:02  17:32:33:: 
+------> xhr_actions, message=AJAX request, ci=4577  ti='0'  ajaxAction:promote
+2012:01:02  17:32:33:: Last item ID:4376
+2012:01:02  17:32:33:: ++MADE IT++
+2012:01:02  17:32:33:: => findLastKid lastKid=0
+2012:01:02  17:32:33:: Promoting: 4577
+2012:01:02  17:32:33:: k-promote: LastKidID=0
+2012:01:02  17:32:33::   REFRESH: [[4577L, 4399L, u'TEST TEST 1 1 1', 0L, 0L, u'4', u'6', u'', '&bull;'], [4399L, 4396L, u'organize grid view on priority', 0L, 0L, u'2', u'2', u'', '&bull;']]
+2012:01:02  17:32:42:: Entering xhr_actions...
+2012:01:02  17:32:42:: 
+------> xhr_actions, message=AJAX request, ci=4577  ti='4574'  ajaxAction:dragmove
+2012:01:02  17:32:42:: Last item ID:4376
+2012:01:02  17:32:42:: ++MADE IT++
+2012:01:02  17:32:42:: 
+======dragmove=> CIid:TIid    4577:4574
+2012:01:02  17:32:42:: Last item ID:4376
+2012:01:02  17:32:42:: => findLastKid lastKid=0
+2012:01:02  17:32:42:: DragMove=> CI saved
+2012:01:02  17:32:42:: dragmove=> targetFollowerID:4392  targetFollower.follows:4574  lastkid:0
+2012:01:02  17:32:42::  => targetFollower.follows=4577
+2012:01:02  17:32:42:: ((drag_move ROAMER1)) [[4577L, 4574, u'TEST TEST 1 1 1', 4574, 1L, u'4', u'6', u'', '&bull;']]
+2012:01:02  17:32:42:: ((drag_move ROAMER2)) [[4577L, 4574, u'TEST TEST 1 1 1', 4574, 1L, u'4', u'6', u'', '&bull;'], [4574L, 4381L, u'Done items ==========', 0L, 0L, u'0', u'9', u'', '+']]
+2012:01:02  17:34:32:: Entering drag list <====================, Project=5
+2012:01:02  17:34:32:: Entering buildDisplayList <=====
+2012:01:02  17:34:32:: ..queries done...
+2012:01:02  17:34:32:: ....parent list built...
+2012:01:02  17:34:32:: .....ix built.....
+2012:01:02  17:34:32:: ...built followhash....
+2012:01:02  17:34:32:: .....displayList built...
+2012:01:02  17:34:32:: Exiting buildDisplayList ========>
+2012:01:02  17:34:36:: Entering xhr_actions...
+2012:01:02  17:34:36:: 
+------> xhr_actions, message=AJAX request, ci=4577  ti='4399'  ajaxAction:dragmove
+2012:01:02  17:34:36:: Last item ID:4376
+2012:01:02  17:34:36:: ++MADE IT++
+2012:01:02  17:34:36:: 
+======dragmove=> CIid:TIid    4577:4399
+2012:01:02  17:34:36:: Last item ID:4376
+2012:01:02  17:34:36:: => findLastKid lastKid=0
+2012:01:02  17:34:36:: DragMove=> CI saved
+2012:01:02  17:34:36:: dragmove=> targetFollowerID:4379  targetFollower.follows:4399  lastkid:0
+2012:01:02  17:34:36::  => targetFollower.follows=4577
+2012:01:02  17:34:36:: ((drag_move ROAMER1)) [[4577L, 4399, u'TEST TEST 1 1 1', 4399, 1L, u'4', u'6', u'', '&bull;']]
+2012:01:02  17:34:36:: ((drag_move ROAMER2)) [[4577L, 4399, u'TEST TEST 1 1 1', 4399, 1L, u'4', u'6', u'', '&bull;'], [4399L, 4396L, u'organize grid view on priority', 0L, 0L, u'2', u'2', u'', '+']]
+2012:01:02  17:34:36:: ((drag_move ROAMER3)) [[4577L, 4399, u'TEST TEST 1 1 1', 4399, 1L, u'4', u'6', u'', '&bull;'], [4399L, 4396L, u'organize grid view on priority', 0L, 0L, u'2', u'2', u'', '+'], [4574L, 4381L, u'Done items ==========', 0L, 0L, u'0', u'9', u'', '+']]
+2012:01:02  17:34:36::   REFRESH: [[4577L, 4399, u'TEST TEST 1 1 1', 4399, 1L, u'4', u'6', u'', '&bull;'], [4399L, 4396L, u'organize grid view on priority', 0L, 0L, u'2', u'2', u'', '+'], [4574L, 4381L, u'Done items ==========', 0L, 0L, u'0', u'9', u'', '+']]
+2012:01:02  17:34:38:: Entering xhr_actions...
+2012:01:02  17:34:38:: 
+------> xhr_actions, message=AJAX request, ci=4577  ti='0'  ajaxAction:promote
+2012:01:02  17:34:38:: Last item ID:4376
+2012:01:02  17:34:38:: ++MADE IT++
+2012:01:02  17:34:38:: => findLastKid lastKid=0
+2012:01:02  17:34:38:: Promoting: 4577
+2012:01:02  17:34:38:: k-promote: LastKidID=0
+2012:01:02  17:34:38::   REFRESH: [[4577L, 4399L, u'TEST TEST 1 1 1', 0L, 0L, u'4', u'6', u'', '&bull;'], [4399L, 4396L, u'organize grid view on priority', 0L, 0L, u'2', u'2', u'', '&bull;']]
+2012:01:02  17:34:40:: Last item ID:4376
+2012:01:02  17:34:40:: edit new item: 4578
+2012:01:02  17:34:40:: Formset generated, pItem=4578
+2012:01:02  17:34:49:: Formset saved: [<Item: mmm>]
+2012:01:02  17:34:49:: Entering drag list <====================, Project=5
+2012:01:02  17:34:49:: Entering buildDisplayList <=====
+2012:01:02  17:34:49:: ..queries done...
+2012:01:02  17:34:49:: ....parent list built...
+2012:01:02  17:34:49:: .....ix built.....
+2012:01:02  17:34:49:: ...built followhash....
+2012:01:02  17:34:49:: .....displayList built...
+2012:01:02  17:34:49:: Exiting buildDisplayList ========>
+2012:01:02  17:34:53:: Last item ID:4376
+2012:01:02  17:34:53:: edit new item: 4579
+2012:01:02  17:34:54:: Formset generated, pItem=4579
+2012:01:02  17:35:02:: Formset saved: [<Item: o o o o o >]
+2012:01:02  17:35:02:: Entering drag list <====================, Project=5
+2012:01:02  17:35:02:: Entering buildDisplayList <=====
+2012:01:02  17:35:02:: ..queries done...
+2012:01:02  17:35:02:: ....parent list built...
+2012:01:02  17:35:02:: .....ix built.....
+2012:01:02  17:35:02:: ...built followhash....
+2012:01:02  17:35:02:: .....displayList built...
+2012:01:02  17:35:02:: Exiting buildDisplayList ========>
+2012:01:02  17:35:19:: Entering xhr_actions...
+2012:01:02  17:35:19:: 
+------> xhr_actions, message=AJAX request, ci=4577  ti='4574'  ajaxAction:dragmove
+2012:01:02  17:35:19:: Last item ID:4376
+2012:01:02  17:35:19:: ++MADE IT++
+2012:01:02  17:35:19:: 
+======dragmove=> CIid:TIid    4577:4574
+2012:01:02  17:35:19:: Last item ID:4376
+2012:01:02  17:35:19:: => findLastKid lastKid=0
+2012:01:02  17:35:19:: DragMove=> CI saved
+2012:01:02  17:35:19:: dragmove=> targetFollowerID:4392  targetFollower.follows:4574  lastkid:0
+2012:01:02  17:35:19::  => targetFollower.follows=4577
+2012:01:02  17:35:19:: ((drag_move ROAMER1)) [[4577L, 4574, u'TEST TEST 1 1 1', 4574, 1L, u'4', u'6', u'', '&bull;']]
+2012:01:02  17:35:19:: ((drag_move ROAMER2)) [[4577L, 4574, u'TEST TEST 1 1 1', 4574, 1L, u'4', u'6', u'', '&bull;'], [4574L, 4381L, u'Done items ==========', 0L, 0L, u'0', u'9', u'', '+']]
+2012:01:02  17:35:19:: ((drag_move ROAMER3)) [[4577L, 4574, u'TEST TEST 1 1 1', 4574, 1L, u'4', u'6', u'', '&bull;'], [4574L, 4381L, u'Done items ==========', 0L, 0L, u'0', u'9', u'', '+']]
+2012:01:02  17:35:19::   REFRESH: [[4577L, 4574, u'TEST TEST 1 1 1', 4574, 1L, u'4', u'6', u'', '&bull;'], [4574L, 4381L, u'Done items ==========', 0L, 0L, u'0', u'9', u'', '+']]
+2012:01:02  17:35:29:: Entering xhr_actions...
+2012:01:02  17:35:29:: 
+------> xhr_actions, message=AJAX request, ci=4578  ti='4574'  ajaxAction:dragmove
+2012:01:02  17:35:29:: Last item ID:4376
+2012:01:02  17:35:29:: ++MADE IT++
+2012:01:02  17:35:29:: 
+======dragmove=> CIid:TIid    4578:4574
+2012:01:02  17:35:29:: Last item ID:4376
+2012:01:02  17:35:29:: => findLastKid lastKid=0
+2012:01:02  17:35:29:: DragMove=> CI saved
+2012:01:02  17:35:29:: dragmove=> targetFollowerID:4577  targetFollower.follows:4574  lastkid:0
+2012:01:02  17:35:29::  => targetFollower.follows=4578
+2012:01:02  17:35:29:: ((drag_move ROAMER1)) [[4578L, 4574, u'mmm', 4574, 1L, u'1', u'6', u'', '&bull;']]
+2012:01:02  17:35:29:: ((drag_move ROAMER2)) [[4578L, 4574, u'mmm', 4574, 1L, u'1', u'6', u'', '&bull;'], [4574L, 4381L, u'Done items ==========', 0L, 0L, u'0', u'9', u'', '+']]
+2012:01:02  17:35:29:: ((drag_move ROAMER3)) [[4578L, 4574, u'mmm', 4574, 1L, u'1', u'6', u'', '&bull;'], [4574L, 4381L, u'Done items ==========', 0L, 0L, u'0', u'9', u'', '+']]
+2012:01:02  17:35:29::   REFRESH: [[4578L, 4574, u'mmm', 4574, 1L, u'1', u'6', u'', '&bull;'], [4574L, 4381L, u'Done items ==========', 0L, 0L, u'0', u'9', u'', '+']]
+2012:01:02  17:35:32:: Entering xhr_actions...
+2012:01:02  17:35:32:: 
+------> xhr_actions, message=AJAX request, ci=4579  ti='4574'  ajaxAction:dragmove
+2012:01:02  17:35:32:: Last item ID:4376
+2012:01:02  17:35:32:: ++MADE IT++
+2012:01:02  17:35:33:: 
+======dragmove=> CIid:TIid    4579:4574
+2012:01:02  17:35:33:: Last item ID:4376
+2012:01:02  17:35:33:: => findLastKid lastKid=0
+2012:01:02  17:35:33:: DragMove=> CI saved
+2012:01:02  17:35:33:: dragmove=> targetFollowerID:4578  targetFollower.follows:4574  lastkid:0
+2012:01:02  17:35:33::  => targetFollower.follows=4579
+2012:01:02  17:35:33:: ((drag_move ROAMER1)) [[4579L, 4574, u'o o o o o ', 4574, 1L, u'2', u'6', u'', '&bull;']]
+2012:01:02  17:35:33:: ((drag_move ROAMER2)) [[4579L, 4574, u'o o o o o ', 4574, 1L, u'2', u'6', u'', '&bull;'], [4574L, 4381L, u'Done items ==========', 0L, 0L, u'0', u'9', u'', '+']]
+2012:01:02  17:35:33:: ((drag_move ROAMER3)) [[4579L, 4574, u'o o o o o ', 4574, 1L, u'2', u'6', u'', '&bull;'], [4574L, 4381L, u'Done items ==========', 0L, 0L, u'0', u'9', u'', '+']]
+2012:01:02  17:35:33::   REFRESH: [[4579L, 4574, u'o o o o o ', 4574, 1L, u'2', u'6', u'', '&bull;'], [4574L, 4381L, u'Done items ==========', 0L, 0L, u'0', u'9', u'', '+']]
+2012:01:02  17:35:42:: Entering xhr_actions...
+2012:01:02  17:35:42:: 
+------> xhr_actions, message=AJAX request, ci=4579  ti='4574'  ajaxAction:dragmove
+2012:01:02  17:35:42:: Last item ID:4376
+2012:01:02  17:35:42:: ++MADE IT++
+2012:01:02  17:35:42:: 
+======dragmove=> CIid:TIid    4579:4574
+2012:01:02  17:35:42:: 
+== WARNING: move of item onto item it follows is invalid. Not executing.
+2012:01:02  17:35:42::   REFRESH: []
+2012:01:02  17:35:44:: Entering xhr_actions...
+2012:01:02  17:35:44:: 
+------> xhr_actions, message=AJAX request, ci=4579  ti='4381'  ajaxAction:dragmove
+2012:01:02  17:35:44:: Last item ID:4376
+2012:01:02  17:35:44:: ++MADE IT++
+2012:01:02  17:35:44:: 
+======dragmove=> CIid:TIid    4579:4381
+2012:01:02  17:35:44:: Last item ID:4376
+2012:01:02  17:35:44:: => findLastKid lastKid=0
+2012:01:02  17:35:44:: DragMove=> CI saved
+2012:01:02  17:35:44:: dragmove=> targetFollowerID:4574  targetFollower.follows:4381  lastkid:0
+2012:01:02  17:35:44::  => targetFollower.follows=4579
+2012:01:02  17:35:44:: ((drag_move ROAMER1)) [[4579L, 4381, u'o o o o o ', 4381, 1L, u'2', u'6', u'', '&bull;']]
+2012:01:02  17:35:44:: ((drag_move ROAMER2)) [[4579L, 4381, u'o o o o o ', 4381, 1L, u'2', u'6', u'', '&bull;'], [4381L, 4380L, u'anchor items: hide or protect?', 0L, 0L, u'3', u'5', u'* Still need it as a drop target, in order to drag to the top slot. \r\n* Could use JS to make it look like a simple blue bar, w/ no internal text', '+']]
+2012:01:02  17:35:44:: ((drag_move ROAMER3)) [[4579L, 4381, u'o o o o o ', 4381, 1L, u'2', u'6', u'', '&bull;'], [4381L, 4380L, u'anchor items: hide or protect?', 0L, 0L, u'3', u'5', u'* Still need it as a drop target, in order to drag to the top slot. \r\n* Could use JS to make it look like a simple blue bar, w/ no internal text', '+'], [4574L, 4579L, u'Done items ==========', 0L, 0L, u'0', u'9', u'', '+']]
+2012:01:02  17:35:44::   REFRESH: [[4579L, 4381, u'o o o o o ', 4381, 1L, u'2', u'6', u'', '&bull;'], [4381L, 4380L, u'anchor items: hide or protect?', 0L, 0L, u'3', u'5', u'* Still need it as a drop target, in order to drag to the top slot. \r\n* Could use JS to make it look like a simple blue bar, w/ no internal text', '+'], [4574L, 4579L, u'Done items ==========', 0L, 0L, u'0', u'9', u'', '+']]
+2012:01:02  17:35:46:: Entering xhr_actions...
+2012:01:02  17:35:46:: 
+------> xhr_actions, message=AJAX request, ci=4578  ti='4579'  ajaxAction:dragmove
+2012:01:02  17:35:46:: Last item ID:4376
+2012:01:02  17:35:46:: ++MADE IT++
+2012:01:02  17:35:46:: 
+======dragmove=> CIid:TIid    4578:4579
+2012:01:02  17:35:46:: Last item ID:4376
+2012:01:02  17:35:46:: => findLastKid lastKid=0
+2012:01:02  17:35:46:: DragMove=> CI saved
+2012:01:02  17:35:46:: dragmove=> targetFollowerID:4574  targetFollower.follows:4579  lastkid:0
+2012:01:02  17:35:46::  => targetFollower.follows=4578
+2012:01:02  17:35:46:: ((drag_move ROAMER1)) [[4578L, 4579, u'mmm', 4579, 2L, u'1', u'6', u'', '&bull;']]
+2012:01:02  17:35:46:: ((drag_move ROAMER2)) [[4578L, 4579, u'mmm', 4579, 2L, u'1', u'6', u'', '&bull;'], [4579L, 4381L, u'o o o o o ', 4381L, 1L, u'2', u'6', u'', '+']]
+2012:01:02  17:35:46:: ((drag_move ROAMER3)) [[4578L, 4579, u'mmm', 4579, 2L, u'1', u'6', u'', '&bull;'], [4579L, 4381L, u'o o o o o ', 4381L, 1L, u'2', u'6', u'', '+'], [4574L, 4578L, u'Done items ==========', 0L, 0L, u'0', u'9', u'', '+']]
+2012:01:02  17:35:46::   REFRESH: [[4578L, 4579, u'mmm', 4579, 2L, u'1', u'6', u'', '&bull;'], [4579L, 4381L, u'o o o o o ', 4381L, 1L, u'2', u'6', u'', '+'], [4574L, 4578L, u'Done items ==========', 0L, 0L, u'0', u'9', u'', '+']]
+2012:01:02  17:35:48:: Entering xhr_actions...
+2012:01:02  17:35:48:: 
+------> xhr_actions, message=AJAX request, ci=4577  ti='4578'  ajaxAction:dragmove
+2012:01:02  17:35:48:: Last item ID:4376
+2012:01:02  17:35:48:: ++MADE IT++
+2012:01:02  17:35:48:: 
+======dragmove=> CIid:TIid    4577:4578
+2012:01:02  17:35:48:: Last item ID:4376
+2012:01:02  17:35:48:: => findLastKid lastKid=0
+2012:01:02  17:35:48:: DragMove=> CI saved
+2012:01:02  17:35:48:: dragmove=> targetFollowerID:4574  targetFollower.follows:4578  lastkid:0
+2012:01:02  17:35:48::  => targetFollower.follows=4577
+2012:01:02  17:35:48:: ((drag_move ROAMER1)) [[4577L, 4578, u'TEST TEST 1 1 1', 4578, 3L, u'4', u'6', u'', '&bull;']]
+2012:01:02  17:35:48:: ((drag_move ROAMER2)) [[4577L, 4578, u'TEST TEST 1 1 1', 4578, 3L, u'4', u'6', u'', '&bull;'], [4578L, 4579L, u'mmm', 4579L, 2L, u'1', u'6', u'', '+']]
+2012:01:02  17:35:48:: ((drag_move ROAMER3)) [[4577L, 4578, u'TEST TEST 1 1 1', 4578, 3L, u'4', u'6', u'', '&bull;'], [4578L, 4579L, u'mmm', 4579L, 2L, u'1', u'6', u'', '+'], [4574L, 4577L, u'Done items ==========', 0L, 0L, u'0', u'9', u'', '+']]
+2012:01:02  17:35:48::   REFRESH: [[4577L, 4578, u'TEST TEST 1 1 1', 4578, 3L, u'4', u'6', u'', '&bull;'], [4578L, 4579L, u'mmm', 4579L, 2L, u'1', u'6', u'', '+'], [4574L, 4577L, u'Done items ==========', 0L, 0L, u'0', u'9', u'', '+']]
+2012:01:02  17:35:53:: Entering xhr_actions...
+2012:01:02  17:35:53:: 
+------> xhr_actions, message=AJAX request, ci=4577  ti='0'  ajaxAction:promote
+2012:01:02  17:35:53:: Last item ID:4376
+2012:01:02  17:35:53:: ++MADE IT++
+2012:01:02  17:35:53:: => findLastKid lastKid=0
+2012:01:02  17:35:53:: Promoting: 4577
+2012:01:02  17:35:53:: k-promote: LastKidID=0
+2012:01:02  17:35:53::   REFRESH: [[4577L, 4578L, u'TEST TEST 1 1 1', 4579L, 2L, u'4', u'6', u'', '&bull;'], [4578L, 4579L, u'mmm', 4579L, 2L, u'1', u'6', u'', '&bull;']]
+2012:01:02  17:35:56:: Entering xhr_actions...
+2012:01:02  17:35:56:: 
+------> xhr_actions, message=AJAX request, ci=4579  ti='0'  ajaxAction:promote
+2012:01:02  17:35:56:: Last item ID:4376
+2012:01:02  17:35:56:: ++MADE IT++
+2012:01:02  17:35:56:: => findLastKid lastKid=4577
+2012:01:02  17:35:56:: Promoting: 4579
+2012:01:02  17:35:56:: k-promote: LastKidID=4577
+2012:01:02  17:35:56::   REFRESH: [[4579L, 4381L, u'o o o o o ', 0L, 0L, u'2', u'6', u'', '+'], [4381L, 4380L, u'anchor items: hide or protect?', 0L, 0L, u'3', u'5', u'* Still need it as a drop target, in order to drag to the top slot. \r\n* Could use JS to make it look like a simple blue bar, w/ no internal text', '&bull;'], [4578L, 4579L, u'mmm', 4579L, 1L, u'1', u'6', u'', '&bull;'], [4579L, 4381L, u'o o o o o ', 0L, 0L, u'2', u'6', u'', '+'], [4577L, 4578L, u'TEST TEST 1 1 1', 4579L, 1L, u'4', u'6', u'', '&bull;'], [4578L, 4579L, u'mmm', 4579L, 1L, u'1', u'6', u'', '&bull;']]
+2012:01:02  17:35:59:: Entering xhr_actions...
+2012:01:02  17:35:59:: 
+------> xhr_actions, message=AJAX request, ci=4578  ti='0'  ajaxAction:promote
+2012:01:02  17:35:59:: Last item ID:4376
+2012:01:02  17:35:59:: ++MADE IT++
+2012:01:02  17:35:59:: => findLastKid lastKid=0
+2012:01:02  17:35:59:: Promoting: 4578
+2012:01:02  17:35:59:: converting subsequent items to children...
+2012:01:02  17:35:59::   REFRESH: [[4578L, 4579L, u'mmm', 0L, 0L, u'1', u'6', u'', '+'], [4579L, 4381L, u'o o o o o ', 0L, 0L, u'2', u'6', u'', '&bull;']]
+2012:01:02  17:36:00:: Entering xhr_actions...
+2012:01:02  17:36:00:: 
+------> xhr_actions, message=AJAX request, ci=4577  ti='0'  ajaxAction:promote
+2012:01:02  17:36:00:: Last item ID:4376
+2012:01:02  17:36:00:: ++MADE IT++
+2012:01:02  17:36:00:: => findLastKid lastKid=0
+2012:01:02  17:36:00:: Promoting: 4577
+2012:01:02  17:36:00:: k-promote: LastKidID=0
+2012:01:02  17:36:00::   REFRESH: [[4577L, 4578L, u'TEST TEST 1 1 1', 0L, 0L, u'4', u'6', u'', '&bull;'], [4578L, 4579L, u'mmm', 0L, 0L, u'1', u'6', u'', '&bull;']]
+2012:01:02  17:36:04:: Entering xhr_actions...
+2012:01:02  17:36:04:: 
+------> xhr_actions, message=AJAX request, ci=4579  ti='4379'  ajaxAction:dragmove
+2012:01:02  17:36:04:: Last item ID:4376
+2012:01:02  17:36:04:: ++MADE IT++
+2012:01:02  17:36:04:: 
+======dragmove=> CIid:TIid    4579:4379
+2012:01:02  17:36:04:: Last item ID:4376
+2012:01:02  17:36:04:: => findLastKid lastKid=0
+2012:01:02  17:36:04:: DragMove=> CI saved
+2012:01:02  17:36:04:: dragmove=> targetFollowerID:4380  targetFollower.follows:4379  lastkid:0
+2012:01:02  17:36:04::  => targetFollower.follows=4579
+2012:01:02  17:36:04:: ((drag_move ROAMER1)) [[4579L, 4379, u'o o o o o ', 4379, 1L, u'2', u'6', u'', '&bull;']]
+2012:01:02  17:36:04:: ((drag_move ROAMER2)) [[4579L, 4379, u'o o o o o ', 4379, 1L, u'2', u'6', u'', '&bull;'], [4379L, 4399L, u'priority/status js updates', 0L, 0L, u'1', u'1', u'', '+']]
+2012:01:02  17:36:04:: ((drag_move ROAMER3)) [[4579L, 4379, u'o o o o o ', 4379, 1L, u'2', u'6', u'', '&bull;'], [4379L, 4399L, u'priority/status js updates', 0L, 0L, u'1', u'1', u'', '+']]
+2012:01:02  17:36:04::   REFRESH: [[4579L, 4379, u'o o o o o ', 4379, 1L, u'2', u'6', u'', '&bull;'], [4379L, 4399L, u'priority/status js updates', 0L, 0L, u'1', u'1', u'', '+']]
+2012:01:02  17:36:08:: Entering xhr_actions...
+2012:01:02  17:36:08:: 
+------> xhr_actions, message=AJAX request, ci=4577  ti='4574'  ajaxAction:dragmove
+2012:01:02  17:36:08:: Last item ID:4376
+2012:01:02  17:36:08:: ++MADE IT++
+2012:01:02  17:36:08:: 
+======dragmove=> CIid:TIid    4577:4574
+2012:01:02  17:36:08:: Last item ID:4376
+2012:01:02  17:36:08:: => findLastKid lastKid=0
+2012:01:02  17:36:08:: DragMove=> CI saved
+2012:01:02  17:36:08:: dragmove=> targetFollowerID:4392  targetFollower.follows:4574  lastkid:0
+2012:01:02  17:36:08::  => targetFollower.follows=4577
+2012:01:02  17:36:08:: ((drag_move ROAMER1)) [[4577L, 4574, u'TEST TEST 1 1 1', 4574, 1L, u'4', u'6', u'', '&bull;']]
+2012:01:02  17:36:08:: ((drag_move ROAMER2)) [[4577L, 4574, u'TEST TEST 1 1 1', 4574, 1L, u'4', u'6', u'', '&bull;'], [4574L, 4578L, u'Done items ==========', 0L, 0L, u'0', u'9', u'', '+']]
+2012:01:02  17:36:08:: ((drag_move ROAMER3)) [[4577L, 4574, u'TEST TEST 1 1 1', 4574, 1L, u'4', u'6', u'', '&bull;'], [4574L, 4578L, u'Done items ==========', 0L, 0L, u'0', u'9', u'', '+']]
+2012:01:02  17:36:08::   REFRESH: [[4577L, 4574, u'TEST TEST 1 1 1', 4574, 1L, u'4', u'6', u'', '&bull;'], [4574L, 4578L, u'Done items ==========', 0L, 0L, u'0', u'9', u'', '+']]
+2012:01:02  17:36:11:: Entering xhr_actions...
+2012:01:02  17:36:11:: 
+------> xhr_actions, message=AJAX request, ci=4578  ti='4577'  ajaxAction:dragmove
+2012:01:02  17:36:11:: Last item ID:4376
+2012:01:02  17:36:11:: ++MADE IT++
+2012:01:02  17:36:11:: 
+======dragmove=> CIid:TIid    4578:4577
+2012:01:02  17:36:11:: Last item ID:4376
+2012:01:02  17:36:11:: => findLastKid lastKid=0
+2012:01:02  17:36:11:: DragMove=> CI saved
+2012:01:02  17:36:11:: dragmove=> targetFollowerID:4392  targetFollower.follows:4577  lastkid:0
+2012:01:02  17:36:11::  => targetFollower.follows=4578
+2012:01:02  17:36:11:: ((drag_move ROAMER1)) [[4578L, 4577, u'mmm', 4577, 2L, u'1', u'6', u'', '&bull;']]
+2012:01:02  17:36:11:: ((drag_move ROAMER2)) [[4578L, 4577, u'mmm', 4577, 2L, u'1', u'6', u'', '&bull;'], [4577L, 4574L, u'TEST TEST 1 1 1', 4574L, 1L, u'4', u'6', u'', '+']]
+2012:01:02  17:36:11:: ((drag_move ROAMER3)) [[4578L, 4577, u'mmm', 4577, 2L, u'1', u'6', u'', '&bull;'], [4577L, 4574L, u'TEST TEST 1 1 1', 4574L, 1L, u'4', u'6', u'', '+']]
+2012:01:02  17:36:11::   REFRESH: [[4578L, 4577, u'mmm', 4577, 2L, u'1', u'6', u'', '&bull;'], [4577L, 4574L, u'TEST TEST 1 1 1', 4574L, 1L, u'4', u'6', u'', '+']]
+2012:01:02  17:36:14:: Entering drag list <====================, Project=5
+2012:01:02  17:36:14:: Entering buildDisplayList <=====
+2012:01:02  17:36:14:: ..queries done...
+2012:01:02  17:36:14:: ....parent list built...
+2012:01:02  17:36:14:: .....ix built.....
+2012:01:02  17:36:14:: ...built followhash....
+2012:01:02  17:36:14:: .....displayList built...
+2012:01:02  17:36:14:: Exiting buildDisplayList ========>
+2012:01:02  17:36:21:: Entering xhr_actions...
+2012:01:02  17:36:21:: 
+------> xhr_actions, message=AJAX request, ci=4579  ti='0'  ajaxAction:delete
+2012:01:02  17:36:21:: Last item ID:4376
+2012:01:02  17:36:21:: ++MADE IT++
+2012:01:02  17:36:21:: ==> deleting 4579
+2012:01:02  17:36:21::   REFRESH: [[4379L, 4399L, u'priority/status js updates', 0L, 0L, u'1', u'1', u'', '+'], [4380L, 4379L, u'provide "new project" function', 0L, 0L, u'1', u'3', u'includes creating an anchor item', '&bull;'], [4579L, 4379L, u'o o o o o ', 4379L, 1L, u'2', u'6', u'', '&bull;']]
+2012:01:02  17:36:23:: Entering drag list <====================, Project=5
+2012:01:02  17:36:23:: Entering buildDisplayList <=====
+2012:01:02  17:36:23:: ..queries done...
+2012:01:02  17:36:23:: ....parent list built...
+2012:01:02  17:36:23:: .....ix built.....
+2012:01:02  17:36:23:: ...built followhash....
+2012:01:02  17:36:23:: .....displayList built...
+2012:01:02  17:36:23:: Exiting buildDisplayList ========>
+2012:01:02  17:44:26:: Entering drag list <====================, Project=5
+2012:01:02  17:44:26:: Entering buildDisplayList <=====
+2012:01:02  17:44:26:: ..queries done...
+2012:01:02  17:44:26:: ....parent list built...
+2012:01:02  17:44:26:: .....ix built.....
+2012:01:02  17:44:26:: ...built followhash....
+2012:01:02  17:44:26:: .....displayList built...
+2012:01:02  17:44:26:: Exiting buildDisplayList ========>
+2012:01:02  17:44:50:: Entering xhr_actions...
+2012:01:02  17:44:50:: 
+------> xhr_actions, message=AJAX request, ci=4578  ti='0'  ajaxAction:delete
+2012:01:02  17:44:50:: Last item ID:4376
+2012:01:02  17:44:50:: ++MADE IT++
+2012:01:02  17:44:50:: ==> deleting 4578
+2012:01:02  17:45:00:: Entering drag list <====================, Project=5
+2012:01:02  17:45:00:: Entering buildDisplayList <=====
+2012:01:02  17:45:00:: ..queries done...
+2012:01:02  17:45:00:: ....parent list built...
+2012:01:02  17:45:00:: .....ix built.....
+2012:01:02  17:45:00:: ...built followhash....
+2012:01:02  17:45:00:: .....displayList built...
+2012:01:02  17:45:00:: Exiting buildDisplayList ========>
+2012:01:02  17:45:03:: Last item ID:4376
+2012:01:02  17:45:03:: Item has no follower: ID4577
+2012:01:02  17:45:03:: edit new item: 4580
+2012:01:02  17:45:04:: Formset generated, pItem=4580
+2012:01:02  17:45:09:: Formset saved: [<Item: mmmmm>]
+2012:01:02  17:45:09:: Entering drag list <====================, Project=5
+2012:01:02  17:45:09:: Entering buildDisplayList <=====
+2012:01:02  17:45:09:: ..queries done...
+2012:01:02  17:45:09:: ....parent list built...
+2012:01:02  17:45:09:: .....ix built.....
+2012:01:02  17:45:09:: 
+=====> WARNING!! followHash duplicate
+2012:01:02  17:45:09:: =====>ID:4392:on edit forms, title field is too short  follows=4577]
+2012:01:02  17:45:09:: =====>ID:4580:mmmmm  follows=4577]
+
+2012:01:02  17:45:09:: ...built followhash....
+2012:01:02  17:45:09:: .....displayList built...
+2012:01:02  17:45:09:: Exiting buildDisplayList ========>
+2012:01:02  17:45:22:: Entering drag list <====================, Project=5
+2012:01:02  17:45:22:: Entering buildDisplayList <=====
+2012:01:02  17:45:22:: ..queries done...
+2012:01:02  17:45:22:: ....parent list built...
+2012:01:02  17:45:22:: .....ix built.....
+2012:01:02  17:45:22:: 
+=====> WARNING!! followHash duplicate
+2012:01:02  17:45:22:: =====>ID:4392:on edit forms, title field is too short  follows=4577]
+2012:01:02  17:45:22:: =====>ID:4580:mmmmm  follows=4577]
+
+2012:01:02  17:45:22:: ...built followhash....
+2012:01:02  17:45:22:: .....displayList built...
+2012:01:02  17:45:22:: Exiting buildDisplayList ========>
+2012:01:02  17:47:19:: Entering drag list <====================, Project=5
+2012:01:02  17:47:19:: Entering buildDisplayList <=====
+2012:01:02  17:47:19:: ..queries done...
+2012:01:02  17:47:19:: ....parent list built...
+2012:01:02  17:47:19:: .....ix built.....
+2012:01:02  17:47:19:: ...built followhash....
+2012:01:02  17:47:19:: .....displayList built...
+2012:01:02  17:47:19:: Exiting buildDisplayList ========>
+2012:01:02  17:47:51:: Entering drag list <====================, Project=5
+2012:01:02  17:47:51:: Entering buildDisplayList <=====
+2012:01:02  17:47:51:: ..queries done...
+2012:01:02  17:47:51:: ....parent list built...
+2012:01:02  17:47:52:: .....ix built.....
+2012:01:02  17:47:52:: ...built followhash....
+2012:01:02  17:47:52:: .....displayList built...
+2012:01:02  17:47:52:: Exiting buildDisplayList ========>
+2012:01:02  17:47:59:: backup ==> projlist:5
+2012:01:02  17:48:00:: Project 5: 19 items backed up to P005zz_Ben_20120102_174759.bnk
+2012:01:02  17:48:13:: Entering drag list <====================, Project=5
+2012:01:02  17:48:13:: Entering buildDisplayList <=====
+2012:01:02  17:48:13:: ..queries done...
+2012:01:02  17:48:13:: ....parent list built...
+2012:01:02  17:48:13:: .....ix built.....
+2012:01:02  17:48:13:: ...built followhash....
+2012:01:02  17:48:13:: .....displayList built...
+2012:01:02  17:48:13:: Exiting buildDisplayList ========>
+2012:01:02  17:48:17:: Formset generated, pItem=4531
+2012:01:02  17:49:16:: Formset saved: [<Item: bugs: moving>]
+2012:01:02  17:49:16:: Entering drag list <====================, Project=5
+2012:01:02  17:49:16:: Entering buildDisplayList <=====
+2012:01:02  17:49:16:: ..queries done...
+2012:01:02  17:49:16:: ....parent list built...
+2012:01:02  17:49:16:: .....ix built.....
+2012:01:02  17:49:16:: ...built followhash....
+2012:01:02  17:49:16:: .....displayList built...
+2012:01:02  17:49:16:: Exiting buildDisplayList ========>
+2012:01:02  17:49:28:: Entering drag list <====================, Project=4
+2012:01:02  17:49:28:: Entering buildDisplayList <=====
+2012:01:02  17:49:28:: ..queries done...
+2012:01:02  17:49:28:: ....parent list built...
+2012:01:02  17:49:28:: .....ix built.....
+2012:01:02  17:49:28:: ...built followhash....
+2012:01:02  17:49:28:: .....displayList built...
+2012:01:02  17:49:28:: Exiting buildDisplayList ========>
+2012:01:02  17:49:39:: Entering xhr_actions...
+2012:01:02  17:49:39:: 
+------> xhr_actions, message=AJAX request, ci=4558  ti='4554'  ajaxAction:dragmove
+2012:01:02  17:49:39:: Last item ID:4573
+2012:01:02  17:49:39:: ++MADE IT++
+2012:01:02  17:49:39:: 
+======dragmove=> CIid:TIid    4558:4554
+2012:01:02  17:49:39:: Last item ID:4573
+2012:01:02  17:49:39:: => findLastKid lastKid=0
+2012:01:02  17:49:39:: DragMove=> CI saved
+2012:01:02  17:49:39:: dragmove=> targetFollowerID:4569  targetFollower.follows:4554  lastkid:0
+2012:01:02  17:49:39::  => targetFollower.follows=4558
+2012:01:02  17:49:39:: ((drag_move ROAMER1)) [[4558L, 4554, u'First child of second regular item', 4554, 2L, u'2', u'3', u'geezus!', '&bull;']]
+2012:01:02  17:49:39:: ((drag_move ROAMER2)) [[4558L, 4554, u'First child of second regular item', 4554, 2L, u'2', u'3', u'geezus!', '&bull;'], [4554L, 4553L, u'First regular item - parent', 4553L, 1L, u'2', u'3', u'<ol>\r\n<li>bread</li>\r\n<li>milk</li>\r\n<li>eggs</li>\r\n</ol>', '+']]
+2012:01:02  17:49:39:: ((drag_move ROAMER3)) [[4558L, 4554, u'First child of second regular item', 4554, 2L, u'2', u'3', u'geezus!', '&bull;'], [4554L, 4553L, u'First regular item - parent', 4553L, 1L, u'2', u'3', u'<ol>\r\n<li>bread</li>\r\n<li>milk</li>\r\n<li>eggs</li>\r\n</ol>', '+'], [4556L, 4555L, u'2nd child of 1st parent', 4555L, 3L, u'0', u'0', u'', '&bull;']]
+2012:01:02  17:49:39::   REFRESH: [[4558L, 4554, u'First child of second regular item', 4554, 2L, u'2', u'3', u'geezus!', '&bull;'], [4554L, 4553L, u'First regular item - parent', 4553L, 1L, u'2', u'3', u'<ol>\r\n<li>bread</li>\r\n<li>milk</li>\r\n<li>eggs</li>\r\n</ol>', '+'], [4556L, 4555L, u'2nd child of 1st parent', 4555L, 3L, u'0', u'0', u'', '&bull;']]
+2012:01:02  17:49:46:: Entering xhr_actions...
+2012:01:02  17:49:46:: 
+------> xhr_actions, message=AJAX request, ci=4556  ti='0'  ajaxAction:delete
+2012:01:02  17:49:46:: Last item ID:4573
+2012:01:02  17:49:46:: ++MADE IT++
+2012:01:02  17:49:46:: ==> deleting 4556
+2012:01:02  17:49:49:: Entering drag list <====================, Project=4
+2012:01:02  17:49:49:: Entering buildDisplayList <=====
+2012:01:02  17:49:49:: ..queries done...
+2012:01:02  17:49:49:: ....parent list built...
+2012:01:02  17:49:49:: .....ix built.....
+2012:01:02  17:49:49:: ...built followhash....
+2012:01:02  17:49:49:: .....displayList built...
+2012:01:02  17:49:49:: Exiting buildDisplayList ========>
+2012:01:02  17:50:06:: Entering xhr_actions...
+2012:01:02  17:50:06:: 
+------> xhr_actions, message=AJAX request, ci=4555  ti='4554'  ajaxAction:dragmove
+2012:01:02  17:50:06:: Last item ID:4573
+2012:01:02  17:50:06:: ++MADE IT++
+2012:01:02  17:50:06:: 
+======dragmove=> CIid:TIid    4555:4554
+2012:01:02  17:50:07:: Last item ID:4573
+2012:01:02  17:50:16:: Entering xhr_actions...
+2012:01:02  17:50:16:: 
+------> xhr_actions, message=AJAX request, ci=4555  ti='0'  ajaxAction:delete
+2012:01:02  17:50:16:: Last item ID:4573
+2012:01:02  17:50:16:: ++MADE IT++
+2012:01:02  17:50:16:: ==> deleting 4555
+2012:01:02  17:50:19:: Entering drag list <====================, Project=4
+2012:01:02  17:50:19:: Entering buildDisplayList <=====
+2012:01:02  17:50:19:: ..queries done...
+2012:01:02  17:50:19:: ....parent list built...
+2012:01:02  17:50:19:: .....ix built.....
+2012:01:02  17:50:19:: ...built followhash....
+2012:01:02  17:50:19:: .....displayList built...
+2012:01:02  17:50:19:: Exiting buildDisplayList ========>
+2012:01:02  17:50:27:: Entering xhr_actions...
+2012:01:02  17:50:27:: 
+------> xhr_actions, message=AJAX request, ci=4555  ti='4554'  ajaxAction:dragmove
+2012:01:02  17:50:27:: Last item ID:4573
+2012:01:02  17:50:27:: ++MADE IT++
+2012:01:02  17:50:27:: 
+======dragmove=> CIid:TIid    4555:4554
+2012:01:02  17:50:27:: Last item ID:4573
+2012:01:02  17:50:31:: Entering drag list <====================, Project=4
+2012:01:02  17:50:31:: Entering buildDisplayList <=====
+2012:01:02  17:50:31:: ..queries done...
+2012:01:02  17:50:31:: ....parent list built...
+2012:01:02  17:50:32:: .....ix built.....
+2012:01:02  17:50:32:: ...built followhash....
+2012:01:02  17:50:32:: .....displayList built...
+2012:01:02  17:50:32:: Exiting buildDisplayList ========>
+2012:01:02  17:50:48:: Entering xhr_actions...
+2012:01:02  17:50:48:: 
+------> xhr_actions, message=AJAX request, ci=4555  ti='4554'  ajaxAction:dragmove
+2012:01:02  17:50:48:: Last item ID:4573
+2012:01:02  17:50:48:: ++MADE IT++
+2012:01:02  17:50:48:: 
+======dragmove=> CIid:TIid    4555:4554
+2012:01:02  17:50:48:: Last item ID:4573
+2012:01:02  17:52:39:: Entering drag list <====================, Project=4
+2012:01:02  17:52:39:: Entering buildDisplayList <=====
+2012:01:02  17:52:39:: ..queries done...
+2012:01:02  17:52:39:: ....parent list built...
+2012:01:02  17:52:39:: .....ix built.....
+2012:01:02  17:52:39:: ...built followhash....
+2012:01:02  17:52:39:: .....displayList built...
+2012:01:02  17:52:39:: Exiting buildDisplayList ========>
+2012:01:02  17:54:40:: Entering drag list <====================, Project=4
+2012:01:02  17:54:40:: Entering buildDisplayList <=====
+2012:01:02  17:54:40:: ..queries done...
+2012:01:02  17:54:40:: ....parent list built...
+2012:01:02  17:54:40:: .....ix built.....
+2012:01:02  17:54:40:: ...built followhash....
+2012:01:02  17:54:40:: .....displayList built...
+2012:01:02  17:54:40:: Exiting buildDisplayList ========>
+2012:01:02  17:54:43:: Entering drag list <====================, Project=4
+2012:01:02  17:54:43:: Entering buildDisplayList <=====
+2012:01:02  17:54:43:: ..queries done...
+2012:01:02  17:54:43:: ....parent list built...
+2012:01:02  17:54:43:: .....ix built.....
+2012:01:02  17:54:43:: ...built followhash....
+2012:01:02  17:54:43:: .....displayList built...
+2012:01:02  17:54:43:: Exiting buildDisplayList ========>
+2012:01:02  18:06:32:: Entering drag list <====================, Project=4
+2012:01:02  18:06:32:: Entering buildDisplayList <=====
+2012:01:02  18:06:32:: ..queries done...
+2012:01:02  18:06:32:: ....parent list built...
+2012:01:02  18:06:32:: .....ix built.....
+2012:01:02  18:06:32:: ...built followhash....
+2012:01:02  18:06:32:: .....displayList built...
+2012:01:02  18:06:32:: Exiting buildDisplayList ========>
+2012:01:02  18:07:01:: Entering drag list <====================, Project=4
+2012:01:02  18:07:01:: Entering buildDisplayList <=====
+2012:01:02  18:07:01:: ..queries done...
+2012:01:02  18:07:01:: ....parent list built...
+2012:01:02  18:07:01:: .....ix built.....
+2012:01:02  18:07:01:: ...built followhash....
+2012:01:02  18:07:01:: .....displayList built...
+2012:01:02  18:07:01:: Exiting buildDisplayList ========>
+2012:01:02  18:07:10:: Entering xhr_actions...
+2012:01:02  18:07:10:: 
+------> xhr_actions, message=AJAX request, ci=4569  ti='0'  ajaxAction:delete
+2012:01:02  18:07:10:: Last item ID:4573
+2012:01:02  18:07:10:: ++MADE IT++
+2012:01:02  18:08:14:: Entering drag list <====================, Project=4
+2012:01:02  18:08:14:: Entering buildDisplayList <=====
+2012:01:02  18:08:14:: ..queries done...
+2012:01:02  18:08:14:: ....parent list built...
+2012:01:02  18:08:14:: .....ix built.....
+2012:01:02  18:08:14:: ...built followhash....
+2012:01:02  18:08:14:: .....displayList built...
+2012:01:02  18:08:14:: Exiting buildDisplayList ========>
+2012:01:02  18:08:22:: Entering xhr_actions...
+2012:01:02  18:08:22:: 
+------> xhr_actions, message=AJAX request, ci=4558  ti='0'  ajaxAction:delete
+2012:01:02  18:08:22:: Last item ID:4573
+2012:01:02  18:08:22:: ++MADE IT++
+2012:01:02  18:12:52:: Entering drag list <====================, Project=4
+2012:01:02  18:12:52:: Entering buildDisplayList <=====
+2012:01:02  18:12:52:: ..queries done...
+2012:01:02  18:12:52:: ....parent list built...
+2012:01:02  18:12:52:: .....ix built.....
+2012:01:02  18:12:52:: ...built followhash....
+2012:01:02  18:12:52:: .....displayList built...
+2012:01:02  18:12:52:: Exiting buildDisplayList ========>
+2012:01:02  18:15:51:: Entering drag list <====================, Project=4
+2012:01:02  18:15:51:: Entering buildDisplayList <=====
+2012:01:02  18:15:51:: ..queries done...
+2012:01:02  18:15:51:: ....parent list built...
+2012:01:02  18:15:51:: .....ix built.....
+2012:01:02  18:15:51:: ...built followhash....
+2012:01:02  18:15:51:: .....displayList built...
+2012:01:02  18:15:51:: Exiting buildDisplayList ========>
+2012:01:02  18:16:19:: Entering xhr_actions...
+2012:01:02  18:16:19:: 
+------> xhr_actions, message=AJAX request, ci=4558  ti='0'  ajaxAction:delete
+2012:01:02  18:16:19:: Last item ID:4573
+2012:01:02  18:16:19:: ++MADE IT++
+2012:01:02  18:18:20:: Entering drag list <====================, Project=4
+2012:01:02  18:18:20:: Entering buildDisplayList <=====
+2012:01:02  18:18:20:: ..queries done...
+2012:01:02  18:18:20:: ....parent list built...
+2012:01:02  18:18:20:: .....ix built.....
+2012:01:02  18:18:20:: ...built followhash....
+2012:01:02  18:18:20:: .....displayList built...
+2012:01:02  18:18:20:: Exiting buildDisplayList ========>
+2012:01:02  18:18:31:: Entering xhr_actions...
+2012:01:02  18:18:31:: 
+------> xhr_actions, message=AJAX request, ci=4555  ti='0'  ajaxAction:delete
+2012:01:02  18:18:31:: Last item ID:4573
+2012:01:02  18:18:31:: ++MADE IT++
+2012:01:02  18:19:41:: Entering drag list <====================, Project=4
+2012:01:02  18:19:41:: Entering buildDisplayList <=====
+2012:01:02  18:19:41:: ..queries done...
+2012:01:02  18:19:41:: ....parent list built...
+2012:01:02  18:19:41:: .....ix built.....
+2012:01:02  18:19:41:: ...built followhash....
+2012:01:02  18:19:41:: .....displayList built...
+2012:01:02  18:19:41:: Exiting buildDisplayList ========>
+2012:01:02  18:20:00:: Entering drag list <====================, Project=4
+2012:01:02  18:20:00:: Entering buildDisplayList <=====
+2012:01:02  18:20:00:: ..queries done...
+2012:01:02  18:20:00:: ....parent list built...
+2012:01:02  18:20:00:: .....ix built.....
+2012:01:02  18:20:00:: ...built followhash....
+2012:01:02  18:20:00:: .....displayList built...
+2012:01:02  18:20:00:: Exiting buildDisplayList ========>
+2012:01:02  18:20:09:: Entering xhr_actions...
+2012:01:02  18:20:09:: 
+------> xhr_actions, message=AJAX request, ci=4554  ti='0'  ajaxAction:delete
+2012:01:02  18:20:09:: Last item ID:4573
+2012:01:02  18:20:09:: ++MADE IT++
+2012:01:02  18:25:05:: Entering drag list <====================, Project=4
+2012:01:02  18:25:05:: Entering buildDisplayList <=====
+2012:01:02  18:25:05:: ..queries done...
+2012:01:02  18:25:05:: ....parent list built...
+2012:01:02  18:25:05:: .....ix built.....
+2012:01:02  18:25:05:: ...built followhash....
+2012:01:02  18:25:05:: .....displayList built...
+2012:01:02  18:25:05:: Exiting buildDisplayList ========>
+2012:01:02  18:25:15:: Entering xhr_actions...
+2012:01:02  18:25:15:: 
+------> xhr_actions, message=AJAX request, ci=4559  ti='0'  ajaxAction:delete
+2012:01:02  18:25:15:: Last item ID:4573
+2012:01:02  18:25:15:: ++MADE IT++
+2012:01:02  18:26:36:: Entering drag list <====================, Project=4
+2012:01:02  18:26:36:: Entering buildDisplayList <=====
+2012:01:02  18:26:36:: ..queries done...
+2012:01:02  18:26:36:: ....parent list built...
+2012:01:02  18:26:36:: .....ix built.....
+2012:01:02  18:26:36:: ...built followhash....
+2012:01:02  18:26:36:: .....displayList built...
+2012:01:02  18:26:36:: Exiting buildDisplayList ========>
+2012:01:02  18:26:49:: Entering xhr_actions...
+2012:01:02  18:26:49:: 
+------> xhr_actions, message=AJAX request, ci=4568  ti='0'  ajaxAction:delete
+2012:01:02  18:26:49:: Last item ID:4573
+2012:01:02  18:26:49:: ++MADE IT++
+2012:01:02  18:26:49:: ==> deleting 4568
+2012:01:02  18:26:49::   REFRESH: [[4567L, 4566L, u'First regular item - parent', 4566L, 1L, u'0', u'0', u'', '+'], [4567L, 4566L, u'First regular item - parent', 4566L, 1L, u'0', u'0', u'', '+'], [4570L, 4567L, u'Second regular item - parent', 4566L, 1L, u'0', u'0', u'', '+']]
+2012:01:02  18:27:11:: Entering xhr_actions...
+2012:01:02  18:27:11:: 
+------> xhr_actions, message=AJAX request, ci=4571  ti='0'  ajaxAction:delete
+2012:01:02  18:27:11:: Last item ID:4573
+2012:01:02  18:27:11:: ++MADE IT++
+2012:01:02  18:27:11:: ==> deleting 4571
+2012:01:02  18:27:11::   REFRESH: [[4570L, 4567L, u'Second regular item - parent', 4566L, 1L, u'0', u'0', u'', '+'], [4570L, 4567L, u'Second regular item - parent', 4566L, 1L, u'0', u'0', u'', '+'], [4572L, 4570L, u'second child of second regular item', 4570L, 2L, u'0', u'0', u'', '&bull;']]
+2012:01:02  18:29:19:: Entering xhr_actions...
+2012:01:02  18:29:19:: ------> xhr_actions: =AJAX request, ci=4560  ti='4553'  ajaxAction: dragmove
+2012:01:02  18:29:19:: Last item ID:4573
+2012:01:02  18:29:19:: 
+======dragmove=> CIid:TIid    4560:4553
+2012:01:02  18:29:19:: Last item ID:4573
+2012:01:02  18:29:19:: => findLastKid lastKid=0
+2012:01:02  18:29:19:: DragMove=> CI saved
+2012:01:02  18:29:19:: dragmove=> targetFollowerID:4554  targetFollower.follows:4553  lastkid:0
+2012:01:02  18:29:19::  => targetFollower.follows=4560
+2012:01:02  18:29:19:: ((drag_move ROAMER1)) [[4560L, 4553, u'First of the LAST IMPORTED ITEM', 4553, 1L, u'1', u'6', u'', '&bull;']]
+2012:01:02  18:29:19:: ((drag_move ROAMER2)) [[4560L, 4553, u'First of the LAST IMPORTED ITEM', 4553, 1L, u'1', u'6', u'', '&bull;'], [4553L, 4301L, u'Simple Test data ', 0L, 0L, u'3', u'3', u'MY POEM\r\n\r\nif this has\r\n   just a few lines\r\nseparated only\r\n   by line breaks,\r\n\r\nthen we \r\nmight         not\r\nsee \r\nit \r\nnicely.', '+']]
+2012:01:02  18:29:19:: ((drag_move ROAMER3)) [[4560L, 4553, u'First of the LAST IMPORTED ITEM', 4553, 1L, u'1', u'6', u'', '&bull;'], [4553L, 4301L, u'Simple Test data ', 0L, 0L, u'3', u'3', u'MY POEM\r\n\r\nif this has\r\n   just a few lines\r\nseparated only\r\n   by line breaks,\r\n\r\nthen we \r\nmight         not\r\nsee \r\nit \r\nnicely.', '+']]
+2012:01:02  18:29:19::   REFRESH: [[4560L, 4553, u'First of the LAST IMPORTED ITEM', 4553, 1L, u'1', u'6', u'', '&bull;'], [4553L, 4301L, u'Simple Test data ', 0L, 0L, u'3', u'3', u'MY POEM\r\n\r\nif this has\r\n   just a few lines\r\nseparated only\r\n   by line breaks,\r\n\r\nthen we \r\nmight         not\r\nsee \r\nit \r\nnicely.', '+']]
+2012:01:02  18:30:10:: Entering drag list <====================, Project=4
+2012:01:02  18:30:10:: Entering buildDisplayList <=====
+2012:01:02  18:30:10:: ..queries done...
+2012:01:02  18:30:10:: ....parent list built...
+2012:01:02  18:30:10:: .....ix built.....
+2012:01:02  18:30:10:: ...built followhash....
+2012:01:02  18:30:10:: .....displayList built...
+2012:01:02  18:30:10:: Exiting buildDisplayList ========>
+2012:01:02  18:30:21:: Entering xhr_actions...
+2012:01:02  18:30:21:: ------> xhr_actions: =AJAX request, ci=4567  ti='4553'  ajaxAction: dragmove
+2012:01:02  18:30:21:: Last item ID:4573
+2012:01:02  18:30:21:: 
+======dragmove=> CIid:TIid    4567:4553
+2012:01:02  18:30:21:: Last item ID:4573
+2012:01:02  18:30:22:: => findLastKid lastKid=0
+2012:01:02  18:30:22:: DragMove=> CI saved
+2012:01:02  18:30:22:: dragmove=> targetFollowerID:4560  targetFollower.follows:4553  lastkid:0
+2012:01:02  18:30:22::  => targetFollower.follows=4567
+2012:01:02  18:30:22::   REFRESH: [[4567L, 4553, u'First regular item - parent', 4553, 1L, u'0', u'0', u'', '&bull;'], [4553L, 4301L, u'Simple Test data ', 0L, 0L, u'3', u'3', u'MY POEM\r\n\r\nif this has\r\n   just a few lines\r\nseparated only\r\n   by line breaks,\r\n\r\nthen we \r\nmight         not\r\nsee \r\nit \r\nnicely.', '+'], [4566L, 4557L, u'Simple Test data ', 0L, 0L, u'0', u'0', u'', '+']]
+2012:01:02  18:32:01:: Entering xhr_actions...
+2012:01:02  18:32:01:: =====> xhr_actions: =AJAX request, ci=4572  ti='4567'  ajaxAction: dragmove
+2012:01:02  18:32:01:: Last item ID:4573
+2012:01:02  18:32:01::  ====dragmove=> CIid:TIid    4572:4567
+2012:01:02  18:32:01:: Last item ID:4573
+2012:01:02  18:32:01:: => findLastKid lastKid=0
+2012:01:02  18:32:02:: DragMove=> CI saved
+2012:01:02  18:32:02:: dragmove=> targetFollowerID:4560  targetFollower.follows:4567  lastkid:0
+2012:01:02  18:32:02::  => targetFollower.follows=4572
+2012:01:02  18:32:02::   REFRESH: [[4572L, 4567, u'second child of second regular item', 4567, 2L, u'0', u'0', u'', '&bull;'], [4567L, 4553L, u'First regular item - parent', 4553L, 1L, u'0', u'0', u'', '+'], [4570L, 4566L, u'Second regular item - parent', 4566L, 1L, u'0', u'0', u'', '&bull;']]

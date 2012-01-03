@@ -16,6 +16,16 @@ LOGFILE = '/home/bhadmin13/dx.bernardhecker.com/pim1/benklog1.log'
 
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# returnMarker
+
+def returnMarker(self,itemx):
+        ## returns a plus or bullet, depending upon if Item has kids or not
+        if len( Item.objects.filter(parent=itemx.id) ) > 0:
+            return("+")
+        else:
+            return("&bull;")
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # logThis
 def logThis(s):
     LX = open(LOGFILE, 'a')

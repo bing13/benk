@@ -25,48 +25,10 @@ class dragOps():
         for id in IDlist:
             if id != 0 :
                 thisItem=Item.objects.get(pk=id)
-                decoratedItems.append([thisItem.id, thisItem.follows, thisItem.title, thisItem.parent, thisItem.indentLevel, thisItem.priority, thisItem.status, thisItem.HTMLnoteBody, self.DAreturnMarker(thisItem)])
+                decoratedItems.append([thisItem.id, thisItem.follows, thisItem.title, thisItem.parent, thisItem.indentLevel, thisItem.priority, thisItem.status, thisItem.HTMLnoteBody, sharedMD.returnMarker(self, thisItem)])
         return(decoratedItems)
 
-# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-# DAreturnMarker
 
-    def DAreturnMarker(self,itemx):
-        ## returns a plus or bullet, depending upon if Item has kids or not
-        if len( Item.objects.filter(parent=itemx.id) ) > 0:
-            return("+")
-        else:
-            return("&bull;")
-# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-# DAfindLastKid
-
-    def RETIREDDAfindLastKid(self, itemx, lastItemID, LOGFILE):
-        ###   look for first item below you with =< level of indent
-        kidList=[]
-        if itemx.id == lastItemID:
-            lastKid=0
-        else:
-            indx=Item.objects.get(follows=itemx.id)
-            if itemx.parent==indx.parent  or indx.indentLevel < itemx.indentLevel:
-                ## if we both have same parent, or follow is low indent level 
-                lastKid=0  ## special value for "no kids"
-            else:
-                prev_id=indx.id  ## need to define, in case we don't enter while block
-                lastItemFlag='no'
-                while (indx.indentLevel > itemx.indentLevel) and lastItemFlag == 'no':
-                    kidList.append([indx.id, indx.follows])
-                    prev_id=indx.id
-                    if indx.id == lastItemID:
-                        lastItemFlag='yes'
-                    else:
-                        indx=Item.objects.get(follows=indx.id)
-
-                lastKid=prev_id
-
-        sharedMD.logThis("=> findLastKid lastKid="+str(lastKid))
-        return(lastKid,kidList)
-
-        
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # moveUp
 
@@ -218,7 +180,6 @@ class dragOps():
 
         ## now for refresh
 
-        ##
         updateListIDs=[clickedItem.id, clickedItem.follows ] + kidList
         return(self.updateIDsDecorate(updateListIDs))
 
@@ -293,15 +254,14 @@ class dragOps():
     
     def delete(self, clickedItem, lastItemID):
 
-        ghostsParentID = clickedItem.parent
         ghostsID = clickedItem.id
-
+        ghostFollowsID = clickedItem.follows
+        ghostsParentID = clickedItem.parent
         
         if clickedItem.id != lastItemID:
-            
-            sharedMD.logThis( "==> deleting "+str(clickedItem.id))
-            
+             
             followingMe = Item.objects.get(follows=clickedItem.id)
+            
             followingMe.follows=clickedItem.follows
             if followingMe.parent==clickedItem.id:
                 followingMe.parent=clickedItem.parent
@@ -313,8 +273,8 @@ class dragOps():
         projObjc.item_set.remove(clickedItem)
 
         # pull this before the item is deleted
-        toUpdate = self.updateIDsDecorate([ghostsParentID, followingMe.id, ghostsID]) 
-
+        toUpdate = self.updateIDsDecorate([ghostsParentID, ghostFollowsID, followingMe.id] ) 
+        sharedMD.logThis( "==> deleting "+str(clickedItem.id))
         # remove item
         clickedItem.delete()
         

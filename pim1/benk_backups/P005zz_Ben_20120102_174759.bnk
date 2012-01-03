@@ -1,0 +1,296 @@
+@@!! NEW_RECORD =====================================
+@@!! ID 4375
+@@!! FOLLOWS 0
+@@!! PARENTS 0
+@@!! INDENT_LEVEL 0
+@@!! SELECTOR === ANCHOR - benk meta ===
+@@!! PROJECT zz Benk meta
+@@!! PRIORITY 0
+@@!! STATUS 0
+@@!! DATE_CREATED 2011-12-28 20:39:53
+@@!! DATE_MODIFIED 2011-12-28 20:39:53
+@@!! DATE_GOO_TASK None
+@@!! GOO_TASK_ID 
+@@!! NOTE follows 
+
+@@!! NEW_RECORD =====================================
+@@!! ID 4377
+@@!! FOLLOWS 4375
+@@!! PARENTS 0
+@@!! INDENT_LEVEL 0
+@@!! SELECTOR introduce paging
+@@!! PROJECT zz Benk meta
+@@!! PRIORITY 1
+@@!! STATUS 2
+@@!! DATE_CREATED 2011-12-28 20:42:22
+@@!! DATE_MODIFIED 2012-01-02 14:36:46
+@@!! DATE_GOO_TASK None
+@@!! GOO_TASK_ID 
+@@!! NOTE follows 
+1. smart paging - don't truncate in middle of children
+
+2. Javacript will need to check if an item is in the DOM before refreshing
+
+3. buildlist could be passed starting item, and length/threshold #.
+
+4. Hard part will be keeping track of the next item. Well, fussy, not hard.
+@@!! NEW_RECORD =====================================
+@@!! ID 4531
+@@!! FOLLOWS 4377
+@@!! PARENTS 0
+@@!! INDENT_LEVEL 0
+@@!! SELECTOR bugs: moving
+@@!! PROJECT zz Benk meta
+@@!! PRIORITY 2
+@@!! STATUS 3
+@@!! DATE_CREATED 2012-01-02 07:28:48
+@@!! DATE_MODIFIED 2012-01-02 17:28:56
+@@!! DATE_GOO_TASK None
+@@!! GOO_TASK_ID 
+@@!! NOTE follows 
+1. if you move a tree whose last child is the last item on the project, that last child seems to be abandoned.
+
+2. dragging onto last item doesn't work
+
+3. ddragging to parent, whose lastKid=lastItemID doesn't work on benk item # 4574, but does on other tests?
+@@!! NEW_RECORD =====================================
+@@!! ID 4396
+@@!! FOLLOWS 4531
+@@!! PARENTS 4531
+@@!! INDENT_LEVEL 1
+@@!! SELECTOR don't seem to be able to drag onto the last item
+@@!! PROJECT zz Benk meta
+@@!! PRIORITY 0
+@@!! STATUS 0
+@@!! DATE_CREATED 2011-12-29 13:37:20
+@@!! DATE_MODIFIED 2012-01-02 17:32:15
+@@!! DATE_GOO_TASK None
+@@!! GOO_TASK_ID 
+@@!! NOTE follows 
+
+@@!! NEW_RECORD =====================================
+@@!! ID 4399
+@@!! FOLLOWS 4396
+@@!! PARENTS 0
+@@!! INDENT_LEVEL 0
+@@!! SELECTOR organize grid view on priority
+@@!! PROJECT zz Benk meta
+@@!! PRIORITY 2
+@@!! STATUS 2
+@@!! DATE_CREATED 2011-12-31 09:59:43
+@@!! DATE_MODIFIED 2012-01-02 17:25:31
+@@!! DATE_GOO_TASK None
+@@!! GOO_TASK_ID 
+@@!! NOTE follows 
+
+@@!! NEW_RECORD =====================================
+@@!! ID 4379
+@@!! FOLLOWS 4399
+@@!! PARENTS 0
+@@!! INDENT_LEVEL 0
+@@!! SELECTOR priority/status js updates
+@@!! PROJECT zz Benk meta
+@@!! PRIORITY 1
+@@!! STATUS 1
+@@!! DATE_CREATED 2011-12-28 20:43:28
+@@!! DATE_MODIFIED 2012-01-02 17:35:33
+@@!! DATE_GOO_TASK None
+@@!! GOO_TASK_ID 
+@@!! NOTE follows 
+
+@@!! NEW_RECORD =====================================
+@@!! ID 4380
+@@!! FOLLOWS 4379
+@@!! PARENTS 0
+@@!! INDENT_LEVEL 0
+@@!! SELECTOR provide "new project" function
+@@!! PROJECT zz Benk meta
+@@!! PRIORITY 1
+@@!! STATUS 3
+@@!! DATE_CREATED 2011-12-28 20:43:49
+@@!! DATE_MODIFIED 2012-01-02 17:36:21
+@@!! DATE_GOO_TASK None
+@@!! GOO_TASK_ID 
+@@!! NOTE follows 
+includes creating an anchor item
+@@!! NEW_RECORD =====================================
+@@!! ID 4381
+@@!! FOLLOWS 4380
+@@!! PARENTS 0
+@@!! INDENT_LEVEL 0
+@@!! SELECTOR anchor items: hide or protect?
+@@!! PROJECT zz Benk meta
+@@!! PRIORITY 3
+@@!! STATUS 5
+@@!! DATE_CREATED 2011-12-28 20:44:25
+@@!! DATE_MODIFIED 2012-01-02 17:23:49
+@@!! DATE_GOO_TASK None
+@@!! GOO_TASK_ID 
+@@!! NOTE follows 
+* Still need it as a drop target, in order to drag to the top slot. 
+* Could use JS to make it look like a simple blue bar, w/ no internal text
+@@!! NEW_RECORD =====================================
+@@!! ID 4574
+@@!! FOLLOWS 4381
+@@!! PARENTS 0
+@@!! INDENT_LEVEL 0
+@@!! SELECTOR Done items ==========
+@@!! PROJECT zz Benk meta
+@@!! PRIORITY 0
+@@!! STATUS 9
+@@!! DATE_CREATED 2012-01-02 10:31:36
+@@!! DATE_MODIFIED 2012-01-02 17:36:11
+@@!! DATE_GOO_TASK None
+@@!! GOO_TASK_ID 
+@@!! NOTE follows 
+
+@@!! NEW_RECORD =====================================
+@@!! ID 4577
+@@!! FOLLOWS 4574
+@@!! PARENTS 4574
+@@!! INDENT_LEVEL 1
+@@!! SELECTOR TEST TEST 1 1 1
+@@!! PROJECT zz Benk meta
+@@!! PRIORITY 4
+@@!! STATUS 6
+@@!! DATE_CREATED 2012-01-02 17:13:14
+@@!! DATE_MODIFIED 2012-01-02 17:36:08
+@@!! DATE_GOO_TASK None
+@@!! GOO_TASK_ID 
+@@!! NOTE follows 
+
+@@!! NEW_RECORD =====================================
+@@!! ID 4392
+@@!! FOLLOWS 4577
+@@!! PARENTS 4574
+@@!! INDENT_LEVEL 1
+@@!! SELECTOR on edit forms, title field is too short
+@@!! PROJECT zz Benk meta
+@@!! PRIORITY 0
+@@!! STATUS 9
+@@!! DATE_CREATED 2011-12-29 13:23:17
+@@!! DATE_MODIFIED 2012-01-02 17:44:50
+@@!! DATE_GOO_TASK None
+@@!! GOO_TASK_ID 
+@@!! NOTE follows 
+
+@@!! NEW_RECORD =====================================
+@@!! ID 4398
+@@!! FOLLOWS 4392
+@@!! PARENTS 4574
+@@!! INDENT_LEVEL 1
+@@!! SELECTOR wrap HTMLbody in <pre> tags, if no tags in body
+@@!! PROJECT zz Benk meta
+@@!! PRIORITY 0
+@@!! STATUS 9
+@@!! DATE_CREATED 2011-12-30 16:18:29
+@@!! DATE_MODIFIED 2012-01-02 17:16:47
+@@!! DATE_GOO_TASK None
+@@!! GOO_TASK_ID 
+@@!! NOTE follows 
+
+@@!! NEW_RECORD =====================================
+@@!! ID 4390
+@@!! FOLLOWS 4398
+@@!! PARENTS 4574
+@@!! INDENT_LEVEL 1
+@@!! SELECTOR eliminate interstitial [NEW ITEM] step
+@@!! PROJECT zz Benk meta
+@@!! PRIORITY 0
+@@!! STATUS 9
+@@!! DATE_CREATED 2011-12-29 13:22:29
+@@!! DATE_MODIFIED 2012-01-02 17:13:57
+@@!! DATE_GOO_TASK None
+@@!! GOO_TASK_ID 
+@@!! NOTE follows 
+
+@@!! NEW_RECORD =====================================
+@@!! ID 4449
+@@!! FOLLOWS 4390
+@@!! PARENTS 4574
+@@!! INDENT_LEVEL 1
+@@!! SELECTOR reuse existing actionItem logic.
+@@!! PROJECT zz Benk meta
+@@!! PRIORITY 0
+@@!! STATUS 9
+@@!! DATE_CREATED 2011-12-31 22:39:43
+@@!! DATE_MODIFIED 2012-01-02 17:18:06
+@@!! DATE_GOO_TASK None
+@@!! GOO_TASK_ID 
+@@!! NOTE follows 
+could even differentiate a call via ajax from a synchronous call, perhaps based on the Request itself.  
+@@!! NEW_RECORD =====================================
+@@!! ID 4565
+@@!! FOLLOWS 4449
+@@!! PARENTS 4574
+@@!! INDENT_LEVEL 1
+@@!! SELECTOR update the drag display after local operations: promote/demote, up/down, new item, delete; including bullet
+@@!! PROJECT zz Benk meta
+@@!! PRIORITY 0
+@@!! STATUS 9
+@@!! DATE_CREATED 2012-01-02 10:08:36
+@@!! DATE_MODIFIED 2012-01-02 10:32:07
+@@!! DATE_GOO_TASK None
+@@!! GOO_TASK_ID 
+@@!! NOTE follows 
+
+@@!! NEW_RECORD =====================================
+@@!! ID 4378
+@@!! FOLLOWS 4565
+@@!! PARENTS 4574
+@@!! INDENT_LEVEL 1
+@@!! SELECTOR recover list display after edit, move, etc
+@@!! PROJECT zz Benk meta
+@@!! PRIORITY 0
+@@!! STATUS 9
+@@!! DATE_CREATED 2011-12-28 20:42:23
+@@!! DATE_MODIFIED 2012-01-02 10:32:10
+@@!! DATE_GOO_TASK None
+@@!! GOO_TASK_ID 
+@@!! NOTE follows 
+
+@@!! NEW_RECORD =====================================
+@@!! ID 4394
+@@!! FOLLOWS 4378
+@@!! PARENTS 4574
+@@!! INDENT_LEVEL 1
+@@!! SELECTOR Provide one-click backups
+@@!! PROJECT zz Benk meta
+@@!! PRIORITY 0
+@@!! STATUS 9
+@@!! DATE_CREATED 2011-12-29 13:24:26
+@@!! DATE_MODIFIED 2012-01-02 10:32:14
+@@!! DATE_GOO_TASK None
+@@!! GOO_TASK_ID 
+@@!! NOTE follows 
+
+@@!! NEW_RECORD =====================================
+@@!! ID 4391
+@@!! FOLLOWS 4394
+@@!! PARENTS 4574
+@@!! INDENT_LEVEL 1
+@@!! SELECTOR grid view item click takes you to non-drag view
+@@!! PROJECT zz Benk meta
+@@!! PRIORITY 0
+@@!! STATUS 9
+@@!! DATE_CREATED 2011-12-29 13:22:55
+@@!! DATE_MODIFIED 2012-01-02 10:32:18
+@@!! DATE_GOO_TASK None
+@@!! GOO_TASK_ID 
+@@!! NOTE follows 
+
+@@!! NEW_RECORD =====================================
+@@!! ID 4376
+@@!! FOLLOWS 4391
+@@!! PARENTS 4574
+@@!! INDENT_LEVEL 1
+@@!! SELECTOR grid view busted
+@@!! PROJECT zz Benk meta
+@@!! PRIORITY 0
+@@!! STATUS 9
+@@!! DATE_CREATED 2011-12-28 20:42:19
+@@!! DATE_MODIFIED 2012-01-02 10:32:21
+@@!! DATE_GOO_TASK None
+@@!! GOO_TASK_ID 
+@@!! NOTE follows 
+

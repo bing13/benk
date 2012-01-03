@@ -225,7 +225,7 @@ def buildDisplayList(projectx, projID, ordering, hoistID, useList):
         ## generate outline-ordered and formatted output list
         for f2 in ixList:
             if followHash.has_key(f2.follows): 
-                sharedMD.logThis( "\n=====> WARNING!! followHash duplicate")
+                sharedMD.logThis( "=====> WARNING!! followHash duplicate")
                 fh1=Item.objects.get(pk=followHash[f2.follows])
                 sharedMD.logThis("=====>ID:"+str(fh1.id)+":" + str(fh1) +"  follows=" + str(fh1.follows)+']')
                 sharedMD.logThis("=====>ID:"+str(f2.id)+":" + str(f2) +"  follows=" + str(f2.follows)+']\n')
@@ -539,7 +539,7 @@ def actionItem(request, pItem, action):
     ###ACTION UNKNOWN########
 
     else:
-        sharedMD.logThis( "===WARNING!=========== \nUnknown action=" + action)
+        sharedMD.logThis( "===WARNING!=========== Unknown action=" + action)
         exit()
 
     ###########################################################################
@@ -1042,29 +1042,23 @@ def xhr_actions(request):
     message = 'nix'
     
     if request.is_ajax():
-        message = "AJAX request, ci="+str(actionRequest['ci'])+"  ti='"+str(actionRequest['ti']+"'  ajaxAction:"+actionRequest['ajaxAction'])
+        message = "AJAX request, ci="+str(actionRequest['ci'])+"  ti='"+str(actionRequest['ti']+"'  ajaxAction: "+actionRequest['ajaxAction'])
     else:
         message = "Not an AJAX request"
 
-    sharedMD.logThis("\n------> xhr_actions, message="+message)
+    sharedMD.logThis("=====> xhr_actions: ="+message)
 
     ## dragmove should also get refactored to the external library
     clickedItem=Item.objects.get(pk=actionRequest['ci'])
 
     lastItemID=getLastItemID(clickedItem.project_id)
 
-
-    sharedMD.logThis("++MADE IT++")
-#    lastKid,kidList=findLastKid(clickedItem,lastItemID)
+    #lastKid,kidList=findLastKid(clickedItem,lastItemID)
 
     ## to dragmove #################################
 
     if actionRequest['ajaxAction'] == 'dragmove':
-        #ParKidList=
         refreshThese= drag_move(int(actionRequest['ci']), int(actionRequest['ti']))
-        #refreshThese=simplejson.dumps(ParKidList)
-        #sharedMD.logThis("---> xhr_actions, dragmove, returning="+str(jsonParKid))
-        #return HttpResponse(jsonParKid)
     
     elif actionRequest['ajaxAction']== 'moveUp':
         refreshThese=DRAGACTIONS.moveUp(clickedItem,  lastItemID)
@@ -1087,7 +1081,7 @@ def xhr_actions(request):
         sharedMD.logThis("+++ERROR+++. Uncaught actionRequest['ajaxAction']:"+actionRequest['ajaxAction'])
         refreshThese=[]
 
-    sharedMD.logThis("  REFRESH: "+str(refreshThese))
+    #sharedMD.logThis("  REFRESH: "+str(refreshThese))
     jRefresh=simplejson.dumps(refreshThese)
     return HttpResponse(jRefresh, mimetype=mimetypex)
         
@@ -1098,11 +1092,11 @@ def drag_move(CIid, TIid):
 
     CI=Item.objects.get(pk=CIid)
     TI=Item.objects.get(pk=TIid)
-    sharedMD.logThis("\n======dragmove=> CIid:TIid    "+str(CIid)+":"+str(TIid))
+    sharedMD.logThis(" ====dragmove=> CIid:TIid    "+str(CIid)+":"+str(TIid))
     
     if CI.follows == TI.id:
         ## invalid move
-        sharedMD.logThis('\n== WARNING: move of item onto item it follows is invalid. Not executing.')
+        sharedMD.logThis('== WARNING: move of item onto item it follows is invalid. Not executing.')
         return([])
 
  
@@ -1182,12 +1176,14 @@ def drag_move(CIid, TIid):
     parentKidUpdate.append([newTI.id, newTI.follows, newTI.title, newTI.parent, newTI.indentLevel,newTI.priority, newTI.status,  newTI.HTMLnoteBody, returnMarker(newTI) ] )
 
     ## have to refresh the CI's parent, in case it's marker has changed w/ the move
-    CIparent=Item.objects.get(pk=origCIparent)
-    
-    parentKidUpdate.append([CIparent.id, CIparent.follows, CIparent.title, CIparent.parent, CIparent.indentLevel, CIparent.priority, CIparent.status, CIparent.HTMLnoteBody, returnMarker(CIparent) ] )
+    ## IF the parent != 0
+
+    if origCIparent != 0:
+        CIparent=Item.objects.get(pk=origCIparent)
+        parentKidUpdate.append([CIparent.id, CIparent.follows, CIparent.title, CIparent.parent, CIparent.indentLevel, CIparent.priority, CIparent.status, CIparent.HTMLnoteBody, returnMarker(CIparent) ] )
    
     parentKidUpdate += kidItems
-    
+
     return(parentKidUpdate)
 
 #############################################################################
