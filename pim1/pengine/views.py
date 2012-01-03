@@ -636,19 +636,31 @@ def gridview(request):
         j = 0 ; ##Item.objects.filter(project=thisProject.id).get(follows=0).id
 
         limit = min(10, len(Item.objects.filter(project=thisProject.id)))
+        cellobjs=Item.objects.filter(project=thisProject).exclude(status='9')[:10]
+        for co in cellobjs:
+            cellItems.append(co.id)
 
-        for i in range(0,limit):
-            thisItem=Item.objects.filter(project=thisProject).get(follows=j)
-            cellItems.append(thisItem.id)
-            j = thisItem.id
+        #         get=Item.objects.filter(project=thisProject).get(follows=j)
+        
+        #for i in range(0,limit):
+            #was 2012/1/2########################
+            #thisItem=Item.objects.filter(project=thisProject).get(follows=j)
+            #cellItems.append(thisItem.id)
+            #j = thisItem.id
+            #####################################
+
+            #thisItem=Item.objects.filter(project=thisProject).get(follows=j)
+            ### priority can be '', which causes it to sort wrong
+            ##if thisItem.priority == '':
+            ##    thisItem.priority = 99
             
-                    
-
-#        cellObjects = Item.objects.filter(project=thisProject.id).order_by('follows')[:ITEMS_PER_CELL]
-#        for c in cellObjects:
-#            cellItems.append(c.id)
-        #sharedMD.logThis("Gridview  thisProject.id:"+str(thisProject.id)+" "+str(cellItems))
-        dx =   buildDisplayList(current_projs,thisProject.id, 'follows',0,cellItems)
+            # #        cellObjects = Item.objects.filter(project=thisProject.id).order_by('follows')[:ITEMS_PER_CELL]
+            # #        for c in cellObjects:
+            # #            cellItems.append(c.id)
+            #         #sharedMD.logThis("Gridview  thisProject.id:"+str(thisProject.id)+" "+str(cellItems))
+            
+            # was dx =   buildDisplayList(current_projs,thisProject.id, 'follows',0,cellItems)
+        dx =   buildDisplayList(current_projs,thisProject.id, 'priority',0,cellItems)
         displayList = displayList + dx
 
 
