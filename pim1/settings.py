@@ -4,7 +4,7 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    # ('Your Name', 'your_email@domain.com'),
+     ('Benk admin', 'bhadmin13@bernardhecker.com'),
 )
 
 MANAGERS = ADMINS
@@ -128,5 +128,8 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
     'django.contrib.admindocs',
-    'pim1.pengine'
+    'pim1.pengine',
+
+    # south installed with: easy_install --install-dir /home/bhadmin13/python_pkgs/ South
+    'south' 
 )

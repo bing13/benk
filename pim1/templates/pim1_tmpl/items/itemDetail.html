@@ -7,7 +7,7 @@
     <table class="item_table">
     {% for ci in current_items %}
 
-     <tr class="items"><td class="titlecol itemtd" colspan="2">({{ci.id}}) <a href="/pim1/admin/pengine/item/{{ci.id}}/">{{ ci.title }}</a></td></tr>
+     <tr class="items"><td class="titlecol itemtd" colspan="3"><strong>({{ci.id}}) <a href="/pim1/admin/pengine/item/{{ci.id}}/">{{ ci.title }}</strong></a></td></tr>
 
      <tr class="items"><td class="itemtd">projects:
 	     {% for px in ci.projects %}
@@ -16,15 +16,44 @@
 
 	</td>
 
-     <td class="itemtd">p/f:i {{ci.parent}}/{{ci.follows}}:<span class="indent">{{ci.indent}}</span>  
-     <span "actionArrows">delete? <a href="/pim1/item/delete/{{ ci.id }}">&otimes;</a></span></td
-</tr>
+     <td  class="itemtd">indentLevel: {{ci.indentLevel}}</td>  </tr>
 
-     <tr class="items"><td class="itemtd">priority: {{ ci.priority }}:{{ci.priorityText}}	</td><td class="itemtd">status: {{ ci.status }}:{{ci.statusText}}</td></tr>
+
+     <tr class="items">
+     <td class="itemtd">parent: {{ci.parent}}</td>
+     <td  class="itemtd">follows: {{ci.follows}}</td>
+     <tr class="items"><td class="itemtd">date_created:{{ ci.date_created }} </td>
+        <td class="itemtd">date_mod:{{ ci.date_mod }}</td></tr>
+
+
+
+     <tr class="items"><td class="itemtd">priority: {{ ci.priority }}:{{ci.priorityText}}</td>
+                       <td class="itemtd">status: {{ ci.status }}:{{ci.statusText}}</td></tr>
+
+
+     <tr class="items"><td class="itemtd">project: {{ ci.project }}</td>
+                       <td class="itemtd">IS_import_ID:{{  ci.IS_import_ID }}</td></tr>
+
+
+     <tr class="items"><td class="itemtd">date_gootask_display (date): {{ ci.date_gootask_display }}</td>
+	 <td class="itemtd">gtask_id:{{ ci.gtask_id }} </td>
+        </tr>
+
+
+
+
+
 
    <tr class="items"><td colspan="2" >Note: 
 {{ ci.HTMLnoteBody|safe|default:" - - - " }}
       </td></tr>
+
+
+
+
+
+
+    <tr  class="items"> <td "actionArrows">delete? <a href="/pim1/item/delete/{{ ci.id }}">&otimes;</a></td></tr>
 
     {% endfor %}
 

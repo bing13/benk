@@ -1,10 +1,17 @@
-from pim1.pengine.models import Item, Project
+from pim1.pengine.models import Item, Project, ProjectSet
 # ++ was "pengine.models"
 
 from django.contrib import admin
 
-class ProjAdmin(admin.ModelAdmin):
+class ProjSetAdmin(admin.ModelAdmin):
     list_display=('id','name','color')
+    list_filter= ['color']   
+
+admin.site.register(ProjectSet, ProjSetAdmin)
+
+
+class ProjAdmin(admin.ModelAdmin):
+    list_display=('id','name','color', 'set')
     list_filter= ['color']   
 
 admin.site.register(Project, ProjAdmin)

@@ -40,7 +40,7 @@ urlpatterns = patterns('',
     url(r'^pim1/importfile/$','pim1.pengine.views.importfile'),
     url(r'^pim1/serialize/$','pim1.pengine.views.backupdata'),
 
-    url(r'^pim1/pim1/search/$','pim1.pengine.views.ssearch'),                       
+    url(r'^pim1/search/$','pim1.pengine.views.ssearch'),                       
 
     url(r'^pim1/item/gooUpdate$','pim1.pengine.views.gooTaskUpdate'),
     url(r'^pim1/xhr_test$','pim1.pengine.views.xhr_test'),

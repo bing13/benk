@@ -19,7 +19,7 @@ from django.forms.widgets import CheckboxSelectMultiple
 #from django.forms.models import modelformset_factory 
 
 # ++ was "pengine.models"
-from pim1.pengine.models import Item, Project
+from pim1.pengine.models import Item, Project, ProjectSet
 
 import datetime, sys, simplejson, codecs
 
@@ -30,8 +30,9 @@ import datetime, sys, simplejson, codecs
 
 #DreamHost - UNIX
 sys.path.append('/home/bhadmin13/dx.bernardhecker.com/pim1/library');
+sys.path.append('/home/bhadmin13/python_pkgs/South-0.7.3-py2.5.egg');
 
-import gooOps, dirlist;
+import gooOps, dirlist, south;
 from rfc3339 import rfc3339;
 
 import drag_actions, sharedMD;
@@ -153,7 +154,13 @@ def buildDisplayList(projectx, projID, ordering, hoistID, useList):
 
     ## items in the explicit useList (used by search0
     if useList != []:
-        items2List=Item.objects.filter(id__in=useList).order_by(ordering)
+        if ordering == 'provided':
+            itemList=[]
+            for ULid in useList:
+                itemList.append(Item.objects.get(id=ULid))
+            items2List = itemList
+        else:
+            items2List=Item.objects.filter(id__in=useList).order_by(ordering)
 
     ## the hoist ID
     elif hoistID != 0:
@@ -635,10 +642,35 @@ def gridview(request):
         #(projlist, projID, ordering, hoistID, useList)
         j = 0 ; ##Item.objects.filter(project=thisProject.id).get(follows=0).id
 
-        limit = min(10, len(Item.objects.filter(project=thisProject.id)))
-        cellobjs=Item.objects.filter(project=thisProject).exclude(status='9')[:10]
-        for co in cellobjs:
-            cellItems.append(co.id)
+        limit = min(ITEMS_PER_CELL, Item.objects.filter(project=thisProject.id).count());
+        # count() is more efficienrt than 
+        cellobjs=Item.objects.filter(project=thisProject).exclude(status='9').exclude(priority=0, follows=0).order_by('priority')[:10]
+        
+        #### WORKAROUND until we change model, which currently has a "choice" of '' for priority=0
+        #### which makes it sort high, rather than low on the gridview cell
+
+        #for priorityLevel in (1,2,3,4,5,6,7,8,9,99,0):
+        #    for itemz in cellobjs:
+        #        if (itemz.priority == priorityLevel):
+        ###            cellItems.append(itemz.id)
+        # that sucker ends up pulling ALL items into the grid, I have no freakin'idea why.
+        # something about querysets I don't understand (likely) or Possible django bug.
+
+        ### routine to generate a list of IDs in a specific priority order. Here, makes un-prioritized items sort lower
+        ### than prioritized items. Makes use of "provided" ordering in builddisplaylist()
+        priorityCollector={}
+
+        for citem in cellobjs:
+            if not priorityCollector.has_key(citem.priority):
+                priorityCollector[citem.priority]=[]
+            priorityCollector[citem.priority].append(citem.id)
+
+        for priorityLevel in (1,2,3,4,5,6,7,8,9,99,0,''):
+            if priorityCollector.has_key(str(priorityLevel)):
+                cellItems += priorityCollector[str(priorityLevel)]
+                
+        #for co in cellobjs:
+        #    cellItems.append(co.id)
 
         #         get=Item.objects.filter(project=thisProject).get(follows=j)
         
@@ -660,7 +692,7 @@ def gridview(request):
             #         #sharedMD.logThis("Gridview  thisProject.id:"+str(thisProject.id)+" "+str(cellItems))
             
             # was dx =   buildDisplayList(current_projs,thisProject.id, 'follows',0,cellItems)
-        dx =   buildDisplayList(current_projs,thisProject.id, 'priority',0,cellItems)
+        dx =   buildDisplayList(current_projs,thisProject.id, 'provided',0,cellItems)
         displayList = displayList + dx
 
 
@@ -779,6 +811,7 @@ def ssearch(request):
     c = {}
     c.update(csrf(request))
     error_message=''
+    searchTerm=''
      
     if request.method == 'GET':
         sform = ssearchForm(request.GET)
@@ -809,6 +842,7 @@ def ssearch(request):
 
     t = loader.get_template('pim1_tmpl/items/index.html')
     c = Context({
+        'searchterm':searchTerm,
         'current_items':displayList,
         'current_projs':current_projs,
         'nowx':datetime.datetime.now().strftime("%Y/%m/%d  %H:%M:%S"),
@@ -835,7 +869,9 @@ def addItem(request, pItem):
 #############################################################################
 
 def editItem(request, pItem):
-    itemProject=Item.objects.get(pk=pItem).project_id
+    itemProject = Item.objects.get(pk=pItem).project_id
+    projectName = Project.objects.get(pk=itemProject).name
+
     #dispPage, dispStart, dispLength):
     # dispPage, dispStart and dispLength allow us to restore the listing page to what it was
     current_projs = Project.objects.order_by('name')
@@ -867,7 +903,8 @@ def editItem(request, pItem):
     return render_to_response("pim1_tmpl/items/editItem.html", {
         "pItem": pItem,
         "rawform": formset,
-        
+        "projectNum": itemProject,
+        "projectName": projectName,
         "formset": formsetOut,
         'pagecrumb':'edit an item',
         'current_projs':current_projs,
@@ -911,21 +948,32 @@ def importfile(request):
 #############################################################################
 
 def importISdata(importFile,newProjectID):
-#    import dircache
-#    print "default level=",dircache.listdir('.')
 
-
-    #startdir='/home/bhadmin13/dx.bernardhecker.com/pim1/pengine/imports/'
     textAccumulator = ''
-    sharedMD.logThis( "+++ b1 importISdata from " + IMPORTDIR + importFile)
-    INFILE=open(IMPORTDIR + importFile,'r')
-    allLines=INFILE.readlines()
+    ISparentFirst = ''
+    selectorTitle = ''
+    read_indentLevel = ''
+    read_priority = ''
+    read_status = ''
+    read_date_created = ''
+    read_date_mod = ''
+    read_date_goo_task = ''
+    read_goo_task_id = ''
     currentISid = 0
     previousNewItemBenkID=getLastItemID(newProjectID)
     firstRecord = 'yes'
-    sharedMD.logThis( "+++ b2 importISdata")
+    numberOfRecordsImported = 0
+
+    sharedMD.logThis( ">>> importISdata from " + IMPORTDIR + importFile)
+    
+    INFILE=open(IMPORTDIR + importFile,'r')
+    allLines=INFILE.readlines()
 
     importedRecordIDs = []
+
+    ## this makes sure the last record gets written out
+    allLines.append('@@!! NEW_RECORD =====================================')
+    
     
     for lx in allLines[:]:
         if lx[0:4] != '@@!!':  # we assume it's a continuing note body
@@ -937,20 +985,56 @@ def importISdata(importFile,newProjectID):
                 if firstRecord == 'yes':
                     firstRecord = 'no'
                 else:
-                    newItem = Item(title=selectorTitle, priority='0', status='0', \
+                    ## you've hit a NEW_RECORD line, and it's not the very first record, so it's
+                    ## time to save the (previous) record
+                    
+                    newItem = Item(title=selectorTitle, \
                               follows=previousNewItemBenkID, \
                               IS_import_ID = currentISid,     \
+                             
+                              gtask_id = read_goo_task_id, \
                               HTMLnoteBody = textAccumulator)
 
                     if ISparentFirst == 0:
                         newItem.parent = 0
                     else:
+                        sharedMD.logThis("  Import: currentISid="+str(currentISid)+"  ISparentFirst="+str(ISparentFirst))
                         newItem.parent=Item.objects.get(IS_import_ID=ISparentFirst).id
                     newItem.project=Project.objects.get(pk=newProjectID)
 
-                    newItem.indentLevel=countIndent(newItem)
+
+                    if read_priority == '':
+                        newItem.priority = 0
+                    else:
+                        newItem.priority = read_priority
+
+
+                    if read_status == '':
+                        newItem.status = 0
+                    else:
+                        newItem.status = read_status
+
+
+                    if read_indentLevel == '':
+                        newItem.indentLevel=countIndent(newItem)
+                    else:
+                        newItem.indentLevel = read_indentLevel
+
+
+                    if read_date_created != '':
+                        newItem.date_created = datetime.datetime.strptime(read_date_created,'%Y-%m-%d %H:%M:%S')
+
+                    if read_date_mod != '':
+                        newItem.date_mod = datetime.datetime.strptime(read_date_mod,'%Y-%m-%d %H:%M:%S')
+
+                    if read_date_goo_task != 'None' and read_date_goo_task != '':
+                        newItem.date_gootask_display = datetime.datetime.strptime(read_date_goo_task,'%Y-%m-%d %H:%M:%S')
 
                     newItem.save()
+                    numberOfRecordsImported += 1
+
+
+                    
                     importedRecordIDs.append(newItem.id)
                     ### PURGE PREVIOUS VALUES ###
 
@@ -958,6 +1042,13 @@ def importISdata(importFile,newProjectID):
                     previousNewItemBenkID = newItem.id
                     ISparentFirst = ''
                     selectorTitle = ''
+                    read_indentLevel = ''
+                    read_priority = ''
+                    read_status = ''
+                    read_date_created = ''
+                    read_date_mod = ''
+                    read_date_goo_task = ''
+                    read_goo_task_id = ''
 
             elif itemType == 'ID':
                 ## this is the non-unique Info Select exported item ID
@@ -974,14 +1065,48 @@ def importISdata(importFile,newProjectID):
                 splitter = data.split(',',1)
                 if len(splitter) > 0 :
                     if splitter[0].isdigit():
-                        ISparentFirst = splitter[0]
+                        ## added int() 1/7/2012
+                        ISparentFirst = int(splitter[0])
                     else:
                         ISparentFirst=0
                 else:
                     ISparentFirst=0
 
-            elif itemType=='SELECTOR':
+            elif itemType == 'SELECTOR':
                 selectorTitle=data;
+
+            elif itemType == 'INDENT_LEVEL':
+                ## assume if it's provided, it's good 
+                read_indentLevel = data;
+                
+
+            elif itemType == 'PROJECT':
+                ## won't override the form data, so this value isn't used
+                read_project = data;
+
+
+            elif itemType == 'PRIORITY':
+                read_priority = data;
+
+
+            elif itemType == 'STATUS':
+                read_status = data;
+
+            elif itemType == 'DATE_CREATED':
+                read_date_created = data;
+                sharedMD.logThis('Date_created:'+str(read_date_created)+' ['+str(id)+']')
+
+            elif itemType == 'DATE_MODIFIED':
+                read_date_mod = data;
+                sharedMD.logThis('Date_modified:'+str(read_date_mod))
+
+            elif itemType == 'DATE_GOO_TASK':
+                read_date_goo_task = data;
+                sharedMD.logThis('read_date_goo_task:'+str(read_date_goo_task))
+
+            elif itemType == 'GOO_TASK_ID':
+                read_goo_task_id = data; 
+
 
             elif itemType == 'NOTE':
                 # nothing to do here. We're accumulating all row bodies that do not start
@@ -989,7 +1114,7 @@ def importISdata(importFile,newProjectID):
                 pass;
 
             else:
-                sharedMD.logThis( "* * * * RECORD MISSED * * * *:"+ str(lx))
+                sharedMD.logThis( "* * RECORD TYPE MISSED * *:"+ str(lx))
     newItem.save()
     importedRecordIDs.append(newItem.id)
 
@@ -998,6 +1123,8 @@ def importISdata(importFile,newProjectID):
         cleanUp=Item.objects.get(pk=importID)
         cleanUp.IS_import_ID=-999
         cleanUp.save()
+
+    sharedMD.logThis(">>> Completed. # of imported records: " + str(numberOfRecordsImported))
     
 ##################################################################
 
@@ -1210,11 +1337,7 @@ def returnMarker(Itemx):
 def backupdata(request):
     # projlist=0 is default value, overridden by passed parameters
 
-
-
     current_projs = Project.objects.order_by('name')
-
-
 
     #BackupTheseProjects = []
     if request.method == 'POST': # If the form has been posted...
@@ -1222,8 +1345,17 @@ def backupdata(request):
         #if form.is_valid(): # All validation rules pass
         # Process the data in form.cleaned_data
         if "BackupTheseProjects" in request.POST:
-            BackupTheseProjects=request.POST['BackupTheseProjects']
-            sharedMD.logThis('backup ==> projlist:'+ str(BackupTheseProjects))
+            sharedMD.logThis("backup request:"+str(request.POST))
+
+            for reqData in request.POST.lists():
+                if reqData[0] == 'BackupTheseProjects':
+                    BackupTheseProjects=reqData[1]
+                
+
+            #    =request.POST['BackupTheseProjects']
+
+            
+            sharedMD.logThis(' backup ==> projlist:'+ str(BackupTheseProjects))
 
 
             for thisBackupID in BackupTheseProjects:

@@ -1,0 +1,287 @@
+@@!! NEW_RECORD =====================================
+@@!! ID 1
+@@!! FOLLOWS 0
+@@!! PARENTS 0
+@@!! INDENT_LEVEL 0
+@@!! SELECTOR BMJ ANCHOR
+@@!! PROJECT BMJ
+@@!! PRIORITY 0
+@@!! STATUS 0
+@@!! DATE_CREATED 2011-12-22 22:00:48
+@@!! DATE_MODIFIED 2011-12-29 08:52:06
+@@!! DATE_GOO_TASK None
+@@!! GOO_TASK_ID 
+@@!! NOTE follows 
+
+@@!! NEW_RECORD =====================================
+@@!! ID 4585
+@@!! FOLLOWS 1
+@@!! PARENTS 0
+@@!! INDENT_LEVEL 0
+@@!! SELECTOR Review Jira tasks
+@@!! PROJECT BMJ
+@@!! PRIORITY 1
+@@!! STATUS 1
+@@!! DATE_CREATED 2012-01-03 09:53:57
+@@!! DATE_MODIFIED 2012-01-03 09:54:51
+@@!! DATE_GOO_TASK None
+@@!! GOO_TASK_ID 
+@@!! NOTE follows 
+Status ongoing tasks, make sure important ones don't go stale. (The dog that didn't bark.)
+@@!! NEW_RECORD =====================================
+@@!! ID 4584
+@@!! FOLLOWS 4585
+@@!! PARENTS 0
+@@!! INDENT_LEVEL 0
+@@!! SELECTOR Edit, send policy for new workflow ("Jan model")
+@@!! PROJECT BMJ
+@@!! PRIORITY 1
+@@!! STATUS 2
+@@!! DATE_CREATED 2012-01-03 09:48:13
+@@!! DATE_MODIFIED 2012-01-03 10:28:56
+@@!! DATE_GOO_TASK None
+@@!! GOO_TASK_ID 
+@@!! NOTE follows 
+
+@@!! NEW_RECORD =====================================
+@@!! ID 4586
+@@!! FOLLOWS 4584
+@@!! PARENTS 0
+@@!! INDENT_LEVEL 0
+@@!! SELECTOR why did Rapids break?
+@@!! PROJECT BMJ
+@@!! PRIORITY 2
+@@!! STATUS 2
+@@!! DATE_CREATED 2012-01-03 10:06:40
+@@!! DATE_MODIFIED 2012-01-03 10:06:56
+@@!! DATE_GOO_TASK None
+@@!! GOO_TASK_ID 
+@@!! NOTE follows 
+
+@@!! NEW_RECORD =====================================
+@@!! ID 4587
+@@!! FOLLOWS 4586
+@@!! PARENTS 0
+@@!! INDENT_LEVEL 0
+@@!! SELECTOR markup server errors continue
+@@!! PROJECT BMJ
+@@!! PRIORITY 2
+@@!! STATUS 3
+@@!! DATE_CREATED 2012-01-03 10:19:21
+@@!! DATE_MODIFIED 2012-01-03 10:22:42
+@@!! DATE_GOO_TASK None
+@@!! GOO_TASK_ID 
+@@!! NOTE follows 
+error reports still coming in. Ex., I assume
+http://www.pivotaltracker.com/story/show/22890209
+
+
+Todd was pushing on this issue, too, 12/30/11, with AV,RC,JH,MK, GS, RL
+12/31/11, MK reponds w/temporizing message
+@@!! NEW_RECORD =====================================
+@@!! ID 4382
+@@!! FOLLOWS 4587
+@@!! PARENTS 0
+@@!! INDENT_LEVEL 0
+@@!! SELECTOR Specialty portal / subject collection selection criteria
+@@!! PROJECT BMJ
+@@!! PRIORITY 3
+@@!! STATUS 2
+@@!! DATE_CREATED 2011-12-29 08:52:10
+@@!! DATE_MODIFIED 2012-01-03 10:19:21
+@@!! DATE_GOO_TASK None
+@@!! GOO_TASK_ID 
+@@!! NOTE follows 
+<pre>see  qb <a href="https://www.quickbase.com/db/bbsbmsd7m?=dr&r=bdtz">36407</a>
+
+12/29/2011
+PH: PW implemented the search that get all articles, from the  subjects search...
+Loop in MAF? PW can give you the search XML....and MASF could tell you why the query doesn't work.....
+
+PH: Pretty sure it's one to one, but could be wrong...
+</pre>
+@@!! NEW_RECORD =====================================
+@@!! ID 4588
+@@!! FOLLOWS 4382
+@@!! PARENTS 0
+@@!! INDENT_LEVEL 0
+@@!! SELECTOR Model changes
+@@!! PROJECT BMJ
+@@!! PRIORITY 3
+@@!! STATUS 5
+@@!! DATE_CREATED 2012-01-03 10:23:48
+@@!! DATE_MODIFIED 2012-01-03 10:27:08
+@@!! DATE_GOO_TASK None
+@@!! GOO_TASK_ID 
+@@!! NOTE follows 
+* Multiple URL fields, conveniently clickable
+
+* hot URLs in HTMLbody notes
+
+* change priority for "Done" to "99" to make sorting easier?
+
+* more or different priority levels?
+@@!! NEW_RECORD =====================================
+@@!! ID 4589
+@@!! FOLLOWS 4588
+@@!! PARENTS 0
+@@!! INDENT_LEVEL 0
+@@!! SELECTOR display Project ID on edititem template
+@@!! PROJECT BMJ
+@@!! PRIORITY 4
+@@!! STATUS 5
+@@!! DATE_CREATED 2012-01-03 10:27:14
+@@!! DATE_MODIFIED 2012-01-03 10:27:38
+@@!! DATE_GOO_TASK None
+@@!! GOO_TASK_ID 
+@@!! NOTE follows 
+
+@@!! NEW_RECORD =====================================
+@@!! ID 4590
+@@!! FOLLOWS 4589
+@@!! PARENTS 0
+@@!! INDENT_LEVEL 0
+@@!! SELECTOR BMJ1 Reconcile Logging/Reports - check
+@@!! PROJECT BMJ
+@@!! PRIORITY 3
+@@!! STATUS 3
+@@!! DATE_CREATED 2012-01-03 10:29:17
+@@!! DATE_MODIFIED 2012-01-03 10:29:37
+@@!! DATE_GOO_TASK None
+@@!! GOO_TASK_ID 
+@@!! NOTE follows 
+PH has fixed the Guest logging. 
+Rerun? Communicate w/BMJT?
+
+@@!! NEW_RECORD =====================================
+@@!! ID 4591
+@@!! FOLLOWS 4590
+@@!! PARENTS 0
+@@!! INDENT_LEVEL 0
+@@!! SELECTOR verify virtual issue processing
+@@!! PROJECT BMJ
+@@!! PRIORITY 4
+@@!! STATUS 3
+@@!! DATE_CREATED 2012-01-03 10:29:52
+@@!! DATE_MODIFIED 2012-01-03 10:30:10
+@@!! DATE_GOO_TASK None
+@@!! GOO_TASK_ID 
+@@!! NOTE follows 
+
+@@!! NEW_RECORD =====================================
+@@!! ID 4592
+@@!! FOLLOWS 4591
+@@!! PARENTS 0
+@@!! INDENT_LEVEL 0
+@@!! SELECTOR block of docs
+@@!! PROJECT BMJ
+@@!! PRIORITY 4
+@@!! STATUS 5
+@@!! DATE_CREATED 2012-01-03 10:30:31
+@@!! DATE_MODIFIED 2012-01-03 10:30:57
+@@!! DATE_GOO_TASK None
+@@!! GOO_TASK_ID 
+@@!! NOTE follows 
+we're supposed to be notified when/if they want this
+@@!! NEW_RECORD =====================================
+@@!! ID 4583
+@@!! FOLLOWS 4592
+@@!! PARENTS 0
+@@!! INDENT_LEVEL 0
+@@!! SELECTOR Done BMJ items
+@@!! PROJECT BMJ
+@@!! PRIORITY 0
+@@!! STATUS 9
+@@!! DATE_CREATED 2012-01-03 09:47:35
+@@!! DATE_MODIFIED 2012-01-03 10:30:31
+@@!! DATE_GOO_TASK None
+@@!! GOO_TASK_ID 
+@@!! NOTE follows 
+
+@@!! NEW_RECORD =====================================
+@@!! ID 4383
+@@!! FOLLOWS 4583
+@@!! PARENTS 4583
+@@!! INDENT_LEVEL 1
+@@!! SELECTOR WSOD - now impacting uptime %
+@@!! PROJECT BMJ
+@@!! PRIORITY 0
+@@!! STATUS 9
+@@!! DATE_CREATED 2011-12-29 08:52:51
+@@!! DATE_MODIFIED 2012-01-03 09:51:50
+@@!! DATE_GOO_TASK None
+@@!! GOO_TASK_ID 
+@@!! NOTE follows 
+12/29/2011
+PH's previous fix is now resulting in a template error. he's working today to remedy. he also cleared memcache as the culprit.
+
+12/29/2011
+PH
+I've taken another crack at fixing the missing-templates (née WSOD)
+bug. I've tracked down an issue with MemCache being unavailable for
+just a fraction of a second resulting in broken cache entries. I've
+added a fix and am (crossing-my-fingers) thinking that this might be
+the final fix.
+@@!! NEW_RECORD =====================================
+@@!! ID 4389
+@@!! FOLLOWS 4383
+@@!! PARENTS 4383
+@@!! INDENT_LEVEL 2
+@@!! SELECTOR are we monitoring the WSOD condition?
+@@!! PROJECT BMJ
+@@!! PRIORITY 0
+@@!! STATUS 9
+@@!! DATE_CREATED 2011-12-29 13:03:04
+@@!! DATE_MODIFIED 2012-01-03 09:52:01
+@@!! DATE_GOO_TASK None
+@@!! GOO_TASK_ID 
+@@!! NOTE follows 
+
+@@!! NEW_RECORD =====================================
+@@!! ID 4385
+@@!! FOLLOWS 4389
+@@!! PARENTS 4583
+@@!! INDENT_LEVEL 1
+@@!! SELECTOR xmas articles missing section PDFs
+@@!! PROJECT BMJ
+@@!! PRIORITY 0
+@@!! STATUS 9
+@@!! DATE_CREATED 2011-12-29 08:59:09
+@@!! DATE_MODIFIED 2012-01-03 09:52:08
+@@!! DATE_GOO_TASK None
+@@!! GOO_TASK_ID 
+@@!! NOTE follows 
+12/29/2011
+to XM
+
+http://www.pivotaltracker.com/story/show/22790069
+@@!! NEW_RECORD =====================================
+@@!! ID 4388
+@@!! FOLLOWS 4385
+@@!! PARENTS 4583
+@@!! INDENT_LEVEL 1
+@@!! SELECTOR WHY ARE HW SEARCHES FAILING?
+@@!! PROJECT BMJ
+@@!! PRIORITY 0
+@@!! STATUS 9
+@@!! DATE_CREATED 2011-12-29 09:57:17
+@@!! DATE_MODIFIED 2012-01-03 09:52:16
+@@!! DATE_GOO_TASK None
+@@!! GOO_TASK_ID 
+@@!! NOTE follows 
+http://highwire.stanford.edu/cgi/searchresults?y=0&andorexactfulltext=and&resourcetype=1&fulltext=nurse+led+clinic+coronary+heart+disease&x=0&searchsubmit=redo&hits=10&FIRSTINDEX=70&request_history_element=0&request_history_store_element=false
+@@!! NEW_RECORD =====================================
+@@!! ID 4395
+@@!! FOLLOWS 4388
+@@!! PARENTS 4583
+@@!! INDENT_LEVEL 1
+@@!! SELECTOR Respond to DP re: reduced visits
+@@!! PROJECT BMJ
+@@!! PRIORITY 0
+@@!! STATUS 9
+@@!! DATE_CREATED 2011-12-29 13:35:30
+@@!! DATE_MODIFIED 2012-01-03 09:48:03
+@@!! DATE_GOO_TASK None
+@@!! GOO_TASK_ID 
+@@!! NOTE follows 
+

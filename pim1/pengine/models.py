@@ -1,11 +1,23 @@
 from django.db import models
 
-class Project(models.Model):
-#    item = models.ManyToManyField(Item)
+
+class ProjectSet(models.Model):
     name = models.CharField(max_length=120)
     color = models.IntegerField()
     def __unicode__(self):
         return self.name
+
+class Project(models.Model):
+    name = models.CharField(max_length=120)
+    color = models.IntegerField()
+
+    set = models.ForeignKey(ProjectSet, null=True)
+
+
+    def __unicode__(self):
+        return self.name
+
+
 
 class Item(models.Model):
     project = models.ForeignKey(Project, null=True)

@@ -8,6 +8,11 @@
 
 {% endif %}
 
+
+{% if searchterm %}
+<h5>searching: {{ searchterm }}</h5>
+{% endif %}
+
 {% if current_items %}
 
     <table class="item_table">
@@ -41,14 +46,20 @@
 	</td>
         <td class="itemtd">{{ ci.status }}:{{ci.statusText}}</td>
         <td class="itemtd notecell">
-	  {% if ci.HTMLnoteBody|length > 2 %}
-  	    <a onClick="toggleLI('notebody_{{ci.id}}');" class="noteplus">&oplus;</a>
-	    <a onClick='detailpop("{{ci.id}}")' class="notearr">&rArr;</a> 
+  {% if ci.HTMLnoteBody|length > 2 %}
 
-	    <span id="notebody_{{ci.id}}" class="noteBody">{{ ci.HTMLnoteBody|safe|default:" --- " }}</span>
-          {% endif %}
-      </td>
-        
+
+  	    <a onClick="toggleNoteBodyTableRow('notebody_{{ci.id}}');" class="noteplus">&oplus;</a>
+
+	    <a onClick='detailpop("{{ci.id}}")' class="notearr">&rArr;</a> 
+	</td>
+       </tr>
+       <tr id="notebody_{{ci.id}}" class="noteBody">
+	   <td colspan="6"   class="noteWrapper">
+		{{ ci.HTMLnoteBody|safe|default:" --- " }}
+	   </td>
+       </tr>
+ {% endif %}
 
         </tr>
     {% endfor %}
