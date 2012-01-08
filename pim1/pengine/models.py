@@ -1,3 +1,8 @@
+###
+# help with south for model migration
+# http://south.aeracode.org/docs/tutorial/part1.html
+####
+
 from django.db import models
 
 

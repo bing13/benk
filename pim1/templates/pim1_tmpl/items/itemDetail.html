@@ -9,11 +9,7 @@
 
      <tr class="items"><td class="titlecol itemtd" colspan="3"><strong>({{ci.id}}) <a href="/pim1/admin/pengine/item/{{ci.id}}/">{{ ci.title }}</strong></a></td></tr>
 
-     <tr class="items"><td class="itemtd">projects:
-	     {% for px in ci.projects %}
-	         {{ px }}
-	     {% endfor %}
-
+     <tr class="items"><td class="itemtd">project: {{ ci.project.id}}: <strong>{{ ci.project }}</strong>   /   set:{{ ci.project.set.id}}: {{ ci.project.set }}
 	</td>
 
      <td  class="itemtd">indentLevel: {{ci.indentLevel}}</td>  </tr>

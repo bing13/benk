@@ -131,5 +131,6 @@ INSTALLED_APPS = (
     'pim1.pengine',
 
     # south installed with: easy_install --install-dir /home/bhadmin13/python_pkgs/ South
+    # requires sys path add-on in passenger config file
     'south' 
 )

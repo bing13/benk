@@ -19,18 +19,19 @@
     <title>{% block title %}benk {{ pagecrumb }}{{ pItem }}{% endblock %}</title>
 </head>
 
-<body onLoad="hideClass('noteBody')" > 
+<body onLoad="hideClass('noteBody');showAProjSet('{{ thisSet }}')" > 
 
     <div id="headerx">
         {% block headerx %}
           <div class="hxtitle">benk</div>
 
-	  <div id="pagecrumb">{{ pagecrumb }}</div>
+	  <div id="pagecrumb">{{ titleCrumbBlurb }}</div>
 
 	  <ul class="hxbuttons">
+	     <li><a href="/pim1/grid-view/">grid view</a> | </li>
 	     <li><a href="/pim1/">home</a> | </li>
 	     <li><a href="/pim1/list-items/">outline</a> | </li>
-	     <li><a href="/pim1/grid-view/">grid view</a> | </li>
+
 	     <li>sort [<a href="/pim1/psd/date_created">dc</a> 
 	       <a href="/pim1/psd/date_mod">dm</a> 
 	       <a href="/pim1/psd/goo_date">gd</a>
@@ -47,8 +48,23 @@
  <div id="mainContainer">
     <div id="sidebar">
         {% block sidebar %}
-	<div class="sideProjList">
-        <h5>projects</h5>
+	<div class="sideProjList"  >
+        <a href="#"  onClick="(showAllProj())" class="projectsHeading">projects</a>
+
+
+
+
+<form action="">
+  <select name="selProj" onChange="(showAProjSet(this.value))"   >
+      <option value="999" selected="selected"></option>
+
+    {% for sx in current_sets %}
+      <option value="{{ sx.id }}" >{{ sx.name }}</option>
+
+    {%  endfor  %}
+  </select>
+</form>
+
  
 <!-- here's the default project list, which can be overridden  -->    
 <!-- in the calling html template -->
@@ -58,7 +74,9 @@
         <ul>  
            {% for px in current_projs %}
 
-	      <li> <a href="/pim1/drag/{{px.id}}">{{ px.name }} {{ px.id }}</a> | <a href="/pim1/projdetail/{{px.id}}">s</a> </li>
+	  
+
+	      <li class="set_{{ px.set.id }} all_set"> <a href="/pim1/drag/{{px.id}}">{{ px.name }} {{ px.id }}</a> | <a href="/pim1/projdetail/{{px.id}}">s</a> </li>
            {% endfor %}
 
        </ul>
@@ -95,6 +113,7 @@
 <div class="time">
 {{ nowx }}
 </div>
+
 
 </body>
 </html>

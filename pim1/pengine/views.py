@@ -30,7 +30,6 @@ import datetime, sys, simplejson, codecs
 
 #DreamHost - UNIX
 sys.path.append('/home/bhadmin13/dx.bernardhecker.com/pim1/library');
-sys.path.append('/home/bhadmin13/python_pkgs/South-0.7.3-py2.5.egg');
 
 import gooOps, dirlist, south;
 from rfc3339 import rfc3339;
@@ -61,8 +60,10 @@ DRAGACTIONS=drag_actions.dragOps();
 ##################################################################
 def homepage(request):
     current_projs = Project.objects.all()
+    current_sets = ProjectSet.objects.all()
     c = Context({'home_page':'homepage',
                  'current_projs':current_projs,
+                 'current_sets':current_sets,
                  'nowx':datetime.datetime.now().strftime("%Y:%m:%d  %H:%M:%S")})
     t = loader.get_template('pim1_tmpl/home_page.html')
     return HttpResponse(t.render(c))
@@ -73,18 +74,22 @@ def itemlist(request,proj_id):
     
     ##current_items=Item.objects.all()
     current_projs = Project.objects.order_by('name')
+    current_sets = ProjectSet.objects.all()
+    
     displayList = buildDisplayList(current_projs, proj_id,'follows',0,[])
+    projObj = Project.objects.get(pk=proj_id)
 
-    titleCrumbBlurb = str(proj_id)+':'+Project.objects.get(pk=proj_id).name
+    titleCrumbBlurb = str(proj_id)+':'+projObj.name+"   ("+projObj.set.name+")"
 
     t = loader.get_template('pim1_tmpl/items/index.html')
                        
     c = Context({
-        'pagecrumb':'main item list',
         'current_items':displayList,
         'current_projs':current_projs, 
         'nowx':datetime.datetime.now().strftime("%Y/%m/%d  %H:%M:%S"),
-        'pagecrumb':titleCrumbBlurb
+        'pagecrumb':titleCrumbBlurb,
+        'thisSet':projObj.set.id,
+        'current_sets':current_sets,
 
     })
     return HttpResponse(t.render(c))
@@ -109,41 +114,35 @@ def hoistItem(request,pItem):
     ## Fourth buildlist arg is hoist ID #. BuildDisplayList calls allMyChildren
     hoistID=pItem
     current_projs = Project.objects.order_by('name')
+    current_sets = ProjectSet.objects.all()
 
     hoistProj=Item.objects.get(pk=hoistID).project_id 
+
+    projObj = Project.objects.get(pk=hoistProj)
+
+    titleCrumbBlurb = str(hoistProj)+':'+projObj.name+"   ("+projObj.set.name+")"
+
+
     
     displayList=buildDisplayList(current_projs, hoistProj, 'follows', hoistID,[])
-
-   ##  t = loader.get_template('pim1_tmpl/items/index.html')
-##     c = Context({
-##         'current_items':displayList,
-##         'current_projs':current_projs,
-##         'nowx':datetime.datetime.now().strftime("%Y/%m/%d  %H:%M:%S"),
-##         'pagecrumb':'item list (hoist)'
-##     })
-##     return HttpResponse(t.render(c))
 
 
     t = loader.get_template('pim1_tmpl/items/dragdrop.html')
  
     c = Context({
         'current_items':displayList,
-        'current_projs':current_projs, 
+        'current_projs':current_projs,
+        'current_sets':current_sets,
+
         'nowx':datetime.datetime.now().strftime("%Y/%m/%d  %H:%M:%S"),
         'pagecrumb': str(pItem)+"Hoist",
         'pItem':pItem,
         'projectNum':hoistProj,
+        'titleCrumbBlurb':titleCrumbBlurb,
     })
     return HttpResponse(t.render(c))
 
 
-##################################################################
-def RETIREDlogThis(s):
-    LX = open(LOGFILE, 'a')
-    t = datetime.datetime.now().strftime("%Y:%m:%d  %H:%M:%S")
-    LX.write(t+": "+s+'\n')
-    LX.close
-    return()
 
 
 ##################################################################
@@ -332,6 +331,9 @@ def actionItem(request, pItem, action):
         ajaxRequest = False
 
     current_projs = Project.objects.order_by('name')
+    current_sets = ProjectSet.objects.all()
+
+    
     clickedItem = Item.objects.get(pk=pItem)
     clickedProjNum=clickedItem.project.id
     lastItemID=getLastItemID(clickedProjNum)
@@ -562,10 +564,15 @@ def actionItem(request, pItem, action):
         #t = loader.get_template('/drag/'+str(clickedProjNum)+'/#'+str(pItem))
         t = loader.get_template('pim1_tmpl/items/dragdrop.html')
 
-        titleCrumbBlurb = str(clickedProjNum)+':'+Project.objects.get(pk=clickedProjNum).name
+        projObj = Project.objects.get(pk=proj_id)
+    
+        titleCrumbBlurb = str(proj_id)+':'+projObj.name+"   ("+projObj.set.name+")"
+
         c = Context({
             'current_items':displayList,
             'current_projs':current_projs, 
+            'current_sets':current_sets,
+
             'nowx':datetime.datetime.now().strftime("%Y/%m/%d  %H:%M:%S"),
             'pagecrumb': titleCrumbBlurb,
             'pItem':pItem,
@@ -609,6 +616,8 @@ def RETIREDfind_LastKid(itemx, lastItemID):
 
 def psd(request,pSort):
     current_projs = Project.objects.order_by('name')
+    current_sets = ProjectSet.objects.all()
+
     if pSort=='goo_date': pSort='date_gootask_display'
     # priority, status, date_mod, date_created
 
@@ -624,6 +633,8 @@ def psd(request,pSort):
     c = Context({
         'current_items':displayList,
         'current_projs':current_projs,
+        'current_sets':current_sets,
+        
         'pSort':pSort,
         'nowx':datetime.datetime.now().strftime("%Y/%m/%d  %H:%M:%S")
     })
@@ -634,6 +645,7 @@ def psd(request,pSort):
 def gridview(request):
     ITEMS_PER_CELL = 10;
     current_projs = Project.objects.order_by('name')
+    current_sets = ProjectSet.objects.all()
 
     displayList = [] ; 
 
@@ -703,7 +715,10 @@ def gridview(request):
         'pagecrumb':'grid view',
         'displayList':displayList,
         'current_projs':current_projs,
+        'current_sets':current_sets,
+        
         'nowx':datetime.datetime.now().strftime("%Y/%m/%d  %H:%M:%S")
+
     })
     return HttpResponse(t.render(c))
 
@@ -711,19 +726,29 @@ def gridview(request):
 
 def detailItem(request,pItem):
     current_projs = Project.objects.order_by('name')
+    current_sets = ProjectSet.objects.all()
+
 
     ix=Item.objects.get(pk=pItem)
     #get project to where it can be displayed; was project_s
     ###ix.project=ix.project 
+
+    projObj = Project.objects.get(pk=ix.project)
+
+    titleCrumbBlurb = str(proj_id)+':'+projObj.name+"   ("+projObj.set.name+")"
+
 
     displayList=[ix]
 
     t = loader.get_template('pim1_tmpl/items/itemDetail.html')
     c = Context({
         'current_items':displayList,
-        'current_projs':current_projs, 
+        'current_projs':current_projs,
+        'current_sets':current_sets,
+
         'nowx':datetime.datetime.now().strftime("%Y/%m/%d  %H:%M:%S"),
-        'pagecrumb':'item detail'
+        'pagecrumb':'item detail',
+        'thisSet': ix.project.set.id
     })
     return HttpResponse(t.render(c))
 
@@ -775,13 +800,17 @@ def gooTaskUpdate(request):
     # ...oops, we need to adorn it with project and ???
     
     current_projs = Project.objects.order_by('name')
+    current_sets = ProjectSet.objects.all()
+
     displayList =  buildDisplayList(current_projs,'0','-date_gootask_display',0,[])
     
     t = loader.get_template('pim1_tmpl/items/psd.html')
     c = Context({
         'pSort':'-date_gootask_display',
         'current_items':displayList,
-        'current_projs':current_projs, 
+        'current_projs':current_projs,
+        'current_sets':current_sets,
+
         'nowx':datetime.datetime.now().strftime("%Y/%m/%d  %H:%M:%S"),
         'pagecrumb': "Google task date sort"
     })
@@ -808,6 +837,8 @@ def ssearch(request):
     sharedMD.logThis("Entering ssearch <====================")
 
     current_projs = Project.objects.order_by('name')
+    current_sets = ProjectSet.objects.all()
+
     c = {}
     c.update(csrf(request))
     error_message=''
@@ -845,6 +876,8 @@ def ssearch(request):
         'searchterm':searchTerm,
         'current_items':displayList,
         'current_projs':current_projs,
+        'current_sets':current_sets,
+
         'nowx':datetime.datetime.now().strftime("%Y/%m/%d  %H:%M:%S"),
         'pagecrumb':'search result',
         'error_message':error_message,
@@ -875,6 +908,8 @@ def editItem(request, pItem):
     #dispPage, dispStart, dispLength):
     # dispPage, dispStart and dispLength allow us to restore the listing page to what it was
     current_projs = Project.objects.order_by('name')
+    current_sets = ProjectSet.objects.all()
+
 
     # model formsets
     ###https://docs.djangoproject.com/en/1.2/topics/forms/modelforms/#using-a-model-formset-in-a-view
@@ -908,6 +943,8 @@ def editItem(request, pItem):
         "formset": formsetOut,
         'pagecrumb':'edit an item',
         'current_projs':current_projs,
+        'current_sets':current_sets,
+
         'nowx':datetime.datetime.now().strftime("%Y/%m/%d  %H:%M:%S")
         }, context_instance=RequestContext(request) )
 
@@ -917,6 +954,8 @@ def editItem(request, pItem):
 def importfile(request):
 
     current_projs = Project.objects.order_by('name')
+    current_sets = ProjectSet.objects.all()
+
     c = {}
     c.update(csrf(request))	  
  
@@ -942,6 +981,8 @@ def importfile(request):
                 'form':form,
                 'pagecrumb':'import',
                 'current_projs':current_projs,
+                'current_sets':current_sets,
+
                 'nowx':datetime.datetime.now().strftime("%Y/%m/%d  %H:%M:%S")
                 }, context_instance=RequestContext(request) )
   
@@ -1132,18 +1173,26 @@ def draglist(request, proj_id):
     sharedMD.logThis("Entering drag list <====================, Project="+str(proj_id))
     
     current_projs = Project.objects.order_by('name')
+    current_sets = ProjectSet.objects.all()
+
     displayList = buildDisplayList(current_projs, proj_id,'follows',0,[])
 
-    titleCrumbBlurb = str(proj_id)+':'+Project.objects.get(pk=proj_id).name
+
+    projObj = Project.objects.get(pk=proj_id)
+
+    titleCrumbBlurb = str(proj_id)+':'+projObj.name+"   ("+projObj.set.name+")"
 
 
     t = loader.get_template('pim1_tmpl/items/dragdrop.html')
                        
     c = Context({
-        'pagecrumb':titleCrumbBlurb,
+        'titleCrumbBlurb':titleCrumbBlurb,
         'current_items':displayList,
-        'current_projs':current_projs, 
+        'current_projs':current_projs,
+        'current_sets':current_sets,
+
         'nowx':datetime.datetime.now().strftime("%Y/%m/%d  %H:%M:%S"),
+        'thisSet':projObj.set.id,
 
 
     })
@@ -1338,6 +1387,8 @@ def backupdata(request):
     # projlist=0 is default value, overridden by passed parameters
 
     current_projs = Project.objects.order_by('name')
+    current_sets = ProjectSet.objects.all()
+
 
     #BackupTheseProjects = []
     if request.method == 'POST': # If the form has been posted...
@@ -1418,5 +1469,7 @@ def backupdata(request):
         'backupdir':BACKUPDIR,
         'pagecrumb':'serialize/backup',
         'current_projs':current_projs,
+        'current_sets':current_sets,
+
         'nowx':datetime.datetime.now().strftime("%Y/%m/%d  %H:%M:%S")
         }, context_instance=RequestContext(request) )
