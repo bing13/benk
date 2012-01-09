@@ -67,7 +67,7 @@ function heightFix(itemID) {
 
 
         <!-- removed this class from below div: ui-widget-headerx --> 
-        <div class="itemsdrag bhdraggable dropx"  id="{{ ci.id }}">
+        <div class="itemsdrag bhdraggable dropx"  id="{{ ci.id }}"  onclick="selectMe(this)">
 
  	  <span class="itemdrag actionArrows"><a class="ilid" href="/pim1/list-items/hoist/{{ci.id}}">{{ci.id}}</a>&nbsp;<a href="/pim1/item/add/{{ ci.id }}">&harr;</a><a href="#" onClick='actionJax({{ ci.id }},0,"promote")' >&larr;</a><a href="#"  onClick='actionJax({{ ci.id }},0,"demote")'>&rarr;</a><a href="#" onClick='actionJax({{ ci.id }},0,"moveUp")'>&uarr;</a><a href="#" onClick='actionJax({{ ci.id }},0,"moveDown")'>&darr;</a><a href="#" onClick='deleteMe({{ ci.id }});actionJax({{ ci.id }},0,"delete")'>&otimes;</a>
           </span>
