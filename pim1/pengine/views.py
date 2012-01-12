@@ -733,9 +733,9 @@ def detailItem(request,pItem):
     #get project to where it can be displayed; was project_s
     ###ix.project=ix.project 
 
-    projObj = Project.objects.get(pk=ix.project)
+    projObj = Project.objects.get(pk=ix.project.id)
 
-    titleCrumbBlurb = str(proj_id)+':'+projObj.name+"   ("+projObj.set.name+")"
+    titleCrumbBlurb = str(ix.project.id)+':'+projObj.name+"   ("+projObj.set.name+")"
 
 
     displayList=[ix]
