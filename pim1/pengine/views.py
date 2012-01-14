@@ -1,4 +1,3 @@
-
 ################################################################
 ## views.py
 ################################################################
@@ -1170,7 +1169,7 @@ def importISdata(importFile,newProjectID):
 ##################################################################
 
 def draglist(request, proj_id):
-    sharedMD.logThis("Entering drag list <====================, Project="+str(proj_id))
+    sharedMD.logThis("Entering drag list <=========, Project="+str(proj_id))
     
     current_projs = Project.objects.order_by('name')
     current_sets = ProjectSet.objects.all()
@@ -1359,7 +1358,7 @@ def drag_move(CIid, TIid):
             
             #extend kidItems (formerly kidPair( -- add the info JS refreshItem function will need
             
-            kidItems.append([thisKid.id, thisKid.follows, thisKid.title, thisKid.parent, thisKid.indentLevel, thisKid.priority, thisKid.status, thisKid.HTMLnoteBody, returnMarker(thisKid)])
+            kidItems.append([thisKid.id, thisKid.follows, thisKid.title, thisKid.parent, thisKid.indentLevel, thisKid.priority, thisKid.status, thisKid.HTMLnoteBody, returnMarker(thisKid)], thisKid.statusText())
             #sharedMD.logThis(' => kidPair '+str(thisKid.id)+": "+str(kidPair))
 
     
@@ -1367,7 +1366,7 @@ def drag_move(CIid, TIid):
     
     parentKidUpdate = []
 
-    parentKidUpdate.append([CI.id, CI.follows, CI.title, CI.parent, CI.indentLevel,CI.priority, CI.status, CI.HTMLnoteBody,returnMarker(CI) ] )
+    parentKidUpdate.append([CI.id, CI.follows, CI.title, CI.parent, CI.indentLevel,CI.priority, CI.status, CI.HTMLnoteBody,returnMarker(CI),CI.statusText() ] )
 
     ## when drag-moving in CLOSE QUARTERS, and item like TI might go stale, b/c
     ## it was changed by, ex., b/c it was ALSO CI follower or some such. SO for
@@ -1375,14 +1374,14 @@ def drag_move(CIid, TIid):
 
     newTI=Item.objects.get(pk=TI.id)
 
-    parentKidUpdate.append([newTI.id, newTI.follows, newTI.title, newTI.parent, newTI.indentLevel,newTI.priority, newTI.status,  newTI.HTMLnoteBody, returnMarker(newTI) ] )
+    parentKidUpdate.append([newTI.id, newTI.follows, newTI.title, newTI.parent, newTI.indentLevel,newTI.priority, newTI.status,  newTI.HTMLnoteBody, returnMarker(newTI), newTI.statusText() ] )
 
     ## have to refresh the CI's parent, in case it's marker has changed w/ the move
     ## IF the parent != 0
 
     if origCIparent != 0:
         CIparent=Item.objects.get(pk=origCIparent)
-        parentKidUpdate.append([CIparent.id, CIparent.follows, CIparent.title, CIparent.parent, CIparent.indentLevel, CIparent.priority, CIparent.status, CIparent.HTMLnoteBody, returnMarker(CIparent) ] )
+        parentKidUpdate.append([CIparent.id, CIparent.follows, CIparent.title, CIparent.parent, CIparent.indentLevel, CIparent.priority, CIparent.status, CIparent.HTMLnoteBody, returnMarker(CIparent) ], CIparent.statusText() )
    
     parentKidUpdate += kidItems
 

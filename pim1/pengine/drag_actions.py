@@ -297,13 +297,13 @@ class dragOps():
 
 
         currentChoice=len(choices)-1; ## i.e., the lowest priority
-        for i in range(0,len(choices)-1):
+        for i in range(0,len(choices)):
             if choices[i][0] == CI.priority: 
                 currentChoice=i
 
         newChoice=currentChoice + increment; 
         
-        if newChoice == -1 : i = 0
+        if newChoice == -1 : newChoice = 0
         if newChoice == len(choices): newChoice -= 1;
 
 
@@ -326,14 +326,14 @@ class dragOps():
             increment = +1;
 
 
-        currentChoice=len(choices)-1; ## i.e., the lowest priority
-        for i in range(0,len(choices)-1):
+        currentChoice=len(choices)-1; ## i.e., default to the lowest priority
+        for i in range(0,len(choices)):
             if choices[i][0] == CI.status: 
                 currentChoice=i
 
         newChoice=currentChoice + increment; 
         
-        if newChoice == -1 : i = 0
+        if newChoice == -1 : newChoice = 0
         if newChoice == len(choices): newChoice -= 1;
 
 
