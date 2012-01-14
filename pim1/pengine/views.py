@@ -69,7 +69,7 @@ def homepage(request):
 ##################################################################
 
 def itemlist(request,proj_id):
-    sharedMD.logThis("Entering itemlist <====================")
+    sharedMD.logThis("Entering itemlist <==============ProjID ="+str(proj_id)+". ")
     
     ##current_items=Item.objects.all()
     current_projs = Project.objects.order_by('name')
@@ -145,20 +145,20 @@ def hoistItem(request,pItem):
 
 
 ##################################################################
-def buildDisplayList(projectx, projID, ordering, hoistID, useList):
+def buildDisplayList(projectx, projID, ordering, hoistID, useListIDs):
     sharedMD.logThis("Entering buildDisplayList <=====")
 
     ### Select the items to operate on ###############
 
-    ## items in the explicit useList (used by search0
-    if useList != []:
+    ## items in the explicit useListID (used by search0
+    if useListIDs != []:
         if ordering == 'provided':
             itemList=[]
-            for ULid in useList:
+            for ULid in useListIDs:
                 itemList.append(Item.objects.get(id=ULid))
             items2List = itemList
         else:
-            items2List=Item.objects.filter(id__in=useList).order_by(ordering)
+            items2List=Item.objects.filter(id__in=useListIDs).order_by(ordering)
 
     ## the hoist ID
     elif hoistID != 0:

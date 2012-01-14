@@ -3,43 +3,6 @@
 {% block content %}
 
 
-<script type="text/javascript">
-
-  function othertestjax(cix, tix) {
-      $.get("/xhr_test", {
-      ci:cix, ti:tix
-      },
-
-
-    function(data) {
-          alert("Data:"+data);
-          for (i=0;i<data.length;i++)
-	       {
-	       alert(data[i][0]+":"+data[i][1]);
-
-	       }
-
-    },"json"  );
-  };
-
-
-function heightFix(itemID) {
-	h=$("#484 .itemdrag.ti").css( "height" );
-        //alert("h="+h);
-        $("#484 .itemdrag.id").css( "height", h);
-        $("#484 .itemdrag.ti").css( "height", h);
-        $("#484 .itemdrag.prio").css( "height", h);
-        $("#484 .itemdrag.stat").css( "height", h);
-        $("#484 .itemdrag.notecell").css( "height", h);
-
-
-}
-
-
-</script>
-
-{# <p><button onclick="othertestjax(222, 555)">ajax</button> &nbsp; <button onclick="heightFix(484)">height</button></p> #}
-
 
 {% if subtitle %}
 
@@ -63,7 +26,7 @@ function heightFix(itemID) {
     </div>
     
     {% for ci in current_items %}
-    {% ifchanged %}<div><span class="projheader" >{{ ci.projectForOrdering }}</span></div>{% endifchanged %}
+    {% ifchanged %}<div><span class="projheader" >{{ ci.projectForOrdering }}  <a href="#" onclick="toggleDoneItems()">toggle done</a> </span> </div>{% endifchanged %}
 
 
         <!-- removed this class from below div: ui-widget-headerx --> 

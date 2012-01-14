@@ -1,0 +1,35 @@
+
+<script type="text/javascript">
+
+  function othertestjax(cix, tix) {
+      $.get("/xhr_test", {
+      ci:cix, ti:tix
+      },
+
+
+    function(data) {
+          alert("Data:"+data);
+          for (i=0;i<data.length;i++)
+	       {
+	       alert(data[i][0]+":"+data[i][1]);
+
+	       }
+
+    },"json"  );
+  };
+
+
+function heightFix(itemID) {
+	h=$("#484 .itemdrag.ti").css( "height" );
+        //alert("h="+h);
+        $("#484 .itemdrag.id").css( "height", h);
+        $("#484 .itemdrag.ti").css( "height", h);
+        $("#484 .itemdrag.prio").css( "height", h);
+        $("#484 .itemdrag.stat").css( "height", h);
+        $("#484 .itemdrag.notecell").css( "height", h);
+
+
+}
+
+
+</script>
