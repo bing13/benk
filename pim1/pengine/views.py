@@ -1265,6 +1265,20 @@ def xhr_actions(request):
         refreshThese=DRAGACTIONS.delete(clickedItem, lastItemID)
 
 
+    elif actionRequest['ajaxAction']== 'incPriority':
+        refreshThese=DRAGACTIONS.priorityChange(clickedItem, 'up')
+
+    elif actionRequest['ajaxAction']== 'decPriority':
+        # javascript on the form already deleted the item from the DOM
+        refreshThese=DRAGACTIONS.priorityChange(clickedItem, 'down')
+
+    elif actionRequest['ajaxAction']== 'incStatus':
+        refreshThese=DRAGACTIONS.statusChange(clickedItem, 'up')
+
+    elif actionRequest['ajaxAction']== 'decStatus':
+        # javascript on the form already deleted the item from the DOM
+        refreshThese=DRAGACTIONS.statusChange(clickedItem,  'down')
+
     else:
         sharedMD.logThis("+++ERROR+++. Uncaught actionRequest['ajaxAction']:"+actionRequest['ajaxAction'])
         refreshThese=[]

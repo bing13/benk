@@ -25,7 +25,10 @@ class dragOps():
         for id in IDlist:
             if id != 0 :
                 thisItem=Item.objects.get(pk=id)
-                decoratedItems.append([thisItem.id, thisItem.follows, thisItem.title, thisItem.parent, thisItem.indentLevel, thisItem.priority, thisItem.status, thisItem.HTMLnoteBody, sharedMD.returnMarker(self, thisItem)])
+                decoratedItems.append([thisItem.id, thisItem.follows, thisItem.title, thisItem.parent, thisItem.indentLevel, thisItem.priority, thisItem.status, thisItem.HTMLnoteBody, sharedMD.returnMarker(self, thisItem), thisItem.statusText()])
+
+                ## am concerned that other places where this list is build won't have statusText()
+                
         return(decoratedItems)
 
 
@@ -279,3 +282,65 @@ class dragOps():
         clickedItem.delete()
         
         return(toUpdate)
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# priorityChange
+
+    def priorityChange(self,  CI,  direction):
+
+        choices=CI.PRIORITY_CHOICES; ## (('1', "urgent"),("2", "Important),(...
+        
+        if direction == 'up': increment = -1;
+        else:
+            increment = +1;
+
+
+        currentChoice=len(choices)-1; ## i.e., the lowest priority
+        for i in range(0,len(choices)-1):
+            if choices[i][0] == CI.priority: 
+                currentChoice=i
+
+        newChoice=currentChoice + increment; 
+        
+        if newChoice == -1 : i = 0
+        if newChoice == len(choices): newChoice -= 1;
+
+
+
+        CI.priority = choices[newChoice][0]
+
+        CI.save()
+
+ 
+        return(self.updateIDsDecorate([CI.id]))
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# statusChange
+
+    def statusChange(self,  CI,  direction):
+
+        choices=CI.STATUS_CHOICES; ## (('1', "urgent"),("2", "Important),(...
+        
+        if direction == 'up': increment = -1;
+        else:
+            increment = +1;
+
+
+        currentChoice=len(choices)-1; ## i.e., the lowest priority
+        for i in range(0,len(choices)-1):
+            if choices[i][0] == CI.status: 
+                currentChoice=i
+
+        newChoice=currentChoice + increment; 
+        
+        if newChoice == -1 : i = 0
+        if newChoice == len(choices): newChoice -= 1;
+
+
+
+        CI.status = choices[newChoice][0]
+
+        CI.save()
+
+ 
+        return(self.updateIDsDecorate([CI.id]))
