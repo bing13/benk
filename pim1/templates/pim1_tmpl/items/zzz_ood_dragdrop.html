@@ -7,25 +7,20 @@
    <span class="headline">{{ subtitle }}</span>
 
 {% endif %}
-
-
-{% if searchterm %}
-<h5>searching: {{ searchterm }}</h5>
-{% endif %}
-
+ 
 {% if current_items %}
 
-    <table class="item_table" >
+    <table class="item_table">
     <tr><th>id</th><th>p/f/i
 
         </th><th class="titlecol">title</th><th>priority</th><th>status</th><th>note</th></tr>
     
     {% for ci in current_items %}
-    {% ifchanged %}<tr ><td class="projheader" colspan="6" style="background: {{ ci.project.color }};">{{ ci.projectForOrdering }}</td></tr>{% endifchanged %}
+    {% ifchanged %}<tr><td class="projheader" colspan="6">{{ ci.projectForOrdering }}</td></tr>{% endifchanged %}
         <tr class="items">
 
-	 <td class="itemtd actionArrows"><a class="ilid" href="/pim1/list-items/hoist/{{ci.id}}">{{ci.id}}</a>&nbsp;{% if is_search_result %}&nbsp;
-{% else %}<a href="/pim1/item/add/{{ ci.id }}">&harr;</a><a href="/pim1/item/promote/{{ ci.id }}">&larr;</a><a href="/pim1/item/demote/{{ ci.id }}">&rarr;</a><a href="/pim1/item/moveup/{{ ci.id }}">&uarr;</a><a href="/pim1/item/movedown/{{ ci.id }}">&darr;</a><a href="/pim1/item/delete/{{ ci.id }}">&otimes;</a>
+	 <td class="itemtd actionArrows"><a class="ilid" href="/list-items/hoist/{{ci.id}}">{{ci.id}}</a>&nbsp;{% if is_search_result %}&nbsp;
+{% else %}<a href="/item/add/{{ ci.id }}">&harr;</a><a href="/item/promote/{{ ci.id }}">&larr;</a><a href="/item/demote/{{ ci.id }}">&rarr;</a><a href="/item/moveup/{{ ci.id }}">&uarr;</a><a href="/item/movedown/{{ ci.id }}">&darr;</a><a href="/item/delete/{{ ci.id }}">&otimes;</a>
 
 {% endif %}
 
@@ -41,25 +36,19 @@
 	   </ul>
 	</td>
 {% endcomment %}
-        <td class="itemtd">{{ci.indentString|safe}}{{ ci.outlineBullet|safe }} <a href="/pim1/admin/pengine/item/{{ci.id}}/">{{ ci.title }}</a></td>
+        <td class="itemtd">{{ci.indentString|safe}}{{ ci.outlineBullet|safe }} <a href="/admin/pengine/item/{{ci.id}}/">{{ ci.title }}</a></td>
         <td class="itemtd">{{ ci.priority }}:{{ci.priorityText}}
 	</td>
         <td class="itemtd">{{ ci.status }}:{{ci.statusText}}</td>
         <td class="itemtd notecell">
-  {% if ci.HTMLnoteBody|length > 2 %}
-
-
-  	    <a onClick="toggleNoteBodyTableRow('notebody_{{ci.id}}');" class="noteplus">&oplus;</a>
-
+	  {% if ci.HTMLnoteBody|length > 2 %}
+  	    <a onClick="toggleLI('notebody_{{ci.id}}');" class="noteplus">&oplus;</a>
 	    <a onClick='detailpop("{{ci.id}}")' class="notearr">&rArr;</a> 
-	</td>
-       </tr>
-       <tr id="notebody_{{ci.id}}" class="noteBody">
-	   <td colspan="6"   class="noteWrapper">
-		{{ ci.HTMLnoteBody|safe|default:" --- " }}
-	   </td>
-       </tr>
- {% endif %}
+
+	    <span id="notebody_{{ci.id}}" class="noteBody">{{ ci.HTMLnoteBody|safe|default:" --- " }}</span>
+          {% endif %}
+      </td>
+        
 
         </tr>
     {% endfor %}

@@ -58,7 +58,7 @@ DRAGACTIONS=drag_actions.dragOps();
 
 ##################################################################
 def homepage(request):
-    current_projs = Project.objects.all()
+    current_projs = Project.objects.filter(projType=1)
     current_sets = ProjectSet.objects.all()
     c = Context({'home_page':'homepage',
                  'current_projs':current_projs,
@@ -72,7 +72,7 @@ def itemlist(request,proj_id):
     sharedMD.logThis("Entering itemlist <==============ProjID ="+str(proj_id)+". ")
     
     ##current_items=Item.objects.all()
-    current_projs = Project.objects.order_by('name')
+    current_projs = Project.objects.filter(projType=1).order_by('name')
     current_sets = ProjectSet.objects.all()
     
     displayList = buildDisplayList(current_projs, proj_id,'follows',0,[])
@@ -112,7 +112,7 @@ def hoistItem(request,pItem):
     ##   2. need to find all children, and then draw children and their children
     ## Fourth buildlist arg is hoist ID #. BuildDisplayList calls allMyChildren
     hoistID=pItem
-    current_projs = Project.objects.order_by('name')
+    current_projs = Project.objects.filter(projType=1).order_by('name')
     current_sets = ProjectSet.objects.all()
 
     hoistProj=Item.objects.get(pk=hoistID).project_id 
@@ -299,24 +299,6 @@ def countIndent(anItem):
     return(indentCount)
 ##################################################################
 
-def getLastItemID(projID):
-    listOfFollowers=[] ## a list of all IDs that appear in item.follows
-    thisProjItems = Item.objects.filter(project__id=projID)
-    ## 12/18/2011 limited search to one projID.
-    for itemx in thisProjItems:
-        listOfFollowers.append(itemx.follows)
-    lastItemIDs = []
-    for itemx in thisProjItems:
-        if itemx.id not in listOfFollowers:
-            lastItemIDs.append(itemx.id)
-    if len(lastItemIDs)!= 1:
-        sharedMD.logThis( "===== getLastItemID: BAD LAST ITEM IDs, should only be one. Instead: "+ str(lastItemIDs))
-        sharedMD.logThis( "===== BAILING getlastItemID=====" )
-        exit()
-    else:
-        sharedMD.logThis( "Last item ID:"+ str(lastItemIDs[0]))
-        return(lastItemIDs[0])
-##################################################################
 
 def actionItem(request, pItem, action):
     #sharedMD.logThis( "item "+ pItem + " to " + action);
@@ -329,19 +311,22 @@ def actionItem(request, pItem, action):
         sharedMD.logThis( "Not an AJAX request"+ pItem + " to " + action);
         ajaxRequest = False
 
-    current_projs = Project.objects.order_by('name')
+    current_projs = Project.objects.filter(projType=1).order_by('name')
     current_sets = ProjectSet.objects.all()
 
     
     clickedItem = Item.objects.get(pk=pItem)
     clickedProjNum=clickedItem.project.id
-    lastItemID=getLastItemID(clickedProjNum)
+    lastItemID=sharedMD.getLastItemID(clickedProjNum)
 
     origlastKidofCI,origkidList=sharedMD.findLastKid(clickedItem,lastItemID)
         
     #assigning project [many to many]...convoluted?.... 
     projIDc=clickedItem.project.id
     projObjc=Project.objects.get(pk=projIDc)
+
+
+    ### ADD ###################################################################
     
     ## find the item that was following pItem
     if action=='add':
@@ -585,36 +570,9 @@ def actionItem(request, pItem, action):
 
 #####################################################(end of actionItem)########
 
-def RETIREDfind_LastKid(itemx, lastItemID):
-    ###   look for first item below you with =< level of indent
-    kidList=[]
-    if itemx.id == lastItemID:
-        lastKid=0
-    else:
-        indx=Item.objects.get(follows=itemx.id)
-        if itemx.parent==indx.parent  or indx.indentLevel < itemx.indentLevel:
-            ## if we both have same parent, or follow is low indent level 
-            lastKid=0  ## special value for "no kids"
-        else:
-            prev_id=indx.id  ## need to define, in case we don't enter while block
-            lastItemFlag='no'
-            while (indx.indentLevel > itemx.indentLevel) and lastItemFlag == 'no':
-                kidList.append([indx.id, indx.follows])
-                prev_id=indx.id
-                if indx.id == lastItemID:
-                    lastItemFlag='yes'
-                else:
-                    indx=Item.objects.get(follows=indx.id)
-
-            lastKid=prev_id
-
-    sharedMD.logThis("=> sharedMD.findLastKid lastKid="+str(lastKid))
-    return(lastKid,kidList)
-
-##################################################################
 
 def psd(request,pSort):
-    current_projs = Project.objects.order_by('name')
+    current_projs = Project.objects.filter(projType=1).order_by('name')
     current_sets = ProjectSet.objects.all()
 
     if pSort=='goo_date': pSort='date_gootask_display'
@@ -643,7 +601,7 @@ def psd(request,pSort):
 
 def gridview(request):
     ITEMS_PER_CELL = 10;
-    current_projs = Project.objects.order_by('name')
+    current_projs = Project.objects.filter(projType=1).order_by('name')
     current_sets = ProjectSet.objects.all()
 
     displayList = [] ; 
@@ -724,7 +682,7 @@ def gridview(request):
 ##################################################################
 
 def detailItem(request,pItem):
-    current_projs = Project.objects.order_by('name')
+    current_projs = Project.objects.filter(projType=1).order_by('name')
     current_sets = ProjectSet.objects.all()
 
 
@@ -798,7 +756,7 @@ def gooTaskUpdate(request):
     # bypassing builddisplaylist, since it only filters by project
     # ...oops, we need to adorn it with project and ???
     
-    current_projs = Project.objects.order_by('name')
+    current_projs = Project.objects.filter(projType=1).order_by('name')
     current_sets = ProjectSet.objects.all()
 
     displayList =  buildDisplayList(current_projs,'0','-date_gootask_display',0,[])
@@ -835,7 +793,7 @@ def example_task():
 def ssearch(request):
     sharedMD.logThis("Entering ssearch <====================")
 
-    current_projs = Project.objects.order_by('name')
+    current_projs = Project.objects.filter(projType=1).order_by('name')
     current_sets = ProjectSet.objects.all()
 
     c = {}
@@ -892,7 +850,7 @@ def addItem(request, pItem):
     # but we'll leave the routine in dragactions.
 
     clickedItem=Item.objects.get(pk=pItem)
-    lastItemID=getLastItemID(clickedItem.project_id)
+    lastItemID=sharedMD.getLastItemID(clickedItem.project_id)
     newItem=DRAGACTIONS.addItem(clickedItem, lastItemID)
     sharedMD.logThis('edit new item: ' + str(newItem.id))
     #follow does not work, no idea why
@@ -906,7 +864,7 @@ def editItem(request, pItem):
 
     #dispPage, dispStart, dispLength):
     # dispPage, dispStart and dispLength allow us to restore the listing page to what it was
-    current_projs = Project.objects.order_by('name')
+    current_projs = Project.objects.filter(projType=1).order_by('name')
     current_sets = ProjectSet.objects.all()
 
 
@@ -952,7 +910,7 @@ def editItem(request, pItem):
 
 def importfile(request):
 
-    current_projs = Project.objects.order_by('name')
+    current_projs = Project.objects.filter(projType=1).order_by('name')
     current_sets = ProjectSet.objects.all()
 
     c = {}
@@ -1000,7 +958,7 @@ def importISdata(importFile,newProjectID):
     read_date_goo_task = ''
     read_goo_task_id = ''
     currentISid = 0
-    previousNewItemBenkID=getLastItemID(newProjectID)
+    previousNewItemBenkID=sharedMD.getLastItemID(newProjectID)
     firstRecord = 'yes'
     numberOfRecordsImported = 0
 
@@ -1171,7 +1129,7 @@ def importISdata(importFile,newProjectID):
 def draglist(request, proj_id):
     sharedMD.logThis("Entering drag list <=========, Project="+str(proj_id))
     
-    current_projs = Project.objects.order_by('name')
+    current_projs = Project.objects.filter(projType=1).order_by('name')
     current_sets = ProjectSet.objects.all()
 
     displayList = buildDisplayList(current_projs, proj_id,'follows',0,[])
@@ -1238,7 +1196,7 @@ def xhr_actions(request):
     ## dragmove should also get refactored to the external library
     clickedItem=Item.objects.get(pk=actionRequest['ci'])
 
-    lastItemID=getLastItemID(clickedItem.project_id)
+    lastItemID=sharedMD.getLastItemID(clickedItem.project_id)
 
     #lastKid,kidList=findLastKid(clickedItem,lastItemID)
 
@@ -1263,19 +1221,20 @@ def xhr_actions(request):
         # javascript on the form already deleted the item from the DOM
         refreshThese=DRAGACTIONS.delete(clickedItem, lastItemID)
 
+    elif actionRequest['ajaxAction']== 'archiveThisItem':
+        # javascript on the form already deleted the item from the DOM
+        refreshThese=DRAGACTIONS.swapWithArchivePair(clickedItem, lastItemID)
 
     elif actionRequest['ajaxAction']== 'incPriority':
         refreshThese=DRAGACTIONS.priorityChange(clickedItem, 'up')
 
     elif actionRequest['ajaxAction']== 'decPriority':
-        # javascript on the form already deleted the item from the DOM
         refreshThese=DRAGACTIONS.priorityChange(clickedItem, 'down')
 
     elif actionRequest['ajaxAction']== 'incStatus':
         refreshThese=DRAGACTIONS.statusChange(clickedItem, 'up')
 
     elif actionRequest['ajaxAction']== 'decStatus':
-        # javascript on the form already deleted the item from the DOM
         refreshThese=DRAGACTIONS.statusChange(clickedItem,  'down')
 
     else:
@@ -1301,7 +1260,7 @@ def drag_move(CIid, TIid):
         return([])
 
  
-    lastItemID=getLastItemID(CI.project_id)
+    lastItemID=sharedMD.getLastItemID(CI.project_id)
 
     origCIparent=CI.parent
     origCIfollow=CI.follows
@@ -1399,7 +1358,7 @@ def returnMarker(Itemx):
 def backupdata(request):
     # projlist=0 is default value, overridden by passed parameters
 
-    current_projs = Project.objects.order_by('name')
+    current_projs = Project.objects.filter(projType=1).order_by('name')
     current_sets = ProjectSet.objects.all()
 
 

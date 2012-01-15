@@ -11,8 +11,8 @@ admin.site.register(ProjectSet, ProjSetAdmin)
 
 
 class ProjAdmin(admin.ModelAdmin):
-    list_display=('id','name','color', 'set')
-    list_filter= ['color']   
+    list_display=('id','name','color', 'set', 'projType', 'archivePair')
+    list_filter= ['set']   
 
 admin.site.register(Project, ProjAdmin)
 

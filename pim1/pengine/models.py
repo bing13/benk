@@ -1,26 +1,47 @@
 ###
 # help with south for model migration
 # http://south.aeracode.org/docs/tutorial/part1.html
+#
+# ./manage.py schemamigration pengine --auto
+# ./manage.py migrate pengine
+
 ####
 
 from django.db import models
 
 
-class ProjectSet(models.Model):
+class ProjectSet(models.Model): 
     name = models.CharField(max_length=120)
-    color = models.IntegerField()
+    color = models.CharField(max_length=8)
     def __unicode__(self):
         return self.name
 
 class Project(models.Model):
     name = models.CharField(max_length=120)
-    color = models.IntegerField()
-
+    color = models.CharField(max_length=8)
+    archivePair = models.ForeignKey('self', null=True, blank=True)
     set = models.ForeignKey(ProjectSet, null=True)
 
+    ### archive is for done items, etc
+    ### retired project is for mothballing the entire main project
+
+    PROJTYPE_CHOICES = (
+        ('1', 'normal'),
+        ('2', 'retired project'),
+        ('3', 'archive'),
+    )
+         
+    projType = models.CharField(max_length=20, choices=PROJTYPE_CHOICES )    
 
     def __unicode__(self):
         return self.name
+    
+    projectTypeLookup = {}
+    for pt in PROJTYPE_CHOICES:
+        projectTypeLookup[pt[0]]=pt[1]
+
+    def projectTypeText(self):
+        return(self.projectTypeLookup[self.projtype])
 
 
 

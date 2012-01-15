@@ -34,6 +34,27 @@ def logThis(s):
     LX.close
     return()
 
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# getLastItemID
+
+
+def getLastItemID(projID):
+    listOfFollowers=[] ## a list of all IDs that appear in item.follows
+    thisProjItems = Item.objects.filter(project__id=projID)
+    ## 12/18/2011 limited search to one projID.
+    for itemx in thisProjItems:
+        listOfFollowers.append(itemx.follows)
+    lastItemIDs = []
+    for itemx in thisProjItems:
+        if itemx.id not in listOfFollowers:
+            lastItemIDs.append(itemx.id)
+    if len(lastItemIDs)!= 1:
+        logThis( "===== getLastItemID: BAD LAST ITEM IDs, should only be one. Instead: "+ str(lastItemIDs))
+        logThis( "===== BAILING getlastItemID=====" )
+        exit()
+    else:
+        logThis( "Last item ID:"+ str(lastItemIDs[0]))
+        return(lastItemIDs[0])
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 #  findLastKid

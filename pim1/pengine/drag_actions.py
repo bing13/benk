@@ -283,6 +283,52 @@ class dragOps():
         
         return(toUpdate)
 
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# swapWithArchivePair ##
+    
+    def swapWithArchivePair(self, clickedItem, lastItemID):
+
+        # routine may work for unarchiving an item as well... perhaps messily...
+
+
+
+        ghostsID = clickedItem.id
+        ghostFollowsID = clickedItem.follows
+        ghostsParentID = clickedItem.parent
+
+        updateThese = [ghostsParentID, ghostFollowsID]
+        
+        if clickedItem.id != lastItemID:
+            
+            followingMe = Item.objects.get(follows=clickedItem.id)
+            updateThese.append(followingMe.id)
+            
+            followingMe.follows=clickedItem.follows
+            if followingMe.parent==clickedItem.id:
+                followingMe.parent=clickedItem.parent
+            followingMe.save()
+
+        # remove entry from Projects, MOVE to archive project
+        # clickedItem.project is a project object, another dot to get id
+        projObjc=Project.objects.get(pk=clickedItem.project.id)
+        projObjc.item_set.remove(clickedItem)
+
+
+        clickedItem.project = projObjc.archivePair
+        clickedItem.follows = sharedMD.getLastItemID(clickedItem.project.id)
+        clickedItem.parent = 0
+        clickedItem.indentLevel = 0
+
+        clickedItem.save()
+
+        # pull this before the item is deleted
+        toUpdate = self.updateIDsDecorate(updateThese ) 
+        sharedMD.logThis( "==> archivePair moved item "+str(clickedItem.id)+"  to proj: " +str(clickedItem.project.id)    )
+        # remove item
+        # clickedItem.delete()
+        
+        return(toUpdate)
+
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # priorityChange
