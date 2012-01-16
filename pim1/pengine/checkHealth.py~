@@ -1,0 +1,32 @@
+###
+# healthcheck.py
+#    modules that return various bits of diagnostic output
+#
+#################################
+from pim1.pengine.models import Item, Project
+import datetime, sys
+
+sys.path.append('/home/bhadmin13/dx.bernardhecker.com/pim1/library');
+
+import sharedMD; 
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# projectList
+
+def projectList():
+
+    projList = Project.objects.all()
+
+    tableBody=''
+
+    for p in projList:
+        tableBody += '''<tr class="health_row">
+        <td class="health_cell">%s </td>
+        <td class="health_cell">%s </td>
+        <td class="health_cell">%s </td>
+        <td class="health_cell">%s </td>
+        <td class="health_cell">%s </td>
+        <td class="health_cell">%s </td>
+        </tr>''' % (p.id, p.set, p.name, p.color, p.projtype, p.archivepair)
+    
+    return(tableBody)

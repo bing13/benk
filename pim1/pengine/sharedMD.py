@@ -1,9 +1,6 @@
-#
-# POSSIBLE PROBLEM: I changed kidList as returned by getLastKid to not have
+## POSSIBLE PROBLEM: I changed kidList as returned by getLastKid to not have
 # CI and ci.follows in it's own array, which is then embedded in kidList.
 # now it's just linear. Might mess up some other routines.
-#
-
 
 ###
 # modules that are shared between views.py and drag_actions.py

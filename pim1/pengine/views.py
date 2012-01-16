@@ -33,7 +33,7 @@ sys.path.append('/home/bhadmin13/dx.bernardhecker.com/pim1/library');
 import gooOps, dirlist, south;
 from rfc3339 import rfc3339;
 
-import drag_actions, sharedMD;
+import drag_actions, sharedMD, checkHealth;
 
 #import test1;
 
@@ -1445,3 +1445,31 @@ def backupdata(request):
 
         'nowx':datetime.datetime.now().strftime("%Y/%m/%d  %H:%M:%S")
         }, context_instance=RequestContext(request) )
+
+
+#############################################################################
+def healthcheck(request):
+    current_projs = Project.objects.filter(projType=1).order_by('name')
+    current_sets = ProjectSet.objects.all()
+
+    healthTables = []
+    projTable=checkHealth.projectList();
+    healthTables.append(projTable);
+
+    itemsNotInProjects=checkHealth.projectlessItems();
+    healthTables.append(itemsNotInProjects);
+
+    healthTables +=  checkHealth.followerCheck();
+
+    
+
+    return render_to_response('pim1_tmpl/healthcheck.html', {
+        'titleCrumbBlurb':'health check',
+        'displayTables':healthTables,
+        'current_projs':current_projs,
+        'current_sets':current_sets,
+
+        'nowx':datetime.datetime.now().strftime("%Y/%m/%d  %H:%M:%S")
+        }, context_instance=RequestContext(request) )
+
+

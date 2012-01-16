@@ -1,0 +1,48 @@
+{% extends "pim1_tmpl/pim1_base.html" %}
+
+{% block content %}
+
+
+
+{% if subtitle %}
+
+   <span class="headline">{{ titleCrumbBlurb }}</span>
+
+{% endif %}
+ 
+
+
+{% if displayTables %}
+
+    <div class="table_lists" >
+ 
+    {% for tablex in displayTables %}
+
+       <table>{{ tablex|safe }}  </table>
+
+
+
+
+
+{% ifchanged %}
+
+<hr/>
+
+{% endifchanged %}
+
+
+    {% endfor %}
+    </div>
+
+<p class="ilid"> {{ displayTables|length }}<img src="http://media.bernardhecker.com/pim1/static/images/itemlistwidget.gif"></p>
+
+{% else %}
+   
+       <p>No items are available.</p>
+
+{% endif %}
+
+
+
+{% endblock %}
+ 
