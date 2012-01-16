@@ -818,7 +818,7 @@ def ssearch(request):
             for h in noteHits:
                 totalHits.append(h.id)
             if totalHits != []:
-                displayList=buildDisplayList(current_projs, 0, 'id', 0, totalHits)
+                displayList=buildDisplayList(current_projs, 0, 'project', 0, totalHits)
                 #buildDisplayList(projectx, projID, ordering, hoistID, useList):
             else:
                 ## no hits
