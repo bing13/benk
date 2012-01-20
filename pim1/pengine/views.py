@@ -669,7 +669,7 @@ def gridview(request):
 
     t = loader.get_template('pim1_tmpl/items/gridview.html')
     c = Context({
-        'pagecrumb':'grid view',
+        'titleCrumbBlurb':'grid view',
         'displayList':displayList,
         'current_projs':current_projs,
         'current_sets':current_sets,
@@ -836,7 +836,7 @@ def ssearch(request):
         'current_sets':current_sets,
 
         'nowx':datetime.datetime.now().strftime("%Y/%m/%d  %H:%M:%S"),
-        'pagecrumb':'search result',
+        'titleCrumbBlurb':'search result',
         'error_message':error_message,
         'is_search_result':'true'
     })
@@ -846,8 +846,6 @@ def ssearch(request):
 #############################################################################
 
 def addItem(request, pItem):
-    # don't think we can use xhr, b/c ajax probably can't redirect the page
-    # but we'll leave the routine in dragactions.
 
     clickedItem=Item.objects.get(pk=pItem)
     lastItemID=sharedMD.getLastItemID(clickedItem.project_id)

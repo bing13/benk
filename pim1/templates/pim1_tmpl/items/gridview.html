@@ -8,6 +8,12 @@
 
 {% endif %}
 
+<script>
+$(window).load(function(){
+ $(".mainGrid > .all_set").css("display", "inline-block");
+});
+</script>
+
 <div class="mainGrid">
 
 {% if displayList %}
@@ -17,7 +23,7 @@
     {% for ci in displayList %}
         {% ifchanged %}
             </div></div>
-            <div class="gridCell">
+            <div class="gridCell  all_set  set_{{ ci.project.set.id }}">
               <div class="projheader"><a href="/pim1/drag/{{ ci.project.id }}">{{ ci.projectForOrdering }}</a></div>
 	      <div class="gridItemList">
         {% endifchanged %}

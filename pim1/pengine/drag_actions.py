@@ -239,7 +239,7 @@ class dragOps():
             sharedMD.logThis( "Item has no follower: ID" + str(clickedItem.id))
             follower=False
 
-        newItem = Item(title="-",priority='0', status='0', \
+        newItem = Item(title="",priority='0', status='0', \
            follows=clickedItem.id, parent=clickedItem.parent, indentLevel=clickedItem.indentLevel)
         newItem.project=clickedItem.project
 
