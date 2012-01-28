@@ -74,7 +74,7 @@ class dragOps():
             clickedItem.save()
             targetToSwap.save()
 
-            updateListIDs=[clickedItem.id, tts_follows,bts_follows ] + kidList
+            updateListIDs=[ clickedItem.id, tts_follows,bts_follows ] + kidList
             sharedMD.logThis("updateListIDs: "+str(updateListIDs))
             sharedMD.logThis("updateListIDs deco: "+str(self.updateIDsDecorate(updateListIDs)))
             return(self.updateIDsDecorate(updateListIDs))
@@ -133,7 +133,7 @@ class dragOps():
         CIoriginalParent=clickedItem.parent
 
         if clickedItem.parent ==  0:
-            sharedMD.logThis( "CAN'T PROMOTE TOP-LEVEL "+ str(pItem))
+            sharedMD.logThis( "CAN'T PROMOTE TOP-LEVEL "+ str(clickedItem.id))
 
         else:
             ### Deal with parent assignments first
@@ -250,6 +250,8 @@ class dragOps():
             oldFollower.save()
 
         return(newItem)
+
+
 
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
@@ -390,3 +392,64 @@ class dragOps():
 
  
         return(self.updateIDsDecorate([CI.id]))
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# fastAdd
+
+    def fastAdd(self,  clickedItem, FADtitle, FADstatus, FADpriority, FADhtmlBody):
+
+        #clickedItem=Item.objects.get(pk=clickedItemID)
+
+        sharedMD.logThis("fastAdd for "+str(clickedItem.id)+"  "+FADtitle)
+
+        ##sharedMD.getLastItemID(clickedItem.project.id)
+        
+        ## find the item that was following clickedItem
+        try:
+            oldFollower = Item.objects.get(follows=clickedItem.id)
+            follower=True
+        except:
+            sharedMD.logThis( "Item has no follower: ID" + str(clickedItem.id))
+            follower=False
+
+        newItem = Item(title=FADtitle,priority=FADpriority, status=FADstatus, \
+           follows=clickedItem.id, parent=clickedItem.parent, \
+           indentLevel=clickedItem.indentLevel,HTMLnoteBody=FADhtmlBody )
+        newItem.project=clickedItem.project
+
+        newItem.save()
+
+
+        updateListIDs=[newItem.id, clickedItem.id, clickedItem.follows  ] 
+
+        if follower:
+            oldFollower.follows = newItem.id
+            oldFollower.save()
+            updateListIDs.append(oldFollower.id)
+
+
+        newItemTemplate= ''' <div class="itemsdrag bhdraggable dropx"  id="xxxID"  onclick="selectMe(this)">
+
+ 	  <span class="itemdrag actionArrows"><a class="ilid" href="/pim1/list-items/hoist/xxxID">xxxID</a>&nbsp;<a href="/pim1/item/add/xxxID">&harr;</a><a href="#" onClick='actionJax(xxxID,0,"promote")' >&larr;</a><a href="#"  onClick='actionJax(xxxID,0,"demote")'>&rarr;</a><a href="#" onClick='actionJax(xxxID,0,"moveUp")'>&uarr;</a><a href="#" onClick='actionJax(xxxID,0,"moveDown")'>&darr;</a><a href="#" onClick='deleteMeFromDOM(xxxID);actionJax(xxxID,0,"archiveThisItem")'>a</a><a href="#" onClick='showFastAddDialog(xxxID)'>f</a></span>
+
+<span class="prio_stat_btns"><a href="#xxxID" onClick='actionJax( xxxID,0,"incPriority")'>+</a><a href="#xxxID" onClick='actionJax( xxxID,0,"decPriority")'>-</a></span><span class="prio priority_"></span><span class="prio_stat_btns"><a href="#xxxID" onClick='actionJax( xxxID,0,"incStatus")'>+</a><a href="#xxxID" onClick='actionJax( xxxID,0,"decStatus")'>-</a></span><span class="itemdrag ti"><span class="indent_0 ">
+<span class="marker">&bull; </span>
+<a href="/pim1/item/edititem/xxxID" class="Next titlelink">xxxitemtitle</a></span></span>
+          <span class="itemdrag notecell">
+
+ 	    <a onClick="toggleNoteBody('notebody_xxxID');" class="noteplus">&oplus;</a>
+	    <a onClick='detailpop("xxxID")' class="notearr">&rArr;</a> </span>
+	   
+
+          </span>
+       	  <span class="itemdrag id pfi"></span>
+          <div id="notebody_xxxID" class="noteBody"><div class="noteWrapper"> xxxNoteBody </div></div>
+     </div>'''
+
+        newItemTemplate=newItemTemplate.replace('xxxID',str(newItem.id))
+        newItemTemplate=newItemTemplate.replace('xxxitemtitle',newItem.title)
+        newItemTemplate=newItemTemplate.replace('xxxNoteBody',newItem.HTMLnoteBody)
+
+        return(self.updateIDsDecorate(updateListIDs), newItemTemplate)
+
+

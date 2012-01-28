@@ -1,4 +1,3 @@
-
 {% extends "pim1_tmpl/pim1_base.html" %}
 
 {% block content %}
@@ -39,9 +38,7 @@
         <!-- removed this class from below div: ui-widget-headerx --> 
         <div class="itemsdrag bhdraggable dropx"  id="{{ ci.id }}"  onclick="selectMe(this)">
 
- 	  <span class="itemdrag actionArrows"><a class="ilid" href="/pim1/list-items/hoist/{{ci.id}}">{{ci.id}}</a>&nbsp;<a href="/pim1/item/add/{{ ci.id }}">&harr;</a><a href="#" onClick='actionJax({{ ci.id }},0,"promote")' >&larr;</a><a href="#"  onClick='actionJax({{ ci.id }},0,"demote")'>&rarr;</a><a href="#" onClick='actionJax({{ ci.id }},0,"moveUp")'>&uarr;</a><a href="#" onClick='actionJax({{ ci.id }},0,"moveDown")'>&darr;</a><a href="#" onClick='deleteMeFromDOM({{ ci.id }});actionJax({{ ci.id }},0,"archiveThisItem")'>a</a><a href="#" onClick='showFastAddDialog({{ ci.id }})'>f</a></span>
-
-
+ 	  <span class="itemdrag actionArrows"><a class="ilid" href="/pim1/list-items/hoist/{{ci.id}}">{{ci.id}}</a>&nbsp;<a href="/pim1/item/add/{{ ci.id }}">&harr;</a><a href="#" onClick='actionJax({{ ci.id }},0,"promote")' >&larr;</a><a href="#"  onClick='actionJax({{ ci.id }},0,"demote")'>&rarr;</a><a href="#" onClick='actionJax({{ ci.id }},0,"moveUp")'>&uarr;</a><a href="#" onClick='actionJax({{ ci.id }},0,"moveDown")'>&darr;</a><a href="#" onClick='deleteMeFromDOM({{ ci.id }});actionJax({{ ci.id }},0,"archiveThisItem")'>a</a></span>
 <!--a href="#" onClick='deleteMeFromDOM({{ ci.id }});actionJax({{ ci.id }},0,"delete")'>&otimes;</a -->
 
 <span class="prio_stat_btns"><a href="#{{ci.id}}" onClick='actionJax( {{ ci.id }},0,"incPriority")'>+</a><a href="#{{ci.id}}" onClick='actionJax( {{ ci.id }},0,"decPriority")'>-</a></span><span class="prio priority_{{ ci.priority }}">{{ci.priority}} {{ci.statusText|slice:":6"|default:"&nbsp;"}}</span><span class="prio_stat_btns"><a href="#{{ci.id}}" onClick='actionJax( {{ ci.id }},0,"incStatus")'>+</a><a href="#{{ci.id}}" onClick='actionJax( {{ ci.id }},0,"decStatus")'>-</a></span><span class="itemdrag ti">{# NOT USED {ci.indentString|safe}#}<span class="indent_{{ci.indentLevel}} {% if ci.isParent %} parentItem {% endif %}">
@@ -76,34 +73,25 @@
 
 	<form>
 	<fieldset>
-	<span class="dialog_widgets"  id="FADci" ></span>
-	<label class="dialog_widgets" for="FADpriority">priority</label>
-	<select  name="FADpriority" id="FADpriority" value="" class="dialog_widgets text  text ui-widget-content ui-corner-all">
-		<option>0</option><option>1</option><option>2</option><option>3</option><option>4</option>
+	<label class="dialog_widgets" for="priority">priority</label>
+	<select  name="priority" id="priority" value="" class="dialog_widgets text  text ui-widget-content ui-corner-all">
+		<option></option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option>
 	</select>
 
-	<label class="dialog_widgets" for="FADstatus">status</label>
-	<select  name="FADstatus" id="FADstatus" value="" class="dialog_widgets text ui-widget-content ui-corner-all">
-		<option>0</option><option>1</option><option>2</option><option>3</option><option>5</option><option>6</option><option>9</option>
+	<label class="dialog_widgets" for="status">status</label>
+	<select  name="status" id="status" value="" class="dialog_widgets text ui-widget-content ui-corner-all">
+		<option></option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option>
 	</select>
 	<span  class=" dialog_validateTips dialog_widgets"></span>
 
 <br/>
-<br/>
-	<label class="dialog_txt_widgets" for="FADtitle">title</label>
-	<textarea  name="title" id="FADtitle" value="" class="text dialog_textarea ui-widget-content ui-corner-all" ></textarea>
-<br/>
-<br/>
-	<label class="dialog_txt_widgets" for="FADhtmlBody">note</label>
-
-	<textarea  name="htmlBody" id="FADhtmlBody" value="" class="text dialog_textarea ui-widget-content ui-corner-all" ></textarea><br>
-
+	<textarea  name="title" id="title" value="" class="text dialog_textarea ui-widget-content ui-corner-all" ></textarea><br>
 
 	</fieldset>
 	</form>
 </div>
 
-{# <button id="create-item">Create new item</button> #}
+<a button id="create-item">Create new item</button>
 
 
 {% else %}

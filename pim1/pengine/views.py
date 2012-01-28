@@ -1199,13 +1199,23 @@ def xhr_actions(request):
     elif actionRequest['ajaxAction']== 'decStatus':
         refreshThese=DRAGACTIONS.statusChange(clickedItem,  'down')
 
+    elif actionRequest['ajaxAction']== 'fastAdd':
+        
+        refreshThese,newItemTemplate=DRAGACTIONS.fastAdd(clickedItem, actionRequest['FADtitle'], actionRequest['FADstatus'], actionRequest['FADpriority'], actionRequest['FADhtmlBody'] )
+
+
     else:
         sharedMD.logThis("+++ERROR+++. Uncaught actionRequest['ajaxAction']:"+actionRequest['ajaxAction'])
         refreshThese=[]
 
     #sharedMD.logThis("  REFRESH: "+str(refreshThese))
-    jRefresh=simplejson.dumps(refreshThese)
-    return HttpResponse(jRefresh, mimetype=mimetypex)
+    if actionRequest['ajaxAction']== 'fastAdd':
+        jRefresh=simplejson.dumps(refreshThese+[newItemTemplate])
+        return HttpResponse(jRefresh, mimetype=mimetypex)
+        
+    else:
+        jRefresh=simplejson.dumps(refreshThese)
+        return HttpResponse(jRefresh, mimetype=mimetypex)
         
 
 ######################################################################
