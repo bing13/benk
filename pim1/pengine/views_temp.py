@@ -611,25 +611,67 @@ def gridview(request):
     for thisProject in current_projs:
         cellItems = [];
         #(projlist, projID, ordering, hoistID, useList)
+        j = 0 ; ##Item.objects.filter(project=thisProject.id).get(follows=0).id
 
-        # limit = min(ITEMS_PER_CELL, Item.objects.filter(project=thisProject.id).count());
-
-        # complexity comes b/c you can't slice a query set, and expect it to be ordered the
-        # way you want. It just takes the first [:n] items, and orders those
+        limit = min(ITEMS_PER_CELL, Item.objects.filter(project=thisProject.id).count());
+        # count() is more efficienrt than 
+        cellobjs=Item.objects.filter(project=thisProject).exclude(status='9').exclude(priority=0, follows=0).order_by('priority')
+        #### removed from line above 1/27/2012[:10]
         
-        cellObjs = []
-        for priorityLevel in (1,2,3,4,5,6,7,8,9,0,99,''):
-            cx = Item.objects.filter(project=thisProject,priority=priorityLevel)[:ITEMS_PER_CELL]
-            ## i.e., no need to consider more than ITEMS_PER_CELL max in a category, since that's
-            ## the *overall* limit for gridview
-            
-            for co in cx:
-                cellItems.append(co.id)
+        #### WORKAROUND until we change model, which currently has a "choice" of '' for priority=0
+        #### which makes it sort high, rather than low on the gridview cell
 
+        #for priorityLevel in (1,2,3,4,5,6,7,8,9,99,0):
+        #    for itemz in cellobjs:
+        #        if (itemz.priority == priorityLevel):
+        ###            cellItems.append(itemz.id)
+        # that sucker ends up pulling ALL items into the grid, I have no freakin'idea why.
+        # something about querysets I don't understand (likely) or Possible django bug.
+
+        ### routine to generate a list of IDs in a specific priority order. Here, makes un-prioritized items sort lower
+        ### than prioritized items. Makes use of "provided" ordering in builddisplaylist()
+        priorityCollector={}
+
+        for citem in cellobjs:
+            if not priorityCollector.has_key(citem.priority):
+                priorityCollector[citem.priority]=[]
+            priorityCollector[citem.priority].append(citem.id)
+
+        for priorityLevel in (1,2,3,4,5,6,7,8,9,99,0,''):
+            if priorityCollector.has_key(str(priorityLevel)):
+                cellItems += priorityCollector[str(priorityLevel)]
                 
-        dx =   buildDisplayList(current_projs,thisProject.id, 'provided',0,cellItems[:ITEMS_PER_CELL])
+        #for co in cellobjs:
+        #    cellItems.append(co.id)
+
+        #         get=Item.objects.filter(project=thisProject).get(follows=j)
+        
+        #for i in range(0,limit):
+            #was 2012/1/2########################
+            #thisItem=Item.objects.filter(project=thisProject).get(follows=j)
+            #cellItems.append(thisItem.id)
+            #j = thisItem.id
+            #####################################
+
+            #thisItem=Item.objects.filter(project=thisProject).get(follows=j)
+            ### priority can be '', which causes it to sort wrong
+            ##if thisItem.priority == '':
+            ##    thisItem.priority = 99
+            
+            # #        cellObjects = Item.objects.filter(project=thisProject.id).order_by('follows')[:ITEMS_PER_CELL]
+            # #        for c in cellObjects:
+            # #            cellItems.append(c.id)
+            #         #sharedMD.logThis("Gridview  thisProject.id:"+str(thisProject.id)+" "+str(cellItems))
+            
+            # was dx =   buildDisplayList(current_projs,thisProject.id, 'follows',0,cellItems)
+
+        sharedMD.logThis("cellitems:"+str(cellItems))
+
+        dx =   buildDisplayList(current_projs,thisProject.id, 'provided',0,cellItems)
         displayList = displayList + dx
 
+
+        
 
     t = loader.get_template('pim1_tmpl/items/gridview.html')
     c = Context({
