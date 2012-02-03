@@ -573,9 +573,11 @@ def actionItem(request, pItem, action):
 #####################################################(end of actionItem)########
 
 
-def psd(request,pSort):
+def psd(request,pSort,targetProject):
     current_projs = Project.objects.filter(projType=1).order_by('name')
     current_sets = ProjectSet.objects.all()
+
+    targProjObj = Project.objects.get(pk=targetProject)
 
     if pSort=='goo_date': pSort='date_gootask_display'
     # priority, status, date_mod, date_created
@@ -585,16 +587,18 @@ def psd(request,pSort):
     elif  pSort=="date_gootask_display":
         pSort="-"+pSort
 
-    displayList =  buildDisplayList(current_projs,'0',pSort,0,[])
+    displayList =  buildDisplayList(current_projs,targetProject,pSort,0,[])
 
+    titleCrumbBlurb = "sort "+str(targetProject)+':'+targProjObj.name+"   ("+targProjObj.set.name+")"
 
     t = loader.get_template('pim1_tmpl/items/psd.html')
     c = Context({
         'current_items':displayList,
         'current_projs':current_projs,
         'current_sets':current_sets,
-        
+        'targetProject':targetProject,
         'pSort':pSort,
+        'titleCrumbBlurb':titleCrumbBlurb,
         'nowx':datetime.datetime.now().strftime("%Y/%m/%d  %H:%M:%S")
     })
     return HttpResponse(t.render(c))
@@ -1164,8 +1168,13 @@ def xhr_actions(request):
 
     ## to dragmove #################################
 
-    if actionRequest['ajaxAction'] == 'dragmove':
+    if actionRequest['ajaxAction'] == 'dragKid':
         refreshThese= drag_move(int(actionRequest['ci']), int(actionRequest['ti']))
+
+    elif actionRequest['ajaxAction']== 'dragPeer':
+        #refreshThese= drag_move(int(actionRequest['ci']), int(actionRequest['ti']))
+        # this is where the shift-drag action should go
+        pass
     
     elif actionRequest['ajaxAction']== 'moveUp':
         refreshThese=DRAGACTIONS.moveUp(clickedItem,  lastItemID)

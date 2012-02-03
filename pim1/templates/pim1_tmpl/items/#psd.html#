@@ -1,0 +1,96 @@
+{% extends "pim1_tmpl/pim1_base.html" %}
+
+{% block content %}
+
+<div class="headline">Sort by {{ pSort }}
+<span>sort [<a href="/pim1/psd/date_created/{{targetProject}}">dc</a> 
+	       <a href="/pim1/psd/date_mod/{{targetProject}}">dm</a> 
+	       <a href="/pim1/psd/goo_date/{{targetProject}}">gd</a>
+	       <a href="/pim1/psd/status/{{targetProject}}">s</a> 
+	       <a href="/pim1/psd/priority/{{targetProject}}">p</a>] 
+   </>
+</ul>
+
+</div>
+
+{% if current_items %}
+
+    <table class="item_table">
+    <tr><th>id</th><th>p/f:c</th><th class="titlecol">title</th><th>priority</th><th>status</th>
+<th>
+
+{% if 'date' in pSort %}
+{{ pSort }}
+{% endif %}
+
+{% if 'date' not in pSort %}
+date created
+{% endif %}
+</th>
+
+
+<th>note</th></tr>
+    
+    {% for ci in current_items %}
+    {% ifchanged %}<tr><td class="projheader" colspan="7">{{ ci.projectForOrdering }}</td></tr>{% endifchanged %}
+        <tr class="items">
+
+
+
+	 <td class="itemtd ">{{ci.id}}&nbsp;</td>
+
+
+
+
+
+
+	 <td class="itemtd">{{ci.parent}}/{{ci.follows}}:<span class="indent">{{ci.indent}}</span></td>
+{% comment %}
+	 <td class="itemtd">
+	   <ul class="projname">
+	     {% for px in ci.projects %}
+	         <li>{{ px }}</li>
+	     {% endfor %}
+	   </ul>
+	</td>
+{% endcomment %}
+        <td class="itemtd">{{ci.indentString|safe}}&bull; <a href="/pim1/item/edititem/{{ci.id}}">{{ ci.title }}</a></td>
+
+
+
+        <td class="itemtd">{{ ci.priority }}:{{ci.priorityText}}
+	</td>
+        <td class="itemtd">{{ ci.status }}:{{ci.statusText}}</td>
+
+
+        <td class="itemtd">
+{% if  pSort = '-date_created' or pSort = 'priority' or pSort = 'status' %}
+{{ ci.date_created }}
+{% endif %}
+
+{% if pSort = '-date_mod' %}
+{{ ci.date_mod }}
+{% endif %}
+
+{% if pSort = '-date_gootask_display' %}
+{{ ci.date_gootask_display }}
+{% endif %}
+
+</td>
+
+        <td class="itemtd notecell_psd">
+	  {% if ci.HTMLnoteBody|length > 2 %}
+  	    <span onClick="toggleLI('notebody_{{ci.id}}');" class="noteplus"><img src="http://media.bernardhecker.com/pim1/static/images/itemlistwidget.gif"></span>
+	    <span id="notebody_{{ci.id}}" class="noteBody">{{ ci.HTMLnoteBody|safe|default:" --- " }}</span>
+          {% endif %}
+      </td>
+        
+
+        </tr>
+    {% endfor %}
+    </table>
+{% else %}
+    <p>No items are available.</p>
+{% endif %}
+{% endblock %}
+ 

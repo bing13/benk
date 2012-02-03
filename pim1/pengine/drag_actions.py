@@ -414,11 +414,10 @@ class dragOps():
 
         newItem = Item(title=FADtitle,priority=FADpriority, status=FADstatus, \
            follows=clickedItem.id, parent=clickedItem.parent, \
-           indentLevel=clickedItem.indentLevel,HTMLnoteBody=FADhtmlBody )
+           indentLevel=clickedItem.indentLevel, HTMLnoteBody=FADhtmlBody )
         newItem.project=clickedItem.project
 
         newItem.save()
-
 
         updateListIDs=[newItem.id, clickedItem.id, clickedItem.follows  ] 
 
@@ -428,7 +427,7 @@ class dragOps():
             updateListIDs.append(oldFollower.id)
 
 
-        newItemTemplate= ''' <div class="itemsdrag bhdraggable dropx"  id="xxxID"  onclick="selectMe(this)">
+        newItemTemplate= ''' <div class="itemsdrag bhdraggable dropx ui-draggable ui-droppable"  id="xxxID"  onclick="selectMe(this)">
 
  	  <span class="itemdrag actionArrows"><a class="ilid" href="/pim1/list-items/hoist/xxxID">xxxID</a>&nbsp;<a href="/pim1/item/add/xxxID">&harr;</a><a href="#" onClick='actionJax(xxxID,0,"promote")' >&larr;</a><a href="#"  onClick='actionJax(xxxID,0,"demote")'>&rarr;</a><a href="#" onClick='actionJax(xxxID,0,"moveUp")'>&uarr;</a><a href="#" onClick='actionJax(xxxID,0,"moveDown")'>&darr;</a><a href="#" onClick='deleteMeFromDOM(xxxID);actionJax(xxxID,0,"archiveThisItem")'>a</a><a href="#" onClick='showFastAddDialog(xxxID)'>f</a></span>
 

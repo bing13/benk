@@ -71,10 +71,11 @@ class Item(models.Model):
     indentLevel = models.IntegerField(null=True, blank=True)
 
     PRIORITY_CHOICES = (
-        ('1', 'Urgent'),
-        ('2', 'Important'),
-        ('3', 'Normal'),
-        ('4', 'Low'),
+        ('1', 'TODAY'),
+        ('2', 'Urgent'),        
+        ('3', 'Important'),
+        ('4', 'Normal'),
+        ('5', 'Low'),
         ('0', '')
     )
     STATUS_CHOICES = (
@@ -83,6 +84,7 @@ class Item(models.Model):
         ('3', 'Cold'),
         ('5', 'Hold'),
         ('6', 'Cancelled'),
+        ('8', 'Ref'),        
         ('9', 'Done'),
         ('0', '')
     )
