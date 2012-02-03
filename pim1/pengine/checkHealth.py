@@ -17,7 +17,7 @@ def projectList():
 
     projList = Project.objects.all().order_by('name')
 
-    tableBody='<tr class="health_row"><th class="health_cell" colspan=6>project list</th></tr>'
+    tableBody='<tr class="health_row"><th class="health_cell" colspan=7>project list</th></tr>'
 
     tableBody += '''<tr class="health_row">
         <th class="health_cell">id </th>
@@ -26,6 +26,7 @@ def projectList():
         <th class="health_cell">color </th>
         <th class="health_cell">projType </th>
         <th class="health_cell">archivePair </th>
+        <th class="health_cell"># of items </th>
         </tr>'''
 
     for p in projList:
@@ -36,7 +37,16 @@ def projectList():
         <td class="health_cell">%s </td>
         <td class="health_cell">%s </td>
         <td class="health_cell">%s </td>
-        </tr>''' % (p.id, p.set, p.name, p.color, p.projType, p.archivePair)
+        <td class="health_cell health_cell_total">%s </td>
+        </tr>''' % (p.id, p.set, p.name, p.color, p.projType, p.archivePair, Item.objects.filter(project=p.id).count())
+
+    tableBody += '''<tr class="health_row">
+    <td class="health_cell" colspan="5"></td>
+    <td class="health_cell">grand total</td>
+    <td class="health_cell health_cell_total">%s </td>
+    </tr>''' % ( Item.objects.all().count())
+
+        
     
     return(tableBody)
 
@@ -63,13 +73,13 @@ def projectlessItems():
     
     for p in unprojectedItems:
         tableBody += '''<tr class="health_row">
+        <td class="health_cell"><a href="/pim1/admin/pengine/item/%s">%s</a> </td>
         <td class="health_cell">%s </td>
         <td class="health_cell">%s </td>
         <td class="health_cell">%s </td>
         <td class="health_cell">%s </td>
         <td class="health_cell">%s </td>
-        <td class="health_cell">%s </td>
-        </tr>''' % (p.id, p.parent, p.follows, p.title, p.priority, p.status)
+        </tr>''' % (p.id, p.id, p.parent, p.follows, p.title, p.priority, p.status)
     
     return(tableBody)
 
@@ -94,17 +104,18 @@ def followerCheck():
     
     for p in zeroFollowers:
         tableBody += '''<tr class="health_row">
+        <td class="health_cell"><a href="/pim1/item/edititem/%s">%s</a> </td>
         <td class="health_cell">%s </td>
         <td class="health_cell">%s </td>
         <td class="health_cell">%s </td>
         <td class="health_cell">%s </td>
         <td class="health_cell">%s </td>
-        <td class="health_cell">%s </td>
-        </tr>''' % (p.id, p.parent, p.follows, p.title, p.priority, p.status)
+        </tr>''' % (p.id, p.id, p.parent, p.follows, p.title, p.priority, p.status)
 
     zeroFollowersOutput = tableBody
 
-    ##########################
+    ##########################################################################
+    # multiFollowers
 
     # get a list of item IDs
     allIDs=Item.objects.all().order_by('id').values_list('id', flat=True)
@@ -154,7 +165,7 @@ def followerCheck():
 
     if (0 in uniqueMFids ):
         tableBody +='''<tr class="health_row">
-        <td class="health_cell" cellspan="7"> item 0 has multiple followers </td>
+        <td class="health_cell" colspan="7"> item 0 has multiple followers </td>
         </tr>''' 
     else:
     
@@ -178,5 +189,94 @@ def followerCheck():
     multiFollowersOutput = tableBody
 
 
+    ##########################################################################
+    # selfFollowers / lostFollowers
 
-    return([zeroFollowersOutput, multiFollowersOutput ])
+    selfFollowersObjs=[]
+    lostFollowersObjs=[]
+    
+    allItems = Item.objects.all().order_by('project')
+    for x in allItems:
+        if (x.id == x.follows):
+            selfFollowersObjs.append(x)
+    
+        if (x.follows not in allIDs and x.follows != 0):
+            lostFollowersObjs.append(x)
+            
+    #####################################
+    # self followers draw
+
+    tableBody='<tr class="health_row"><th class="health_cell" colspan="7">%s items that follow themselves</th></tr>' % len(selfFollowersObjs)
+
+    tableBody += '''<tr class="health_row">
+        <th class="health_cell">id </th>
+        <th class="health_cell">project </th>
+        
+        <th class="health_cell">parent </th>
+        <th class="health_cell">follows</th>
+        <th class="health_cell">title</th>
+        <th class="health_cell">priority</th>
+        <th class="health_cell">status</th>
+        </tr>'''
+
+
+    for p in selfFollowersObjs:
+        try:
+            projx = p.project.id;
+        except:
+            projx = "none";
+
+        tableBody += '''<tr class="health_row">
+        <td class="health_cell"><a href="/pim1/item/edititem/%s">%s</a> </td>
+        <td class="health_cell">%s </td>
+        <td class="health_cell">%s </td>
+        <td class="health_cell">%s </td>
+        <td class="health_cell">%s </td>
+        <td class="health_cell">%s </td>
+        <td class="health_cell">%s </td>
+        </tr>''' % (p.id, p.id, projx, p.parent, p.follows, p.title, p.priority, p.status)
+
+
+    selfFollowersOutput = tableBody
+
+    ##############################
+    # lostFollowers draw
+
+
+    tableBody='<tr class="health_row"><th class="health_cell" colspan="7">%s items that follow missing item</th></tr>' % len(lostFollowersObjs)
+
+    tableBody += '''<tr class="health_row">
+        <th class="health_cell">id </th>
+        <th class="health_cell">project </th>
+        
+        <th class="health_cell">parent </th>
+        <th class="health_cell">follows</th>
+        <th class="health_cell">title</th>
+        <th class="health_cell">priority</th>
+        <th class="health_cell">status</th>
+        </tr>'''
+
+
+    for p in lostFollowersObjs:
+        try:
+            projx = p.project.id;
+        except:
+            projx = "none";
+
+        tableBody += '''<tr class="health_row">
+        <td class="health_cell"><a href="/pim1/item/edititem/%s">%s</a> </td>
+        <td class="health_cell">%s </td>
+        <td class="health_cell">%s </td>
+        <td class="health_cell">%s </td>
+        <td class="health_cell">%s </td>
+        <td class="health_cell">%s </td>
+        <td class="health_cell">%s </td>
+        </tr>''' % (p.id, p.id, projx, p.parent, p.follows, p.title, p.priority, p.status)
+
+
+    lostFollowersOutput = tableBody
+
+
+    #############################################################################
+
+    return([zeroFollowersOutput, multiFollowersOutput, selfFollowersOutput, lostFollowersOutput ])

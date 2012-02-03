@@ -1433,6 +1433,8 @@ def healthcheck(request):
     current_projs = Project.objects.filter(projType=1).order_by('name')
     current_sets = ProjectSet.objects.all()
 
+
+    ### each routine returns an array of tables
     healthTables = []
     projTable=checkHealth.projectList();
     healthTables.append(projTable);
@@ -1441,7 +1443,6 @@ def healthcheck(request):
     healthTables.append(itemsNotInProjects);
 
     healthTables +=  checkHealth.followerCheck();
-
     
 
     return render_to_response('pim1_tmpl/healthcheck.html', {
