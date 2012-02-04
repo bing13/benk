@@ -123,7 +123,8 @@ def followerCheck():
     # get a list of all followers
     allFollows=Item.objects.all().order_by('follows').values_list('follows', flat=True)
     
-    # .count() is buggy on the django object, so we trasfer to a normal array
+    # values_list doesn't return a normal array, consequently
+    # .count() is buggy, so we trasfer to a normal array
     
     allFollowsArray = []
     allFollowsArray += allFollows

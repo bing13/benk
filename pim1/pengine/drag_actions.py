@@ -38,7 +38,7 @@ class dragOps():
     def moveUp(self,clickedItem, lastItemID):
 
         lastKid, kidList = sharedMD.findLastKid(clickedItem, lastItemID)
-
+        originalCIindentLevel = clickedItem.indentLevel
         
         if clickedItem.follows==0:
             sharedMD.logThis( "CAN'T MOVE UP TOP item "+ str(pItem))
@@ -71,9 +71,20 @@ class dragOps():
             clickedItem.follows=tts_follows
             clickedItem.parent=targetToSwap.parent
             targetToSwap.follows=bottomToSwap.id
+
+            clickedItem.indentLevel = sharedMD.countIndent(clickedItem)
+            
             clickedItem.save()
             targetToSwap.save()
 
+            ## the kids need their indent level changed in some instances.
+            if (originalCIindentLevel != clickedItem.indentLevel):
+                for k in kidList:
+                    kObj = Item.objects.get(pk=k)
+                    kObj.indentLevel = sharedMD.countIndent(kObj)
+                    kObj.save()
+
+           
             updateListIDs=[ clickedItem.id, tts_follows,bts_follows ] + kidList
             sharedMD.logThis("updateListIDs: "+str(updateListIDs))
             sharedMD.logThis("updateListIDs deco: "+str(self.updateIDsDecorate(updateListIDs)))
@@ -117,6 +128,11 @@ class dragOps():
                     bottomFollower.follows = lastKidofCI
                 bottomFollower.save()
 
+
+
+            clickedItem.indentLevel = sharedMD.countIndent(clickedItem)
+
+
             clickedItem.save()
             fciFollower.save()
 
@@ -124,9 +140,9 @@ class dragOps():
             return(self.updateIDsDecorate(updateListIDs))
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-# promote
+# OLDpromote
 
-    def promote(self,clickedItem,  lastItemID):
+    def OLDpromote(self,clickedItem,  lastItemID):
 
         runKids='no'
         lastKidID,kidList=sharedMD.findLastKid(clickedItem, lastItemID)
@@ -154,8 +170,8 @@ class dragOps():
             ## now deal with  the kids
 
             # if items following the promotee are of the same level, we have to turn
-                # the consecutive run of a same level/parent items into children (parent, indent)
-                # not sure this works right at the moment
+            # the consecutive run of a same level/parent items into children (parent, indent)
+            
                 if Item.objects.get(follows=clickedItem.id).parent == CIoriginalParent:
                     sharedMD.logThis("converting subsequent items to children...")
                     indx = Item.objects.get(follows=clickedItem.id)
@@ -181,10 +197,76 @@ class dragOps():
                         thisItem.indentLevel -= 1
                         thisItem.save()
 
+        ciKidCount = Item.objects.filter(parent=clickedItem.id).count()
+        kidsIDs = []
+        if (ciKidCount > 0):
+            kidsIDva = Item.objects.filter(parent=clickedItem.id).values_list('id',flat=True)
+
+        kidsIDs += kidsIDva
         ## now for refresh
 
-        updateListIDs=[clickedItem.id, clickedItem.follows ] + kidList
+        updateListIDs=[clickedItem.id, clickedItem.follows ] + kidsIDs
         return(self.updateIDsDecorate(updateListIDs))
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# promote
+
+    def promote(self,clickedItem,  lastItemID):
+
+        lastKidID,kidList=sharedMD.findLastKid(clickedItem, lastItemID)
+        CIoriginalParent=clickedItem.parent
+
+        if clickedItem.parent ==  0:
+            sharedMD.logThis( "CAN'T PROMOTE TOP-LEVEL "+ str(clickedItem.id))
+
+        else:
+            sharedMD.logThis("Promoting: " +str(clickedItem.id))
+
+            clickedItem.parent = Item.objects.get(pk=CIoriginalParent).parent
+            clickedItem.indentLevel = sharedMD.countIndent(clickedItem)
+            clickedItem.save()
+
+            ## fix my kids:
+            for k in kidList:
+                ko=Item.objects.get(pk=k)
+                ko.indentLevel = sharedMD.countIndent(ko)
+                ko.save()
+
+            if lastKidID != lastItemID:
+                kidnapStart = lastKidID
+            else:
+                kidnapStart = clickedItemID
+
+            indx =  Item.objects.get(follows = kidnapStart)
+
+
+            ## if items following the promotee have CI's original parent, AND we haven't
+            ## hit an item with the same parent as the CI's NEW parent, then kidnap it
+            ## (i.e., the CI is it's new parent)
+            ## No need to fix indent level, kidnapped items remain as before
+
+            sharedMD.logThis("converting subsequent items to children...")
+                    
+            while (indx.id != lastItemID) and (indx.parent != clickedItem.parent):
+                sharedMD.logThis("converting subsequent items to children...")
+                if (indx.parent == CIoriginalParent):
+                    indx.parent = clickedItem.id
+                    indx.save()
+                indx = Item.objects.get(follows = indx.id)
+
+
+        ciKidCount = Item.objects.filter(parent=clickedItem.id).count()
+        kidsIDs = []
+        if (ciKidCount > 0):
+            kidsIDva = Item.objects.filter(parent=clickedItem.id).values_list('id',flat=True)
+
+        kidsIDs += kidsIDva
+        ## now for refresh
+
+        updateListIDs=[clickedItem.id, clickedItem.follows ] + kidsIDs
+        return(self.updateIDsDecorate(updateListIDs))
+
+
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # demote
@@ -412,10 +494,22 @@ class dragOps():
             sharedMD.logThis( "Item has no follower: ID" + str(clickedItem.id))
             follower=False
 
+
         newItem = Item(title=FADtitle,priority=FADpriority, status=FADstatus, \
-           follows=clickedItem.id, parent=clickedItem.parent, \
-           indentLevel=clickedItem.indentLevel, HTMLnoteBody=FADhtmlBody )
+           follows=clickedItem.id, \
+           HTMLnoteBody=FADhtmlBody )
         newItem.project=clickedItem.project
+
+
+        ## if clickedItem has kids, the fastAdded item should be a kid.
+        ##   if not, it should be a peer
+        ciKidCount = Item.objects.filter(parent=clickedItem.id).count()
+        if (ciKidCount) == 0:
+            newItem.parent = clickedItem.parent
+            newItem.indentLevel=clickedItem.indentLevel
+        else:
+            newItem.parent = clickedItem.id
+            newItem.indentLevel = clickedItem.indentLevel+1
 
         newItem.save()
 
@@ -427,9 +521,10 @@ class dragOps():
             updateListIDs.append(oldFollower.id)
 
 
+
         newItemTemplate= ''' <div class="itemsdrag bhdraggable dropx ui-draggable ui-droppable"  id="xxxID"  onclick="selectMe(this)">
 
- 	  <span class="itemdrag actionArrows"><a class="ilid" href="/pim1/list-items/hoist/xxxID">xxxID</a>&nbsp;<a href="/pim1/item/add/xxxID">&harr;</a><a href="#" onClick='actionJax(xxxID,0,"promote")' >&larr;</a><a href="#"  onClick='actionJax(xxxID,0,"demote")'>&rarr;</a><a href="#" onClick='actionJax(xxxID,0,"moveUp")'>&uarr;</a><a href="#" onClick='actionJax(xxxID,0,"moveDown")'>&darr;</a><a href="#" onClick='deleteMeFromDOM(xxxID);actionJax(xxxID,0,"archiveThisItem")'>a</a><a href="#" onClick='showFastAddDialog(xxxID)'>f</a></span>
+ 	  <span class="itemdrag actionArrows"><a class="ilid" href="/pim1/list-items/hoist/xxxID">xxxID</a>&nbsp;<a href="/pim1/item/add/xxxID">&harr;</a><a href="#" onClick='actionJax(xxxID,0,"promote")' >&larr;</a><a href="#"  onClick='actionJax(xxxID,0,"demote")'>&rarr;</a><a href="#" onClick='actionJax(xxxID,0,"moveUp")'>&uarr;</a><a href="#" onClick='actionJax(xxxID,0,"moveDown")'>&darr;</a><a href="#" class="archiveLink" onClick='deleteMeFromDOM(xxxID);actionJax(xxxID,0,"archiveThisItem")'>a</a><a href="#" class="fastAddLink" onClick='showFastAddDialog(xxxID)'>f</a></span>
 
 <span class="prio_stat_btns"><a href="#xxxID" onClick='actionJax( xxxID,0,"incPriority")'>+</a><a href="#xxxID" onClick='actionJax( xxxID,0,"decPriority")'>-</a></span><span class="prio priority_"></span><span class="prio_stat_btns"><a href="#xxxID" onClick='actionJax( xxxID,0,"incStatus")'>+</a><a href="#xxxID" onClick='actionJax( xxxID,0,"decStatus")'>-</a></span><span class="itemdrag ti"><span class="indent_0 ">
 <span class="marker">&bull; </span>

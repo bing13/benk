@@ -287,18 +287,7 @@ def buildDisplayList(projectx, projID, ordering, hoistID, useListIDs):
         displayList=ixList
     sharedMD.logThis("Exiting buildDisplayList ========>")
     return(displayList)
-##################################################################
 
-def countIndent(anItem):
-    
-    indentCount=0
-    
-    while anItem.parent != 0: 
-        indentCount+=1
-        if anItem.parent !=0:
-            anItem=Item.objects.get(pk=anItem.parent)
-            
-    return(indentCount)
 ##################################################################
 
 
@@ -980,7 +969,7 @@ def importISdata(importFile,newProjectID):
 
 
                     if read_indentLevel == '':
-                        newItem.indentLevel=countIndent(newItem)
+                        newItem.indentLevel=sharedMD.countIndent(newItem)
                     else:
                         newItem.indentLevel = read_indentLevel
 
@@ -1293,7 +1282,7 @@ def drag_move(CIid, TIid):
         for kidx in kidList:
             #kidx used to be kidpair[]
             thisKid=Item.objects.get(pk=kidx)
-            thisKid.indentLevel=countIndent(thisKid)
+            thisKid.indentLevel=sharedMD.countIndent(thisKid)
             thisKid.save()
             
             #extend kidItems (formerly kidPair( -- add the info JS refreshItem function will need

@@ -11,6 +11,20 @@ import datetime
 
 LOGFILE = '/home/bhadmin13/dx.bernardhecker.com/pim1/benklog1.log'
 
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# countIndent
+
+def countIndent(anItem):
+    
+    indentCount=0
+    
+    while anItem.parent != 0: 
+        indentCount+=1
+        if anItem.parent !=0:
+            anItem=Item.objects.get(pk=anItem.parent)
+            
+    return(indentCount)
+
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # returnMarker
