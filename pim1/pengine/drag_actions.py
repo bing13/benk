@@ -33,9 +33,9 @@ class dragOps():
 
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-# moveUp
+# moveUpEveryItem
 
-    def moveUp(self,clickedItem, lastItemID):
+    def moveUpEveryItem(self,clickedItem, lastItemID):
 
         lastKid, kidList = sharedMD.findLastKid(clickedItem, lastItemID)
         originalCIindentLevel = clickedItem.indentLevel
@@ -87,13 +87,151 @@ class dragOps():
            
             updateListIDs=[ clickedItem.id, tts_follows,bts_follows ] + kidList
             sharedMD.logThis("updateListIDs: "+str(updateListIDs))
-            sharedMD.logThis("updateListIDs deco: "+str(self.updateIDsDecorate(updateListIDs)))
+            #sharedMD.logThis("updateListIDs deco: "+str(self.updateIDsDecorate(updateListIDs)))
             return(self.updateIDsDecorate(updateListIDs))
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-# moveDown
+# moveUp (via peers only)
+
+    def moveUp(self,clickedItem,  lastItemID):
+        
+        lastKidofCI, CIkidList = sharedMD.findLastKid(clickedItem, lastItemID)
+        
+        if Item.objects.get(pk=clickedItem.follows).follows == 0:
+            sharedMD.logThis( "==> Clicked item first item, no move:ci, lk, liID "+str(clickedItem.id) +"  " + str(lastKidofCI) + '  ' + str(lastItemID))
+            return([])
+
+        ## Locate the previous item with the same parent as me
+        ## stop completely if you hit an item with the same grandparent as me
+
+        grandParent=Item.objects.get(pk=clickedItem.parent).parent
+        sharedMD.logThis( "  moving among children of "+str(clickedItem.parent))
+
+        haveFoundItem = 'no'
+        indx=Item.objects.get(pk=clickedItem.follows)
+        while (indx.follows != 0 ) and (indx.parent != grandParent) and (haveFoundItem == 'no'):
+            if (indx.parent != clickedItem.parent):
+                indx = Item.objects.get(pk=indx.follows)
+            else:
+                haveFoundItem = 'yes'
+                targetItem = indx
+
+        if haveFoundItem == 'no':
+            sharedMD.logThis( "  no valid moveUp found ")
+            return([])
+
+        sharedMD.logThis( "  TI:  "+str(targetItem.id))
+        # targetItem is the item we aim to move CI and its kids before    
+
+
+        lastKidofTI, TIkidList = sharedMD.findLastKid(targetItem, lastItemID)
+ 
+        #CIfollowed = clickedItem.follows
+        #targetItemFollowedThis = targetItem.follows
+        
+        # move CI
+        clickedItem.follows = targetItem.follows
+
+        # move TI
+        if lastKidofCI == 0:
+            CILastItemWasFollowedBy = Item.objects.get(follows=clickedItem.id)
+
+            targetItem.follows = clickedItem.id
+        else:
+            CILastItemWasFollowedBy = Item.objects.get(follows=lastKidofCI)
+
+            targetItem.follows = lastKidofCI
+        
+        # reset CI's last follower
+        if lastKidofTI == 0:
+            CILastItemWasFollowedBy.follows = targetItem.id
+        else:
+            CILastItemWasFollowedBy.follows = lastKidofTI
+
+        clickedItem.save()
+        targetItem.save()
+        CILastItemWasFollowedBy.save()
+        
+        ## try to list in follow order, so JavaScript correctly does the DOM inserts
+        updateListIDs=[targetItem.follows, targetItem.id] + TIkidList + [clickedItem.follows, clickedItem.id] + CIkidList + [CILastItemWasFollowedBy.id ] 
+        
+        return(self.updateIDsDecorate(updateListIDs))
+
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# moveDown  (via peers only)
 
     def moveDown(self,clickedItem,  lastItemID):
+        
+        lastKidofCI, CIkidList = sharedMD.findLastKid(clickedItem, lastItemID)
+        
+        if clickedItem.id == lastItemID or lastKidofCI == lastItemID:
+            sharedMD.logThis( "==> Clicked item is last item or last parent, no move:ci, lk, liID "+str(clickedItem.id) +"  " + str(lastKidofCI) + '  ' + str(lastItemID))
+            return([])
+
+        ## Locate the next following item with the same parent as me
+        ## stop completely if you hit an item with the same grandparent as me
+
+        grandParent=Item.objects.get(pk=clickedItem.parent).parent
+        sharedMD.logThis( "  moving among children of "+str(clickedItem.parent))
+
+        haveFoundItem = 'no'
+        indx=Item.objects.get(follows = clickedItem.id)
+        while (indx.id != lastItemID) and (indx.parent != grandParent) and (haveFoundItem == 'no'):
+            if (indx.parent != clickedItem.parent):
+                indx = Item.objects.get(follows = indx.id)
+            else:
+                haveFoundItem = 'yes'
+                targetItem = indx
+
+        if haveFoundItem == 'no':
+            sharedMD.logThis( "  no valid moveDown found ")
+            return([])
+
+
+        sharedMD.logThis( "  TI:  "+str(targetItem.id))
+        # targetItem is the item we aim to move CI and its kids after    
+
+
+        lastKidofTI, TIkidList = sharedMD.findLastKid(targetItem, lastItemID)
+ 
+        #CIfollowed = clickedItem.follows
+        #targetItemFollowedThis = targetItem.follows
+        
+        # move TI
+        targetItem.follows = clickedItem.follows
+
+        # move CI
+        if lastKidofTI == 0:
+            targetLastItemWasFollowedBy = Item.objects.get(follows=targetItem.id)
+
+            clickedItem.follows = targetItem.id
+        else:
+            targetLastItemWasFollowedBy = Item.objects.get(follows=lastKidofTI)
+
+            clickedItem.follows = lastKidofTI
+        
+        # reset CI's last follower
+        if lastKidofCI == 0:
+            targetLastItemWasFollowedBy.follows = clickedItem.id
+        else:
+            targetLastItemWasFollowedBy.follows = lastKidofCI
+
+        clickedItem.save()
+        targetItem.save()
+        targetLastItemWasFollowedBy.save()
+        
+        ## try to list in follow order, so JavaScript correctly does the DOM inserts
+        updateListIDs=[clickedItem.follows, clickedItem.id] + CIkidList + [targetItem.follows, targetItem.id] + TIkidList + [targetLastItemWasFollowedBy.id ] 
+        
+        return(self.updateIDsDecorate(updateListIDs))
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# OLDmoveDown
+
+    def OLDmoveDown(self,clickedItem,  lastItemID):
         
         ### may wish to remodel so it looks like "moveup", which uses the findLastKid method
 
@@ -239,31 +377,34 @@ class dragOps():
 
             indx =  Item.objects.get(follows = kidnapStart)
 
-
+            ######################KIDNAP####################################################
             ## if items following the promotee have CI's original parent, AND we haven't
             ## hit an item with the same parent as the CI's NEW parent, then kidnap it
             ## (i.e., the CI is it's new parent)
             ## No need to fix indent level, kidnapped items remain as before
 
-            sharedMD.logThis("converting subsequent items to children...")
-                    
+            sharedMD.logThis("converting subsequent items to children starting at: "+str(kidnapStart))
+               
             while (indx.id != lastItemID) and (indx.parent != clickedItem.parent):
                 sharedMD.logThis("converting subsequent items to children...")
                 if (indx.parent == CIoriginalParent):
                     indx.parent = clickedItem.id
                     indx.save()
+                    kidList.append(indx.id)
                 indx = Item.objects.get(follows = indx.id)
+            #    
+            ##############################################################################
+                
 
+        #ciKidCount = Item.objects.filter(parent=clickedItem.id).count()
+        #kidsIDs = []
+        #if (ciKidCount > 0):
+        #    kidsIDva = Item.objects.filter(parent=clickedItem.id).values_list('id',flat=True)
 
-        ciKidCount = Item.objects.filter(parent=clickedItem.id).count()
-        kidsIDs = []
-        if (ciKidCount > 0):
-            kidsIDva = Item.objects.filter(parent=clickedItem.id).values_list('id',flat=True)
-
-        kidsIDs += kidsIDva
+        #kidsIDs += kidsIDva
         ## now for refresh
 
-        updateListIDs=[clickedItem.id, clickedItem.follows ] + kidsIDs
+        updateListIDs=[clickedItem.id, clickedItem.follows ] + kidList
         return(self.updateIDsDecorate(updateListIDs))
 
 
@@ -276,16 +417,7 @@ class dragOps():
             sharedMD.logThis( "Can't demote further, item "+str(clickedItem.id))
         else:
             ## if CI and the item following it have same parent, just shift CI parent, and indent CI
-
             lastKidID,kidList=sharedMD.findLastKid(clickedItem, lastItemID)
-
-            ## find the first preceeding item is the same level as the demoted CI,
-            ## and adopt the same parent
-            ##indx=clickedItem;
-            ##while indx.indentLevel != clickedItem.indentLevel+1:
-            ##    indx=Item.objects.get(pk=indx.follows)
-            ##clickedItem.parent=indx.parent
-
 
             # find first preceeding item at same level, make it CI's parent
             indx=Item.objects.get(pk=clickedItem.follows)

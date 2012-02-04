@@ -68,7 +68,8 @@ def getLastItemID(projID):
         return(lastItemIDs[0])
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-#  findLastKid
+#  findLastKid  (includes grandkids)
+
 def findLastKid(itemx, lastItemID):
     ###   look for first item below you with =< level of indent
     kidList=[]
@@ -83,7 +84,8 @@ def findLastKid(itemx, lastItemID):
             prev_id=indx.id  ## need to define, in case we don't enter while block
             lastItemFlag='no'
             while (indx.indentLevel > itemx.indentLevel) and lastItemFlag == 'no':
-                kidList += [indx.id, indx.follows]
+                # 'til 2/4 was: kidList += [indx.id, indx.follows]
+                kidList += [indx.id]
                 prev_id=indx.id
                 if indx.id == lastItemID:
                     lastItemFlag='yes'
@@ -92,6 +94,6 @@ def findLastKid(itemx, lastItemID):
 
             lastKid=prev_id
 
-    logThis("=> findLastKid lastKid="+str(lastKid))
+    logThis("sMDflk=> findLastKid lastKid="+str(lastKid))
     return(lastKid,kidList)
 
