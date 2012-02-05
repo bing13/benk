@@ -24,6 +24,7 @@ class dragOps():
         decoratedItems=[]
         for id in IDlist:
             if id != 0 :
+                sharedMD.logThis( "  deco for: "+ str(id))
                 thisItem=Item.objects.get(pk=id)
                 decoratedItems.append([thisItem.id, thisItem.follows, thisItem.title, thisItem.parent, thisItem.indentLevel, thisItem.priority, thisItem.status, thisItem.HTMLnoteBody, sharedMD.returnMarker(self, thisItem), thisItem.statusText()])
 
@@ -89,6 +90,94 @@ class dragOps():
             sharedMD.logThis("updateListIDs: "+str(updateListIDs))
             #sharedMD.logThis("updateListIDs deco: "+str(self.updateIDsDecorate(updateListIDs)))
             return(self.updateIDsDecorate(updateListIDs))
+
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# drag_peer
+
+    def drag_peer(self,clickedItemID,targetItemID):
+
+        clickedItem = Item.objects.get(pk=clickedItemID)
+        targetItem = Item.objects.get(pk=targetItemID)
+
+        CIfollowed = clickedItem.follows
+
+    
+        lastItemID=sharedMD.getLastItemID(clickedItem.project_id)
+        lastKidofCI, CIkidList = sharedMD.findLastKid(clickedItem, lastItemID)
+        lastKidofTI, TIkidList = sharedMD.findLastKid(targetItem, lastItemID)
+
+        if lastKidofCI != lastItemID:
+            if lastKidofCI != 0:
+                lastCIkidFollower = Item.objects.get(follows=lastKidofCI).id
+            else:
+                lastCIkidFollower = Item.objects.get(follows=clickedItem.id).id
+        else:
+            lastCIkidFollower = -999
+
+        sharedMD.logThis( "==> drag_Peer, CI / TI:"+str(clickedItem.id)+"/"+str(targetItem.id))
+ 
+
+        followOK = False 
+        updateListIDs = []
+        
+        # move CI: follows; note the TI follower for later
+        if lastKidofTI == 0:
+            if targetItem.id != lastItemID:
+                wasFollowingTI = Item.objects.get(follows=targetItem.id)
+                followOK = True
+            clickedItem.follows = targetItem.id
+            
+        else:
+            if lastKidofTI != lastItemID:
+                wasFollowingTI = Item.objects.get(follows=lastKidofTI)
+                followOK = True
+            clickedItem.follows = lastKidofTI
+
+        # move CI: parent
+        clickedItem.parent = targetItem.parent
+
+        # fix CI indentLevel
+        clickedItem.indentLevel = sharedMD.countIndent(clickedItem)
+
+
+        if lastKidofCI == 0:
+            lastCIitem = clickedItem.id
+            
+        else:
+            lastCIitem = lastKidofCI
+
+        # fix the item that followed TI so it follows CI
+        if followOK:
+            wasFollowingTI.follows = lastCIitem
+            wasFollowingTI.save()
+
+        
+        #reset item that originally followed lastCIitem, by stitching to item
+        # that original was followed by CI
+        if lastCIkidFollower != -999:
+            LCIFobj = Item.objects.get(pk=lastCIkidFollower)
+            LCIFobj.follows = CIfollowed
+            updateListIDs =  [ LCIFobj.id ]
+            LCIFobj.save()
+        
+            
+        clickedItem.save()
+        targetItem.save()
+
+        ## fix my kids:
+        for k in CIkidList:
+            ko=Item.objects.get(pk=k)
+            ko.indentLevel = sharedMD.countIndent(ko)
+            ko.save()
+        
+        ## try to list in follow order, so JavaScript correctly does the DOM inserts
+        updateListIDs += [targetItem.follows, targetItem.id] + TIkidList + [clickedItemID, clickedItem.follows] + CIkidList 
+
+                
+        return(self.updateIDsDecorate(updateListIDs))
+
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # moveUp (via peers only)

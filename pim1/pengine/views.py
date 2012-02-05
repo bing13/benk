@@ -1160,11 +1160,10 @@ def xhr_actions(request):
     if actionRequest['ajaxAction'] == 'dragKid':
         refreshThese= drag_move(int(actionRequest['ci']), int(actionRequest['ti']))
 
+    # this is where the shift-drag action should go
     elif actionRequest['ajaxAction']== 'dragPeer':
-        #refreshThese= drag_move(int(actionRequest['ci']), int(actionRequest['ti']))
-        # this is where the shift-drag action should go
-        pass
-    
+        refreshThese= DRAGACTIONS.drag_peer(int(actionRequest['ci']), int(actionRequest['ti']))
+
     elif actionRequest['ajaxAction']== 'moveUp':
         refreshThese=DRAGACTIONS.moveUp(clickedItem,  lastItemID)
 
