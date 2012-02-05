@@ -20,8 +20,8 @@ def countIndent(anItem):
     
     while anItem.parent != 0: 
         indentCount+=1
-        if anItem.parent !=0:
-            anItem=Item.objects.get(pk=anItem.parent)
+        #if anItem.parent !=0:
+        anItem=Item.objects.get(pk=anItem.parent)
             
     return(indentCount)
 

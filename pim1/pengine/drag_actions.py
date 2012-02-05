@@ -1,4 +1,4 @@
-## drag_actions.py
+## drag_actions.py ###################################################
 #
 # actions that work with xhr requests
 #
@@ -103,8 +103,11 @@ class dragOps():
 
         ## Locate the previous item with the same parent as me
         ## stop completely if you hit an item with the same grandparent as me
+        if clickedItem.parent == 0:
+            grandParent = 99999
+        else:
+            grandParent = Item.objects.get(pk=clickedItem.parent).parent
 
-        grandParent=Item.objects.get(pk=clickedItem.parent).parent
         sharedMD.logThis( "  moving among children of "+str(clickedItem.parent))
 
         haveFoundItem = 'no'
@@ -128,33 +131,45 @@ class dragOps():
  
         #CIfollowed = clickedItem.follows
         #targetItemFollowedThis = targetItem.follows
+
+        followOK = False 
+        updateListIDs = []
         
         # move CI
         clickedItem.follows = targetItem.follows
 
         # move TI
         if lastKidofCI == 0:
-            CILastItemWasFollowedBy = Item.objects.get(follows=clickedItem.id)
-
+            if clickedItem.id != lastItemID:
+                CILastItemWasFollowedBy = Item.objects.get(follows=clickedItem.id)
+                followOK = True
+                
             targetItem.follows = clickedItem.id
         else:
-            CILastItemWasFollowedBy = Item.objects.get(follows=lastKidofCI)
+            if lastKidofCI != lastItemID:
+                CILastItemWasFollowedBy = Item.objects.get(follows=lastKidofCI)
+                follokOK = True
 
             targetItem.follows = lastKidofCI
         
         # reset CI's last follower
-        if lastKidofTI == 0:
-            CILastItemWasFollowedBy.follows = targetItem.id
-        else:
-            CILastItemWasFollowedBy.follows = lastKidofTI
+        if followOK:
+            if lastKidofTI == 0:
+                CILastItemWasFollowedBy.follows = targetItem.id
+            else:
+                CILastItemWasFollowedBy.follows = lastKidofTI
+            CILastItemWasFollowedBy.save()
+            updateListIDs = [ CILastItemWasFollowedBy.id ]
 
+            
         clickedItem.save()
         targetItem.save()
-        CILastItemWasFollowedBy.save()
+
         
         ## try to list in follow order, so JavaScript correctly does the DOM inserts
-        updateListIDs=[targetItem.follows, targetItem.id] + TIkidList + [clickedItem.follows, clickedItem.id] + CIkidList + [CILastItemWasFollowedBy.id ] 
-        
+        updateListIDs += [targetItem.follows, targetItem.id] + TIkidList + [clickedItem.follows, clickedItem.id] + CIkidList  
+
+                
         return(self.updateIDsDecorate(updateListIDs))
 
 
@@ -172,8 +187,11 @@ class dragOps():
 
         ## Locate the next following item with the same parent as me
         ## stop completely if you hit an item with the same grandparent as me
-
-        grandParent=Item.objects.get(pk=clickedItem.parent).parent
+        if clickedItem.parent == 0:
+            grandParent = 99999
+        else:
+            grandParent = Item.objects.get(pk=clickedItem.parent).parent
+            
         sharedMD.logThis( "  moving among children of "+str(clickedItem.parent))
 
         haveFoundItem = 'no'
@@ -356,7 +374,8 @@ class dragOps():
 
         if clickedItem.parent ==  0:
             sharedMD.logThis( "CAN'T PROMOTE TOP-LEVEL "+ str(clickedItem.id))
-
+            return([])
+        
         else:
             sharedMD.logThis("Promoting: " +str(clickedItem.id))
 
@@ -370,10 +389,10 @@ class dragOps():
                 ko.indentLevel = sharedMD.countIndent(ko)
                 ko.save()
 
-            if lastKidID != lastItemID:
+            if lastKidID != lastItemID and lastKidID != 0:
                 kidnapStart = lastKidID
             else:
-                kidnapStart = clickedItemID
+                kidnapStart = clickedItem.id
 
             indx =  Item.objects.get(follows = kidnapStart)
 
@@ -389,6 +408,7 @@ class dragOps():
                 sharedMD.logThis("converting subsequent items to children...")
                 if (indx.parent == CIoriginalParent):
                     indx.parent = clickedItem.id
+                    
                     indx.save()
                     kidList.append(indx.id)
                 indx = Item.objects.get(follows = indx.id)
@@ -503,10 +523,6 @@ class dragOps():
 # swapWithArchivePair ##
     
     def swapWithArchivePair(self, clickedItem, lastItemID):
-
-        # routine may work for unarchiving an item as well... perhaps messily...
-
-
 
         ghostsID = clickedItem.id
         ghostFollowsID = clickedItem.follows
