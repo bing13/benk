@@ -237,7 +237,7 @@ class dragOps():
         else:
             if lastKidofCI != lastItemID:
                 CILastItemWasFollowedBy = Item.objects.get(follows=lastKidofCI)
-                follokOK = True
+                followOK = True
 
             targetItem.follows = lastKidofCI
         
@@ -248,7 +248,6 @@ class dragOps():
             else:
                 CILastItemWasFollowedBy.follows = lastKidofTI
             CILastItemWasFollowedBy.save()
-            updateListIDs = [ CILastItemWasFollowedBy.id ]
 
             
         clickedItem.save()
@@ -256,8 +255,9 @@ class dragOps():
 
         
         ## try to list in follow order, so JavaScript correctly does the DOM inserts
-        updateListIDs += [targetItem.follows, targetItem.id] + TIkidList + [clickedItem.follows, clickedItem.id] + CIkidList  
-
+        updateListIDs += [targetItem.follows, targetItem.id] + TIkidList + [clickedItem.follows, clickedItem.id] + CIkidList 
+        if followOK:
+            updateListIDs +=  [ CILastItemWasFollowedBy.id ]
                 
         return(self.updateIDsDecorate(updateListIDs))
 
@@ -310,27 +310,39 @@ class dragOps():
         targetItem.follows = clickedItem.follows
 
         # move CI
+        TLIWFBok = False
+        
         if lastKidofTI == 0:
-            targetLastItemWasFollowedBy = Item.objects.get(follows=targetItem.id)
-
             clickedItem.follows = targetItem.id
-        else:
-            targetLastItemWasFollowedBy = Item.objects.get(follows=lastKidofTI)
 
+            if targetItem.id != lastItemID:
+                targetLastItemWasFollowedBy = Item.objects.get(follows=targetItem.id)
+                TLIWFBok = True
+
+        else:
             clickedItem.follows = lastKidofTI
+            if lastKidofTI != lastItemID:
+                targetLastItemWasFollowedBy = Item.objects.get(follows=lastKidofTI)
+                TLIWFBok = True
+
         
         # reset CI's last follower
-        if lastKidofCI == 0:
-            targetLastItemWasFollowedBy.follows = clickedItem.id
-        else:
-            targetLastItemWasFollowedBy.follows = lastKidofCI
-
+        if TLIWFBok:
+            if lastKidofCI == 0:
+                targetLastItemWasFollowedBy.follows = clickedItem.id
+            else:
+                targetLastItemWasFollowedBy.follows = lastKidofCI
+            targetLastItemWasFollowedBy.save()
+        
         clickedItem.save()
         targetItem.save()
-        targetLastItemWasFollowedBy.save()
+
         
         ## try to list in follow order, so JavaScript correctly does the DOM inserts
-        updateListIDs=[clickedItem.follows, clickedItem.id] + CIkidList + [targetItem.follows, targetItem.id] + TIkidList + [targetLastItemWasFollowedBy.id ] 
+        updateListIDs = [clickedItem.follows, clickedItem.id] + CIkidList + [targetItem.follows, targetItem.id] + TIkidList
+
+        if TLIWFBok:
+            updateListIDs += [targetLastItemWasFollowedBy.id ] 
         
         return(self.updateIDsDecorate(updateListIDs))
 
@@ -763,9 +775,11 @@ class dragOps():
 
  	  <span class="itemdrag actionArrows"><a class="ilid" href="/pim1/list-items/hoist/xxxID">xxxID</a>&nbsp;<a href="/pim1/item/add/xxxID">&harr;</a><a href="#" onClick='actionJax(xxxID,0,"promote")' >&larr;</a><a href="#"  onClick='actionJax(xxxID,0,"demote")'>&rarr;</a><a href="#" onClick='actionJax(xxxID,0,"moveUp")'>&uarr;</a><a href="#" onClick='actionJax(xxxID,0,"moveDown")'>&darr;</a><a href="#" class="archiveLink" onClick='deleteMeFromDOM(xxxID);actionJax(xxxID,0,"archiveThisItem")'>a</a><a href="#" class="fastAddLink" onClick='showFastAddDialog(xxxID)'>f</a></span>
 
-<span class="prio_stat_btns"><a href="#xxxID" onClick='actionJax( xxxID,0,"incPriority")'>+</a><a href="#xxxID" onClick='actionJax( xxxID,0,"decPriority")'>-</a></span><span class="prio priority_"></span><span class="prio_stat_btns"><a href="#xxxID" onClick='actionJax( xxxID,0,"incStatus")'>+</a><a href="#xxxID" onClick='actionJax( xxxID,0,"decStatus")'>-</a></span><span class="itemdrag ti"><span class="indent_0 ">
-<span class="marker">&bull; </span>
-<a href="/pim1/item/edititem/xxxID" class="Next titlelink">xxxitemtitle</a></span></span>
+<span class="prio_stat_btns">
+<span class="js_statprio" onClick='actionJax( xxxID,0,"incPriority")'>+</span><span class="js_statprio" onClick='actionJax( xxxID,0,"decPriority")'>-</span></span><span class="prio"></span><span class="prio_stat_btns"><span class="js_statprio"  onClick='actionJax( xxxID,0,"incStatus")'>+</span><span class="js_statprio"  onClick='actionJax( xxxID,0,"decStatus")'>-</span></span><span class="itemdrag ti"><span class="indent_0 ">
+<span class="marker">&bull; </span><a href="/pim1/item/edititem/xxxID" class="Next titlelink">xxxitemtitle</a></span></span>
+
+
           <span class="itemdrag notecell">
 
  	    <a onClick="toggleNoteBody('notebody_xxxID');" class="noteplus">&oplus;</a>
@@ -782,5 +796,4 @@ class dragOps():
         newItemTemplate=newItemTemplate.replace('xxxNoteBody',newItem.HTMLnoteBody)
 
         return(self.updateIDsDecorate(updateListIDs), newItemTemplate)
-
 

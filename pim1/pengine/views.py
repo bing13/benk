@@ -1281,12 +1281,15 @@ def drag_move(CIid, TIid):
         for kidx in kidList:
             #kidx used to be kidpair[]
             thisKid=Item.objects.get(pk=kidx)
-            thisKid.indentLevel=sharedMD.countIndent(thisKid)
+            thisKid.indentLevel = sharedMD.countIndent(thisKid)
             thisKid.save()
+            sharedMD.logThis(' dm=>kidx / indentL = '+str(thisKid.id)+"/"+str(thisKid.indentLevel))
+
             
             #extend kidItems (formerly kidPair( -- add the info JS refreshItem function will need
             
-            kidItems.append([thisKid.id, thisKid.follows, thisKid.title, thisKid.parent, thisKid.indentLevel, thisKid.priority, thisKid.status, thisKid.HTMLnoteBody, returnMarker(thisKid)], thisKid.statusText())
+            kidItems.append([thisKid.id, thisKid.follows, thisKid.title, thisKid.parent, thisKid.indentLevel, thisKid.priority, thisKid.status, thisKid.HTMLnoteBody, returnMarker(thisKid), thisKid.statusText()])
+            # 2/5/12 thisKid.statusText move inside of array bracket
             #sharedMD.logThis(' => kidPair '+str(thisKid.id)+": "+str(kidPair))
 
     
