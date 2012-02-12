@@ -536,6 +536,7 @@ class dragOps():
 
         if clickedItem.parent==clickedItem.follows:
             sharedMD.logThis( "Can't demote further, item "+str(clickedItem.id))
+            return([])
         else:
             ## if CI and the item following it have same parent, just shift CI parent, and indent CI
             lastKidID,kidList=sharedMD.findLastKid(clickedItem, lastItemID)
@@ -629,16 +630,31 @@ class dragOps():
         ghostFollowsID = clickedItem.follows
         ghostsParentID = clickedItem.parent
 
+        lastKidID,kidList=sharedMD.findLastKid(clickedItem, lastItemID)
+
+
         updateThese = [ghostsParentID, ghostFollowsID]
         
         if clickedItem.id != lastItemID:
             
             followingMe = Item.objects.get(follows=clickedItem.id)
             updateThese.append(followingMe.id)
-            
             followingMe.follows=clickedItem.follows
-            if followingMe.parent==clickedItem.id:
+            
+            if kidList != []:
+                ## fix my kids:
+                for k in kidList:
+                    
+                    ko=Item.objects.get(pk=k)
+                    if ko.parent == clickedItem.id:
+                        ko.parent = clickedItem.parent
+                    ko.indentLevel = sharedMD.countIndent(ko)
+                    sharedMD.logThis("     ko.id="+str(ko.id)+  "ko.parent="+str(ko.parent))
+                    ko.save()
+                    updateThese.append(ko.id)
+            else:
                 followingMe.parent=clickedItem.parent
+ 
             followingMe.save()
 
         # remove entry from Projects, MOVE to archive project
@@ -657,8 +673,6 @@ class dragOps():
         # pull this before the item is deleted
         toUpdate = self.updateIDsDecorate(updateThese ) 
         sharedMD.logThis( "==> archivePair moved item "+str(clickedItem.id)+"  to proj: " +str(clickedItem.project.id)    )
-        # remove item
-        # clickedItem.delete()
         
         return(toUpdate)
 
@@ -769,9 +783,7 @@ class dragOps():
             oldFollower.save()
             updateListIDs.append(oldFollower.id)
 
-
-
-        newItemTemplate= ''' <div class="itemsdrag bhdraggable dropx ui-draggable ui-droppable"  id="xxxID"  onclick="selectMe(this)">
+        newItemTemplate= ''' <div class="itemsdrag bhdraggable dropx ui-draggable ui-droppable"  id="xxxID"  onclick="selectMe(this)" style="position: relative; "     >
 
  	  <span class="itemdrag actionArrows"><a class="ilid" href="/pim1/list-items/hoist/xxxID">xxxID</a>&nbsp;<a href="/pim1/item/add/xxxID">&harr;</a><a href="#" onClick='actionJax(xxxID,0,"promote")' >&larr;</a><a href="#"  onClick='actionJax(xxxID,0,"demote")'>&rarr;</a><a href="#" onClick='actionJax(xxxID,0,"moveUp")'>&uarr;</a><a href="#" onClick='actionJax(xxxID,0,"moveDown")'>&darr;</a><a href="#" class="archiveLink" onClick='deleteMeFromDOM(xxxID);actionJax(xxxID,0,"archiveThisItem")'>a</a><a href="#" class="fastAddLink" onClick='showFastAddDialog(xxxID)'>f</a></span>
 
