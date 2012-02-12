@@ -640,7 +640,8 @@ class dragOps():
             followingMe = Item.objects.get(follows=clickedItem.id)
             updateThese.append(followingMe.id)
             followingMe.follows=clickedItem.follows
-            
+            followingMe.save()
+               
             if kidList != []:
                 ## fix my kids:
                 for k in kidList:
@@ -649,14 +650,12 @@ class dragOps():
                     if ko.parent == clickedItem.id:
                         ko.parent = clickedItem.parent
                     ko.indentLevel = sharedMD.countIndent(ko)
-                    sharedMD.logThis("     ko.id="+str(ko.id)+  "ko.parent="+str(ko.parent))
                     ko.save()
+                    
                     updateThese.append(ko.id)
             else:
                 followingMe.parent=clickedItem.parent
  
-            followingMe.save()
-
         # remove entry from Projects, MOVE to archive project
         # clickedItem.project is a project object, another dot to get id
         projObjc=Project.objects.get(pk=clickedItem.project.id)
