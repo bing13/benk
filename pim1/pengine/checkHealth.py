@@ -120,7 +120,7 @@ def followerCheck():
     # get a list of item IDs
     allIDs=Item.objects.all().order_by('id').values_list('id', flat=True)
 
-    # get a list of all followers
+    # get a list of all followers (includes dupes)
     allFollows=Item.objects.all().order_by('follows').values_list('follows', flat=True)
     
     # values_list doesn't return a normal array, consequently
@@ -132,8 +132,6 @@ def followerCheck():
     multiFollowersIDs = [];
 
     for i in allIDs:
-        #sharedMD.logThis("trying, ID:" +  str(i) + " follows count:"+str( allFollowsArray.count(i)) )
-        #for f in allFollows:
         if ( allFollowsArray.count(i) != 1):
             ix = Item.objects.get(pk=i)
 
@@ -143,15 +141,18 @@ def followerCheck():
                 lastID = 999999;  ## for the bogus item that has no project
             
             if ( ix.id != lastID ):
-                multiFollowersIDs.append(Item.objects.get(pk=i).follows);
-                ##sharedMD.logThis("dup follower, ID:" + str(i))
+                
+                #sharedMD.logThis("     multi: ix.id:"+str(ix.id)+"  afA.c:"+str(allFollowsArray.count(i))+"  xx:"+str(Item.objects.get(pk=i).follows))
+
+                multiFollowersIDs.append(i)
+
 
 
     uniqueMFids=set(multiFollowersIDs)
     sharedMD.logThis("checkhealth uniqueMFids:" + str(uniqueMFids))
     multiFollowersObjs=Item.objects.filter(id__in = uniqueMFids).order_by('id')
     
-    tableBody='<tr class="health_row"><th class="health_cell" colspan="7">%s items with multiple followers</th></tr>' % len(multiFollowersObjs)
+    tableBody='<tr class="health_row"><th class="health_cell" colspan="8">%s items with multiple followers or no followers</th></tr>' % len(multiFollowersObjs)
 
     tableBody += '''<tr class="health_row">
         <th class="health_cell">id </th>
@@ -162,21 +163,33 @@ def followerCheck():
         <th class="health_cell">title</th>
         <th class="health_cell">priority</th>
         <th class="health_cell">status</th>
+        <th class="health_cell">following items</th>
         </tr>'''
 
     if (0 in uniqueMFids ):
         tableBody +='''<tr class="health_row">
-        <td class="health_cell" colspan="7"> item 0 has multiple followers </td>
+        <td class="health_cell" colspan="8"> item 0 has multiple followers </td>
         </tr>''' 
     else:
-    
+
         for p in multiFollowersObjs:
+            pFollowers = ''
             try:
                 projx = p.project.id;
             except:
                 projx = "none";
-            
+
+            followerObjs = Item.objects.filter(follows=p.id)
+            if followerObjs.count() == 0:
+                pFollowers = "---"
+            else:
+                for f in followerObjs:
+                    pFollowers += str(f.id)+','
+
+        
             tableBody += '''<tr class="health_row">
+            <td class="health_cell"><a href="/pim1/admin/pengine/item/%s">%s</a> </td>
+ 
             <td class="health_cell">%s </td>
             <td class="health_cell">%s </td>
             <td class="health_cell">%s </td>
@@ -184,7 +197,7 @@ def followerCheck():
             <td class="health_cell">%s </td>
             <td class="health_cell">%s </td>
             <td class="health_cell">%s </td>
-            </tr>''' % (p.id, projx, p.parent, p.follows, p.title, p.priority, p.status)
+            </tr>''' % (p.id, p.id, projx, p.parent, p.follows, p.title, p.priority, p.status, pFollowers[:-1])
 
 
     multiFollowersOutput = tableBody
