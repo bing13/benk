@@ -203,6 +203,153 @@ def followerCheck():
     multiFollowersOutput = tableBody
 
 
+
+
+    ##########################################################################
+    # parent Not in Tree
+    crazyParentTry = 'newModel'
+    if crazyParentTry == 'oldModel':
+        # create dictionary where index is an item ID, and value is array of
+        # *all* items in it's "follow tree", back to an item ID=0
+
+        parentTree = {}
+        #[5577, 5572, 5571] :
+        sharedMD.logThis("Crazy parent build1 ...")
+
+
+        for anID in allIDs:    
+            sharedMD.logThis(" Crazy Parent tree building for ID = " + str(anID))
+            followx = -999
+            thisID=anID
+            while followx != 0:
+                followx = Item.objects.get(pk=thisID).follows
+                if not parentTree.has_key(anID):
+                    parentTree[anID]=[]
+                parentTree[anID].append(followx)
+                thisID=followx
+
+
+        crazyParentObjects = []
+        for ik in allIDs:
+            #[5577, 5572, 5571] :
+
+            ikObj = Item.objects.get(pk=ik)
+            if ikObj.parent not in parentTree[ik]:
+                crazyParentObjects.append(ikObj)
+
+        tableBody='<tr class="health_row"><th class="health_cell" colspan="8">%s items with parents not in their follow tree</th></tr>' % len(crazyParentObjects)
+
+        tableBody += '''<tr class="health_row">
+            <th class="health_cell">id </th>
+            <th class="health_cell">project </th>
+
+            <th class="health_cell">parent </th>
+            <th class="health_cell">follows</th>
+            <th class="health_cell">title</th>
+            <th class="health_cell">priority</th>
+            <th class="health_cell">status</th>
+            <th class="health_cell">following items</th>
+            </tr>'''
+
+        tableBody +='''<tr class="health_row">
+            <td class="health_cell" colspan="8">  </td>
+            </tr>''' 
+
+        for p in crazyParentObjects:
+
+            #try:
+            #    projx = p.project.id;
+            #except:
+            #    projx = "none";
+
+            tableBody += '''<tr class="health_row">
+                <td class="health_cell"><a href="/pim1/admin/pengine/item/%s">%s</a> </td>
+
+                <td class="health_cell">%s </td>
+                <td class="health_cell">%s </td>
+                <td class="health_cell">%s </td>
+                <td class="health_cell">%s </td>
+                <td class="health_cell">%s </td>
+                <td class="health_cell">%s </td>
+
+                </tr>''' % (p.id, p.id, p.project.id, p.parent, p.follows, p.title, p.priority, p.status)
+
+            
+        crazyParents = tableBody
+
+    # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+
+
+    elif crazyParentTry == 'newModel':
+        ## build a complete tree of the data
+
+        projList = Project.objects.all().order_by('name')
+
+
+        tableBody='<tr class="health_row"><th class="health_cell" colspan="8">items with parents not in their follow tree, or in a different project</th></tr>' 
+
+        tableBody += '''<tr class="health_row">
+            <th class="health_cell">id </th>
+            <th class="health_cell">seq / parent seq </th>
+            <th class="health_cell">project /<br/> parent&nbsp;project </th>
+
+            <th class="health_cell">parent </th>
+            <th class="health_cell">follows</th>
+            <th class="health_cell">title</th>
+            <th class="health_cell">priority</th>
+            <th class="health_cell">status</th>
+  
+            </tr>'''
+
+        
+        for projx in projList:
+            #items2List=Item.objects.filter(project__id=projx.id).order_by( 'follows' )
+            thisItem = Item.objects.filter(project__id=projx.id).get(follows=0)
+            followOrder = [thisItem]
+            contx = True
+            while contx:
+                try:
+                    nextItem = Item.objects.get(follows = thisItem.id)
+                    followOrder.append(nextItem)
+                    thisItem = nextItem
+                except:
+                    contx=False
+
+            
+            ## project-item lookup
+            PIL = {}
+            seq = 0
+            for item in followOrder:
+                PIL[item.id]={ 'seq':seq, 'parent':item.parent, 'follows':item.follows, 'project':item.project }
+                seq += 1;
+            sharedMD.logThis("   ... PIL built, proj:"+str(projx.id))
+
+
+            for ix in followOrder:
+                #sharedMD.logThis("   ...ix.id="+str(ix.id)+"  =>"+str(PIL[ix.id]))
+                if (ix.parent != 0) and ((PIL[ix.id]['seq'] < PIL[ix.parent]['seq']) or PIL[ix.id]['project'] != PIL[ix.parent]['project']):
+
+                    tableBody += '''<tr class="health_row">
+                        <td class="health_cell"><a href="/pim1/admin/pengine/item/%s">%s</a> </td>
+                        <td class="health_cell">%s / %s</td>
+                        <td class="health_cell">%s / <br/> %s</td>
+                        <td class="health_cell">%s </td>
+                        <td class="health_cell">%s </td>
+                        <td class="health_cell">%s </td>
+                        <td class="health_cell">%s </td>
+                        <td class="health_cell">%s </td>
+                        </tr>''' % (ix.id, ix.id, PIL[ix.id]['seq'], PIL[ix.parent]['seq'], ix.project.name,  PIL[ix.parent]['project'],  ix.parent, ix.follows, ix.title, ix.priority, ix.status )
+
+
+        crazyParents = tableBody
+
+    else:
+        
+        crazyParents='''<tr class="health_row"><th class="health_cell">crazy parents </th></tr><tr class="health_row"><td colspan=7>crazy parents under performance review</td></tr>'''
+
+
+
+
     ##########################################################################
     # selfFollowers / lostFollowers
 
@@ -291,6 +438,10 @@ def followerCheck():
     lostFollowersOutput = tableBody
 
 
+
+
+
+
     #############################################################################
 
-    return([zeroFollowersOutput, multiFollowersOutput, selfFollowersOutput, lostFollowersOutput ])
+    return([zeroFollowersOutput, multiFollowersOutput, selfFollowersOutput, lostFollowersOutput, crazyParents ])
