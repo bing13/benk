@@ -6,10 +6,13 @@
 # modules that are shared between views.py and drag_actions.py
 #
 #################################
-from pim1.pengine.models import Item, Project
-import datetime
+from pim1.pengine.models import Item, Project, ProjectSet
+import datetime, os
 
 LOGFILE = '/home/bhadmin13/dx.bernardhecker.com/pim1/benklog1.log'
+LOCKFILE = '/home/bhadmin13/dx.bernardhecker.com/pim1/lockfile1.lock'
+
+
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # countIndent
@@ -96,4 +99,33 @@ def findLastKid(itemx, lastItemID):
 
     logThis("sMDflk=> findLastKid lastKid="+str(lastKid))
     return(lastKid,kidList)
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# createLock
+def createLock(message):
+    LX = open(LOCKFILE, 'a')
+    lockMessage = "Locked: " + datetime.datetime.now().strftime("%Y:%m:%d  %H:%M:%S")+ " :: " + message
+    LX.write(lockMessage)
+    LX.close
+
+    return("lock created")
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# releaseLock
+def releaseLock():
+    os.remove(LOCKFILE)
+    return("lock removed")
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# testLock
+def testLock():
+    if os.access(LOCKFILE, os.F_OK):
+        # hope this isn't a problem if the write op is still open
+        LX = open(LOCKFILE, 'r')
+        msg=LX.readlines()
+        LX.close
+        return(msg)
+
+    else:
+        return("no lock")
 

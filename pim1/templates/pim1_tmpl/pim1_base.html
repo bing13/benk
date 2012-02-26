@@ -96,12 +96,17 @@
 	     </form>
            </div>
 
-	   <div class="errormsg">
-	     {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
-	   </div>
+	 
  
    {% endblock %}
     </div>
+
+  <div id="messageLine">
+    <span class="dj_error">
+    {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+    </span>
+    <span class="xhr_lock_error">&nbsp;</span>
+  </div>
 
     <div id="mcontent">
         {% block content %}{% endblock %}

@@ -1148,12 +1148,20 @@ def xhr_actions(request):
 
     sharedMD.logThis("=====> xhr_actions: ="+message)
 
+    lockStatus = sharedMD.testLock()
+
+    if lockStatus != 'no lock':
+        sharedMD.logThis("         ==> Lock exists:" + str(lockStatus))
+        
+        lockInfo=simplejson.dumps(['LOCKED']+[lockStatus])
+        return HttpResponse(lockInfo, mimetype=mimetypex)
+    
+    sharedMD.createLock( actionRequest['ajaxAction'] )
+
     ## dragmove should also get refactored to the external library
     clickedItem=Item.objects.get(pk=actionRequest['ci'])
 
     lastItemID=sharedMD.getLastItemID(clickedItem.project_id)
-
-    #lastKid,kidList=findLastKid(clickedItem,lastItemID)
 
     ## to dragmove #################################
 
@@ -1204,6 +1212,8 @@ def xhr_actions(request):
     else:
         sharedMD.logThis("+++ERROR+++. Uncaught actionRequest['ajaxAction']:"+actionRequest['ajaxAction'])
         refreshThese=[]
+
+    sharedMD.releaseLock()
 
     #sharedMD.logThis("  REFRESH: "+str(refreshThese))
     if actionRequest['ajaxAction']== 'fastAdd':
