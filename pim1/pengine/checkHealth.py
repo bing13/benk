@@ -303,42 +303,43 @@ def followerCheck():
 
         
         for projx in projList:
-            #items2List=Item.objects.filter(project__id=projx.id).order_by( 'follows' )
-            thisItem = Item.objects.filter(project__id=projx.id).get(follows=0)
-            followOrder = [thisItem]
-            contx = True
-            while contx:
-                try:
-                    nextItem = Item.objects.get(follows = thisItem.id)
-                    followOrder.append(nextItem)
-                    thisItem = nextItem
-                except:
-                    contx=False
-
-            
-            ## project-item lookup
-            PIL = {}
-            seq = 0
-            for item in followOrder:
-                PIL[item.id]={ 'seq':seq, 'parent':item.parent, 'follows':item.follows, 'project':item.project }
-                seq += 1;
-            sharedMD.logThis("   ... PIL built, proj:"+str(projx.id))
+            if projx.id != 3:
+                #items2List=Item.objects.filter(project__id=projx.id).order_by( 'follows' )
+                thisItem = Item.objects.filter(project__id=projx.id).get(follows=0)
+                followOrder = [thisItem]
+                contx = True
+                while contx:
+                    try:
+                        nextItem = Item.objects.get(follows = thisItem.id)
+                        followOrder.append(nextItem)
+                        thisItem = nextItem
+                    except:
+                        contx=False
 
 
-            for ix in followOrder:
-                #sharedMD.logThis("   ...ix.id="+str(ix.id)+"  =>"+str(PIL[ix.id]))
-                if (ix.parent != 0) and ((PIL[ix.id]['seq'] < PIL[ix.parent]['seq']) or PIL[ix.id]['project'] != PIL[ix.parent]['project']):
+                ## project-item lookup
+                PIL = {}
+                seq = 0
+                for item in followOrder:
+                    PIL[item.id]={ 'seq':seq, 'parent':item.parent, 'follows':item.follows, 'project':item.project }
+                    seq += 1;
+                sharedMD.logThis("   ... PIL built, proj:"+str(projx.id))
 
-                    tableBody += '''<tr class="health_row">
-                        <td class="health_cell"><a href="/pim1/admin/pengine/item/%s">%s</a> </td>
-                        <td class="health_cell">%s / %s</td>
-                        <td class="health_cell">%s / <br/> %s</td>
-                        <td class="health_cell">%s </td>
-                        <td class="health_cell">%s </td>
-                        <td class="health_cell">%s </td>
-                        <td class="health_cell">%s </td>
-                        <td class="health_cell">%s </td>
-                        </tr>''' % (ix.id, ix.id, PIL[ix.id]['seq'], PIL[ix.parent]['seq'], ix.project.name,  PIL[ix.parent]['project'],  ix.parent, ix.follows, ix.title, ix.priority, ix.status )
+
+                for ix in followOrder:
+                    #sharedMD.logThis("   ...ix.id="+str(ix.id)+"  =>"+str(PIL[ix.id]))
+                    if (ix.parent != 0) and ((PIL[ix.id]['seq'] < PIL[ix.parent]['seq']) or PIL[ix.id]['project'] != PIL[ix.parent]['project']):
+
+                        tableBody += '''<tr class="health_row">
+                            <td class="health_cell"><a href="/pim1/admin/pengine/item/%s">%s</a> </td>
+                            <td class="health_cell">%s / %s</td>
+                            <td class="health_cell">%s / <br/> %s</td>
+                            <td class="health_cell">%s </td>
+                            <td class="health_cell">%s </td>
+                            <td class="health_cell">%s </td>
+                            <td class="health_cell">%s </td>
+                            <td class="health_cell">%s </td>
+                            </tr>''' % (ix.id, ix.id, PIL[ix.id]['seq'], PIL[ix.parent]['seq'], ix.project.name,  PIL[ix.parent]['project'],  ix.parent, ix.follows, ix.title, ix.priority, ix.status )
 
 
         crazyParents = tableBody

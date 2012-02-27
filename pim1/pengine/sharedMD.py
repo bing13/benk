@@ -107,7 +107,6 @@ def createLock(message):
     lockMessage = "Locked: " + datetime.datetime.now().strftime("%Y:%m:%d  %H:%M:%S")+ " :: " + message
     LX.write(lockMessage)
     LX.close
-
     return("lock created")
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
@@ -125,7 +124,6 @@ def testLock():
         msg=LX.readlines()
         LX.close
         return(msg)
-
     else:
         return("no lock")
 
