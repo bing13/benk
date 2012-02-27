@@ -1093,7 +1093,7 @@ def draglist(request, proj_id):
     projObj = Project.objects.get(pk=proj_id)
 
     titleCrumbBlurb = str(proj_id)+':'+projObj.name+"   ("+projObj.set.name+")"
-
+    totalProjItems = Item.objects.filter(project=proj_id).count()
 
     t = loader.get_template('pim1_tmpl/items/dragdrop.html')
                        
@@ -1105,6 +1105,7 @@ def draglist(request, proj_id):
 
         'nowx':datetime.datetime.now().strftime("%Y/%m/%d  %H:%M:%S"),
         'thisSet':projObj.set.id,
+        'totalProjItems':totalProjItems,
 
 
     })
@@ -1430,20 +1431,20 @@ def backupdata(request):
 
 
 #############################################################################
-def healthcheck(request):
+def healthcheck(request, proj_id):
     current_projs = Project.objects.filter(projType=1).order_by('name')
     current_sets = ProjectSet.objects.all()
 
 
     ### each routine returns an array of tables
     healthTables = []
-    projTable=checkHealth.projectList();
+    projTable=checkHealth.projectList(proj_id);
     healthTables.append(projTable);
 
     itemsNotInProjects=checkHealth.projectlessItems();
     healthTables.append(itemsNotInProjects);
 
-    healthTables +=  checkHealth.followerCheck();
+    healthTables +=  checkHealth.followerCheck(proj_id);
     
 
     return render_to_response('pim1_tmpl/healthcheck.html', {

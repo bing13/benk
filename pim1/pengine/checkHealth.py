@@ -13,9 +13,13 @@ import sharedMD;
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # projectList
 
-def projectList():
-
-    projList = Project.objects.all().order_by('name')
+def projectList(proj_id):
+    if proj_id == 0:
+        projList = Project.objects.all().order_by('name')
+        totalCount = Item.objects.all().count()
+    else:
+        projList = Project.objects.filter(pk=proj_id)
+        totalCount=Item.objects.filter(pk=proj_id).count()
 
     tableBody='<tr class="health_row"><th class="health_cell" colspan=7>project list</th></tr>'
 
@@ -34,17 +38,17 @@ def projectList():
         <td class="health_cell">%s </td>
         <td class="health_cell">%s </td>
         <td class="health_cell">%s </td>
-        <td class="health_cell">%s </td>
+        <td class="health_cell" style="background:%s;">%s </td>
         <td class="health_cell">%s </td>
         <td class="health_cell">%s </td>
         <td class="health_cell health_cell_total">%s </td>
-        </tr>''' % (p.id, p.set, p.name, p.color, p.projType, p.archivePair, Item.objects.filter(project=p.id).count())
+        </tr>''' % (p.id, p.set, p.name, p.color, p.color, p.projType, p.archivePair, Item.objects.filter(project=p.id).count())
 
     tableBody += '''<tr class="health_row">
     <td class="health_cell" colspan="5"></td>
     <td class="health_cell">grand total</td>
     <td class="health_cell health_cell_total">%s </td>
-    </tr>''' % ( Item.objects.all().count())
+    </tr>''' % ( totalCount )
 
         
     
@@ -87,8 +91,14 @@ def projectlessItems():
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # followerCheck 
 
-def followerCheck():
-    zeroFollowers=Item.objects.filter(follows=0)
+def followerCheck(proj_id):
+
+    if proj_id == 0:
+        zeroFollowers=Item.objects.filter(follows=0)
+
+    else:
+        zeroFollowers=Item.objects.filter(follows=0, project=proj_id)
+
 
     tableBody='<tr class="health_row"><th class="health_cell" colspan=6>items that follow item Zero</th></tr>'
 
@@ -117,12 +127,17 @@ def followerCheck():
     ##########################################################################
     # multiFollowers
 
-    # get a list of item IDs
-    allIDs=Item.objects.all().order_by('id').values_list('id', flat=True)
 
-    # get a list of all followers (includes dupes)
-    allFollows=Item.objects.all().order_by('follows').values_list('follows', flat=True)
-    
+    if proj_id == 0:
+        # get a list of item IDs
+        allIDs=Item.objects.all().order_by('id').values_list('id', flat=True)
+        # get a list of all followers (includes dupes)
+        allFollows=Item.objects.all().order_by('follows').values_list('follows', flat=True)
+    else:
+        allIDs=Item.objects.filter(project=proj_id).order_by('id').values_list('id', flat=True)
+        allFollows=Item.objects.filter(project=proj_id).order_by('follows').values_list('follows', flat=True)
+
+        
     # values_list doesn't return a normal array, consequently
     # .count() is buggy, so we trasfer to a normal array
     
@@ -356,8 +371,15 @@ def followerCheck():
 
     selfFollowersObjs=[]
     lostFollowersObjs=[]
+
+    if proj_id == 0:
+        allItems = Item.objects.all().order_by('project')
+    else:
+        allItems = Item.objects.filter(project=proj_id)
+
     
-    allItems = Item.objects.all().order_by('project')
+
+    
     for x in allItems:
         if (x.id == x.follows):
             selfFollowersObjs.append(x)

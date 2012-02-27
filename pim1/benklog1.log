@@ -1400,3 +1400,495 @@
 2012:02:26  22:36:44:: DragMove=> CI saved
 2012:02:26  22:36:44:: dragmove=> targetFollowerID:5576  targetFollower.follows:5601  lastkid:0
 2012:02:26  22:36:44::  => targetFollower.follows=5573
+2012:02:27  06:58:08:: Entering drag list <=========, Project=9
+2012:02:27  06:58:08:: Entering buildDisplayList <=====
+2012:02:27  06:58:09:: ..queries done...
+2012:02:27  06:58:09:: ....parent list built...
+2012:02:27  06:58:09:: .....ix built.....
+2012:02:27  06:58:09:: ...built followhash....
+2012:02:27  06:58:09:: .....displayList built...
+2012:02:27  06:58:09:: Exiting buildDisplayList ========>
+2012:02:27  06:58:15:: Last item ID:4300
+2012:02:27  06:58:15:: Last item ID:4574
+2012:02:27  06:58:15:: Last item ID:4583
+2012:02:27  06:58:15:: Last item ID:4586
+2012:02:27  06:58:15:: Last item ID:4597
+2012:02:27  06:58:16:: Last item ID:4610
+2012:02:27  06:58:16:: Last item ID:4629
+2012:02:27  06:58:16:: Last item ID:4998
+2012:02:27  06:58:16:: Last item ID:5063
+2012:02:27  06:58:16:: Last item ID:5070
+2012:02:27  06:58:16:: Last item ID:5074
+2012:02:27  06:58:16:: Last item ID:5102
+2012:02:27  06:58:16:: Last item ID:5120
+2012:02:27  06:58:16:: Last item ID:5126
+2012:02:27  06:58:16:: Last item ID:5187
+2012:02:27  06:58:16:: Last item ID:5215
+2012:02:27  06:58:16:: Last item ID:5404
+2012:02:27  06:58:16:: Last item ID:5575
+2012:02:27  06:58:16:: Last item ID:5578
+2012:02:27  06:58:16:: Last item ID:5595
+2012:02:27  06:58:16:: Last item ID:5598
+2012:02:27  06:58:16:: Last item ID:5608
+2012:02:27  06:58:16:: checkhealth uniqueMFids:set([])
+2012:02:27  06:58:16::    ... PIL built, proj:21
+2012:02:27  06:58:16::    ... PIL built, proj:22
+2012:02:27  06:58:19::    ... PIL built, proj:5
+2012:02:27  06:58:21::    ... PIL built, proj:15
+2012:02:27  06:58:23::    ... PIL built, proj:1
+2012:02:27  06:58:25::    ... PIL built, proj:11
+2012:02:27  06:58:26::    ... PIL built, proj:2
+2012:02:27  06:58:26::    ... PIL built, proj:12
+2012:02:27  06:58:27::    ... PIL built, proj:19
+2012:02:27  06:58:27::    ... PIL built, proj:20
+2012:02:27  06:58:28::    ... PIL built, proj:6
+2012:02:27  06:58:29::    ... PIL built, proj:13
+2012:02:27  06:58:50::    ... PIL built, proj:7
+2012:02:27  06:58:50::    ... PIL built, proj:14
+2012:02:27  06:58:50::    ... PIL built, proj:9
+2012:02:27  06:58:51::    ... PIL built, proj:16
+2012:02:27  06:58:51::    ... PIL built, proj:18
+2012:02:27  06:58:51::    ... PIL built, proj:4
+2012:02:27  06:58:51::    ... PIL built, proj:10
+2012:02:27  06:58:52::    ... PIL built, proj:8
+2012:02:27  06:58:52::    ... PIL built, proj:17
+2012:02:27  07:34:40:: Entering drag list <=========, Project=9
+2012:02:27  07:34:40:: Entering buildDisplayList <=====
+2012:02:27  07:34:43:: ..queries done...
+2012:02:27  07:34:43:: ....parent list built...
+2012:02:27  07:34:44:: .....ix built.....
+2012:02:27  07:34:44:: ...built followhash....
+2012:02:27  07:34:44:: .....displayList built...
+2012:02:27  07:34:44:: Exiting buildDisplayList ========>
+2012:02:27  07:34:55:: Entering drag list <=========, Project=4
+2012:02:27  07:34:55:: Entering buildDisplayList <=====
+2012:02:27  07:34:55:: ..queries done...
+2012:02:27  07:34:55:: ....parent list built...
+2012:02:27  07:34:56:: .....ix built.....
+2012:02:27  07:34:56:: ...built followhash....
+2012:02:27  07:34:56:: .....displayList built...
+2012:02:27  07:34:56:: Exiting buildDisplayList ========>
+2012:02:27  07:36:57:: Entering drag list <=========, Project=4
+2012:02:27  07:36:57:: Entering buildDisplayList <=====
+2012:02:27  07:36:57:: ..queries done...
+2012:02:27  07:36:57:: ....parent list built...
+2012:02:27  07:36:57:: .....ix built.....
+2012:02:27  07:36:57:: ...built followhash....
+2012:02:27  07:36:57:: .....displayList built...
+2012:02:27  07:36:57:: Exiting buildDisplayList ========>
+2012:02:27  07:37:18:: Entering drag list <=========, Project=4
+2012:02:27  07:37:18:: Entering buildDisplayList <=====
+2012:02:27  07:37:18:: ..queries done...
+2012:02:27  07:37:18:: ....parent list built...
+2012:02:27  07:37:18:: .....ix built.....
+2012:02:27  07:37:18:: ...built followhash....
+2012:02:27  07:37:18:: .....displayList built...
+2012:02:27  07:37:18:: Exiting buildDisplayList ========>
+2012:02:27  07:46:15:: Entering itemlist <==============ProjID =4. 
+2012:02:27  07:46:15:: Entering buildDisplayList <=====
+2012:02:27  07:46:15:: ..queries done...
+2012:02:27  07:46:15:: ....parent list built...
+2012:02:27  07:46:16:: .....ix built.....
+2012:02:27  07:46:16:: ...built followhash....
+2012:02:27  07:46:16:: .....displayList built...
+2012:02:27  07:46:16:: Exiting buildDisplayList ========>
+2012:02:27  07:46:32:: Entering buildDisplayList <=====
+2012:02:27  07:46:32:: ..queries done...
+2012:02:27  07:46:34:: ....parent list built...
+2012:02:27  07:46:45:: Entering buildDisplayList <=====
+2012:02:27  07:46:45:: ..queries done...
+2012:02:27  07:46:46:: ....parent list built...
+2012:02:27  07:46:51:: .....ix built.....
+2012:02:27  07:46:51:: Exiting buildDisplayList ========>
+2012:02:27  07:47:00:: .....ix built.....
+2012:02:27  07:47:00:: Exiting buildDisplayList ========>
+2012:02:27  07:47:29:: Entering buildDisplayList <=====
+2012:02:27  07:47:29:: ..queries done...
+2012:02:27  07:47:31:: ....parent list built...
+2012:02:27  07:47:41:: Entering drag list <=========, Project=4
+2012:02:27  07:47:41:: Entering buildDisplayList <=====
+2012:02:27  07:47:41:: ..queries done...
+2012:02:27  07:47:41:: ....parent list built...
+2012:02:27  07:47:41:: .....ix built.....
+2012:02:27  07:47:41:: ...built followhash....
+2012:02:27  07:47:41:: .....displayList built...
+2012:02:27  07:47:41:: Exiting buildDisplayList ========>
+2012:02:27  07:47:46:: Entering buildDisplayList <=====
+2012:02:27  07:47:46:: ..queries done...
+2012:02:27  07:47:48:: ....parent list built...
+2012:02:27  07:47:54:: .....ix built.....
+2012:02:27  07:47:54:: Exiting buildDisplayList ========>
+2012:02:27  07:48:12:: .....ix built.....
+2012:02:27  07:48:12:: Exiting buildDisplayList ========>
+2012:02:27  07:48:57:: Entering buildDisplayList <=====
+2012:02:27  07:48:57:: ..queries done...
+2012:02:27  07:48:57:: ....parent list built...
+2012:02:27  07:48:57:: .....ix built.....
+2012:02:27  07:48:57:: Exiting buildDisplayList ========>
+2012:02:27  07:49:01:: Entering buildDisplayList <=====
+2012:02:27  07:49:01:: ..queries done...
+2012:02:27  07:49:01:: ....parent list built...
+2012:02:27  07:49:01:: .....ix built.....
+2012:02:27  07:49:01:: Exiting buildDisplayList ========>
+2012:02:27  07:50:54:: Last item ID:4300
+2012:02:27  07:50:54:: Last item ID:4574
+2012:02:27  07:50:54:: Last item ID:4583
+2012:02:27  07:50:54:: Last item ID:4586
+2012:02:27  07:50:54:: Last item ID:4597
+2012:02:27  07:50:54:: Last item ID:4610
+2012:02:27  07:50:55:: Last item ID:4629
+2012:02:27  07:50:55:: Last item ID:4998
+2012:02:27  07:50:55:: Last item ID:5063
+2012:02:27  07:50:55:: Last item ID:5070
+2012:02:27  07:50:55:: Last item ID:5074
+2012:02:27  07:50:55:: Last item ID:5102
+2012:02:27  07:50:55:: Last item ID:5120
+2012:02:27  07:50:55:: Last item ID:5126
+2012:02:27  07:50:55:: Last item ID:5187
+2012:02:27  07:50:55:: Last item ID:5215
+2012:02:27  07:50:55:: Last item ID:5404
+2012:02:27  07:50:56:: Last item ID:5575
+2012:02:27  07:50:56:: Last item ID:5578
+2012:02:27  07:50:56:: Last item ID:5595
+2012:02:27  07:50:56:: Last item ID:5598
+2012:02:27  07:50:56:: Last item ID:5608
+2012:02:27  07:50:56:: checkhealth uniqueMFids:set([])
+2012:02:27  07:50:56::    ... PIL built, proj:21
+2012:02:27  07:50:56::    ... PIL built, proj:22
+2012:02:27  07:50:57::    ... PIL built, proj:5
+2012:02:27  07:50:57::    ... PIL built, proj:15
+2012:02:27  07:50:57::    ... PIL built, proj:1
+2012:02:27  07:50:58::    ... PIL built, proj:11
+2012:02:27  07:50:58::    ... PIL built, proj:2
+2012:02:27  07:50:58::    ... PIL built, proj:12
+2012:02:27  07:50:58::    ... PIL built, proj:19
+2012:02:27  07:50:58::    ... PIL built, proj:20
+2012:02:27  07:50:59::    ... PIL built, proj:6
+2012:02:27  07:50:59::    ... PIL built, proj:13
+2012:02:27  07:51:06::    ... PIL built, proj:7
+2012:02:27  07:51:06::    ... PIL built, proj:14
+2012:02:27  07:51:06::    ... PIL built, proj:9
+2012:02:27  07:51:07::    ... PIL built, proj:16
+2012:02:27  07:51:07::    ... PIL built, proj:18
+2012:02:27  07:51:07::    ... PIL built, proj:4
+2012:02:27  07:51:07::    ... PIL built, proj:10
+2012:02:27  07:51:07::    ... PIL built, proj:8
+2012:02:27  07:51:08::    ... PIL built, proj:17
+2012:02:27  07:53:34:: Entering drag list <=========, Project=9
+2012:02:27  07:53:34:: Entering buildDisplayList <=====
+2012:02:27  07:53:34:: ..queries done...
+2012:02:27  07:53:34:: ....parent list built...
+2012:02:27  07:53:34:: .....ix built.....
+2012:02:27  07:53:34:: ...built followhash....
+2012:02:27  07:53:34:: .....displayList built...
+2012:02:27  07:53:34:: Exiting buildDisplayList ========>
+2012:02:27  07:55:04:: Last item ID:4300
+2012:02:27  07:55:04:: Last item ID:4574
+2012:02:27  07:55:04:: Last item ID:4583
+2012:02:27  07:55:04:: Last item ID:4586
+2012:02:27  07:55:04:: Last item ID:4597
+2012:02:27  07:55:04:: Last item ID:4610
+2012:02:27  07:55:05:: Last item ID:4629
+2012:02:27  07:55:05:: Last item ID:4998
+2012:02:27  07:55:05:: Last item ID:5063
+2012:02:27  07:55:05:: Last item ID:5070
+2012:02:27  07:55:05:: Last item ID:5074
+2012:02:27  07:55:05:: Last item ID:5102
+2012:02:27  07:55:05:: Last item ID:5120
+2012:02:27  07:55:05:: Last item ID:5126
+2012:02:27  07:55:05:: Last item ID:5187
+2012:02:27  07:55:05:: Last item ID:5215
+2012:02:27  07:55:05:: Last item ID:5404
+2012:02:27  07:55:05:: Last item ID:5575
+2012:02:27  07:55:05:: Last item ID:5578
+2012:02:27  07:55:05:: Last item ID:5595
+2012:02:27  07:55:05:: Last item ID:5598
+2012:02:27  07:55:05:: Last item ID:5608
+2012:02:27  07:55:05:: checkhealth uniqueMFids:set([])
+2012:02:27  07:55:05::    ... PIL built, proj:21
+2012:02:27  07:55:06::    ... PIL built, proj:22
+2012:02:27  07:55:06::    ... PIL built, proj:5
+2012:02:27  07:55:08::    ... PIL built, proj:15
+2012:02:27  07:55:08::    ... PIL built, proj:1
+2012:02:27  07:55:09::    ... PIL built, proj:11
+2012:02:27  07:55:09::    ... PIL built, proj:2
+2012:02:27  07:55:09::    ... PIL built, proj:12
+2012:02:27  07:55:09::    ... PIL built, proj:19
+2012:02:27  07:55:09::    ... PIL built, proj:20
+2012:02:27  07:55:09::    ... PIL built, proj:6
+2012:02:27  07:55:10::    ... PIL built, proj:13
+2012:02:27  07:55:17::    ... PIL built, proj:7
+2012:02:27  07:55:17::    ... PIL built, proj:14
+2012:02:27  07:55:18::    ... PIL built, proj:9
+2012:02:27  07:55:18::    ... PIL built, proj:16
+2012:02:27  07:55:18::    ... PIL built, proj:18
+2012:02:27  07:55:19::    ... PIL built, proj:4
+2012:02:27  07:55:19::    ... PIL built, proj:10
+2012:02:27  07:55:19::    ... PIL built, proj:8
+2012:02:27  07:55:19::    ... PIL built, proj:17
+2012:02:27  08:39:23:: Last item ID:5578
+2012:02:27  08:39:23:: checkhealth uniqueMFids:set([])
+2012:02:27  08:39:23::    ... PIL built, proj:21
+2012:02:27  08:39:23::    ... PIL built, proj:22
+2012:02:27  08:39:24::    ... PIL built, proj:5
+2012:02:27  08:39:24::    ... PIL built, proj:15
+2012:02:27  08:39:24::    ... PIL built, proj:1
+2012:02:27  08:39:25::    ... PIL built, proj:11
+2012:02:27  08:39:25::    ... PIL built, proj:2
+2012:02:27  08:39:25::    ... PIL built, proj:12
+2012:02:27  08:39:25::    ... PIL built, proj:19
+2012:02:27  08:39:25::    ... PIL built, proj:20
+2012:02:27  08:39:26::    ... PIL built, proj:6
+2012:02:27  08:39:27::    ... PIL built, proj:13
+2012:02:27  08:39:34::    ... PIL built, proj:7
+2012:02:27  08:39:34::    ... PIL built, proj:14
+2012:02:27  08:39:34::    ... PIL built, proj:9
+2012:02:27  08:39:34::    ... PIL built, proj:16
+2012:02:27  08:39:34::    ... PIL built, proj:18
+2012:02:27  08:39:34::    ... PIL built, proj:4
+2012:02:27  08:39:34::    ... PIL built, proj:10
+2012:02:27  08:39:34::    ... PIL built, proj:8
+2012:02:27  08:39:34::    ... PIL built, proj:17
+2012:02:27  08:40:22:: Entering drag list <=========, Project=4
+2012:02:27  08:40:22:: Entering buildDisplayList <=====
+2012:02:27  08:40:22:: ..queries done...
+2012:02:27  08:40:22:: ....parent list built...
+2012:02:27  08:40:22:: .....ix built.....
+2012:02:27  08:40:22:: ...built followhash....
+2012:02:27  08:40:22:: .....displayList built...
+2012:02:27  08:40:22:: Exiting buildDisplayList ========>
+2012:02:27  08:40:33:: Entering xhr_actions...
+2012:02:27  08:40:33:: =====> xhr_actions: =AJAX request, ci=5576  ti='5572'  ajaxAction: dragKid
+2012:02:27  08:40:33:: Last item ID:5578
+2012:02:27  08:40:33::  ====dragmove=> CIid:TIid    5576:5572
+2012:02:27  08:40:33:: Last item ID:5578
+2012:02:27  08:40:33:: sMDflk=> findLastKid lastKid=0
+2012:02:27  08:40:33:: DragMove=> CI saved
+2012:02:27  08:40:33:: dragmove=> targetFollowerID:5577  targetFollower.follows:5572  lastkid:0
+2012:02:27  08:40:33::  => targetFollower.follows=5576
+2012:02:27  08:41:24:: Entering xhr_actions...
+2012:02:27  08:41:24:: =====> xhr_actions: =AJAX request, ci=5576  ti='5622'  ajaxAction: dragPeer
+2012:02:27  08:41:24:: Last item ID:5578
+2012:02:27  08:41:24:: Last item ID:5578
+2012:02:27  08:41:24:: sMDflk=> findLastKid lastKid=0
+2012:02:27  08:41:24:: sMDflk=> findLastKid lastKid=0
+2012:02:27  08:41:24:: ==> drag_Peer, CI / TI:5576/5622
+2012:02:27  08:41:24::   deco for: 5577
+2012:02:27  08:41:24::   deco for: 5602
+2012:02:27  08:41:24::   deco for: 5622
+2012:02:27  08:41:24::   deco for: 5576
+2012:02:27  08:41:24::   deco for: 5622
+2012:02:27  08:41:33:: Entering xhr_actions...
+2012:02:27  08:41:33:: =====> xhr_actions: =AJAX request, ci=5576  ti='0'  ajaxAction: moveUp
+2012:02:27  08:41:33:: Last item ID:5578
+2012:02:27  08:41:33:: sMDflk=> findLastKid lastKid=0
+2012:02:27  08:41:33::   moving among children of 5602
+2012:02:27  08:41:33::   TI:  5622
+2012:02:27  08:41:33:: sMDflk=> findLastKid lastKid=0
+2012:02:27  08:41:33::   deco for: 5576
+2012:02:27  08:41:33::   deco for: 5622
+2012:02:27  08:41:33::   deco for: 5602
+2012:02:27  08:41:33::   deco for: 5576
+2012:02:27  08:41:33::   deco for: 5603
+2012:02:27  08:41:57:: Entering xhr_actions...
+2012:02:27  08:41:57:: =====> xhr_actions: =AJAX request, ci=5574  ti='0'  ajaxAction: fastAdd
+2012:02:27  08:41:57:: Last item ID:5578
+2012:02:27  08:41:57:: fastAdd for 5574  Had trouble clicking on that one.
+2012:02:27  08:41:57::   deco for: 5623
+2012:02:27  08:41:57::   deco for: 5574
+2012:02:27  08:41:57::   deco for: 5573
+2012:02:27  08:41:58::   deco for: 5572
+2012:02:27  08:47:05:: Last item ID:5608
+2012:02:27  08:47:05:: checkhealth uniqueMFids:set([])
+2012:02:27  08:47:05::    ... PIL built, proj:21
+2012:02:27  08:47:05::    ... PIL built, proj:22
+2012:02:27  08:47:06::    ... PIL built, proj:5
+2012:02:27  08:47:07::    ... PIL built, proj:15
+2012:02:27  08:47:08::    ... PIL built, proj:1
+2012:02:27  08:47:09::    ... PIL built, proj:11
+2012:02:27  08:47:09::    ... PIL built, proj:2
+2012:02:27  08:47:10::    ... PIL built, proj:12
+2012:02:27  08:47:10::    ... PIL built, proj:19
+2012:02:27  08:47:11::    ... PIL built, proj:20
+2012:02:27  08:47:11::    ... PIL built, proj:6
+2012:02:27  08:47:12::    ... PIL built, proj:13
+2012:02:27  08:47:23::    ... PIL built, proj:7
+2012:02:27  08:47:23::    ... PIL built, proj:14
+2012:02:27  08:47:23::    ... PIL built, proj:9
+2012:02:27  08:47:23:: Entering drag list <=========, Project=5
+2012:02:27  08:47:23:: Entering buildDisplayList <=====
+2012:02:27  08:47:23:: ..queries done...
+2012:02:27  08:47:23:: ....parent list built...
+2012:02:27  08:47:23:: .....ix built.....
+2012:02:27  08:47:23:: ...built followhash....
+2012:02:27  08:47:23:: .....displayList built...
+2012:02:27  08:47:23:: Exiting buildDisplayList ========>
+2012:02:27  08:47:23::    ... PIL built, proj:16
+2012:02:27  08:47:24::    ... PIL built, proj:18
+2012:02:27  08:47:24::    ... PIL built, proj:4
+2012:02:27  08:47:24::    ... PIL built, proj:10
+2012:02:27  08:47:25::    ... PIL built, proj:8
+2012:02:27  08:47:25::    ... PIL built, proj:17
+2012:02:27  08:47:58:: Last item ID:5404
+2012:02:27  08:47:58:: checkhealth uniqueMFids:set([])
+2012:02:27  08:47:58::    ... PIL built, proj:21
+2012:02:27  08:47:58::    ... PIL built, proj:22
+2012:02:27  08:47:58::    ... PIL built, proj:5
+2012:02:27  08:47:59::    ... PIL built, proj:15
+2012:02:27  08:47:59::    ... PIL built, proj:1
+2012:02:27  08:47:59::    ... PIL built, proj:11
+2012:02:27  08:48:00::    ... PIL built, proj:2
+2012:02:27  08:48:00::    ... PIL built, proj:12
+2012:02:27  08:48:00::    ... PIL built, proj:19
+2012:02:27  08:48:00::    ... PIL built, proj:20
+2012:02:27  08:48:01::    ... PIL built, proj:6
+2012:02:27  08:48:02::    ... PIL built, proj:13
+2012:02:27  08:48:08::    ... PIL built, proj:7
+2012:02:27  08:48:08::    ... PIL built, proj:14
+2012:02:27  08:48:08::    ... PIL built, proj:9
+2012:02:27  08:48:09::    ... PIL built, proj:16
+2012:02:27  08:48:09::    ... PIL built, proj:18
+2012:02:27  08:48:09::    ... PIL built, proj:4
+2012:02:27  08:48:09::    ... PIL built, proj:10
+2012:02:27  08:48:09::    ... PIL built, proj:8
+2012:02:27  08:48:09::    ... PIL built, proj:17
+2012:02:27  08:48:54:: Formset generated, pItem=5402
+2012:02:27  08:49:09:: Last item ID:5608
+2012:02:27  08:49:09:: checkhealth uniqueMFids:set([])
+2012:02:27  08:49:09::    ... PIL built, proj:21
+2012:02:27  08:49:09::    ... PIL built, proj:22
+2012:02:27  08:49:10::    ... PIL built, proj:5
+2012:02:27  08:49:11::    ... PIL built, proj:15
+2012:02:27  08:49:11::    ... PIL built, proj:1
+2012:02:27  08:49:11::    ... PIL built, proj:11
+2012:02:27  08:49:12::    ... PIL built, proj:2
+2012:02:27  08:49:12::    ... PIL built, proj:12
+2012:02:27  08:49:12::    ... PIL built, proj:19
+2012:02:27  08:49:12::    ... PIL built, proj:20
+2012:02:27  08:49:13::    ... PIL built, proj:6
+2012:02:27  08:49:14::    ... PIL built, proj:13
+2012:02:27  08:49:20::    ... PIL built, proj:7
+2012:02:27  08:49:20::    ... PIL built, proj:14
+2012:02:27  08:49:20::    ... PIL built, proj:9
+2012:02:27  08:49:21::    ... PIL built, proj:16
+2012:02:27  08:49:21::    ... PIL built, proj:18
+2012:02:27  08:49:21::    ... PIL built, proj:4
+2012:02:27  08:49:21::    ... PIL built, proj:10
+2012:02:27  08:49:21::    ... PIL built, proj:8
+2012:02:27  08:49:21::    ... PIL built, proj:17
+2012:02:27  08:50:01:: Last item ID:5578
+2012:02:27  08:50:01:: checkhealth uniqueMFids:set([])
+2012:02:27  08:50:01::    ... PIL built, proj:21
+2012:02:27  08:50:01::    ... PIL built, proj:22
+2012:02:27  08:50:01::    ... PIL built, proj:5
+2012:02:27  08:50:02::    ... PIL built, proj:15
+2012:02:27  08:50:03::    ... PIL built, proj:1
+2012:02:27  08:50:04::    ... PIL built, proj:11
+2012:02:27  08:50:04::    ... PIL built, proj:2
+2012:02:27  08:50:04::    ... PIL built, proj:12
+2012:02:27  08:50:05::    ... PIL built, proj:19
+2012:02:27  08:50:05::    ... PIL built, proj:20
+2012:02:27  08:50:05::    ... PIL built, proj:6
+2012:02:27  08:50:05::    ... PIL built, proj:13
+2012:02:27  08:50:12::    ... PIL built, proj:7
+2012:02:27  08:50:12::    ... PIL built, proj:14
+2012:02:27  08:50:13::    ... PIL built, proj:9
+2012:02:27  08:50:13::    ... PIL built, proj:16
+2012:02:27  08:50:13::    ... PIL built, proj:18
+2012:02:27  08:50:14::    ... PIL built, proj:4
+2012:02:27  08:50:14::    ... PIL built, proj:10
+2012:02:27  08:50:14::    ... PIL built, proj:8
+2012:02:27  08:50:14::    ... PIL built, proj:17
+2012:02:27  09:00:12:: Last item ID:5404
+2012:02:27  09:00:12:: checkhealth uniqueMFids:set([])
+2012:02:27  09:00:12::    ... PIL built, proj:21
+2012:02:27  09:00:13::    ... PIL built, proj:22
+2012:02:27  09:00:13::    ... PIL built, proj:5
+2012:02:27  09:00:14::    ... PIL built, proj:15
+2012:02:27  09:00:14::    ... PIL built, proj:1
+2012:02:27  09:00:14::    ... PIL built, proj:11
+2012:02:27  09:00:15::    ... PIL built, proj:2
+2012:02:27  09:00:15::    ... PIL built, proj:12
+2012:02:27  09:00:15::    ... PIL built, proj:19
+2012:02:27  09:00:15::    ... PIL built, proj:20
+2012:02:27  09:00:15::    ... PIL built, proj:6
+2012:02:27  09:00:16::    ... PIL built, proj:13
+2012:02:27  09:00:21::    ... PIL built, proj:7
+2012:02:27  09:00:21::    ... PIL built, proj:14
+2012:02:27  09:00:22::    ... PIL built, proj:9
+2012:02:27  09:00:22::    ... PIL built, proj:16
+2012:02:27  09:00:22::    ... PIL built, proj:18
+2012:02:27  09:00:22::    ... PIL built, proj:4
+2012:02:27  09:00:22::    ... PIL built, proj:10
+2012:02:27  09:00:22::    ... PIL built, proj:8
+2012:02:27  09:00:22::    ... PIL built, proj:17
+2012:02:27  09:01:34:: Last item ID:5608
+2012:02:27  09:01:34:: checkhealth uniqueMFids:set([])
+2012:02:27  09:01:34::    ... PIL built, proj:21
+2012:02:27  09:01:34::    ... PIL built, proj:22
+2012:02:27  09:01:35::    ... PIL built, proj:5
+2012:02:27  09:01:35::    ... PIL built, proj:15
+2012:02:27  09:01:36::    ... PIL built, proj:1
+2012:02:27  09:01:37::    ... PIL built, proj:11
+2012:02:27  09:01:37::    ... PIL built, proj:2
+2012:02:27  09:01:37::    ... PIL built, proj:12
+2012:02:27  09:01:37::    ... PIL built, proj:19
+2012:02:27  09:01:37::    ... PIL built, proj:20
+2012:02:27  09:01:38::    ... PIL built, proj:6
+2012:02:27  09:01:38::    ... PIL built, proj:13
+2012:02:27  09:01:46::    ... PIL built, proj:7
+2012:02:27  09:01:46::    ... PIL built, proj:14
+2012:02:27  09:01:46::    ... PIL built, proj:9
+2012:02:27  09:01:47::    ... PIL built, proj:16
+2012:02:27  09:01:47::    ... PIL built, proj:18
+2012:02:27  09:01:47::    ... PIL built, proj:4
+2012:02:27  09:01:47::    ... PIL built, proj:10
+2012:02:27  09:01:47::    ... PIL built, proj:8
+2012:02:27  09:01:47::    ... PIL built, proj:17
+2012:02:27  09:04:54:: Entering xhr_actions...
+2012:02:27  09:04:54:: =====> xhr_actions: =AJAX request, ci=5395  ti='0'  ajaxAction: fastAdd
+2012:02:27  09:04:54:: Last item ID:4574
+2012:02:27  09:04:54:: fastAdd for 5395  Beware using field "project" with the Projects table
+2012:02:27  09:04:55::   deco for: 5624
+2012:02:27  09:04:55::   deco for: 5395
+2012:02:27  09:04:55::   deco for: 4621
+2012:02:27  09:04:55::   deco for: 4574
+2012:02:27  09:09:46:: Entering drag list <=========, Project=5
+2012:02:27  09:09:46:: Entering buildDisplayList <=====
+2012:02:27  09:09:46:: ..queries done...
+2012:02:27  09:09:46:: ....parent list built...
+2012:02:27  09:09:46:: .....ix built.....
+2012:02:27  09:09:46:: ...built followhash....
+2012:02:27  09:09:46:: .....displayList built...
+2012:02:27  09:09:46:: Exiting buildDisplayList ========>
+2012:02:27  09:10:38:: Entering drag list <=========, Project=5
+2012:02:27  09:10:38:: Entering buildDisplayList <=====
+2012:02:27  09:10:38:: ..queries done...
+2012:02:27  09:10:38:: ....parent list built...
+2012:02:27  09:10:38:: .....ix built.....
+2012:02:27  09:10:38:: ...built followhash....
+2012:02:27  09:10:38:: .....displayList built...
+2012:02:27  09:10:38:: Exiting buildDisplayList ========>
+2012:02:27  09:10:46:: Last item ID:4574
+2012:02:27  09:10:46:: checkhealth uniqueMFids:set([])
+2012:02:27  09:10:46::    ... PIL built, proj:21
+2012:02:27  09:10:46::    ... PIL built, proj:22
+2012:02:27  09:10:48::    ... PIL built, proj:5
+2012:02:27  09:10:50::    ... PIL built, proj:15
+2012:02:27  09:10:51::    ... PIL built, proj:1
+2012:02:27  09:10:51::    ... PIL built, proj:11
+2012:02:27  09:10:52::    ... PIL built, proj:2
+2012:02:27  09:10:52::    ... PIL built, proj:12
+2012:02:27  09:10:52::    ... PIL built, proj:19
+2012:02:27  09:10:52::    ... PIL built, proj:20
+2012:02:27  09:10:53::    ... PIL built, proj:6
+2012:02:27  09:10:53::    ... PIL built, proj:13
+2012:02:27  09:11:04::    ... PIL built, proj:7
+2012:02:27  09:11:04::    ... PIL built, proj:14
+2012:02:27  09:11:04::    ... PIL built, proj:9
+2012:02:27  09:11:05::    ... PIL built, proj:16
+2012:02:27  09:11:05::    ... PIL built, proj:18
+2012:02:27  09:11:05::    ... PIL built, proj:4
+2012:02:27  09:11:05::    ... PIL built, proj:10
+2012:02:27  09:11:06::    ... PIL built, proj:8
+2012:02:27  09:11:06::    ... PIL built, proj:17

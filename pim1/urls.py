@@ -46,7 +46,7 @@ urlpatterns = patterns('',
     url(r'^pim1/item/gooUpdate$','pim1.pengine.views.gooTaskUpdate'),
     url(r'^pim1/xhr_test$','pim1.pengine.views.xhr_test'),
     url(r'^pim1/xhr_actions$','pim1.pengine.views.xhr_actions'),
-    url(r'^pim1/healthcheck$','pim1.pengine.views.healthcheck'),
+    url(r'^pim1/healthcheck/(?P<proj_id>\d+)/$','pim1.pengine.views.healthcheck'),
 
                    
 )
