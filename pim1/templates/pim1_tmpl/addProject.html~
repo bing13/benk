@@ -1,0 +1,45 @@
+{% extends "pim1_tmpl/pim1_base.html" %}
+
+
+{% block xxprojlist %}
+<li><a href="">place holder 1</a></li>
+<li><a href="">place holder 2</a></li>
+{% endblock %}
+
+
+{% block content %}
+<div class="homecontent">
+
+
+<h4>add a project</h4>
+
+<p>create a new project, and it's archive pair.</p>
+
+<form action="/pim1/addproject/" method="post">
+{% csrf_token %}
+{{ form.as_p }}
+<input type="submit" value="Submit" />
+</form>
+
+
+<div class= "backUpFileList">
+{% for cx in projlist %}
+
+{{ cx.id }} - {{cx.name}} : {{cx.set}}
+
+{% endfor %}
+
+</div>
+
+
+
+
+
+<hr/>
+
+
+
+</div>
+
+{% endblock %}
+ 

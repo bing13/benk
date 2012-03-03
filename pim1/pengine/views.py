@@ -51,6 +51,21 @@ class ImportForm(forms.Form):
 class ssearchForm(forms.Form):
     searchfx=forms.CharField(max_length=200)
 
+class addProjectForm(forms.Form):
+    newProjectName =  forms.CharField(max_length = 120)
+    newProjectColor = forms.CharField(max_length = 8)
+
+    newProjProjectSet = forms.ModelChoiceField(queryset = ProjectSet.objects.all() )
+    # https://docs.djangoproject.com/en/dev/ref/forms/fields/#modelchoicefield
+    
+    #newProjProjectSet = forms.CharField(max_length=120, \
+    #                    widget=forms.Select(choices=PROJSET_CHOICES));
+
+    #    title = forms.CharField(max_length=3,
+    #            widget=forms.Select(choices=TITLE_CHOICES))
+
+
+
 DRAGACTIONS=drag_actions.dragOps();
 
 @csrf_protect
@@ -620,7 +635,7 @@ def gridview(request):
                 cellItems.append(co.id)
 
                 
-        dx =   buildDisplayList(current_projs,thisProject.id, 'provided',0,cellItems[:ITEMS_PER_CELL])
+        dx =   buildDisplayList(current_projs,thisProject.id, 'provided', 0, cellItems[:ITEMS_PER_CELL])
         displayList = displayList + dx
 
 
@@ -1456,4 +1471,108 @@ def healthcheck(request, proj_id):
         'nowx':datetime.datetime.now().strftime("%Y/%m/%d  %H:%M:%S")
         }, context_instance=RequestContext(request) )
 
+
+###########################################################################
+
+
+def createProject(request):
+
+    current_projs = Project.objects.filter(projType=1).order_by('name')
+    current_sets = ProjectSet.objects.all()
+
+    c = {}
+    c.update(csrf(request))	  
+ 
+    if request.method == 'POST': # If the form has been posted...
+        form = addProjectForm(request.POST) # A form bound to the POST data
+        if form.is_valid(): # All validation rules pass
+            # Process the data in form.cleaned_data
+
+            newProjectName = form.cleaned_data['newProjectName']
+            newProjectSet = form.cleaned_data['newProjProjectSet']
+            newProjectColor = form.cleaned_data['newProjectColor']
+
+            sharedMD.logThis( "creating project: "+newProjectName + "projset = "+str(newProjectSet))
+
+            newProjectObject = Project(name = newProjectName, color = newProjectColor, \
+                                       set = newProjectSet, projType = 1 )
+            newProjectObject.save()
+             
+            newArchiveProj = Project(name = newProjectName + " ARCHIVE", color = "#cccccc",\
+                                     set = newProjectSet, projType = 3, \
+                                     archivePair = newProjectObject )
+
+            newArchiveProj.save()
+
+            newProjectObject.archivePair = newArchiveProj
+            newProjectObject.save()
+
+            ### create anchor items for both projects
+
+            npAnchor = '== ' + newProjectObject.name + ' ANCHOR =='
+            archAnchor =  '== ' + newArchiveProj.name + ' ANCHOR =='
+
+            newProjItem = Item(title = npAnchor, priority = '0', status = '0', \
+                               follows = 0,  parent = 0, indentLevel = 0, \
+                               project = newProjectObject)
+            newProjItem.save()
+
+            newArchItem = Item(title = archAnchor, priority = '0', status = '0', \
+                               follows = 0,  parent = 0, indentLevel = 0, \
+                               project = newArchiveProj)
+            newArchItem.save()
+
+            
+
+            # Redirect after POST
+            return HttpResponseRedirect('/pim1/drag/'+str(newProjectObject.id)) 
+    else:
+        form = addProjectForm() # An unbound form
+
+    return render_to_response('pim1_tmpl/addProject.html', {
+                'form':form,
+                'pagecrumb':'add a new project',
+                'current_projs':current_projs,
+                'current_sets':current_sets,
+
+                'nowx':datetime.datetime.now().strftime("%Y/%m/%d  %H:%M:%S")
+                }, context_instance=RequestContext(request) )
+
+######################################################################
+
+def maintPage(request):
+    current_projs = Project.objects.filter(projType=1).order_by('name')
+    current_sets = ProjectSet.objects.all()
+
+
+    lockMessage=sharedMD.testLock()
+
+
+    return render_to_response('pim1_tmpl/maint.html', {
+        'titleCrumbBlurb':'maint page',
+        'current_projs':current_projs,
+        'current_sets':current_sets,
+        'lockMsg':lockMessage,
+        
+        'nowx':datetime.datetime.now().strftime("%Y/%m/%d  %H:%M:%S")
+        }, context_instance=RequestContext(request) )
+
+######################################################################
+
+def lockClear(request):
+    current_projs = Project.objects.filter(projType=1).order_by('name')
+    current_sets = ProjectSet.objects.all()
+
+    lockActionStatus = sharedMD.releaseLock()
+    lockMessage=sharedMD.testLock()
+
+
+    return render_to_response('pim1_tmpl/maint.html', {
+        'titleCrumbBlurb':'maint page',
+        'current_projs':current_projs,
+        'current_sets':current_sets,
+        'lockMsg':lockMessage,
+        'error_message':lockActionStatus,
+        'nowx':datetime.datetime.now().strftime("%Y/%m/%d  %H:%M:%S")
+        }, context_instance=RequestContext(request) )
 

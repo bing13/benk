@@ -112,8 +112,14 @@ def createLock(message):
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # releaseLock
 def releaseLock():
-    os.remove(LOCKFILE)
-    return("lock removed")
+    if os.path.exists(LOCKFILE):
+        os.remove(LOCKFILE)
+        msg = "lock removed"
+    else:
+        msg = "no lock file, no action taken"
+
+    logThis(msg)
+    return(msg)
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # testLock

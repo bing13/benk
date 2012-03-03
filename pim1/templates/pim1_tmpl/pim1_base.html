@@ -30,14 +30,9 @@
 	  <ul class="hxbuttons">
 	     <li><a href="/pim1/grid-view/">grid view</a> | </li>
 	     <li><a href="/pim1/">home</a> | </li>
-	     <li><a href="/pim1/list-items/">outline</a> | </li>
-
-	   
-	     <li>  <a href="/pim1/item/gooUpdate">gTask update</a> | </li>
-	     <li><a href="/pim1/importfile">import</a> | </li>
 	     <li><a href="/pim1/serialize">backup</a> | </li>
-	     <li><a href="/pim1/admin">admin</a> | </li>
-	     <li><a href="/pim1/healthcheck/0">health</a></li>
+	     <li><a href="/pim1/healthcheck/0">health</a> | </li>
+	     <li><a href="/pim1/maint/">maint</a></li>
 	  </ul>
         {% endblock %}
     </div>
@@ -105,9 +100,8 @@
 
   <div id="messageLine">
     <span class="dj_error">
-    {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
-    </span>
-    <span class="xhr_lock_error">&nbsp;</span>
+    {% if error_message %}<strong>{{ error_message }}</strong>{% endif %}
+    </span>    <span class="xhr_lock_error">&nbsp;</span>
   </div>
 
     <div id="mcontent">

@@ -1,0 +1,66 @@
+{% extends "pim1_tmpl/pim1_base.html" %}
+
+{% block content %}
+
+<div class="homecontent">
+
+
+<h3>maint</h3>
+
+<p>various and sundry maintenance features</p>
+
+
+<div class="maintLinks">
+
+<ul>
+	     <li><a href="/pim1/addproject/">add project</a> </li>
+	     <li><a href="/pim1/importfile">import</a>  </li>
+	     <li><a href="/pim1/admin">django admin</a> </li>
+	     <li><a href="/pim1/lockclear/">clear lock</a> </li>
+</ul>
+
+
+<ul>
+	     <li><a href="/pim1/list-items/">outline</a> </li>
+
+	     <li>  <a href="/pim1/item/gooUpdate">gTask update</a> </li>
+
+
+</ul>
+
+
+<hr/>
+
+<ul>
+          <li>lock file contents:  <div class='lockMessage'>{{ lockMsg }}</div> </li>
+
+
+	  <li><a href="/pim1/lockclear/">clear lock</a> </li>
+</ul>
+
+</div>
+
+<div class="addProjList backUpFileList">
+
+<table >
+
+{% for cx in current_projs %}
+
+<tr><td>{{ cx.id }}</td><td> {{cx.name}}</td><td> {{cx.set}}</td></tr>
+
+{% endfor %}
+
+
+
+</table>
+
+</div>
+
+
+
+
+
+</div>
+
+{% endblock %}
+ 

@@ -1,0 +1,48 @@
+{% extends "pim1_tmpl/pim1_base.html" %}
+
+{% block content %}
+
+<div class="homecontent">
+
+
+<h3>maint</h3>
+
+<p>various and sundry maintenance features</p>
+
+
+<div class="maintLinks">
+
+<ul>
+<li></li>
+
+
+</ul>
+
+
+
+</div>
+
+<div class="addProjList backUpFileList">
+
+<table >
+
+{% for cx in current_projs %}
+
+<tr><td>{{ cx.id }}</td><td> {{cx.name}}</td><td> {{cx.set}}</td></tr>
+
+{% endfor %}
+
+
+
+</table>
+
+</div>
+
+
+
+
+
+</div>
+
+{% endblock %}
+ 

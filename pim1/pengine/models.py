@@ -10,8 +10,15 @@
 from django.db import models
 
 
-class ProjectSet(models.Model): 
-    name = models.CharField(max_length=120)
+class ProjectSet(models.Model):
+    PROJSET_CHOICES = (
+        ('1', 'work'),
+        ('2', 'personal'),
+        ('3', 'testing'),
+        ('4', 'retired'),
+    )
+    
+    name = models.CharField(max_length=120, choices=PROJSET_CHOICES)
     color = models.CharField(max_length=8)
     def __unicode__(self):
         return self.name
