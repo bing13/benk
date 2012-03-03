@@ -1450,14 +1450,14 @@ def healthcheck(request, proj_id):
     current_projs = Project.objects.filter(projType=1).order_by('name')
     current_sets = ProjectSet.objects.all()
 
+    proj_id = int(proj_id)
 
     ### each routine returns an array of tables
     healthTables = []
-    projTable=checkHealth.projectList(proj_id);
-    healthTables.append(projTable);
 
-    itemsNotInProjects=checkHealth.projectlessItems();
-    healthTables.append(itemsNotInProjects);
+    healthTables += checkHealth.projectList(proj_id);
+
+    healthTables += checkHealth.projectlessItems();
 
     healthTables +=  checkHealth.followerCheck(proj_id);
     

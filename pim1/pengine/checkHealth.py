@@ -21,6 +21,10 @@ def projectList(proj_id):
         projList = Project.objects.filter(pk=proj_id)
         totalCount=Item.objects.filter(pk=proj_id).count()
 
+
+    sharedMD.logThis("===> CheckHealth starting, proj_id="+str(proj_id))
+ 
+
     tableBody='<tr class="health_row"><th class="health_cell" colspan=7>project list</th></tr>'
 
     tableBody += '''<tr class="health_row">
@@ -52,7 +56,7 @@ def projectList(proj_id):
 
         
     
-    return(tableBody)
+    return([tableBody])
 
 
 
@@ -85,7 +89,7 @@ def projectlessItems():
         <td class="health_cell">%s </td>
         </tr>''' % (p.id, p.id, p.parent, p.follows, p.title, p.priority, p.status)
     
-    return(tableBody)
+    return([tableBody])
 
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
