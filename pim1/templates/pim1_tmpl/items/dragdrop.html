@@ -18,8 +18,8 @@
     {% for ci in current_items %}
     {% ifchanged %}
 
-<div><span class="projheader"  style="background: {{ ci.project.color }};" >{{ ci.projectForOrdering }}  <a href="#" onclick="toggleDoneItems()"  class="toggleDone">toggle done</a> 
-</span></div>
+<div><span class="projheader"  style="background: {{ ci.project.color }};" >{{ ci.projectForOrdering }} <span class="toggleDone"> <a href="#" onclick="toggleDoneItems()" > toggle done</a> |  <a href="#" onclick="toggleSimple()" class="simpleToggle">simple</a> 
+</span></span></div>
 {% endifchanged %}
 
 
