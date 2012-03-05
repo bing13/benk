@@ -18,7 +18,7 @@
     {% for ci in current_items %}
     {% ifchanged %}
 
-<div><span class="projheader"  style="background: {{ ci.project.color }};" >{{ ci.projectForOrdering }} <span class="toggleDone"> <a href="#" onclick="toggleDoneItems()" > toggle done</a> |  <a href="#" onclick="toggleSimple()" class="simpleToggle">simple</a> 
+<div><span class="projheader"  style="background: {{ ci.project.color }};" >{{ ci.projectForOrdering }}  <a href="#"  class="toggleDone" onclick="toggleDoneItems()" > hide done</a> <a href="#" onclick="toggleSimple()" class="simpleToggle">simple</a> 
 </span></span></div>
 {% endifchanged %}
 
@@ -26,39 +26,43 @@
         <!-- removed this class from below div: ui-widget-headerx --> 
         <div class="itemsdrag bhdraggable dropx"  id="{{ ci.id }}"  onclick="selectMe(this)">
 
- 	  <span class="itemdrag actionArrows"><a class="ilid" href="/pim1/list-items/hoist/{{ci.id}}">{{ci.id}}</a>&nbsp;<a href="/pim1/item/add/{{ ci.id }}">&harr;</a><a href="#" onClick='actionJax({{ ci.id }},0,"promote")' >&larr;</a><a href="#"  onClick='actionJax({{ ci.id }},0,"demote")'>&rarr;</a><a href="#{{ci.id}}" onClick='actionJax({{ ci.id }},0,"moveUp")'>&uarr;</a><a href="#{{ci.id}}" onClick='actionJax({{ ci.id }},0,"moveDown")'>&darr;</a><a href="#" class="archiveLink" onClick='deleteMeFromDOM({{ ci.id }});actionJax({{ ci.id }},0,"archiveThisItem")'>a</a><a href="#" class="fastAddLink" onClick='showFastAddDialog({{ ci.id }})'>f</a></span>
+  
+
+
+ 	  <span class="itemdrag actionArrows"><a class="ilid" href="/pim1/list-items/hoist/{{ci.id}}">{{ci.id}}&nbsp;{{ci.parent}}/{{ci.follows}}:{{ci.indentLevel}}:</a>&nbsp;<a href="/pim1/item/add/{{ ci.id }}">&harr;</a><a href="#" onClick='actionJax({{ ci.id }},0,"promote")' >&larr;</a><a href="#"  onClick='actionJax({{ ci.id }},0,"demote")'>&rarr;</a><a href="#{{ci.id}}" onClick='actionJax({{ ci.id }},0,"moveUp")'>&uarr;</a><a href="#{{ci.id}}" onClick='actionJax({{ ci.id }},0,"moveDown")'>&darr;</a><a href="#" class="archiveLink" onClick='deleteMeFromDOM({{ ci.id }});actionJax({{ ci.id }},0,"archiveThisItem")'>a</a><a href="#" class="fastAddLink" onClick='showFastAddDialog({{ ci.id }})'>&plus;</a></span>
 
 
 <!--a href="#" onClick='deleteMeFromDOM({{ ci.id }});actionJax({{ ci.id }},0,"delete")'>&otimes;</a -->
 
-<span class="prio_stat_btns">
-
-
-
-<span class="js_statprio" onClick='actionJax( {{ ci.id }},0,"incPriority")'>+</span><span  class="js_statprio"onClick='actionJax( {{ ci.id }},0,"decPriority")'>-</span></span><span class="prio priority_{{ ci.priority }}">{{ci.priority}} {{ci.statusText|slice:":6"|default:"&nbsp;"}}</span><span class="prio_stat_btns"><span class="js_statprio" onClick='actionJax( {{ ci.id }},0,"incStatus")'>+</span><span class="js_statprio" onClick='actionJax( {{ ci.id }},0,"decStatus")'>-</span></span><span class="itemdrag ti">{# NOT USED {ci.indentString|safe}#}<span class="indent_{{ci.indentLevel}} {% if ci.isParent %} parentItem {% endif %}">
+<span class="prio_stat_btns"><span class="js_statprio" onClick='actionJax( {{ ci.id }},0,"incPriority")'>+</span><span  class="js_statprio"onClick='actionJax( {{ ci.id }},0,"decPriority")'>-</span></span>
+<span class="prio priority_{{ ci.priority }}">{{ci.priority}} {{ci.statusText|slice:":6"|default:"&nbsp;"}}</span><span class="prio_stat_btns"><span class="js_statprio" onClick='actionJax( {{ ci.id }},0,"incStatus")'>+</span><span class="js_statprio" onClick='actionJax( {{ ci.id }},0,"decStatus")'>-</span></span>
+<span class="itemdrag ti"><span class="indent_{{ci.indentLevel}} {% if ci.isParent %} parentItem {% endif %}">
 <span class="marker">{{ ci.outlineBullet|safe }} </span>
-<a href="/pim1/item/edititem/{{ ci.id }}" class="{{ci.statusText}} titlelink">{{ ci.title }}</a></span></span>
+<a href="/pim1/item/edititem/{{ ci.id }}" class="{{ci.statusText}} titlelink">{{ ci.title }}</a>
+</span>
 
-
-
-          <span class="itemdrag notecell">
+          <span class="xxitemdrag xxnotecell">
 	  {% if ci.HTMLnoteBody|length > 2 %}
- 	    <a onClick="toggleNoteBody('notebody_{{ci.id}}');" class="noteplus">&oplus;</a>
-	    <a onClick='detailpop("{{ci.id}}")' class="notearr">&rArr;</a> </span>
+ 	    [<a onClick="toggleNoteBody('notebody_{{ci.id}}');" class="noteplus">&oplus;</a>
+	    <a onClick='detailpop("{{ci.id}}")' class="notearr">&rArr;</a>] 
+          </span>
 	   
 	  {% else %}
-	    ---</span>
+	    </span>
           {% endif %}
-        	  <span class="itemdrag id pfi">{{ci.parent}}/{{ci.follows}}:{{ci.indentLevel}}</span>
+        	
 
 
-          <div id="notebody_{{ci.id}}" class="noteBody"><div class="noteWrapper">{{ ci.HTMLnoteBody|safe|default:" --- " }}</div></div>
-       </div>
+    </div>
 
+          <div id="notebody_{{ci.id}}" class="noteBody">
+            <div class="noteWrapper">{{ ci.HTMLnoteBody|safe|default:" " }}</div>
+         </div>       
 
+</span>
 
     {% endfor %}
-    </div>
+</div>
 
 <p class="pfi"> {{ current_items|length }}/{{ totalProjItems }} <img src="http://media.bernardhecker.com/pim1/static/images/itemlistwidget.gif"></p>
 
