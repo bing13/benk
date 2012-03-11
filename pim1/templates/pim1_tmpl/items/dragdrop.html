@@ -12,57 +12,80 @@
 
 {% if current_items %}
 
-    <div id="wrapi" class="itemdrag_table benk" >
-     {# removed (list) as a class from the above #}
+
+<div id="wrapi" class="itemdrag_table benk" >
  
     {% for ci in current_items %}
     {% ifchanged %}
+       <div><span class="projheader"  style="background: {{ ci.project.color }};" >{{ ci.projectForOrdering }}  
+              <a href="#"  class="toggleDone" onclick="toggleDoneItems()" > hide done</a> 
+              <a href="#" onclick="toggleSimple()" class="simpleToggle">simple</a></span>
+        </div>
+    {% endifchanged %}
 
-<div><span class="projheader"  style="background: {{ ci.project.color }};" >{{ ci.projectForOrdering }}  <a href="#"  class="toggleDone" onclick="toggleDoneItems()" > hide done</a> <a href="#" onclick="toggleSimple()" class="simpleToggle">simple</a> 
-</span></span></div>
-{% endifchanged %}
-
-
+  <!--a href="#" onClick='deleteMeFromDOM({{ ci.id }});actionJax({{ ci.id }},0,"delete")'>&otimes;</a -->
         <!-- removed this class from below div: ui-widget-headerx --> 
-        <div class="itemsdrag bhdraggable dropx"  id="{{ ci.id }}"  onclick="selectMe(this)">
+    <div class="itemsdrag bhdraggable dropx"  id="{{ ci.id }}"  onclick="selectMe(this)">
+     
+       <span class="itemDragWidgetBlock">
 
-  
-
-
- 	  <span class="itemdrag actionArrows"><a class="ilid" href="/pim1/list-items/hoist/{{ci.id}}">{{ci.id}}&nbsp;{{ci.parent}}/{{ci.follows}}:{{ci.indentLevel}}:</a>&nbsp;<a href="/pim1/item/add/{{ ci.id }}">&harr;</a><a href="#" onClick='actionJax({{ ci.id }},0,"promote")' >&larr;</a><a href="#"  onClick='actionJax({{ ci.id }},0,"demote")'>&rarr;</a><a href="#{{ci.id}}" onClick='actionJax({{ ci.id }},0,"moveUp")'>&uarr;</a><a href="#{{ci.id}}" onClick='actionJax({{ ci.id }},0,"moveDown")'>&darr;</a><a href="#" class="archiveLink" onClick='deleteMeFromDOM({{ ci.id }});actionJax({{ ci.id }},0,"archiveThisItem")'>a</a><a href="#" class="fastAddLink" onClick='showFastAddDialog({{ ci.id }})'>&plus;</a></span>
-
-
-<!--a href="#" onClick='deleteMeFromDOM({{ ci.id }});actionJax({{ ci.id }},0,"delete")'>&otimes;</a -->
-
-<span class="prio_stat_btns"><span class="js_statprio" onClick='actionJax( {{ ci.id }},0,"incPriority")'>+</span><span  class="js_statprio"onClick='actionJax( {{ ci.id }},0,"decPriority")'>-</span></span>
-<span class="prio priority_{{ ci.priority }}">{{ci.priority}} {{ci.statusText|slice:":6"|default:"&nbsp;"}}</span><span class="prio_stat_btns"><span class="js_statprio" onClick='actionJax( {{ ci.id }},0,"incStatus")'>+</span><span class="js_statprio" onClick='actionJax( {{ ci.id }},0,"decStatus")'>-</span></span>
-<span class="itemdrag ti"><span class="indent_{{ci.indentLevel}} {% if ci.isParent %} parentItem {% endif %}">
-<span class="marker">{{ ci.outlineBullet|safe }} </span>
-<a href="/pim1/item/edititem/{{ ci.id }}" class="{{ci.statusText}} titlelink">{{ ci.title }}</a>
-</span>
-
-          <span class="xxitemdrag xxnotecell">
-	  {% if ci.HTMLnoteBody|length > 2 %}
- 	    [<a onClick="toggleNoteBody('notebody_{{ci.id}}');" class="noteplus">&oplus;</a>
-	    <a onClick='detailpop("{{ci.id}}")' class="notearr">&rArr;</a>] 
-          </span>
-	   
-	  {% else %}
-	    </span>
-          {% endif %}
-        	
+	    <span class="itemdrag actionArrows simpleDisappear"><a class="ilid simpleDisappear" href="/pim1/list-items/hoist/{{ ci.id }}">{{ ci.id }}&nbsp;{{ci.parent}}/{{ci.follows}}:{{ci.indentLevel}}:</a><span class="simpleDisappear arrowItems">&nbsp;<a href="/pim1/item/add/{{ ci.id }}">&harr;</a><a href="#" onClick='actionJax({{ ci.id }},0,"promote")' >&larr;</a><a href="#"  onClick='actionJax({{ ci.id }},0,"demote")'>&rarr;</a><a href="#{{ ci.id }}" onClick='actionJax({{ ci.id }},0,"moveUp")'>&uarr;</a><a href="#{{ ci.id }}" onClick='actionJax({{ ci.id }},0,"moveDown")'>&darr;</a></span></span>
 
 
-    </div>
 
-          <div id="notebody_{{ci.id}}" class="noteBody">
+            <span class="prio_stat_btns">
+
+	      <a href="#" class="fastAddLink" onClick='showFastAddDialog({{ ci.id }})'>&loz;</a>
+	      <a href="#" class="archiveLink simpleDisappear" onClick='deleteMeFromDOM({{ ci.id }});actionJax({{ ci.id }},0,"archiveThisItem")'>a</a>
+
+              <span class="js_statprio simpleDisappear" onClick='actionJax( {{ ci.id }},0,"incPriority")'>+</span>
+              <span  class="js_statprio simpleDisappear"onClick='actionJax( {{ ci.id }},0,"decPriority")'>-</span>
+
+           <span class="prio priority_{{ ci.priority }}">{{ci.priority}} {{ci.statusText|slice:":6"|default:"&nbsp;"}}</span>
+
+               <span class="js_statprio simpleDisappear" onClick='actionJax( {{ ci.id }},0,"incStatus")'>+</span>
+               <span class="js_statprio simpleDisappear" onClick='actionJax( {{ ci.id }},0,"decStatus")'>-</span>
+
+	     
+           </span>
+
+        </span><!-- itemdragWidgetBlock  -->
+
+   <span class="itemDragContentBlock">
+        <span class="itemdrag ti">
+	     <a href="/pim1/item/edititem/{{ ci.id }}" class="{{ci.statusText}} titlelink">
+	      <span  class="indentHolder indent_{{ ci.indentLevel }} {% if ci.isParent %} parentItem {% endif %}">
+		 <span class="marker">{{ ci.outlineBullet|safe }}</span>
+		 <span class="titletext">{{ ci.title }}</span> 
+ 
+	      </span> 
+	     </a> 
+
+<span class="noteExpandWidget"> {% if ci.HTMLnoteBody|length > 2 %} <a onClick="toggleNoteBody('notebody_{{ ci.id }}');" class="noteplus">&oplus;</a>&nbsp;<a onClick='detailpop("{{ ci.id }}")' class="notearr">&rArr;</a> {% else %} {% endif %} </span>
+
+	</span>
+
+
+ 
+     
+
+    </span>  <!-- itemDragContentBlock -->
+
+
+
+
+          <div id="notebody_{{ ci.id }}" class="noteBody">
             <div class="noteWrapper">{{ ci.HTMLnoteBody|safe|default:" " }}</div>
-         </div>       
+          </div>       
 
-</span>
+  </div>      <!--  .itemsdrag -->
 
+   <div class="itemDivider" id="itemDivider_{{ ci.id }}" >{{ ci.id }}</div>
+ 
     {% endfor %}
-</div>
+
+</div>  <!-- wrapi -->
+
 
 <p class="pfi"> {{ current_items|length }}/{{ totalProjItems }} <img src="http://media.bernardhecker.com/pim1/static/images/itemlistwidget.gif"></p>
 

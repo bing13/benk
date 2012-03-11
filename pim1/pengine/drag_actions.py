@@ -782,68 +782,69 @@ class dragOps():
             oldFollower.save()
             updateListIDs.append(oldFollower.id)
 
-        RETIREDnewItemTemplate= ''' <div class="itemsdrag bhdraggable dropx ui-draggable ui-droppable"  id="xxxID"  onclick="selectMe(this)" style="position: relative; "     >
-
- 	  <span class="itemdrag actionArrows"><a class="ilid" href="/pim1/list-items/hoist/xxxID">xxxID</a>&nbsp;<a href="/pim1/item/add/xxxID">&harr;</a><a href="#" onClick='actionJax(xxxID,0,"promote")' >&larr;</a><a href="#"  onClick='actionJax(xxxID,0,"demote")'>&rarr;</a><a href="#" onClick='actionJax(xxxID,0,"moveUp")'>&uarr;</a><a href="#" onClick='actionJax(xxxID,0,"moveDown")'>&darr;</a><a href="#" class="archiveLink" onClick='deleteMeFromDOM(xxxID);actionJax(xxxID,0,"archiveThisItem")'>a</a><a href="#" class="fastAddLink" onClick='showFastAddDialog(xxxID)'>f</a></span>
-
-<span class="prio_stat_btns">
-<span class="js_statprio" onClick='actionJax( xxxID,0,"incPriority")'>+</span><span class="js_statprio" onClick='actionJax( xxxID,0,"decPriority")'>-</span></span><span class="prio"></span><span class="prio_stat_btns"><span class="js_statprio"  onClick='actionJax( xxxID,0,"incStatus")'>+</span><span class="js_statprio"  onClick='actionJax( xxxID,0,"decStatus")'>-</span></span><span class="itemdrag ti"><span class="indent_0 ">
-<span class="marker">&bull; </span><a href="/pim1/item/edititem/xxxID" class="Next titlelink">xxxitemtitle</a></span></span>
-
-
-          <span class="itemdrag notecell">
-
- 	    <a onClick="toggleNoteBody('notebody_xxxID');" class="noteplus">&oplus;</a>
-	    <a onClick='detailpop("xxxID")' class="notearr">&rArr;</a> </span>
-	   
-
-          </span>
-       	  <span class="itemdrag id pfi"></span>
-          <div id="notebody_xxxID" class="noteBody"><div class="noteWrapper"> xxxNoteBody </div></div>
-     </div>'''
-
-
+            
         newItemTemplate= '''
 
-        <div class="itemsdrag bhdraggable dropx"  id="xxxID"  onclick="selectMe(this)">
+       <div class="itemsdrag bhdraggable dropx"  id="xxxID"  onclick="selectMe(this)">
+     
+       <span class="itemDragWidgetBlock">
+
+	    <span class="itemdrag actionArrows simpleDisappear"><a class="ilid simpleDisappear" href="/pim1/list-items/hoist/xxxID">xxxID&nbsp;://:</a><span class="simpleDisappear arrowItems">&nbsp;<a href="/pim1/item/add/xxxID">&harr;</a><a href="#" onClick='actionJax(xxxID,0,"promote")' >&larr;</a><a href="#"  onClick='actionJax(xxxID,0,"demote")'>&rarr;</a><a href="#xxxID" onClick='actionJax(xxxID,0,"moveUp")'>&uarr;</a><a href="#xxxID" onClick='actionJax(xxxID,0,"moveDown")'>&darr;</a></span></span>
 
 
- 	  <span class="itemdrag actionArrows"><a class="ilid" href="/pim1/list-items/hoist/xxxID">xxxID&nbsp;/::</a>&nbsp;<a href="/pim1/item/add/xxxID">&harr;</a><a href="#" onClick='actionJax(xxxID,0,"promote")' >&larr;</a><a href="#"  onClick='actionJax(xxxID,0,"demote")'>&rarr;</a><a href="#{{ xxxID }}" onClick='actionJax(xxxID,0,"moveUp")'>&uarr;</a><a href="#{{ xxxID }}" onClick='actionJax(xxxID,0,"moveDown")'>&darr;</a><a href="#" class="archiveLink" onClick='deleteMeFromDOM(xxxID);actionJax(xxxID,0,"archiveThisItem")'>a</a><a href="#" class="fastAddLink" onClick='showFastAddDialog(xxxID)'>&plus;</a></span>
+
+            <span class="prio_stat_btns">
+
+	      <a href="#" class="fastAddLink" onClick='showFastAddDialog(xxxID)'>&loz;</a>
+	      <a href="#" class="archiveLink simpleDisappear" onClick='deleteMeFromDOM(xxxID);actionJax(xxxID,0,"archiveThisItem")'>a</a>
+
+              <span class="js_statprio simpleDisappear" onClick='actionJax( xxxID,0,"incPriority")'>+</span>
+              <span  class="js_statprio simpleDisappear"onClick='actionJax( xxxID,0,"decPriority")'>-</span>
+
+           <span class="prio priority_xxx"></span>
+
+               <span class="js_statprio simpleDisappear" onClick='actionJax( xxxID,0,"incStatus")'>+</span>
+               <span class="js_statprio simpleDisappear" onClick='actionJax( xxxID,0,"decStatus")'>-</span>
+
+	     
+           </span>
+
+        </span><!-- itemdragWidgetBlock  -->
+
+   <span class="itemDragContentBlock">
+        <span class="itemdrag ti">
+	     <a href="/pim1/item/edititem/xxxID" class="xxxstatusText titlelink">
+	      <span  class="indentHolder xxxIndentlevel xxxParentItem ">
+		 <span class="marker"></span>
+		 <span class="titletext">xxxItemTitle</span> 
+ 
+	      </span> 
+	     </a> 
+
+<span class="noteExpandWidget"> <a onClick="toggleNoteBody('notebody_xxxID');" class="noteplus">&oplus;</a>&nbsp;<a onClick='detailpop("xxxID")' class="notearr">&rArr;</a> </span>
+
+	</span>
 
 
-<!--a href="#" onClick='deleteMeFromDOM(xxxID);actionJax(xxxID,0,"delete")'>&otimes;</a -->
+    </span>  <!-- itemDragContentBlock -->
 
-<span class="prio_stat_btns"><span class="js_statprio" onClick='actionJax( xxxID,0,"incPriority")'>+</span><span  class="js_statprio"onClick='actionJax( xxxID,0,"decPriority")'>-</span></span>
-<span class="prio priority_"></span><span class="prio_stat_btns"><span class="js_statprio" onClick='actionJax( xxxID,0,"incStatus")'>+</span><span class="js_statprio" onClick='actionJax( xxxID,0,"decStatus")'>-</span></span>
-<span class="itemdrag ti"><span class="indent_0">
-<span class="marker"> </span>
-<a href="/pim1/item/edititem/xxxID" class="Next titlelink">xxxitemtitle</a>
-</span>
 
-          <span class="xxitemdrag xxnotecell">
-
- 	    [<a onClick="toggleNoteBody('notebody_xxxID');" class="noteplus">&oplus;</a>
-	    <a onClick='detailpop("xxxID")' class="notearr">&rArr;</a>] 
-          </span>
-	   
-
-    </div>
+ 
 
           <div id="notebody_xxxID" class="noteBody">
             <div class="noteWrapper">xxxNoteBody</div>
-         </div>       
+          </div>       
 
-</span>
+  </div>      <!--  .itemsdrag -->
 
+   <div class="itemDivider" id="itemDivider_xxxID" >xxxID</div>
 
-</div>
-
-
+        
 
         '''
 
         newItemTemplate=newItemTemplate.replace('xxxID',str(newItem.id))
-        newItemTemplate=newItemTemplate.replace('xxxitemtitle',newItem.title)
+        newItemTemplate=newItemTemplate.replace('xxxItemTitle',newItem.title)
         newItemTemplate=newItemTemplate.replace('xxxNoteBody',newItem.HTMLnoteBody)
 
         return(self.updateIDsDecorate(updateListIDs), newItemTemplate)
