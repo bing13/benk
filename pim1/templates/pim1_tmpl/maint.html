@@ -46,7 +46,7 @@
 
 {% for cx in current_projs %}
 
-<tr><td>{{ cx.id }}</td><td> {{cx.name}}</td><td> {{cx.set}}</td></tr>
+<tr><td>{{ cx.id }}</td><td> {{cx.name}}</td><td> {{cx.set}}</td><td  style="background:{{ cx.color }};">{{cx.color}}</td></tr>
 
 {% endfor %}
 

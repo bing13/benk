@@ -19,7 +19,7 @@
     <title>{% block title %}{{ titleCrumbBlurb }} - benk{% endblock %}</title>
 </head>
 
-<body onLoad="hideClass('noteBody');showAProjSet('{{ thisSet }}')" > 
+<body onLoad="toggleSimple();hideClass('noteBody');showAProjSet('{{ thisSet }}')" > 
 
     <div id="headerx">
         {% block headerx %}
@@ -101,7 +101,10 @@
   <div id="messageLine">
     <span class="dj_error">
     {% if error_message %}<strong>{{ error_message }}</strong>{% endif %}
-    </span>    <span class="xhr_lock_error">&nbsp;</span>
+    </span>    
+
+    <span class="selected_item_msg">&nbsp;</span>
+    <span class="xhr_lock_error">&nbsp;</span> 
   </div>
 
     <div id="mcontent">

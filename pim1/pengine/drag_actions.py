@@ -103,6 +103,16 @@ class dragOps():
 
         CIfollowed = clickedItem.follows
 
+  
+        if clickedItem.follows == targetItem.id:
+            ## invalid move
+            sharedMD.logThis('== WARNING: drag_peer of item onto item it follows is invalid. Not executing.')
+            updateThese = self.updateIDsDecorate([clickedItem.id, targetItem.id])
+            sharedMD.logThis('    updating:'+str(updateThese))
+       
+            return(updateThese) 
+
+
     
         lastItemID=sharedMD.getLastItemID(clickedItem.project_id)
         lastKidofCI, CIkidList = sharedMD.findLastKid(clickedItem, lastItemID)
@@ -785,7 +795,7 @@ class dragOps():
             
         newItemTemplate= '''
 
-       <div class="itemsdrag bhdraggable dropx"  id="xxxID"  onclick="selectMe(this)">
+       <div class="itemsdrag bhdraggable dropx selectedItem"  id="xxxID"  onclick="selectMe(this)">
      
        <span class="itemDragWidgetBlock">
 
@@ -814,7 +824,7 @@ class dragOps():
    <span class="itemDragContentBlock">
         <span class="itemdrag ti">
 	     <a href="/pim1/item/edititem/xxxID" class="xxxstatusText titlelink">
-	      <span  class="indentHolder xxxIndentlevel xxxParentItem ">
+	      <span  class="indentHolder indent_xxxIndentLevel xxxParentItem ">
 		 <span class="marker"></span>
 		 <span class="titletext">xxxItemTitle</span> 
  
@@ -846,6 +856,7 @@ class dragOps():
         newItemTemplate=newItemTemplate.replace('xxxID',str(newItem.id))
         newItemTemplate=newItemTemplate.replace('xxxItemTitle',newItem.title)
         newItemTemplate=newItemTemplate.replace('xxxNoteBody',newItem.HTMLnoteBody)
+        newItemTemplate=newItemTemplate.replace('xxxIndentLevel',"indent_"+str(sharedMD.countIndent(newItem)))
 
         return(self.updateIDsDecorate(updateListIDs), newItemTemplate)
 

@@ -1231,7 +1231,6 @@ def xhr_actions(request):
 
     sharedMD.releaseLock()
 
-    #sharedMD.logThis("  REFRESH: "+str(refreshThese))
     if actionRequest['ajaxAction']== 'fastAdd':
         jRefresh=simplejson.dumps(refreshThese+[newItemTemplate])
         return HttpResponse(jRefresh, mimetype=mimetypex)
@@ -1251,8 +1250,11 @@ def drag_move(CIid, TIid):
     
     if CI.follows == TI.id:
         ## invalid move
-        sharedMD.logThis('== WARNING: move of item onto item it follows is invalid. Not executing.')
-        return([])
+        sharedMD.logThis('== WARNING: drag_move of item onto item it follows is invalid. Not executing.')
+
+        updateThese = DRAGACTIONS.updateIDsDecorate([CI.id, TI.id])
+        sharedMD.logThis('    updating:'+str(updateThese))
+        return(updateThese) 
 
  
     lastItemID=sharedMD.getLastItemID(CI.project_id)
