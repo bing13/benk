@@ -34,7 +34,8 @@
 
 <form>
             <span class="prio_stat_btns"> 
-<select class="prioritySelect" onChange="prioritySelected({{ ci.id }});"  />
+
+<select class="prioritySelect" onChange="prioritySelected({{ ci.id }});"  >
 {% if ci.priority == "1" %}
   <option value="1" selected="selected">TODAY</option>
 {% else %}
@@ -73,14 +74,14 @@
 
 </select>
 
-<select class="statusSelect" onChange="statusSelected({{ ci.id }});"   />
+<select class="statusSelect" onChange="statusSelected({{ ci.id }});"   >
 {% if ci.status == "1" %}
   <option value="1" selected="selected">WIP</option>
 {% else %}
   <option value="1" >WIP</option>
 {% endif %}
 
-{% if ci.priority == "2" %}
+{% if ci.status == "2" %}
   <option value="2" selected="selected">Next</option>
 {% else %}
   <option value="2" >Next</option>
@@ -123,8 +124,7 @@
 
 </select>
 
-
-	      <a href="#" class="fastAddLink" onClick='showFastAddDialog({{ ci.id }})'>&loz;</a>
+	      <a href="#" class="fastAddLink" onClick='showFastAddDialog({{ ci.id }})'>&plus;</a>
 	      <a href="#" class="archiveLink" onClick='deleteMeFromDOM({{ ci.id }});actionJax({{ ci.id }},0,"archiveThisItem")'>a</a>
 </form>
 
@@ -134,20 +134,26 @@
 
         </span><!-- itemdragWidgetBlock  -->
 
+
+
+
    <span class="itemDragContentBlock">
-        <span class="itemdrag titleContainer">
-	     <a href="/pim1/item/edititem/{{ ci.id }}" class="{{ci.statusText}} titlelink">
-	      <span  class="indentHolder indent_{{ ci.indentLevel }} {% if ci.isParent %} parentItem {% endif %}">
-		 <span class="marker">{{ ci.outlineBullet|safe }}</span>
-		 <span class="titletext">{{ ci.title }}</span> 
-              
-	      </span> 
-	    </a> 
+        <div class="itemdrag titleContainer">
+	     
+	      <div  class="indentHolder indent_{{ ci.indentLevel }} {% if ci.isParent %} parentItem {% endif %}">
+		 <a href="/pim1/item/edititem/{{ ci.id }}" class="{{ci.statusText}} titlelink" >
+                    <span class="marker">{{ ci.outlineBullet|safe }}</span><span class="titletext"> {{ ci.title }}</span></a> 
+	      </div> 
+	   
 
 
-<span class="noteExpandWidget"> {% if ci.HTMLnoteBody|length > 2 %} <a onClick="toggleNoteBody('notebody_{{ ci.id }}');" class="noteplus">&oplus;</a>&nbsp;<a onClick='detailpop("{{ ci.id }}")' class="notearr">&rArr;</a> {% else %} {% endif %} </span>
+	      <span class="noteExpandWidget"> 
+                {% if ci.HTMLnoteBody|length > 2 %} 
+                  <a onClick="toggleNoteBody('notebody_{{ ci.id }}');" class="noteplus">&oplus;</a>&nbsp;<a onClick='detailpop("{{ ci.id }}")' class="notearr">&rArr;</a> 
+                {% else %} {% endif %} 
+              </span>
 
-	</span>
+	</div>  <!-- itemdrag -->
 
      
 
@@ -172,6 +178,12 @@
 <p class="pfi"> {{ current_items|length }}/{{ totalProjItems }} <img src="http://media.bernardhecker.com/pim1/static/images/itemlistwidget.gif"></p>
 
 
+
+
+
+
+<!-- ================================ dialog box - fastAdd ============================= -->
+
 <div id="dialog-form" title="new item">
 
 	<form>
@@ -179,12 +191,26 @@
 	<span class="dialog_widgets"  id="FADci" ></span>
 	<label class="dialog_widgets" for="FADpriority">priority</label>
 	<select  name="FADpriority" id="FADpriority" value="" class="dialog_widgets text  text ui-widget-content ui-corner-all">
-		<option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+	   <option value="1" >TODAY</option>
+	    <option value="2" >Urgent</option>
+	    <option value="3" >Important</option>
+	    <option value="4" >Normal</option>
+	    <option value="5" >Low</option>
+	    <option value="0" selected="selected" ></option>
+	 
+
 	</select>
 
 	<label class="dialog_widgets" for="FADstatus">status</label>
 	<select  name="FADstatus" id="FADstatus" value="" class="dialog_widgets text ui-widget-content ui-corner-all">
-		<option>0</option><option>1</option><option>2</option><option>3</option><option>5</option><option>6</option><option>8</option><option>9</option>
+	   <option value="1" >WIP</option>
+	   <option value="2" >Next</option>
+	   <option value="3" >Cold</option>
+	   <option value="5" >Hold</option>
+	   <option value="6" >Cancelled</option>
+	   <option value="8" >Ref</option>
+	   <option value="9" >Done</option>
+	   <option value="0" selected="selected"  ></option>	
 	</select>
 	<span  class=" dialog_validateTips dialog_widgets"></span>
 

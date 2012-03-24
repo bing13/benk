@@ -84,7 +84,10 @@ def homepage(request):
 ##################################################################
 
 def itemlist(request,proj_id):
-    sharedMD.logThis("Entering itemlist <==============ProjID ="+str(proj_id)+". ")
+    ### THE ORIGINAL LIST VIEW
+    ### still functional, but deprecated, and not exposed
+
+    sharedMD.logThis("Entering the original view: itemlist <==============ProjID ="+str(proj_id)+". ")
     
     ##current_items=Item.objects.all()
     current_projs = Project.objects.filter(projType=1).order_by('name')

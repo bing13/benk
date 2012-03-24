@@ -795,51 +795,75 @@ class dragOps():
             
         newItemTemplate= '''
 
-       <div class="itemsdrag bhdraggable dropx selectedItem"  id="xxxID"  onclick="selectMe(this)">
+        <div class="itemsdrag bhdraggable dropx"  id="xxxID"  onclick="selectMe(this)">
      
        <span class="itemDragWidgetBlock">
 
-	    <span class="itemdrag actionArrows simpleDisappear"><a class="ilid simpleDisappear" href="/pim1/list-items/hoist/xxxID">xxxID&nbsp;://:</a><span class="simpleDisappear arrowItems">&nbsp;<a href="/pim1/item/add/xxxID">&harr;</a><a href="#" onClick='actionJax(xxxID,0,"promote")' >&larr;</a><a href="#"  onClick='actionJax(xxxID,0,"demote")'>&rarr;</a><a href="#xxxID" onClick='actionJax(xxxID,0,"moveUp")'>&uarr;</a><a href="#xxxID" onClick='actionJax(xxxID,0,"moveDown")'>&darr;</a></span></span>
+	    <span class="itemdrag actionArrows simpleDisappear"><a class="ilid" href="/pim1/list-items/hoist/xxxID">// </a><span class="arrowItems">&nbsp;<a href="/pim1/item/add/xxxID">&harr;</a><a href="#" onClick='actionJax(xxxID,0,"promote")' >&larr;</a><a href="#"  onClick='actionJax(xxxID,0,"demote")'>&rarr;</a><a href="#xxxID" onClick='actionJax(xxxID,0,"moveUp")'>&uarr;</a><a href="#xxxID" onClick='actionJax(xxxID,0,"moveDown")'>&darr;</a></span></span>
 
 
+<form>
+            <span class="prio_stat_btns"> 
 
-            <span class="prio_stat_btns">
+<select class="prioritySelect" onChange="prioritySelected(xxxID);"  >
+  <option value="1" >TODAY</option>
+  <option value="2" >Urgent</option>
+  <option value="3" >Important</option>
+  <option value="4" >Normal</option>
+  <option value="5" >Low</option>
+  <option value="0" ></option>
+</select>
 
-	      <a href="#" class="fastAddLink" onClick='showFastAddDialog(xxxID)'>&loz;</a>
-	      <a href="#" class="archiveLink simpleDisappear" onClick='deleteMeFromDOM(xxxID);actionJax(xxxID,0,"archiveThisItem")'>a</a>
+<select class="statusSelect" onChange="statusSelected(xxxID);"   >
+  <option value="1" >WIP</option>
+  <option value="2" >Next</option>
+  <option value="3" >Cold</option>
+  <option value="5" >Hold</option>
+  <option value="6" >Cancelled</option>
+  <option value="8" >Ref</option>
+  <option value="9" >Done</option>
+  <option value="0" ></option>
+</select>
 
-              <span class="js_statprio simpleDisappear" onClick='actionJax( xxxID,0,"incPriority")'>+</span>
-              <span  class="js_statprio simpleDisappear"onClick='actionJax( xxxID,0,"decPriority")'>-</span>
-
-           <span class="prio priority_xxx"></span>
-
-               <span class="js_statprio simpleDisappear" onClick='actionJax( xxxID,0,"incStatus")'>+</span>
-               <span class="js_statprio simpleDisappear" onClick='actionJax( xxxID,0,"decStatus")'>-</span>
+	      <a href="#" class="fastAddLink" onClick='showFastAddDialog(xxxID)'>&plus;</a>
+	      <a href="#" class="archiveLink" onClick='deleteMeFromDOM(xxxID);actionJax(xxxID,0,"archiveThisItem")'>a</a>
+</form>
 
 	     
            </span>
 
+
         </span><!-- itemdragWidgetBlock  -->
 
+
+
+
    <span class="itemDragContentBlock">
-        <span class="itemdrag ti">
-	     <a href="/pim1/item/edititem/xxxID" class="xxxstatusText titlelink">
-	      <span  class="indentHolder indent_xxxIndentLevel xxxParentItem ">
-		 <span class="marker"></span>
-		 <span class="titletext">xxxItemTitle</span> 
- 
-	      </span> 
-	     </a> 
-
-<span class="noteExpandWidget"> <a onClick="toggleNoteBody('notebody_xxxID');" class="noteplus">&oplus;</a>&nbsp;<a onClick='detailpop("xxxID")' class="notearr">&rArr;</a> </span>
-
-	</span>
+        <div class="itemdrag titleContainer">
+	     
+	      <div  class="indentHolder indent_xxxIndentLevel xxxParentItem }} ">
+		
+		 <a href="/pim1/item/edititem/xxxID" class="titlelink" >
+                     <span class="marker"></span>
+                     <span class="titletext">xxxItemTitle</span></a> 
+	      </div> 
+	   
 
 
-    </span>  <!-- itemDragContentBlock -->
+	      <span class="noteExpandWidget"> 
+                
+                  <a onClick="toggleNoteBody('notebody_xxxID');" class="noteplus">&oplus;</a>&nbsp;<a onClick='detailpop("xxxID")' class="notearr">&rArr;</a> 
+               
+              </span>
+
+	</div> 
+
+     
+
+    </span> 
 
 
- 
+
 
           <div id="notebody_xxxID" class="noteBody">
             <div class="noteWrapper">xxxNoteBody</div>
@@ -848,8 +872,6 @@ class dragOps():
   </div>      <!--  .itemsdrag -->
 
    <div class="itemDivider" id="itemDivider_xxxID" >xxxID</div>
-
-        
 
         '''
 

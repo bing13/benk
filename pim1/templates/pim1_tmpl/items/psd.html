@@ -37,7 +37,7 @@ date created
     
     {% for ci in current_items %}
     {% ifchanged %}<tr  style="background: {{ ci.project.color }};" ><td class="psd_projheader" colspan="7">{{ ci.projectForOrdering }}</td></tr>{% endifchanged %}
-        <tr class="items">
+        <tr class="items" id = {{ ci.id }} >
 
 
 
@@ -59,13 +59,7 @@ date created
 
 
         <td class="itemtd">
-	  {{ ci.priority }}:{{ci.priorityText}}
-	  {{ ci.status }}:{{ci.statusText}}
-	</td>
-
-
-        <td class="itemtd">
-
+	 
 
    <select class="prioritySelect" onChange="prioritySelected({{ ci.id }});"  />
    {% if ci.priority == "1" %}
@@ -105,6 +99,11 @@ date created
   {% endif %}
 
   </select>
+ 
+     </td>
+     <td class="itemtd">
+	 
+
 
   <select class="statusSelect" onChange="statusSelected({{ ci.id }});"   />
   {% if ci.status == "1" %}
@@ -113,7 +112,7 @@ date created
     <option value="1" >WIP</option>
   {% endif %}
 
-  {% if ci.priority == "2" %}
+  {% if ci.status == "2" %}
     <option value="2" selected="selected">Next</option>
   {% else %}
     <option value="2" >Next</option>
