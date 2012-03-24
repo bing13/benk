@@ -841,7 +841,7 @@ def editItem(request, pItem):
     # model formsets
     ###https://docs.djangoproject.com/en/1.2/topics/forms/modelforms/#using-a-model-formset-in-a-view
     
-    itemFormSet = forms.models.modelformset_factory(Item, max_num=0, exclude=('IS_import_ID','date_gootask_display', 'gtask_id', 'project'))
+    itemFormSet = forms.models.modelformset_factory(Item, max_num=0, exclude=('IS_import_ID', 'gtask_id', 'project', 'date_gootask_display'))
 
     
     ## "field" and "exclude" operands supported
@@ -1210,15 +1210,21 @@ def xhr_actions(request):
 
     elif actionRequest['ajaxAction']== 'incPriority':
         refreshThese=DRAGACTIONS.priorityChange(clickedItem, 'up')
-
     elif actionRequest['ajaxAction']== 'decPriority':
         refreshThese=DRAGACTIONS.priorityChange(clickedItem, 'down')
 
     elif actionRequest['ajaxAction']== 'incStatus':
         refreshThese=DRAGACTIONS.statusChange(clickedItem, 'up')
-
     elif actionRequest['ajaxAction']== 'decStatus':
         refreshThese=DRAGACTIONS.statusChange(clickedItem,  'down')
+
+    elif actionRequest['ajaxAction']== 'prioritySelected':
+        refreshThese=DRAGACTIONS.prioritySelected(clickedItem, actionRequest['datax'])
+    elif actionRequest['ajaxAction']== 'statusSelected':
+        refreshThese=DRAGACTIONS.statusSelected(clickedItem, actionRequest['datax'])
+
+
+
 
     elif actionRequest['ajaxAction']== 'fastAdd':
         
@@ -1578,3 +1584,30 @@ def lockClear(request):
         'nowx':datetime.datetime.now().strftime("%Y/%m/%d  %H:%M:%S")
         }, context_instance=RequestContext(request) )
 
+
+###########################################################################
+#def buildDisplayList(projectx, projID, ordering, hoistID, useListIDs):
+#    sharedMD.logThis("Entering buildDisplayList <=====")
+
+
+def today(request):
+    current_projs = Project.objects.filter(projType=1).order_by('name')
+    current_sets = ProjectSet.objects.all()
+
+    todayIDs = Item.objects.filter(priority=1).filter(project__projType=1).order_by('project__name')
+
+    displayList =  buildDisplayList(current_projs,0,'project__name',0,todayIDs)
+
+    titleCrumbBlurb = "TODAY "
+
+    t = loader.get_template('pim1_tmpl/items/psd.html')
+    c = Context({
+        'current_items':displayList,
+        'current_projs':current_projs,
+        'current_sets':current_sets,
+        'targetProject':0,
+        'pSort':'project',
+        'titleCrumbBlurb':titleCrumbBlurb,
+        'nowx':datetime.datetime.now().strftime("%Y/%m/%d  %H:%M:%S")
+    })
+    return HttpResponse(t.render(c))

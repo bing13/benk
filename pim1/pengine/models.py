@@ -61,12 +61,8 @@ class Item(models.Model):
     # They are not unique across import files
     IS_import_ID = models.IntegerField(null=True, blank=True)
 
-    date_gootask_display = models.DateTimeField('date to display as goo Task',null=True, blank=True)
-    #date_gootask_display.blank=True
-    ##? date_gootask_display.blank=True
-    # for now we'll assume we don't need a key field
+    date_gootask_display = models.DateTimeField('to do date',null=True, blank=True)
     HTMLnoteBody = models.TextField(blank=True)
-    #HTMLnoteBody.blank=True
 
     title = models.CharField(max_length=200)
     ## example gtask ID: u'MDA5MTI3NjgzODg0MDUzMjk1MTI6MTk1Mjg0MjA0MzoxMzQ3MDQ3NjYy'

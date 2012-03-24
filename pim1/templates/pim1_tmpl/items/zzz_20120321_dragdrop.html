@@ -29,105 +29,27 @@
      
        <span class="itemDragWidgetBlock">
 
-	    <span class="itemdrag actionArrows simpleDisappear"><a class="ilid" href="/pim1/list-items/hoist/{{ ci.id }}">{{ ci.id }}&nbsp;{{ci.parent}}/{{ci.follows}}:{{ci.indentLevel}}:</a><span class="arrowItems">&nbsp;<a href="/pim1/item/add/{{ ci.id }}">&harr;</a><a href="#" onClick='actionJax({{ ci.id }},0,"promote")' >&larr;</a><a href="#"  onClick='actionJax({{ ci.id }},0,"demote")'>&rarr;</a><a href="#{{ ci.id }}" onClick='actionJax({{ ci.id }},0,"moveUp")'>&uarr;</a><a href="#{{ ci.id }}" onClick='actionJax({{ ci.id }},0,"moveDown")'>&darr;</a></span></span>
+	    <span class="itemdrag actionArrows simpleDisappear"><a class="ilid simpleDisappear" href="/pim1/list-items/hoist/{{ ci.id }}">{{ ci.id }}&nbsp;{{ci.parent}}/{{ci.follows}}:{{ci.indentLevel}}:</a><span class="simpleDisappear arrowItems">&nbsp;<a href="/pim1/item/add/{{ ci.id }}">&harr;</a><a href="#" onClick='actionJax({{ ci.id }},0,"promote")' >&larr;</a><a href="#"  onClick='actionJax({{ ci.id }},0,"demote")'>&rarr;</a><a href="#{{ ci.id }}" onClick='actionJax({{ ci.id }},0,"moveUp")'>&uarr;</a><a href="#{{ ci.id }}" onClick='actionJax({{ ci.id }},0,"moveDown")'>&darr;</a></span></span>
 
 
 <form>
-            <span class="prio_stat_btns"> 
-<select class="prioritySelect" onChange="prioritySelected({{ ci.id }});"  />
-{% if ci.priority == "1" %}
-  <option value="1" selected="selected">TODAY</option>
-{% else %}
-  <option value="1" >TODAY</option>
-{% endif %}
-
-{% if ci.priority == "2" %}
-  <option value="2" selected="selected">Urgent</option>
-{% else %}
-  <option value="2" >Urgent</option>
-{% endif %}
-
-{% if ci.priority == "3" %}
-  <option value="3" selected="selected">Important</option>
-{% else %}
-  <option value="3" >Important</option>
-{% endif %}
-
-{% if ci.priority == "4" %}
-  <option value="4" selected="selected">Normal</option>
-{% else %}
-  <option value="4" >Normal</option>
-{% endif %}
-
-{% if ci.priority == "5" %}
-  <option value="5" selected="selected">Low</option>
-{% else %}
-  <option value="5" >Low</option>
-{% endif %}
-
-{% if ci.priority == "0" %}
-  <option value="" selected="selected"></option>
-{% else %}
-  <option value="0" ></option>
-{% endif %}
-
-</select>
-
-<select class="statusSelect" onChange="statusSelected({{ ci.id }});"   />
-{% if ci.status == "1" %}
-  <option value="1" selected="selected">WIP</option>
-{% else %}
-  <option value="1" >WIP</option>
-{% endif %}
-
-{% if ci.priority == "2" %}
-  <option value="2" selected="selected">Next</option>
-{% else %}
-  <option value="2" >Next</option>
-{% endif %}
-
-{% if ci.status == "3" %}
-  <option value="3" selected="selected">Cold</option>
-{% else %}
-  <option value="3" >Cold</option>
-{% endif %}
-
-{% if ci.status == "5" %}
-  <option value="5" selected="selected">Hold</option>
-{% else %}
-  <option value="5" >Hold</option>
-{% endif %}
-
-{% if ci.status == "6" %}
-  <option value="6" selected="selected">Cancelled</option>
-{% else %}
-  <option value="6" >Cancelled</option>
-{% endif %}
-
-{% if ci.status == "8" %}
-  <option value="8" selected="selected">Ref</option>
-{% else %}
-  <option value="8" >Ref</option>
-{% endif %}
-{% if ci.status == "9" %}
-  <option value="9" selected="selected">Done</option>
-{% else %}
-  <option value="9" >Done</option>
-{% endif %}
-
-{% if ci.status == "0" %}
-  <option value="0" selected="selected"></option>
-{% else %}
-  <option value="0" ></option>
-{% endif %}
-
-</select>
+            <span class="prio_stat_btns">
+<input type="checkbox" name="todoDateBox" value="xxx" />
 
 
 	      <a href="#" class="fastAddLink" onClick='showFastAddDialog({{ ci.id }})'>&loz;</a>
 	      <a href="#" class="archiveLink" onClick='deleteMeFromDOM({{ ci.id }});actionJax({{ ci.id }},0,"archiveThisItem")'>a</a>
 </form>
 
+	      <span class="prioStatWidgets">
+		<span class="js_statprio simpleDisappear" onClick='actionJax( {{ ci.id }},0,"incPriority")'>+</span>
+		<span  class="js_statprio simpleDisappear" onClick='actionJax( {{ ci.id }},0,"decPriority")'>-</span>
+
+		<span class="prio priority_{{ ci.priority }}">{{ci.priority}} {{ci.statusText|slice:":6"|default:"&nbsp;"}}</span>
+
+               <span class="js_statprio simpleDisappear" onClick='actionJax( {{ ci.id }},0,"incStatus")'>+</span>
+               <span class="js_statprio simpleDisappear" onClick='actionJax( {{ ci.id }},0,"decStatus")'>-</span>
+	     </span>
 	     
            </span>
 

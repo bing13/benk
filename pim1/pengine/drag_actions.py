@@ -860,3 +860,30 @@ class dragOps():
 
         return(self.updateIDsDecorate(updateListIDs), newItemTemplate)
 
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# prioritySelected   ## for the pop-up boxes
+
+    def prioritySelected(self,  CI,  pValue):
+
+        #choices=CI.PRIORITY_CHOICES; ## (('1', "urgent"),("2", "Important),(...
+        
+        CI.priority = pValue;
+
+        CI.save()
+
+ 
+        return(self.updateIDsDecorate([CI.id]))
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# statusSelected   ## for the pop-up boxes
+
+    def statusSelected(self,  CI,  sValue):
+
+        #choices=CI.STATUS_CHOICES; ## (('1', "urgent"),("2", "Important),(...
+        
+        CI.status = sValue;
+
+        CI.save()
+
+ 
+        return(self.updateIDsDecorate([CI.id]))
