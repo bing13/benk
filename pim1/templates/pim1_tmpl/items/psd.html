@@ -36,15 +36,16 @@ date created
 <th>note</th></tr>
     
     {% for ci in current_items %}
-    {% ifchanged %}<tr  style="background: {{ ci.project.color }};" ><td class="psd_projheader" colspan="7">{{ ci.projectForOrdering }}</td></tr>{% endifchanged %}
+    {% ifchanged %}<tr  style="background: {{ ci.project.color }};" >
+        <td class="psd_projheader" colspan="7"><a href="/pim1/drag/{{ ci.project.id }}">{{ ci.projectForOrdering }}</a></td></tr>{% endifchanged %}
         <tr class="items" id = {{ ci.id }} >
 
 
 
-	 <td class="itemtd ">{{ci.id}}&nbsp;</td>
+	 <td class="itemtd id_cell_psd">{{ci.id}}&nbsp;</td>
 
 
-	 <td class="itemtd">{{ci.parent}}/{{ci.follows}}:<span class="indent">{{ci.indentLevel}}</span></td>
+	 <td class="itemtd pfi_cell_psd">{{ci.parent}}/{{ci.follows}}:<span class="indent">{{ci.indentLevel}}</span></td>
 {% comment %}
 	 <td class="itemtd">
 	   <ul class="projname">
@@ -54,7 +55,7 @@ date created
 	   </ul>
 	</td>
 {% endcomment %}
-        <td class="itemtd">{{ci.indentString|safe}}&bull; <a href="/pim1/item/edititem/{{ci.id}}">{{ ci.title }}</a></td>
+        <td class="itemtd">{{ci.indentString|safe}}&bull; <a href="/pim1/item/edititem/{{ci.id}}" class="title_psd">{{ ci.title }}</a></td>
 
 
 
@@ -162,9 +163,9 @@ date created
 
 
 
-        <td class="itemtd">
+        <td class="itemtd date_cell_psd">
 {% if  pSort = '-date_created' or pSort = 'priority' or pSort = 'status' or pSort = "project" %}
-{{ ci.date_created }}
+{{ ci.date_created|date:"d M Y" }}
 {% endif %}
 
 {% if pSort = '-date_mod' %}
@@ -177,7 +178,7 @@ date created
 
 </td>
 
-        <td class="itemtd notecell_psd">
+        <td class="itemtd note_cell_psd">
 	  {% if ci.HTMLnoteBody|length > 2 %}
   	    <span onClick="toggleLI('notebody_{{ci.id}}');" class="noteplus"><img src="http://media.bernardhecker.com/pim1/static/images/itemlistwidget.gif"></span>
 	    <span id="notebody_{{ci.id}}" class="noteBody">{{ ci.HTMLnoteBody|safe|default:" --- " }}</span>
