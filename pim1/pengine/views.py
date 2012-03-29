@@ -803,7 +803,7 @@ def ssearch(request):
             error_message="Form was not valid, search term = "
             displayList=['Form not valid, no results to display']
 
-    t = loader.get_template('pim1_tmpl/items/index.html')
+    t = loader.get_template('pim1_tmpl/items/psd.html'); ## was index.html
     c = Context({
         'searchterm':searchTerm,
         'current_items':displayList,

@@ -35,7 +35,7 @@
 <form>
             <span class="prio_stat_btns"> 
 
-<select class="prioritySelect" onChange="prioritySelected({{ ci.id }});"  >
+<select class="prioritySelect priority_{{ ci.priority }}" onChange="prioritySelected({{ ci.id }});"  >
 {% if ci.priority == "1" %}
   <option value="1" selected="selected">TODAY</option>
 {% else %}

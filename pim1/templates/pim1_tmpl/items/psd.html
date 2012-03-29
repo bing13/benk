@@ -2,6 +2,13 @@
 
 {% block content %}
 
+
+
+{% if searchterm %}
+<h5>searching: {{ searchterm }}</h5>
+{% endif %}
+
+
 <div class="headline">Sort by {{ pSort }}
 
   <span class="psdSortLinks">sort [ 
@@ -16,6 +23,7 @@
 
 
 </div>
+
 
 {% if current_items %}
 
@@ -58,11 +66,10 @@ date created
         <td class="itemtd">{{ci.indentString|safe}}&bull; <a href="/pim1/item/edititem/{{ci.id}}" class="title_psd">{{ ci.title }}</a></td>
 
 
-
         <td class="itemtd">
 	 
 
-   <select class="prioritySelect" onChange="prioritySelected({{ ci.id }});"  />
+   <select class="prioritySelect priority_{{ ci.priority }}" onChange="prioritySelected({{ ci.id }});"  />
    {% if ci.priority == "1" %}
      <option value="1" selected="selected">TODAY</option>
    {% else %}

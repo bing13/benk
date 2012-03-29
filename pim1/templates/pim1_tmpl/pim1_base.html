@@ -27,6 +27,15 @@
 
 	  <div id="pagecrumb">{{ titleCrumbBlurb }}</div>
 
+	  <span class="ssearch">
+	     <form action="/pim1/search/" method="get">
+	       {% csrf_token %}
+	        <input type="text" name="searchfx" id="searchfx" />
+
+	       <input type="submit" value="search" />
+	     </form>
+           </span>
+
 	  <ul class="hxbuttons">
 	     <li><a href="/pim1/today/">today</a> | </li>
 	     <li><a href="/pim1/grid-view/">grid view</a> | </li>
@@ -35,8 +44,12 @@
 	     <li><a href="/pim1/healthcheck/0">health</a> | </li>
 	     <li><a href="/pim1/maint/">maint</a></li>
 	  </ul>
+
+
+
+
         {% endblock %}
-    </div>
+    </div> <!-- closes headerx -->
 
  <div id="mainContainer">
     <div id="sidebar">
@@ -84,16 +97,7 @@
        </div>
      {% endblock %}
 
-
-	   <div class="ssearch">
-	     <form action="/pim1/search/" method="get">
-	       {% csrf_token %}
-	        <input type="text" name="searchfx" id="searchfx" />
-
-	       <input type="submit" value="search" />
-	     </form>
-           </div>
-
+<!-- search was here -->
 	 
  
    {% endblock %}
