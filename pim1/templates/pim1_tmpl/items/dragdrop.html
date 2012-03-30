@@ -37,7 +37,7 @@
 
 <select class="prioritySelect priority_{{ ci.priority }}" onChange="prioritySelected({{ ci.id }});"  >
 {% if ci.priority == "1" %}
-  <option value="1" selected="selected">TODAY</option>
+  <option value="1" selected="selected" >TODAY</option>
 {% else %}
   <option value="1" >TODAY</option>
 {% endif %}
@@ -138,6 +138,7 @@
 
 
    <span class="itemDragContentBlock">
+<span class="print_prioStat">{{ ci.priorityText }}:{{ ci.statusText }}</span>
         <div class="itemdrag titleContainer">
 	     
 	      <div  class="indentHolder indent_{{ ci.indentLevel }} {% if ci.isParent %} parentItem {% endif %}">

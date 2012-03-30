@@ -44,7 +44,7 @@ date created
 <th>note</th></tr>
     
     {% for ci in current_items %}
-    {% ifchanged %}<tr  style="background: {{ ci.project.color }};" >
+    {% ifchanged %}<tr  class="psd_projectheader_row" style="background: {{ ci.project.color }};" >
         <td class="psd_projheader" colspan="7"><a href="/pim1/drag/{{ ci.project.id }}">{{ ci.projectForOrdering }}</a></td></tr>{% endifchanged %}
         <tr class="items" id = {{ ci.id }} >
 
