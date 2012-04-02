@@ -124,13 +124,16 @@
 
 </select>
 
-	      <a href="#" class="fastAddLink" onClick='showFastAddDialog({{ ci.id }})'>&plus;</a>
-	      <a href="#" class="archiveLink" onClick='deleteMeFromDOM({{ ci.id }});actionJax({{ ci.id }},0,"archiveThisItem")'>a</a>
+	      <a href="#" class="fastAddLink simpleDisappear" onClick='showFastAddDialog({{ ci.id }})'>&plus;</a>
+	      <a href="#" class="archiveLink simpleDisappear" onClick='deleteMeFromDOM({{ ci.id }});actionJax({{ ci.id }},0,"archiveThisItem")'>a</a>
 </form>
 
 	     
-           </span>
 
+
+         <a class="itemControlWidget" id="itemControl_{{ ci.id }}" onMouseover="itemControlWidget('{{ ci.id }}')">&raquo;</a>
+
+           </span>
 
         </span><!-- itemdragWidgetBlock  -->
 
@@ -179,6 +182,19 @@
 <p class="pfi"> {{ current_items|length }}/{{ totalProjItems }} <img src="http://media.bernardhecker.com/pim1/static/images/itemlistwidget.gif"></p>
 
 
+<!-- ================================ controlPanel ============onblur======================== -->
+
+	    <div id="itemControlPanel" onmouseout='hideICP();'>
+	      <ul>
+		 <li id="icpFastAdd" ><a href="#"  onClick='to be replaced by javascript'>fast add</a> </li>
+		 <li id="icpArchive"><a href="#"   onClick='to be replaced by javascript'>archive</a></li>
+		 <li id="icpHoist"><a href="to be replaced by javascript"  onClick='hideICP();'>hoist</a></li>
+	      </ul>
+	    </div>
+
+
+
+<!-- End controlPanel -->
 
 
 
