@@ -230,7 +230,6 @@ def buildDisplayList(projectx, projID, ordering, hoistID, useListIDs):
         ix.projectForOrdering=ix.project.name
         ixList.append(ix)
         jxHash[ix.id]=ix
-        #if ix.parent==0: pzero.append(ix) // commented out 12/17/2011
 
         ## inControl uses a triangle for parents, dots for others
         if ix.id in parentList:
@@ -1175,10 +1174,13 @@ def xhr_actions(request):
         lockInfo=simplejson.dumps(['LOCKED']+[lockStatus])
         return HttpResponse(lockInfo, mimetype=mimetypex)
     
-    sharedMD.createLock( actionRequest['ajaxAction'] )
+
 
     ## dragmove should also get refactored to the external library
     clickedItem=Item.objects.get(pk=actionRequest['ci'])
+
+    ## set lock
+    sharedMD.createLock( actionRequest['ajaxAction']+"  Proj:"+str(clickedItem.project_id)+" ci:"+str(clickedItem.id) +"  ti:"+ str(actionRequest['ti']) )
 
     lastItemID=sharedMD.getLastItemID(clickedItem.project_id)
 
@@ -1238,7 +1240,12 @@ def xhr_actions(request):
         sharedMD.logThis("+++ERROR+++. Uncaught actionRequest['ajaxAction']:"+actionRequest['ajaxAction'])
         refreshThese=[]
 
-    sharedMD.releaseLock()
+
+    validateResult = sharedMD.validate_project(clickedItem.project_id)
+    if validateResult == 'No errors':
+        sharedMD.releaseLock();
+    else:
+        pass;
 
     if actionRequest['ajaxAction']== 'fastAdd':
         jRefresh=simplejson.dumps(refreshThese+[newItemTemplate])
@@ -1558,12 +1565,24 @@ def maintPage(request):
 
     lockMessage=sharedMD.testLock()
 
-
+    logLineText = ''
+    logLines = sharedMD.tailLog(30);
+    for llt in logLines:
+        if  ('ERROR') in llt:
+            llt = '<span class="error">'+llt+'</span>';
+        elif ('WARNING') in llt:
+            llt = '<span class="warn">'+llt+'</span>';
+        elif ('BAD LAST') in llt:
+            llt = '<span class="badlast">'+llt+'</span>';
+    
+        logLineText += llt +'<br/>' ;
+        
     return render_to_response('pim1_tmpl/maint.html', {
         'titleCrumbBlurb':'maint page',
         'current_projs':current_projs,
         'current_sets':current_sets,
         'lockMsg':lockMessage,
+        'logLines':logLineText,
         
         'nowx':datetime.datetime.now().strftime("%Y/%m/%d  %H:%M:%S")
         }, context_instance=RequestContext(request) )
@@ -1611,6 +1630,157 @@ def today(request):
         'targetProject':0,
         'pSort':'project',
         'titleCrumbBlurb':titleCrumbBlurb,
+        'nowx':datetime.datetime.now().strftime("%Y/%m/%d  %H:%M:%S")
+    })
+    return HttpResponse(t.render(c))
+
+###########################################################################
+# showChains
+#               provide user interface to link un-linked segments
+
+
+def showChains(request, proj_id):
+    current_projs = Project.objects.filter(projType=1).order_by('name')
+    current_sets = ProjectSet.objects.all()
+
+    thisProjItems=Item.objects.filter(project__id = proj_id);
+
+    ## the start of each chain is its endpoint - an item with no followers.
+    ##   chain with the anchor is chain 0
+    ## the chain is built back from there, for each endpoint.
+ 
+    ### need to duplicate logic from getLastItemId (since calling that
+    ### leaves a lock open, logs errors, etc
+
+    allFollows=Item.objects.filter(project=proj_id).values_list('follows', flat=True)
+    allinProj=Item.objects.filter(project=proj_id).values_list('id', flat=True)
+
+
+    lastItemIDs = []
+    for itemx in thisProjItems:
+        if itemx.id not in allFollows:
+            lastItemIDs.append(itemx.id)
+
+    sharedMD.logThis( "ShowChains found these un-followed items: "+ str(lastItemIDs))
+    noFollowers = Item.objects.filter(id__in = lastItemIDs);
+
+
+    ##build chain display tables ################################
+
+    displayTables = []
+    anchor= Item.objects.get(project__id = proj_id, follows=0);
+
+    # values_list doesn't return a normal array, consequently
+    # .count() is buggy, so we trasfer to a normal array
+    remainingIDs =  [];
+    remainingIDs += allinProj;
+
+    ix = anchor
+    chainEnd = False;
+    outx = '<table><tr><th colspan="3">chain 0</th></tr>';
+    
+    while not chainEnd:
+        outx += '<tr class="chainTableRow"><td>%s</td><td>%s</td><td>%s/%s:%s</td></tr>' % (ix.id,  ix.parent, ix.follows, ix.indentLevel, ix.title)
+        remainingIDs.remove(ix.id)
+        
+        try:
+            follows_ix = Item.objects.get(follows=ix.id)
+            ix = follows_ix
+        except:
+            #sharedMD.logThis(str(sys.exec_info()))
+            outx += "<tr><td colspan='3'>error getting follower of %s, error: %s</td></tr>" % (ix.id, str(sys.exc_info()));
+            mfString = '';
+            multiFollows = Item.objects.filter(follows = ix.id)
+            
+            for k in multiFollows:
+                mfString += '['+str(k.id) + ":" + k.title[:50] + '],';
+            
+            outx +="<tr><td colspan='3'>followers of ix.id are: %s</td></tr>" % mfString[:-1];
+            chainEnd = True;
+
+    outx += '</table>';
+
+
+    displayTables.append(outx);
+
+
+    #####################################################
+    # first try: just list all of the items not in chain 0
+
+    outx = ''
+    outx += '<h4>items not in chain 0</h4>\n<table>'
+
+    for rid in remainingIDs:
+        r = Item.objects.get(id=rid);
+        outx += '<tr><td>%s</td><td>%s</td><td>%s/%s:%s</td></tr>' % (r.id, r.title, r.follows, r.parent, r.indentLevel)
+
+    outx += '</table>';
+
+        
+    displayTables.append(outx);
+
+
+    #####################################################
+    # again, with follower order intact
+    # working from LAST ITEMS backward
+
+    outx = '<hr/>'
+    outx += '<h4>item chains, derived by endpoint </h4>\n'
+
+    # take the items with no followers, and GO BACKWARDS from them
+    # that would be one chain per no-follower items
+    # Most of the time, the segments will all chase back to the anchor
+    # could then potentially create one segment that has all of the items automatically
+
+    ix = anchor
+    
+    for endPoint in noFollowers:
+        outx += '<table><tr><th colspan="3">endpoint for segment: %s %s' % (endPoint.id, endPoint.title);
+        chainEnd = False;
+        ix = endPoint
+        outputRows = []
+        while not chainEnd:
+            outputRows.append('<tr class="chainTableRow"><td>%s</td><td>%s</td><td>%s/%s:%s</td></tr>' % (ix.id,  ix.parent, ix.follows, ix.indentLevel, ix.title) )
+            #remainingIDs.remove(ix.id)
+
+            try:
+                ix = Item.objects.get(id=ix.follows);
+                
+            except:
+                #sharedMD.logThis(str(sys.exec_info()))
+                outx += "<tr><td colspan='3'>error getting preceeder of %s, error: %s</td></tr>" % (ix.id, str(sys.exc_info()));
+                mfString = '';
+                multiFollows = Item.objects.filter(follows = ix.id)
+                
+                for k in multiFollows:
+                    mfString += '['+str(k.id) + ":" + k.title[:50] + '],';
+                    
+                    outx +="<tr><td colspan='3'>followers of ix.id are: %s</td></tr>" % mfString[:-1];
+                    chainEnd = True;
+
+        outputRows.reverse()
+        for row in outputRows:
+            outx += row;
+        outx +=  '</table>'
+
+
+
+    outx += '<hr/>'
+
+    outx += '<p>end of tables</p>';
+
+    displayTables.append(outx);
+
+     
+
+    #######################################################
+    t = loader.get_template('pim1_tmpl/showchains.html')
+    c = Context({
+        'displayTables':displayTables, 
+        'current_projs':current_projs,
+        'current_sets':current_sets,
+        'noFollowers':noFollowers,
+        'titleCrumbBlurb':'showchain proj:'+str(proj_id),
         'nowx':datetime.datetime.now().strftime("%Y/%m/%d  %H:%M:%S")
     })
     return HttpResponse(t.render(c))

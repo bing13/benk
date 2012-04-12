@@ -47,6 +47,8 @@ urlpatterns = patterns('',
     url(r'^pim1/xhr_test$','pim1.pengine.views.xhr_test'),
     url(r'^pim1/xhr_actions$','pim1.pengine.views.xhr_actions'),
     url(r'^pim1/healthcheck/(?P<proj_id>\d+)/$','pim1.pengine.views.healthcheck'),
+     url(r'^pim1/showchains/(?P<proj_id>\d+)/$','pim1.pengine.views.showChains'),
+                       
     url(r'^pim1/addproject/$','pim1.pengine.views.createProject'),                       
     url(r'^pim1/maint/$','pim1.pengine.views.maintPage'),                       
     url(r'^pim1/lockclear/$','pim1.pengine.views.lockClear'),                       

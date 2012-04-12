@@ -16,7 +16,6 @@
 	     <li><a href="/pim1/addproject/">add project</a> </li>
 	     <li><a href="/pim1/importfile">import</a>  </li>
 	     <li><a href="/pim1/admin">django admin</a> </li>
-	     <li><a href="/pim1/lockclear/">clear lock</a> </li>
 </ul>
 
 
@@ -46,7 +45,7 @@
 
 {% for cx in current_projs %}
 
-<tr><td>{{ cx.id }}</td><td> {{cx.name}}</td><td> {{cx.set}}</td><td  style="background:{{ cx.color }};">{{cx.color}}</td></tr>
+<tr><td>{{ cx.id }}</td><td> {{cx.name}}</td><td> {{cx.set}}</td><td  style="background:{{ cx.color }};">{{cx.color}}</td><td><a href="/pim1/showchains/{{ cx.id }}/">sc</a></td></tr>
 
 {% endfor %}
 

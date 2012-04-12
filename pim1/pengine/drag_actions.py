@@ -811,7 +811,7 @@ class dragOps():
   <option value="3" >Important</option>
   <option value="4" >Normal</option>
   <option value="5" >Low</option>
-  <option value="0" ></option>
+  <option value="0"selected="selected" ></option>
 </select>
 
 <select class="statusSelect" onChange="statusSelected(xxxID);"   >
@@ -822,13 +822,15 @@ class dragOps():
   <option value="6" >Cancelled</option>
   <option value="8" >Ref</option>
   <option value="9" >Done</option>
-  <option value="0" ></option>
+  <option value="0" selected="selected"></option>
 </select>
 
-	      <a href="#" class="fastAddLink" onClick='showFastAddDialog(xxxID)'>&plus;</a>
-	      <a href="#" class="archiveLink" onClick='deleteMeFromDOM(xxxID);actionJax(xxxID,0,"archiveThisItem")'>a</a>
+	      <a href="#" class="fastAddLink simpleDisappear" onClick='showFastAddDialog(xxxID)'>&plus;</a>
+	      <a href="#" class="archiveLink simpleDisappear" onClick='deleteMeFromDOM(xxxID);actionJax(xxxID,0,"archiveThisItem")'>a</a>
 </form>
 
+
+         <a class="itemControlWidget" id="itemControl_xxxID" onMouseover="itemControlWidget('xxxID')">&raquo;</a>
 	     
            </span>
 
@@ -839,6 +841,7 @@ class dragOps():
 
 
    <span class="itemDragContentBlock">
+   <span class="print_prioStat">xxxPriority:xxxStatus</span>
         <div class="itemdrag titleContainer">
 	     
 	      <div  class="indentHolder indent_xxxIndentLevel xxxParentItem }} ">
@@ -879,6 +882,9 @@ class dragOps():
         newItemTemplate=newItemTemplate.replace('xxxItemTitle',newItem.title)
         newItemTemplate=newItemTemplate.replace('xxxNoteBody',newItem.HTMLnoteBody)
         newItemTemplate=newItemTemplate.replace('xxxIndentLevel',"indent_"+str(sharedMD.countIndent(newItem)))
+        newItemTemplate=newItemTemplate.replace('xxxPriority',newItem.priorityText())
+        newItemTemplate=newItemTemplate.replace('xxxStatus',newItem.statusText())
+
 
         return(self.updateIDsDecorate(updateListIDs), newItemTemplate)
 

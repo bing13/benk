@@ -12,6 +12,40 @@ import datetime, os
 LOGFILE = '/home/bhadmin13/dx.bernardhecker.com/pim1/benklog1.log'
 LOCKFILE = '/home/bhadmin13/dx.bernardhecker.com/pim1/lockfile1.lock'
 
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# validate_project
+
+def validate_project(proj_id):
+    allItems = Item.objects.filter(project=proj_id)
+    ## find items that have duplicate followers
+    allFollows=Item.objects.filter(project=proj_id).order_by('follows').values_list('follows', flat=True)
+    # values_list doesn't return a normal array, consequently
+    # .count() is buggy, so we trasfer to a normal array
+    allFollowsArray = []
+    allFollowsArray += allFollows
+    followedByMultiples = []
+
+    for x in allFollowsArray:
+        allFollowsArray.remove(x); ## remove the first occurence of value x
+
+        if x in allFollowsArray:
+            followedByMultiples.append(x)
+
+    if len(followedByMultiples) > 0:
+        logThis(" * * * * * * * * VALIDATE ERROR * * * * * * * ");
+        totalErrorMsg = ''
+
+        for f in followedByMultiples:
+            multiFollows= Item.objects.filter(follows=f)
+            mfString='';
+            for k in multiFollows:
+                mfString += str(k.id) + ":" + k.title[:50] + ',';
+            logThis("[%s is followed by %s]" % (f, mfString[:-1]));
+            totalErrorMsg += "[%s is followed by %s]" % (f, mfString[:-1]) + '\n';
+        return(totalErrorMsg);
+    else:
+        return("No errors");
+    
 
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
@@ -43,8 +77,8 @@ def returnMarker(self,itemx):
 # logThis
 def logThis(s):
     LX = open(LOGFILE, 'a')
-    t = datetime.datetime.now().strftime("%Y:%m:%d  %H:%M:%S")
-    LX.write(t+":: "+s+'\n')
+    t = datetime.datetime.now().strftime("%Y/%m/%d  %H:%M:%S")
+    LX.write(t+" "+s+'\n')
     LX.close
     return()
 
@@ -65,7 +99,12 @@ def getLastItemID(projID):
     if len(lastItemIDs)!= 1:
         logThis( "===== getLastItemID: BAD LAST ITEM IDs, should only be one. Instead: "+ str(lastItemIDs))
         logThis( "===== BAILING getlastItemID=====" )
+
+        validate_project(projID);
+
         exit()
+
+
     else:
         logThis( "Last item ID:"+ str(lastItemIDs[0]))
         return(lastItemIDs[0])
@@ -133,3 +172,14 @@ def testLock():
     else:
         return("no lock")
 
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# tailLog
+
+def tailLog(nLines):
+    LX = open(LOGFILE, 'r')
+    #t = datetime.datetime.now().strftime("%Y:%m:%d  %H:%M:%S")
+    allLines=LX.readlines()
+    lastLogLines=allLines[-nLines:]
+    LX.close
+    
+    return(lastLogLines)
