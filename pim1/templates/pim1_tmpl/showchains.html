@@ -18,15 +18,15 @@
 
 <div class="backUpFileList">
 
-<table >
-{% for cx in noFollowers %}
+   <table >
+   {% for cx in noFollowers %}
 
-<tr><td>{{ cx.id }}</td><td> {{cx.title}}</td><td> {{cx.follows}}/{{cx.parent}}:{{ cx.indentLevel }}</td></tr>
+   <tr><td>{{ cx.id }}</td><td> {{cx.title}}</td><td> {{cx.follows}}/{{cx.parent}}:{{ cx.indentLevel }}</td></tr>
 
-{% endfor %}
+   {% endfor %}
 
 
-</table>
+   </table>
 
 </div>
 
@@ -37,33 +37,28 @@
 <div class="backUpFileList">
 
 
-{% if displayTables %}
+    {% if displayTables %}
 
-    <div class="table_lists" >
- 
-    {% for tablex in displayTables %}
+	<div class="table_lists" >
 
-       {{ tablex|safe }} 
+	   {% for tablex in displayTables %}
 
-
-
-    {% endfor %}
-    </div>
+	      {{ tablex|safe }} 
 
 
-{% else %}
-   
-       <p>No items are available.</p>
 
-{% endif %}
+	   {% endfor %}
+	</div>
+
+
+    {% else %}
+
+	   <p>No items are available.</p>
+
+    {% endif %}
 
 
 </div>
-
-
-
-
-
 
 </div>
 

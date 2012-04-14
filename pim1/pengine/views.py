@@ -1661,7 +1661,8 @@ def showChains(request, proj_id):
         if itemx.id not in allFollows:
             lastItemIDs.append(itemx.id)
 
-    sharedMD.logThis( "ShowChains found these un-followed items: "+ str(lastItemIDs))
+    sharedMD.logThis( "ShowChains: Proj "+ str(proj_id) +"======================================")
+    sharedMD.logThis( "            Found these un-followed items: "+ str(lastItemIDs))
     noFollowers = Item.objects.filter(id__in = lastItemIDs);
 
 
@@ -1778,6 +1779,33 @@ def showChains(request, proj_id):
         #### calculate a recommended chain
 
     recommendedResult = []
+
+    # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+    ### make sure tables[0][0] is anchor, if not move the chain continaing the
+    ### anchor over to [0]
+    
+    if tables[0][0] != anchor.id:
+        anchorHere = 999; ## if ever this generates an error, we've lost the nachor
+        indexCount = -1
+        for tx in tables:
+            indexCount += 1;
+            if tx[0] == anchor.id:
+                anchorHere = indexCount
+
+        if anchorHere == 999:
+            sharedMD.logThis("             ERROR! Anchor missing from tables array, or not in position 0")
+            exit();
+        elif anchorHere == 0:
+            sharedMD.logThis("             ...anchor in chain 0...")
+        else:
+            arrayContainingAnchor = tables.pop(anchorHere)
+            tables.insert(0, arrayContainingAnchor)
+            sharedMD.logThis("             ...anchor moved from chain %s to chain 0..." % anchorHere)
+
+
+    # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+            
+    
     for cx in range(0, len(tables)-1):
         
         ##select each value in the first table
@@ -1788,17 +1816,12 @@ def showChains(request, proj_id):
                 if j in tables[k]:
                     tables[k].remove(j)
                 
-    sharedMD.logThis("=> Tables w/dupes removed:" + str(tables))
+    sharedMD.logThis("            Tables w/dupes removed:" + str(tables))
 
 
     outx += '<hr/>'
     if len(tables) > 1:
         outx += '<h4>tables with dupes removed</h4>';
-
-        #for i in (0, len(tables)-1):
-        #    recommendedResult += tables[i];
-
-
 
         for i in (0, len(tables)-1):
             outx += "<p>%s: %s</p>" % (i, tables[i]);
@@ -1809,7 +1832,6 @@ def showChains(request, proj_id):
         outx += '<a href="/pim1/repairchain/'+ proj_id +'">execute this repair</a>'
 
         displayTables.append(outx);
-
     
     displayTables.append("\n<p>fin</p>"); 
     #######################################################
@@ -1825,6 +1847,9 @@ def showChains(request, proj_id):
         'nowx':datetime.datetime.now().strftime("%Y/%m/%d  %H:%M:%S")
     })
     return HttpResponse(t.render(c))
+
+
+
 
 
 ###########################################################################
@@ -1850,12 +1875,8 @@ def repairChain(request, proj_id):
     for itemx in thisProjItems:
         if itemx.id not in allFollows:
             lastItemIDs.append(itemx.id)
-
-
     
     noFollowers = Item.objects.filter(id__in = lastItemIDs);
-
-
 
     ix = anchor
     tableID = 0
@@ -1877,7 +1898,31 @@ def repairChain(request, proj_id):
 
         thisRun.reverse()
         tables.append(thisRun)
-        
+
+    # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+    ### make sure tables[0][0] is anchor, if not move the chain continaing the
+    ### anchor over to [0]
+    
+    if tables[0][0] != anchor.id:
+        anchorHere = 999; ## if ever this generates an error, we've lost the nachor
+        indexCount = -1
+        for tx in tables:
+            indexCount += 1;
+            if tx[0] == anchor.id:
+                anchorHere = indexCount
+
+        if anchorHere == 999:
+            sharedMD.logThis("             ERROR! Anchor missing from tables array, or not in position 0")
+            exit();
+        elif anchorHere == 0:
+            sharedMD.logThis("             ...anchor in chain 0...")
+        else:
+            arrayContainingAnchor = tables.pop(anchorHere)
+            tables.insert(0, arrayContainingAnchor)
+            sharedMD.logThis("             ...anchor moved from chain %s to chain 0..." % anchorHere)
+
+
+    # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 
     recommendedResult = []
     for cx in range(0, len(tables)-1):
@@ -1888,23 +1933,30 @@ def repairChain(request, proj_id):
                 if j in tables[k]:
                     tables[k].remove(j)
                     
-    if len(tables) > 1:
+    if len(tables) == 1:
+        sharedMD.logThis("            TABLE HAS ONLY 1 CHAIN. Aborting");
+    else:
+        
         for i in (0, len(tables)-1):
             recommendedResult += tables[i];
 
-    sharedMD.logThis("repairChain recommendedResult:" + str(recommendedResult))
 
-    #return HttpResponseRedirect('/pim1/drag/'+str(newProjectObject.id)) 
+        sharedMD.logThis("RepairChain: Proj " + str(proj_id) + "===================================")
+        sharedMD.logThis("            recommendedResult:" + str(recommendedResult))
+        sharedMD.logThis("            Starting rechaining....anchor="+str(anchor.id));
+        
 
-    #######################################################
-    t = loader.get_template('pim1_tmpl/showchains.html')
-    c = Context({
-        'current_projs':current_projs,
-        'current_sets':current_sets,
-        'noFollowers':noFollowers,
-        'recommendedList':str(recommendedResult)[1:-1],
-        'titleCrumbBlurb':'showchain proj:'+str(proj_id),
-        'proj_id':proj_id,
-        'nowx':datetime.datetime.now().strftime("%Y/%m/%d  %H:%M:%S")
-    })
-    return HttpResponse(t.render(c))
+        ##recommendedResult removes duplicate items across chains.
+        ##That means we can't just chain first-to-last across chains, we have to
+        ##relink the entire list. Otherwise entire duplicate sections could remain
+
+
+        # start by skipping the first item, which should be the anchor.
+        for index in range(1, len(recommendedResult)):
+            item = Item.objects.get(id = recommendedResult[index])
+            item.follows = recommendedResult[index - 1]
+            item.save()
+
+
+
+    return HttpResponseRedirect('/pim1/showchains/'+str(proj_id)) 

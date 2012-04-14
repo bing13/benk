@@ -1764,3 +1764,104 @@ showChains
 2012/04/13  22:16:53 repairChain recommendedResult:[5641L, 6005L, 6013L, 6009L, 6008L, 6019L, 6010L, 6011L, 6007L, 6006L, 6012L]
 2012/04/13  22:16:58 repairChain recommendedResult:[5641L, 6005L, 6013L, 6009L, 6008L, 6019L, 6010L, 6011L, 6007L, 6006L, 6012L]
 2012/04/13  22:18:31 repairChain recommendedResult:[5641L, 6005L, 6013L, 6009L, 6008L, 6019L, 6010L, 6011L, 6007L, 6006L, 6012L]
+2012/04/13  22:20:45 repairChain recommendedResult:[5641L, 6005L, 6013L, 6009L, 6008L, 6019L, 6010L, 6011L, 6007L, 6006L, 6012L]
+2012/04/13  22:20:49 repairChain recommendedResult:[5641L, 6005L, 6013L, 6009L, 6008L, 6019L, 6010L, 6011L, 6007L, 6006L, 6012L]
+2012/04/13  22:21:50 repairChain recommendedResult:[5641L, 6005L, 6013L, 6009L, 6008L, 6019L, 6010L, 6011L, 6007L, 6006L, 6012L]
+2012/04/13  22:21:50 ShowChains found these un-followed items: [6010L, 6012L]
+2012/04/13  22:21:50 => Tables w/dupes removed:[[5641L, 6005L, 6013L, 6009L, 6008L, 6019L, 6010L], [6011L, 6007L, 6006L, 6012L]]
+2012/04/14  06:48:24 Entering drag list <=========, Project=8
+2012/04/14  06:48:24 Entering buildDisplayList <=====
+2012/04/14  06:48:24 ..queries done...
+2012/04/14  06:48:24 ....parent list built...
+2012/04/14  06:48:24 .....ix built.....
+2012/04/14  06:48:24 ...built followhash....
+2012/04/14  06:48:24 .....displayList built...
+2012/04/14  06:48:24 Exiting buildDisplayList ========>
+2012/04/14  06:48:56 Entering xhr_actions...
+2012/04/14  06:48:56 =====> xhr_actions: =AJAX request, ci=5000  ti='0'  ajaxAction: fastAdd
+2012/04/14  06:48:56 Last item ID:5838
+2012/04/14  06:48:56 fastAdd for 5000  get flight to Houston for Rachel's show
+2012/04/14  06:48:56   deco for: 6030
+2012/04/14  06:48:56   deco for: 5000
+2012/04/14  06:48:56   deco for: 5596
+2012/04/14  06:48:56 lock removed
+2012/04/14  06:49:09 Entering buildDisplayList <=====
+2012/04/14  06:49:09 ..queries done...
+2012/04/14  06:49:09 ....parent list built...
+2012/04/14  06:49:09 .....ix built.....
+2012/04/14  06:49:09 Exiting buildDisplayList ========>
+2012/04/14  06:57:19 Entering buildDisplayList <=====
+2012/04/14  06:57:19 ..queries done...
+2012/04/14  06:57:20 ....parent list built...
+2012/04/14  06:57:20 .....ix built.....
+2012/04/14  06:57:20 Exiting buildDisplayList ========>
+2012/04/14  06:58:20 ShowChains found these un-followed items: [6010L, 6012L]
+2012/04/14  06:58:20 => Tables w/dupes removed:[[5641L, 6005L, 6013L, 6009L, 6008L, 6019L, 6010L], [6011L, 6007L, 6006L, 6012L]]
+2012/04/14  06:58:37 repairChain recommendedResult:[5641L, 6005L, 6013L, 6009L, 6008L, 6019L, 6010L, 6011L, 6007L, 6006L, 6012L]
+2012/04/14  06:58:37 ShowChains found these un-followed items: [6010L, 6012L]
+2012/04/14  06:58:37 => Tables w/dupes removed:[[5641L, 6005L, 6013L, 6009L, 6008L, 6019L, 6010L], [6011L, 6007L, 6006L, 6012L]]
+2012/04/14  07:00:34 ShowChains found these un-followed items: [6004L]
+2012/04/14  07:00:35 => Tables w/dupes removed:[[4301L, 5979L, 5980L, 5988L, 5987L, 6022L, 5985L, 5992L, 5981L, 5991L, 5990L, 5984L, 5982L, 5983L, 5989L, 5993L, 5994L, 5995L, 5996L, 5997L, 5998L, 5999L, 6000L, 6001L, 6002L, 6003L, 6004L]]
+2012/04/14  07:00:57 ShowChains found these un-followed items: [5917L]
+2012/04/14  07:00:59 => Tables w/dupes removed:[[4375L, 5953L, 5955L, 5954L, 5956L, 5833L, 6015L, 6023L, 5977L, 6014L, 5619L, 5832L, 5978L, 5928L, 5959L, 4531L, 5952L, 5880L, 5963L, 5609L, 5435L, 5258L, 5384L, 5394L, 4396L, 5374L, 5654L, 5957L, 5834L, 5672L, 5665L, 5175L, 4377L, 5934L, 4381L, 5040L, 5931L, 5923L, 5286L, 5375L, 4581L, 5104L, 4608L, 5655L, 5092L, 5929L, 5002L, 4621L, 5395L, 5624L, 5933L, 4574L, 5917L]]
+2012/04/14  07:04:09 ShowChains found these un-followed items: [5917L]
+2012/04/14  07:04:10 showchain: Tables w/dupes removed:[[4375L, 5953L, 5955L, 5954L, 5956L, 5833L, 6015L, 6023L, 5977L, 6014L, 5619L, 5832L, 5978L, 5928L, 5959L, 4531L, 5952L, 5880L, 5963L, 5609L, 5435L, 5258L, 5384L, 5394L, 4396L, 5374L, 5654L, 5957L, 5834L, 5672L, 5665L, 5175L, 4377L, 5934L, 4381L, 5040L, 5931L, 5923L, 5286L, 5375L, 4581L, 5104L, 4608L, 5655L, 5092L, 5929L, 5002L, 4621L, 5395L, 5624L, 5933L, 4574L, 5917L]]
+2012/04/14  07:04:27 ShowChains found these un-followed items: [6010L, 6012L]
+2012/04/14  07:04:27 showchain: Tables w/dupes removed:[[5641L, 6005L, 6013L, 6009L, 6008L, 6019L, 6010L], [6011L, 6007L, 6006L, 6012L]]
+2012/04/14  07:07:51 ShowChains: Proj 27.  Found these un-followed items: [6010L, 6012L]
+2012/04/14  07:07:51       Tables w/dupes removed:[[5641L, 6005L, 6013L, 6009L, 6008L, 6019L, 6010L], [6011L, 6007L, 6006L, 6012L]]
+2012/04/14  07:09:00 ShowChains: Proj 27======================================
+2012/04/14  07:09:00             Found these un-followed items: [6010L, 6012L]
+2012/04/14  07:09:00       Tables w/dupes removed:[[5641L, 6005L, 6013L, 6009L, 6008L, 6019L, 6010L], [6011L, 6007L, 6006L, 6012L]]
+2012/04/14  07:09:46 ShowChains: Proj 27======================================
+2012/04/14  07:09:46             Found these un-followed items: [6010L, 6012L]
+2012/04/14  07:09:46             Tables w/dupes removed:[[5641L, 6005L, 6013L, 6009L, 6008L, 6019L, 6010L], [6011L, 6007L, 6006L, 6012L]]
+2012/04/14  07:12:45 RepairChain: Proj 27===================================
+2012/04/14  07:12:45             recommendedResult:[5641L, 6005L, 6013L, 6009L, 6008L, 6019L, 6010L, 6011L, 6007L, 6006L, 6012L]
+2012/04/14  07:12:45 ShowChains: Proj 27======================================
+2012/04/14  07:12:45             Found these un-followed items: [6010L, 6012L]
+2012/04/14  07:12:45             Tables w/dupes removed:[[5641L, 6005L, 6013L, 6009L, 6008L, 6019L, 6010L], [6011L, 6007L, 6006L, 6012L]]
+2012/04/14  07:18:55 ShowChains: Proj 4======================================
+2012/04/14  07:18:55             Found these un-followed items: [6004L]
+2012/04/14  07:18:55             Tables w/dupes removed:[[4301L, 5979L, 5980L, 5988L, 5987L, 6022L, 5985L, 5992L, 5981L, 5991L, 5990L, 5984L, 5982L, 5983L, 5989L, 5993L, 5994L, 5995L, 5996L, 5997L, 5998L, 5999L, 6000L, 6001L, 6002L, 6003L, 6004L]]
+2012/04/14  07:24:48 ShowChains: Proj 27======================================
+2012/04/14  07:24:48             Found these un-followed items: [6010L, 6012L]
+2012/04/14  07:24:48             Tables w/dupes removed:[[5641L, 6005L, 6013L, 6009L, 6008L, 6019L, 6010L], [6011L, 6007L, 6006L, 6012L]]
+2012/04/14  07:25:02 ShowChains: Proj 4======================================
+2012/04/14  07:25:02             Found these un-followed items: [6004L]
+2012/04/14  07:25:03             Tables w/dupes removed:[[4301L, 5979L, 5980L, 5988L, 5987L, 6022L, 5985L, 5992L, 5981L, 5991L, 5990L, 5984L, 5982L, 5983L, 5989L, 5993L, 5994L, 5995L, 5996L, 5997L, 5998L, 5999L, 6000L, 6001L, 6002L, 6003L, 6004L]]
+2012/04/14  07:43:41 ShowChains: Proj 4======================================
+2012/04/14  07:43:41             Found these un-followed items: [6004L]
+2012/04/14  07:44:29 ShowChains: Proj 4======================================
+2012/04/14  07:44:29             Found these un-followed items: [6004L]
+2012/04/14  07:44:30             Tables w/dupes removed:[[4301L, 5979L, 5980L, 5988L, 5987L, 6022L, 5985L, 5992L, 5981L, 5991L, 5990L, 5984L, 5982L, 5983L, 5989L, 5993L, 5994L, 5995L, 5996L, 5997L, 5998L, 5999L, 6000L, 6001L, 6002L, 6003L, 6004L]]
+2012/04/14  07:45:03 ShowChains: Proj 27======================================
+2012/04/14  07:45:03             Found these un-followed items: [6010L, 6012L]
+2012/04/14  07:45:03             Tables w/dupes removed:[[5641L, 6005L, 6013L, 6009L, 6008L, 6019L, 6010L], [6011L, 6007L, 6006L, 6012L]]
+2012/04/14  08:06:44 ShowChains: Proj 27======================================
+2012/04/14  08:06:44             Found these un-followed items: [6010L, 6012L]
+2012/04/14  08:06:44             Tables w/dupes removed:[[5641L, 6005L, 6013L, 6009L, 6008L, 6019L, 6010L], [6011L, 6007L, 6006L, 6012L]]
+2012/04/14  08:08:01 ShowChains: Proj 27======================================
+2012/04/14  08:08:01             Found these un-followed items: [6010L, 6012L]
+2012/04/14  08:08:02             Tables w/dupes removed:[[5641L, 6005L, 6013L, 6009L, 6008L, 6019L, 6010L], [6011L, 6007L, 6006L, 6012L]]
+2012/04/14  08:14:02 ShowChains: Proj 27======================================
+2012/04/14  08:14:02             Found these un-followed items: [6010L, 6012L]
+2012/04/14  08:14:02             Tables w/dupes removed:[[5641L, 6005L, 6013L, 6009L, 6008L, 6019L, 6010L], [6011L, 6007L, 6006L, 6012L]]
+2012/04/14  08:14:23 
+RepairChain: Proj 27===================================
+2012/04/14  08:14:23             recommendedResult:[5641L, 6005L, 6013L, 6009L, 6008L, 6019L, 6010L, 6011L, 6007L, 6006L, 6012L]
+2012/04/14  08:14:23             Starting rechaining....anchor=5641
+2012/04/14  08:14:24 ShowChains: Proj 27======================================
+2012/04/14  08:14:24             Found these un-followed items: [6012L]
+2012/04/14  08:14:24             Tables w/dupes removed:[[5641L, 6005L, 6013L, 6009L, 6008L, 6019L, 6010L, 6011L, 6007L, 6006L, 6012L]]
+2012/04/14  08:14:55 Entering drag list <=========, Project=27
+2012/04/14  08:14:55 Entering buildDisplayList <=====
+2012/04/14  08:14:55 ..queries done...
+2012/04/14  08:14:55 ....parent list built...
+2012/04/14  08:14:55 .....ix built.....
+2012/04/14  08:14:55 ...built followhash....
+2012/04/14  08:14:55 .....displayList built...
+2012/04/14  08:14:55 Exiting buildDisplayList ========>
+2012/04/14  08:15:15 ShowChains: Proj 4======================================
+2012/04/14  08:15:15             Found these un-followed items: [6004L]
+2012/04/14  08:15:16             Tables w/dupes removed:[[4301L, 5979L, 5980L, 5988L, 5987L, 6022L, 5985L, 5992L, 5981L, 5991L, 5990L, 5984L, 5982L, 5983L, 5989L, 5993L, 5994L, 5995L, 5996L, 5997L, 5998L, 5999L, 6000L, 6001L, 6002L, 6003L, 6004L]]
