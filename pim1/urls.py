@@ -57,5 +57,8 @@ urlpatterns = patterns('',
 
     url(r'^pim1/today/$','pim1.pengine.views.today'),                       
 
+    url(r'^accounts/login/$', 'django.contrib.auth.views.login', {'template_name': 'pim1_tmpl/login.html'}),
+    url(r'^accounts/logout/$', 'django.contrib.auth.views.logout', {'template_name': 'pim1_tmpl/logout.html'}),
+
                    
 )

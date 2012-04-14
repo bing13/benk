@@ -10,6 +10,8 @@ from django.template import Context, loader
 from django.shortcuts import render_to_response
 from django.core.context_processors import csrf
 from django.views.decorators.csrf import csrf_protect
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.views import login, logout
 from django.template import RequestContext
 
 from django import forms
@@ -75,12 +77,14 @@ DRAGACTIONS=drag_actions.dragOps();
 def homepage(request):
     current_projs = Project.objects.filter(projType=1)
     current_sets = ProjectSet.objects.all()
-    c = Context({'home_page':'homepage',
-                 'current_projs':current_projs,
-                 'current_sets':current_sets,
-                 'nowx':datetime.datetime.now().strftime("%Y:%m:%d  %H:%M:%S")})
-    t = loader.get_template('pim1_tmpl/home_page.html')
-    return HttpResponse(t.render(c))
+
+    return render_to_response("pim1_tmpl/home_page.html", {
+        'home_page':'homepage',
+        'current_projs':current_projs,
+        'current_sets':current_sets,
+        'nowx':datetime.datetime.now().strftime("%Y:%m:%d  %H:%M:%S")
+        }, context_instance=RequestContext(request) )
+    
 ##################################################################
 
 def itemlist(request,proj_id):
@@ -98,18 +102,16 @@ def itemlist(request,proj_id):
 
     titleCrumbBlurb = str(proj_id)+':'+projObj.name+"   ("+projObj.set.name+")"
 
-    t = loader.get_template('pim1_tmpl/items/index.html')
-                       
-    c = Context({
+    return render_to_response("pim1_tmpl/items/index.html", {
         'current_items':displayList,
         'current_projs':current_projs, 
         'nowx':datetime.datetime.now().strftime("%Y/%m/%d  %H:%M:%S"),
         'pagecrumb':titleCrumbBlurb,
         'thisSet':projObj.set.id,
         'current_sets':current_sets,
+        }, context_instance=RequestContext(request) )
 
-    })
-    return HttpResponse(t.render(c))
+ 
 ##################################################################
 def allMyChildren(targetID, resultList):
     sharedMD.logThis("Entering allMyChildren <====================")
@@ -143,10 +145,7 @@ def hoistItem(request,pItem):
     
     displayList=buildDisplayList(current_projs, hoistProj, 'follows', hoistID,[])
 
-
-    t = loader.get_template('pim1_tmpl/items/dragdrop.html')
- 
-    c = Context({
+    return render_to_response("pim1_tmpl/items/dragdrop.html", {
         'current_items':displayList,
         'current_projs':current_projs,
         'current_sets':current_sets,
@@ -156,8 +155,7 @@ def hoistItem(request,pItem):
         'pItem':pItem,
         'projectNum':hoistProj,
         'titleCrumbBlurb':titleCrumbBlurb,
-    })
-    return HttpResponse(t.render(c))
+        }, context_instance=RequestContext(request) )
 
 
 
@@ -546,7 +544,7 @@ def actionItem(request, pItem, action):
     ###########################################################################
     ## let's restrict default view to the clicked item project
         
-    sharedMD.logThis( "Action done. current project #"+str(clickedProjNum)+ " " +\
+    sharedMD.logThis( "      Action done. current project #"+str(clickedProjNum)+ " " +\
              current_projs.get(pk=clickedProjNum).name + "Ajax:"+str(ajaxRequest))
 
     if not ajaxRequest:
@@ -554,13 +552,13 @@ def actionItem(request, pItem, action):
 
         #t = loader.get_template('pim1_tmpl/items/index.html')
         #t = loader.get_template('/drag/'+str(clickedProjNum)+'/#'+str(pItem))
-        t = loader.get_template('pim1_tmpl/items/dragdrop.html')
+
 
         projObj = Project.objects.get(pk=proj_id)
     
         titleCrumbBlurb = str(proj_id)+':'+projObj.name+"   ("+projObj.set.name+")"
-
-        c = Context({
+        sharedMD.logThis("    Action completed, for Non-ajax call.  " + titleCrumbBlurb)  
+        return render_to_response("pim1_tmpl/draglist.html", {
             'current_items':displayList,
             'current_projs':current_projs, 
             'current_sets':current_sets,
@@ -569,8 +567,9 @@ def actionItem(request, pItem, action):
             'pagecrumb': titleCrumbBlurb,
             'pItem':pItem,
             'projectNum':clickedProjNum,
-        })
-        return HttpResponse(t.render(c))
+        
+        }, context_instance=RequestContext(request) )
+
     else:
         ## for all of these operations, we may need to refresh CI, ci.follows, ci.parent, ci children, the item that follows CI
         return (clickedItem.id)
@@ -578,7 +577,7 @@ def actionItem(request, pItem, action):
 
 #####################################################(end of actionItem)########
 
-
+@login_required
 def psd(request,pSort,targetProject):
     current_projs = Project.objects.filter(projType=1).order_by('name')
     current_sets = ProjectSet.objects.all()
@@ -600,8 +599,7 @@ def psd(request,pSort,targetProject):
 
     titleCrumbBlurb = "sort "+str(targetProject)+':'+targProjObj.name+"   ("+targProjObj.set.name+")"
 
-    t = loader.get_template('pim1_tmpl/items/psd.html')
-    c = Context({
+    return render_to_response("pim1_tmpl/items/psd.html", {
         'current_items':displayList,
         'current_projs':current_projs,
         'current_sets':current_sets,
@@ -609,11 +607,11 @@ def psd(request,pSort,targetProject):
         'pSort':pSort,
         'titleCrumbBlurb':titleCrumbBlurb,
         'nowx':datetime.datetime.now().strftime("%Y/%m/%d  %H:%M:%S")
-    })
-    return HttpResponse(t.render(c))
+        }, context_instance=RequestContext(request) )
+
 
 ###################################################################
-
+@login_required
 def gridview(request):
     ITEMS_PER_CELL = 10;
     current_projs = Project.objects.filter(projType=1).order_by('name')
@@ -643,21 +641,20 @@ def gridview(request):
         dx =   buildDisplayList(current_projs,thisProject.id, 'provided', 0, cellItems[:ITEMS_PER_CELL])
         displayList = displayList + dx
 
-
-    t = loader.get_template('pim1_tmpl/items/gridview.html')
-    c = Context({
+    return render_to_response("pim1_tmpl/items/gridview.html", {
+        
         'titleCrumbBlurb':'grid view',
         'displayList':displayList,
         'current_projs':current_projs,
         'current_sets':current_sets,
         
         'nowx':datetime.datetime.now().strftime("%Y/%m/%d  %H:%M:%S")
+        }, context_instance=RequestContext(request) )
 
-    })
-    return HttpResponse(t.render(c))
+
 
 ##################################################################
-
+@login_required
 def detailItem(request,pItem):
     current_projs = Project.objects.filter(projType=1).order_by('name')
     current_sets = ProjectSet.objects.all()
@@ -674,8 +671,7 @@ def detailItem(request,pItem):
 
     displayList=[ix]
 
-    t = loader.get_template('pim1_tmpl/items/itemDetail.html')
-    c = Context({
+    return render_to_response("pim1_tmpl/items/itemDetail.html", {
         'current_items':displayList,
         'current_projs':current_projs,
         'current_sets':current_sets,
@@ -683,11 +679,12 @@ def detailItem(request,pItem):
         'nowx':datetime.datetime.now().strftime("%Y/%m/%d  %H:%M:%S"),
         'pagecrumb':'item detail',
         'thisSet': ix.project.set.id
-    })
-    return HttpResponse(t.render(c))
+        }, context_instance=RequestContext(request) )
+
+
 
 ##################################################################
-
+@login_required
 def gooTaskUpdate(request):
     request.session['viewmode'] = 'psd'
 
@@ -740,18 +737,19 @@ def gooTaskUpdate(request):
     current_sets = ProjectSet.objects.all()
 
     displayList =  buildDisplayList(current_projs,'0','-date_gootask_display',0,[])
-    
-    t = loader.get_template('pim1_tmpl/items/psd.html')
-    c = Context({
+
+    return render_to_response("pim1_tmpl/items/psd.html", {
+
         'pSort':'-date_gootask_display',
         'current_items':displayList,
         'current_projs':current_projs,
         'current_sets':current_sets,
 
         'nowx':datetime.datetime.now().strftime("%Y/%m/%d  %H:%M:%S"),
-        'pagecrumb': "Google task date sort"
-    })
-    return HttpResponse(t.render(c))
+        'pagecrumb': "Google task date sort"        
+    }, context_instance=RequestContext(request) )
+
+ 
 
 ##################################################################
 
@@ -769,7 +767,7 @@ def example_task():
     return(result)
 
 #############################################################################
-
+@login_required
 def ssearch(request):
     sharedMD.logThis("Entering ssearch <====================")
 
@@ -813,8 +811,8 @@ def ssearch(request):
             error_message="Form was not valid, search term = "
             displayList=['Form not valid, no results to display']
 
-    t = loader.get_template('pim1_tmpl/items/psd.html'); ## was index.html
-    c = Context({
+    return render_to_response("pim1_tmpl/items/psd.html", {
+        
         'searchterm':searchTerm,
         'current_items':displayList,
         'current_projs':current_projs,
@@ -824,12 +822,12 @@ def ssearch(request):
         'titleCrumbBlurb':'search result',
         'error_message':error_message,
         'is_search_result':'true'
-    })
-    return HttpResponse(t.render(c))
-            
+        
+        }, context_instance=RequestContext(request) )
+
 
 #############################################################################
-
+@login_required
 def addItem(request, pItem):
 
     clickedItem=Item.objects.get(pk=pItem)
@@ -838,9 +836,9 @@ def addItem(request, pItem):
     sharedMD.logThis('edit new item: ' + str(newItem.id))
     #follow does not work, no idea why
     return HttpResponseRedirect('/pim1/item/edititem/'+str(newItem.id))
-
+                                        
 #############################################################################
-
+@login_required
 def editItem(request, pItem):
     itemProject = Item.objects.get(pk=pItem).project_id
     projectName = Project.objects.get(pk=itemProject).name
@@ -898,7 +896,7 @@ def editItem(request, pItem):
 
                                      
 ############################################################################
-
+@login_required
 def importfile(request):
 
     current_projs = Project.objects.filter(projType=1).order_by('name')
@@ -935,7 +933,7 @@ def importfile(request):
                 }, context_instance=RequestContext(request) )
   
 #############################################################################
-
+@login_required
 def importISdata(importFile,newProjectID):
 
     textAccumulator = ''
@@ -1116,11 +1114,13 @@ def importISdata(importFile,newProjectID):
     sharedMD.logThis(">>> Completed. # of imported records: " + str(numberOfRecordsImported))
     
 ##################################################################
-
+@login_required
 def draglist(request, proj_id):
     sharedMD.logThis("Entering drag list, Proj "+str(proj_id)+"===============================")
+    sharedMD.logThis("     User:"+request.user.username)
 
     request.session['viewmode'] = 'draglist'
+    
     
     current_projs = Project.objects.filter(projType=1).order_by('name')
     current_sets = ProjectSet.objects.all()
@@ -1133,9 +1133,8 @@ def draglist(request, proj_id):
     titleCrumbBlurb = str(proj_id)+':'+projObj.name+"   ("+projObj.set.name+")"
     totalProjItems = Item.objects.filter(project=proj_id).count()
 
-    t = loader.get_template('pim1_tmpl/items/dragdrop.html')
-                       
-    c = Context({
+    return render_to_response("pim1_tmpl/items/dragdrop.html", {
+
         'titleCrumbBlurb':titleCrumbBlurb,
         'current_items':displayList,
         'current_projs':current_projs,
@@ -1143,11 +1142,9 @@ def draglist(request, proj_id):
 
         'nowx':datetime.datetime.now().strftime("%Y/%m/%d  %H:%M:%S"),
         'thisSet':projObj.set.id,
-        'totalProjItems':totalProjItems,
+        'totalProjItems':totalProjItems,        
+        }, context_instance=RequestContext(request) )
 
-
-    })
-    return HttpResponse(t.render(c))
 
 ######################################################################
 def xhr_test(request):
@@ -1172,16 +1169,18 @@ def xhr_test(request):
 
 #(r'^xhr_test$','your_project.your_app.views.xhr_test'),
 ######################################################################
+#@login_required
 def xhr_actions(request):
 
     mimetypex = 'application/javascript'
     sharedMD.logThis('Entering xhr_actions...')
     
     actionRequest=request.GET
+    sharedMD.logThis(str(actionRequest))
     message = 'nix'
     
     if request.is_ajax():
-        message = "AJAX request, ci="+str(actionRequest['ci'])+"  ti='"+str(actionRequest['ti']+"'  ajaxAction: "+actionRequest['ajaxAction'])
+        message = "AJAX request, ci="+str(actionRequest['ci'])+"  ti="+str(actionRequest['ti']+"  ajaxAction: "+actionRequest['ajaxAction'])
     else:
         message = "Not an AJAX request"
 
@@ -1208,8 +1207,10 @@ def xhr_actions(request):
     ## to dragmove #################################
 
     if actionRequest['ajaxAction'] == 'dragKid':
-        refreshThese= drag_move(int(actionRequest['ci']), int(actionRequest['ti']))
-
+         intCI = int(actionRequest['ci']);
+         intTI = int(actionRequest['ti']);
+         refreshThese= drag_move(intCI, intTI);
+         
     # this is where the shift-drag action should go
     elif actionRequest['ajaxAction']== 'dragPeer':
         refreshThese= DRAGACTIONS.drag_peer(int(actionRequest['ci']), int(actionRequest['ti']))
@@ -1278,6 +1279,7 @@ def xhr_actions(request):
         
 
 ######################################################################
+#@login_required
 def drag_move(CIid, TIid):
     # clicked item ID, target item ID
 
@@ -1482,6 +1484,7 @@ def backupdata(request):
 
 
 #############################################################################
+@login_required
 def healthcheck(request, proj_id):
     current_projs = Project.objects.filter(projType=1).order_by('name')
     current_sets = ProjectSet.objects.all()
@@ -1510,7 +1513,7 @@ def healthcheck(request, proj_id):
 
 ###########################################################################
 
-
+@login_required
 def createProject(request):
 
     current_projs = Project.objects.filter(projType=1).order_by('name')
@@ -1575,7 +1578,7 @@ def createProject(request):
                 }, context_instance=RequestContext(request) )
 
 ######################################################################
-
+@login_required
 def maintPage(request, pLockRequest):
     current_projs = Project.objects.filter(projType=1).order_by('name')
     current_sets = ProjectSet.objects.all()
@@ -1610,6 +1613,7 @@ def maintPage(request, pLockRequest):
 
 
 ###########################################################################
+@login_required
 def today(request):
 
     request.session['viewmode'] = 'today'
@@ -1623,24 +1627,24 @@ def today(request):
     displayList =  buildDisplayList(current_projs,0,'project__name',0,todayIDs)
 
     titleCrumbBlurb = "TODAY "
+    return render_to_response("pim1_tmpl/items/psd.html", {
 
-    t = loader.get_template('pim1_tmpl/items/psd.html')
-    c = Context({
         'current_items':displayList,
         'current_projs':current_projs,
         'current_sets':current_sets,
         'targetProject':0,
         'pSort':'project',
         'titleCrumbBlurb':titleCrumbBlurb,
-        'nowx':datetime.datetime.now().strftime("%Y/%m/%d  %H:%M:%S")
-    })
-    return HttpResponse(t.render(c))
+        'nowx':datetime.datetime.now().strftime("%Y/%m/%d  %H:%M:%S")        
+        }, context_instance=RequestContext(request) )
+
+
 
 ###########################################################################
 # showChains
 #               provide user interface to link un-linked segments
 
-
+@login_required
 def showChains(request, proj_id):
     current_projs = Project.objects.filter(projType=1).order_by('name')
     current_sets = ProjectSet.objects.all()
@@ -1837,8 +1841,9 @@ def showChains(request, proj_id):
     
     displayTables.append("\n<p>fin</p>"); 
     #######################################################
-    t = loader.get_template('pim1_tmpl/showchains.html')
-    c = Context({
+
+    return render_to_response("pim1_tmpl/showchains.html", {
+
         'displayTables':displayTables, 
         'current_projs':current_projs,
         'current_sets':current_sets,
@@ -1847,18 +1852,15 @@ def showChains(request, proj_id):
         'titleCrumbBlurb':'showchain proj:'+str(proj_id),
         'proj_id':proj_id,
         'nowx':datetime.datetime.now().strftime("%Y/%m/%d  %H:%M:%S")
-    })
-    return HttpResponse(t.render(c))
-
-
-
+        
+        }, context_instance=RequestContext(request) )
 
 
 ###########################################################################
 # repairChain
 #               repairs un-linked segments. naively.
 
-
+@login_required
 def repairChain(request, proj_id):
 
     current_projs = Project.objects.filter(projType=1).order_by('name')

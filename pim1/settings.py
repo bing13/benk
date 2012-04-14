@@ -134,3 +134,8 @@ INSTALLED_APPS = (
     # requires sys path add-on in passenger config file
     'south' 
 )
+
+#should be default in django 1.2
+#TEMPLATE_CONTEXT_PROCESSORS = (
+#    'django.contrib.auth.context_processors.auth',
+#)
