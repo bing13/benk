@@ -164,7 +164,7 @@ def hoistItem(request,pItem):
 
 ##################################################################
 def buildDisplayList(projectx, projID, ordering, hoistID, useListIDs):
-    sharedMD.logThis("Entering buildDisplayList <=====")
+    sharedMD.logThis("   Entering buildDisplayList <=====")
 
     ### Select the items to operate on ###############
 
@@ -204,7 +204,7 @@ def buildDisplayList(projectx, projID, ordering, hoistID, useListIDs):
     ### Build the parent list
     ixList=[]
     jxHash={}
-    sharedMD.logThis("..queries done...")
+    sharedMD.logThis("      ..queries done...")
 
 
     parentList=[] ## list of all items that are parents
@@ -213,7 +213,7 @@ def buildDisplayList(projectx, projID, ordering, hoistID, useListIDs):
 
     ###SLOW BLOCK BEGINS########################################################################
         
-    sharedMD.logThis("....parent list built...")
+    sharedMD.logThis("      ....parent list built...")
     ### get project string to where it can be displayed    
     for ix in items2List:
         
@@ -240,7 +240,7 @@ def buildDisplayList(projectx, projID, ordering, hoistID, useListIDs):
             ix.isParent=False
             
 
-    sharedMD.logThis( ".....ix built.....")
+    sharedMD.logThis( "      .....ix built.....")
 
     displayList=[]
     followHash={}
@@ -289,7 +289,7 @@ def buildDisplayList(projectx, projID, ordering, hoistID, useListIDs):
             
         currentID = 0
 
-        sharedMD.logThis("...built followhash....")
+        sharedMD.logThis("      ...built followhash....")
 
         ## OK, now follow the chain of who follows whom, starting with whoever follows Parent ID = 0
         while  followHash.has_key(currentID):
@@ -298,11 +298,11 @@ def buildDisplayList(projectx, projID, ordering, hoistID, useListIDs):
 
         # theoretically, having no followHash key for currentID means you're on the last item
         # but beware re: data integrity / lost items
-        sharedMD.logThis(".....displayList built...")
+        sharedMD.logThis("      .....displayList built...")
     else:
 
         displayList=ixList
-    sharedMD.logThis("Exiting buildDisplayList ========>")
+    sharedMD.logThis("   Exiting buildDisplayList ========>")
     return(displayList)
 
 ##################################################################
@@ -583,6 +583,9 @@ def psd(request,pSort,targetProject):
     current_projs = Project.objects.filter(projType=1).order_by('name')
     current_sets = ProjectSet.objects.all()
 
+    request.session['viewmode'] = 'psd'
+
+
     targProjObj = Project.objects.get(pk=targetProject)
 
     if pSort=='goo_date': pSort='date_gootask_display'
@@ -686,6 +689,9 @@ def detailItem(request,pItem):
 ##################################################################
 
 def gooTaskUpdate(request):
+    request.session['viewmode'] = 'psd'
+
+
     benkId = u'MDA5MTI3NjgzODg0MDUzMjk1MTI6MTk1Mjg0MjA0Mzow'
     GOOTASK=gooOps.gooOps()
     serviceConn=GOOTASK.taskAPIconnect()
@@ -767,6 +773,9 @@ def example_task():
 def ssearch(request):
     sharedMD.logThis("Entering ssearch <====================")
 
+    request.session['viewmode'] = 'ssearch'
+
+
     current_projs = Project.objects.filter(projType=1).order_by('name')
     current_sets = ProjectSet.objects.all()
 
@@ -780,6 +789,8 @@ def ssearch(request):
         if sform.is_valid():
             searchTerm=sform.cleaned_data['searchfx']
             sharedMD.logThis("Search term="+searchTerm)
+
+            request.session['searchterm'] = searchTerm
 
             ## Execute the search ##
             ## get the querySets
@@ -851,17 +862,25 @@ def editItem(request, pItem):
     if request.method == 'POST':
         formset=itemFormSet(request.POST, request.FILES)
         changedInstances=formset.save()
-        sharedMD.logThis("Formset saved: "+str(changedInstances))
+        sharedMD.logThis("   Formset saved: "+str(changedInstances))
 
-        ## POST completed, now redirect to the reconstructed view
-        return HttpResponseRedirect('/pim1/drag/'+str(itemProject)+'/#'+str(pItem))
+        ## POST completed, now redirect to the correct view
+        if request.session['viewmode'] == 'today':
+            return HttpResponseRedirect('/pim1/today/')
+        elif request.session['viewmode'] == 'psd':
+            return HttpResponseRedirect('/pim1/psd/date_mod/' + str(itemProject) + '/#' + str(pItem))
+        elif request.session['viewmode'] == 'ssearch':
+            return HttpResponseRedirect('/pim1/search/?searchfx=' + request.session['searchterm'])
+       
+        else:
+            return HttpResponseRedirect('/pim1/drag/'+str(itemProject)+'/#'+str(pItem))
     
     else:
         formset = itemFormSet(queryset=Item.objects.filter(pk=pItem))
 
 
         formsetOut = formset.as_table()
-        sharedMD.logThis("Formset generated, pItem="+str(pItem))
+        sharedMD.logThis("Edit item: Formset generated, pItem="+str(pItem))
         ##sharedMD.logThis(formsetOut)
         
     return render_to_response("pim1_tmpl/items/editItem.html", {
@@ -1099,7 +1118,9 @@ def importISdata(importFile,newProjectID):
 ##################################################################
 
 def draglist(request, proj_id):
-    sharedMD.logThis("Entering drag list <=========, Project="+str(proj_id))
+    sharedMD.logThis("Entering drag list, Proj "+str(proj_id)+"===============================")
+
+    request.session['viewmode'] = 'draglist'
     
     current_projs = Project.objects.filter(projType=1).order_by('name')
     current_sets = ProjectSet.objects.all()
@@ -1390,10 +1411,7 @@ def backupdata(request):
                 if reqData[0] == 'BackupTheseProjects':
                     BackupTheseProjects=reqData[1]
                 
-
-            #    =request.POST['BackupTheseProjects']
-
-            
+              
             sharedMD.logThis(' backup ==> projlist:'+ str(BackupTheseProjects))
 
 
@@ -1558,10 +1576,13 @@ def createProject(request):
 
 ######################################################################
 
-def maintPage(request):
+def maintPage(request, pLockRequest):
     current_projs = Project.objects.filter(projType=1).order_by('name')
     current_sets = ProjectSet.objects.all()
 
+
+    if pLockRequest == "clearlock":
+        lockActionStatus = sharedMD.releaseLock()
 
     lockMessage=sharedMD.testLock()
 
@@ -1587,32 +1608,13 @@ def maintPage(request):
         'nowx':datetime.datetime.now().strftime("%Y/%m/%d  %H:%M:%S")
         }, context_instance=RequestContext(request) )
 
-######################################################################
-
-def lockClear(request):
-    current_projs = Project.objects.filter(projType=1).order_by('name')
-    current_sets = ProjectSet.objects.all()
-
-    lockActionStatus = sharedMD.releaseLock()
-    lockMessage=sharedMD.testLock()
-
-
-    return render_to_response('pim1_tmpl/maint.html', {
-        'titleCrumbBlurb':'maint page',
-        'current_projs':current_projs,
-        'current_sets':current_sets,
-        'lockMsg':lockMessage,
-        'error_message':lockActionStatus,
-        'nowx':datetime.datetime.now().strftime("%Y/%m/%d  %H:%M:%S")
-        }, context_instance=RequestContext(request) )
-
 
 ###########################################################################
-#def buildDisplayList(projectx, projID, ordering, hoistID, useListIDs):
-#    sharedMD.logThis("Entering buildDisplayList <=====")
-
-
 def today(request):
+
+    request.session['viewmode'] = 'today'
+
+    
     current_projs = Project.objects.filter(projType=1).order_by('name')
     current_sets = ProjectSet.objects.all()
 
