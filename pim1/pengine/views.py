@@ -1720,7 +1720,7 @@ def showChains(request, proj_id):
     displayTables.append(outx);
 
 
-    #####################################################
+    #########################################################################
     # again, with follower order intact
     # working from LAST ITEMS backward
 
@@ -1732,47 +1732,86 @@ def showChains(request, proj_id):
     # Most of the time, the segments will all chase back to the anchor
     # could then potentially create one segment that has all of the items automatically
 
+  
+
+
     ix = anchor
-    
+    tableID = 0
+    tables = []
     for endPoint in noFollowers:
-        outx += '<table><tr><th colspan="3">endpoint for segment: %s %s' % (endPoint.id, endPoint.title);
+
+        outx += '<table><tr><th colspan="5">endpoint for segment: %s %s' % (endPoint.id, endPoint.title);
+        outx += '<tr><th>id</th><th>parent</th><th>follows</th><th>indent</th><th>title</th></tr>'
         chainEnd = False;
         ix = endPoint
         outputRows = []
+        #tables.append([])
+        thisRun = []
         while not chainEnd:
-            outputRows.append('<tr class="chainTableRow"><td>%s</td><td>%s</td><td>%s/%s:%s</td></tr>' % (ix.id,  ix.parent, ix.follows, ix.indentLevel, ix.title) )
-            #remainingIDs.remove(ix.id)
-
+            outputRows.append('<tr class="chainTableRow"><td><b>%s</b></td><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>' % (ix.id,  ix.parent, ix.follows, ix.indentLevel, ix.title) )
+            thisRun.append(ix.id)
             try:
                 ix = Item.objects.get(id=ix.follows);
                 
             except:
                 #sharedMD.logThis(str(sys.exec_info()))
-                outx += "<tr><td colspan='3'>error getting preceeder of %s, error: %s</td></tr>" % (ix.id, str(sys.exc_info()));
+                outx += "<tr><td colspan='5'>error getting preceeder of %s, error: %s</td></tr>" % (ix.id, str(sys.exc_info()));
                 mfString = '';
                 multiFollows = Item.objects.filter(follows = ix.id)
                 
                 for k in multiFollows:
                     mfString += '['+str(k.id) + ":" + k.title[:50] + '],';
                     
-                    outx +="<tr><td colspan='3'>followers of ix.id are: %s</td></tr>" % mfString[:-1];
+                    outx +="<tr><td colspan='5'>followers of ix.id are: %s</td></tr>" % mfString[:-1];
                     chainEnd = True;
 
+        thisRun.reverse()
+        tables.append(thisRun)
+        
         outputRows.reverse()
         for row in outputRows:
             outx += row;
         outx +=  '</table>'
+        displayTables.append(outx);
 
+        outx = ''
+        #### calculate a recommended chain
+
+    recommendedResult = []
+    for cx in range(0, len(tables)-1):
+        
+        ##select each value in the first table
+        for j in tables[cx]:
+            for k in range(cx+1, len(tables)):
+                
+                
+                if j in tables[k]:
+                    tables[k].remove(j)
+                
+    sharedMD.logThis("=> Tables w/dupes removed:" + str(tables))
 
 
     outx += '<hr/>'
+    if len(tables) > 1:
+        outx += '<h4>tables with dupes removed</h4>';
 
-    outx += '<p>end of tables</p>';
+        #for i in (0, len(tables)-1):
+        #    recommendedResult += tables[i];
 
-    displayTables.append(outx);
 
-     
 
+        for i in (0, len(tables)-1):
+            outx += "<p>%s: %s</p>" % (i, tables[i]);
+            recommendedResult += tables[i];
+
+        outx += "<p>Recommended fix: " + str(recommendedResult)+'</p>';
+
+        outx += '<a href="/pim1/repairchain/'+ proj_id +'">execute this repair</a>'
+
+        displayTables.append(outx);
+
+    
+    displayTables.append("\n<p>fin</p>"); 
     #######################################################
     t = loader.get_template('pim1_tmpl/showchains.html')
     c = Context({
@@ -1780,7 +1819,92 @@ def showChains(request, proj_id):
         'current_projs':current_projs,
         'current_sets':current_sets,
         'noFollowers':noFollowers,
+        'recommendedList':str(recommendedResult)[1:-1],
         'titleCrumbBlurb':'showchain proj:'+str(proj_id),
+        'proj_id':proj_id,
+        'nowx':datetime.datetime.now().strftime("%Y/%m/%d  %H:%M:%S")
+    })
+    return HttpResponse(t.render(c))
+
+
+###########################################################################
+# repairChain
+#               repairs un-linked segments. naively.
+
+
+def repairChain(request, proj_id):
+
+    current_projs = Project.objects.filter(projType=1).order_by('name')
+    current_sets = ProjectSet.objects.all()
+
+
+    # CHANGES HERE MUST BE INCORPORATED INTO SHOWCHAINS and vice versa,
+    # until we re-factor
+    anchor= Item.objects.get(project__id = proj_id, follows=0);
+    thisProjItems=Item.objects.filter(project__id = proj_id);
+    allFollows=Item.objects.filter(project=proj_id).values_list('follows', flat=True)
+    #allinProj=Item.objects.filter(project=proj_id).values_list('id', flat=True)
+
+
+    lastItemIDs = []
+    for itemx in thisProjItems:
+        if itemx.id not in allFollows:
+            lastItemIDs.append(itemx.id)
+
+
+    
+    noFollowers = Item.objects.filter(id__in = lastItemIDs);
+
+
+
+    ix = anchor
+    tableID = 0
+    tables = []
+    for endPoint in noFollowers:
+
+        chainEnd = False;
+        ix = endPoint
+        outputRows = []
+
+        thisRun = []
+        while not chainEnd:
+            thisRun.append(ix.id)
+            try:
+                ix = Item.objects.get(id=ix.follows);
+                
+            except:
+                chainEnd = True;
+
+        thisRun.reverse()
+        tables.append(thisRun)
+        
+
+    recommendedResult = []
+    for cx in range(0, len(tables)-1):
+        
+        ##select each value in the first table
+        for j in tables[cx]:
+            for k in range(cx+1, len(tables)):
+                if j in tables[k]:
+                    tables[k].remove(j)
+                    
+    if len(tables) > 1:
+        for i in (0, len(tables)-1):
+            recommendedResult += tables[i];
+
+    sharedMD.logThis("repairChain recommendedResult:" + str(recommendedResult))
+
+    #return HttpResponseRedirect('/pim1/drag/'+str(newProjectObject.id)) 
+
+    #######################################################
+    t = loader.get_template('pim1_tmpl/showchains.html')
+    c = Context({
+        'current_projs':current_projs,
+        'current_sets':current_sets,
+        'noFollowers':noFollowers,
+        'recommendedList':str(recommendedResult)[1:-1],
+        'titleCrumbBlurb':'showchain proj:'+str(proj_id),
+        'proj_id':proj_id,
         'nowx':datetime.datetime.now().strftime("%Y/%m/%d  %H:%M:%S")
     })
     return HttpResponse(t.render(c))
