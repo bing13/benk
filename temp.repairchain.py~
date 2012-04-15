@@ -1,0 +1,83 @@
+###########################################################################
+# repairChain
+#               repairs un-linked segments. naively.
+
+
+def showChains(proj_id):
+
+    # CHANGES HERE MUST BE INCORPORATED INTO SHOWCHAINS and vice versa,
+    # until we re-factor
+
+    ix = anchor
+    tableID = 0
+    tables = []
+    for endPoint in noFollowers:
+
+        chainEnd = False;
+        ix = endPoint
+        outputRows = []
+
+        thisRun = []
+        while not chainEnd:
+            thisRun.append(ix.id)
+            try:
+                ix = Item.objects.get(id=ix.follows);
+                
+            except:
+                chainEnd = True;
+
+        thisRun.reverse()
+        tables.append(thisRun)
+        
+        outputRows.reverse()
+        for row in outputRows:
+            outx += row;
+        outx +=  '</table>'
+        displayTables.append(outx);
+
+        outx = ''
+        #### calculate a recommended chain
+
+    recommendedResult = []
+    for cx in range(0, len(tables)-1):
+        
+        ##select each value in the first table
+        for j in tables[cx]:
+            for k in range(cx+1, len(tables)):
+                
+                
+                if j in tables[k]:
+                    tables[k].remove(j)
+                
+    sharedMD.logThis("Tables w/dupes removed:" + str(tables))
+
+
+    outx += '<hr/>'
+    if len(tables) > 1:
+        outx += '<h4>tables with dupes removed</h4>';
+
+        for i in (0, len(tables)-1):
+            outx += "<p>%s: %s</p>" % (i, tables[i]);
+            recommendedResult += tables[i];
+
+        outx += "<p>Recommended fix: " + str(recommendedResult)+'</p>';
+
+        outx += '<a href="/pim1/repairchain/'+ proj_id +'">execute this repair</a>'
+
+        displayTables.append(outx);
+
+    
+    displayTables.append("\n<p>fin</p>"); 
+    #######################################################
+    t = loader.get_template('pim1_tmpl/showchains.html')
+    c = Context({
+        'displayTables':displayTables, 
+        'current_projs':current_projs,
+        'current_sets':current_sets,
+        'noFollowers':noFollowers,
+        'recommendedList':str(recommendedResult)[1:-1],
+        'titleCrumbBlurb':'showchain proj:'+str(proj_id),
+        'proj_id':proj_id,
+        'nowx':datetime.datetime.now().strftime("%Y/%m/%d  %H:%M:%S")
+    })
+    return HttpResponse(t.render(c))

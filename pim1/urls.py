@@ -53,8 +53,12 @@ urlpatterns = patterns('',
     url(r'^pim1/addproject/$','pim1.pengine.views.createProject'),
     url(r'^pim1/addprojectset/$','pim1.pengine.views.createProjectSet'),                       
 
-    url(r'^pim1/maint/(?P<pLockRequest>\w+)/$','pim1.pengine.views.maintPage'),                       
-    url(r'^pim1/maint/$','pim1.pengine.views.maintPage',{'pLockRequest':'no'}),                       
+    url(r'^pim1/maint/(?P<pLockRequest>\w+)/$','pim1.pengine.views.maintPage'),
+    url(r'^pim1/maint/$','pim1.pengine.views.maintPage',{'pLockRequest':'no'}),
+
+    url(r'^pim1/manage/(?P<pLockRequest>\w+)/$','pim1.pengine.views.managePage'),
+    url(r'^pim1/manage/$','pim1.pengine.views.managePage',{'pLockRequest':'no'}),
+
 
     url(r'^pim1/today/$','pim1.pengine.views.today'),                       
 

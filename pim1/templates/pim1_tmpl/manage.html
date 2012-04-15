@@ -1,0 +1,38 @@
+{% extends "pim1_tmpl/pim1_base.html" %}
+
+{% block content %}
+
+<div class="maintcontent">
+
+
+  <h3>manage</h3>
+
+  <p>manage your projects </p>
+
+
+  <div class="maintLinks">
+
+     <ul>
+		  <li><a href="/pim1/addproject/">add project</a> </li>
+		  <li><a href="/pim1/addprojectset/">add project set</a> </li>
+		  <li>backup a project</li>
+     </ul>
+
+     <hr/>
+
+     <ul>
+	       <li>lock file contents:  <div class='lockMessage'>{{ lockMsg }}</div> </li>
+
+
+	       <li><a href="/pim1/manage/clearlock">clear lock</a> </li>
+     </ul>
+
+  </div>
+
+
+
+
+</div>
+
+{% endblock %}
+ 

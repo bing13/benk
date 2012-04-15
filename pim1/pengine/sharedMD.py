@@ -10,7 +10,7 @@ from pim1.pengine.models import Item, Project, ProjectSet
 import datetime, os
 
 LOGFILE = '/home/bhadmin13/dx.bernardhecker.com/pim1/benklog1.log'
-LOCKFILE = '/home/bhadmin13/dx.bernardhecker.com/pim1/lockfile1.lock'
+LOCKFILEDIR = '/home/bhadmin13/dx.bernardhecker.com/pim1/locks/'
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # validate_project
@@ -142,7 +142,7 @@ def findLastKid(itemx, lastItemID):
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # createLock
 def createLock(userx, message):
-    LX = open(LOCKFILE, 'a')
+    LX = open(LOCKFILEDIR+userx+'.lock', 'a')
     lockMessage = "Locked:\t" + userx +'\t' + datetime.datetime.now().strftime("%Y:%m:%d  %H:%M:%S")+ " ::\t" + message
     LX.write(lockMessage)
     LX.close
@@ -150,9 +150,9 @@ def createLock(userx, message):
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # releaseLock
-def releaseLock():
-    if os.path.exists(LOCKFILE):
-        os.remove(LOCKFILE)
+def releaseLock(userx):
+    if os.path.exists(LOCKFILEDIR+userx+'.lock'):
+        os.remove(LOCKFILEDIR+userx+'.lock')
         msg = "lock removed"
     else:
         msg = "no lock file, no action taken"
@@ -162,10 +162,10 @@ def releaseLock():
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # testLock
-def testLock():
-    if os.access(LOCKFILE, os.F_OK):
+def testLock(userx):
+    if os.access(LOCKFILEDIR+userx+'.lock', os.F_OK):
         # hope this isn't a problem if the write op is still open
-        LX = open(LOCKFILE, 'r')
+        LX = open(LOCKFILEDIR+userx+'.lock', 'r')
         msg=LX.readlines()
         LX.close
         return(msg)
