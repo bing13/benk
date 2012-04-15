@@ -50,7 +50,8 @@ urlpatterns = patterns('',
     url(r'^pim1/showchains/(?P<proj_id>\d+)/$','pim1.pengine.views.showChains'),
     url(r'^pim1/repairchain/(?P<proj_id>\d+)/$','pim1.pengine.views.repairChain'),                       
                        
-    url(r'^pim1/addproject/$','pim1.pengine.views.createProject'),                       
+    url(r'^pim1/addproject/$','pim1.pengine.views.createProject'),
+    url(r'^pim1/addprojectset/$','pim1.pengine.views.createProjectSet'),                       
 
     url(r'^pim1/maint/(?P<pLockRequest>\w+)/$','pim1.pengine.views.maintPage'),                       
     url(r'^pim1/maint/$','pim1.pengine.views.maintPage',{'pLockRequest':'no'}),                       

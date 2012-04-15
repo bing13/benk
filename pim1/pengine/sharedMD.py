@@ -32,7 +32,7 @@ def validate_project(proj_id):
             followedByMultiples.append(x)
 
     if len(followedByMultiples) > 0:
-        logThis(" * * * * * * * * VALIDATE ERROR * * * * * * * ");
+        logThis('---', " * * * * * * * * VALIDATE ERROR * * * * * * * ");
         totalErrorMsg = ''
 
         for f in followedByMultiples:
@@ -40,7 +40,7 @@ def validate_project(proj_id):
             mfString='';
             for k in multiFollows:
                 mfString += str(k.id) + ":" + k.title[:50] + ',';
-            logThis("[%s is followed by %s]" % (f, mfString[:-1]));
+            logThis('---', "[%s is followed by %s]" % (f, mfString[:-1]));
             totalErrorMsg += "[%s is followed by %s]" % (f, mfString[:-1]) + '\n';
         return(totalErrorMsg);
     else:
@@ -75,10 +75,10 @@ def returnMarker(self,itemx):
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # logThis
-def logThis(s):
+def logThis(userx, s):
     LX = open(LOGFILE, 'a')
     t = datetime.datetime.now().strftime("%Y/%m/%d  %H:%M:%S")
-    LX.write(t+" "+s+'\n')
+    LX.write(t+"\t"+userx+"\t"+s+'\n')
     LX.close
     return()
 
@@ -97,8 +97,8 @@ def getLastItemID(projID):
         if itemx.id not in listOfFollowers:
             lastItemIDs.append(itemx.id)
     if len(lastItemIDs)!= 1:
-        logThis( "===== getLastItemID: BAD LAST ITEM IDs, should only be one. Instead: "+ str(lastItemIDs))
-        logThis( "===== BAILING getlastItemID=====" )
+        logThis('---',  "===== getLastItemID: BAD LAST ITEM IDs, should only be one. Instead: "+ str(lastItemIDs))
+        logThis('---',  "===== BAILING getlastItemID=====" )
 
         validate_project(projID);
 
@@ -106,7 +106,7 @@ def getLastItemID(projID):
 
 
     else:
-        logThis( "Last item ID:"+ str(lastItemIDs[0]))
+        logThis('---',  "Last item ID:"+ str(lastItemIDs[0]))
         return(lastItemIDs[0])
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
@@ -136,14 +136,14 @@ def findLastKid(itemx, lastItemID):
 
             lastKid=prev_id
 
-    logThis("sMDflk=> findLastKid lastKid="+str(lastKid))
+    logThis('---', "sMDflk=> findLastKid lastKid="+str(lastKid))
     return(lastKid,kidList)
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # createLock
-def createLock(message):
+def createLock(userx, message):
     LX = open(LOCKFILE, 'a')
-    lockMessage = "Locked: " + datetime.datetime.now().strftime("%Y:%m:%d  %H:%M:%S")+ " :: " + message
+    lockMessage = "Locked:\t" + userx +'\t' + datetime.datetime.now().strftime("%Y:%m:%d  %H:%M:%S")+ " ::\t" + message
     LX.write(lockMessage)
     LX.close
     return("lock created")
@@ -157,7 +157,7 @@ def releaseLock():
     else:
         msg = "no lock file, no action taken"
 
-    logThis(msg)
+    logThis('---', msg)
     return(msg)
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #

@@ -5,7 +5,7 @@ from django.contrib import admin
 
 class ProjSetAdmin(admin.ModelAdmin):
     list_display=('id','name','color','owner')
-    list_filter= ['color']   
+    list_filter= ['owner']   
 
 admin.site.register(ProjectSet, ProjSetAdmin)
 

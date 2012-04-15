@@ -53,23 +53,10 @@ class ImportForm(forms.Form):
 class ssearchForm(forms.Form):
     searchfx=forms.CharField(max_length=200)
 
-class xxaddProjectForm(forms.Form):
-    newProjectName =  forms.CharField(max_length = 120)
-    newProjectColor = forms.CharField(max_length = 8)
-    newProjectOwner = forms.CharField(max_length = 30)
-    newProjProjectSet = forms.ModelChoiceField(queryset = ProjectSet.objects.all())
-    #filter(owner = request.user.username ))
-    ## was ....objects.all()
-    newProjProjectSetOwner = forms.CharField(max_length = 30)
-    # https://docs.djangoproject.com/en/dev/ref/forms/fields/#modelchoicefield
-    
-    #newProjProjectSet = forms.CharField(max_length=120, \
-    #                    widget=forms.Select(choices=PROJSET_CHOICES));
-
-    #    title = forms.CharField(max_length=3,
-    #            widget=forms.Select(choices=TITLE_CHOICES))
-
-
+class addProjectSetForm(forms.Form):
+    newProjectSetName =  forms.CharField(max_length = 120)
+    newProjectSetColor = forms.CharField(max_length = 8)
+    ##newProjectSetOwner = forms.CharField(max_length = 30)
 
 DRAGACTIONS=drag_actions.dragOps();
 
@@ -78,8 +65,10 @@ DRAGACTIONS=drag_actions.dragOps();
 
 ##################################################################
 def homepage(request):
-    current_projs = Project.objects.filter(projType=1)
-    current_sets = ProjectSet.objects.all()
+    sharedMD.logThis(request.user.username, "VIEW: homepage")
+
+    current_projs = Project.objects.filter(projType=1).filter(owner = request.user.username).order_by('name')
+    current_sets = ProjectSet.objects.filter(owner = request.user.username)
 
     return render_to_response("pim1_tmpl/home_page.html", {
         'home_page':'homepage',
@@ -91,14 +80,15 @@ def homepage(request):
 ##################################################################
 
 def itemlist(request,proj_id):
+    sharedMD.logThis(request.user.username, "VIEW: itemlist")
+
     ### THE ORIGINAL LIST VIEW
     ### still functional, but deprecated, and not exposed
 
-    sharedMD.logThis("Entering the original view: itemlist <==============ProjID ="+str(proj_id)+". ")
-    
-    ##current_items=Item.objects.all()
-    current_projs = Project.objects.filter(projType=1).order_by('name')
-    current_sets = ProjectSet.objects.all()
+    sharedMD.logThis(request.user.username, "Entering the original view: itemlist <==============ProjID ="+str(proj_id)+". ")
+
+    current_projs = Project.objects.filter(projType=1).filter(owner = request.user.username).order_by('name')
+    current_sets = ProjectSet.objects.filter(owner = request.user.username)
     
     displayList = buildDisplayList(current_projs, proj_id,'follows',0,[])
     projObj = Project.objects.get(pk=proj_id)
@@ -117,7 +107,8 @@ def itemlist(request,proj_id):
  
 ##################################################################
 def allMyChildren(targetID, resultList):
-    sharedMD.logThis("Entering allMyChildren <====================")
+
+    sharedMD.logThis('---', "VIEW: allMyChildren ")
 
     children= Item.objects.filter(parent=targetID)
     for cx in children:
@@ -134,9 +125,12 @@ def hoistItem(request,pItem):
     ##   1. can't just truncate, or you get the entire rest of the file
     ##   2. need to find all children, and then draw children and their children
     ## Fourth buildlist arg is hoist ID #. BuildDisplayList calls allMyChildren
+
+    sharedMD.logThis(request.user.username, "VIEW: hoistItem")
+
     hoistID=pItem
-    current_projs = Project.objects.filter(projType=1).order_by('name')
-    current_sets = ProjectSet.objects.all()
+    current_projs = Project.objects.filter(projType=1).filter(owner = request.user.username).order_by('name')
+    current_sets = ProjectSet.objects.filter(owner = request.user.username)
 
     hoistProj=Item.objects.get(pk=hoistID).project_id 
 
@@ -165,7 +159,7 @@ def hoistItem(request,pItem):
 
 ##################################################################
 def buildDisplayList(projectx, projID, ordering, hoistID, useListIDs):
-    sharedMD.logThis("   Entering buildDisplayList <=====")
+    sharedMD.logThis('---', "   Entering buildDisplayList")
 
     ### Select the items to operate on ###############
 
@@ -205,7 +199,7 @@ def buildDisplayList(projectx, projID, ordering, hoistID, useListIDs):
     ### Build the parent list
     ixList=[]
     jxHash={}
-    sharedMD.logThis("      ..queries done...")
+    sharedMD.logThis('---', "      ..queries done...")
 
 
     parentList=[] ## list of all items that are parents
@@ -214,7 +208,7 @@ def buildDisplayList(projectx, projID, ordering, hoistID, useListIDs):
 
     ###SLOW BLOCK BEGINS########################################################################
         
-    sharedMD.logThis("      ....parent list built...")
+    sharedMD.logThis('---', "      ....parent list built...")
     ### get project string to where it can be displayed    
     for ix in items2List:
         
@@ -241,7 +235,7 @@ def buildDisplayList(projectx, projID, ordering, hoistID, useListIDs):
             ix.isParent=False
             
 
-    sharedMD.logThis( "      .....ix built.....")
+    sharedMD.logThis('---',  "      .....ix built.....")
 
     displayList=[]
     followHash={}
@@ -250,10 +244,10 @@ def buildDisplayList(projectx, projID, ordering, hoistID, useListIDs):
         ## generate outline-ordered and formatted output list
         for f2 in ixList:
             if followHash.has_key(f2.follows): 
-                sharedMD.logThis( "=====> WARNING!! followHash duplicate")
+                sharedMD.logThis('---',   "      =====> WARNING!! followHash duplicate")
                 fh1=Item.objects.get(pk=followHash[f2.follows])
-                sharedMD.logThis("=====>ID:"+str(fh1.id)+":" + str(fh1) +"  follows=" + str(fh1.follows)+']')
-                sharedMD.logThis("=====>ID:"+str(f2.id)+":" + str(f2) +"  follows=" + str(f2.follows)+']\n')
+                sharedMD.logThis('---',  "      =====>ID:"+str(fh1.id)+":" + str(fh1) +"  follows=" + str(fh1.follows)+']')
+                sharedMD.logThis('---',  "      =====>ID:"+str(f2.id)+":" + str(f2) +"  follows=" + str(f2.follows)+']\n')
 
             ## this is the critial line for list-building
             followHash[f2.follows] = f2.id
@@ -283,14 +277,14 @@ def buildDisplayList(projectx, projID, ordering, hoistID, useListIDs):
                     continue
                 else:
                     break
-            sharedMD.logThis("FHK is="+str(fhk))
+            sharedMD.logThis('---',  "FHK is="+str(fhk))
             followHash[0]=followHash[fhk]
             followHash.pop(fhk)
-            ###sharedMD.logThis('new followhash'+str(followHash))
+            ###sharedMD.logThis('---',  'new followhash'+str(followHash))
             
         currentID = 0
 
-        sharedMD.logThis("      ...built followhash....")
+        sharedMD.logThis('---',  "      ...built followhash....")
 
         ## OK, now follow the chain of who follows whom, starting with whoever follows Parent ID = 0
         while  followHash.has_key(currentID):
@@ -299,29 +293,29 @@ def buildDisplayList(projectx, projID, ordering, hoistID, useListIDs):
 
         # theoretically, having no followHash key for currentID means you're on the last item
         # but beware re: data integrity / lost items
-        sharedMD.logThis("      .....displayList built...")
+        sharedMD.logThis('---',  "      .....displayList built...")
     else:
 
         displayList=ixList
-    sharedMD.logThis("   Exiting buildDisplayList ========>")
+    sharedMD.logThis('---',  "   Exiting buildDisplayList")
     return(displayList)
 
 ##################################################################
 
 
 def actionItem(request, pItem, action):
-    #sharedMD.logThis( "item "+ pItem + " to " + action);
-    #sharedMD.logThis( "actionItem request:" + str(request))
+    #sharedMD.logThis(request.user.username,  "item "+ pItem + " to " + action);
+    #sharedMD.logThis(request.user.username,  "actionItem request:" + str(request))
+    sharedMD.logThis(request.user.username, "VIEW: ")
 
     if request.is_ajax():
-        sharedMD.logThis( "AJAX request,item " + pItem + " to " + action);
+        sharedMD.logThis(request.user.username,  "AJAX request,item " + pItem + " to " + action);
         ajaxRequest = True
     else:
-        sharedMD.logThis( "Not an AJAX request"+ pItem + " to " + action);
+        sharedMD.logThis(request.user.username,  "Not an AJAX request"+ pItem + " to " + action);
         ajaxRequest = False
-
-    current_projs = Project.objects.filter(projType=1).order_by('name')
-    current_sets = ProjectSet.objects.all()
+    current_projs = Project.objects.filter(projType=1).filter(owner = request.user.username).order_by('name')
+    current_sets = ProjectSet.objects.filter(owner = request.user.username)
 
     
     clickedItem = Item.objects.get(pk=pItem)
@@ -343,7 +337,7 @@ def actionItem(request, pItem, action):
             oldFollower = Item.objects.get(follows=pItem)
             follower=True
         except:
-            sharedMD.logThis( "Item has no follower: ID" + str(pItem))
+            sharedMD.logThis(request.user.username,  "Item has no follower: ID" + str(pItem))
             follower=False
 
         newItem = Item(title="[NEW ITEM]",priority='0', status='0', \
@@ -360,7 +354,7 @@ def actionItem(request, pItem, action):
     elif action=='delete':
         if int(pItem) != lastItemID:
             
-            sharedMD.logThis( "===pItem, lastItemID============"+str(pItem)+ '  '+str(lastItemID)+"==============")
+            sharedMD.logThis(request.user.username,  "===pItem, lastItemID============"+str(pItem)+ '  '+str(lastItemID)+"==============")
             followingMe = Item.objects.get(follows=pItem)
             followingMe.follows=clickedItem.follows
             if followingMe.parent==clickedItem.id:
@@ -375,7 +369,7 @@ def actionItem(request, pItem, action):
     ###DEMOTE###################################################################
     elif action=='demote':
         if clickedItem.parent==clickedItem.follows:
-            sharedMD.logThis( "Can't demote further, item "+str(clickedItem.id))
+            sharedMD.logThis(request.user.username,  "Can't demote further, item "+str(clickedItem.id))
         else:
             ## if CI and the item following it have same parent, just shift CI parent, and indent CI
 
@@ -415,12 +409,12 @@ def actionItem(request, pItem, action):
         CIoriginalParent=clickedItem.parent
         
         if clickedItem.parent ==  0:
-            sharedMD.logThis( "CAN'T PROMOTE TOP-LEVEL "+ str(pItem))
+            sharedMD.logThis(request.user.username,  "CAN'T PROMOTE TOP-LEVEL "+ str(pItem))
 
         else:
             ### Deal with parent assignments first
             
-            sharedMD.logThis("Promoting: " +str(clickedItem.id))
+            sharedMD.logThis(request.user.username, "Promoting: " +str(clickedItem.id))
             indx=Item.objects.get(pk=clickedItem.follows)
             while indx.indentLevel >= clickedItem.indentLevel:
                 indx=Item.objects.get(pk=indx.follows)
@@ -438,7 +432,7 @@ def actionItem(request, pItem, action):
             # if items following the promotee are of the same level, we have to turn
             # the consecutive run of a same level/parent items into children (parent, indent)
             if Item.objects.get(follows=clickedItem.id).parent == CIoriginalParent:
-                sharedMD.logThis("converting subsequent items to children...")
+                sharedMD.logThis(request.user.username, "converting subsequent items to children...")
                 indx = Item.objects.get(follows=clickedItem.id)
                 while indx.parent == CIoriginalParent:
                     indx.parent=clickedItem.id
@@ -450,7 +444,7 @@ def actionItem(request, pItem, action):
 
             else:
                 # promotee has real kids
-                sharedMD.logThis("k-promote: LastKidID="+str(lastKidID))
+                sharedMD.logThis(request.user.username, "k-promote: LastKidID="+str(lastKidID))
                 if lastKidID != 0:
                     thisItem=Item.objects.get(follows=clickedItem.id)
                     while thisItem.id != lastKidID:
@@ -467,7 +461,7 @@ def actionItem(request, pItem, action):
     elif action=='moveup':
 
         if clickedItem.follows==0:
-            sharedMD.logThis( "CAN'T MOVE UP TOP item "+ str(pItem))
+            sharedMD.logThis(request.user.username,  "CAN'T MOVE UP TOP item "+ str(pItem))
         else:
             hasFollower=False             
             lastKid,kidList=sharedMD.findLastKid(clickedItem,lastItemID)
@@ -508,7 +502,7 @@ def actionItem(request, pItem, action):
         ### may wish to remodel so it looks like "moveup", which uses the findLastKid method
         lastKidofCI,kidList=sharedMD.findLastKid(clickedItem,lastItemID)
         if clickedItem.id == lastItemID or lastKidofCI == lastItemID:
-            sharedMD.logThis( "==> Clicked item is last item or last parent, no move:ci, lk, liID "+str(clickedItem.id) +"  " + str(lastKidofCI) + '  ' + str(lastItemID))
+            sharedMD.logThis(request.user.username,  "==> Clicked item is last item or last parent, no move:ci, lk, liID "+str(clickedItem.id) +"  " + str(lastKidofCI) + '  ' + str(lastItemID))
         else:
             #ciFollower=Item.objects.get(follows=clickedItem.id)
             if lastKidofCI !=0:
@@ -541,13 +535,13 @@ def actionItem(request, pItem, action):
     ###ACTION UNKNOWN########
 
     else:
-        sharedMD.logThis( "===WARNING!=========== Unknown action=" + action)
+        sharedMD.logThis(request.user.username,  "===WARNING!=========== Unknown action=" + action)
         exit()
 
     ###########################################################################
     ## let's restrict default view to the clicked item project
         
-    sharedMD.logThis( "      Action done. current project #"+str(clickedProjNum)+ " " +\
+    sharedMD.logThis(request.user.username,  "      Action done. current project #"+str(clickedProjNum)+ " " +\
              current_projs.get(pk=clickedProjNum).name + "Ajax:"+str(ajaxRequest))
 
     if not ajaxRequest:
@@ -560,7 +554,7 @@ def actionItem(request, pItem, action):
         projObj = Project.objects.get(pk=proj_id)
     
         titleCrumbBlurb = str(proj_id)+':'+projObj.name+"   ("+projObj.set.name+")"
-        sharedMD.logThis("    Action completed, for Non-ajax call.  " + titleCrumbBlurb)  
+        sharedMD.logThis(request.user.username, "    Action completed, for Non-ajax call.  " + titleCrumbBlurb)  
         return render_to_response("pim1_tmpl/draglist.html", {
             'current_items':displayList,
             'current_projs':current_projs, 
@@ -582,14 +576,21 @@ def actionItem(request, pItem, action):
 
 @login_required
 def psd(request,pSort,targetProject):
-    current_projs = Project.objects.filter(projType=1).order_by('name')
-    current_sets = ProjectSet.objects.all()
+    sharedMD.logThis(request.user.username, "VIEW: psd")
+
+    current_projs = Project.objects.filter(projType=1).filter(owner = request.user.username).order_by('name')
+    current_sets = ProjectSet.objects.filter(owner = request.user.username)
 
     request.session['viewmode'] = 'psd'
 
 
     targProjObj = Project.objects.get(pk=targetProject)
 
+    if targProjObj.owner != request.user.username:
+        
+        return HttpResponseRedirect('/pim1/homepage/') 
+
+    
     if pSort=='goo_date': pSort='date_gootask_display'
     # priority, status, date_mod, date_created
 
@@ -616,6 +617,8 @@ def psd(request,pSort,targetProject):
 ###################################################################
 @login_required
 def gridview(request):
+    sharedMD.logThis(request.user.username, "VIEW: gridview")
+
     ITEMS_PER_CELL = 10;
     current_projs = Project.objects.filter(projType=1).filter(owner = request.user.username).order_by('name')
     current_sets = ProjectSet.objects.filter(owner = request.user.username)
@@ -647,7 +650,7 @@ def gridview(request):
             for co in cx:
                 cellItems.append(co.id)
 
-        sharedMD.logThis("   cellItems=" + str(cellItems))       
+        sharedMD.logThis(request.user.username, "   cellItems=" + str(cellItems))       
         dx =   buildDisplayList(current_projs,thisProject.id, 'provided', 0, cellItems[:ITEMS_PER_CELL])
         displayList = displayList + dx
 
@@ -666,9 +669,10 @@ def gridview(request):
 ##################################################################
 @login_required
 def detailItem(request,pItem):
-    current_projs = Project.objects.filter(projType=1).order_by('name')
-    current_sets = ProjectSet.objects.all()
+    sharedMD.logThis(request.user.username, "VIEW: detailItem")
 
+    current_projs = Project.objects.filter(projType=1).filter(owner = request.user.username).order_by('name')
+    current_sets = ProjectSet.objects.filter(owner = request.user.username)
 
     ix=Item.objects.get(pk=pItem)
     #get project to where it can be displayed; was project_s
@@ -696,6 +700,9 @@ def detailItem(request,pItem):
 ##################################################################
 @login_required
 def gooTaskUpdate(request):
+
+    sharedMD.logThis(request.user.username, "VIEW: gooTaskUpdate")
+
     request.session['viewmode'] = 'psd'
 
 
@@ -710,10 +717,10 @@ def gooTaskUpdate(request):
     for g in gootasks['items']:
         gooTaskIdList.append(g['id'])
 
-    sharedMD.logThis( "gooTaskIdList="+str(gooTaskIdList))
+    sharedMD.logThis(request.user.username,  "gooTaskIdList="+str(gooTaskIdList))
 
     ## update all items that have google task display dates
-    pushableItems=Item.objects.filter(date_gootask_display__gte=datetime.date(2000, 1, 1))
+    pushableItems=Item.objects.filter(date_gootask_display__gte=datetime.date(2000, 1, 1), owner = request.user.username)
     #newIds=GTO.pushBenkToGooTasks(TASKLISTNAME, USER, pushableItems)
 
     # RFC 3339 timestamp
@@ -779,13 +786,13 @@ def example_task():
 #############################################################################
 @login_required
 def ssearch(request):
-    sharedMD.logThis("Entering ssearch <====================")
+    sharedMD.logThis(request.user.username, "VIEW: search")
+
 
     request.session['viewmode'] = 'ssearch'
 
-
-    current_projs = Project.objects.filter(projType=1).order_by('name')
-    current_sets = ProjectSet.objects.all()
+    current_projs = Project.objects.filter(projType=1).filter(owner = request.user.username).order_by('name')
+    current_sets = ProjectSet.objects.filter(owner = request.user.username)
 
     c = {}
     c.update(csrf(request))
@@ -796,14 +803,20 @@ def ssearch(request):
         sform = ssearchForm(request.GET)
         if sform.is_valid():
             searchTerm=sform.cleaned_data['searchfx']
-            sharedMD.logThis("Search term="+searchTerm)
+            sharedMD.logThis(request.user.username, "Search term="+searchTerm)
 
             request.session['searchterm'] = searchTerm
 
             ## Execute the search ##
             ## get the querySets
-            titleHits=Item.objects.filter(title__icontains=searchTerm)
-            noteHits=Item.objects.filter(HTMLnoteBody__icontains=searchTerm)
+            # Item.objects.filter(priority=1).filter(project__projType=1, owner = request.user.username).order_by('project__name')
+
+            #titleHits=Item.objects.filter(title__icontains=searchTerm)
+            #noteHits=Item.objects.filter(HTMLnoteBody__icontains=searchTerm)
+
+            titleHits = Item.objects.filter(project__projType=1, owner = request.user.username, title__icontains=searchTerm)
+            noteHits  = Item.objects.filter(project__projType=1, owner = request.user.username, HTMLnoteBody__icontains=searchTerm)
+            
             ## enumerate the hit IDs
             totalHits=[]
             for h in titleHits:
@@ -839,22 +852,31 @@ def ssearch(request):
 #############################################################################
 @login_required
 def addItem(request, pItem):
+    sharedMD.logThis(request.user.username, "VIEW: addItem")
 
     clickedItem=Item.objects.get(pk=pItem)
     lastItemID=sharedMD.getLastItemID(clickedItem.project_id)
     newItem=DRAGACTIONS.addItem(clickedItem, lastItemID)
-    sharedMD.logThis('edit new item: ' + str(newItem.id))
+    sharedMD.logThis(request.user.username, 'edit new item: ' + str(newItem.id))
     #follow does not work, no idea why
     return HttpResponseRedirect('/pim1/item/edititem/'+str(newItem.id))
                                         
 #############################################################################
 @login_required
 def editItem(request, pItem):
+    
     itemProject = Item.objects.get(pk=pItem).project_id
     projectName = Project.objects.get(pk=itemProject).name
+    projectOwner = Project.objects.get(pk=itemProject).owner
 
-    current_projs = Project.objects.filter(projType=1).order_by('name')
-    current_sets = ProjectSet.objects.all()
+    ### AUTH CHECK
+    if projectOwner != request.user.username:
+        sharedMD.logThis(request.user.username, "WARNING: attempt to edit item #" + str(pItem) + "in project " + projectName + ".  Not owned by this user!")
+        return HttpResponseRedirect('/pim1/') 
+
+
+    current_projs = Project.objects.filter(projType=1).filter(owner = request.user.username).order_by('name')
+    current_sets = ProjectSet.objects.filter(owner = request.user.username)
 
     # model formsets
     ###https://docs.djangoproject.com/en/1.2/topics/forms/modelforms/#using-a-model-formset-in-a-view
@@ -867,7 +889,7 @@ def editItem(request, pItem):
     if request.method == 'POST':
         formset=itemFormSet(request.POST, request.FILES)
         changedInstances=formset.save()
-        sharedMD.logThis("   Formset saved: "+str(changedInstances))
+        sharedMD.logThis(request.user.username, "   Formset saved: "+str(changedInstances))
 
         ## POST completed, now redirect to the correct view
         if request.session['viewmode'] == 'today':
@@ -885,8 +907,8 @@ def editItem(request, pItem):
 
 
         formsetOut = formset.as_table()
-        sharedMD.logThis("Edit item: Formset generated, pItem="+str(pItem))
-        ##sharedMD.logThis(formsetOut)
+        sharedMD.logThis(request.user.username, "Edit item: Formset generated, pItem="+str(pItem))
+        ##sharedMD.logThis(request.user.username, formsetOut)
         
     return render_to_response("pim1_tmpl/items/editItem.html", {
         "pItem": pItem,
@@ -905,9 +927,10 @@ def editItem(request, pItem):
 ############################################################################
 @login_required
 def importfile(request):
+    sharedMD.logThis(request.user.username, "VIEW: importfile")
 
-    current_projs = Project.objects.filter(projType=1).order_by('name')
-    current_sets = ProjectSet.objects.all()
+    current_projs = Project.objects.filter(projType=1).filter(owner = request.user.username).order_by('name')
+    current_sets = ProjectSet.objects.filter(owner = request.user.username)
 
     c = {}
     c.update(csrf(request))	  
@@ -918,10 +941,10 @@ def importfile(request):
             # Process the data in form.cleaned_data
             fileToImport=form.cleaned_data['fileToImport']
             projectToAdd=form.cleaned_data['projectToAdd']
-            sharedMD.logThis( "fileToImport="+fileToImport)
-            sharedMD.logThis( "projectToAdd="+str(projectToAdd))
+            sharedMD.logThis(request.user.username,  "fileToImport="+fileToImport)
+            sharedMD.logThis(request.user.username,  "projectToAdd="+str(projectToAdd))
 
-            sharedMD.logThis( "+++ departing to importISdata")
+            sharedMD.logThis(request.user.username,  "+++ departing to importISdata")
             importISdata(fileToImport,projectToAdd)
 
             # Redirect after POST
@@ -942,6 +965,11 @@ def importfile(request):
 #############################################################################
 @login_required
 def importISdata(importFile,newProjectID):
+    sharedMD.logThis(request.user.username, "VIEW: importISdata")
+
+    current_projs = Project.objects.filter(projType=1).filter(owner = request.user.username).order_by('name')
+    current_sets = ProjectSet.objects.filter(owner = request.user.username)
+
 
     textAccumulator = ''
     ISparentFirst = ''
@@ -958,7 +986,7 @@ def importISdata(importFile,newProjectID):
     firstRecord = 'yes'
     numberOfRecordsImported = 0
 
-    sharedMD.logThis( ">>> importISdata from " + IMPORTDIR + importFile)
+    sharedMD.logThis(request.user.username,  ">>> importISdata from " + IMPORTDIR + importFile)
     
     INFILE=open(IMPORTDIR + importFile,'r')
     allLines=INFILE.readlines()
@@ -992,7 +1020,7 @@ def importISdata(importFile,newProjectID):
                     if ISparentFirst == 0:
                         newItem.parent = 0
                     else:
-                        sharedMD.logThis("  Import: currentISid="+str(currentISid)+"  ISparentFirst="+str(ISparentFirst))
+                        sharedMD.logThis(request.user.username, "  Import: currentISid="+str(currentISid)+"  ISparentFirst="+str(ISparentFirst))
                         newItem.parent=Item.objects.get(IS_import_ID=ISparentFirst).id
                     newItem.project=Project.objects.get(pk=newProjectID)
 
@@ -1088,15 +1116,15 @@ def importISdata(importFile,newProjectID):
 
             elif itemType == 'DATE_CREATED':
                 read_date_created = data;
-                sharedMD.logThis('Date_created:'+str(read_date_created)+' ['+str(id)+']')
+                sharedMD.logThis(request.user.username, 'Date_created:'+str(read_date_created)+' ['+str(id)+']')
 
             elif itemType == 'DATE_MODIFIED':
                 read_date_mod = data;
-                sharedMD.logThis('Date_modified:'+str(read_date_mod))
+                sharedMD.logThis(request.user.username, 'Date_modified:'+str(read_date_mod))
 
             elif itemType == 'DATE_GOO_TASK':
                 read_date_goo_task = data;
-                sharedMD.logThis('read_date_goo_task:'+str(read_date_goo_task))
+                sharedMD.logThis(request.user.username, 'read_date_goo_task:'+str(read_date_goo_task))
 
             elif itemType == 'GOO_TASK_ID':
                 read_goo_task_id = data; 
@@ -1108,7 +1136,7 @@ def importISdata(importFile,newProjectID):
                 pass;
 
             else:
-                sharedMD.logThis( "* * RECORD TYPE MISSED * *:"+ str(lx))
+                sharedMD.logThis(request.user.username,  "* * RECORD TYPE MISSED * *:"+ str(lx))
     newItem.save()
     importedRecordIDs.append(newItem.id)
 
@@ -1118,24 +1146,24 @@ def importISdata(importFile,newProjectID):
         cleanUp.IS_import_ID=-999
         cleanUp.save()
 
-    sharedMD.logThis(">>> Completed. # of imported records: " + str(numberOfRecordsImported))
+    sharedMD.logThis(request.user.username, ">>> Completed. # of imported records: " + str(numberOfRecordsImported))
     
 ##################################################################
 @login_required
 def draglist(request, proj_id):
-    sharedMD.logThis("Entering drag list, Proj "+str(proj_id)+"===============================")
-    sharedMD.logThis("     User:"+request.user.username)
+    sharedMD.logThis(request.user.username, "VIEW: draglist")
+    
+    sharedMD.logThis(request.user.username, "     Proj "+str(proj_id))
 
     if request.user.username != Project.objects.get(id=proj_id).owner:
-        sharedMD.logThis("      Invalid user for this project, aborting.")
+        sharedMD.logThis(request.user.username, "      Invalid user for this project, aborting.")
         return HttpResponseRedirect('/pim1/') 
     
 
     request.session['viewmode'] = 'draglist'
     
-    
-    current_projs = Project.objects.filter(projType=1).order_by('name')
-    current_sets = ProjectSet.objects.all()
+    current_projs = Project.objects.filter(projType=1).filter(owner = request.user.username).order_by('name')
+    current_sets = ProjectSet.objects.filter(owner = request.user.username)
 
     displayList = buildDisplayList(current_projs, proj_id,'follows',0,[])
 
@@ -1160,10 +1188,12 @@ def draglist(request, proj_id):
 
 ######################################################################
 def xhr_test(request):
+    sharedMD.logThis(request.user.username, "VIEW: xhr_test")
+    
     myRequest=request.GET
-    sharedMD.logThis("xhr_test entered........")
+    sharedMD.logThis(request.user.username, "xhr_test entered........")
 
-    sharedMD.logThis("request.GET="+str(myRequest))
+    sharedMD.logThis(request.user.username, "request.GET="+str(myRequest))
 
     a=[(1,11),(2,22),(3,33),(4,44), (5,55)]
     jsona=simplejson.dumps(a)
@@ -1174,7 +1204,7 @@ def xhr_test(request):
         
     else:
         message = "not ajax"
-    sharedMD.logThis("xhr_test, message="+message)
+    sharedMD.logThis(request.user.username, "xhr_test, message="+message)
     
     mimetypex = 'application/javascript'
     return HttpResponse(jsona,mimetype=mimetypex)
@@ -1183,12 +1213,13 @@ def xhr_test(request):
 ######################################################################
 #@login_required
 def xhr_actions(request):
+    sharedMD.logThis(request.user.username, "VIEW: xhr_actions")
 
     mimetypex = 'application/javascript'
-    sharedMD.logThis('Entering xhr_actions...')
+
     
     actionRequest=request.GET
-    sharedMD.logThis(str(actionRequest))
+    sharedMD.logThis(request.user.username, str(actionRequest))
     message = 'nix'
     
     if request.is_ajax():
@@ -1196,12 +1227,12 @@ def xhr_actions(request):
     else:
         message = "Not an AJAX request"
 
-    sharedMD.logThis("=====> xhr_actions: ="+message)
+    sharedMD.logThis(request.user.username, "=====> xhr_actions: ="+message)
 
     lockStatus = sharedMD.testLock()
 
     if lockStatus != 'no lock':
-        sharedMD.logThis("         ==> Lock exists:" + str(lockStatus))
+        sharedMD.logThis(request.user.username, "         ==> Lock exists:" + str(lockStatus))
         
         lockInfo=simplejson.dumps(['LOCKED']+[lockStatus])
         return HttpResponse(lockInfo, mimetype=mimetypex)
@@ -1212,7 +1243,7 @@ def xhr_actions(request):
     clickedItem=Item.objects.get(pk=actionRequest['ci'])
 
     ## set lock
-    sharedMD.createLock( actionRequest['ajaxAction']+"  Proj:"+str(clickedItem.project_id)+" ci:"+str(clickedItem.id) +"  ti:"+ str(actionRequest['ti']) )
+    sharedMD.createLock(request.user.username, actionRequest['ajaxAction']+"  Proj:"+str(clickedItem.project_id)+" ci:"+str(clickedItem.id) +"  ti:"+ str(actionRequest['ti']) )
 
     lastItemID=sharedMD.getLastItemID(clickedItem.project_id)
 
@@ -1220,7 +1251,7 @@ def xhr_actions(request):
 
     if actionRequest['ajaxAction'] == 'dragKid':
         #BEWARE - if you require login on drag_move, the next line will fail. User/int decorator
-        refreshThese= drag_move(int(actionRequest['ci']),int(actionRequest['ti']));
+        refreshThese= drag_move(request, int(actionRequest['ci']),int(actionRequest['ti']));
 
     # this is where the shift-drag action should go
     elif actionRequest['ajaxAction']== 'dragPeer':
@@ -1270,7 +1301,7 @@ def xhr_actions(request):
 
 
     else:
-        sharedMD.logThis("+++ERROR+++. Uncaught actionRequest['ajaxAction']:"+actionRequest['ajaxAction'])
+        sharedMD.logThis(request.user.username, "+++ERROR+++. Uncaught actionRequest['ajaxAction']:"+actionRequest['ajaxAction'])
         refreshThese=[]
 
 
@@ -1291,19 +1322,20 @@ def xhr_actions(request):
 
 ######################################################################
 #@login_required
-def drag_move(CIid, TIid):
+def drag_move(request, CIid, TIid):
+    sharedMD.logThis(request.user.username, "VIEW: drag_move")
     # clicked item ID, target item ID
 
     CI=Item.objects.get(pk=CIid)
     TI=Item.objects.get(pk=TIid)
-    sharedMD.logThis(" ====dragmove=> CIid:TIid    "+str(CIid)+":"+str(TIid))
+    sharedMD.logThis(request.user.username, " ====dragmove=> CIid:TIid    "+str(CIid)+":"+str(TIid))
     
     if CI.follows == TI.id:
         ## invalid move
-        sharedMD.logThis('== WARNING: drag_move of item onto item it follows is invalid. Not executing.')
+        sharedMD.logThis(request.user.username, '== WARNING: drag_move of item onto item it follows is invalid. Not executing.')
 
         updateThese = DRAGACTIONS.updateIDsDecorate([CI.id, TI.id])
-        sharedMD.logThis('    updating:'+str(updateThese))
+        sharedMD.logThis(request.user.username, '    updating:'+str(updateThese))
         return(updateThese) 
 
  
@@ -1328,17 +1360,17 @@ def drag_move(CIid, TIid):
         followedCIorKid.follows = origCIfollow
         followedCIorKid.save()
         
-    #sharedMD.logThis("DragMove=> stitch around CI done")
+    #sharedMD.logThis(request.user.username, "DragMove=> stitch around CI done")
     ## now insert the moved item into it's new position
     CI.parent = TIid;  ## was origTIparent
     CI.follows = TIid;
     CI.indentLevel = TI.indentLevel+1
     CI.save()
-    sharedMD.logThis("DragMove=> CI saved")
+    sharedMD.logThis(request.user.username, "DragMove=> CI saved")
     
     ## item that followed the target now must follow the CI, or the CI's last child (if any)
 
-    sharedMD.logThis('dragmove=> targetFollowerID:'+str(targetFollower.id)+'  targetFollower.follows:'+str(targetFollower.follows) + '  lastkid:'+str(lastKidID))
+    sharedMD.logThis(request.user.username, 'dragmove=> targetFollowerID:'+str(targetFollower.id)+'  targetFollower.follows:'+str(targetFollower.follows) + '  lastkid:'+str(lastKidID))
     ## at this point tF.follows is previous one, 
 
 
@@ -1352,7 +1384,7 @@ def drag_move(CIid, TIid):
         targetFollower.save()
 
         ## also correct indentLevel, since parent indent might have changed
-        sharedMD.logThis(' dm=>kidList = '+str(kidList))
+        sharedMD.logThis(request.user.username, ' dm=>kidList = '+str(kidList))
 
 
         
@@ -1361,17 +1393,17 @@ def drag_move(CIid, TIid):
             thisKid=Item.objects.get(pk=kidx)
             thisKid.indentLevel = sharedMD.countIndent(thisKid)
             thisKid.save()
-            sharedMD.logThis(' dm=>kidx / indentL = '+str(thisKid.id)+"/"+str(thisKid.indentLevel))
+            sharedMD.logThis(request.user.username, ' dm=>kidx / indentL = '+str(thisKid.id)+"/"+str(thisKid.indentLevel))
 
             
             #extend kidItems (formerly kidPair( -- add the info JS refreshItem function will need
             
             kidItems.append([thisKid.id, thisKid.follows, thisKid.title, thisKid.parent, thisKid.indentLevel, thisKid.priority, thisKid.status, thisKid.HTMLnoteBody, returnMarker(thisKid), thisKid.statusText()])
             # 2/5/12 thisKid.statusText move inside of array bracket
-            #sharedMD.logThis(' => kidPair '+str(thisKid.id)+": "+str(kidPair))
+            #sharedMD.logThis(request.user.username, ' => kidPair '+str(thisKid.id)+": "+str(kidPair))
 
     
-    sharedMD.logThis(' => targetFollower.follows='+str(targetFollower.follows))
+    sharedMD.logThis(request.user.username, ' => targetFollower.follows='+str(targetFollower.follows))
     
     parentKidUpdate = []
 
@@ -1406,11 +1438,12 @@ def returnMarker(Itemx):
 
 #############################################################################
 def backupdata(request):
+    sharedMD.logThis(request.user.username, "VIEW: backupdata")
+    
     # projlist=0 is default value, overridden by passed parameters
 
-    current_projs = Project.objects.filter(projType=1).order_by('name')
-    current_sets = ProjectSet.objects.all()
-
+    current_projs = Project.objects.filter(projType=1).filter(owner = request.user.username).order_by('name')
+    current_sets = ProjectSet.objects.filter(owner = request.user.username)
 
     #BackupTheseProjects = []
     if request.method == 'POST': # If the form has been posted...
@@ -1418,14 +1451,14 @@ def backupdata(request):
         #if form.is_valid(): # All validation rules pass
         # Process the data in form.cleaned_data
         if "BackupTheseProjects" in request.POST:
-            sharedMD.logThis("backup request:"+str(request.POST))
+            sharedMD.logThis(request.user.username, "backup request:"+str(request.POST))
 
             for reqData in request.POST.lists():
                 if reqData[0] == 'BackupTheseProjects':
                     BackupTheseProjects=reqData[1]
                 
               
-            sharedMD.logThis(' backup ==> projlist:'+ str(BackupTheseProjects))
+            sharedMD.logThis(request.user.username, ' backup ==> projlist:'+ str(BackupTheseProjects))
 
 
             for thisBackupID in BackupTheseProjects:
@@ -1473,7 +1506,7 @@ def backupdata(request):
 
                     count += 1
 
-                sharedMD.logThis("Project "+str(thisBackupID)+": "+str(count)+" items backed up to "+filename)
+                sharedMD.logThis(request.user.username, "Project "+str(thisBackupID)+": "+str(count)+" items backed up to "+filename)
                 OUTX.close()
             #return HttpResponseRedirect('/serialize/')
     else:
@@ -1497,8 +1530,11 @@ def backupdata(request):
 #############################################################################
 @login_required
 def healthcheck(request, proj_id):
-    current_projs = Project.objects.filter(projType=1).order_by('name')
-    current_sets = ProjectSet.objects.all()
+    sharedMD.logThis(request.user.username, "VIEW: healthcheck")
+
+    current_projs = Project.objects.filter(projType=1).filter(owner = request.user.username).order_by('name')
+    current_sets = ProjectSet.objects.filter(owner = request.user.username)
+
 
     proj_id = int(proj_id)
 
@@ -1526,6 +1562,7 @@ def healthcheck(request, proj_id):
 
 @login_required
 def createProject(request):
+    sharedMD.logThis(request.user.username, "VIEW: createProject")
 
     class addProjectForm(forms.Form):
         newProjectName =  forms.CharField(max_length = 120)
@@ -1535,8 +1572,8 @@ def createProject(request):
         ## was ....objects.all()
         #newProjProjectSetOwner = forms.CharField(max_length = 30)
 
-    current_projs = Project.objects.filter(projType=1).order_by('name')
-    current_sets = ProjectSet.objects.all()
+    current_projs = Project.objects.filter(projType=1).filter(owner = request.user.username).order_by('name')
+    current_sets = ProjectSet.objects.filter(owner = request.user.username)
 
     c = {}
     c.update(csrf(request))	  
@@ -1550,7 +1587,7 @@ def createProject(request):
             newProjectSet = form.cleaned_data['newProjProjectSet']
             newProjectColor = form.cleaned_data['newProjectColor']
             #newProjectOwner = form.cleaned_data['newProjectOwner']
-            sharedMD.logThis( "creating project: "+newProjectName + "projset = "+str(newProjectSet))
+            sharedMD.logThis(request.user.username,  "creating project: "+newProjectName + "projset = "+str(newProjectSet))
 
             newProjectObject = Project(name = newProjectName, color = newProjectColor, \
                                        set = newProjectSet, projType = 1, \
@@ -1574,12 +1611,14 @@ def createProject(request):
 
             newProjItem = Item(title = npAnchor, priority = '0', status = '0', \
                                follows = 0,  parent = 0, indentLevel = 0, \
-                               project = newProjectObject)
+                               project = newProjectObject, \
+                               owner = request.user.username)
             newProjItem.save()
 
             newArchItem = Item(title = archAnchor, priority = '0', status = '0', \
                                follows = 0,  parent = 0, indentLevel = 0, \
-                               project = newArchiveProj)
+                               project = newArchiveProj, \
+                               owner = request.user.username)
             newArchItem.save()
 
             
@@ -1598,11 +1637,55 @@ def createProject(request):
                 'nowx':datetime.datetime.now().strftime("%Y/%m/%d  %H:%M:%S")
                 }, context_instance=RequestContext(request) )
 
+
+###########################################################################
+
+@login_required
+def createProjectSet(request):
+    sharedMD.logThis(request.user.username, "VIEW: createProjectSet")
+
+    current_projs = Project.objects.filter(projType=1).filter(owner = request.user.username).order_by('name')
+    current_sets = ProjectSet.objects.filter(owner = request.user.username)
+
+    c = {}
+    c.update(csrf(request))	  
+ 
+    if request.method == 'POST': # If the form has been posted...
+        form = addProjectSetForm(request.POST) # A form bound to the POST data
+        if form.is_valid(): # All validation rules pass
+            # Process the data in form.cleaned_data
+
+            newProjectSetName = form.cleaned_data['newProjectSetName']
+            newProjectSetColor = form.cleaned_data['newProjectSetColor']
+            sharedMD.logThis(request.user.username,  "creating projectSet: "+newProjectSetName )
+
+            newProjectSetObject = ProjectSet(name = newProjectSetName, color = newProjectSetColor, \
+                                       owner = request.user.username )
+            newProjectSetObject.save()
+            
+
+            # Redirect after POST
+            return HttpResponseRedirect('/pim1/addprojectset') 
+    else:
+        form = addProjectSetForm() # An unbound form
+
+    return render_to_response('pim1_tmpl/addProjectset.html', {
+                'form':form,
+                'pagecrumb':'add a new project set',
+                'current_projs':current_projs,
+                'current_sets':current_sets,
+
+                'nowx':datetime.datetime.now().strftime("%Y/%m/%d  %H:%M:%S")
+                }, context_instance=RequestContext(request) )
+
+
 ######################################################################
 @login_required
 def maintPage(request, pLockRequest):
-    current_projs = Project.objects.filter(projType=1).order_by('name')
-    current_sets = ProjectSet.objects.all()
+    sharedMD.logThis(request.user.username, "VIEW: maintPage")
+    
+    current_projs = Project.objects.filter(projType=1).filter(owner = request.user.username).order_by('name')
+    current_sets = ProjectSet.objects.filter(owner = request.user.username)
 
 
     if pLockRequest == "clearlock":
@@ -1637,6 +1720,7 @@ def maintPage(request, pLockRequest):
 @login_required
 def today(request):
 
+    sharedMD.logThis(request.user.username, "VIEW: today")
     request.session['viewmode'] = 'today'
 
 
@@ -1670,8 +1754,10 @@ def today(request):
 
 @login_required
 def showChains(request, proj_id):
-    current_projs = Project.objects.filter(projType=1).order_by('name')
-    current_sets = ProjectSet.objects.all()
+    sharedMD.logThis(request.user.username, "VIEW: showchains")
+
+    current_projs = Project.objects.filter(projType=1).filter(owner = request.user.username).order_by('name')
+    current_sets = ProjectSet.objects.filter(owner = request.user.username)
 
     thisProjItems=Item.objects.filter(project__id = proj_id);
 
@@ -1691,8 +1777,8 @@ def showChains(request, proj_id):
         if itemx.id not in allFollows:
             lastItemIDs.append(itemx.id)
 
-    sharedMD.logThis( "ShowChains: Proj "+ str(proj_id) +"======================================")
-    sharedMD.logThis( "            Found these un-followed items: "+ str(lastItemIDs))
+    sharedMD.logThis(request.user.username,  "ShowChains: Proj "+ str(proj_id) +"======================================")
+    sharedMD.logThis(request.user.username,  "            Found these un-followed items: "+ str(lastItemIDs))
     noFollowers = Item.objects.filter(id__in = lastItemIDs);
 
 
@@ -1718,7 +1804,7 @@ def showChains(request, proj_id):
             follows_ix = Item.objects.get(follows=ix.id)
             ix = follows_ix
         except:
-            #sharedMD.logThis(str(sys.exec_info()))
+            #sharedMD.logThis(request.user.username, str(sys.exec_info()))
             outx += "<tr><td colspan='3'>error getting follower of %s, error: %s</td></tr>" % (ix.id, str(sys.exc_info()));
             mfString = '';
             multiFollows = Item.objects.filter(follows = ix.id)
@@ -1785,7 +1871,7 @@ def showChains(request, proj_id):
                 ix = Item.objects.get(id=ix.follows);
                 
             except:
-                #sharedMD.logThis(str(sys.exec_info()))
+                #sharedMD.logThis(request.user.username, str(sys.exec_info()))
                 outx += "<tr><td colspan='5'>error getting preceeder of %s, error: %s</td></tr>" % (ix.id, str(sys.exc_info()));
                 mfString = '';
                 multiFollows = Item.objects.filter(follows = ix.id)
@@ -1823,14 +1909,14 @@ def showChains(request, proj_id):
                 anchorHere = indexCount
 
         if anchorHere == 999:
-            sharedMD.logThis("             ERROR! Anchor missing from tables array, or not in position 0")
+            sharedMD.logThis(request.user.username, "             ERROR! Anchor missing from tables array, or not in position 0")
             exit();
         elif anchorHere == 0:
-            sharedMD.logThis("             ...anchor in chain 0...")
+            sharedMD.logThis(request.user.username, "             ...anchor in chain 0...")
         else:
             arrayContainingAnchor = tables.pop(anchorHere)
             tables.insert(0, arrayContainingAnchor)
-            sharedMD.logThis("             ...anchor moved from chain %s to chain 0..." % anchorHere)
+            sharedMD.logThis(request.user.username, "             ...anchor moved from chain %s to chain 0..." % anchorHere)
 
 
     # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
@@ -1846,7 +1932,7 @@ def showChains(request, proj_id):
                 if j in tables[k]:
                     tables[k].remove(j)
                 
-    sharedMD.logThis("            Tables w/dupes removed:" + str(tables))
+    sharedMD.logThis(request.user.username, "            Tables w/dupes removed:" + str(tables))
 
 
     outx += '<hr/>'
@@ -1886,10 +1972,10 @@ def showChains(request, proj_id):
 
 @login_required
 def repairChain(request, proj_id):
+    sharedMD.logThis(request.user.username, "VIEW: repairchain")
 
-    current_projs = Project.objects.filter(projType=1).order_by('name')
-    current_sets = ProjectSet.objects.all()
-
+    current_projs = Project.objects.filter(projType=1).filter(owner = request.user.username).order_by('name')
+    current_sets = ProjectSet.objects.filter(owner = request.user.username)
 
     # CHANGES HERE MUST BE INCORPORATED INTO SHOWCHAINS and vice versa,
     # until we re-factor
@@ -1940,14 +2026,14 @@ def repairChain(request, proj_id):
                 anchorHere = indexCount
 
         if anchorHere == 999:
-            sharedMD.logThis("             ERROR! Anchor missing from tables array, or not in position 0")
+            sharedMD.logThis(request.user.username, "             ERROR! Anchor missing from tables array, or not in position 0")
             exit();
         elif anchorHere == 0:
-            sharedMD.logThis("             ...anchor in chain 0...")
+            sharedMD.logThis(request.user.username, "             ...anchor in chain 0...")
         else:
             arrayContainingAnchor = tables.pop(anchorHere)
             tables.insert(0, arrayContainingAnchor)
-            sharedMD.logThis("             ...anchor moved from chain %s to chain 0..." % anchorHere)
+            sharedMD.logThis(request.user.username, "             ...anchor moved from chain %s to chain 0..." % anchorHere)
 
 
     # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
@@ -1962,16 +2048,16 @@ def repairChain(request, proj_id):
                     tables[k].remove(j)
                     
     if len(tables) == 1:
-        sharedMD.logThis("            TABLE HAS ONLY 1 CHAIN. Aborting");
+        sharedMD.logThis(request.user.username, "            TABLE HAS ONLY 1 CHAIN. Aborting");
     else:
         
         for i in (0, len(tables)-1):
             recommendedResult += tables[i];
 
 
-        sharedMD.logThis("RepairChain: Proj " + str(proj_id) + "===================================")
-        sharedMD.logThis("            recommendedResult:" + str(recommendedResult))
-        sharedMD.logThis("            Starting rechaining....anchor="+str(anchor.id));
+        sharedMD.logThis(request.user.username, "RepairChain: Proj " + str(proj_id) + "===================================")
+        sharedMD.logThis(request.user.username, "            recommendedResult:" + str(recommendedResult))
+        sharedMD.logThis(request.user.username, "            Starting rechaining....anchor="+str(anchor.id));
         
 
         ##recommendedResult removes duplicate items across chains.
