@@ -3,6 +3,7 @@
 # actions that work with xhr requests
 #
 
+from django.contrib.auth.decorators import login_required
 
 from pim1.pengine.models import Item, Project
 import sharedMD
@@ -749,7 +750,7 @@ class dragOps():
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # fastAdd
-
+    #@login_required - uh oh, no request context
     def fastAdd(self,  clickedItem, FADtitle, FADstatus, FADpriority, FADhtmlBody):
 
         #clickedItem=Item.objects.get(pk=clickedItemID)
@@ -764,13 +765,14 @@ class dragOps():
             follower=True
         except:
             sharedMD.logThis( "Item has no follower: ID" + str(clickedItem.id))
-            follower=False
-
-
+            follower = False
+        
         newItem = Item(title=FADtitle,priority=FADpriority, status=FADstatus, \
-           follows=clickedItem.id, \
-           HTMLnoteBody=FADhtmlBody )
-        newItem.project=clickedItem.project
+                       follows=clickedItem.id, \
+                       HTMLnoteBody=FADhtmlBody )
+        newItem.project = clickedItem.project
+        newItem.owner = clickedItem.project.owner
+        sharedMD.logThis("NEW FA item ID=" + str(newItem.id))
 
 
         ## if clickedItem has kids, the fastAdded item should be a kid.
@@ -784,8 +786,10 @@ class dragOps():
             newItem.indentLevel = clickedItem.indentLevel+1
 
         newItem.save()
-
-        updateListIDs=[newItem.id, clickedItem.id, clickedItem.follows  ] 
+        sharedMD.logThis("   fastadded item ID = " + str(newItem.id));
+        updateListIDs=[newItem.id, clickedItem.id]
+        if clickedItem.follows != 0:
+            updateListIDs.append(clickedItem.follows) 
 
         if follower:
             oldFollower.follows = newItem.id

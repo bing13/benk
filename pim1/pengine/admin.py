@@ -4,24 +4,24 @@ from pim1.pengine.models import Item, Project, ProjectSet
 from django.contrib import admin
 
 class ProjSetAdmin(admin.ModelAdmin):
-    list_display=('id','name','color')
+    list_display=('id','name','color','owner')
     list_filter= ['color']   
 
 admin.site.register(ProjectSet, ProjSetAdmin)
 
 
 class ProjAdmin(admin.ModelAdmin):
-    list_display=('id','name','color', 'set', 'projType', 'archivePair')
+    list_display=('id','name','owner','color', 'set', 'projType', 'archivePair')
     list_filter= ['set']   
 
 admin.site.register(Project, ProjAdmin)
 
     
 class ItemAdmin(admin.ModelAdmin):
-    fields = [ 'id', 'project', 'title','parent','follows','indentLevel', 'IS_import_ID', 'priority', 'status',\
+    fields = [ 'id', 'owner', 'project', 'title','parent','follows','indentLevel', 'IS_import_ID', 'priority', 'status',\
                'date_gootask_display','HTMLnoteBody', \
                'date_created', 'date_mod']
-    list_display = ('id','project', 'parent','follows', 'indentLevel','IS_import_ID','title', 'date_mod', 'date_gootask_display')
+    list_display = ('id','owner', 'project', 'parent','follows', 'indentLevel','IS_import_ID','title', 'date_mod', 'date_gootask_display')
     search_fields = ['HTMLnoteBody', 'title']
     date_hierarchy = 'date_mod'
 

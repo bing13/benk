@@ -53,11 +53,14 @@ class ImportForm(forms.Form):
 class ssearchForm(forms.Form):
     searchfx=forms.CharField(max_length=200)
 
-class addProjectForm(forms.Form):
+class xxaddProjectForm(forms.Form):
     newProjectName =  forms.CharField(max_length = 120)
     newProjectColor = forms.CharField(max_length = 8)
-
-    newProjProjectSet = forms.ModelChoiceField(queryset = ProjectSet.objects.all() )
+    newProjectOwner = forms.CharField(max_length = 30)
+    newProjProjectSet = forms.ModelChoiceField(queryset = ProjectSet.objects.all())
+    #filter(owner = request.user.username ))
+    ## was ....objects.all()
+    newProjProjectSetOwner = forms.CharField(max_length = 30)
     # https://docs.djangoproject.com/en/dev/ref/forms/fields/#modelchoicefield
     
     #newProjProjectSet = forms.CharField(max_length=120, \
@@ -614,8 +617,8 @@ def psd(request,pSort,targetProject):
 @login_required
 def gridview(request):
     ITEMS_PER_CELL = 10;
-    current_projs = Project.objects.filter(projType=1).order_by('name')
-    current_sets = ProjectSet.objects.all()
+    current_projs = Project.objects.filter(projType=1).filter(owner = request.user.username).order_by('name')
+    current_sets = ProjectSet.objects.filter(owner = request.user.username)
 
     displayList = [] ; 
 
@@ -630,14 +633,21 @@ def gridview(request):
         
         cellObjs = []
         for priorityLevel in (1,2,3,4,5,6,7,8,9,0,99,''):
-            cx = Item.objects.filter(project=thisProject,priority=priorityLevel)[:ITEMS_PER_CELL]
+            cx = Item.objects.filter(project=thisProject, priority=priorityLevel)[:ITEMS_PER_CELL]
+
+
+            #works in TODAY:    todayIDs = Item.objects.filter(priority=1).filter(project__projType=1, owner = request.user.username).order_by('project__name')
+            # ,  owner = request.user.username
+            # preceding line returns no results for jmoss. Works on projects.
+            #####################################################################
+            
             ## i.e., no need to consider more than ITEMS_PER_CELL max in a category, since that's
             ## the *overall* limit for gridview
             
             for co in cx:
                 cellItems.append(co.id)
 
-                
+        sharedMD.logThis("   cellItems=" + str(cellItems))       
         dx =   buildDisplayList(current_projs,thisProject.id, 'provided', 0, cellItems[:ITEMS_PER_CELL])
         displayList = displayList + dx
 
@@ -843,16 +853,13 @@ def editItem(request, pItem):
     itemProject = Item.objects.get(pk=pItem).project_id
     projectName = Project.objects.get(pk=itemProject).name
 
-    #dispPage, dispStart, dispLength):
-    # dispPage, dispStart and dispLength allow us to restore the listing page to what it was
     current_projs = Project.objects.filter(projType=1).order_by('name')
     current_sets = ProjectSet.objects.all()
-
 
     # model formsets
     ###https://docs.djangoproject.com/en/1.2/topics/forms/modelforms/#using-a-model-formset-in-a-view
     
-    itemFormSet = forms.models.modelformset_factory(Item, max_num=0, exclude=('IS_import_ID', 'gtask_id', 'project', 'date_gootask_display'))
+    itemFormSet = forms.models.modelformset_factory(Item, max_num=0, exclude=('IS_import_ID', 'gtask_id', 'project', 'date_gootask_display', 'owner'))
 
     
     ## "field" and "exclude" operands supported
@@ -1119,6 +1126,11 @@ def draglist(request, proj_id):
     sharedMD.logThis("Entering drag list, Proj "+str(proj_id)+"===============================")
     sharedMD.logThis("     User:"+request.user.username)
 
+    if request.user.username != Project.objects.get(id=proj_id).owner:
+        sharedMD.logThis("      Invalid user for this project, aborting.")
+        return HttpResponseRedirect('/pim1/') 
+    
+
     request.session['viewmode'] = 'draglist'
     
     
@@ -1207,10 +1219,9 @@ def xhr_actions(request):
     ## to dragmove #################################
 
     if actionRequest['ajaxAction'] == 'dragKid':
-         intCI = int(actionRequest['ci']);
-         intTI = int(actionRequest['ti']);
-         refreshThese= drag_move(intCI, intTI);
-         
+        #BEWARE - if you require login on drag_move, the next line will fail. User/int decorator
+        refreshThese= drag_move(int(actionRequest['ci']),int(actionRequest['ti']));
+
     # this is where the shift-drag action should go
     elif actionRequest['ajaxAction']== 'dragPeer':
         refreshThese= DRAGACTIONS.drag_peer(int(actionRequest['ci']), int(actionRequest['ti']))
@@ -1516,6 +1527,14 @@ def healthcheck(request, proj_id):
 @login_required
 def createProject(request):
 
+    class addProjectForm(forms.Form):
+        newProjectName =  forms.CharField(max_length = 120)
+        newProjectColor = forms.CharField(max_length = 8)
+        #newProjectOwner = forms.CharField(max_length = 30)
+        newProjProjectSet = forms.ModelChoiceField(queryset = ProjectSet.objects.filter(owner = request.user.username ))
+        ## was ....objects.all()
+        #newProjProjectSetOwner = forms.CharField(max_length = 30)
+
     current_projs = Project.objects.filter(projType=1).order_by('name')
     current_sets = ProjectSet.objects.all()
 
@@ -1530,16 +1549,18 @@ def createProject(request):
             newProjectName = form.cleaned_data['newProjectName']
             newProjectSet = form.cleaned_data['newProjProjectSet']
             newProjectColor = form.cleaned_data['newProjectColor']
-
+            #newProjectOwner = form.cleaned_data['newProjectOwner']
             sharedMD.logThis( "creating project: "+newProjectName + "projset = "+str(newProjectSet))
 
             newProjectObject = Project(name = newProjectName, color = newProjectColor, \
-                                       set = newProjectSet, projType = 1 )
+                                       set = newProjectSet, projType = 1, \
+                                       owner = request.user.username )
             newProjectObject.save()
              
             newArchiveProj = Project(name = newProjectName + " ARCHIVE", color = "#cccccc",\
                                      set = newProjectSet, projType = 3, \
-                                     archivePair = newProjectObject )
+                                     archivePair = newProjectObject , \
+                                     owner = request.user.username )
 
             newArchiveProj.save()
 
@@ -1618,11 +1639,14 @@ def today(request):
 
     request.session['viewmode'] = 'today'
 
-    
-    current_projs = Project.objects.filter(projType=1).order_by('name')
-    current_sets = ProjectSet.objects.all()
 
-    todayIDs = Item.objects.filter(priority=1).filter(project__projType=1).order_by('project__name')
+    current_projs = Project.objects.filter(projType=1).filter(owner = request.user.username).order_by('name')
+    current_sets = ProjectSet.objects.filter(owner = request.user.username)
+    
+    #current_projs = Project.objects.filter(projType=1).order_by('name')
+    #current_sets = ProjectSet.objects.all()
+
+    todayIDs = Item.objects.filter(priority=1).filter(project__projType=1, owner = request.user.username).order_by('project__name')
 
     displayList =  buildDisplayList(current_projs,0,'project__name',0,todayIDs)
 

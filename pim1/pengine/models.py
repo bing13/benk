@@ -16,18 +16,23 @@ class ProjectSet(models.Model):
         ('2', 'personal'),
         ('3', 'testing'),
         ('4', 'retired'),
+        ('5', 'main'),
+        ('6', 'fun'),
     )
     
     name = models.CharField(max_length=120, choices=PROJSET_CHOICES)
     color = models.CharField(max_length=8)
+    owner = models.CharField(max_length = 30)
+
     def __unicode__(self):
         return self.name
 
 class Project(models.Model):
-    name = models.CharField(max_length=120)
-    color = models.CharField(max_length=8)
+    name = models.CharField(max_length = 120)
+    color = models.CharField(max_length = 8)
     archivePair = models.ForeignKey('self', null=True, blank=True)
     set = models.ForeignKey(ProjectSet, null=True)
+    owner = models.CharField(max_length = 30)
 
     ### archive is for done items, etc
     ### retired project is for mothballing the entire main project
@@ -56,7 +61,7 @@ class Item(models.Model):
     project = models.ForeignKey(Project, null=True)
     date_created = models.DateTimeField('date created',auto_now_add=True)
     date_mod = models.DateTimeField('date last modified',auto_now=True)
-
+    owner = models.CharField(max_length = 30)
     # these are used during Info Select import operation. 
     # They are not unique across import files
     IS_import_ID = models.IntegerField(null=True, blank=True)
