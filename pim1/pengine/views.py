@@ -636,7 +636,7 @@ def gridview(request):
         
         cellObjs = []
         for priorityLevel in (1,2,3,4,5,6,7,8,9,0,99,''):
-            cx = Item.objects.filter(project=thisProject, priority=priorityLevel)[:ITEMS_PER_CELL]
+            cx = Item.objects.filter(project=thisProject, priority=priorityLevel, owner = request.user.username)[:ITEMS_PER_CELL]
 
 
             #works in TODAY:    todayIDs = Item.objects.filter(priority=1).filter(project__projType=1, owner = request.user.username).order_by('project__name')

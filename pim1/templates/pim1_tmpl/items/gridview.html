@@ -24,7 +24,7 @@ $(window).load(function(){
         {% ifchanged %}
             </div></div>
             <div class="gridCell  all_set  set_{{ ci.project.set.id }}">
-              <div class="projheader"><a href="/pim1/drag/{{ ci.project.id }}">{{ ci.projectForOrdering }}</a></div>
+              <div class="projheader"  style="background:{{ ci.project.color }};"><a href="/pim1/drag/{{ ci.project.id }}">{{ ci.projectForOrdering }}</a></div>
 	      <div class="gridItemList">
         {% endifchanged %}
 
