@@ -1,0 +1,268 @@
+
+{% extends "pim1_tmpl/pim1_base.html" %}
+
+{% block content %}
+
+{% if subtitle %}
+
+   <span class="headline">{{ titleCrumbBlurb }}</span>
+
+{% endif %}
+ 
+
+{% if current_items %}
+
+<div id="wrapi" class="itemdrag_table benk" >
+ 
+    {% for ci in current_items %}
+    {% ifchanged %}
+       <div><span class="projheader"  style="background: {{ ci.project.color }};" >{{ ci.projectForOrdering }}  
+              <a href="#"  class="toggleDone" onclick="toggleDoneItems()" > hide done</a> 
+              <a href="#" onclick="toggleSimple()" class="simpleToggle">simple</a></span>
+        </div>
+    {% endifchanged %}
+
+  <!--a href="#" onClick='deleteMeFromDOM({{ ci.id }});actionJax({{ ci.id }},0,"delete")'>&otimes;</a -->
+        <!-- removed this class from below div: ui-widget-headerx --> 
+
+    {% if ci.follows == 0 %}
+	<!-- it's an anchor, so make it undraggable, and unselectable -->
+	<div class="itemsdrag dropx anchor"  id="{{ ci.id }}"  >
+    {% else %} 
+
+        <div class="itemsdrag bhdraggable dropx"  id="{{ ci.id }}"  onclick="selectMe(this)">
+
+    {% endif %}
+    
+       <span class="itemDragWidgetBlock">
+
+	    <span class="itemdrag actionArrows simpleDisappear"><a class="ilid" href="/pim1/list-items/hoist/{{ ci.id }}">{{ ci.id }}&nbsp;{{ci.parent}}/{{ci.follows}}:{{ci.indentLevel}}:</a><span class="arrowItems">&nbsp;<a href="/pim1/item/add/{{ ci.id }}">&harr;</a><a href="#" onClick='actionJax({{ ci.id }},0,"promote")' >&larr;</a><a href="#"  onClick='actionJax({{ ci.id }},0,"demote")'>&rarr;</a><a href="#{{ ci.id }}" onClick='actionJax({{ ci.id }},0,"moveUp")'>&uarr;</a><a href="#{{ ci.id }}" onClick='actionJax({{ ci.id }},0,"moveDown")'>&darr;</a></span></span>
+
+
+<form>
+            <span class="prio_stat_btns"> 
+
+<select class="prioritySelect priority_{{ ci.priority }}" onChange="prioritySelected({{ ci.id }});"  >
+{% if ci.priority == "1" %}
+  <option value="1" selected="selected" >TODAY</option>
+{% else %}
+  <option value="1" >TODAY</option>
+{% endif %}
+
+{% if ci.priority == "2" %}
+  <option value="2" selected="selected">Urgent</option>
+{% else %}
+  <option value="2" >Urgent</option>
+{% endif %}
+
+{% if ci.priority == "3" %}
+  <option value="3" selected="selected">Important</option>
+{% else %}
+  <option value="3" >Important</option>
+{% endif %}
+
+{% if ci.priority == "4" %}
+  <option value="4" selected="selected">Normal</option>
+{% else %}
+  <option value="4" >Normal</option>
+{% endif %}
+
+{% if ci.priority == "5" %}
+  <option value="5" selected="selected">Low</option>
+{% else %}
+  <option value="5" >Low</option>
+{% endif %}
+
+{% if ci.priority == "0" %}
+  <option value="" selected="selected"></option>
+{% else %}
+  <option value="0" ></option>
+{% endif %}
+
+</select>
+
+<select class="statusSelect" onChange="statusSelected({{ ci.id }});"   >
+{% if ci.status == "1" %}
+  <option value="1" selected="selected">WIP</option>
+{% else %}
+  <option value="1" >WIP</option>
+{% endif %}
+
+{% if ci.status == "2" %}
+  <option value="2" selected="selected">Next</option>
+{% else %}
+  <option value="2" >Next</option>
+{% endif %}
+
+{% if ci.status == "3" %}
+  <option value="3" selected="selected">Cold</option>
+{% else %}
+  <option value="3" >Cold</option>
+{% endif %}
+
+{% if ci.status == "5" %}
+  <option value="5" selected="selected">Hold</option>
+{% else %}
+  <option value="5" >Hold</option>
+{% endif %}
+
+{% if ci.status == "6" %}
+  <option value="6" selected="selected">Cancelled</option>
+{% else %}
+  <option value="6" >Cancelled</option>
+{% endif %}
+
+{% if ci.status == "8" %}
+  <option value="8" selected="selected">Ref</option>
+{% else %}
+  <option value="8" >Ref</option>
+{% endif %}
+{% if ci.status == "9" %}
+  <option value="9" selected="selected">Done</option>
+{% else %}
+  <option value="9" >Done</option>
+{% endif %}
+
+{% if ci.status == "0" %}
+  <option value="0" selected="selected"></option>
+{% else %}
+  <option value="0" ></option>
+{% endif %}
+
+</select>
+
+	      <a href="#" class="fastAddLink simpleDisappear" onClick='showFastAddDialog({{ ci.id }})'>&plus;</a>
+	      <a href="#" class="archiveLink simpleDisappear" onClick='deleteMeFromDOM({{ ci.id }});actionJax({{ ci.id }},0,"archiveThisItem")'>a</a>
+</form>
+
+	     
+
+
+         <a class="itemControlWidget" id="itemControl_{{ ci.id }}" onMouseover="itemControlWidget('{{ ci.id }}')">&raquo;</a>
+
+           </span>
+
+        </span><!-- itemdragWidgetBlock  -->
+
+
+
+
+   <span class="itemDragContentBlock">
+<span class="print_prioStat">{{ ci.priorityText }}:{{ ci.statusText }}</span>
+        <div class="itemdrag titleContainer">
+	     
+	      <div  class="indentHolder indent_{{ ci.indentLevel }} {% if ci.isParent %} parentItem {% endif %}">
+		 <a href="/pim1/item/edititem/{{ ci.id }}" class="{{ci.statusText}} titlelink" >
+                    <span class="marker">{{ ci.outlineBullet|safe }}</span><span class="titletext"> {{ ci.title }}</span></a> 
+	      </div> 
+	   
+
+
+	      <span class="noteExpandWidget"> 
+                {% if ci.HTMLnoteBody|length > 2 %} 
+                  <a onClick="toggleNoteBody('notebody_{{ ci.id }}');" class="noteplus">&oplus;</a>&nbsp;<a onClick='detailpop("{{ ci.id }}")' class="notearr">&rArr;</a> 
+                {% else %} {% endif %} 
+              </span>
+
+	</div>  <!-- itemdrag -->
+
+     
+
+    </span>  <!-- itemDragContentBlock -->
+
+
+
+
+          <div id="notebody_{{ ci.id }}" class="noteBody">
+            <div class="noteWrapper">{{ ci.HTMLnoteBody|safe|default:" " }}</div>
+          </div>       
+
+  </div>      <!--  .itemsdrag -->
+
+   <div class="itemDivider" id="itemDivider_{{ ci.id }}" >{{ ci.id }}</div>
+ 
+    {% endfor %}
+
+</div>  <!-- wrapi -->
+
+
+<p class="pfi"> {{ current_items|length }}/{{ totalProjItems }} <img src="http://media.bernardhecker.com/pim1/static/images/itemlistwidget.gif"></p>
+
+
+<!-- ================================ controlPanel ============onblur======================== -->
+
+	    <div id="itemControlPanel" onmouseout='hideICP();'>
+	      <ul>
+		 <li id="icpFastAdd" ><a href="#"  onClick='to be replaced by javascript'>fast add</a> </li>
+		 <li id="icpArchive"><a href="#"   onClick='to be replaced by javascript'>archive</a></li>
+		 <li id="icpHoist"><a href="to be replaced by javascript"  onClick='hideICP();'>hoist</a></li>
+	      </ul>
+	    </div>
+
+
+
+<!-- End controlPanel -->
+
+
+
+
+<!-- ================================ dialog box - fastAdd ============================= -->
+
+<div id="dialog-form" title="new item">
+
+	<form>
+	<fieldset>
+	<span class="dialog_widgets"  id="FADci" ></span>
+	<label class="dialog_widgets" for="FADpriority">priority</label>
+	<select  name="FADpriority" id="FADpriority" value="" class="dialog_widgets text  text ui-widget-content ui-corner-all">
+	   <option value="1" >TODAY</option>
+	    <option value="2" >Urgent</option>
+	    <option value="3" >Important</option>
+	    <option value="4" >Normal</option>
+	    <option value="5" >Low</option>
+	    <option value="0" selected="selected" ></option>
+	 
+
+	</select>
+
+	<label class="dialog_widgets" for="FADstatus">status</label>
+	<select  name="FADstatus" id="FADstatus" value="" class="dialog_widgets text ui-widget-content ui-corner-all">
+	   <option value="1" >WIP</option>
+	   <option value="2" >Next</option>
+	   <option value="3" >Cold</option>
+	   <option value="5" >Hold</option>
+	   <option value="6" >Cancelled</option>
+	   <option value="8" >Ref</option>
+	   <option value="9" >Done</option>
+	   <option value="0" selected="selected"  ></option>	
+	</select>
+	<span  class=" dialog_validateTips dialog_widgets"></span>
+
+<br/>
+<br/>
+	<label class="dialog_txt_widgets" for="FADtitle">title</label>
+	<textarea  name="title" id="FADtitle" value="" class="text dialog_textarea ui-widget-content ui-corner-all" ></textarea>
+<br/>
+<br/>
+	<label class="dialog_txt_widgets" for="FADhtmlBody">note</label>
+
+	<textarea  name="htmlBody" id="FADhtmlBody" value="" class="text dialog_textarea ui-widget-content ui-corner-all" ></textarea><br>
+
+
+	</fieldset>
+	</form>
+</div>
+
+{# <button id="create-item">Create new item</button> #}
+
+
+{% else %}
+   
+       <p>No items are available.</p>
+
+{% endif %}
+
+
+
+{% endblock %}
+ 

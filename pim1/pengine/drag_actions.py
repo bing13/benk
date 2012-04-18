@@ -804,9 +804,6 @@ class dragOps():
      
        <span class="itemDragWidgetBlock">
 
-	    <span class="itemdrag actionArrows simpleDisappear"><a class="ilid" href="/pim1/list-items/hoist/xxxID">// </a><span class="arrowItems">&nbsp;<a href="/pim1/item/add/xxxID">&harr;</a><a href="#" onClick='actionJax(xxxID,0,"promote")' >&larr;</a><a href="#"  onClick='actionJax(xxxID,0,"demote")'>&rarr;</a><a href="#xxxID" onClick='actionJax(xxxID,0,"moveUp")'>&uarr;</a><a href="#xxxID" onClick='actionJax(xxxID,0,"moveDown")'>&darr;</a></span></span>
-
-
 <form>
             <span class="prio_stat_btns"> 
 

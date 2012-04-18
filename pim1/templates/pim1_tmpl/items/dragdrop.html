@@ -16,10 +16,13 @@
  
     {% for ci in current_items %}
     {% ifchanged %}
-       <div><span class="projheader"  style="background: {{ ci.project.color }};" >{{ ci.projectForOrdering }}  
-              <a href="#"  class="toggleDone" onclick="toggleDoneItems()" > hide done</a> 
-              <a href="#" onclick="toggleSimple()" class="simpleToggle">simple</a></span>
+       <div>
+         <span class="projheader"  style="background: {{ ci.project.color }};" >{{ ci.projectForOrdering }}
+	 <span class="alternateViews"> <a href="/pim1/drag/{{ ci.project.archivePair_id }}">archive</a> | <a href="/pim1/psd/date_mod/{{ ci.project.id }}">list view</a> </span>
+	  </span>
         </div>
+
+
     {% endifchanged %}
 
   <!--a href="#" onClick='deleteMeFromDOM({{ ci.id }});actionJax({{ ci.id }},0,"delete")'>&otimes;</a -->
@@ -35,8 +38,6 @@
     {% endif %}
     
        <span class="itemDragWidgetBlock">
-
-	    <span class="itemdrag actionArrows simpleDisappear"><a class="ilid" href="/pim1/list-items/hoist/{{ ci.id }}">{{ ci.id }}&nbsp;{{ci.parent}}/{{ci.follows}}:{{ci.indentLevel}}:</a><span class="arrowItems">&nbsp;<a href="/pim1/item/add/{{ ci.id }}">&harr;</a><a href="#" onClick='actionJax({{ ci.id }},0,"promote")' >&larr;</a><a href="#"  onClick='actionJax({{ ci.id }},0,"demote")'>&rarr;</a><a href="#{{ ci.id }}" onClick='actionJax({{ ci.id }},0,"moveUp")'>&uarr;</a><a href="#{{ ci.id }}" onClick='actionJax({{ ci.id }},0,"moveDown")'>&darr;</a></span></span>
 
 
 <form>
@@ -131,14 +132,15 @@
 
 </select>
 
-	      <a href="#" class="fastAddLink simpleDisappear" onClick='showFastAddDialog({{ ci.id }})'>&plus;</a>
-	      <a href="#" class="archiveLink simpleDisappear" onClick='deleteMeFromDOM({{ ci.id }});actionJax({{ ci.id }},0,"archiveThisItem")'>a</a>
 </form>
 
 	     
 
 
          <a class="itemControlWidget" id="itemControl_{{ ci.id }}" onMouseover="itemControlWidget('{{ ci.id }}')">&raquo;</a>
+
+
+
 
            </span>
 
@@ -196,6 +198,14 @@
 		 <li id="icpFastAdd" ><a href="#"  onClick='to be replaced by javascript'>fast add</a> </li>
 		 <li id="icpArchive"><a href="#"   onClick='to be replaced by javascript'>archive</a></li>
 		 <li id="icpHoist"><a href="to be replaced by javascript"  onClick='hideICP();'>hoist</a></li>
+
+		 <li id="icpMoveUp"><a href="#"  onClick='to be replaced by JS'>&uarr;</a></li>
+		 <li id="icpMoveDown"><a href="#"  onClick='to be replaced by JS'>&darr;</a></li>
+		 <li id="icpPromote"><a href="#"  onClick='to be replaced by JS'>&larr;</a></li>
+		 <li id="icpDemote"><a href="#"  onClick='to be replaced by JS'>&rarr;</a></li>
+
+
+
 	      </ul>
 	    </div>
 

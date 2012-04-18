@@ -93,13 +93,10 @@
         <ul>  
            {% for px in current_projs %}
 
-	  
+	<!--   style="background:{{ px.set.color }};" -->
 
-	      <li class="set_{{ px.set.id }} all_set" style="background:{{ px.set.color }};"> <a href="/pim1/drag/{{px.id}}">{{ px.name }} {{ px.id }}</a> | <a href="/pim1/drag/{{px.archivePair_id}}">a</a>  
- | <a href="/pim1/psd/date_mod/{{px.id}}">v</a>
- | <a href="/pim1/healthcheck/{{px.id}}">c</a>
+	      <li class="set_{{ px.set.id }} all_set"  style="background:{{ px.color }};" > <a href="/pim1/drag/{{px.id}}">{{ px.name }} {{ px.id }}</a></li>
 
-</li>
            {% endfor %}
 
        </ul>

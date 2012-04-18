@@ -9,15 +9,17 @@
 {% endif %}
 
 
-<div class="headline">Sort by {{ pSort }}
+<div class="headline">Sorted by <strong>{{ pSort }}</strong>
 
   <span class="psdSortLinks">sort [ 
 	       <a href="/pim1/psd/id/{{targetProject}}">id</a>
-	       <a href="/pim1/psd/date_created/{{targetProject}}">dc</a> 
-	       <a href="/pim1/psd/date_mod/{{targetProject}}">dm</a> 
-	       <a href="/pim1/psd/goo_date/{{targetProject}}">gd</a>
-	       <a href="/pim1/psd/status/{{targetProject}}">s</a> 
-	       <a href="/pim1/psd/priority/{{targetProject}}">p</a> ] 
+
+	       <a href="/pim1/psd/status/{{targetProject}}">status</a> 
+	       <a href="/pim1/psd/priority/{{targetProject}}">priority</a> ] 
+	       <a href="/pim1/psd/date_created/{{targetProject}}">created</a> 
+	       <a href="/pim1/psd/date_mod/{{targetProject}}">modified</a> 
+
+
    </span>
 
 
