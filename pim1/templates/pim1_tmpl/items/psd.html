@@ -9,6 +9,8 @@
 {% endif %}
 
 
+{% if request.session.viewmode  != 'today' %}
+
 <div class="headline">Sorted by <strong>{{ pSort }}</strong>
 
   <span class="psdSortLinks">sort [ 
@@ -26,6 +28,7 @@
 
 </div>
 
+{% endif %}
 
 {% if current_items %}
 
