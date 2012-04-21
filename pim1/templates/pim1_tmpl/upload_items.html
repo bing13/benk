@@ -1,0 +1,66 @@
+{% extends "pim1_tmpl/pim1_base.html" %}
+
+{% block content %}
+
+<div class="homecontent">
+
+
+  <h3>upload some items</h3>
+
+
+
+
+    <div class="addProjForm">
+      <ul><li>items must be stored in a <strong>simple text file, one item per line</strong>. </li>
+	  <li>item titles only.  notes are not supported.</li>
+	  <li>be sure to <a href="/pim1/addproject/">add a project</a> first if you don't already have one, before trying to import items.</li>
+</ul>
+
+     <hr/>
+
+	  <h4>how-to</h4>
+	       <ol>
+		 <li>click the [Choose File] button and select a file from your desktop machine.</li>
+		 <li>enter the id for the project to which you want the items added.  see the first column in the table below for the IDs.</li>
+		 
+		</ol>
+
+ 
+    <form action="/pim1/uploaditems/" method="post" enctype="multipart/form-data" method="post"  >
+    {% csrf_token %}
+    <table>
+    {{ form.as_table }}
+    </table>
+    <input type="submit" value="Submit" />
+
+
+    </form>
+    </div>
+
+    <div class="addProjList backUpFileList">
+      <h4>projects</h4>
+    <table >
+    <tr><th>id</th><th>name</th><th>set</th><th>color</th><th>integrity check</th></tr>
+    {% for cx in current_projs %}
+
+    <tr><td>{{ cx.id }}</td><td> {{cx.name}}</td><td> {{cx.set}}</td>
+    <td style="background:{{ cx.color }};"> {{cx.color}}</td>
+      <td><a href="/pim1/showchains/{{ cx.id }}/">integrity check</a></td>
+    </tr>
+
+    {% endfor %}
+
+
+
+    </table>
+
+    </div>
+
+
+
+
+
+</div>
+
+{% endblock %}
+ 

@@ -18,7 +18,7 @@
     {% ifchanged %}
        <div>
          <span class="projheader"  style="background: {{ ci.project.color }};" >{{ ci.projectForOrdering }}
-	 <span class="alternateViews"> <a href="/pim1/drag/{{ ci.project.archivePair_id }}">archive</a> | <a href="/pim1/psd/date_mod/{{ ci.project.id }}">list view</a> </span>
+	 <span class="alternateViews"> <a href="/pim1/drag/{{ ci.project.archivePair_id }}">see archive</a> | <a href="/pim1/psd/date_mod/{{ ci.project.id }}">list view</a> | <a href="/pim1/csvdownload/{{ ci.project.id }}">backup</a></span>
 	  </span>
         </div>
 

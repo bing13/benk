@@ -40,6 +40,7 @@ urlpatterns = patterns('',
 
     url(r'^pim1/importfile/$','pim1.pengine.views.importfile'),
     url(r'^pim1/serialize/$','pim1.pengine.views.backupdata'),
+    url(r'^pim1/csvdownload/(?P<projectID>\d+)/$','pim1.pengine.views.csvDownload'),                       
 
     url(r'^pim1/search/$','pim1.pengine.views.ssearch'),                       
 
@@ -64,6 +65,7 @@ urlpatterns = patterns('',
 
     url(r'^accounts/login/$', 'django.contrib.auth.views.login', {'template_name': 'pim1_tmpl/login.html'}),
     url(r'^accounts/logout/$', 'django.contrib.auth.views.logout', {'template_name': 'pim1_tmpl/logout.html'}),
+    url(r'^pim1/uploaditems/$','pim1.pengine.views.uploadItems'),                       
 
                    
 )

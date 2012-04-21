@@ -22,7 +22,7 @@ from django.forms.widgets import CheckboxSelectMultiple
 # ++ was "pengine.models"
 from pim1.pengine.models import Item, Project, ProjectSet
 
-import datetime, sys, simplejson, codecs
+import datetime, sys, simplejson, codecs, csv
 
 #D410 sys.path.append('C:\\Documents and Settings\\Owner\\My Documents\\Python\\library');
 #D610 #sys.path.append('C:\\Documents and Settings\\Bernard Hecker\\My Documents\\python\\lib')
@@ -57,6 +57,11 @@ class addProjectSetForm(forms.Form):
     newProjectSetName =  forms.CharField(max_length = 120)
     newProjectSetColor = forms.CharField(max_length = 8)
     ##newProjectSetOwner = forms.CharField(max_length = 30)
+
+class UploadFileForm(forms.Form):
+    #title = forms.CharField(max_length=50)
+    file  = forms.FileField()
+    projectID = forms.IntegerField()
 
 DRAGACTIONS=drag_actions.dragOps();
 
@@ -1435,6 +1440,91 @@ def returnMarker(Itemx):
         return("+")
     else:
         return("&bull;")
+#############################################################################
+
+def uploadItems(request):
+    current_projs = Project.objects.filter(projType=1).filter(owner = request.user.username).order_by('name')
+    current_sets = ProjectSet.objects.filter(owner = request.user.username)
+
+    c = {}
+    c.update(csrf(request))
+    
+    if request.method == 'POST':
+        form = UploadFileForm(request.POST, request.FILES)
+        if form.is_valid():
+            
+            allLines = request.FILES['file'].read().split('\n')
+
+            
+            projectID = form.cleaned_data['projectID']
+            sharedMD.logThis(request.user.username,"VIEW: item import, "+str(len(allLines))+" items, project "+str(projectID));            
+ 
+
+            for thisItemTitle in allLines:
+                ##sharedMD.logThis(request.user.username,"tIT:"+thisItemTitle)
+                lastItemID=sharedMD.getLastItemID(projectID)                
+                clickedItem = Item.objects.get(pk=lastItemID) ## i.e., add it to the bottom
+
+                newItem=DRAGACTIONS.addItem(clickedItem, lastItemID)
+                newItem.title = thisItemTitle
+                newItem.parent='0'
+                newItem.indentLevel='0'
+                newItem.save()
+                
+            return HttpResponseRedirect('/pim1/uploaditems')
+        else:
+            sharedMD.logThis(request.user.username, "uploaded items: FORM IS INVALID");
+    else:
+        form = UploadFileForm()
+    return render_to_response('pim1_tmpl/upload_items.html', {
+ 
+                'form':form,
+                'pagecrumb':'upload items',
+                'current_projs':current_projs,
+                'current_sets':current_sets,
+
+                'nowx':datetime.datetime.now().strftime("%Y/%m/%d  %H:%M:%S")
+                }, context_instance=RequestContext(request) )
+ 
+
+
+#############################################################################
+    
+def csvDownload(request, projectID):
+              
+    sharedMD.logThis(request.user.username, ' csvDownload ==> project:'+ str(projectID))
+    
+    fhandle=Project.objects.get(pk=projectID).name.replace(' ','_').replace('-','_')
+    pnum="%04d" % int(projectID)
+    suggestedFilename="P"+pnum+'-'+fhandle+'-'+datetime.datetime.now().strftime("%Y%m%d_%H%M%S")+'.csv'
+
+    
+    #see: https://docs.djangoproject.com/en/1.2/howto/outputting-csv/
+    
+    # Create the HttpResponse object with the appropriate CSV header.
+    response = HttpResponse(mimetype='text/csv')
+    response['Content-Disposition'] = 'attachment; filename=%s' % suggestedFilename
+
+    writer = csv.writer(response)
+    ThisProjItems = Item.objects.filter(project=projectID)
+    lx = len(ThisProjItems)
+    j=0
+
+    # this array will store item IDs in Outline order for this project
+    projItemsIDs=[]
+    for i in range(0,lx):
+        thisItem=ThisProjItems.get(follows=j)
+        projItemsIDs.append(thisItem.id)
+        j = thisItem.id
+    
+    writer.writerow(['id', 'follows', 'parent', 'indent level', 'title', 'project', 'priority', 'status', 'date created', 'last modification date', 'note'])
+    
+    ## csv module doesn't handle unicode, so must transcode to utf-8 before writing
+    for itemID in projItemsIDs:
+        x = Item.objects.get(pk=itemID)
+        writer.writerow([x.id, x.follows, x.parent, x.indentLevel, x.title.encode('utf-8'), x.project, x.priority, x.status, x.date_created, x.date_mod,  x.HTMLnoteBody.encode('utf-8')])
+
+    return response
 
 #############################################################################
 def backupdata(request):
