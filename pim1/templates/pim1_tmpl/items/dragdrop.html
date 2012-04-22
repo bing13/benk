@@ -18,7 +18,9 @@
     {% ifchanged %}
        <div>
          <span class="projheader"  style="background: {{ ci.project.color }};" >{{ ci.projectForOrdering }}
-	 <span class="alternateViews"> <a href="/pim1/drag/{{ ci.project.archivePair_id }}">see archive</a> | <a href="/pim1/psd/date_mod/{{ ci.project.id }}">list view</a> | <a href="/pim1/csvdownload/{{ ci.project.id }}">backup</a></span>
+	 <span class="alternateViews"> 
+<a href="/pim1/drag/{{ ci.project.archivePair_id }}">see {% if ci.project.projType == '1' %}archive {% else %} project {% endif %}</a> 
+| <a href="/pim1/psd/date_mod/{{ ci.project.id }}">see sort view</a> | <a href="/pim1/csvdownload/{{ ci.project.id }}">backup</a></span>
 	  </span>
         </div>
 
@@ -195,7 +197,7 @@
 
 	    <div id="itemControlPanel" onmouseout='hideICP();'>
 	      <ul>
-		 <li id="icpFastAdd" ><a href="#"  onClick='to be replaced by javascript'>fast add</a> </li>
+		 <li id="icpFastAdd" ><a href="#"  onClick='to be replaced by javascript'>add</a> </li>
 		 <li id="icpArchive"><a href="#"   onClick='to be replaced by javascript'>archive</a></li>
 		 <li id="icpHoist"><a href="to be replaced by javascript"  onClick='hideICP();'>hoist</a></li>
 

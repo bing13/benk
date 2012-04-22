@@ -60,8 +60,8 @@ class addProjectSetForm(forms.Form):
 
 class UploadFileForm(forms.Form):
     #title = forms.CharField(max_length=50)
-    file  = forms.FileField()
-    projectID = forms.IntegerField()
+    file  = forms.FileField(label = "simple text file")
+    projectID = forms.IntegerField(label = "project ID")
 
 DRAGACTIONS=drag_actions.dragOps();
 
@@ -606,7 +606,7 @@ def psd(request,pSort,targetProject):
 
     displayList =  buildDisplayList(current_projs,targetProject,pSort,0,[])
 
-    titleCrumbBlurb = "sort "+str(targetProject)+':'+targProjObj.name+"   ("+targProjObj.set.name+")"
+    titleCrumbBlurb = "sort view   "+ targProjObj.name+"   ("+targProjObj.set.name+")"
 
     return render_to_response("pim1_tmpl/items/psd.html", {
         'current_items':displayList,
@@ -886,7 +886,8 @@ def editItem(request, pItem):
     # model formsets
     ###https://docs.djangoproject.com/en/1.2/topics/forms/modelforms/#using-a-model-formset-in-a-view
     
-    itemFormSet = forms.models.modelformset_factory(Item, max_num=0, exclude=('IS_import_ID', 'gtask_id', 'project', 'date_gootask_display', 'owner'))
+    itemFormSet = forms.models.modelformset_factory(Item, max_num=0,fields=("title","priority","status","HTMLnoteBody"));
+    #exclude=('IS_import_ID', 'gtask_id', 'project', 'date_gootask_display', 'owner', 'follows', 'parent', 'indentLevel'))
 
     
     ## "field" and "exclude" operands supported
@@ -1448,43 +1449,62 @@ def uploadItems(request):
 
     c = {}
     c.update(csrf(request))
+    warning = ''
     
     if request.method == 'POST':
         form = UploadFileForm(request.POST, request.FILES)
         if form.is_valid():
             
             allLines = request.FILES['file'].read().split('\n')
-
+            uploadedFileName = request.FILES['file'].name
+            uploadedFileSize = request.FILES['file'].size
+            
             
             projectID = form.cleaned_data['projectID']
             sharedMD.logThis(request.user.username,"VIEW: item import, "+str(len(allLines))+" items, project "+str(projectID));            
  
+            isBinary = False
+            for lx in allLines:
+                if '\0' in lx:
+                    isBinary =True
 
-            for thisItemTitle in allLines:
-                ##sharedMD.logThis(request.user.username,"tIT:"+thisItemTitle)
-                lastItemID=sharedMD.getLastItemID(projectID)                
-                clickedItem = Item.objects.get(pk=lastItemID) ## i.e., add it to the bottom
+            ## subvert the data to deliver warning messages
+            if isBinary:
 
-                newItem=DRAGACTIONS.addItem(clickedItem, lastItemID)
-                newItem.title = thisItemTitle
-                newItem.parent='0'
-                newItem.indentLevel='0'
-                newItem.save()
-                
-            return HttpResponseRedirect('/pim1/uploaditems')
+                warning = 'WARNING! You attempted to upload binary data. Please upload only simple text files. File: ' + uploadedFileName 
+                sharedMD.logThis(request.user.username,'WARNING! Attempt to load binary file. File: ' + uploadedFileName +'  project: '+str(projectID));                     
+
+                ## 50 items is about 2k, min
+            elif uploadedFileSize > 30000:
+                warning = 'WARNING! You attempted to upload a file that was too damn big! Try something less ambitious, please.  File: ' + uploadedFileName 
+                sharedMD.logThis(request.user.username,' WARNING! Attempt to load large file. File: ' + uploadedFileName +'  project: '+str(projectID));      
+            else:
+
+                for thisItemTitle in allLines:
+                    lastItemID=sharedMD.getLastItemID(projectID)                
+                    clickedItem = Item.objects.get(pk=lastItemID) ## i.e., add it to the bottom
+
+                    newItem=DRAGACTIONS.addItem(clickedItem, lastItemID)
+                    newItem.title = thisItemTitle
+                    newItem.parent='0'
+                    newItem.indentLevel='0'
+                    newItem.save()
+
+            #return HttpResponseRedirect('/pim1/uploaditems')
         else:
             sharedMD.logThis(request.user.username, "uploaded items: FORM IS INVALID");
+            warning = "Form data was invalid, please try again."
     else:
         form = UploadFileForm()
     return render_to_response('pim1_tmpl/upload_items.html', {
- 
-                'form':form,
-                'pagecrumb':'upload items',
-                'current_projs':current_projs,
-                'current_sets':current_sets,
-
-                'nowx':datetime.datetime.now().strftime("%Y/%m/%d  %H:%M:%S")
-                }, context_instance=RequestContext(request) )
+        'warning': warning,
+        'form':form,
+        'pagecrumb':'upload items',
+        'current_projs':current_projs,
+        'current_sets':current_sets,
+        
+        'nowx':datetime.datetime.now().strftime("%Y/%m/%d  %H:%M:%S")
+        }, context_instance=RequestContext(request) )
  
 
 
@@ -1631,11 +1651,11 @@ def healthcheck(request, proj_id):
     ### each routine returns an array of tables
     healthTables = []
 
-    healthTables += checkHealth.projectList(proj_id);
+    healthTables += checkHealth.projectList(request, proj_id);
 
-    healthTables += checkHealth.projectlessItems();
+    healthTables += checkHealth.projectlessItems(request);
 
-    healthTables +=  checkHealth.followerCheck(proj_id);
+    healthTables +=  checkHealth.followerCheck(request, proj_id);
     
 
     return render_to_response('pim1_tmpl/healthcheck.html', {
@@ -2189,3 +2209,22 @@ def repairChain(request, proj_id):
 
 
     return HttpResponseRedirect('/pim1/showchains/'+str(proj_id)) 
+
+######################################################################
+@login_required
+def help(request, helpSection):
+    sharedMD.logThis(request.user.username, "VIEW: help")
+    
+    current_projs = Project.objects.filter(projType=1).filter(owner = request.user.username).order_by('name')
+    current_sets = ProjectSet.objects.filter(owner = request.user.username)
+
+    
+    helptarget = 'pim1_tmpl/help.html'+helpSection
+    
+    return render_to_response(helptarget, {
+        'titleCrumbBlurb':'help',
+        'current_projs':current_projs,
+        'current_sets':current_sets,
+        
+        'nowx':datetime.datetime.now().strftime("%Y/%m/%d  %H:%M:%S")
+        }, context_instance=RequestContext(request) )

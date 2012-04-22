@@ -1,0 +1,17 @@
+{% extends "pim1_tmpl/pim1_base.html" %}
+
+{% block content %}
+
+<div class="maintcontent">
+
+
+  <h3>help</h3>
+
+
+
+
+
+</div> <!-- close maintcontent -->
+
+{% endblock %}
+ 

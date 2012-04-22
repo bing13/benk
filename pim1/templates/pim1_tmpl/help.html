@@ -1,0 +1,224 @@
+{% extends "pim1_tmpl/pim1_base.html" %}
+
+{% block content %}
+
+<div class="helpcontent" >
+
+
+  <h3>help</h3>
+
+
+<h2 id="alpha" class="help_section_title">it’s <u>alpha</u> software!</h2>
+<div class="help_chunk">
+benk is currently in an early alpha release. please expect some bugs, and <strong>be sure to back up your benk data regularly for safe keeping</strong>.  No warranties, expressed or implied, yadda yadda yadda. 
+</div>
+
+
+<h2 id="broken_glass" class="help_section_title">broken glass</h2>
+<div class="help_chunk">
+Did I mention it was alpha software? Good. Here's a list of the more egregious bugs and shortcomings, in descending order of severity.
+</div>
+
+
+<h3 id="serious_bugs" class="help_section_title">serious bugs</h3>
+<div class="help_chunk">
+
+<dl>
+
+<dt id="brokenchains">broken chains (disappeared items)</dt>
+<dd>As explained in the <a href="#intro">intro to benk</a>, every item consists of several parts. The important ones are the title of the item, a pointer to the item that preceeds it, and a pointer to the item's parent.  Some latent, hard-to-find bugs occasionally goof up the "follower" chaining, so items fall off the display. These items are not lost! (I know of no instance where Benk lost data.)  If this happens to you:
+<ol>
+<li>Use the <em>sort view</em> link, on the color banner  at the top of your list of items, to verify that your item wasn’t deleted. List provides a flat list of all items in a project, sorted by the criteria of your choosing. Odds are, you'll see your item there.</li>
+<li>Next, go to the "manage" link at the top of the page</li>
+<li>From the "manage" page, click "integrity check a project" (takes you to the same page as the "add a project" page)</li>
+<li>click "integrity check" next to the project of concern.  If the project has "broken chains", you'll be given the opportunity to re-chain them.</li>
+</ol>
+<p>Needless to say, we're out to crush these bugs for good!</p>
+
+</dd>
+
+
+<dt id="lockfile">"locked file"</dt>
+
+<dd>Once in a great while, your actions may have no result, and the little message bar at the top left of the page may report "File locked...".  Go to the "manage" menu at the top of the page, and click the "clear lock" link.   Reload the page, and check your data. If you think you're missing items, see the instructions for <a href="#brokenchains">broken chains</a>.
+</dd>
+
+
+</dl>
+
+</div> <!-- end of serious bugs section -->
+
+<h3 id="other_bugs">other known bugs</h3>
+<div class="help_chunk">
+<ol>
+<li>adding an item sometimes harmlessly messes up the bullet point for its parent</li>
+<li>anchors are dorky</li>
+<li>when an item is added, the &oplus widget appears, even if the note is empty</li>
+<li>display should tidy itself after aborted drags</li>
+<li></li>
+
+
+
+</ol>
+
+
+</div>
+<h3 id="missing_svcs">missing or incomplete services</h3>
+<div class="help_chunk">
+<p>here’s a list of missing or incomplete services:</p>
+<ol>
+<li>you can’t change your password</li>
+<li>you can’t edit a project or projectset’s name or color once created</li>
+<li>the sort view doesn't have all of the features of the main item view</li>
+<li></li>
+<li></li>
+
+
+</ol>
+
+
+</div>
+
+
+
+
+
+
+
+<h2 id="getting_started" class="help_section_title">getting started with benk</h2>
+<div class="help_chunk">
+
+<p>Getting started with Benk is easy.  The only concepts you need to bear in mind are:</p>
+
+<ul>
+<li><em>Items</em> are the smallest unit in Benk - often a "to-do" item. An example of an item is "call client X", or "recipe for vegan lard". </li>
+
+<li><em>Projects</em> are how items are grouped. Examples are "SuperCorp client project", "Improve dating skills", "Secure B round funding". You work with one project at a time.</li>
+
+<li><em>Project sets</em> are groups of projects. Some of us have so darn many projects, we need this level of order. Some folks only need two project sets - say, "work" and "personal". Others like to have a project set for each client, and so forth.</li>
+
+
+</ul>
+
+<p>That's it. <strong>Project sets</strong> contain <strong>projects</strong> which contain <strong>items</strong>. </p>
+
+
+<p>To get started, follow these steps.</p>
+
+<ol>
+<li>Add a project set or two. Do this through the "manage" link at the top of the page. </li>
+
+<li>Now add some projects, also via the "manage" page. Be sure to assign a project set from the pop-up menu for each.</li>
+
+<li>Finally, from the "projects" pop-up at the top left of the page, select a project set. the relevant projects appear.  Click one to begin work.</li>
+</ol>
+
+<p>Now that you've created some projects, it's time to add data. First, some words on <a href="parts_of_an_item">the parts of an item</a> section. </p>
+
+</div>
+
+
+
+<!-- =============================================================== -->
+
+<h2 id="parts_of_an_item" class="help_section_title">parts of an item</h2>
+<div class="help_chunk">
+
+<p>Here's some additional info on the <strong>parts of an item</strong>.</p>
+
+
+<ul>
+<li>The "priority" and "status" fields speak for themselves. The priority of "TODAY" is special. Items with a "TODAY" priority can be called up at any time on the cross-project "TODAY" report. The link as at the top of the page. A good view to print out.</li>
+
+<li>The title is the title of the item.</li>
+
+<li>The <strong>note</strong> field can contain anything you wish. If you include HTML tagging, it is treated properly. If there is no HTML in the note field, Benk renders the field as plain text.  The note is hidden on the main item list, until you click the "&oplus;" symbol to the left of the title.</li>
+
+</ul>
+
+</div>
+
+
+<!-- =============================================================== -->
+<h2 id="working_with_data" class="help_section_title">working with benk data</h2>
+<div class="help_chunk">
+<p>Once you've set up your project sets and projects, you can start slamming some data. It's easy.</p>
+
+
+<ol>
+<li>From the "project" pop-up menu at the top left of every page, pick a project set, and then click on the project with which you want to work.</li>
+
+<li>You'll see a title bar, and a minimum of one item. The first item cannot be moved or deleted. It's the <strong>anchor item</strong>, and all projects have them.</li>
+
+
+<li>Hover over the little double arrow character ( &raquo; )to the left of the anchor item. Up pops the <strong>item control panel</strong>. Select <strong>add</strong> to create a new item. </li>
+</ol>
+
+</div>
+
+
+<h2 id="dragging" class="help_section_title">moving, editing, archiving and related</h2>
+<div class="help_chunk">
+<p>Here are the actions you can select for Benk items.</p>
+
+<ul>
+<li><em>dragging</em> - Drag any item on top of any other item to make it a child of that item.</li>
+
+<li><em>shift-dragging</em> - Drag any item and hold the shift key down while you drop it on another item to make the dragged item a peer of that item.</li>
+
+<li><em>select</em> - Select an item by clicking on it (but not on the title). A dotted green outline appears. You can now use the <a href="#keyboard_shortcuts">keyboard shortcuts</a>.</li>
+
+
+<li><p><em>move up, down, promote, demote</em> - You can move an item up or down, or promote an item or demote it, by using the item control panel. Hover over the "&raquo;" symbol to the left of the status field and the item control panel pops-up.</p>
+<p id="keyboard_shortcuts">You can also conveniently do the same with the keyboard. Click to select an item, and the use your control key + an arrow key to initiate the same actions.</p>
+
+<p>The up and down arrow keys by themseleves will change the selected item, if there is one.</p>
+
+
+
+</li>
+
+<li><em>edit</em> -  Click an item's title to call up the edit screen for that item.</li>
+<li><em>hoist</em> - Select "hoist" from the item control panel to show only that item and its children. (For those of you that remember MORE, GrandView, and InControl.)</li>
+<li><em>archive</em> - You <strong>cannot delete items in Benk</strong>. You can however banish them to the "archive" instance of you project, which is automatically created for you. Simply select "archive" from the item control panel for that item.  You can visit your archived items at any time. Just click the "see archive" link on the color banner of any item list</li>
+
+
+</ul>
+
+</div>
+
+
+
+
+<h2 id="backups" class="help_section_title">back up your data!</h2>
+<div class="help_chunk">
+<p>Benk is pre-alpha software!  Please regularly back up your precious data. Simply click the <strong>backup</strong> link  at the far right of the item list color banner.</p>
+
+</div>
+
+
+
+<h2 id="" class="help_section_title"></h2>
+<div class="help_chunk">
+</div>
+
+
+
+
+
+</div> <!-- close maintcontent -->
+
+<div id="helpFloatingMenu" class="floatingMenu" >
+<p>help topics</p>
+<ul>
+
+<li>to be replaced by javascript</li>
+
+</ul>
+
+</div>
+
+
+
+{% endblock %}
+ 

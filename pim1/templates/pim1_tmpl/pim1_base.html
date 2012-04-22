@@ -42,12 +42,13 @@
 	     <li><a href="/pim1/today/">today</a> | </li>
 	     <li><a href="/pim1/grid-view/">grid view</a> | </li>
 	     <li><a href="/pim1/">home</a> | </li>
+
+	     {% if  user.username = "djangosuper" %}
+    	     <li><a href="/pim1/maint/">maint</a> |</li>
 	     <li><a href="/pim1/serialize">backup</a> | </li>
 	     <li><a href="/pim1/healthcheck/0">health</a> | </li>
 
 
-	     {% if  user.username = "djangosuper" %}
-    	       <li><a href="/pim1/maint/">maint</a> |</li>
 	       {% else %}
 
 	       <li><a href="/pim1/manage/">manage</a> |</li>
@@ -55,7 +56,9 @@
 	       {% endif %}
 
 
-	     <li><a href="/accounts/logout/">logout</a></li>
+	     <li><a href="/accounts/logout/">logout</a> |</li>
+	     <li><a href="/pim1/help/">help</a></li>
+
 	  </ul>
 
 

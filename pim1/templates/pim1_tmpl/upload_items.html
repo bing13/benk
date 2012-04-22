@@ -21,11 +21,15 @@
 	  <h4>how-to</h4>
 	       <ol>
 		 <li>click the [Choose File] button and select a file from your desktop machine.</li>
-		 <li>enter the id for the project to which you want the items added.  see the first column in the table below for the IDs.</li>
+		 <li>enter the <em>numeric</em> id for the project to which you want the items added.  see the first column in the table below for the IDs.</li>
 		 
 		</ol>
 
- 
+
+    {% if warning %}
+     <h3 class="uploadWarning">{{ warning }} </h3>
+    {% endif %}
+
     <form action="/pim1/uploaditems/" method="post" enctype="multipart/form-data" method="post"  >
     {% csrf_token %}
     <table>

@@ -65,7 +65,9 @@ urlpatterns = patterns('',
 
     url(r'^accounts/login/$', 'django.contrib.auth.views.login', {'template_name': 'pim1_tmpl/login.html'}),
     url(r'^accounts/logout/$', 'django.contrib.auth.views.logout', {'template_name': 'pim1_tmpl/logout.html'}),
-    url(r'^pim1/uploaditems/$','pim1.pengine.views.uploadItems'),                       
+    url(r'^pim1/uploaditems/$','pim1.pengine.views.uploadItems'),
+    url(r'^pim1/help/(?P<helpSection>\w+)/$','pim1.pengine.views.help'),
+    url(r'^pim1/help/$','pim1.pengine.views.help',{ 'helpSection':''}),                       
 
                    
 )

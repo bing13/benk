@@ -29,8 +29,11 @@
     <p>No formset available.</p>
 {% endif %}
 
+{% if request.user.username == "djangosuper" %}
+
 <p><a href="/pim1/admin/pengine/item/{{ pItem }}">Admin edit</a> for this record.</p>
 
+{% endif %}
 
 {% endblock %}
  

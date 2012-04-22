@@ -13,7 +13,7 @@ import sharedMD;
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # projectList
 
-def projectList(proj_id):
+def projectList(request, proj_id):
     if proj_id == 0:
         projList = Project.objects.all().order_by('name')
         totalCount = Item.objects.all().count()
@@ -22,7 +22,7 @@ def projectList(proj_id):
         totalCount=Item.objects.filter(pk=proj_id).count()
 
 
-    sharedMD.logThis("===> CheckHealth starting, proj_id="+str(proj_id))
+    sharedMD.logThis(request.user.username, "===> CheckHealth starting, proj_id="+str(proj_id))
  
 
     tableBody='<tr class="health_row"><th class="health_cell" colspan=7>project list</th></tr>'
@@ -63,7 +63,7 @@ def projectList(proj_id):
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # projectlessItems
 
-def projectlessItems():
+def projectlessItems(request):
 
     unprojectedItems = Item.objects.filter(project__isnull=True)
 
@@ -95,7 +95,7 @@ def projectlessItems():
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # followerCheck 
 
-def followerCheck(proj_id):
+def followerCheck(request, proj_id):
 
     if proj_id == 0:
         zeroFollowers=Item.objects.filter(follows=0)
@@ -168,7 +168,7 @@ def followerCheck(proj_id):
 
 
     uniqueMFids=set(multiFollowersIDs)
-    sharedMD.logThis("checkhealth uniqueMFids:" + str(uniqueMFids))
+    sharedMD.logThis(request.user.username, "checkhealth uniqueMFids:" + str(uniqueMFids))
     multiFollowersObjs=Item.objects.filter(id__in = uniqueMFids).order_by('id')
     
     tableBody='<tr class="health_row"><th class="health_cell" colspan="8">%s items with multiple followers or no followers</th></tr>' % len(multiFollowersObjs)
@@ -233,11 +233,11 @@ def followerCheck(proj_id):
 
         parentTree = {}
         #[5577, 5572, 5571] :
-        sharedMD.logThis("Crazy parent build1 ...")
+        sharedMD.logThis(request.user.username, "Crazy parent build1 ...")
 
 
         for anID in allIDs:    
-            sharedMD.logThis(" Crazy Parent tree building for ID = " + str(anID))
+            sharedMD.logThis(request.user.username," Crazy Parent tree building for ID = " + str(anID))
             followx = -999
             thisID=anID
             while followx != 0:
@@ -342,7 +342,7 @@ def followerCheck(proj_id):
                 for item in followOrder:
                     PIL[item.id]={ 'seq':seq, 'parent':item.parent, 'follows':item.follows, 'project':item.project }
                     seq += 1;
-                sharedMD.logThis("   ... PIL built, proj:"+str(projx.id))
+                sharedMD.logThis(request.user.username,"   ... PIL built, proj:"+str(projx.id))
 
 
                 for ix in followOrder:
