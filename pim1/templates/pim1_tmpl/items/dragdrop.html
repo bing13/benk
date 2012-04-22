@@ -17,9 +17,18 @@
     {% for ci in current_items %}
     {% ifchanged %}
        <div>
-         <span class="projheader"  style="background: {{ ci.project.color }};" >{{ ci.projectForOrdering }}
+
+<!-- == prevents identity color from showing for archive projects -->
+         <span class="projheader"  
+{% if ci.project.projType == '1' %}
+style="background: {{ ci.project.color }};" 
+{% else %}
+style="border: 2px solid grey;" 
+{% endif %}
+>
+	   {{ ci.projectForOrdering }}
 	 <span class="alternateViews"> 
-<a href="/pim1/drag/{{ ci.project.archivePair_id }}">see {% if ci.project.projType == '1' %}archive {% else %} project {% endif %}</a> 
+<a href="/pim1/drag/{{ ci.project.archivePair_id }}">go to {% if ci.project.projType == '1' %}archive {% else %} project {% endif %}</a> 
 | <a href="/pim1/psd/date_mod/{{ ci.project.id }}">see sort view</a> | <a href="/pim1/csvdownload/{{ ci.project.id }}">backup</a></span>
 	  </span>
         </div>
@@ -34,6 +43,7 @@
 	<!-- it's an anchor, so make it undraggable, and unselectable -->
 	<div class="itemsdrag dropx anchor"  id="{{ ci.id }}"  >
     {% else %} 
+
 
         <div class="itemsdrag bhdraggable dropx"  id="{{ ci.id }}"  onclick="selectMe(this)">
 
