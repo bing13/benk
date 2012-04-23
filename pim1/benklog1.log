@@ -13477,3 +13477,2662 @@ and 5th item is here.
 2012/04/21  21:39:15	---	      ...built followhash....
 2012/04/21  21:39:15	---	      .....displayList built...
 2012/04/21  21:39:15	---	   Exiting buildDisplayList
+2012/04/22  07:04:56	djangosuper	VIEW: xhr_actions
+2012/04/22  07:04:56	djangosuper	<QueryDict: {u'ci': [u'4375'], u'FADpriority': [u'3'], u'FADhtmlBody': [u'darcy\njulie\ndom\nniz\nian\nsusanne\n'], u'FADstatus': [u'8'], u'ti': [u'0'], u'ajaxAction': [u'fastAdd'], u'FADtitle': [u'Testers']}>
+2012/04/22  07:04:56	djangosuper	=====> xhr_actions: =AJAX request, ci=4375  ti=0  ajaxAction: fastAdd
+2012/04/22  07:04:56	---	Last item ID:5917
+2012/04/22  07:04:56	---	VIEW: drag_actions => fastAdd
+2012/04/22  07:04:56	---	fastAdd for 4375  Testers
+2012/04/22  07:04:57	---	NEW FA item ID=None
+2012/04/22  07:04:57	---	   fastadded item ID = 6229
+2012/04/22  07:04:57	---	  deco for: 6229
+2012/04/22  07:04:57	---	  deco for: 4375
+2012/04/22  07:04:57	---	  deco for: 5953
+2012/04/22  07:04:57	---	lock removed
+2012/04/22  07:05:14	djangosuper	VIEW: xhr_actions
+2012/04/22  07:05:14	djangosuper	<QueryDict: {u'ci': [u'6054'], u'datax': [u''], u'ajaxAction': [u'moveDown'], u'ti': [u'0']}>
+2012/04/22  07:05:14	djangosuper	=====> xhr_actions: =AJAX request, ci=6054  ti=0  ajaxAction: moveDown
+2012/04/22  07:05:14	---	Last item ID:5917
+2012/04/22  07:05:14	---	sMDflk=> findLastKid lastKid=0
+2012/04/22  07:05:14	---	  moving among children of 5955
+2012/04/22  07:05:14	---	  TI:  6080
+2012/04/22  07:05:14	---	sMDflk=> findLastKid lastKid=0
+2012/04/22  07:05:14	---	  deco for: 6080
+2012/04/22  07:05:14	---	  deco for: 6054
+2012/04/22  07:05:14	---	  deco for: 6063
+2012/04/22  07:05:14	---	  deco for: 6080
+2012/04/22  07:05:14	---	  deco for: 5954
+2012/04/22  07:05:14	---	lock removed
+2012/04/22  07:06:05	djangosuper	Edit item: Formset generated, pItem=5977
+2012/04/22  07:06:33	djangosuper	   Formset saved: [<Item: UNCORRUPTIBLE MODEL?>]
+2012/04/22  07:06:33	djangosuper	VIEW: draglist
+2012/04/22  07:06:33	djangosuper	     Proj 5
+2012/04/22  07:06:33	---	   Entering buildDisplayList
+2012/04/22  07:06:33	---	      ..queries done...
+2012/04/22  07:06:33	---	      ....parent list built...
+2012/04/22  07:06:34	---	      .....ix built.....
+2012/04/22  07:06:34	---	      ...built followhash....
+2012/04/22  07:06:34	---	      .....displayList built...
+2012/04/22  07:06:34	---	   Exiting buildDisplayList
+2012/04/22  07:06:51	djangosuper	Edit item: Formset generated, pItem=5977
+2012/04/22  07:09:34	djangosuper	Edit item: Formset generated, pItem=5917
+2012/04/22  07:09:46	djangosuper	VIEW: xhr_actions
+2012/04/22  07:09:46	djangosuper	<QueryDict: {u'ci': [u'5917'], u'ajaxAction': [u'archiveThisItem'], u'ti': [u'0']}>
+2012/04/22  07:09:46	djangosuper	=====> xhr_actions: =AJAX request, ci=5917  ti=0  ajaxAction: archiveThisItem
+2012/04/22  07:09:46	---	Last item ID:5917
+2012/04/22  07:09:46	---	sMDflk=> findLastKid lastKid=0
+2012/04/22  07:09:46	---	Last item ID:6117
+2012/04/22  07:09:46	---	  deco for: 4574
+2012/04/22  07:09:47	---	==> archivePair moved item 5917  to proj: 15
+2012/04/22  07:09:47	---	lock removed
+2012/04/22  07:10:04	djangosuper	VIEW: xhr_actions
+2012/04/22  07:10:04	djangosuper	<QueryDict: {u'ci': [u'5624'], u'FADpriority': [u'0'], u'FADhtmlBody': [u''], u'FADstatus': [u'0'], u'ti': [u'0'], u'ajaxAction': [u'fastAdd'], u'FADtitle': [u'BUSINESS']}>
+2012/04/22  07:10:04	djangosuper	=====> xhr_actions: =AJAX request, ci=5624  ti=0  ajaxAction: fastAdd
+2012/04/22  07:10:04	---	Last item ID:4574
+2012/04/22  07:10:04	---	VIEW: drag_actions => fastAdd
+2012/04/22  07:10:04	---	fastAdd for 5624  BUSINESS
+2012/04/22  07:10:04	---	NEW FA item ID=None
+2012/04/22  07:10:04	---	   fastadded item ID = 6230
+2012/04/22  07:10:04	---	  deco for: 6230
+2012/04/22  07:10:04	---	  deco for: 5624
+2012/04/22  07:10:04	---	  deco for: 5395
+2012/04/22  07:10:04	---	  deco for: 5933
+2012/04/22  07:10:04	---	lock removed
+2012/04/22  07:10:10	djangosuper	VIEW: xhr_actions
+2012/04/22  07:10:10	djangosuper	<QueryDict: {u'ci': [u'5933'], u'ajaxAction': [u'demote'], u'ti': [u'0']}>
+2012/04/22  07:10:10	djangosuper	=====> xhr_actions: =AJAX request, ci=5933  ti=0  ajaxAction: demote
+2012/04/22  07:10:10	---	Last item ID:4574
+2012/04/22  07:10:10	---	sMDflk=> findLastKid lastKid=0
+2012/04/22  07:10:10	---	  deco for: 5933
+2012/04/22  07:10:10	---	  deco for: 6230
+2012/04/22  07:10:10	---	lock removed
+2012/04/22  07:10:30	djangosuper	Edit item: Formset generated, pItem=5833
+2012/04/22  07:10:37	djangosuper	   Formset saved: [<Item: BUGS>]
+2012/04/22  07:10:37	djangosuper	VIEW: draglist
+2012/04/22  07:10:37	djangosuper	     Proj 5
+2012/04/22  07:10:37	---	   Entering buildDisplayList
+2012/04/22  07:10:37	---	      ..queries done...
+2012/04/22  07:10:37	---	      ....parent list built...
+2012/04/22  07:10:37	---	      .....ix built.....
+2012/04/22  07:10:37	---	      ...built followhash....
+2012/04/22  07:10:37	---	      .....displayList built...
+2012/04/22  07:10:37	---	   Exiting buildDisplayList
+2012/04/22  07:11:55	djangosuper	VIEW: xhr_actions
+2012/04/22  07:11:55	djangosuper	<QueryDict: {u'ci': [u'4396'], u'FADpriority': [u'0'], u'FADhtmlBody': [u''], u'FADstatus': [u'0'], u'ti': [u'0'], u'ajaxAction': [u'fastAdd'], u'FADtitle': [u"long lines in the note field don't wrap on the main view, making them hard to read"]}>
+2012/04/22  07:11:55	djangosuper	=====> xhr_actions: =AJAX request, ci=4396  ti=0  ajaxAction: fastAdd
+2012/04/22  07:11:55	---	Last item ID:4574
+2012/04/22  07:11:55	---	VIEW: drag_actions => fastAdd
+2012/04/22  07:11:55	---	fastAdd for 4396  long lines in the note field don't wrap on the main view, making them hard to read
+2012/04/22  07:11:55	---	NEW FA item ID=None
+2012/04/22  07:11:55	---	   fastadded item ID = 6231
+2012/04/22  07:11:55	---	  deco for: 6231
+2012/04/22  07:11:55	---	  deco for: 4396
+2012/04/22  07:11:55	---	  deco for: 5394
+2012/04/22  07:11:55	---	  deco for: 5374
+2012/04/22  07:11:55	---	lock removed
+2012/04/22  07:12:03	djangosuper	VIEW: xhr_actions
+2012/04/22  07:12:03	djangosuper	<QueryDict: {u'ci': [u'6231'], u'datax': [u''], u'ajaxAction': [u'promote'], u'ti': [u'0']}>
+2012/04/22  07:12:03	djangosuper	=====> xhr_actions: =AJAX request, ci=6231  ti=0  ajaxAction: promote
+2012/04/22  07:12:03	---	Last item ID:4574
+2012/04/22  07:12:03	---	sMDflk=> findLastKid lastKid=0
+2012/04/22  07:12:03	---	Promoting: 6231
+2012/04/22  07:12:03	---	converting subsequent items to children starting at: 6231
+2012/04/22  07:12:03	---	converting subsequent items to children...
+2012/04/22  07:12:03	---	converting subsequent items to children...
+2012/04/22  07:12:03	---	converting subsequent items to children...
+2012/04/22  07:12:03	---	converting subsequent items to children...
+2012/04/22  07:12:03	---	converting subsequent items to children...
+2012/04/22  07:12:03	---	converting subsequent items to children...
+2012/04/22  07:12:03	---	converting subsequent items to children...
+2012/04/22  07:12:03	---	converting subsequent items to children...
+2012/04/22  07:12:03	---	converting subsequent items to children...
+2012/04/22  07:12:03	---	converting subsequent items to children...
+2012/04/22  07:12:03	---	converting subsequent items to children...
+2012/04/22  07:12:03	---	converting subsequent items to children...
+2012/04/22  07:12:03	---	converting subsequent items to children...
+2012/04/22  07:12:03	---	converting subsequent items to children...
+2012/04/22  07:12:03	---	converting subsequent items to children...
+2012/04/22  07:12:03	---	converting subsequent items to children...
+2012/04/22  07:12:03	---	converting subsequent items to children...
+2012/04/22  07:12:03	---	converting subsequent items to children...
+2012/04/22  07:12:03	---	converting subsequent items to children...
+2012/04/22  07:12:03	---	converting subsequent items to children...
+2012/04/22  07:12:03	---	converting subsequent items to children...
+2012/04/22  07:12:03	---	converting subsequent items to children...
+2012/04/22  07:12:03	---	converting subsequent items to children...
+2012/04/22  07:12:03	---	converting subsequent items to children...
+2012/04/22  07:12:03	---	converting subsequent items to children...
+2012/04/22  07:12:03	---	converting subsequent items to children...
+2012/04/22  07:12:03	---	converting subsequent items to children...
+2012/04/22  07:12:03	---	converting subsequent items to children...
+2012/04/22  07:12:03	---	converting subsequent items to children...
+2012/04/22  07:12:03	---	  deco for: 6231
+2012/04/22  07:12:03	---	  deco for: 4396
+2012/04/22  07:12:03	---	lock removed
+2012/04/22  07:12:08	djangosuper	VIEW: xhr_actions
+2012/04/22  07:12:08	djangosuper	<QueryDict: {u'ci': [u'6231'], u'datax': [u''], u'ajaxAction': [u'moveUp'], u'ti': [u'0']}>
+2012/04/22  07:12:08	djangosuper	=====> xhr_actions: =AJAX request, ci=6231  ti=0  ajaxAction: moveUp
+2012/04/22  07:12:08	---	Last item ID:4574
+2012/04/22  07:12:08	---	sMDflk=> findLastKid lastKid=0
+2012/04/22  07:12:08	---	  moving among children of 5833
+2012/04/22  07:12:08	---	  TI:  4531
+2012/04/22  07:12:08	---	sMDflk=> findLastKid lastKid=4396
+2012/04/22  07:12:08	---	  deco for: 6231
+2012/04/22  07:12:08	---	  deco for: 4531
+2012/04/22  07:12:08	---	  deco for: 6164
+2012/04/22  07:12:08	---	  deco for: 5952
+2012/04/22  07:12:08	---	  deco for: 5880
+2012/04/22  07:12:08	---	  deco for: 5963
+2012/04/22  07:12:08	---	  deco for: 5609
+2012/04/22  07:12:08	---	  deco for: 5435
+2012/04/22  07:12:08	---	  deco for: 5258
+2012/04/22  07:12:08	---	  deco for: 5384
+2012/04/22  07:12:08	---	  deco for: 5394
+2012/04/22  07:12:08	---	  deco for: 4396
+2012/04/22  07:12:08	---	  deco for: 5959
+2012/04/22  07:12:08	---	  deco for: 6231
+2012/04/22  07:12:08	---	  deco for: 5374
+2012/04/22  07:12:08	---	lock removed
+2012/04/22  07:12:36	djangosuper	VIEW: xhr_actions
+2012/04/22  07:12:36	djangosuper	<QueryDict: {u'ci': [u'6164'], u'datax': [u''], u'ajaxAction': [u'dragPeer'], u'ti': [u'6231']}>
+2012/04/22  07:12:36	djangosuper	=====> xhr_actions: =AJAX request, ci=6164  ti=6231  ajaxAction: dragPeer
+2012/04/22  07:12:36	---	Last item ID:4574
+2012/04/22  07:12:36	---	Last item ID:4574
+2012/04/22  07:12:36	---	sMDflk=> findLastKid lastKid=0
+2012/04/22  07:12:36	---	sMDflk=> findLastKid lastKid=0
+2012/04/22  07:12:36	---	==> drag_Peer, CI / TI:6164/6231
+2012/04/22  07:12:36	---	  deco for: 5952
+2012/04/22  07:12:36	---	  deco for: 5959
+2012/04/22  07:12:36	---	  deco for: 6231
+2012/04/22  07:12:36	---	  deco for: 6164
+2012/04/22  07:12:36	---	  deco for: 6231
+2012/04/22  07:12:36	---	lock removed
+2012/04/22  07:13:42	djangosuper	VIEW: xhr_actions
+2012/04/22  07:13:42	djangosuper	<QueryDict: {u'ci': [u'5384'], u'datax': [u''], u'ajaxAction': [u'dragPeer'], u'ti': [u'6164']}>
+2012/04/22  07:13:42	djangosuper	=====> xhr_actions: =AJAX request, ci=5384  ti=6164  ajaxAction: dragPeer
+2012/04/22  07:13:42	---	Last item ID:4574
+2012/04/22  07:13:42	---	Last item ID:4574
+2012/04/22  07:13:42	---	sMDflk=> findLastKid lastKid=0
+2012/04/22  07:13:42	---	sMDflk=> findLastKid lastKid=0
+2012/04/22  07:13:42	---	==> drag_Peer, CI / TI:5384/6164
+2012/04/22  07:13:42	---	  deco for: 5394
+2012/04/22  07:13:42	---	  deco for: 6231
+2012/04/22  07:13:42	---	  deco for: 6164
+2012/04/22  07:13:42	---	  deco for: 5384
+2012/04/22  07:13:42	---	  deco for: 6164
+2012/04/22  07:13:42	---	lock removed
+2012/04/22  07:14:10	djangosuper	VIEW: xhr_actions
+2012/04/22  07:14:10	djangosuper	<QueryDict: {u'ci': [u'6164'], u'datax': [u''], u'ajaxAction': [u'dragPeer'], u'ti': [u'5833']}>
+2012/04/22  07:14:10	djangosuper	=====> xhr_actions: =AJAX request, ci=6164  ti=5833  ajaxAction: dragPeer
+2012/04/22  07:14:10	---	Last item ID:4574
+2012/04/22  07:14:10	---	Last item ID:4574
+2012/04/22  07:14:10	---	sMDflk=> findLastKid lastKid=0
+2012/04/22  07:14:10	---	sMDflk=> findLastKid lastKid=4396
+2012/04/22  07:14:10	---	==> drag_Peer, CI / TI:6164/5833
+2012/04/22  07:14:10	---	  deco for: 5384
+2012/04/22  07:14:10	---	  deco for: 6087
+2012/04/22  07:14:10	---	  deco for: 5833
+2012/04/22  07:14:10	---	  deco for: 6015
+2012/04/22  07:14:10	---	  deco for: 6023
+2012/04/22  07:14:10	---	  deco for: 5977
+2012/04/22  07:14:10	---	  deco for: 5619
+2012/04/22  07:14:10	---	  deco for: 5978
+2012/04/22  07:14:10	---	  deco for: 5959
+2012/04/22  07:14:10	---	  deco for: 6231
+2012/04/22  07:14:10	---	  deco for: 6164
+2012/04/22  07:14:10	---	  deco for: 5384
+2012/04/22  07:14:10	---	  deco for: 4531
+2012/04/22  07:14:10	---	  deco for: 5952
+2012/04/22  07:14:10	---	  deco for: 5880
+2012/04/22  07:14:11	---	  deco for: 5963
+2012/04/22  07:14:11	---	  deco for: 5609
+2012/04/22  07:14:11	---	  deco for: 5435
+2012/04/22  07:14:11	---	  deco for: 5258
+2012/04/22  07:14:11	---	  deco for: 5394
+2012/04/22  07:14:11	---	  deco for: 4396
+2012/04/22  07:14:11	---	  deco for: 6164
+2012/04/22  07:14:11	---	  deco for: 4396
+2012/04/22  07:14:11	---	lock removed
+2012/04/22  07:14:21	djangosuper	VIEW: xhr_actions
+2012/04/22  07:14:21	djangosuper	<QueryDict: {u'ci': [u'6164'], u'datax': [u''], u'ajaxAction': [u'dragPeer'], u'ti': [u'5833']}>
+2012/04/22  07:14:21	djangosuper	=====> xhr_actions: =AJAX request, ci=6164  ti=5833  ajaxAction: dragPeer
+2012/04/22  07:14:21	---	Last item ID:4574
+2012/04/22  07:14:22	---	Last item ID:4574
+2012/04/22  07:14:22	---	sMDflk=> findLastKid lastKid=0
+2012/04/22  07:14:22	---	sMDflk=> findLastKid lastKid=4396
+2012/04/22  07:14:22	---	==> drag_Peer, CI / TI:6164/5833
+2012/04/22  07:14:22	---	  deco for: 5374
+2012/04/22  07:14:22	---	  deco for: 6087
+2012/04/22  07:14:22	---	  deco for: 5833
+2012/04/22  07:14:22	---	  deco for: 6015
+2012/04/22  07:14:22	---	  deco for: 6023
+2012/04/22  07:14:22	---	  deco for: 5977
+2012/04/22  07:14:22	---	  deco for: 5619
+2012/04/22  07:14:22	---	  deco for: 5978
+2012/04/22  07:14:22	---	  deco for: 5959
+2012/04/22  07:14:22	---	  deco for: 6231
+2012/04/22  07:14:22	---	  deco for: 5384
+2012/04/22  07:14:22	---	  deco for: 4531
+2012/04/22  07:14:22	---	  deco for: 5952
+2012/04/22  07:14:22	---	  deco for: 5880
+2012/04/22  07:14:22	---	  deco for: 5963
+2012/04/22  07:14:22	---	  deco for: 5609
+2012/04/22  07:14:22	---	  deco for: 5435
+2012/04/22  07:14:22	---	  deco for: 5258
+2012/04/22  07:14:22	---	  deco for: 5394
+2012/04/22  07:14:22	---	  deco for: 4396
+2012/04/22  07:14:22	---	  deco for: 6164
+2012/04/22  07:14:22	---	  deco for: 4396
+2012/04/22  07:14:22	---	 * * * * * * * * VALIDATE ERROR * * * * * * * 
+2012/04/22  07:14:22	---	[4396 is followed by 5374:= = = Improvements = = =,6164:still major bug with placement of the fast add dia]
+2012/04/22  07:14:39	djangosuper	VIEW: xhr_actions
+2012/04/22  07:14:39	djangosuper	<QueryDict: {u'ci': [u'6164'], u'datax': [u''], u'ajaxAction': [u'dragPeer'], u'ti': [u'5833']}>
+2012/04/22  07:14:39	djangosuper	=====> xhr_actions: =AJAX request, ci=6164  ti=5833  ajaxAction: dragPeer
+2012/04/22  07:14:39	djangosuper	         ==> Lock exists:['Locked:\tdjangosuper\t2012:04:22  07:14:21 ::\tdragPeer  Proj:5 ci:6164  ti:5833']
+2012/04/22  07:15:08	djangosuper	VIEW: maintPage
+2012/04/22  07:15:13	djangosuper	VIEW: managePage
+2012/04/22  07:16:12	jmoss	VIEW: today
+2012/04/22  07:16:12	---	   Entering buildDisplayList
+2012/04/22  07:16:12	---	      ..queries done...
+2012/04/22  07:16:12	---	      ....parent list built...
+2012/04/22  07:16:12	---	      .....ix built.....
+2012/04/22  07:16:12	---	   Exiting buildDisplayList
+2012/04/22  07:16:20	jmoss	VIEW: managePage
+2012/04/22  07:16:56	djangosuper	VIEW: draglist
+2012/04/22  07:16:56	djangosuper	     Proj 5
+2012/04/22  07:16:56	---	   Entering buildDisplayList
+2012/04/22  07:16:56	---	      ..queries done...
+2012/04/22  07:16:56	---	      ....parent list built...
+2012/04/22  07:16:57	---	      .....ix built.....
+2012/04/22  07:16:57	---	      =====> WARNING!! followHash duplicate
+2012/04/22  07:16:57	---	      =====>ID:5374:= = = Improvements = = =  follows=4396]
+2012/04/22  07:16:57	---	      =====>ID:6164:still major bug with placement of the fast add dialog. probably a viewport issue.  follows=4396]
+
+2012/04/22  07:16:57	---	      ...built followhash....
+2012/04/22  07:16:57	---	      .....displayList built...
+2012/04/22  07:16:57	---	   Exiting buildDisplayList
+2012/04/22  07:17:25	djangosuper	VIEW: managePage
+2012/04/22  07:17:25	---	lock removed
+2012/04/22  07:17:27	djangosuper	VIEW: createProject
+2012/04/22  07:17:36	djangosuper	VIEW: showchains
+2012/04/22  07:17:36	djangosuper	ShowChains: Proj 5======================================
+2012/04/22  07:17:36	djangosuper	            Found these un-followed items: [4574L, 6164L]
+2012/04/22  07:17:37	djangosuper	            Tables w/dupes removed:[[4375L, 6229L, 5953L, 6081L, 6090L, 4381L, 6044L, 6096L, 5955L, 6063L, 6080L, 6054L, 5954L, 6087L, 5833L, 6015L, 6023L, 5977L, 5619L, 5978L, 5959L, 6231L, 5384L, 4531L, 5952L, 5880L, 5963L, 5609L, 5435L, 5258L, 5394L, 4396L, 5374L, 5957L, 5834L, 5672L, 5665L, 5175L, 4377L, 6084L, 6085L, 5934L, 6162L, 5923L, 6163L, 5040L, 5931L, 5286L, 5375L, 4581L, 5104L, 4608L, 5655L, 5092L, 5929L, 5002L, 4621L, 5395L, 5624L, 6230L, 5933L, 4574L], [6164L]]
+2012/04/22  07:19:13	djangosuper	VIEW: repairchain
+2012/04/22  07:19:14	djangosuper	RepairChain: Proj 5===================================
+2012/04/22  07:19:14	djangosuper	            recommendedResult:[4375L, 6229L, 5953L, 6081L, 6090L, 4381L, 6044L, 6096L, 5955L, 6063L, 6080L, 6054L, 5954L, 6087L, 5833L, 6015L, 6023L, 5977L, 5619L, 5978L, 5959L, 6231L, 5384L, 4531L, 5952L, 5880L, 5963L, 5609L, 5435L, 5258L, 5394L, 4396L, 5374L, 5957L, 5834L, 5672L, 5665L, 5175L, 4377L, 6084L, 6085L, 5934L, 6162L, 5923L, 6163L, 5040L, 5931L, 5286L, 5375L, 4581L, 5104L, 4608L, 5655L, 5092L, 5929L, 5002L, 4621L, 5395L, 5624L, 6230L, 5933L, 4574L, 6164L]
+2012/04/22  07:19:14	djangosuper	            Starting rechaining....anchor=4375
+2012/04/22  07:19:16	djangosuper	VIEW: showchains
+2012/04/22  07:19:16	djangosuper	ShowChains: Proj 5======================================
+2012/04/22  07:19:16	djangosuper	            Found these un-followed items: [6164L]
+2012/04/22  07:19:17	djangosuper	            Tables w/dupes removed:[[4375L, 6229L, 5953L, 6081L, 6090L, 4381L, 6044L, 6096L, 5955L, 6063L, 6080L, 6054L, 5954L, 6087L, 5833L, 6015L, 6023L, 5977L, 5619L, 5978L, 5959L, 6231L, 5384L, 4531L, 5952L, 5880L, 5963L, 5609L, 5435L, 5258L, 5394L, 4396L, 5374L, 5957L, 5834L, 5672L, 5665L, 5175L, 4377L, 6084L, 6085L, 5934L, 6162L, 5923L, 6163L, 5040L, 5931L, 5286L, 5375L, 4581L, 5104L, 4608L, 5655L, 5092L, 5929L, 5002L, 4621L, 5395L, 5624L, 6230L, 5933L, 4574L, 6164L]]
+2012/04/22  07:19:26	djangosuper	VIEW: draglist
+2012/04/22  07:19:26	djangosuper	     Proj 5
+2012/04/22  07:19:26	---	   Entering buildDisplayList
+2012/04/22  07:19:26	---	      ..queries done...
+2012/04/22  07:19:26	---	      ....parent list built...
+2012/04/22  07:19:27	---	      .....ix built.....
+2012/04/22  07:19:27	---	      ...built followhash....
+2012/04/22  07:19:27	---	      .....displayList built...
+2012/04/22  07:19:27	---	   Exiting buildDisplayList
+2012/04/22  07:19:51	djangosuper	VIEW: xhr_actions
+2012/04/22  07:19:51	djangosuper	<QueryDict: {u'ci': [u'6164'], u'datax': [u''], u'ajaxAction': [u'dragKid'], u'ti': [u'5374']}>
+2012/04/22  07:19:51	djangosuper	=====> xhr_actions: =AJAX request, ci=6164  ti=5374  ajaxAction: dragKid
+2012/04/22  07:19:51	---	Last item ID:6164
+2012/04/22  07:19:51	djangosuper	VIEW: drag_move
+2012/04/22  07:19:51	djangosuper	 ====dragmove=> CIid:TIid    6164:5374
+2012/04/22  07:19:51	---	Last item ID:6164
+2012/04/22  07:19:51	---	sMDflk=> findLastKid lastKid=0
+2012/04/22  07:19:51	djangosuper	DragMove=> CI saved
+2012/04/22  07:19:51	djangosuper	dragmove=> targetFollowerID:5957  targetFollower.follows:5374  lastkid:0
+2012/04/22  07:19:51	djangosuper	 => targetFollower.follows=6164
+2012/04/22  07:19:51	---	lock removed
+2012/04/22  07:20:02	djangosuper	VIEW: xhr_actions
+2012/04/22  07:20:02	djangosuper	<QueryDict: {u'ci': [u'6164'], u'datax': [u''], u'ajaxAction': [u'dragKid'], u'ti': [u'5833']}>
+2012/04/22  07:20:02	djangosuper	=====> xhr_actions: =AJAX request, ci=6164  ti=5833  ajaxAction: dragKid
+2012/04/22  07:20:02	---	Last item ID:4574
+2012/04/22  07:20:02	djangosuper	VIEW: drag_move
+2012/04/22  07:20:02	djangosuper	 ====dragmove=> CIid:TIid    6164:5833
+2012/04/22  07:20:02	---	Last item ID:4574
+2012/04/22  07:20:02	---	sMDflk=> findLastKid lastKid=0
+2012/04/22  07:20:02	djangosuper	DragMove=> CI saved
+2012/04/22  07:20:02	djangosuper	dragmove=> targetFollowerID:6015  targetFollower.follows:5833  lastkid:0
+2012/04/22  07:20:02	djangosuper	 => targetFollower.follows=6164
+2012/04/22  07:20:02	---	lock removed
+2012/04/22  07:22:15	djangosuper	VIEW: showchains
+2012/04/22  07:22:15	djangosuper	ShowChains: Proj 5======================================
+2012/04/22  07:22:15	djangosuper	            Found these un-followed items: [4574L]
+2012/04/22  07:22:16	djangosuper	            Tables w/dupes removed:[[4375L, 6229L, 5953L, 6081L, 6090L, 4381L, 6044L, 6096L, 5955L, 6063L, 6080L, 6054L, 5954L, 6087L, 5833L, 6164L, 6015L, 6023L, 5977L, 5619L, 5978L, 5959L, 6231L, 5384L, 4531L, 5952L, 5880L, 5963L, 5609L, 5435L, 5258L, 5394L, 4396L, 5374L, 5957L, 5834L, 5672L, 5665L, 5175L, 4377L, 6084L, 6085L, 5934L, 6162L, 5923L, 6163L, 5040L, 5931L, 5286L, 5375L, 4581L, 5104L, 4608L, 5655L, 5092L, 5929L, 5002L, 4621L, 5395L, 5624L, 6230L, 5933L, 4574L]]
+2012/04/22  07:27:30	jmoss	VIEW: help
+2012/04/22  07:31:17	jmoss	VIEW: today
+2012/04/22  07:31:17	---	   Entering buildDisplayList
+2012/04/22  07:31:17	---	      ..queries done...
+2012/04/22  07:31:18	---	      ....parent list built...
+2012/04/22  07:31:18	---	      .....ix built.....
+2012/04/22  07:31:18	---	   Exiting buildDisplayList
+2012/04/22  07:31:24	jmoss	VIEW: draglist
+2012/04/22  07:31:24	jmoss	     Proj 33
+2012/04/22  07:31:24	---	   Entering buildDisplayList
+2012/04/22  07:31:24	---	      ..queries done...
+2012/04/22  07:31:24	---	      ....parent list built...
+2012/04/22  07:31:25	---	      .....ix built.....
+2012/04/22  07:31:25	---	      ...built followhash....
+2012/04/22  07:31:25	---	      .....displayList built...
+2012/04/22  07:31:25	---	   Exiting buildDisplayList
+2012/04/22  07:31:51	jmoss	VIEW: xhr_actions
+2012/04/22  07:31:51	jmoss	<QueryDict: {u'ci': [u'6042'], u'ajaxAction': [u'archiveThisItem'], u'ti': [u'0']}>
+2012/04/22  07:31:51	jmoss	=====> xhr_actions: =AJAX request, ci=6042  ti=0  ajaxAction: archiveThisItem
+2012/04/22  07:31:51	---	Last item ID:6226
+2012/04/22  07:31:51	---	sMDflk=> findLastKid lastKid=0
+2012/04/22  07:31:51	---	Last item ID:6179
+2012/04/22  07:31:51	---	  deco for: 6045
+2012/04/22  07:31:51	---	  deco for: 6045
+2012/04/22  07:31:51	---	  deco for: 6041
+2012/04/22  07:31:51	---	==> archivePair moved item 6042  to proj: 34
+2012/04/22  07:31:51	---	lock removed
+2012/04/22  07:32:11	jmoss	VIEW: xhr_actions
+2012/04/22  07:32:11	jmoss	<QueryDict: {u'ci': [u'6045'], u'datax': [u''], u'ajaxAction': [u'dragKid'], u'ti': [u'6170']}>
+2012/04/22  07:32:11	jmoss	=====> xhr_actions: =AJAX request, ci=6045  ti=6170  ajaxAction: dragKid
+2012/04/22  07:32:11	---	Last item ID:6226
+2012/04/22  07:32:11	jmoss	VIEW: drag_move
+2012/04/22  07:32:11	jmoss	 ====dragmove=> CIid:TIid    6045:6170
+2012/04/22  07:32:11	---	Last item ID:6226
+2012/04/22  07:32:11	---	sMDflk=> findLastKid lastKid=0
+2012/04/22  07:32:11	jmoss	DragMove=> CI saved
+2012/04/22  07:32:11	jmoss	dragmove=> targetFollowerID:6173  targetFollower.follows:6170  lastkid:0
+2012/04/22  07:32:11	jmoss	 => targetFollower.follows=6045
+2012/04/22  07:32:11	---	lock removed
+2012/04/22  07:32:17	jmoss	VIEW: xhr_actions
+2012/04/22  07:32:17	jmoss	<QueryDict: {u'ci': [u'6040'], u'datax': [u'2'], u'ajaxAction': [u'statusSelected'], u'ti': [u'0']}>
+2012/04/22  07:32:17	jmoss	=====> xhr_actions: =AJAX request, ci=6040  ti=0  ajaxAction: statusSelected
+2012/04/22  07:32:17	---	Last item ID:6226
+2012/04/22  07:32:17	---	  deco for: 6040
+2012/04/22  07:32:17	---	lock removed
+2012/04/22  07:34:26	jmoss	VIEW: xhr_actions
+2012/04/22  07:34:26	jmoss	<QueryDict: {u'ci': [u'6166'], u'datax': [u''], u'ajaxAction': [u'dragKid'], u'ti': [u'6172']}>
+2012/04/22  07:34:26	jmoss	=====> xhr_actions: =AJAX request, ci=6166  ti=6172  ajaxAction: dragKid
+2012/04/22  07:34:26	---	Last item ID:6226
+2012/04/22  07:34:26	jmoss	VIEW: drag_move
+2012/04/22  07:34:26	jmoss	 ====dragmove=> CIid:TIid    6166:6172
+2012/04/22  07:34:26	---	Last item ID:6226
+2012/04/22  07:34:26	---	sMDflk=> findLastKid lastKid=0
+2012/04/22  07:34:26	jmoss	DragMove=> CI saved
+2012/04/22  07:34:26	jmoss	dragmove=> targetFollowerID:6170  targetFollower.follows:6172  lastkid:0
+2012/04/22  07:34:26	jmoss	 => targetFollower.follows=6166
+2012/04/22  07:34:27	---	lock removed
+2012/04/22  07:34:36	jmoss	VIEW: xhr_actions
+2012/04/22  07:34:36	jmoss	<QueryDict: {u'ci': [u'6041'], u'datax': [u''], u'ajaxAction': [u'dragKid'], u'ti': [u'6170']}>
+2012/04/22  07:34:36	jmoss	=====> xhr_actions: =AJAX request, ci=6041  ti=6170  ajaxAction: dragKid
+2012/04/22  07:34:36	---	Last item ID:6226
+2012/04/22  07:34:36	jmoss	VIEW: drag_move
+2012/04/22  07:34:36	jmoss	 ====dragmove=> CIid:TIid    6041:6170
+2012/04/22  07:34:37	---	Last item ID:6226
+2012/04/22  07:34:37	---	sMDflk=> findLastKid lastKid=0
+2012/04/22  07:34:37	jmoss	DragMove=> CI saved
+2012/04/22  07:34:37	jmoss	dragmove=> targetFollowerID:6045  targetFollower.follows:6170  lastkid:0
+2012/04/22  07:34:37	jmoss	 => targetFollower.follows=6041
+2012/04/22  07:34:37	---	lock removed
+2012/04/22  07:34:40	jmoss	VIEW: xhr_actions
+2012/04/22  07:34:40	jmoss	<QueryDict: {u'ci': [u'6040'], u'datax': [u''], u'ajaxAction': [u'dragKid'], u'ti': [u'6170']}>
+2012/04/22  07:34:40	jmoss	=====> xhr_actions: =AJAX request, ci=6040  ti=6170  ajaxAction: dragKid
+2012/04/22  07:34:40	---	Last item ID:6226
+2012/04/22  07:34:40	jmoss	VIEW: drag_move
+2012/04/22  07:34:40	jmoss	 ====dragmove=> CIid:TIid    6040:6170
+2012/04/22  07:34:40	---	Last item ID:6226
+2012/04/22  07:34:40	---	sMDflk=> findLastKid lastKid=0
+2012/04/22  07:34:40	jmoss	DragMove=> CI saved
+2012/04/22  07:34:40	jmoss	dragmove=> targetFollowerID:6041  targetFollower.follows:6170  lastkid:0
+2012/04/22  07:34:40	jmoss	 => targetFollower.follows=6040
+2012/04/22  07:34:40	---	lock removed
+2012/04/22  07:34:44	jmoss	VIEW: xhr_actions
+2012/04/22  07:34:44	jmoss	<QueryDict: {u'ci': [u'6168'], u'datax': [u''], u'ajaxAction': [u'dragKid'], u'ti': [u'6170']}>
+2012/04/22  07:34:44	jmoss	=====> xhr_actions: =AJAX request, ci=6168  ti=6170  ajaxAction: dragKid
+2012/04/22  07:34:44	---	Last item ID:6226
+2012/04/22  07:34:44	jmoss	VIEW: drag_move
+2012/04/22  07:34:44	jmoss	 ====dragmove=> CIid:TIid    6168:6170
+2012/04/22  07:34:44	---	Last item ID:6226
+2012/04/22  07:34:44	---	sMDflk=> findLastKid lastKid=0
+2012/04/22  07:34:44	jmoss	DragMove=> CI saved
+2012/04/22  07:34:44	jmoss	dragmove=> targetFollowerID:6040  targetFollower.follows:6170  lastkid:0
+2012/04/22  07:34:44	jmoss	 => targetFollower.follows=6168
+2012/04/22  07:34:44	---	lock removed
+2012/04/22  07:34:47	jmoss	VIEW: xhr_actions
+2012/04/22  07:34:47	jmoss	<QueryDict: {u'ci': [u'6167'], u'datax': [u''], u'ajaxAction': [u'dragKid'], u'ti': [u'6170']}>
+2012/04/22  07:34:47	jmoss	=====> xhr_actions: =AJAX request, ci=6167  ti=6170  ajaxAction: dragKid
+2012/04/22  07:34:47	---	Last item ID:6226
+2012/04/22  07:34:47	jmoss	VIEW: drag_move
+2012/04/22  07:34:47	jmoss	 ====dragmove=> CIid:TIid    6167:6170
+2012/04/22  07:34:47	---	Last item ID:6226
+2012/04/22  07:34:47	---	sMDflk=> findLastKid lastKid=0
+2012/04/22  07:34:47	jmoss	DragMove=> CI saved
+2012/04/22  07:34:47	jmoss	dragmove=> targetFollowerID:6168  targetFollower.follows:6170  lastkid:0
+2012/04/22  07:34:47	jmoss	 => targetFollower.follows=6167
+2012/04/22  07:34:47	---	lock removed
+2012/04/22  07:34:51	jmoss	VIEW: xhr_actions
+2012/04/22  07:34:51	jmoss	<QueryDict: {u'ci': [u'6169'], u'datax': [u''], u'ajaxAction': [u'dragKid'], u'ti': [u'6166']}>
+2012/04/22  07:34:51	jmoss	=====> xhr_actions: =AJAX request, ci=6169  ti=6166  ajaxAction: dragKid
+2012/04/22  07:34:52	---	Last item ID:6226
+2012/04/22  07:34:52	jmoss	VIEW: drag_move
+2012/04/22  07:34:52	jmoss	 ====dragmove=> CIid:TIid    6169:6166
+2012/04/22  07:34:52	---	Last item ID:6226
+2012/04/22  07:34:52	---	sMDflk=> findLastKid lastKid=0
+2012/04/22  07:34:52	jmoss	DragMove=> CI saved
+2012/04/22  07:34:52	jmoss	dragmove=> targetFollowerID:6170  targetFollower.follows:6166  lastkid:0
+2012/04/22  07:34:52	jmoss	 => targetFollower.follows=6169
+2012/04/22  07:34:52	---	lock removed
+2012/04/22  07:35:01	jmoss	VIEW: xhr_actions
+2012/04/22  07:35:01	jmoss	<QueryDict: {u'ci': [u'6166'], u'datax': [u''], u'ajaxAction': [u'promote'], u'ti': [u'0']}>
+2012/04/22  07:35:01	jmoss	=====> xhr_actions: =AJAX request, ci=6166  ti=0  ajaxAction: promote
+2012/04/22  07:35:01	---	Last item ID:6226
+2012/04/22  07:35:01	---	sMDflk=> findLastKid lastKid=6169
+2012/04/22  07:35:01	---	Promoting: 6166
+2012/04/22  07:35:01	---	converting subsequent items to children starting at: 6169
+2012/04/22  07:35:01	---	converting subsequent items to children...
+2012/04/22  07:35:01	---	converting subsequent items to children...
+2012/04/22  07:35:01	---	converting subsequent items to children...
+2012/04/22  07:35:01	---	converting subsequent items to children...
+2012/04/22  07:35:01	---	converting subsequent items to children...
+2012/04/22  07:35:01	---	converting subsequent items to children...
+2012/04/22  07:35:01	---	converting subsequent items to children...
+2012/04/22  07:35:01	---	converting subsequent items to children...
+2012/04/22  07:35:01	---	converting subsequent items to children...
+2012/04/22  07:35:01	---	converting subsequent items to children...
+2012/04/22  07:35:01	---	converting subsequent items to children...
+2012/04/22  07:35:01	---	converting subsequent items to children...
+2012/04/22  07:35:01	---	converting subsequent items to children...
+2012/04/22  07:35:01	---	converting subsequent items to children...
+2012/04/22  07:35:01	---	converting subsequent items to children...
+2012/04/22  07:35:01	---	converting subsequent items to children...
+2012/04/22  07:35:01	---	converting subsequent items to children...
+2012/04/22  07:35:01	---	converting subsequent items to children...
+2012/04/22  07:35:02	---	converting subsequent items to children...
+2012/04/22  07:35:02	---	converting subsequent items to children...
+2012/04/22  07:35:02	---	converting subsequent items to children...
+2012/04/22  07:35:02	---	converting subsequent items to children...
+2012/04/22  07:35:02	---	converting subsequent items to children...
+2012/04/22  07:35:02	---	converting subsequent items to children...
+2012/04/22  07:35:02	---	converting subsequent items to children...
+2012/04/22  07:35:02	---	converting subsequent items to children...
+2012/04/22  07:35:02	---	converting subsequent items to children...
+2012/04/22  07:35:02	---	converting subsequent items to children...
+2012/04/22  07:35:02	---	converting subsequent items to children...
+2012/04/22  07:35:02	---	converting subsequent items to children...
+2012/04/22  07:35:02	---	converting subsequent items to children...
+2012/04/22  07:35:02	---	converting subsequent items to children...
+2012/04/22  07:35:02	---	converting subsequent items to children...
+2012/04/22  07:35:02	---	converting subsequent items to children...
+2012/04/22  07:35:02	---	converting subsequent items to children...
+2012/04/22  07:35:02	---	converting subsequent items to children...
+2012/04/22  07:35:02	---	converting subsequent items to children...
+2012/04/22  07:35:02	---	converting subsequent items to children...
+2012/04/22  07:35:02	---	converting subsequent items to children...
+2012/04/22  07:35:02	---	converting subsequent items to children...
+2012/04/22  07:35:02	---	converting subsequent items to children...
+2012/04/22  07:35:02	---	converting subsequent items to children...
+2012/04/22  07:35:02	---	converting subsequent items to children...
+2012/04/22  07:35:02	---	converting subsequent items to children...
+2012/04/22  07:35:02	---	converting subsequent items to children...
+2012/04/22  07:35:02	---	converting subsequent items to children...
+2012/04/22  07:35:02	---	converting subsequent items to children...
+2012/04/22  07:35:02	---	converting subsequent items to children...
+2012/04/22  07:35:02	---	converting subsequent items to children...
+2012/04/22  07:35:02	---	converting subsequent items to children...
+2012/04/22  07:35:02	---	converting subsequent items to children...
+2012/04/22  07:35:02	---	converting subsequent items to children...
+2012/04/22  07:35:02	---	converting subsequent items to children...
+2012/04/22  07:35:02	---	converting subsequent items to children...
+2012/04/22  07:35:02	---	converting subsequent items to children...
+2012/04/22  07:35:02	---	converting subsequent items to children...
+2012/04/22  07:35:02	---	converting subsequent items to children...
+2012/04/22  07:35:02	---	  deco for: 6166
+2012/04/22  07:35:02	---	  deco for: 6172
+2012/04/22  07:35:02	---	  deco for: 6169
+2012/04/22  07:35:02	---	lock removed
+2012/04/22  07:35:03	jmoss	VIEW: xhr_actions
+2012/04/22  07:35:03	jmoss	<QueryDict: {u'ci': [u'6166'], u'datax': [u''], u'ajaxAction': [u'promote'], u'ti': [u'0']}>
+2012/04/22  07:35:03	jmoss	=====> xhr_actions: =AJAX request, ci=6166  ti=0  ajaxAction: promote
+2012/04/22  07:35:04	---	Last item ID:6226
+2012/04/22  07:35:04	---	sMDflk=> findLastKid lastKid=6169
+2012/04/22  07:35:04	---	Promoting: 6166
+2012/04/22  07:35:04	---	converting subsequent items to children starting at: 6169
+2012/04/22  07:35:04	---	  deco for: 6166
+2012/04/22  07:35:04	---	  deco for: 6172
+2012/04/22  07:35:04	---	  deco for: 6169
+2012/04/22  07:35:04	---	lock removed
+2012/04/22  07:35:11	jmoss	VIEW: draglist
+2012/04/22  07:35:11	jmoss	     Proj 33
+2012/04/22  07:35:11	---	   Entering buildDisplayList
+2012/04/22  07:35:11	---	      ..queries done...
+2012/04/22  07:35:11	---	      ....parent list built...
+2012/04/22  07:35:11	---	      .....ix built.....
+2012/04/22  07:35:11	---	      ...built followhash....
+2012/04/22  07:35:11	---	      .....displayList built...
+2012/04/22  07:35:11	---	   Exiting buildDisplayList
+2012/04/22  07:35:47	jmoss	VIEW: xhr_actions
+2012/04/22  07:35:47	jmoss	<QueryDict: {u'ci': [u'6168'], u'datax': [u''], u'ajaxAction': [u'dragKid'], u'ti': [u'6170']}>
+2012/04/22  07:35:47	jmoss	=====> xhr_actions: =AJAX request, ci=6168  ti=6170  ajaxAction: dragKid
+2012/04/22  07:35:47	---	Last item ID:6226
+2012/04/22  07:35:47	jmoss	VIEW: drag_move
+2012/04/22  07:35:47	jmoss	 ====dragmove=> CIid:TIid    6168:6170
+2012/04/22  07:35:47	---	Last item ID:6226
+2012/04/22  07:35:47	---	sMDflk=> findLastKid lastKid=0
+2012/04/22  07:35:47	jmoss	DragMove=> CI saved
+2012/04/22  07:35:47	jmoss	dragmove=> targetFollowerID:6167  targetFollower.follows:6170  lastkid:0
+2012/04/22  07:35:47	jmoss	 => targetFollower.follows=6168
+2012/04/22  07:35:48	---	lock removed
+2012/04/22  07:37:23	jmoss	VIEW: help
+2012/04/22  07:42:31	jmoss	VIEW: help
+2012/04/22  07:42:54	jmoss	VIEW: help
+2012/04/22  07:43:25	jmoss	VIEW: help
+2012/04/22  07:43:28	jmoss	VIEW: help
+2012/04/22  07:43:39	jmoss	VIEW: help
+2012/04/22  07:44:08	jmoss	VIEW: help
+2012/04/22  07:47:13	jmoss	VIEW: help
+2012/04/22  07:47:16	jmoss	VIEW: help
+2012/04/22  07:48:29	jmoss	VIEW: help
+2012/04/22  07:49:19	jmoss	VIEW: help
+2012/04/22  07:49:32	jmoss	VIEW: help
+2012/04/22  07:52:47	jmoss	VIEW: draglist
+2012/04/22  07:52:47	jmoss	     Proj 33
+2012/04/22  07:52:47	---	   Entering buildDisplayList
+2012/04/22  07:52:47	---	      ..queries done...
+2012/04/22  07:52:47	---	      ....parent list built...
+2012/04/22  07:52:48	---	      .....ix built.....
+2012/04/22  07:52:48	---	      ...built followhash....
+2012/04/22  07:52:48	---	      .....displayList built...
+2012/04/22  07:52:48	---	   Exiting buildDisplayList
+2012/04/22  07:53:49	jmoss	VIEW: help
+2012/04/22  07:54:52	jmoss	VIEW: help
+2012/04/22  07:56:10	djangosuper	VIEW: xhr_actions
+2012/04/22  07:56:10	djangosuper	<QueryDict: {u'ci': [u'6063'], u'datax': [u''], u'ajaxAction': [u'moveDown'], u'ti': [u'0']}>
+2012/04/22  07:56:10	djangosuper	=====> xhr_actions: =AJAX request, ci=6063  ti=0  ajaxAction: moveDown
+2012/04/22  07:56:10	---	Last item ID:4574
+2012/04/22  07:56:10	---	sMDflk=> findLastKid lastKid=0
+2012/04/22  07:56:10	---	  moving among children of 5955
+2012/04/22  07:56:10	---	  TI:  6080
+2012/04/22  07:56:11	---	sMDflk=> findLastKid lastKid=0
+2012/04/22  07:56:11	---	  deco for: 6080
+2012/04/22  07:56:11	---	  deco for: 6063
+2012/04/22  07:56:11	---	  deco for: 5955
+2012/04/22  07:56:11	---	  deco for: 6080
+2012/04/22  07:56:11	---	  deco for: 6054
+2012/04/22  07:56:11	---	lock removed
+2012/04/22  08:34:09	jmoss	VIEW: help
+2012/04/22  09:09:30	jmoss	VIEW: help
+2012/04/22  09:11:08	jmoss	VIEW: help
+2012/04/22  09:12:34	jmoss	VIEW: help
+2012/04/22  09:14:50	jmoss	VIEW: help
+2012/04/22  09:17:45	jmoss	VIEW: help
+2012/04/22  09:19:04	jmoss	VIEW: help
+2012/04/22  09:19:50	jmoss	VIEW: help
+2012/04/22  09:32:47	djangosuper	VIEW: draglist
+2012/04/22  09:32:47	djangosuper	     Proj 4
+2012/04/22  09:32:47	---	   Entering buildDisplayList
+2012/04/22  09:32:47	---	      ..queries done...
+2012/04/22  09:32:47	---	      ....parent list built...
+2012/04/22  09:32:47	---	      .....ix built.....
+2012/04/22  09:32:47	---	      ...built followhash....
+2012/04/22  09:32:47	---	      .....displayList built...
+2012/04/22  09:32:47	---	   Exiting buildDisplayList
+2012/04/22  09:32:52	djangosuper	VIEW: xhr_actions
+2012/04/22  09:32:52	djangosuper	<QueryDict: {u'ci': [u'6094'], u'datax': [u''], u'ajaxAction': [u'dragKid'], u'ti': [u'5984']}>
+2012/04/22  09:32:52	djangosuper	=====> xhr_actions: =AJAX request, ci=6094  ti=5984  ajaxAction: dragKid
+2012/04/22  09:32:52	---	Last item ID:6004
+2012/04/22  09:32:52	djangosuper	VIEW: drag_move
+2012/04/22  09:32:52	djangosuper	 ====dragmove=> CIid:TIid    6094:5984
+2012/04/22  09:32:52	---	Last item ID:6004
+2012/04/22  09:32:53	---	sMDflk=> findLastKid lastKid=0
+2012/04/22  09:32:53	djangosuper	DragMove=> CI saved
+2012/04/22  09:32:53	djangosuper	dragmove=> targetFollowerID:5993  targetFollower.follows:5984  lastkid:0
+2012/04/22  09:32:53	djangosuper	 => targetFollower.follows=6094
+2012/04/22  09:32:53	---	lock removed
+2012/04/22  09:34:01	djangosuper	VIEW: help
+2012/04/22  09:34:39	djangosuper	VIEW: help
+2012/04/22  09:40:07	djangosuper	VIEW: help
+2012/04/22  09:40:23	djangosuper	VIEW: help
+2012/04/22  09:40:26	djangosuper	VIEW: help
+2012/04/22  09:40:53	djangosuper	VIEW: help
+2012/04/22  09:41:07	djangosuper	VIEW: help
+2012/04/22  10:36:51	djangosuper	VIEW: help
+2012/04/22  17:28:19	djangosuper	VIEW: today
+2012/04/22  17:28:19	---	   Entering buildDisplayList
+2012/04/22  17:28:19	---	      ..queries done...
+2012/04/22  17:28:20	---	      ....parent list built...
+2012/04/22  17:28:20	---	      .....ix built.....
+2012/04/22  17:28:20	---	   Exiting buildDisplayList
+2012/04/22  17:28:25	djangosuper	VIEW: draglist
+2012/04/22  17:28:25	djangosuper	     Proj 5
+2012/04/22  17:28:25	---	   Entering buildDisplayList
+2012/04/22  17:28:25	---	      ..queries done...
+2012/04/22  17:28:25	---	      ....parent list built...
+2012/04/22  17:28:26	---	      .....ix built.....
+2012/04/22  17:28:26	---	      ...built followhash....
+2012/04/22  17:28:26	---	      .....displayList built...
+2012/04/22  17:28:26	---	   Exiting buildDisplayList
+2012/04/22  18:46:11	djangosuper	VIEW: help
+2012/04/22  21:40:10	jmoss	VIEW: today
+2012/04/22  21:40:10	---	   Entering buildDisplayList
+2012/04/22  21:40:10	---	      ..queries done...
+2012/04/22  21:40:10	---	      ....parent list built...
+2012/04/22  21:40:10	---	      .....ix built.....
+2012/04/22  21:40:10	---	   Exiting buildDisplayList
+2012/04/22  21:40:43	jmoss	VIEW: maintPage
+2012/04/22  21:43:09	djangosuper	VIEW: today
+2012/04/22  21:43:09	---	   Entering buildDisplayList
+2012/04/22  21:43:09	---	      ..queries done...
+2012/04/22  21:43:09	---	      ....parent list built...
+2012/04/22  21:43:09	---	      .....ix built.....
+2012/04/22  21:43:09	---	   Exiting buildDisplayList
+2012/04/22  21:43:27	djangosuper	VIEW: maintPage
+2012/04/22  21:50:08	djangosuper	VIEW: today
+2012/04/22  21:50:08	---	   Entering buildDisplayList
+2012/04/22  21:50:08	---	      ..queries done...
+2012/04/22  21:50:08	---	      ....parent list built...
+2012/04/22  21:50:08	---	      .....ix built.....
+2012/04/22  21:50:08	---	   Exiting buildDisplayList
+2012/04/22  21:50:13	djangosuper	VIEW: draglist
+2012/04/22  21:50:13	djangosuper	     Proj 5
+2012/04/22  21:50:13	---	   Entering buildDisplayList
+2012/04/22  21:50:13	---	      ..queries done...
+2012/04/22  21:50:13	---	      ....parent list built...
+2012/04/22  21:50:13	---	      .....ix built.....
+2012/04/22  21:50:13	---	      ...built followhash....
+2012/04/22  21:50:13	---	      .....displayList built...
+2012/04/22  21:50:13	---	   Exiting buildDisplayList
+2012/04/22  21:51:22	djangosuper	VIEW: maintPage
+2012/04/22  21:51:47	djangosuper	VIEW: xhr_actions
+2012/04/22  21:51:47	djangosuper	<QueryDict: {u'ci': [u'6096'], u'datax': [u''], u'ajaxAction': [u'moveUp'], u'ti': [u'0']}>
+2012/04/22  21:51:47	djangosuper	=====> xhr_actions: =AJAX request, ci=6096  ti=0  ajaxAction: moveUp
+2012/04/22  21:51:47	---	Last item ID:4574
+2012/04/22  21:51:47	---	sMDflk=> findLastKid lastKid=0
+2012/04/22  21:51:47	---	  moving among children of 5953
+2012/04/22  21:51:47	---	  TI:  6044
+2012/04/22  21:51:47	---	sMDflk=> findLastKid lastKid=0
+2012/04/22  21:51:47	---	  deco for: 6096
+2012/04/22  21:51:47	---	  deco for: 6044
+2012/04/22  21:51:47	---	  deco for: 4381
+2012/04/22  21:51:47	---	  deco for: 6096
+2012/04/22  21:51:47	---	  deco for: 5955
+2012/04/22  21:51:47	---	lock removed
+2012/04/22  21:52:39	djangosuper	VIEW: xhr_actions
+2012/04/22  21:52:39	djangosuper	<QueryDict: {u'ci': [u'6044'], u'datax': [u''], u'ajaxAction': [u'moveUp'], u'ti': [u'0']}>
+2012/04/22  21:52:39	djangosuper	=====> xhr_actions: =AJAX request, ci=6044  ti=0  ajaxAction: moveUp
+2012/04/22  21:52:39	---	Last item ID:4574
+2012/04/22  21:52:39	---	sMDflk=> findLastKid lastKid=0
+2012/04/22  21:52:39	---	  moving among children of 5953
+2012/04/22  21:52:39	---	  TI:  6096
+2012/04/22  21:52:39	---	sMDflk=> findLastKid lastKid=0
+2012/04/22  21:52:39	---	  deco for: 6044
+2012/04/22  21:52:39	---	  deco for: 6096
+2012/04/22  21:52:39	---	  deco for: 4381
+2012/04/22  21:52:39	---	  deco for: 6044
+2012/04/22  21:52:39	---	  deco for: 5955
+2012/04/22  21:52:39	---	lock removed
+2012/04/22  21:52:39	djangosuper	VIEW: xhr_actions
+2012/04/22  21:52:39	djangosuper	<QueryDict: {u'ci': [u'6096'], u'datax': [u''], u'ajaxAction': [u'moveUp'], u'ti': [u'0']}>
+2012/04/22  21:52:39	djangosuper	=====> xhr_actions: =AJAX request, ci=6096  ti=0  ajaxAction: moveUp
+2012/04/22  21:52:39	---	Last item ID:4574
+2012/04/22  21:52:39	---	sMDflk=> findLastKid lastKid=0
+2012/04/22  21:52:39	---	  moving among children of 5953
+2012/04/22  21:52:39	---	  TI:  6044
+2012/04/22  21:52:39	---	sMDflk=> findLastKid lastKid=0
+2012/04/22  21:52:39	---	  deco for: 6096
+2012/04/22  21:52:39	---	  deco for: 6044
+2012/04/22  21:52:39	---	  deco for: 4381
+2012/04/22  21:52:40	---	  deco for: 6096
+2012/04/22  21:52:40	---	  deco for: 5955
+2012/04/22  21:52:40	---	lock removed
+2012/04/22  21:52:40	djangosuper	VIEW: xhr_actions
+2012/04/22  21:52:40	djangosuper	<QueryDict: {u'ci': [u'6044'], u'datax': [u''], u'ajaxAction': [u'moveUp'], u'ti': [u'0']}>
+2012/04/22  21:52:40	djangosuper	=====> xhr_actions: =AJAX request, ci=6044  ti=0  ajaxAction: moveUp
+2012/04/22  21:52:40	---	Last item ID:4574
+2012/04/22  21:52:40	---	sMDflk=> findLastKid lastKid=0
+2012/04/22  21:52:40	---	  moving among children of 5953
+2012/04/22  21:52:40	---	  TI:  6096
+2012/04/22  21:52:40	---	sMDflk=> findLastKid lastKid=0
+2012/04/22  21:52:40	---	  deco for: 6044
+2012/04/22  21:52:40	---	  deco for: 6096
+2012/04/22  21:52:40	---	  deco for: 4381
+2012/04/22  21:52:40	---	  deco for: 6044
+2012/04/22  21:52:40	---	  deco for: 5955
+2012/04/22  21:52:40	---	lock removed
+2012/04/22  21:52:52	djangosuper	VIEW: xhr_actions
+2012/04/22  21:52:52	djangosuper	<QueryDict: {u'ci': [u'5954'], u'datax': [u''], u'ajaxAction': [u'moveUp'], u'ti': [u'0']}>
+2012/04/22  21:52:52	djangosuper	=====> xhr_actions: =AJAX request, ci=5954  ti=0  ajaxAction: moveUp
+2012/04/22  21:52:52	---	Last item ID:4574
+2012/04/22  21:52:52	---	sMDflk=> findLastKid lastKid=6087
+2012/04/22  21:52:52	---	  moving among children of 5953
+2012/04/22  21:52:52	---	  TI:  5955
+2012/04/22  21:52:52	---	sMDflk=> findLastKid lastKid=6054
+2012/04/22  21:52:52	---	  deco for: 6087
+2012/04/22  21:52:52	---	  deco for: 5955
+2012/04/22  21:52:52	---	  deco for: 6080
+2012/04/22  21:52:52	---	  deco for: 6063
+2012/04/22  21:52:52	---	  deco for: 6054
+2012/04/22  21:52:52	---	  deco for: 6096
+2012/04/22  21:52:52	---	  deco for: 5954
+2012/04/22  21:52:52	---	  deco for: 6087
+2012/04/22  21:52:52	---	  deco for: 5833
+2012/04/22  21:52:52	---	lock removed
+2012/04/22  21:52:54	djangosuper	VIEW: xhr_actions
+2012/04/22  21:52:54	djangosuper	<QueryDict: {u'ci': [u'5954'], u'datax': [u''], u'ajaxAction': [u'moveUp'], u'ti': [u'0']}>
+2012/04/22  21:52:54	djangosuper	=====> xhr_actions: =AJAX request, ci=5954  ti=0  ajaxAction: moveUp
+2012/04/22  21:52:54	---	Last item ID:4574
+2012/04/22  21:52:54	---	sMDflk=> findLastKid lastKid=6087
+2012/04/22  21:52:54	---	  moving among children of 5953
+2012/04/22  21:52:54	---	  TI:  6096
+2012/04/22  21:52:54	---	sMDflk=> findLastKid lastKid=0
+2012/04/22  21:52:54	---	  deco for: 6087
+2012/04/22  21:52:54	---	  deco for: 6096
+2012/04/22  21:52:54	---	  deco for: 6044
+2012/04/22  21:52:54	---	  deco for: 5954
+2012/04/22  21:52:54	---	  deco for: 6087
+2012/04/22  21:52:54	---	  deco for: 5955
+2012/04/22  21:52:54	---	lock removed
+2012/04/22  21:52:55	djangosuper	VIEW: xhr_actions
+2012/04/22  21:52:55	djangosuper	<QueryDict: {u'ci': [u'5954'], u'datax': [u''], u'ajaxAction': [u'moveUp'], u'ti': [u'0']}>
+2012/04/22  21:52:55	djangosuper	=====> xhr_actions: =AJAX request, ci=5954  ti=0  ajaxAction: moveUp
+2012/04/22  21:52:55	---	Last item ID:4574
+2012/04/22  21:52:55	---	sMDflk=> findLastKid lastKid=6087
+2012/04/22  21:52:55	---	  moving among children of 5953
+2012/04/22  21:52:55	---	  TI:  6044
+2012/04/22  21:52:55	---	sMDflk=> findLastKid lastKid=0
+2012/04/22  21:52:55	---	  deco for: 6087
+2012/04/22  21:52:55	---	  deco for: 6044
+2012/04/22  21:52:55	---	  deco for: 4381
+2012/04/22  21:52:55	---	  deco for: 5954
+2012/04/22  21:52:55	---	  deco for: 6087
+2012/04/22  21:52:55	---	  deco for: 6096
+2012/04/22  21:52:55	---	lock removed
+2012/04/22  21:52:56	djangosuper	VIEW: xhr_actions
+2012/04/22  21:52:56	djangosuper	<QueryDict: {u'ci': [u'5954'], u'datax': [u''], u'ajaxAction': [u'moveUp'], u'ti': [u'0']}>
+2012/04/22  21:52:56	djangosuper	=====> xhr_actions: =AJAX request, ci=5954  ti=0  ajaxAction: moveUp
+2012/04/22  21:52:56	---	Last item ID:4574
+2012/04/22  21:52:56	---	sMDflk=> findLastKid lastKid=6087
+2012/04/22  21:52:56	---	  moving among children of 5953
+2012/04/22  21:52:56	---	  TI:  4381
+2012/04/22  21:52:56	---	sMDflk=> findLastKid lastKid=0
+2012/04/22  21:52:56	---	  deco for: 6087
+2012/04/22  21:52:56	---	  deco for: 4381
+2012/04/22  21:52:56	---	  deco for: 6090
+2012/04/22  21:52:56	---	  deco for: 5954
+2012/04/22  21:52:56	---	  deco for: 6087
+2012/04/22  21:52:56	---	  deco for: 6044
+2012/04/22  21:52:56	---	lock removed
+2012/04/22  21:52:57	djangosuper	VIEW: xhr_actions
+2012/04/22  21:52:57	djangosuper	<QueryDict: {u'ci': [u'5954'], u'datax': [u''], u'ajaxAction': [u'moveUp'], u'ti': [u'0']}>
+2012/04/22  21:52:57	djangosuper	=====> xhr_actions: =AJAX request, ci=5954  ti=0  ajaxAction: moveUp
+2012/04/22  21:52:57	---	Last item ID:4574
+2012/04/22  21:52:57	---	sMDflk=> findLastKid lastKid=6087
+2012/04/22  21:52:57	---	  moving among children of 5953
+2012/04/22  21:52:57	---	  TI:  6090
+2012/04/22  21:52:57	---	sMDflk=> findLastKid lastKid=0
+2012/04/22  21:52:57	---	  deco for: 6087
+2012/04/22  21:52:57	---	  deco for: 6090
+2012/04/22  21:52:57	---	  deco for: 6081
+2012/04/22  21:52:57	---	  deco for: 5954
+2012/04/22  21:52:57	---	  deco for: 6087
+2012/04/22  21:52:57	---	  deco for: 4381
+2012/04/22  21:52:57	---	lock removed
+2012/04/22  21:54:51	djangosuper	VIEW: xhr_actions
+2012/04/22  21:54:51	djangosuper	<QueryDict: {u'ci': [u'5954'], u'FADpriority': [u'0'], u'FADhtmlBody': [u''], u'FADstatus': [u'0'], u'ti': [u'0'], u'ajaxAction': [u'fastAdd'], u'FADtitle': [u'normal user can access /pim1/maint']}>
+2012/04/22  21:54:51	djangosuper	=====> xhr_actions: =AJAX request, ci=5954  ti=0  ajaxAction: fastAdd
+2012/04/22  21:54:51	---	Last item ID:4574
+2012/04/22  21:54:51	---	VIEW: drag_actions => fastAdd
+2012/04/22  21:54:51	---	fastAdd for 5954  normal user can access /pim1/maint
+2012/04/22  21:54:51	---	NEW FA item ID=None
+2012/04/22  21:54:51	---	   fastadded item ID = 6232
+2012/04/22  21:54:51	---	  deco for: 6232
+2012/04/22  21:54:51	---	  deco for: 5954
+2012/04/22  21:54:51	---	  deco for: 6081
+2012/04/22  21:54:51	---	  deco for: 6087
+2012/04/22  21:54:51	---	lock removed
+2012/04/22  21:54:57	djangosuper	VIEW: xhr_actions
+2012/04/22  21:54:57	djangosuper	<QueryDict: {u'ci': [u'4381'], u'datax': [u''], u'ajaxAction': [u'moveDown'], u'ti': [u'0']}>
+2012/04/22  21:54:57	djangosuper	=====> xhr_actions: =AJAX request, ci=4381  ti=0  ajaxAction: moveDown
+2012/04/22  21:54:58	---	Last item ID:4574
+2012/04/22  21:54:58	---	sMDflk=> findLastKid lastKid=0
+2012/04/22  21:54:58	---	  moving among children of 5953
+2012/04/22  21:54:58	---	  TI:  6044
+2012/04/22  21:54:58	---	sMDflk=> findLastKid lastKid=0
+2012/04/22  21:54:58	---	  deco for: 6044
+2012/04/22  21:54:58	---	  deco for: 4381
+2012/04/22  21:54:58	---	  deco for: 6090
+2012/04/22  21:54:58	---	  deco for: 6044
+2012/04/22  21:54:58	---	  deco for: 6096
+2012/04/22  21:54:58	---	lock removed
+2012/04/22  21:54:59	djangosuper	VIEW: xhr_actions
+2012/04/22  21:54:59	djangosuper	<QueryDict: {u'ci': [u'4381'], u'datax': [u''], u'ajaxAction': [u'moveUp'], u'ti': [u'0']}>
+2012/04/22  21:54:59	djangosuper	=====> xhr_actions: =AJAX request, ci=4381  ti=0  ajaxAction: moveUp
+2012/04/22  21:55:00	---	Last item ID:4574
+2012/04/22  21:55:00	---	sMDflk=> findLastKid lastKid=0
+2012/04/22  21:55:00	---	  moving among children of 5953
+2012/04/22  21:55:00	---	  TI:  6044
+2012/04/22  21:55:00	---	sMDflk=> findLastKid lastKid=0
+2012/04/22  21:55:00	---	  deco for: 4381
+2012/04/22  21:55:00	---	  deco for: 6044
+2012/04/22  21:55:00	---	  deco for: 6090
+2012/04/22  21:55:00	---	  deco for: 4381
+2012/04/22  21:55:00	---	  deco for: 6096
+2012/04/22  21:55:00	---	lock removed
+2012/04/22  21:55:04	djangosuper	VIEW: xhr_actions
+2012/04/22  21:55:04	djangosuper	<QueryDict: {u'ci': [u'6096'], u'datax': [u''], u'ajaxAction': [u'moveUp'], u'ti': [u'0']}>
+2012/04/22  21:55:04	djangosuper	=====> xhr_actions: =AJAX request, ci=6096  ti=0  ajaxAction: moveUp
+2012/04/22  21:55:04	---	Last item ID:4574
+2012/04/22  21:55:04	---	sMDflk=> findLastKid lastKid=0
+2012/04/22  21:55:04	---	  moving among children of 5953
+2012/04/22  21:55:04	---	  TI:  6044
+2012/04/22  21:55:04	---	sMDflk=> findLastKid lastKid=0
+2012/04/22  21:55:04	---	  deco for: 6096
+2012/04/22  21:55:04	---	  deco for: 6044
+2012/04/22  21:55:04	---	  deco for: 4381
+2012/04/22  21:55:04	---	  deco for: 6096
+2012/04/22  21:55:04	---	  deco for: 5955
+2012/04/22  21:55:04	---	lock removed
+2012/04/22  21:56:49	jmoss	VIEW: today
+2012/04/22  21:56:49	---	   Entering buildDisplayList
+2012/04/22  21:56:49	---	      ..queries done...
+2012/04/22  21:56:49	---	      ....parent list built...
+2012/04/22  21:56:49	---	      .....ix built.....
+2012/04/22  21:56:49	---	   Exiting buildDisplayList
+2012/04/22  21:56:59	jmoss	VIEW: gridview
+2012/04/22  21:56:59	jmoss	   cellItems=[6056L]
+2012/04/22  21:56:59	---	   Entering buildDisplayList
+2012/04/22  21:56:59	---	      ..queries done...
+2012/04/22  21:56:59	---	      ....parent list built...
+2012/04/22  21:56:59	---	      .....ix built.....
+2012/04/22  21:56:59	---	   Exiting buildDisplayList
+2012/04/22  21:57:00	jmoss	   cellItems=[6047L, 6227L]
+2012/04/22  21:57:00	---	   Entering buildDisplayList
+2012/04/22  21:57:00	---	      ..queries done...
+2012/04/22  21:57:00	---	      ....parent list built...
+2012/04/22  21:57:00	---	      .....ix built.....
+2012/04/22  21:57:00	---	   Exiting buildDisplayList
+2012/04/22  21:57:00	jmoss	   cellItems=[6051L]
+2012/04/22  21:57:00	---	   Entering buildDisplayList
+2012/04/22  21:57:00	---	      ..queries done...
+2012/04/22  21:57:00	---	      ....parent list built...
+2012/04/22  21:57:00	---	      .....ix built.....
+2012/04/22  21:57:00	---	   Exiting buildDisplayList
+2012/04/22  21:57:00	jmoss	   cellItems=[6049L]
+2012/04/22  21:57:00	---	   Entering buildDisplayList
+2012/04/22  21:57:00	---	      ..queries done...
+2012/04/22  21:57:00	---	      ....parent list built...
+2012/04/22  21:57:00	---	      .....ix built.....
+2012/04/22  21:57:00	---	   Exiting buildDisplayList
+2012/04/22  21:57:00	jmoss	   cellItems=[6038L]
+2012/04/22  21:57:00	---	   Entering buildDisplayList
+2012/04/22  21:57:00	---	      ..queries done...
+2012/04/22  21:57:00	---	      ....parent list built...
+2012/04/22  21:57:00	---	      .....ix built.....
+2012/04/22  21:57:00	---	   Exiting buildDisplayList
+2012/04/22  21:57:00	jmoss	   cellItems=[6045L, 6034L, 6040L, 6228L, 6041L]
+2012/04/22  21:57:00	---	   Entering buildDisplayList
+2012/04/22  21:57:00	---	      ..queries done...
+2012/04/22  21:57:00	---	      ....parent list built...
+2012/04/22  21:57:00	---	      .....ix built.....
+2012/04/22  21:57:00	---	   Exiting buildDisplayList
+2012/04/22  21:57:00	jmoss	   cellItems=[6043L, 6036L, 6046L]
+2012/04/22  21:57:00	---	   Entering buildDisplayList
+2012/04/22  21:57:00	---	      ..queries done...
+2012/04/22  21:57:00	---	      ....parent list built...
+2012/04/22  21:57:00	---	      .....ix built.....
+2012/04/22  21:57:00	---	   Exiting buildDisplayList
+2012/04/22  22:02:09	djangosuper	VIEW: xhr_actions
+2012/04/22  22:02:09	djangosuper	<QueryDict: {u'ci': [u'5954'], u'datax': [u'1'], u'ajaxAction': [u'prioritySelected'], u'ti': [u'0']}>
+2012/04/22  22:02:09	djangosuper	=====> xhr_actions: =AJAX request, ci=5954  ti=0  ajaxAction: prioritySelected
+2012/04/22  22:02:09	---	Last item ID:4574
+2012/04/22  22:02:09	---	  deco for: 5954
+2012/04/22  22:02:09	---	lock removed
+2012/04/22  22:02:18	djangosuper	VIEW: xhr_actions
+2012/04/22  22:02:18	djangosuper	<QueryDict: {u'ci': [u'5954'], u'datax': [u''], u'ajaxAction': [u'prioritySelected'], u'ti': [u'0']}>
+2012/04/22  22:02:18	djangosuper	=====> xhr_actions: =AJAX request, ci=5954  ti=0  ajaxAction: prioritySelected
+2012/04/22  22:02:18	---	Last item ID:4574
+2012/04/22  22:02:18	---	  deco for: 5954
+2012/04/22  22:02:18	---	lock removed
+2012/04/22  22:02:34	djangosuper	VIEW: xhr_actions
+2012/04/22  22:02:34	djangosuper	<QueryDict: {u'ci': [u'6232'], u'datax': [u'1'], u'ajaxAction': [u'prioritySelected'], u'ti': [u'0']}>
+2012/04/22  22:02:34	djangosuper	=====> xhr_actions: =AJAX request, ci=6232  ti=0  ajaxAction: prioritySelected
+2012/04/22  22:02:34	---	Last item ID:4574
+2012/04/22  22:02:34	---	  deco for: 6232
+2012/04/22  22:02:34	---	lock removed
+2012/04/22  22:02:43	djangosuper	VIEW: xhr_actions
+2012/04/22  22:02:43	djangosuper	<QueryDict: {u'ci': [u'6232'], u'datax': [u'0'], u'ajaxAction': [u'prioritySelected'], u'ti': [u'0']}>
+2012/04/22  22:02:43	djangosuper	=====> xhr_actions: =AJAX request, ci=6232  ti=0  ajaxAction: prioritySelected
+2012/04/22  22:02:43	---	Last item ID:4574
+2012/04/22  22:02:43	---	  deco for: 6232
+2012/04/22  22:02:43	---	lock removed
+2012/04/22  22:02:50	djangosuper	VIEW: xhr_actions
+2012/04/22  22:02:50	djangosuper	<QueryDict: {u'ci': [u'4381'], u'datax': [u''], u'ajaxAction': [u'moveDown'], u'ti': [u'0']}>
+2012/04/22  22:02:50	djangosuper	=====> xhr_actions: =AJAX request, ci=4381  ti=0  ajaxAction: moveDown
+2012/04/22  22:02:50	---	Last item ID:4574
+2012/04/22  22:02:51	---	sMDflk=> findLastKid lastKid=0
+2012/04/22  22:02:51	---	  moving among children of 5953
+2012/04/22  22:02:51	---	  TI:  6096
+2012/04/22  22:02:51	---	sMDflk=> findLastKid lastKid=0
+2012/04/22  22:02:51	---	  deco for: 6096
+2012/04/22  22:02:51	---	  deco for: 4381
+2012/04/22  22:02:51	---	  deco for: 6090
+2012/04/22  22:02:51	---	  deco for: 6096
+2012/04/22  22:02:51	---	  deco for: 6044
+2012/04/22  22:02:51	---	lock removed
+2012/04/23  06:29:26	djangosuper	VIEW: help
+2012/04/23  06:30:11	djangosuper	VIEW: xhr_actions
+2012/04/23  06:30:11	djangosuper	<QueryDict: {u'ci': [u'6081'], u'FADpriority': [u'0'], u'FADhtmlBody': [u''], u'FADstatus': [u'0'], u'ti': [u'0'], u'ajaxAction': [u'fastAdd'], u'FADtitle': [u'help on color selection\n']}>
+2012/04/23  06:30:11	djangosuper	=====> xhr_actions: =AJAX request, ci=6081  ti=0  ajaxAction: fastAdd
+2012/04/23  06:30:12	---	Last item ID:4574
+2012/04/23  06:30:12	---	VIEW: drag_actions => fastAdd
+2012/04/23  06:30:12	---	fastAdd for 6081  help on color selection
+
+2012/04/23  06:30:12	---	NEW FA item ID=None
+2012/04/23  06:30:12	---	   fastadded item ID = 6233
+2012/04/23  06:30:12	---	  deco for: 6233
+2012/04/23  06:30:12	---	  deco for: 6081
+2012/04/23  06:30:12	---	  deco for: 5953
+2012/04/23  06:30:12	---	  deco for: 5954
+2012/04/23  06:30:12	---	lock removed
+2012/04/23  06:30:30	djangosuper	VIEW: xhr_actions
+2012/04/23  06:30:30	djangosuper	<QueryDict: {u'ci': [u'6233'], u'ajaxAction': [u'demote'], u'ti': [u'0']}>
+2012/04/23  06:30:30	djangosuper	=====> xhr_actions: =AJAX request, ci=6233  ti=0  ajaxAction: demote
+2012/04/23  06:30:30	---	Last item ID:4574
+2012/04/23  06:30:30	---	sMDflk=> findLastKid lastKid=0
+2012/04/23  06:30:30	---	  deco for: 6233
+2012/04/23  06:30:30	---	  deco for: 6081
+2012/04/23  06:30:31	---	lock removed
+2012/04/23  06:31:33	djangosuper	VIEW: xhr_actions
+2012/04/23  06:31:33	djangosuper	<QueryDict: {u'ci': [u'5953'], u'FADpriority': [u'3'], u'FADhtmlBody': [u''], u'FADstatus': [u'2'], u'ti': [u'0'], u'ajaxAction': [u'fastAdd'], u'FADtitle': [u'implement dev site']}>
+2012/04/23  06:31:33	djangosuper	=====> xhr_actions: =AJAX request, ci=5953  ti=0  ajaxAction: fastAdd
+2012/04/23  06:31:33	---	Last item ID:4574
+2012/04/23  06:31:33	---	VIEW: drag_actions => fastAdd
+2012/04/23  06:31:33	---	fastAdd for 5953  implement dev site
+2012/04/23  06:31:33	---	NEW FA item ID=None
+2012/04/23  06:31:33	---	   fastadded item ID = 6234
+2012/04/23  06:31:33	---	  deco for: 6234
+2012/04/23  06:31:33	---	  deco for: 5953
+2012/04/23  06:31:34	---	  deco for: 6229
+2012/04/23  06:31:34	---	  deco for: 6081
+2012/04/23  06:31:34	---	lock removed
+2012/04/23  06:31:43	djangosuper	VIEW: draglist
+2012/04/23  06:31:43	djangosuper	     Proj 5
+2012/04/23  06:31:43	---	   Entering buildDisplayList
+2012/04/23  06:31:43	---	      ..queries done...
+2012/04/23  06:31:43	---	      ....parent list built...
+2012/04/23  06:31:43	---	      .....ix built.....
+2012/04/23  06:31:43	---	      ...built followhash....
+2012/04/23  06:31:43	---	      .....displayList built...
+2012/04/23  06:31:43	---	   Exiting buildDisplayList
+2012/04/23  06:37:07	djangosuper	VIEW: draglist
+2012/04/23  06:37:07	djangosuper	     Proj 9
+2012/04/23  06:37:07	---	   Entering buildDisplayList
+2012/04/23  06:37:07	---	      ..queries done...
+2012/04/23  06:37:07	---	      ....parent list built...
+2012/04/23  06:37:07	---	      .....ix built.....
+2012/04/23  06:37:07	---	      ...built followhash....
+2012/04/23  06:37:07	---	      .....displayList built...
+2012/04/23  06:37:07	---	   Exiting buildDisplayList
+2012/04/23  06:37:11	djangosuper	VIEW: draglist
+2012/04/23  06:37:11	djangosuper	     Proj 5
+2012/04/23  06:37:11	---	   Entering buildDisplayList
+2012/04/23  06:37:11	---	      ..queries done...
+2012/04/23  06:37:11	---	      ....parent list built...
+2012/04/23  06:37:12	---	      .....ix built.....
+2012/04/23  06:37:12	---	      ...built followhash....
+2012/04/23  06:37:12	---	      .....displayList built...
+2012/04/23  06:37:12	---	   Exiting buildDisplayList
+2012/04/23  06:42:26	djangosuper	VIEW: draglist
+2012/04/23  06:42:26	djangosuper	     Proj 9
+2012/04/23  06:42:26	---	   Entering buildDisplayList
+2012/04/23  06:42:26	---	      ..queries done...
+2012/04/23  06:42:26	---	      ....parent list built...
+2012/04/23  06:42:26	---	      .....ix built.....
+2012/04/23  06:42:26	---	      ...built followhash....
+2012/04/23  06:42:26	---	      .....displayList built...
+2012/04/23  06:42:26	---	   Exiting buildDisplayList
+2012/04/23  06:42:32	djangosuper	VIEW: maintPage
+2012/04/23  06:44:22	djangosuper	VIEW: draglist
+2012/04/23  06:44:22	djangosuper	     Proj 5
+2012/04/23  06:44:22	---	   Entering buildDisplayList
+2012/04/23  06:44:22	---	      ..queries done...
+2012/04/23  06:44:22	---	      ....parent list built...
+2012/04/23  06:44:23	---	      .....ix built.....
+2012/04/23  06:44:23	---	      ...built followhash....
+2012/04/23  06:44:23	---	      .....displayList built...
+2012/04/23  06:44:23	---	   Exiting buildDisplayList
+2012/04/23  06:45:10	djangosuper	VIEW: xhr_actions
+2012/04/23  06:45:10	djangosuper	<QueryDict: {u'ci': [u'5954'], u'FADpriority': [u'0'], u'FADhtmlBody': [u''], u'FADstatus': [u'0'], u'ti': [u'0'], u'ajaxAction': [u'fastAdd'], u'FADtitle': [u'implement permissions']}>
+2012/04/23  06:45:10	djangosuper	=====> xhr_actions: =AJAX request, ci=5954  ti=0  ajaxAction: fastAdd
+2012/04/23  06:45:10	---	Last item ID:4574
+2012/04/23  06:45:10	---	VIEW: drag_actions => fastAdd
+2012/04/23  06:45:10	---	fastAdd for 5954  implement permissions
+2012/04/23  06:45:10	---	NEW FA item ID=None
+2012/04/23  06:45:10	---	   fastadded item ID = 6235
+2012/04/23  06:45:10	---	  deco for: 6235
+2012/04/23  06:45:10	---	  deco for: 5954
+2012/04/23  06:45:10	---	  deco for: 6233
+2012/04/23  06:45:10	---	  deco for: 6232
+2012/04/23  06:45:10	---	lock removed
+2012/04/23  06:45:13	djangosuper	VIEW: xhr_actions
+2012/04/23  06:45:13	djangosuper	<QueryDict: {u'ci': [u'6232'], u'datax': [u''], u'ajaxAction': [u'demote'], u'ti': [u'0']}>
+2012/04/23  06:45:13	djangosuper	=====> xhr_actions: =AJAX request, ci=6232  ti=0  ajaxAction: demote
+2012/04/23  06:45:13	---	Last item ID:4574
+2012/04/23  06:45:13	---	sMDflk=> findLastKid lastKid=0
+2012/04/23  06:45:13	---	  deco for: 6232
+2012/04/23  06:45:13	---	  deco for: 6235
+2012/04/23  06:45:13	---	lock removed
+2012/04/23  06:47:18	djangosuper	VIEW: xhr_actions
+2012/04/23  06:47:18	djangosuper	<QueryDict: {u'ci': [u'6164'], u'FADpriority': [u'0'], u'FADhtmlBody': [u"possible I unintentionally did something - I was fast adding, dragmoving, etc. But you can't select that value from the interface."], u'FADstatus': [u'0'], u'ti': [u'0'], u'ajaxAction': [u'fastAdd'], u'FADtitle': [u'item 5953, which was OK for a long while I think, had a "---" for priority and the list wouldn\'t render']}>
+2012/04/23  06:47:18	djangosuper	=====> xhr_actions: =AJAX request, ci=6164  ti=0  ajaxAction: fastAdd
+2012/04/23  06:47:18	---	Last item ID:4574
+2012/04/23  06:47:18	---	VIEW: drag_actions => fastAdd
+2012/04/23  06:47:18	---	fastAdd for 6164  item 5953, which was OK for a long while I think, had a "---" for priority and the list wouldn't render
+2012/04/23  06:47:18	---	NEW FA item ID=None
+2012/04/23  06:47:18	---	   fastadded item ID = 6236
+2012/04/23  06:47:18	---	  deco for: 6236
+2012/04/23  06:47:18	---	  deco for: 6164
+2012/04/23  06:47:18	---	  deco for: 5833
+2012/04/23  06:47:18	---	  deco for: 6015
+2012/04/23  06:47:18	---	lock removed
+2012/04/23  07:23:06	djangosuper	Edit item: Formset generated, pItem=6235
+2012/04/23  07:24:36	djangosuper	   Formset saved: [<Item: implement permissions>]
+2012/04/23  07:24:36	djangosuper	VIEW: draglist
+2012/04/23  07:24:36	djangosuper	     Proj 5
+2012/04/23  07:24:36	---	   Entering buildDisplayList
+2012/04/23  07:24:36	---	      ..queries done...
+2012/04/23  07:24:36	---	      ....parent list built...
+2012/04/23  07:24:36	---	      .....ix built.....
+2012/04/23  07:24:36	---	      ...built followhash....
+2012/04/23  07:24:36	---	      .....displayList built...
+2012/04/23  07:24:36	---	   Exiting buildDisplayList
+2012/04/23  07:32:21	djangosuper	VIEW: homepage
+2012/04/23  07:49:15	djangosuper	VIEW: draglist
+2012/04/23  07:49:15	djangosuper	     Proj 5
+2012/04/23  07:49:15	---	   Entering buildDisplayList
+2012/04/23  07:49:15	---	      ..queries done...
+2012/04/23  07:49:15	---	      ....parent list built...
+2012/04/23  07:49:16	---	      .....ix built.....
+2012/04/23  07:49:16	---	      ...built followhash....
+2012/04/23  07:49:16	---	      .....displayList built...
+2012/04/23  07:49:16	---	   Exiting buildDisplayList
+2012/04/23  07:49:28	djangosuper	VIEW: xhr_actions
+2012/04/23  07:49:28	djangosuper	<QueryDict: {u'ci': [u'6087'], u'datax': [u''], u'ajaxAction': [u'dragKid'], u'ti': [u'6235']}>
+2012/04/23  07:49:28	djangosuper	=====> xhr_actions: =AJAX request, ci=6087  ti=6235  ajaxAction: dragKid
+2012/04/23  07:49:28	---	Last item ID:4574
+2012/04/23  07:49:28	djangosuper	VIEW: drag_move
+2012/04/23  07:49:28	djangosuper	 ====dragmove=> CIid:TIid    6087:6235
+2012/04/23  07:49:28	---	Last item ID:4574
+2012/04/23  07:49:28	---	sMDflk=> findLastKid lastKid=0
+2012/04/23  07:49:28	djangosuper	DragMove=> CI saved
+2012/04/23  07:49:28	djangosuper	dragmove=> targetFollowerID:6232  targetFollower.follows:6235  lastkid:0
+2012/04/23  07:49:28	djangosuper	 => targetFollower.follows=6087
+2012/04/23  07:49:28	---	lock removed
+2012/04/23  07:49:36	djangosuper	VIEW: managePage
+2012/04/23  07:49:37	djangosuper	VIEW: maintPage
+2012/04/23  07:50:02	jmoss	VIEW: help
+2012/04/23  07:50:33	jmoss	VIEW: managePage
+2012/04/23  07:50:41	jmoss	VIEW: maintPage
+2012/04/23  08:24:29	djangosuper	VIEW: homepage
+2012/04/23  08:29:20	djangosuper	VIEW: today
+2012/04/23  08:29:20	---	   Entering buildDisplayList
+2012/04/23  08:29:20	---	      ..queries done...
+2012/04/23  08:29:21	---	      ....parent list built...
+2012/04/23  08:29:21	---	      .....ix built.....
+2012/04/23  08:29:21	---	   Exiting buildDisplayList
+2012/04/23  08:29:51	djangosuper	VIEW: maintPage
+2012/04/23  08:30:00	jmoss	VIEW: homepage
+2012/04/23  08:35:43	jmoss	VIEW: homepage
+2012/04/23  08:38:00	djangosuper	VIEW: help
+2012/04/23  08:39:18	djangosuper	VIEW: homepage
+2012/04/23  08:39:26	djangosuper	VIEW: homepage
+2012/04/23  08:39:28	djangosuper	VIEW: help
+2012/04/23  08:39:37	djangosuper	VIEW: homepage
+2012/04/23  08:40:00	djangosuper	VIEW: help
+2012/04/23  08:42:05	djangosuper	VIEW: homepage
+2012/04/23  08:43:03	djangosuper	VIEW: homepage
+2012/04/23  08:44:08	djangosuper	VIEW: homepage
+2012/04/23  08:44:49	djangosuper	VIEW: homepage
+2012/04/23  08:45:06	djangosuper	VIEW: homepage
+2012/04/23  08:45:43	djangosuper	VIEW: homepage
+2012/04/23  08:47:46	djangosuper	VIEW: homepage
+2012/04/23  08:49:18	djangosuper	VIEW: homepage
+2012/04/23  08:49:45	djangosuper	VIEW: homepage
+2012/04/23  08:50:06	djangosuper	VIEW: homepage
+2012/04/23  08:50:36	djangosuper	VIEW: homepage
+2012/04/23  08:51:24	djangosuper	VIEW: xhr_actions
+2012/04/23  08:51:24	djangosuper	<QueryDict: {u'ci': [u'6232'], u'ajaxAction': [u'archiveThisItem'], u'ti': [u'0']}>
+2012/04/23  08:51:24	djangosuper	=====> xhr_actions: =AJAX request, ci=6232  ti=0  ajaxAction: archiveThisItem
+2012/04/23  08:51:24	---	Last item ID:4574
+2012/04/23  08:51:25	---	sMDflk=> findLastKid lastKid=0
+2012/04/23  08:51:25	---	Last item ID:5917
+2012/04/23  08:51:25	---	  deco for: 6235
+2012/04/23  08:51:25	---	  deco for: 6087
+2012/04/23  08:51:25	---	  deco for: 6090
+2012/04/23  08:51:25	---	==> archivePair moved item 6232  to proj: 15
+2012/04/23  08:51:25	---	lock removed
+2012/04/23  08:51:37	djangosuper	Edit item: Formset generated, pItem=6087
+2012/04/23  08:51:50	djangosuper	   Formset saved: [<Item: AUDIT AC: ex., can normal users access django admin by entering the URL? other URLs?>]
+2012/04/23  08:51:50	djangosuper	VIEW: today
+2012/04/23  08:51:50	---	   Entering buildDisplayList
+2012/04/23  08:51:50	---	      ..queries done...
+2012/04/23  08:51:50	---	      ....parent list built...
+2012/04/23  08:51:51	---	      .....ix built.....
+2012/04/23  08:51:51	---	   Exiting buildDisplayList
+2012/04/23  08:52:48	jmoss	VIEW: homepage
+2012/04/23  08:53:48	djangosuper	VIEW: backupdata
+2012/04/23  08:53:54	jmoss	VIEW: backupdata
+2012/04/23  08:54:11	djangosuper	VIEW: backupdata
+2012/04/23  08:54:15	jmoss	VIEW: homepage
+2012/04/23  08:55:59	jmoss	VIEW: itemlist
+2012/04/23  08:55:59	jmoss	Entering the original view: itemlist <==============ProjID =0. 
+2012/04/23  08:55:59	---	   Entering buildDisplayList
+2012/04/23  08:55:59	---	      ..queries done...
+2012/04/23  08:56:00	---	      ....parent list built...
+2012/04/23  08:58:32	jmoss	VIEW: homepage
+2012/04/23  08:58:36	jmoss	VIEW: draglist
+2012/04/23  08:58:36	jmoss	     Proj 45
+2012/04/23  08:58:36	---	   Entering buildDisplayList
+2012/04/23  08:58:36	---	      ..queries done...
+2012/04/23  08:58:36	---	      ....parent list built...
+2012/04/23  08:58:36	---	      .....ix built.....
+2012/04/23  08:58:36	---	      ...built followhash....
+2012/04/23  08:58:36	---	      .....displayList built...
+2012/04/23  08:58:36	---	   Exiting buildDisplayList
+2012/04/23  08:58:41	jmoss	VIEW: draglist
+2012/04/23  08:58:41	jmoss	     Proj 5
+2012/04/23  08:58:41	jmoss	      Invalid user for this project, aborting.
+2012/04/23  08:58:41	jmoss	VIEW: homepage
+2012/04/23  09:03:12	jmoss	VIEW: draglist
+2012/04/23  09:03:12	jmoss	     Proj 5
+2012/04/23  09:03:12	jmoss	      Invalid user for this project, aborting.
+2012/04/23  09:03:12	jmoss	VIEW: homepage
+2012/04/23  09:03:55	jmoss	VIEW: draglist
+2012/04/23  09:03:55	jmoss	     Proj 4
+2012/04/23  09:03:55	jmoss	      Invalid user for this project, aborting.
+2012/04/23  09:03:55	jmoss	VIEW: homepage
+2012/04/23  09:05:06	jmoss	VIEW: homepage
+2012/04/23  09:05:11	jmoss	VIEW: draglist
+2012/04/23  09:05:11	jmoss	     Proj 33
+2012/04/23  09:05:11	---	   Entering buildDisplayList
+2012/04/23  09:05:11	---	      ..queries done...
+2012/04/23  09:05:11	---	      ....parent list built...
+2012/04/23  09:05:12	---	      .....ix built.....
+2012/04/23  09:05:12	---	      ...built followhash....
+2012/04/23  09:05:12	---	      .....displayList built...
+2012/04/23  09:05:12	---	   Exiting buildDisplayList
+2012/04/23  09:05:15	jmoss	VIEW: draglist
+2012/04/23  09:05:15	jmoss	     Proj 3
+2012/04/23  09:05:15	jmoss	      Invalid user for this project, aborting.
+2012/04/23  09:05:15	jmoss	VIEW: homepage
+2012/04/23  09:06:03	jmoss	VIEW: psd
+2012/04/23  09:06:03	---	   Entering buildDisplayList
+2012/04/23  09:06:03	---	      ..queries done...
+2012/04/23  09:06:03	---	      ....parent list built...
+2012/04/23  09:06:03	---	      .....ix built.....
+2012/04/23  09:06:03	---	   Exiting buildDisplayList
+2012/04/23  09:06:07	jmoss	VIEW: psd
+2012/04/23  09:06:38	jmoss	VIEW: psd
+2012/04/23  09:06:48	jmoss	VIEW: psd
+2012/04/23  09:06:48	jmoss	VIEW: homepage
+2012/04/23  09:09:09	jmoss	VIEW: psd
+2012/04/23  09:09:09	jmoss	VIEW: homepage
+2012/04/23  09:09:20	jmoss	VIEW: homepage
+2012/04/23  09:09:26	jmoss	VIEW: psd
+2012/04/23  09:09:26	jmoss	VIEW: homepage
+2012/04/23  09:10:39	jmoss	VIEW: psd
+2012/04/23  09:10:39	jmoss	VIEW: homepage
+2012/04/23  09:11:42	jmoss	VIEW: psd
+2012/04/23  09:11:42	jmoss	VIEW: homepage
+2012/04/23  09:11:51	jmoss	VIEW: homepage
+2012/04/23  09:16:59	djangosuper	VIEW: maintPage
+2012/04/23  09:18:06	djangosuper	VIEW: homepage
+2012/04/23  09:18:10	djangosuper	VIEW: draglist
+2012/04/23  09:18:10	djangosuper	     Proj 5
+2012/04/23  09:18:10	---	   Entering buildDisplayList
+2012/04/23  09:18:10	---	      ..queries done...
+2012/04/23  09:18:10	---	      ....parent list built...
+2012/04/23  09:18:10	---	      .....ix built.....
+2012/04/23  09:18:10	---	      ...built followhash....
+2012/04/23  09:18:10	---	      .....displayList built...
+2012/04/23  09:18:10	---	   Exiting buildDisplayList
+2012/04/23  09:18:32	djangosuper	VIEW: xhr_actions
+2012/04/23  09:18:32	djangosuper	<QueryDict: {u'ci': [u'6164'], u'FADpriority': [u'1'], u'FADhtmlBody': [u''], u'FADstatus': [u'2'], u'ti': [u'0'], u'ajaxAction': [u'fastAdd'], u'FADtitle': [u'import must assign an item owner']}>
+2012/04/23  09:18:32	djangosuper	=====> xhr_actions: =AJAX request, ci=6164  ti=0  ajaxAction: fastAdd
+2012/04/23  09:18:32	---	Last item ID:4574
+2012/04/23  09:18:32	---	VIEW: drag_actions => fastAdd
+2012/04/23  09:18:32	---	fastAdd for 6164  import must assign an item owner
+2012/04/23  09:18:32	---	NEW FA item ID=None
+2012/04/23  09:18:32	---	   fastadded item ID = 6237
+2012/04/23  09:18:32	---	  deco for: 6237
+2012/04/23  09:18:32	---	  deco for: 6164
+2012/04/23  09:18:32	---	  deco for: 5833
+2012/04/23  09:18:32	---	  deco for: 6236
+2012/04/23  09:18:32	---	lock removed
+2012/04/23  09:22:11	jmoss	VIEW: draglist
+2012/04/23  09:22:11	jmoss	     Proj 39
+2012/04/23  09:22:11	---	   Entering buildDisplayList
+2012/04/23  09:22:11	---	      ..queries done...
+2012/04/23  09:22:11	---	      ....parent list built...
+2012/04/23  09:22:11	---	      .....ix built.....
+2012/04/23  09:22:11	---	      ...built followhash....
+2012/04/23  09:22:11	---	      .....displayList built...
+2012/04/23  09:22:11	---	   Exiting buildDisplayList
+2012/04/23  09:22:13	jmoss	VIEW: draglist
+2012/04/23  09:22:13	jmoss	     Proj 33
+2012/04/23  09:22:13	---	   Entering buildDisplayList
+2012/04/23  09:22:13	---	      ..queries done...
+2012/04/23  09:22:13	---	      ....parent list built...
+2012/04/23  09:22:14	---	      .....ix built.....
+2012/04/23  09:22:14	---	      ...built followhash....
+2012/04/23  09:22:14	---	      .....displayList built...
+2012/04/23  09:22:14	---	   Exiting buildDisplayList
+2012/04/23  09:22:19	jmoss	VIEW: xhr_actions
+2012/04/23  09:22:19	jmoss	<QueryDict: {u'ci': [u'6180'], u'datax': [u''], u'ajaxAction': [u'dragKid'], u'ti': [u'6167']}>
+2012/04/23  09:22:19	jmoss	=====> xhr_actions: =AJAX request, ci=6180  ti=6167  ajaxAction: dragKid
+2012/04/23  09:22:19	---	Last item ID:6226
+2012/04/23  09:22:19	jmoss	VIEW: drag_move
+2012/04/23  09:22:19	jmoss	 ====dragmove=> CIid:TIid    6180:6167
+2012/04/23  09:22:19	jmoss	== WARNING: drag_move of item not belonging to this user.
+2012/04/23  09:22:19	---	  deco for: 6180
+2012/04/23  09:22:19	---	  deco for: 6167
+2012/04/23  09:22:19	---	lock removed
+2012/04/23  09:22:25	jmoss	VIEW: xhr_actions
+2012/04/23  09:22:25	jmoss	<QueryDict: {u'ci': [u'6041'], u'datax': [u''], u'ajaxAction': [u'dragKid'], u'ti': [u'6168']}>
+2012/04/23  09:22:25	jmoss	=====> xhr_actions: =AJAX request, ci=6041  ti=6168  ajaxAction: dragKid
+2012/04/23  09:22:25	---	Last item ID:6226
+2012/04/23  09:22:25	jmoss	VIEW: drag_move
+2012/04/23  09:22:25	jmoss	 ====dragmove=> CIid:TIid    6041:6168
+2012/04/23  09:22:25	---	Last item ID:6226
+2012/04/23  09:22:25	---	sMDflk=> findLastKid lastKid=0
+2012/04/23  09:22:25	jmoss	DragMove=> CI saved
+2012/04/23  09:22:25	jmoss	dragmove=> targetFollowerID:6167  targetFollower.follows:6168  lastkid:0
+2012/04/23  09:22:25	jmoss	 => targetFollower.follows=6041
+2012/04/23  09:22:25	---	lock removed
+2012/04/23  09:22:28	jmoss	VIEW: draglist
+2012/04/23  09:22:28	jmoss	     Proj 33
+2012/04/23  09:22:28	---	   Entering buildDisplayList
+2012/04/23  09:22:28	---	      ..queries done...
+2012/04/23  09:22:28	---	      ....parent list built...
+2012/04/23  09:22:29	---	      .....ix built.....
+2012/04/23  09:22:29	---	      ...built followhash....
+2012/04/23  09:22:29	---	      .....displayList built...
+2012/04/23  09:22:29	---	   Exiting buildDisplayList
+2012/04/23  09:22:36	jmoss	VIEW: xhr_actions
+2012/04/23  09:22:36	jmoss	<QueryDict: {u'ci': [u'6177'], u'datax': [u''], u'ajaxAction': [u'dragKid'], u'ti': [u'6172']}>
+2012/04/23  09:22:36	jmoss	=====> xhr_actions: =AJAX request, ci=6177  ti=6172  ajaxAction: dragKid
+2012/04/23  09:22:36	---	Last item ID:6226
+2012/04/23  09:22:36	jmoss	VIEW: drag_move
+2012/04/23  09:22:36	jmoss	 ====dragmove=> CIid:TIid    6177:6172
+2012/04/23  09:22:36	jmoss	== WARNING: drag_move of item not belonging to this user.
+2012/04/23  09:22:36	---	  deco for: 6177
+2012/04/23  09:22:36	---	  deco for: 6172
+2012/04/23  09:22:36	---	lock removed
+2012/04/23  09:22:40	jmoss	VIEW: xhr_actions
+2012/04/23  09:22:40	jmoss	<QueryDict: {u'ci': [u'6228'], u'datax': [u''], u'ajaxAction': [u'dragKid'], u'ti': [u'6040']}>
+2012/04/23  09:22:40	jmoss	=====> xhr_actions: =AJAX request, ci=6228  ti=6040  ajaxAction: dragKid
+2012/04/23  09:22:40	---	Last item ID:6226
+2012/04/23  09:22:40	jmoss	VIEW: drag_move
+2012/04/23  09:22:40	jmoss	 ====dragmove=> CIid:TIid    6228:6040
+2012/04/23  09:22:40	---	Last item ID:6226
+2012/04/23  09:22:40	---	sMDflk=> findLastKid lastKid=0
+2012/04/23  09:22:40	jmoss	DragMove=> CI saved
+2012/04/23  09:22:40	jmoss	dragmove=> targetFollowerID:6045  targetFollower.follows:6040  lastkid:0
+2012/04/23  09:22:40	jmoss	 => targetFollower.follows=6228
+2012/04/23  09:22:40	---	lock removed
+2012/04/23  09:22:48	jmoss	VIEW: draglist
+2012/04/23  09:22:48	jmoss	     Proj 33
+2012/04/23  09:22:48	---	   Entering buildDisplayList
+2012/04/23  09:22:48	---	      ..queries done...
+2012/04/23  09:22:48	---	      ....parent list built...
+2012/04/23  09:22:48	---	      .....ix built.....
+2012/04/23  09:22:48	---	      ...built followhash....
+2012/04/23  09:22:48	---	      .....displayList built...
+2012/04/23  09:22:48	---	   Exiting buildDisplayList
+2012/04/23  09:22:57	jmoss	VIEW: xhr_actions
+2012/04/23  09:22:57	jmoss	<QueryDict: {u'ci': [u'6194'], u'datax': [u''], u'ajaxAction': [u'dragKid'], u'ti': [u'6175']}>
+2012/04/23  09:22:57	jmoss	=====> xhr_actions: =AJAX request, ci=6194  ti=6175  ajaxAction: dragKid
+2012/04/23  09:22:57	---	Last item ID:6226
+2012/04/23  09:22:57	jmoss	VIEW: drag_move
+2012/04/23  09:22:57	jmoss	 ====dragmove=> CIid:TIid    6194:6175
+2012/04/23  09:22:57	jmoss	== WARNING: drag_move of item not belonging to this user.
+2012/04/23  09:22:57	---	  deco for: 6194
+2012/04/23  09:22:57	---	  deco for: 6175
+2012/04/23  09:22:57	---	lock removed
+2012/04/23  09:23:04	jmoss	VIEW: xhr_actions
+2012/04/23  09:23:04	jmoss	<QueryDict: {u'ci': [u'6176'], u'datax': [u''], u'ajaxAction': [u'dragKid'], u'ti': [u'6166']}>
+2012/04/23  09:23:04	jmoss	=====> xhr_actions: =AJAX request, ci=6176  ti=6166  ajaxAction: dragKid
+2012/04/23  09:23:04	---	Last item ID:6226
+2012/04/23  09:23:04	jmoss	VIEW: drag_move
+2012/04/23  09:23:04	jmoss	 ====dragmove=> CIid:TIid    6176:6166
+2012/04/23  09:23:04	jmoss	== WARNING: drag_move of item not belonging to this user.
+2012/04/23  09:23:04	---	  deco for: 6176
+2012/04/23  09:23:04	---	  deco for: 6166
+2012/04/23  09:23:04	---	lock removed
+2012/04/23  09:23:07	jmoss	VIEW: draglist
+2012/04/23  09:23:07	jmoss	     Proj 33
+2012/04/23  09:23:07	---	   Entering buildDisplayList
+2012/04/23  09:23:07	---	      ..queries done...
+2012/04/23  09:23:07	---	      ....parent list built...
+2012/04/23  09:23:08	---	      .....ix built.....
+2012/04/23  09:23:08	---	      ...built followhash....
+2012/04/23  09:23:08	---	      .....displayList built...
+2012/04/23  09:23:08	---	   Exiting buildDisplayList
+2012/04/23  09:23:29	jmoss	VIEW: draglist
+2012/04/23  09:23:29	jmoss	     Proj 33
+2012/04/23  09:23:29	---	   Entering buildDisplayList
+2012/04/23  09:23:29	---	      ..queries done...
+2012/04/23  09:23:29	---	      ....parent list built...
+2012/04/23  09:23:29	---	      .....ix built.....
+2012/04/23  09:23:29	---	      ...built followhash....
+2012/04/23  09:23:29	---	      .....displayList built...
+2012/04/23  09:23:29	---	   Exiting buildDisplayList
+2012/04/23  09:23:40	jmoss	VIEW: xhr_actions
+2012/04/23  09:23:40	jmoss	<QueryDict: {u'ci': [u'6045'], u'datax': [u''], u'ajaxAction': [u'dragKid'], u'ti': [u'6171']}>
+2012/04/23  09:23:40	jmoss	=====> xhr_actions: =AJAX request, ci=6045  ti=6171  ajaxAction: dragKid
+2012/04/23  09:23:40	---	Last item ID:6226
+2012/04/23  09:23:40	jmoss	VIEW: drag_move
+2012/04/23  09:23:40	jmoss	 ====dragmove=> CIid:TIid    6045:6171
+2012/04/23  09:23:40	---	Last item ID:6226
+2012/04/23  09:23:40	---	sMDflk=> findLastKid lastKid=0
+2012/04/23  09:23:40	jmoss	DragMove=> CI saved
+2012/04/23  09:23:40	jmoss	dragmove=> targetFollowerID:6172  targetFollower.follows:6171  lastkid:0
+2012/04/23  09:23:40	jmoss	 => targetFollower.follows=6045
+2012/04/23  09:23:40	---	lock removed
+2012/04/23  09:23:46	jmoss	VIEW: xhr_actions
+2012/04/23  09:23:46	jmoss	<QueryDict: {u'ci': [u'6175'], u'datax': [u''], u'ajaxAction': [u'dragKid'], u'ti': [u'6045']}>
+2012/04/23  09:23:46	jmoss	=====> xhr_actions: =AJAX request, ci=6175  ti=6045  ajaxAction: dragKid
+2012/04/23  09:23:46	---	Last item ID:6226
+2012/04/23  09:23:46	jmoss	VIEW: drag_move
+2012/04/23  09:23:46	jmoss	 ====dragmove=> CIid:TIid    6175:6045
+2012/04/23  09:23:46	jmoss	== WARNING: drag_move of item not belonging to this user.
+2012/04/23  09:23:46	---	  deco for: 6175
+2012/04/23  09:23:46	---	  deco for: 6045
+2012/04/23  09:23:46	---	lock removed
+2012/04/23  09:24:00	jmoss	VIEW: draglist
+2012/04/23  09:24:00	jmoss	     Proj 39
+2012/04/23  09:24:00	---	   Entering buildDisplayList
+2012/04/23  09:24:00	---	      ..queries done...
+2012/04/23  09:24:00	---	      ....parent list built...
+2012/04/23  09:24:00	---	      .....ix built.....
+2012/04/23  09:24:00	---	      ...built followhash....
+2012/04/23  09:24:00	---	      .....displayList built...
+2012/04/23  09:24:00	---	   Exiting buildDisplayList
+2012/04/23  09:24:02	jmoss	VIEW: draglist
+2012/04/23  09:24:02	jmoss	     Proj 39
+2012/04/23  09:24:02	---	   Entering buildDisplayList
+2012/04/23  09:24:02	---	      ..queries done...
+2012/04/23  09:24:02	---	      ....parent list built...
+2012/04/23  09:24:02	---	      .....ix built.....
+2012/04/23  09:24:02	---	      ...built followhash....
+2012/04/23  09:24:02	---	      .....displayList built...
+2012/04/23  09:24:02	---	   Exiting buildDisplayList
+2012/04/23  09:28:54	jmoss	VIEW: draglist
+2012/04/23  09:28:54	jmoss	     Proj 39
+2012/04/23  09:28:54	---	   Entering buildDisplayList
+2012/04/23  09:28:54	---	      ..queries done...
+2012/04/23  09:28:54	---	      ....parent list built...
+2012/04/23  09:28:54	---	      .....ix built.....
+2012/04/23  09:28:54	---	      ...built followhash....
+2012/04/23  09:28:54	---	      .....displayList built...
+2012/04/23  09:28:54	---	   Exiting buildDisplayList
+2012/04/23  09:28:56	jmoss	VIEW: psd
+2012/04/23  09:28:56	---	   Entering buildDisplayList
+2012/04/23  09:28:56	---	      ..queries done...
+2012/04/23  09:28:56	---	      ....parent list built...
+2012/04/23  09:28:56	---	      .....ix built.....
+2012/04/23  09:28:56	---	   Exiting buildDisplayList
+2012/04/23  09:42:09	jmoss	VIEW: psd
+2012/04/23  09:42:09	---	   Entering buildDisplayList
+2012/04/23  09:42:09	---	      ..queries done...
+2012/04/23  09:42:09	---	      ....parent list built...
+2012/04/23  09:42:09	---	      .....ix built.....
+2012/04/23  09:42:09	---	   Exiting buildDisplayList
+2012/04/23  09:42:15	jmoss	VIEW: draglist
+2012/04/23  09:42:15	jmoss	     Proj 33
+2012/04/23  09:42:15	---	   Entering buildDisplayList
+2012/04/23  09:42:15	---	      ..queries done...
+2012/04/23  09:42:15	---	      ....parent list built...
+2012/04/23  09:42:16	---	      .....ix built.....
+2012/04/23  09:42:16	---	      ...built followhash....
+2012/04/23  09:42:16	---	      .....displayList built...
+2012/04/23  09:42:16	---	   Exiting buildDisplayList
+2012/04/23  09:42:22	jmoss	VIEW: xhr_actions
+2012/04/23  09:42:22	jmoss	<QueryDict: {u'ci': [u'6041'], u'datax': [u''], u'ajaxAction': [u'dragKid'], u'ti': [u'6045']}>
+2012/04/23  09:42:22	jmoss	=====> xhr_actions: =AJAX request, ci=6041  ti=6045  ajaxAction: dragKid
+2012/04/23  09:42:23	---	Last item ID:6226
+2012/04/23  09:42:23	jmoss	VIEW: drag_move
+2012/04/23  09:42:23	jmoss	 ====dragmove=> CIid:TIid    6041:6045
+2012/04/23  09:42:23	---	Last item ID:6226
+2012/04/23  09:42:23	---	sMDflk=> findLastKid lastKid=0
+2012/04/23  09:42:23	jmoss	DragMove=> CI saved
+2012/04/23  09:42:23	jmoss	dragmove=> targetFollowerID:6172  targetFollower.follows:6045  lastkid:0
+2012/04/23  09:42:23	jmoss	 => targetFollower.follows=6041
+2012/04/23  09:42:23	---	lock removed
+2012/04/23  09:44:01	jmoss	VIEW: homepage
+2012/04/23  10:06:38	jmoss	VIEW: homepage
+2012/04/23  10:06:44	jmoss	VIEW: homepage
+2012/04/23  10:07:30	jmoss	VIEW: managePage
+2012/04/23  10:07:37	jmoss	VIEW: homepage
+2012/04/23  10:07:40	jmoss	VIEW: managePage
+2012/04/23  10:07:42	jmoss	VIEW: createProject
+2012/04/23  10:10:38	jmoss	VIEW: draglist
+2012/04/23  10:10:38	jmoss	     Proj 33
+2012/04/23  10:10:38	---	   Entering buildDisplayList
+2012/04/23  10:10:38	---	      ..queries done...
+2012/04/23  10:10:38	---	      ....parent list built...
+2012/04/23  10:10:38	---	      .....ix built.....
+2012/04/23  10:10:38	---	      ...built followhash....
+2012/04/23  10:10:38	---	      .....displayList built...
+2012/04/23  10:10:38	---	   Exiting buildDisplayList
+2012/04/23  10:10:47	jmoss	VIEW: hoistItem
+2012/04/23  10:11:11	jmoss	VIEW: hoistItem
+2012/04/23  10:11:11	---	   Entering buildDisplayList
+2012/04/23  10:11:11	---	VIEW: allMyChildren 
+2012/04/23  10:11:12	---	      ..queries done...
+2012/04/23  10:11:12	---	      ....parent list built...
+2012/04/23  10:11:12	---	      .....ix built.....
+2012/04/23  10:11:12	---	FHK is=6041
+2012/04/23  10:11:12	---	      ...built followhash....
+2012/04/23  10:11:12	---	      .....displayList built...
+2012/04/23  10:11:12	---	   Exiting buildDisplayList
+2012/04/23  10:11:16	jmoss	Edit item: Formset generated, pItem=6172
+2012/04/23  10:11:26	djangosuper	VIEW: maintPage
+2012/04/23  10:12:10	jmoss	VIEW: draglist
+2012/04/23  10:12:10	jmoss	     Proj 33
+2012/04/23  10:12:10	---	   Entering buildDisplayList
+2012/04/23  10:12:10	---	      ..queries done...
+2012/04/23  10:12:10	---	      ....parent list built...
+2012/04/23  10:12:10	---	      .....ix built.....
+2012/04/23  10:12:10	---	      ...built followhash....
+2012/04/23  10:12:10	---	      .....displayList built...
+2012/04/23  10:12:10	---	   Exiting buildDisplayList
+2012/04/23  10:12:18	jmoss	VIEW: hoistItem
+2012/04/23  10:12:18	---	   Entering buildDisplayList
+2012/04/23  10:12:18	---	VIEW: allMyChildren 
+2012/04/23  10:12:18	---	      ..queries done...
+2012/04/23  10:12:18	---	      ....parent list built...
+2012/04/23  10:12:18	---	      .....ix built.....
+2012/04/23  10:12:18	---	FHK is=6168
+2012/04/23  10:12:18	---	      ...built followhash....
+2012/04/23  10:12:18	---	      .....displayList built...
+2012/04/23  10:12:18	---	   Exiting buildDisplayList
+2012/04/23  10:12:51	djangosuper	VIEW: draglist
+2012/04/23  10:12:51	djangosuper	     Proj 4
+2012/04/23  10:12:51	---	   Entering buildDisplayList
+2012/04/23  10:12:51	---	      ..queries done...
+2012/04/23  10:12:51	---	      ....parent list built...
+2012/04/23  10:12:51	---	      .....ix built.....
+2012/04/23  10:12:51	---	      ...built followhash....
+2012/04/23  10:12:51	---	      .....displayList built...
+2012/04/23  10:12:51	---	   Exiting buildDisplayList
+2012/04/23  10:13:01	jmoss	VIEW: hoistItem
+2012/04/23  10:13:01	jmoss	VIEW: homepage
+2012/04/23  10:16:28	jmoss	VIEW: detailItem
+2012/04/23  10:19:24	jmoss	VIEW: detailItem
+2012/04/23  10:19:32	jmoss	VIEW: detailItem
+2012/04/23  10:19:32	jmoss	VIEW: homepage
+2012/04/23  10:20:31	jmoss	WARNING: attempt to edit item #6092in project Test list.  Not owned by this user!
+2012/04/23  10:20:31	jmoss	VIEW: homepage
+2012/04/23  10:32:06	jmoss	VIEW: draglist
+2012/04/23  10:32:06	jmoss	     Proj 39
+2012/04/23  10:32:06	---	   Entering buildDisplayList
+2012/04/23  10:32:06	---	      ..queries done...
+2012/04/23  10:32:06	---	      ....parent list built...
+2012/04/23  10:32:06	---	      .....ix built.....
+2012/04/23  10:32:06	---	      ...built followhash....
+2012/04/23  10:32:06	---	      .....displayList built...
+2012/04/23  10:32:06	---	   Exiting buildDisplayList
+2012/04/23  10:32:14	jmoss	VIEW: managePage
+2012/04/23  10:32:26	jmoss	VIEW: item import, 5 items, project 5
+2012/04/23  10:32:35	djangosuper	VIEW: draglist
+2012/04/23  10:32:35	djangosuper	     Proj 5
+2012/04/23  10:32:35	---	   Entering buildDisplayList
+2012/04/23  10:32:35	---	      ..queries done...
+2012/04/23  10:32:35	---	      ....parent list built...
+2012/04/23  10:32:35	---	      .....ix built.....
+2012/04/23  10:32:35	---	      ...built followhash....
+2012/04/23  10:32:35	---	      .....displayList built...
+2012/04/23  10:32:35	---	   Exiting buildDisplayList
+2012/04/23  10:32:53	djangosuper	Edit item: Formset generated, pItem=6087
+2012/04/23  10:33:14	djangosuper	   Formset saved: [<Item: AUDIT con'd: can user 1 see or action anything from user2?>]
+2012/04/23  10:33:14	djangosuper	VIEW: draglist
+2012/04/23  10:33:14	djangosuper	     Proj 5
+2012/04/23  10:33:14	---	   Entering buildDisplayList
+2012/04/23  10:33:14	---	      ..queries done...
+2012/04/23  10:33:14	---	      ....parent list built...
+2012/04/23  10:33:14	---	      .....ix built.....
+2012/04/23  10:33:14	---	      ...built followhash....
+2012/04/23  10:33:14	---	      .....displayList built...
+2012/04/23  10:33:14	---	   Exiting buildDisplayList
+2012/04/23  10:33:30	jmoss	VIEW: managePage
+2012/04/23  10:33:32	jmoss	VIEW: createProject
+2012/04/23  10:33:32	jmoss	VIEW: createProjectSet
+2012/04/23  10:36:26	jmoss	VIEW: createProject
+2012/04/23  10:36:41	jmoss	VIEW: createProject
+2012/04/23  10:37:01	jmoss	VIEW: createProject
+2012/04/23  10:37:17	jmoss	VIEW: createProject
+2012/04/23  10:37:39	jmoss	VIEW: createProject
+2012/04/23  10:38:50	jmoss	VIEW: createProject
+2012/04/23  10:39:07	jmoss	VIEW: createProject
+2012/04/23  10:39:21	jmoss	VIEW: createProject
+2012/04/23  10:39:38	jmoss	VIEW: createProjectSet
+2012/04/23  10:40:51	jmoss	VIEW: createProjectSet
+2012/04/23  10:41:11	jmoss	VIEW: createProjectSet
+2012/04/23  10:43:10	jmoss	VIEW: createProjectSet
+2012/04/23  10:43:17	jmoss	VIEW: createProject
+2012/04/23  11:02:06	djangosuper	VIEW: backupdata
+2012/04/23  11:02:34	djangosuper	VIEW: backupdata
+2012/04/23  11:02:34	djangosuper	backup request:<QueryDict: {u'csrfmiddlewaretoken': [u'b8d1d90ee78de3e480ce155f0ef960b7'], u'BackupTheseProjects': [u'21', u'5', u'1', u'2', u'19', u'31', u'6', u'7', u'29', u'8', u'9']}>
+2012/04/23  11:02:34	djangosuper	 backup ==> projlist:[u'21', u'5', u'1', u'2', u'19', u'31', u'6', u'7', u'29', u'8', u'9']
+2012/04/23  11:02:35	djangosuper	Project 21: 8 items backed up to P021AAAS_20120423_110234.bnk
+2012/04/23  11:02:36	djangosuper	Project 5: 68 items backed up to P005Benk_20120423_110235.bnk
+2012/04/23  11:02:37	djangosuper	Project 1: 24 items backed up to P001BMJ_20120423_110236.bnk
+2012/04/23  11:02:38	djangosuper	Project 2: 28 items backed up to P002CHOICE_20120423_110237.bnk
+2012/04/23  11:02:38	djangosuper	Project 19: 5 items backed up to P019F_20120423_110238.bnk
+2012/04/23  11:02:38	djangosuper	Project 31: 7 items backed up to P031JWatch_20120423_110238.bnk
+2012/04/23  11:02:39	djangosuper	Project 6: 39 items backed up to P006PMO_20120423_110238.bnk
+2012/04/23  11:02:48	djangosuper	Project 7: 369 items backed up to P007PMO_Ge_20120423_110239.bnk
+2012/04/23  11:02:48	djangosuper	Project 29: 5 items backed up to P029PNAS-A_20120423_110248.bnk
+2012/04/23  11:02:49	djangosuper	Project 8: 35 items backed up to P008travel_20120423_110248.bnk
+2012/04/23  11:02:49	djangosuper	Project 9: 15 items backed up to P009zago_20120423_110249.bnk
+2012/04/23  11:10:52	jmoss	VIEW: draglist
+2012/04/23  11:10:52	jmoss	     Proj 35
+2012/04/23  11:10:52	---	   Entering buildDisplayList
+2012/04/23  11:10:52	---	      ..queries done...
+2012/04/23  11:10:52	---	      ....parent list built...
+2012/04/23  11:10:52	---	      .....ix built.....
+2012/04/23  11:10:52	---	      ...built followhash....
+2012/04/23  11:10:52	---	      .....displayList built...
+2012/04/23  11:10:52	---	   Exiting buildDisplayList
+2012/04/23  11:10:59	jmoss	VIEW: draglist
+2012/04/23  11:10:59	jmoss	     Proj 43
+2012/04/23  11:10:59	---	   Entering buildDisplayList
+2012/04/23  11:10:59	---	      ..queries done...
+2012/04/23  11:10:59	---	      ....parent list built...
+2012/04/23  11:10:59	---	      .....ix built.....
+2012/04/23  11:10:59	---	      ...built followhash....
+2012/04/23  11:10:59	---	      .....displayList built...
+2012/04/23  11:10:59	---	   Exiting buildDisplayList
+2012/04/23  11:11:07	jmoss	VIEW: draglist
+2012/04/23  11:11:07	jmoss	     Proj 37
+2012/04/23  11:11:07	---	   Entering buildDisplayList
+2012/04/23  11:11:07	---	      ..queries done...
+2012/04/23  11:11:07	---	      ....parent list built...
+2012/04/23  11:11:07	---	      .....ix built.....
+2012/04/23  11:11:07	---	      ...built followhash....
+2012/04/23  11:11:07	---	      .....displayList built...
+2012/04/23  11:11:07	---	   Exiting buildDisplayList
+2012/04/23  11:11:17	jmoss	VIEW: managePage
+2012/04/23  11:11:31	jmoss	VIEW: item import, 56 items, project 37
+2012/04/23  11:11:31	---	Last item ID:6038
+2012/04/23  11:11:31	---	Item has no follower: ID6038
+2012/04/23  11:11:31	---	Last item ID:6238
+2012/04/23  11:11:31	---	Item has no follower: ID6238
+2012/04/23  11:11:31	---	Last item ID:6239
+2012/04/23  11:11:31	---	Item has no follower: ID6239
+2012/04/23  11:11:31	---	Last item ID:6240
+2012/04/23  11:11:31	---	Item has no follower: ID6240
+2012/04/23  11:11:31	---	Last item ID:6241
+2012/04/23  11:11:31	---	Item has no follower: ID6241
+2012/04/23  11:11:31	---	Last item ID:6242
+2012/04/23  11:11:31	---	Item has no follower: ID6242
+2012/04/23  11:11:31	---	Last item ID:6243
+2012/04/23  11:11:31	---	Item has no follower: ID6243
+2012/04/23  11:11:31	---	Last item ID:6244
+2012/04/23  11:11:31	---	Item has no follower: ID6244
+2012/04/23  11:11:31	---	Last item ID:6245
+2012/04/23  11:11:31	---	Item has no follower: ID6245
+2012/04/23  11:11:31	---	Last item ID:6246
+2012/04/23  11:11:31	---	Item has no follower: ID6246
+2012/04/23  11:11:31	---	Last item ID:6247
+2012/04/23  11:11:31	---	Item has no follower: ID6247
+2012/04/23  11:11:31	---	Last item ID:6248
+2012/04/23  11:11:31	---	Item has no follower: ID6248
+2012/04/23  11:11:31	---	Last item ID:6249
+2012/04/23  11:11:31	---	Item has no follower: ID6249
+2012/04/23  11:11:31	---	Last item ID:6250
+2012/04/23  11:11:31	---	Item has no follower: ID6250
+2012/04/23  11:11:31	---	Last item ID:6251
+2012/04/23  11:11:31	---	Item has no follower: ID6251
+2012/04/23  11:11:31	---	Last item ID:6252
+2012/04/23  11:11:31	---	Item has no follower: ID6252
+2012/04/23  11:11:31	---	Last item ID:6253
+2012/04/23  11:11:31	---	Item has no follower: ID6253
+2012/04/23  11:11:31	---	Last item ID:6254
+2012/04/23  11:11:31	---	Item has no follower: ID6254
+2012/04/23  11:11:32	---	Last item ID:6255
+2012/04/23  11:11:32	---	Item has no follower: ID6255
+2012/04/23  11:11:32	---	Last item ID:6256
+2012/04/23  11:11:32	---	Item has no follower: ID6256
+2012/04/23  11:11:32	---	Last item ID:6257
+2012/04/23  11:11:32	---	Item has no follower: ID6257
+2012/04/23  11:11:32	---	Last item ID:6258
+2012/04/23  11:11:32	---	Item has no follower: ID6258
+2012/04/23  11:11:32	---	Last item ID:6259
+2012/04/23  11:11:32	---	Item has no follower: ID6259
+2012/04/23  11:11:32	---	Last item ID:6260
+2012/04/23  11:11:32	---	Item has no follower: ID6260
+2012/04/23  11:11:32	---	Last item ID:6261
+2012/04/23  11:11:32	---	Item has no follower: ID6261
+2012/04/23  11:11:32	---	Last item ID:6262
+2012/04/23  11:11:32	---	Item has no follower: ID6262
+2012/04/23  11:11:32	---	Last item ID:6263
+2012/04/23  11:11:32	---	Item has no follower: ID6263
+2012/04/23  11:11:32	---	Last item ID:6264
+2012/04/23  11:11:32	---	Item has no follower: ID6264
+2012/04/23  11:11:32	---	Last item ID:6265
+2012/04/23  11:11:32	---	Item has no follower: ID6265
+2012/04/23  11:11:32	---	Last item ID:6266
+2012/04/23  11:11:32	---	Item has no follower: ID6266
+2012/04/23  11:11:32	---	Last item ID:6267
+2012/04/23  11:11:32	---	Item has no follower: ID6267
+2012/04/23  11:11:32	---	Last item ID:6268
+2012/04/23  11:11:32	---	Item has no follower: ID6268
+2012/04/23  11:11:32	---	Last item ID:6269
+2012/04/23  11:11:32	---	Item has no follower: ID6269
+2012/04/23  11:11:33	---	Last item ID:6270
+2012/04/23  11:11:33	---	Item has no follower: ID6270
+2012/04/23  11:11:33	---	Last item ID:6271
+2012/04/23  11:11:33	---	Item has no follower: ID6271
+2012/04/23  11:11:33	---	Last item ID:6272
+2012/04/23  11:11:33	---	Item has no follower: ID6272
+2012/04/23  11:11:33	---	Last item ID:6273
+2012/04/23  11:11:33	---	Item has no follower: ID6273
+2012/04/23  11:11:33	---	Last item ID:6274
+2012/04/23  11:11:33	---	Item has no follower: ID6274
+2012/04/23  11:11:33	---	Last item ID:6275
+2012/04/23  11:11:33	---	Item has no follower: ID6275
+2012/04/23  11:11:33	---	Last item ID:6276
+2012/04/23  11:11:33	---	Item has no follower: ID6276
+2012/04/23  11:11:33	---	Last item ID:6277
+2012/04/23  11:11:33	---	Item has no follower: ID6277
+2012/04/23  11:11:33	---	Last item ID:6278
+2012/04/23  11:11:33	---	Item has no follower: ID6278
+2012/04/23  11:11:33	---	Last item ID:6279
+2012/04/23  11:11:33	---	Item has no follower: ID6279
+2012/04/23  11:11:33	---	Last item ID:6280
+2012/04/23  11:11:33	---	Item has no follower: ID6280
+2012/04/23  11:11:33	---	Last item ID:6281
+2012/04/23  11:11:33	---	Item has no follower: ID6281
+2012/04/23  11:11:33	---	Last item ID:6282
+2012/04/23  11:11:33	---	Item has no follower: ID6282
+2012/04/23  11:11:33	---	Last item ID:6283
+2012/04/23  11:11:33	---	Item has no follower: ID6283
+2012/04/23  11:11:33	---	Last item ID:6284
+2012/04/23  11:11:33	---	Item has no follower: ID6284
+2012/04/23  11:11:33	---	Last item ID:6285
+2012/04/23  11:11:33	---	Item has no follower: ID6285
+2012/04/23  11:11:33	---	Last item ID:6286
+2012/04/23  11:11:33	---	Item has no follower: ID6286
+2012/04/23  11:11:33	---	Last item ID:6287
+2012/04/23  11:11:34	---	Item has no follower: ID6287
+2012/04/23  11:11:34	---	Last item ID:6288
+2012/04/23  11:11:34	---	Item has no follower: ID6288
+2012/04/23  11:11:34	---	Last item ID:6289
+2012/04/23  11:11:34	---	Item has no follower: ID6289
+2012/04/23  11:11:34	---	Last item ID:6290
+2012/04/23  11:11:34	---	Item has no follower: ID6290
+2012/04/23  11:11:34	---	Last item ID:6291
+2012/04/23  11:11:34	---	Item has no follower: ID6291
+2012/04/23  11:11:34	---	Last item ID:6292
+2012/04/23  11:11:34	---	Item has no follower: ID6292
+2012/04/23  11:11:38	jmoss	VIEW: draglist
+2012/04/23  11:11:38	jmoss	     Proj 37
+2012/04/23  11:11:38	---	   Entering buildDisplayList
+2012/04/23  11:11:38	---	      ..queries done...
+2012/04/23  11:11:38	---	      ....parent list built...
+2012/04/23  11:11:39	---	      .....ix built.....
+2012/04/23  11:11:39	---	      ...built followhash....
+2012/04/23  11:11:39	---	      .....displayList built...
+2012/04/23  11:11:39	---	   Exiting buildDisplayList
+2012/04/23  11:12:15	jmoss	VIEW: xhr_actions
+2012/04/23  11:12:15	jmoss	<QueryDict: {u'ci': [u'6241'], u'datax': [u''], u'ajaxAction': [u'demote'], u'ti': [u'0']}>
+2012/04/23  11:12:15	jmoss	=====> xhr_actions: =AJAX request, ci=6241  ti=0  ajaxAction: demote
+2012/04/23  11:12:15	---	Last item ID:6293
+2012/04/23  11:12:15	---	sMDflk=> findLastKid lastKid=0
+2012/04/23  11:12:15	---	  deco for: 6241
+2012/04/23  11:12:15	---	  deco for: 6240
+2012/04/23  11:12:15	---	lock removed
+2012/04/23  11:12:17	jmoss	VIEW: xhr_actions
+2012/04/23  11:12:17	jmoss	<QueryDict: {u'ci': [u'6245'], u'datax': [u''], u'ajaxAction': [u'demote'], u'ti': [u'0']}>
+2012/04/23  11:12:17	jmoss	=====> xhr_actions: =AJAX request, ci=6245  ti=0  ajaxAction: demote
+2012/04/23  11:12:17	---	Last item ID:6293
+2012/04/23  11:12:17	---	sMDflk=> findLastKid lastKid=0
+2012/04/23  11:12:17	---	  deco for: 6245
+2012/04/23  11:12:17	---	  deco for: 6244
+2012/04/23  11:12:17	---	lock removed
+2012/04/23  11:12:20	jmoss	VIEW: xhr_actions
+2012/04/23  11:12:20	jmoss	<QueryDict: {u'ci': [u'6255'], u'datax': [u''], u'ajaxAction': [u'demote'], u'ti': [u'0']}>
+2012/04/23  11:12:20	jmoss	=====> xhr_actions: =AJAX request, ci=6255  ti=0  ajaxAction: demote
+2012/04/23  11:12:20	---	Last item ID:6293
+2012/04/23  11:12:20	---	sMDflk=> findLastKid lastKid=0
+2012/04/23  11:12:20	---	  deco for: 6255
+2012/04/23  11:12:20	---	  deco for: 6254
+2012/04/23  11:12:20	---	lock removed
+2012/04/23  11:12:23	jmoss	VIEW: draglist
+2012/04/23  11:12:23	jmoss	     Proj 37
+2012/04/23  11:12:23	---	   Entering buildDisplayList
+2012/04/23  11:12:23	---	      ..queries done...
+2012/04/23  11:12:23	---	      ....parent list built...
+2012/04/23  11:12:23	---	      .....ix built.....
+2012/04/23  11:12:23	---	      ...built followhash....
+2012/04/23  11:12:23	---	      .....displayList built...
+2012/04/23  11:12:23	---	   Exiting buildDisplayList
+2012/04/23  11:12:27	jmoss	VIEW: draglist
+2012/04/23  11:12:27	jmoss	     Proj 41
+2012/04/23  11:12:27	---	   Entering buildDisplayList
+2012/04/23  11:12:27	---	      ..queries done...
+2012/04/23  11:12:27	---	      ....parent list built...
+2012/04/23  11:12:27	---	      .....ix built.....
+2012/04/23  11:12:27	---	      ...built followhash....
+2012/04/23  11:12:27	---	      .....displayList built...
+2012/04/23  11:12:27	---	   Exiting buildDisplayList
+2012/04/23  11:12:39	jmoss	VIEW: item import, 938 items, project 41
+2012/04/23  11:12:39	jmoss	WARNING! Attempt to load binary file. File: ajnr1.jpg  project: 41
+2012/04/23  11:12:57	jmoss	VIEW: item import, 7315 items, project 43
+2012/04/23  11:12:57	jmoss	 WARNING! Attempt to load large file. File: BIG-text-file.txt  project: 43
+2012/04/23  11:13:17	jmoss	VIEW: item import, 5 items, project 5
+2012/04/23  11:18:42	jmoss	VIEW: draglist
+2012/04/23  11:18:42	jmoss	     Proj 33
+2012/04/23  11:18:42	---	   Entering buildDisplayList
+2012/04/23  11:18:42	---	      ..queries done...
+2012/04/23  11:18:42	---	      ....parent list built...
+2012/04/23  11:18:42	---	      .....ix built.....
+2012/04/23  11:18:42	---	      ...built followhash....
+2012/04/23  11:18:42	---	      .....displayList built...
+2012/04/23  11:18:42	---	   Exiting buildDisplayList
+2012/04/23  11:19:55	jmoss	VIEW: draglist
+2012/04/23  11:19:55	jmoss	     Proj 33
+2012/04/23  11:19:55	---	   Entering buildDisplayList
+2012/04/23  11:19:55	---	      ..queries done...
+2012/04/23  11:19:55	---	      ....parent list built...
+2012/04/23  11:19:55	---	      .....ix built.....
+2012/04/23  11:19:55	---	      ...built followhash....
+2012/04/23  11:19:55	---	      .....displayList built...
+2012/04/23  11:19:55	---	   Exiting buildDisplayList
+2012/04/23  11:20:02	jmoss	VIEW: managePage
+2012/04/23  11:20:06	jmoss	VIEW: createProject
+2012/04/23  11:20:09	jmoss	VIEW: showchains
+2012/04/23  11:20:10	jmoss	ShowChains: Proj 33======================================
+2012/04/23  11:20:10	jmoss	            Found these un-followed items: [6034L, 6041L, 6228L]
+2012/04/23  11:21:16	jmoss	VIEW: showchains
+2012/04/23  11:21:16	jmoss	ShowChains: Proj 45======================================
+2012/04/23  11:21:16	jmoss	            Found these un-followed items: [6056L]
+2012/04/23  11:21:59	djangosuper	VIEW: homepage
+2012/04/23  11:22:05	djangosuper	VIEW: maintPage
+2012/04/23  11:22:11	djangosuper	VIEW: showchains
+2012/04/23  11:22:11	djangosuper	ShowChains: Proj 9======================================
+2012/04/23  11:22:11	djangosuper	            Found these un-followed items: [5595L]
+2012/04/23  11:22:11	djangosuper	            Tables w/dupes removed:[[5047L, 5591L, 5961L, 6077L, 6018L, 5625L, 5951L, 5900L, 5592L, 5593L, 5897L, 5599L, 5116L, 5600L, 5595L]]
+2012/04/23  11:22:26	jmoss	VIEW: createProject
+2012/04/23  11:22:37	jmoss	VIEW: homepage
+2012/04/23  11:22:43	jmoss	VIEW: draglist
+2012/04/23  11:22:43	jmoss	     Proj 39
+2012/04/23  11:22:43	---	   Entering buildDisplayList
+2012/04/23  11:22:43	---	      ..queries done...
+2012/04/23  11:22:43	---	      ....parent list built...
+2012/04/23  11:22:43	---	      .....ix built.....
+2012/04/23  11:22:43	---	      ...built followhash....
+2012/04/23  11:22:43	---	      .....displayList built...
+2012/04/23  11:22:43	---	   Exiting buildDisplayList
+2012/04/23  11:22:51	jmoss	VIEW: showchains
+2012/04/23  11:22:51	jmoss	ShowChains: Proj 45======================================
+2012/04/23  11:22:51	jmoss	            Found these un-followed items: [6056L]
+2012/04/23  11:23:48	jmoss	VIEW: showchains
+2012/04/23  11:23:48	jmoss	ShowChains: Proj 45======================================
+2012/04/23  11:23:48	jmoss	            Found these un-followed items: [6056L]
+2012/04/23  11:24:07	jmoss	VIEW: draglist
+2012/04/23  11:24:07	jmoss	     Proj 45
+2012/04/23  11:24:07	---	   Entering buildDisplayList
+2012/04/23  11:24:07	---	      ..queries done...
+2012/04/23  11:24:07	---	      ....parent list built...
+2012/04/23  11:24:07	---	      .....ix built.....
+2012/04/23  11:24:07	---	      ...built followhash....
+2012/04/23  11:24:07	---	      .....displayList built...
+2012/04/23  11:24:07	---	   Exiting buildDisplayList
+2012/04/23  11:28:10	jmoss	VIEW: draglist
+2012/04/23  11:28:10	jmoss	     Proj 33
+2012/04/23  11:28:10	---	   Entering buildDisplayList
+2012/04/23  11:28:11	---	      ..queries done...
+2012/04/23  11:28:11	---	      ....parent list built...
+2012/04/23  11:28:11	---	      .....ix built.....
+2012/04/23  11:28:11	---	      ...built followhash....
+2012/04/23  11:28:11	---	      .....displayList built...
+2012/04/23  11:28:11	---	   Exiting buildDisplayList
+2012/04/23  11:28:42	jmoss	VIEW: managePage
+2012/04/23  11:28:45	jmoss	VIEW: createProject
+2012/04/23  11:28:49	jmoss	VIEW: showchains
+2012/04/23  11:28:49	jmoss	ShowChains: Proj 33======================================
+2012/04/23  11:28:49	jmoss	            Found these un-followed items: [6034L, 6041L, 6228L]
+2012/04/23  11:29:24	jmoss	VIEW: today
+2012/04/23  11:29:24	---	   Entering buildDisplayList
+2012/04/23  11:29:24	---	      ..queries done...
+2012/04/23  11:29:24	---	      ....parent list built...
+2012/04/23  11:29:24	---	      .....ix built.....
+2012/04/23  11:29:24	---	   Exiting buildDisplayList
+2012/04/23  11:29:30	jmoss	VIEW: gridview
+2012/04/23  11:29:31	jmoss	   cellItems=[6056L]
+2012/04/23  11:29:31	---	   Entering buildDisplayList
+2012/04/23  11:29:31	---	      ..queries done...
+2012/04/23  11:29:31	---	      ....parent list built...
+2012/04/23  11:29:31	---	      .....ix built.....
+2012/04/23  11:29:31	---	   Exiting buildDisplayList
+2012/04/23  11:29:31	jmoss	   cellItems=[6047L, 6227L]
+2012/04/23  11:29:31	---	   Entering buildDisplayList
+2012/04/23  11:29:31	---	      ..queries done...
+2012/04/23  11:29:31	---	      ....parent list built...
+2012/04/23  11:29:31	---	      .....ix built.....
+2012/04/23  11:29:31	---	   Exiting buildDisplayList
+2012/04/23  11:29:31	jmoss	   cellItems=[6051L]
+2012/04/23  11:29:31	---	   Entering buildDisplayList
+2012/04/23  11:29:31	---	      ..queries done...
+2012/04/23  11:29:31	---	      ....parent list built...
+2012/04/23  11:29:31	---	      .....ix built.....
+2012/04/23  11:29:31	---	   Exiting buildDisplayList
+2012/04/23  11:29:31	jmoss	   cellItems=[6049L]
+2012/04/23  11:29:31	---	   Entering buildDisplayList
+2012/04/23  11:29:31	---	      ..queries done...
+2012/04/23  11:29:31	---	      ....parent list built...
+2012/04/23  11:29:31	---	      .....ix built.....
+2012/04/23  11:29:31	---	   Exiting buildDisplayList
+2012/04/23  11:29:31	jmoss	   cellItems=[6038L, 6287L, 6285L, 6286L, 6289L, 6288L, 6290L, 6291L, 6292L, 6293L, 6283L]
+2012/04/23  11:29:31	---	   Entering buildDisplayList
+2012/04/23  11:29:31	---	      ..queries done...
+2012/04/23  11:29:31	---	      ....parent list built...
+2012/04/23  11:29:31	---	      .....ix built.....
+2012/04/23  11:29:31	---	   Exiting buildDisplayList
+2012/04/23  11:29:32	jmoss	   cellItems=[6045L, 6034L, 6040L, 6228L, 6041L]
+2012/04/23  11:29:32	---	   Entering buildDisplayList
+2012/04/23  11:29:32	---	      ..queries done...
+2012/04/23  11:29:32	---	      ....parent list built...
+2012/04/23  11:29:32	---	      .....ix built.....
+2012/04/23  11:29:32	---	   Exiting buildDisplayList
+2012/04/23  11:29:32	jmoss	   cellItems=[6043L, 6036L, 6046L]
+2012/04/23  11:29:32	---	   Entering buildDisplayList
+2012/04/23  11:29:32	---	      ..queries done...
+2012/04/23  11:29:32	---	      ....parent list built...
+2012/04/23  11:29:32	---	      .....ix built.....
+2012/04/23  11:29:32	---	   Exiting buildDisplayList
+2012/04/23  11:29:52	jmoss	VIEW: managePage
+2012/04/23  11:29:54	jmoss	VIEW: createProject
+2012/04/23  11:30:43	jmoss	VIEW: draglist
+2012/04/23  11:30:43	jmoss	     Proj 39
+2012/04/23  11:30:43	---	   Entering buildDisplayList
+2012/04/23  11:30:43	---	      ..queries done...
+2012/04/23  11:30:43	---	      ....parent list built...
+2012/04/23  11:30:43	---	      .....ix built.....
+2012/04/23  11:30:43	---	      ...built followhash....
+2012/04/23  11:30:43	---	      .....displayList built...
+2012/04/23  11:30:43	---	   Exiting buildDisplayList
+2012/04/23  11:31:52	jmoss	VIEW: psd
+2012/04/23  11:31:52	---	   Entering buildDisplayList
+2012/04/23  11:31:52	---	      ..queries done...
+2012/04/23  11:31:52	---	      ....parent list built...
+2012/04/23  11:31:52	---	      .....ix built.....
+2012/04/23  11:31:52	---	   Exiting buildDisplayList
+2012/04/23  11:31:54	jmoss	VIEW: draglist
+2012/04/23  11:31:54	jmoss	     Proj 33
+2012/04/23  11:31:54	---	   Entering buildDisplayList
+2012/04/23  11:31:54	---	      ..queries done...
+2012/04/23  11:31:54	---	      ....parent list built...
+2012/04/23  11:31:54	---	      .....ix built.....
+2012/04/23  11:31:54	---	      ...built followhash....
+2012/04/23  11:31:54	---	      .....displayList built...
+2012/04/23  11:31:54	---	   Exiting buildDisplayList
+2012/04/23  11:31:56	jmoss	VIEW: psd
+2012/04/23  11:31:56	---	   Entering buildDisplayList
+2012/04/23  11:31:56	---	      ..queries done...
+2012/04/23  11:31:56	---	      ....parent list built...
+2012/04/23  11:31:56	---	      .....ix built.....
+2012/04/23  11:31:56	---	   Exiting buildDisplayList
+2012/04/23  11:32:17	jmoss	VIEW: draglist
+2012/04/23  11:32:17	jmoss	     Proj 39
+2012/04/23  11:32:17	---	   Entering buildDisplayList
+2012/04/23  11:32:17	---	      ..queries done...
+2012/04/23  11:32:17	---	      ....parent list built...
+2012/04/23  11:32:17	---	      .....ix built.....
+2012/04/23  11:32:17	---	      ...built followhash....
+2012/04/23  11:32:17	---	      .....displayList built...
+2012/04/23  11:32:17	---	   Exiting buildDisplayList
+2012/04/23  11:33:36	jmoss	VIEW: draglist
+2012/04/23  11:33:36	jmoss	     Proj 33
+2012/04/23  11:33:36	---	   Entering buildDisplayList
+2012/04/23  11:33:36	---	      ..queries done...
+2012/04/23  11:33:36	---	      ....parent list built...
+2012/04/23  11:33:36	---	      .....ix built.....
+2012/04/23  11:33:36	---	      ...built followhash....
+2012/04/23  11:33:36	---	      .....displayList built...
+2012/04/23  11:33:36	---	   Exiting buildDisplayList
+2012/04/23  11:33:39	jmoss	VIEW: psd
+2012/04/23  11:33:40	---	   Entering buildDisplayList
+2012/04/23  11:33:40	---	      ..queries done...
+2012/04/23  11:33:40	---	      ....parent list built...
+2012/04/23  11:33:40	---	      .....ix built.....
+2012/04/23  11:33:40	---	   Exiting buildDisplayList
+2012/04/23  11:33:49	jmoss	VIEW: draglist
+2012/04/23  11:33:49	jmoss	     Proj 39
+2012/04/23  11:33:49	---	   Entering buildDisplayList
+2012/04/23  11:33:49	---	      ..queries done...
+2012/04/23  11:33:49	---	      ....parent list built...
+2012/04/23  11:33:49	---	      .....ix built.....
+2012/04/23  11:33:49	---	      ...built followhash....
+2012/04/23  11:33:49	---	      .....displayList built...
+2012/04/23  11:33:49	---	   Exiting buildDisplayList
+2012/04/23  11:34:06	jmoss	VIEW: psd
+2012/04/23  11:34:06	---	   Entering buildDisplayList
+2012/04/23  11:34:06	---	      ..queries done...
+2012/04/23  11:34:06	---	      ....parent list built...
+2012/04/23  11:34:06	---	      .....ix built.....
+2012/04/23  11:34:06	---	   Exiting buildDisplayList
+2012/04/23  11:34:13	jmoss	VIEW: draglist
+2012/04/23  11:34:13	jmoss	     Proj 35
+2012/04/23  11:34:13	---	   Entering buildDisplayList
+2012/04/23  11:34:13	---	      ..queries done...
+2012/04/23  11:34:13	---	      ....parent list built...
+2012/04/23  11:34:13	---	      .....ix built.....
+2012/04/23  11:34:13	---	      ...built followhash....
+2012/04/23  11:34:13	---	      .....displayList built...
+2012/04/23  11:34:13	---	   Exiting buildDisplayList
+2012/04/23  11:34:15	jmoss	VIEW: psd
+2012/04/23  11:34:15	---	   Entering buildDisplayList
+2012/04/23  11:34:15	---	      ..queries done...
+2012/04/23  11:34:15	---	      ....parent list built...
+2012/04/23  11:34:15	---	      .....ix built.....
+2012/04/23  11:34:15	---	   Exiting buildDisplayList
+2012/04/23  11:34:24	jmoss	VIEW: draglist
+2012/04/23  11:34:24	jmoss	     Proj 45
+2012/04/23  11:34:24	---	   Entering buildDisplayList
+2012/04/23  11:34:24	---	      ..queries done...
+2012/04/23  11:34:24	---	      ....parent list built...
+2012/04/23  11:34:24	---	      .....ix built.....
+2012/04/23  11:34:24	---	      ...built followhash....
+2012/04/23  11:34:24	---	      .....displayList built...
+2012/04/23  11:34:24	---	   Exiting buildDisplayList
+2012/04/23  11:34:27	jmoss	VIEW: psd
+2012/04/23  11:34:27	---	   Entering buildDisplayList
+2012/04/23  11:34:27	---	      ..queries done...
+2012/04/23  11:34:27	---	      ....parent list built...
+2012/04/23  11:34:27	---	      .....ix built.....
+2012/04/23  11:34:27	---	   Exiting buildDisplayList
+2012/04/23  11:34:30	jmoss	VIEW: draglist
+2012/04/23  11:34:30	jmoss	     Proj 43
+2012/04/23  11:34:30	---	   Entering buildDisplayList
+2012/04/23  11:34:30	---	      ..queries done...
+2012/04/23  11:34:30	---	      ....parent list built...
+2012/04/23  11:34:30	---	      .....ix built.....
+2012/04/23  11:34:30	---	      ...built followhash....
+2012/04/23  11:34:30	---	      .....displayList built...
+2012/04/23  11:34:30	---	   Exiting buildDisplayList
+2012/04/23  11:34:34	jmoss	VIEW: psd
+2012/04/23  11:34:34	---	   Entering buildDisplayList
+2012/04/23  11:34:34	---	      ..queries done...
+2012/04/23  11:34:34	---	      ....parent list built...
+2012/04/23  11:34:34	---	      .....ix built.....
+2012/04/23  11:34:34	---	   Exiting buildDisplayList
+2012/04/23  11:34:39	jmoss	VIEW: draglist
+2012/04/23  11:34:39	jmoss	     Proj 41
+2012/04/23  11:34:39	---	   Entering buildDisplayList
+2012/04/23  11:34:39	---	      ..queries done...
+2012/04/23  11:34:39	---	      ....parent list built...
+2012/04/23  11:34:39	---	      .....ix built.....
+2012/04/23  11:34:39	---	      ...built followhash....
+2012/04/23  11:34:39	---	      .....displayList built...
+2012/04/23  11:34:39	---	   Exiting buildDisplayList
+2012/04/23  11:34:41	jmoss	VIEW: psd
+2012/04/23  11:34:41	---	   Entering buildDisplayList
+2012/04/23  11:34:41	---	      ..queries done...
+2012/04/23  11:34:41	---	      ....parent list built...
+2012/04/23  11:34:41	---	      .....ix built.....
+2012/04/23  11:34:41	---	   Exiting buildDisplayList
+2012/04/23  11:34:47	jmoss	VIEW: draglist
+2012/04/23  11:34:47	jmoss	     Proj 37
+2012/04/23  11:34:47	---	   Entering buildDisplayList
+2012/04/23  11:34:47	---	      ..queries done...
+2012/04/23  11:34:47	---	      ....parent list built...
+2012/04/23  11:34:48	---	      .....ix built.....
+2012/04/23  11:34:48	---	      ...built followhash....
+2012/04/23  11:34:48	---	      .....displayList built...
+2012/04/23  11:34:48	---	   Exiting buildDisplayList
+2012/04/23  11:34:54	jmoss	VIEW: psd
+2012/04/23  11:34:54	---	   Entering buildDisplayList
+2012/04/23  11:34:54	---	      ..queries done...
+2012/04/23  11:34:54	---	      ....parent list built...
+2012/04/23  11:34:54	---	      .....ix built.....
+2012/04/23  11:34:54	---	   Exiting buildDisplayList
+2012/04/23  11:35:09	jmoss	VIEW: managePage
+2012/04/23  11:35:10	jmoss	VIEW: createProject
+2012/04/23  11:35:15	jmoss	VIEW: showchains
+2012/04/23  11:35:15	jmoss	ShowChains: Proj 33======================================
+2012/04/23  11:35:15	jmoss	            Found these un-followed items: [6034L]
+2012/04/23  11:36:04	jmoss	VIEW: draglist
+2012/04/23  11:36:04	jmoss	     Proj 37
+2012/04/23  11:36:04	---	   Entering buildDisplayList
+2012/04/23  11:36:04	---	      ..queries done...
+2012/04/23  11:36:04	---	      ....parent list built...
+2012/04/23  11:36:04	---	      .....ix built.....
+2012/04/23  11:36:04	---	      ...built followhash....
+2012/04/23  11:36:04	---	      .....displayList built...
+2012/04/23  11:36:04	---	   Exiting buildDisplayList
+2012/04/23  11:36:22	jmoss	VIEW: draglist
+2012/04/23  11:36:22	jmoss	     Proj 45
+2012/04/23  11:36:22	---	   Entering buildDisplayList
+2012/04/23  11:36:22	---	      ..queries done...
+2012/04/23  11:36:22	---	      ....parent list built...
+2012/04/23  11:36:22	---	      .....ix built.....
+2012/04/23  11:36:22	---	      ...built followhash....
+2012/04/23  11:36:22	---	      .....displayList built...
+2012/04/23  11:36:22	---	   Exiting buildDisplayList
+2012/04/23  11:36:23	jmoss	VIEW: draglist
+2012/04/23  11:36:23	jmoss	     Proj 43
+2012/04/23  11:36:23	---	   Entering buildDisplayList
+2012/04/23  11:36:23	---	      ..queries done...
+2012/04/23  11:36:23	---	      ....parent list built...
+2012/04/23  11:36:23	---	      .....ix built.....
+2012/04/23  11:36:23	---	      ...built followhash....
+2012/04/23  11:36:23	---	      .....displayList built...
+2012/04/23  11:36:23	---	   Exiting buildDisplayList
+2012/04/23  11:36:24	jmoss	VIEW: draglist
+2012/04/23  11:36:24	jmoss	     Proj 41
+2012/04/23  11:36:24	---	   Entering buildDisplayList
+2012/04/23  11:36:24	---	      ..queries done...
+2012/04/23  11:36:24	---	      ....parent list built...
+2012/04/23  11:36:24	---	      .....ix built.....
+2012/04/23  11:36:24	---	      ...built followhash....
+2012/04/23  11:36:24	---	      .....displayList built...
+2012/04/23  11:36:24	---	   Exiting buildDisplayList
+2012/04/23  11:36:25	jmoss	VIEW: draglist
+2012/04/23  11:36:25	jmoss	     Proj 37
+2012/04/23  11:36:25	---	   Entering buildDisplayList
+2012/04/23  11:36:25	---	      ..queries done...
+2012/04/23  11:36:25	---	      ....parent list built...
+2012/04/23  11:36:25	---	      .....ix built.....
+2012/04/23  11:36:25	---	      ...built followhash....
+2012/04/23  11:36:25	---	      .....displayList built...
+2012/04/23  11:36:25	---	   Exiting buildDisplayList
+2012/04/23  11:36:34	jmoss	VIEW: draglist
+2012/04/23  11:36:34	jmoss	     Proj 39
+2012/04/23  11:36:34	---	   Entering buildDisplayList
+2012/04/23  11:36:34	---	      ..queries done...
+2012/04/23  11:36:34	---	      ....parent list built...
+2012/04/23  11:36:34	---	      .....ix built.....
+2012/04/23  11:36:34	---	      ...built followhash....
+2012/04/23  11:36:34	---	      .....displayList built...
+2012/04/23  11:36:34	---	   Exiting buildDisplayList
+2012/04/23  11:36:36	jmoss	VIEW: draglist
+2012/04/23  11:36:36	jmoss	     Proj 33
+2012/04/23  11:36:36	---	   Entering buildDisplayList
+2012/04/23  11:36:36	---	      ..queries done...
+2012/04/23  11:36:36	---	      ....parent list built...
+2012/04/23  11:36:36	---	      .....ix built.....
+2012/04/23  11:36:36	---	      ...built followhash....
+2012/04/23  11:36:36	---	      .....displayList built...
+2012/04/23  11:36:36	---	   Exiting buildDisplayList
+2012/04/23  11:36:37	jmoss	VIEW: draglist
+2012/04/23  11:36:37	jmoss	     Proj 35
+2012/04/23  11:36:37	---	   Entering buildDisplayList
+2012/04/23  11:36:37	---	      ..queries done...
+2012/04/23  11:36:37	---	      ....parent list built...
+2012/04/23  11:36:37	---	      .....ix built.....
+2012/04/23  11:36:37	---	      ...built followhash....
+2012/04/23  11:36:37	---	      .....displayList built...
+2012/04/23  11:36:37	---	   Exiting buildDisplayList
+2012/04/23  11:36:40	jmoss	VIEW: draglist
+2012/04/23  11:36:40	jmoss	     Proj 39
+2012/04/23  11:36:40	---	   Entering buildDisplayList
+2012/04/23  11:36:40	---	      ..queries done...
+2012/04/23  11:36:40	---	      ....parent list built...
+2012/04/23  11:36:40	---	      .....ix built.....
+2012/04/23  11:36:40	---	      ...built followhash....
+2012/04/23  11:36:40	---	      .....displayList built...
+2012/04/23  11:36:40	---	   Exiting buildDisplayList
+2012/04/23  11:36:59	jmoss	VIEW: draglist
+2012/04/23  11:36:59	jmoss	     Proj 39
+2012/04/23  11:36:59	---	   Entering buildDisplayList
+2012/04/23  11:36:59	---	      ..queries done...
+2012/04/23  11:36:59	---	      ....parent list built...
+2012/04/23  11:36:59	---	      .....ix built.....
+2012/04/23  11:36:59	---	      ...built followhash....
+2012/04/23  11:36:59	---	      .....displayList built...
+2012/04/23  11:36:59	---	   Exiting buildDisplayList
+2012/04/23  11:37:02	jmoss	VIEW: draglist
+2012/04/23  11:37:02	jmoss	     Proj 39
+2012/04/23  11:37:02	---	   Entering buildDisplayList
+2012/04/23  11:37:02	---	      ..queries done...
+2012/04/23  11:37:02	---	      ....parent list built...
+2012/04/23  11:37:02	---	      .....ix built.....
+2012/04/23  11:37:02	---	      ...built followhash....
+2012/04/23  11:37:02	---	      .....displayList built...
+2012/04/23  11:37:02	---	   Exiting buildDisplayList
+2012/04/23  11:37:03	jmoss	VIEW: draglist
+2012/04/23  11:37:03	jmoss	     Proj 33
+2012/04/23  11:37:03	---	   Entering buildDisplayList
+2012/04/23  11:37:03	---	      ..queries done...
+2012/04/23  11:37:03	---	      ....parent list built...
+2012/04/23  11:37:03	---	      .....ix built.....
+2012/04/23  11:37:03	---	      ...built followhash....
+2012/04/23  11:37:03	---	      .....displayList built...
+2012/04/23  11:37:03	---	   Exiting buildDisplayList
+2012/04/23  11:37:05	jmoss	VIEW: draglist
+2012/04/23  11:37:05	jmoss	     Proj 35
+2012/04/23  11:37:05	---	   Entering buildDisplayList
+2012/04/23  11:37:05	---	      ..queries done...
+2012/04/23  11:37:05	---	      ....parent list built...
+2012/04/23  11:37:05	---	      .....ix built.....
+2012/04/23  11:37:05	---	      ...built followhash....
+2012/04/23  11:37:05	---	      .....displayList built...
+2012/04/23  11:37:05	---	   Exiting buildDisplayList
+2012/04/23  11:37:21	jmoss	VIEW: draglist
+2012/04/23  11:37:21	jmoss	     Proj 35
+2012/04/23  11:37:21	---	   Entering buildDisplayList
+2012/04/23  11:37:21	---	      ..queries done...
+2012/04/23  11:37:22	---	      ....parent list built...
+2012/04/23  11:37:22	---	      .....ix built.....
+2012/04/23  11:37:22	---	      ...built followhash....
+2012/04/23  11:37:22	---	      .....displayList built...
+2012/04/23  11:37:22	---	   Exiting buildDisplayList
+2012/04/23  11:37:27	jmoss	VIEW: draglist
+2012/04/23  11:37:27	jmoss	     Proj 35
+2012/04/23  11:37:27	---	   Entering buildDisplayList
+2012/04/23  11:37:27	---	      ..queries done...
+2012/04/23  11:37:27	---	      ....parent list built...
+2012/04/23  11:37:27	---	      .....ix built.....
+2012/04/23  11:37:27	---	      ...built followhash....
+2012/04/23  11:37:27	---	      .....displayList built...
+2012/04/23  11:37:27	---	   Exiting buildDisplayList
+2012/04/23  11:37:36	jmoss	VIEW: showchains
+2012/04/23  11:37:36	jmoss	ShowChains: Proj 33======================================
+2012/04/23  11:37:36	jmoss	            Found these un-followed items: [6034L]
+2012/04/23  11:41:37	jmoss	VIEW: draglist
+2012/04/23  11:41:37	jmoss	     Proj 37
+2012/04/23  11:41:37	---	   Entering buildDisplayList
+2012/04/23  11:41:37	---	      ..queries done...
+2012/04/23  11:41:37	---	      ....parent list built...
+2012/04/23  11:41:37	---	      .....ix built.....
+2012/04/23  11:41:37	---	      ...built followhash....
+2012/04/23  11:41:37	---	      .....displayList built...
+2012/04/23  11:41:37	---	   Exiting buildDisplayList
+2012/04/23  11:41:53	jmoss	VIEW: xhr_actions
+2012/04/23  11:41:53	jmoss	<QueryDict: {u'ci': [u'6036'], u'FADpriority': [u'0'], u'FADhtmlBody': [u''], u'FADstatus': [u'0'], u'ti': [u'0'], u'ajaxAction': [u'fastAdd'], u'FADtitle': [u'second item\n']}>
+2012/04/23  11:41:53	jmoss	=====> xhr_actions: =AJAX request, ci=6036  ti=0  ajaxAction: fastAdd
+2012/04/23  11:41:53	---	Last item ID:6036
+2012/04/23  11:41:53	---	VIEW: drag_actions => fastAdd
+2012/04/23  11:41:53	---	fastAdd for 6036  second item
+
+2012/04/23  11:41:53	---	Item has no follower: ID6036
+2012/04/23  11:41:53	---	NEW FA item ID=None
+2012/04/23  11:41:53	---	   fastadded item ID = 6294
+2012/04/23  11:41:53	---	  deco for: 6294
+2012/04/23  11:41:53	---	  deco for: 6036
+2012/04/23  11:41:53	---	lock removed
+2012/04/23  11:41:59	jmoss	VIEW: xhr_actions
+2012/04/23  11:41:59	jmoss	<QueryDict: {u'ci': [u'6294'], u'FADpriority': [u'0'], u'FADhtmlBody': [u''], u'FADstatus': [u'0'], u'ti': [u'0'], u'ajaxAction': [u'fastAdd'], u'FADtitle': [u'third item']}>
+2012/04/23  11:41:59	jmoss	=====> xhr_actions: =AJAX request, ci=6294  ti=0  ajaxAction: fastAdd
+2012/04/23  11:41:59	---	Last item ID:6294
+2012/04/23  11:41:59	---	VIEW: drag_actions => fastAdd
+2012/04/23  11:41:59	---	fastAdd for 6294  third item
+2012/04/23  11:41:59	---	Item has no follower: ID6294
+2012/04/23  11:41:59	---	NEW FA item ID=None
+2012/04/23  11:41:59	---	   fastadded item ID = 6295
+2012/04/23  11:41:59	---	  deco for: 6295
+2012/04/23  11:41:59	---	  deco for: 6294
+2012/04/23  11:41:59	---	  deco for: 6036
+2012/04/23  11:41:59	---	lock removed
+2012/04/23  11:42:02	jmoss	VIEW: draglist
+2012/04/23  11:42:02	jmoss	     Proj 35
+2012/04/23  11:42:02	---	   Entering buildDisplayList
+2012/04/23  11:42:02	---	      ..queries done...
+2012/04/23  11:42:02	---	      ....parent list built...
+2012/04/23  11:42:02	---	      .....ix built.....
+2012/04/23  11:42:02	---	      ...built followhash....
+2012/04/23  11:42:02	---	      .....displayList built...
+2012/04/23  11:42:02	---	   Exiting buildDisplayList
+2012/04/23  11:42:07	jmoss	VIEW: showchains
+2012/04/23  11:42:07	jmoss	ShowChains: Proj 35======================================
+2012/04/23  11:42:07	jmoss	            Found these un-followed items: [6295L]
+2012/04/23  11:42:07	jmoss	            Tables w/dupes removed:[[6036L, 6294L, 6295L]]
+2012/04/23  11:42:32	jmoss	VIEW: showchains
+2012/04/23  11:42:32	jmoss	ShowChains: Proj 37======================================
+2012/04/23  11:42:32	jmoss	            Found these un-followed items: [6038L]
+2012/04/23  11:42:43	jmoss	VIEW: managePage
+2012/04/23  11:42:55	jmoss	VIEW: item import, 56 items, project 37
+2012/04/23  11:42:55	---	Last item ID:6038
+2012/04/23  11:42:55	---	Item has no follower: ID6038
+2012/04/23  11:42:55	---	Last item ID:6296
+2012/04/23  11:42:55	---	Item has no follower: ID6296
+2012/04/23  11:42:55	---	Last item ID:6297
+2012/04/23  11:42:55	---	Item has no follower: ID6297
+2012/04/23  11:42:55	---	Last item ID:6298
+2012/04/23  11:42:55	---	Item has no follower: ID6298
+2012/04/23  11:42:55	---	Last item ID:6299
+2012/04/23  11:42:55	---	Item has no follower: ID6299
+2012/04/23  11:42:56	---	Last item ID:6300
+2012/04/23  11:42:56	---	Item has no follower: ID6300
+2012/04/23  11:42:56	---	Last item ID:6301
+2012/04/23  11:42:56	---	Item has no follower: ID6301
+2012/04/23  11:42:56	---	Last item ID:6302
+2012/04/23  11:42:56	---	Item has no follower: ID6302
+2012/04/23  11:42:56	---	Last item ID:6303
+2012/04/23  11:42:56	---	Item has no follower: ID6303
+2012/04/23  11:42:56	---	Last item ID:6304
+2012/04/23  11:42:56	---	Item has no follower: ID6304
+2012/04/23  11:42:56	---	Last item ID:6305
+2012/04/23  11:42:56	---	Item has no follower: ID6305
+2012/04/23  11:42:56	---	Last item ID:6306
+2012/04/23  11:42:56	---	Item has no follower: ID6306
+2012/04/23  11:42:56	---	Last item ID:6307
+2012/04/23  11:42:56	---	Item has no follower: ID6307
+2012/04/23  11:42:56	---	Last item ID:6308
+2012/04/23  11:42:56	---	Item has no follower: ID6308
+2012/04/23  11:42:56	---	Last item ID:6309
+2012/04/23  11:42:56	---	Item has no follower: ID6309
+2012/04/23  11:42:56	---	Last item ID:6310
+2012/04/23  11:42:56	---	Item has no follower: ID6310
+2012/04/23  11:42:56	---	Last item ID:6311
+2012/04/23  11:42:56	---	Item has no follower: ID6311
+2012/04/23  11:42:56	---	Last item ID:6312
+2012/04/23  11:42:56	---	Item has no follower: ID6312
+2012/04/23  11:42:56	---	Last item ID:6313
+2012/04/23  11:42:57	---	Item has no follower: ID6313
+2012/04/23  11:42:57	---	Last item ID:6314
+2012/04/23  11:42:57	---	Item has no follower: ID6314
+2012/04/23  11:42:57	---	Last item ID:6315
+2012/04/23  11:42:57	---	Item has no follower: ID6315
+2012/04/23  11:42:57	---	Last item ID:6316
+2012/04/23  11:42:57	---	Item has no follower: ID6316
+2012/04/23  11:42:57	---	Last item ID:6317
+2012/04/23  11:42:57	---	Item has no follower: ID6317
+2012/04/23  11:42:57	---	Last item ID:6318
+2012/04/23  11:42:57	---	Item has no follower: ID6318
+2012/04/23  11:42:57	---	Last item ID:6319
+2012/04/23  11:42:57	---	Item has no follower: ID6319
+2012/04/23  11:42:57	---	Last item ID:6320
+2012/04/23  11:42:57	---	Item has no follower: ID6320
+2012/04/23  11:42:57	---	Last item ID:6321
+2012/04/23  11:42:57	---	Item has no follower: ID6321
+2012/04/23  11:42:57	---	Last item ID:6322
+2012/04/23  11:42:57	---	Item has no follower: ID6322
+2012/04/23  11:42:57	---	Last item ID:6323
+2012/04/23  11:42:57	---	Item has no follower: ID6323
+2012/04/23  11:42:57	---	Last item ID:6324
+2012/04/23  11:42:57	jmoss	            Tables w/dupes removed:[[6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L, 6038L]]
+2012/04/23  11:42:57	---	Item has no follower: ID6324
+2012/04/23  11:42:57	---	Last item ID:6325
+2012/04/23  11:42:57	---	Item has no follower: ID6325
+2012/04/23  11:42:57	---	Last item ID:6326
+2012/04/23  11:42:57	---	Item has no follower: ID6326
+2012/04/23  11:42:57	---	Last item ID:6327
+2012/04/23  11:42:57	---	Item has no follower: ID6327
+2012/04/23  11:42:57	---	Last item ID:6328
+2012/04/23  11:42:57	---	Item has no follower: ID6328
+2012/04/23  11:42:57	---	Last item ID:6329
+2012/04/23  11:42:57	---	Item has no follower: ID6329
+2012/04/23  11:42:57	---	Last item ID:6330
+2012/04/23  11:42:57	---	Item has no follower: ID6330
+2012/04/23  11:42:57	---	Last item ID:6331
+2012/04/23  11:42:58	---	Item has no follower: ID6331
+2012/04/23  11:42:58	---	Last item ID:6332
+2012/04/23  11:42:58	---	Item has no follower: ID6332
+2012/04/23  11:42:58	---	Last item ID:6333
+2012/04/23  11:42:58	---	Item has no follower: ID6333
+2012/04/23  11:42:58	---	Last item ID:6334
+2012/04/23  11:42:58	---	Item has no follower: ID6334
+2012/04/23  11:42:58	---	Last item ID:6335
+2012/04/23  11:42:58	---	Item has no follower: ID6335
+2012/04/23  11:42:58	---	Last item ID:6336
+2012/04/23  11:42:58	---	Item has no follower: ID6336
+2012/04/23  11:42:58	---	Last item ID:6337
+2012/04/23  11:42:58	---	Item has no follower: ID6337
+2012/04/23  11:42:58	---	Last item ID:6338
+2012/04/23  11:42:58	---	Item has no follower: ID6338
+2012/04/23  11:42:58	---	Last item ID:6339
+2012/04/23  11:42:58	---	Item has no follower: ID6339
+2012/04/23  11:42:58	---	Last item ID:6340
+2012/04/23  11:42:58	---	Item has no follower: ID6340
+2012/04/23  11:42:58	---	Last item ID:6341
+2012/04/23  11:42:58	---	Item has no follower: ID6341
+2012/04/23  11:42:58	---	Last item ID:6342
+2012/04/23  11:42:58	---	Item has no follower: ID6342
+2012/04/23  11:42:58	---	Last item ID:6343
+2012/04/23  11:42:58	---	Item has no follower: ID6343
+2012/04/23  11:42:58	---	Last item ID:6344
+2012/04/23  11:42:58	---	Item has no follower: ID6344
+2012/04/23  11:42:58	---	Last item ID:6345
+2012/04/23  11:42:58	---	Item has no follower: ID6345
+2012/04/23  11:42:58	---	Last item ID:6346
+2012/04/23  11:42:58	---	Item has no follower: ID6346
+2012/04/23  11:42:58	---	Last item ID:6347
+2012/04/23  11:42:58	---	Item has no follower: ID6347
+2012/04/23  11:42:58	---	Last item ID:6348
+2012/04/23  11:42:58	---	Item has no follower: ID6348
+2012/04/23  11:42:58	---	Last item ID:6349
+2012/04/23  11:42:58	---	Item has no follower: ID6349
+2012/04/23  11:42:58	---	Last item ID:6350
+2012/04/23  11:42:58	---	Item has no follower: ID6350
+2012/04/23  11:43:08	jmoss	VIEW: showchains
+2012/04/23  11:43:08	jmoss	ShowChains: Proj 37======================================
+2012/04/23  11:43:08	jmoss	            Found these un-followed items: [6351L]
+2012/04/23  11:43:10	jmoss	            Tables w/dupes removed:[[6038L, 6296L, 6297L, 6298L, 6299L, 6300L, 6301L, 6302L, 6303L, 6304L, 6305L, 6306L, 6307L, 6308L, 6309L, 6310L, 6311L, 6312L, 6313L, 6314L, 6315L, 6316L, 6317L, 6318L, 6319L, 6320L, 6321L, 6322L, 6323L, 6324L, 6325L, 6326L, 6327L, 6328L, 6329L, 6330L, 6331L, 6332L, 6333L, 6334L, 6335L, 6336L, 6337L, 6338L, 6339L, 6340L, 6341L, 6342L, 6343L, 6344L, 6345L, 6346L, 6347L, 6348L, 6349L, 6350L, 6351L]]
+2012/04/23  11:43:18	jmoss	VIEW: draglist
+2012/04/23  11:43:18	jmoss	     Proj 37
+2012/04/23  11:43:18	---	   Entering buildDisplayList
+2012/04/23  11:43:18	---	      ..queries done...
+2012/04/23  11:43:18	---	      ....parent list built...
+2012/04/23  11:43:18	---	      .....ix built.....
+2012/04/23  11:43:18	---	      ...built followhash....
+2012/04/23  11:43:18	---	      .....displayList built...
+2012/04/23  11:43:18	---	   Exiting buildDisplayList
+2012/04/23  11:43:24	jmoss	VIEW: draglist
+2012/04/23  11:43:24	jmoss	     Proj 41
+2012/04/23  11:43:24	---	   Entering buildDisplayList
+2012/04/23  11:43:24	---	      ..queries done...
+2012/04/23  11:43:24	---	      ....parent list built...
+2012/04/23  11:43:24	---	      .....ix built.....
+2012/04/23  11:43:24	---	      ...built followhash....
+2012/04/23  11:43:24	---	      .....displayList built...
+2012/04/23  11:43:24	---	   Exiting buildDisplayList
+2012/04/23  11:43:31	jmoss	VIEW: xhr_actions
+2012/04/23  11:43:31	jmoss	<QueryDict: {u'ci': [u'6049'], u'FADpriority': [u'0'], u'FADhtmlBody': [u''], u'FADstatus': [u'0'], u'ti': [u'0'], u'ajaxAction': [u'fastAdd'], u'FADtitle': [u'another nice project']}>
+2012/04/23  11:43:31	jmoss	=====> xhr_actions: =AJAX request, ci=6049  ti=0  ajaxAction: fastAdd
+2012/04/23  11:43:31	---	Last item ID:6049
+2012/04/23  11:43:31	---	VIEW: drag_actions => fastAdd
+2012/04/23  11:43:31	---	fastAdd for 6049  another nice project
+2012/04/23  11:43:31	---	Item has no follower: ID6049
+2012/04/23  11:43:31	---	NEW FA item ID=None
+2012/04/23  11:43:31	---	   fastadded item ID = 6352
+2012/04/23  11:43:31	---	  deco for: 6352
+2012/04/23  11:43:31	---	  deco for: 6049
+2012/04/23  11:43:31	---	lock removed
+2012/04/23  11:43:38	jmoss	VIEW: xhr_actions
+2012/04/23  11:43:38	jmoss	<QueryDict: {u'ci': [u'6352'], u'FADpriority': [u'0'], u'FADhtmlBody': [u''], u'FADstatus': [u'0'], u'ti': [u'0'], u'ajaxAction': [u'fastAdd'], u'FADtitle': [u'a final item here']}>
+2012/04/23  11:43:38	jmoss	=====> xhr_actions: =AJAX request, ci=6352  ti=0  ajaxAction: fastAdd
+2012/04/23  11:43:38	---	Last item ID:6352
+2012/04/23  11:43:38	---	VIEW: drag_actions => fastAdd
+2012/04/23  11:43:38	---	fastAdd for 6352  a final item here
+2012/04/23  11:43:38	---	Item has no follower: ID6352
+2012/04/23  11:43:38	---	NEW FA item ID=None
+2012/04/23  11:43:38	---	   fastadded item ID = 6353
+2012/04/23  11:43:38	---	  deco for: 6353
+2012/04/23  11:43:38	---	  deco for: 6352
+2012/04/23  11:43:38	---	  deco for: 6049
+2012/04/23  11:43:38	---	lock removed
+2012/04/23  11:43:45	jmoss	VIEW: showchains
+2012/04/23  11:43:45	jmoss	ShowChains: Proj 41======================================
+2012/04/23  11:43:45	jmoss	            Found these un-followed items: [6353L]
+2012/04/23  11:43:45	jmoss	            Tables w/dupes removed:[[6049L, 6352L, 6353L]]
+2012/04/23  11:43:53	jmoss	VIEW: draglist
+2012/04/23  11:43:53	jmoss	     Proj 45
+2012/04/23  11:43:53	---	   Entering buildDisplayList
+2012/04/23  11:43:53	---	      ..queries done...
+2012/04/23  11:43:53	---	      ....parent list built...
+2012/04/23  11:43:53	---	      .....ix built.....
+2012/04/23  11:43:53	---	      ...built followhash....
+2012/04/23  11:43:53	---	      .....displayList built...
+2012/04/23  11:43:53	---	   Exiting buildDisplayList
+2012/04/23  11:44:01	jmoss	VIEW: xhr_actions
+2012/04/23  11:44:01	jmoss	<QueryDict: {u'ci': [u'6056'], u'FADpriority': [u'0'], u'FADhtmlBody': [u''], u'FADstatus': [u'0'], u'ti': [u'0'], u'ajaxAction': [u'fastAdd'], u'FADtitle': [u'very intersting']}>
+2012/04/23  11:44:01	jmoss	=====> xhr_actions: =AJAX request, ci=6056  ti=0  ajaxAction: fastAdd
+2012/04/23  11:44:01	---	Last item ID:6056
+2012/04/23  11:44:01	---	VIEW: drag_actions => fastAdd
+2012/04/23  11:44:01	---	fastAdd for 6056  very intersting
+2012/04/23  11:44:01	---	Item has no follower: ID6056
+2012/04/23  11:44:01	---	NEW FA item ID=None
+2012/04/23  11:44:01	---	   fastadded item ID = 6354
+2012/04/23  11:44:01	---	  deco for: 6354
+2012/04/23  11:44:01	---	  deco for: 6056
+2012/04/23  11:44:01	---	lock removed
+2012/04/23  11:44:07	jmoss	VIEW: xhr_actions
+2012/04/23  11:44:07	jmoss	<QueryDict: {u'ci': [u'6354'], u'FADpriority': [u'0'], u'FADhtmlBody': [u''], u'FADstatus': [u'0'], u'ti': [u'0'], u'ajaxAction': [u'fastAdd'], u'FADtitle': [u'learn to type!']}>
+2012/04/23  11:44:07	jmoss	=====> xhr_actions: =AJAX request, ci=6354  ti=0  ajaxAction: fastAdd
+2012/04/23  11:44:07	---	Last item ID:6354
+2012/04/23  11:44:07	---	VIEW: drag_actions => fastAdd
+2012/04/23  11:44:07	---	fastAdd for 6354  learn to type!
+2012/04/23  11:44:07	---	Item has no follower: ID6354
+2012/04/23  11:44:07	---	NEW FA item ID=None
+2012/04/23  11:44:07	---	   fastadded item ID = 6355
+2012/04/23  11:44:07	---	  deco for: 6355
+2012/04/23  11:44:07	---	  deco for: 6354
+2012/04/23  11:44:07	---	  deco for: 6056
+2012/04/23  11:44:07	---	lock removed
+2012/04/23  11:44:09	jmoss	VIEW: draglist
+2012/04/23  11:44:09	jmoss	     Proj 43
+2012/04/23  11:44:09	---	   Entering buildDisplayList
+2012/04/23  11:44:09	---	      ..queries done...
+2012/04/23  11:44:09	---	      ....parent list built...
+2012/04/23  11:44:09	---	      .....ix built.....
+2012/04/23  11:44:09	---	      ...built followhash....
+2012/04/23  11:44:09	---	      .....displayList built...
+2012/04/23  11:44:09	---	   Exiting buildDisplayList
+2012/04/23  11:44:15	jmoss	VIEW: xhr_actions
+2012/04/23  11:44:15	jmoss	<QueryDict: {u'ci': [u'6051'], u'FADpriority': [u'0'], u'FADhtmlBody': [u''], u'FADstatus': [u'0'], u'ti': [u'0'], u'ajaxAction': [u'fastAdd'], u'FADtitle': [u'important item']}>
+2012/04/23  11:44:15	jmoss	=====> xhr_actions: =AJAX request, ci=6051  ti=0  ajaxAction: fastAdd
+2012/04/23  11:44:15	---	Last item ID:6051
+2012/04/23  11:44:15	---	VIEW: drag_actions => fastAdd
+2012/04/23  11:44:15	---	fastAdd for 6051  important item
+2012/04/23  11:44:15	---	Item has no follower: ID6051
+2012/04/23  11:44:15	---	NEW FA item ID=None
+2012/04/23  11:44:15	---	   fastadded item ID = 6356
+2012/04/23  11:44:15	---	  deco for: 6356
+2012/04/23  11:44:15	---	  deco for: 6051
+2012/04/23  11:44:15	---	lock removed
+2012/04/23  11:44:21	jmoss	VIEW: xhr_actions
+2012/04/23  11:44:21	jmoss	<QueryDict: {u'ci': [u'6356'], u'FADpriority': [u'0'], u'FADhtmlBody': [u''], u'FADstatus': [u'0'], u'ti': [u'0'], u'ajaxAction': [u'fastAdd'], u'FADtitle': [u'REALLY important item']}>
+2012/04/23  11:44:21	jmoss	=====> xhr_actions: =AJAX request, ci=6356  ti=0  ajaxAction: fastAdd
+2012/04/23  11:44:21	---	Last item ID:6356
+2012/04/23  11:44:21	---	VIEW: drag_actions => fastAdd
+2012/04/23  11:44:21	---	fastAdd for 6356  REALLY important item
+2012/04/23  11:44:21	---	Item has no follower: ID6356
+2012/04/23  11:44:21	---	NEW FA item ID=None
+2012/04/23  11:44:21	---	   fastadded item ID = 6357
+2012/04/23  11:44:21	---	  deco for: 6357
+2012/04/23  11:44:21	---	  deco for: 6356
+2012/04/23  11:44:21	---	  deco for: 6051
+2012/04/23  11:44:21	---	lock removed
+2012/04/23  11:44:25	jmoss	VIEW: draglist
+2012/04/23  11:44:25	jmoss	     Proj 41
+2012/04/23  11:44:25	---	   Entering buildDisplayList
+2012/04/23  11:44:25	---	      ..queries done...
+2012/04/23  11:44:25	---	      ....parent list built...
+2012/04/23  11:44:25	---	      .....ix built.....
+2012/04/23  11:44:25	---	      ...built followhash....
+2012/04/23  11:44:25	---	      .....displayList built...
+2012/04/23  11:44:25	---	   Exiting buildDisplayList
+2012/04/23  11:44:27	jmoss	VIEW: draglist
+2012/04/23  11:44:27	jmoss	     Proj 37
+2012/04/23  11:44:27	---	   Entering buildDisplayList
+2012/04/23  11:44:27	---	      ..queries done...
+2012/04/23  11:44:27	---	      ....parent list built...
+2012/04/23  11:44:28	---	      .....ix built.....
+2012/04/23  11:44:28	---	      ...built followhash....
+2012/04/23  11:44:28	---	      .....displayList built...
+2012/04/23  11:44:28	---	   Exiting buildDisplayList
+2012/04/23  11:44:29	jmoss	VIEW: draglist
+2012/04/23  11:44:29	jmoss	     Proj 41
+2012/04/23  11:44:29	---	   Entering buildDisplayList
+2012/04/23  11:44:29	---	      ..queries done...
+2012/04/23  11:44:29	---	      ....parent list built...
+2012/04/23  11:44:29	---	      .....ix built.....
+2012/04/23  11:44:29	---	      ...built followhash....
+2012/04/23  11:44:29	---	      .....displayList built...
+2012/04/23  11:44:29	---	   Exiting buildDisplayList
+2012/04/23  11:44:30	jmoss	VIEW: draglist
+2012/04/23  11:44:30	jmoss	     Proj 43
+2012/04/23  11:44:30	---	   Entering buildDisplayList
+2012/04/23  11:44:30	---	      ..queries done...
+2012/04/23  11:44:30	---	      ....parent list built...
+2012/04/23  11:44:30	---	      .....ix built.....
+2012/04/23  11:44:30	---	      ...built followhash....
+2012/04/23  11:44:30	---	      .....displayList built...
+2012/04/23  11:44:30	---	   Exiting buildDisplayList
+2012/04/23  11:44:31	jmoss	VIEW: draglist
+2012/04/23  11:44:31	jmoss	     Proj 45
+2012/04/23  11:44:31	---	   Entering buildDisplayList
+2012/04/23  11:44:31	---	      ..queries done...
+2012/04/23  11:44:31	---	      ....parent list built...
+2012/04/23  11:44:31	---	      .....ix built.....
+2012/04/23  11:44:31	---	      ...built followhash....
+2012/04/23  11:44:31	---	      .....displayList built...
+2012/04/23  11:44:31	---	   Exiting buildDisplayList
+2012/04/23  11:44:35	jmoss	VIEW: draglist
+2012/04/23  11:44:35	jmoss	     Proj 39
+2012/04/23  11:44:35	---	   Entering buildDisplayList
+2012/04/23  11:44:35	---	      ..queries done...
+2012/04/23  11:44:35	---	      ....parent list built...
+2012/04/23  11:44:35	---	      .....ix built.....
+2012/04/23  11:44:35	---	      ...built followhash....
+2012/04/23  11:44:35	---	      .....displayList built...
+2012/04/23  11:44:35	---	   Exiting buildDisplayList
+2012/04/23  11:44:43	jmoss	VIEW: xhr_actions
+2012/04/23  11:44:43	jmoss	<QueryDict: {u'ci': [u'6047'], u'FADpriority': [u'0'], u'FADhtmlBody': [u''], u'FADstatus': [u'0'], u'ti': [u'0'], u'ajaxAction': [u'fastAdd'], u'FADtitle': [u'This is a sample project']}>
+2012/04/23  11:44:43	jmoss	=====> xhr_actions: =AJAX request, ci=6047  ti=0  ajaxAction: fastAdd
+2012/04/23  11:44:43	---	Last item ID:6047
+2012/04/23  11:44:43	---	VIEW: drag_actions => fastAdd
+2012/04/23  11:44:43	---	fastAdd for 6047  This is a sample project
+2012/04/23  11:44:43	---	Item has no follower: ID6047
+2012/04/23  11:44:43	---	NEW FA item ID=None
+2012/04/23  11:44:43	---	   fastadded item ID = 6358
+2012/04/23  11:44:43	---	  deco for: 6358
+2012/04/23  11:44:43	---	  deco for: 6047
+2012/04/23  11:44:43	---	lock removed
+2012/04/23  11:44:50	jmoss	VIEW: xhr_actions
+2012/04/23  11:44:50	jmoss	<QueryDict: {u'ci': [u'6358'], u'FADpriority': [u'0'], u'FADhtmlBody': [u''], u'FADstatus': [u'0'], u'ti': [u'0'], u'ajaxAction': [u'fastAdd'], u'FADtitle': [u'it has a few items.']}>
+2012/04/23  11:44:50	jmoss	=====> xhr_actions: =AJAX request, ci=6358  ti=0  ajaxAction: fastAdd
+2012/04/23  11:44:50	---	Last item ID:6358
+2012/04/23  11:44:50	---	VIEW: drag_actions => fastAdd
+2012/04/23  11:44:50	---	fastAdd for 6358  it has a few items.
+2012/04/23  11:44:50	---	Item has no follower: ID6358
+2012/04/23  11:44:50	---	NEW FA item ID=None
+2012/04/23  11:44:50	---	   fastadded item ID = 6359
+2012/04/23  11:44:50	---	  deco for: 6359
+2012/04/23  11:44:50	---	  deco for: 6358
+2012/04/23  11:44:50	---	  deco for: 6047
+2012/04/23  11:44:50	---	lock removed
+2012/04/23  11:44:54	jmoss	VIEW: draglist
+2012/04/23  11:44:54	jmoss	     Proj 33
+2012/04/23  11:44:54	---	   Entering buildDisplayList
+2012/04/23  11:44:54	---	      ..queries done...
+2012/04/23  11:44:54	---	      ....parent list built...
+2012/04/23  11:44:54	---	      .....ix built.....
+2012/04/23  11:44:54	---	      ...built followhash....
+2012/04/23  11:44:54	---	      .....displayList built...
+2012/04/23  11:44:54	---	   Exiting buildDisplayList
+2012/04/23  11:45:01	jmoss	VIEW: xhr_actions
+2012/04/23  11:45:01	jmoss	<QueryDict: {u'ci': [u'6034'], u'FADpriority': [u'0'], u'FADhtmlBody': [u''], u'FADstatus': [u'0'], u'ti': [u'0'], u'ajaxAction': [u'fastAdd'], u'FADtitle': [u'another demo project']}>
+2012/04/23  11:45:01	jmoss	=====> xhr_actions: =AJAX request, ci=6034  ti=0  ajaxAction: fastAdd
+2012/04/23  11:45:01	---	Last item ID:6034
+2012/04/23  11:45:01	---	VIEW: drag_actions => fastAdd
+2012/04/23  11:45:01	---	fastAdd for 6034  another demo project
+2012/04/23  11:45:01	---	Item has no follower: ID6034
+2012/04/23  11:45:01	---	NEW FA item ID=None
+2012/04/23  11:45:01	---	   fastadded item ID = 6360
+2012/04/23  11:45:01	---	  deco for: 6360
+2012/04/23  11:45:01	---	  deco for: 6034
+2012/04/23  11:45:01	---	lock removed
+2012/04/23  11:45:11	jmoss	VIEW: xhr_actions
+2012/04/23  11:45:11	jmoss	<QueryDict: {u'ci': [u'6360'], u'FADpriority': [u'0'], u'FADhtmlBody': [u''], u'FADstatus': [u'0'], u'ti': [u'0'], u'ajaxAction': [u'fastAdd'], u'FADtitle': [u'knit 1, pearl 2']}>
+2012/04/23  11:45:11	jmoss	=====> xhr_actions: =AJAX request, ci=6360  ti=0  ajaxAction: fastAdd
+2012/04/23  11:45:11	---	Last item ID:6360
+2012/04/23  11:45:11	---	VIEW: drag_actions => fastAdd
+2012/04/23  11:45:11	---	fastAdd for 6360  knit 1, pearl 2
+2012/04/23  11:45:11	---	Item has no follower: ID6360
+2012/04/23  11:45:11	---	NEW FA item ID=None
+2012/04/23  11:45:11	---	   fastadded item ID = 6361
+2012/04/23  11:45:11	---	  deco for: 6361
+2012/04/23  11:45:11	---	  deco for: 6360
+2012/04/23  11:45:11	---	  deco for: 6034
+2012/04/23  11:45:11	---	lock removed
+2012/04/23  11:45:18	jmoss	VIEW: xhr_actions
+2012/04/23  11:45:18	jmoss	<QueryDict: {u'ci': [u'6361'], u'FADpriority': [u'0'], u'FADhtmlBody': [u''], u'FADstatus': [u'0'], u'ti': [u'0'], u'ajaxAction': [u'fastAdd'], u'FADtitle': [u'just add water']}>
+2012/04/23  11:45:18	jmoss	=====> xhr_actions: =AJAX request, ci=6361  ti=0  ajaxAction: fastAdd
+2012/04/23  11:45:18	---	Last item ID:6361
+2012/04/23  11:45:18	---	VIEW: drag_actions => fastAdd
+2012/04/23  11:45:18	---	fastAdd for 6361  just add water
+2012/04/23  11:45:18	---	Item has no follower: ID6361
+2012/04/23  11:45:18	---	NEW FA item ID=None
+2012/04/23  11:45:18	---	   fastadded item ID = 6362
+2012/04/23  11:45:18	---	  deco for: 6362
+2012/04/23  11:45:18	---	  deco for: 6361
+2012/04/23  11:45:18	---	  deco for: 6360
+2012/04/23  11:45:18	---	lock removed
+2012/04/23  11:45:20	jmoss	VIEW: draglist
+2012/04/23  11:45:20	jmoss	     Proj 35
+2012/04/23  11:45:20	---	   Entering buildDisplayList
+2012/04/23  11:45:20	---	      ..queries done...
+2012/04/23  11:45:20	---	      ....parent list built...
+2012/04/23  11:45:20	---	      .....ix built.....
+2012/04/23  11:45:20	---	      ...built followhash....
+2012/04/23  11:45:20	---	      .....displayList built...
+2012/04/23  11:45:20	---	   Exiting buildDisplayList
+2012/04/23  11:45:36	jmoss	VIEW: xhr_actions
+2012/04/23  11:45:36	jmoss	<QueryDict: {u'ci': [u'6295'], u'FADpriority': [u'4'], u'FADhtmlBody': [u''], u'FADstatus': [u'8'], u'ti': [u'0'], u'ajaxAction': [u'fastAdd'], u'FADtitle': [u'very nice!']}>
+2012/04/23  11:45:36	jmoss	=====> xhr_actions: =AJAX request, ci=6295  ti=0  ajaxAction: fastAdd
+2012/04/23  11:45:36	---	Last item ID:6295
+2012/04/23  11:45:36	---	VIEW: drag_actions => fastAdd
+2012/04/23  11:45:36	---	fastAdd for 6295  very nice!
+2012/04/23  11:45:36	---	Item has no follower: ID6295
+2012/04/23  11:45:36	---	NEW FA item ID=None
+2012/04/23  11:45:36	---	   fastadded item ID = 6363
+2012/04/23  11:45:36	---	  deco for: 6363
+2012/04/23  11:45:36	---	  deco for: 6295
+2012/04/23  11:45:36	---	  deco for: 6294
+2012/04/23  11:45:37	---	lock removed
+2012/04/23  11:45:47	jmoss	VIEW: showchains
+2012/04/23  11:45:47	jmoss	ShowChains: Proj 45======================================
+2012/04/23  11:45:47	jmoss	            Found these un-followed items: [6355L]
+2012/04/23  11:45:47	jmoss	            Tables w/dupes removed:[[6056L, 6354L, 6355L]]
+2012/04/23  11:45:54	jmoss	VIEW: showchains
+2012/04/23  11:45:54	jmoss	ShowChains: Proj 41======================================
+2012/04/23  11:45:54	jmoss	            Found these un-followed items: [6353L]
+2012/04/23  11:45:54	jmoss	            Tables w/dupes removed:[[6049L, 6352L, 6353L]]
+2012/04/23  11:45:55	jmoss	VIEW: showchains
+2012/04/23  11:45:55	jmoss	ShowChains: Proj 37======================================
+2012/04/23  11:45:55	jmoss	            Found these un-followed items: [6351L]
+2012/04/23  11:45:56	jmoss	VIEW: showchains
+2012/04/23  11:45:56	jmoss	ShowChains: Proj 35======================================
+2012/04/23  11:45:56	jmoss	            Found these un-followed items: [6363L]
+2012/04/23  11:45:56	jmoss	            Tables w/dupes removed:[[6036L, 6294L, 6295L, 6363L]]
+2012/04/23  11:45:57	jmoss	            Tables w/dupes removed:[[6038L, 6296L, 6297L, 6298L, 6299L, 6300L, 6301L, 6302L, 6303L, 6304L, 6305L, 6306L, 6307L, 6308L, 6309L, 6310L, 6311L, 6312L, 6313L, 6314L, 6315L, 6316L, 6317L, 6318L, 6319L, 6320L, 6321L, 6322L, 6323L, 6324L, 6325L, 6326L, 6327L, 6328L, 6329L, 6330L, 6331L, 6332L, 6333L, 6334L, 6335L, 6336L, 6337L, 6338L, 6339L, 6340L, 6341L, 6342L, 6343L, 6344L, 6345L, 6346L, 6347L, 6348L, 6349L, 6350L, 6351L]]
+2012/04/23  11:46:16	jmoss	VIEW: draglist
+2012/04/23  11:46:16	jmoss	     Proj 43
+2012/04/23  11:46:16	---	   Entering buildDisplayList
+2012/04/23  11:46:16	---	      ..queries done...
+2012/04/23  11:46:16	---	      ....parent list built...
+2012/04/23  11:46:16	---	      .....ix built.....
+2012/04/23  11:46:16	---	      ...built followhash....
+2012/04/23  11:46:16	---	      .....displayList built...
+2012/04/23  11:46:16	---	   Exiting buildDisplayList
+2012/04/23  11:46:26	jmoss	VIEW: managePage
+2012/04/23  11:46:28	jmoss	VIEW: createProject
+2012/04/23  11:48:53	jmoss	VIEW: createProject
+2012/04/23  11:49:48	jmoss	VIEW: createProject
+2012/04/23  11:50:22	jmoss	VIEW: createProject
+2012/04/23  11:50:33	jmoss	VIEW: createProject
+2012/04/23  11:51:02	jmoss	VIEW: createProject
+2012/04/23  11:53:01	jmoss	VIEW: createProject
+2012/04/23  11:53:44	jmoss	VIEW: createProject
+2012/04/23  11:54:09	jmoss	VIEW: managePage
+2012/04/23  11:54:14	jmoss	VIEW: createProjectSet
+2012/04/23  11:54:16	jmoss	VIEW: createProjectSet
+2012/04/23  11:57:07	jmoss	VIEW: createProjectSet
+2012/04/23  11:57:23	jmoss	VIEW: createProjectSet
+2012/04/23  11:58:25	jmoss	VIEW: createProjectSet
+2012/04/23  12:02:02	jmoss	VIEW: createProjectSet
+2012/04/23  12:02:07	jmoss	VIEW: draglist
+2012/04/23  12:02:07	jmoss	     Proj 43
+2012/04/23  12:02:07	---	   Entering buildDisplayList
+2012/04/23  12:02:07	---	      ..queries done...
+2012/04/23  12:02:07	---	      ....parent list built...
+2012/04/23  12:02:07	---	      .....ix built.....
+2012/04/23  12:02:07	---	      ...built followhash....
+2012/04/23  12:02:07	---	      .....displayList built...
+2012/04/23  12:02:07	---	   Exiting buildDisplayList
+2012/04/23  12:02:34	jmoss	VIEW: createProjectSet
+2012/04/23  12:02:40	jmoss	VIEW: managePage
+2012/04/23  12:02:43	jmoss	VIEW: createProject
+2012/04/23  12:03:45	jmoss	VIEW: createProject
+2012/04/23  12:04:08	jmoss	VIEW: createProject
+2012/04/23  12:04:28	jmoss	VIEW: createProject
+2012/04/23  12:04:40	jmoss	VIEW: createProjectSet
+2012/04/23  12:04:43	jmoss	VIEW: managePage
+2012/04/23  12:04:50	jmoss	VIEW: createProject
+2012/04/23  12:05:18	djangosuper	VIEW: homepage
+2012/04/23  12:05:20	djangosuper	VIEW: maintPage
+2012/04/23  12:05:57	djangosuper	VIEW: maintPage
+2012/04/23  12:07:15	djangosuper	VIEW: maintPage

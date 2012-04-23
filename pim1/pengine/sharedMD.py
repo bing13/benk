@@ -12,6 +12,25 @@ import datetime, os
 LOGFILE = '/home/bhadmin13/dx.bernardhecker.com/pim1/benklog1.log'
 LOCKFILEDIR = '/home/bhadmin13/dx.bernardhecker.com/pim1/locks/'
 
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# validate_maint_membership
+
+def validate_maint_membership(user):
+    ### I have no idea where "user" is defined
+    ### nor why I don't seem to be able to pass normal parameters to this function
+    ### (although it is referenced from a decorator )
+    
+    groupx = 'maint user';
+    if user.is_authenticated() and ( (user.groups.filter(name=groupx).count() > 0 or user.is_superuser)):
+        isMaintUser = True
+    else:
+        isMaintUser = False
+        user.message_set.create (message="You do not have permission to access that page.")
+        
+    return isMaintUser
+        
+
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # validate_project
 

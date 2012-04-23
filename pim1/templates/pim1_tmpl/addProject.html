@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<div class="homecontent">
+<div class="maintcontent">
 
 
   <h3>add a project</h3>
@@ -21,31 +21,14 @@
     <input type="submit" value="Submit" />
 
 
+ 
+  <p>For project background color, enter a valid hex color or color name. See <a href="http://www.w3schools.com/html/html_colornames.asp">this guide</a>.</p>
+
     </form>
     </div>
 
-    <div class="addProjList backUpFileList">
-      <h4>projects</h4>
-    <table >
-    <tr><th>id</th><th>name</th><th>set</th><th>color</th><th>integrity check</th></tr>
-    {% for cx in current_projs %}
 
-    <tr><td>{{ cx.id }}</td><td> {{cx.name}}</td><td> {{cx.set}}</td>
-    <td style="background:{{ cx.color }};"> {{cx.color}}</td>
-      <td><a href="/pim1/showchains/{{ cx.id }}/">integrity check</a></td>
-    </tr>
-
-    {% endfor %}
-
-
-
-    </table>
-
-    </div>
-
-
-
-
+    {% include "pim1_tmpl/project_table_incl.html" %}
 
 </div>
 

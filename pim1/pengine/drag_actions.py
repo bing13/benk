@@ -771,8 +771,13 @@ class dragOps():
         newItem = Item(title=FADtitle,priority=FADpriority, status=FADstatus, \
                        follows=clickedItem.id, \
                        HTMLnoteBody=FADhtmlBody )
-        newItem.project = clickedItem.project
+
+
         newItem.owner = clickedItem.project.owner
+        
+        newItem.project = clickedItem.project
+
+        
         sharedMD.logThis('---', "NEW FA item ID=" + str(newItem.id))
 
 

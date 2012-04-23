@@ -10,7 +10,7 @@ from django.template import Context, loader
 from django.shortcuts import render_to_response
 from django.core.context_processors import csrf
 from django.views.decorators.csrf import csrf_protect
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, user_passes_test
 from django.contrib.auth.views import login, logout
 from django.template import RequestContext
 
@@ -54,8 +54,8 @@ class ssearchForm(forms.Form):
     searchfx=forms.CharField(max_length=200)
 
 class addProjectSetForm(forms.Form):
-    newProjectSetName =  forms.CharField(max_length = 120)
-    newProjectSetColor = forms.CharField(max_length = 8)
+    newProjectSetName =  forms.CharField(max_length = 120, label = "project set name")
+    newProjectSetColor = forms.CharField(max_length = 8, label = "background color")
     ##newProjectSetOwner = forms.CharField(max_length = 30)
 
 class UploadFileForm(forms.Form):
@@ -123,7 +123,7 @@ def allMyChildren(targetID, resultList):
     return(resultList)    
 
 ##################################################################
-
+@login_required 
 def hoistItem(request,pItem):
     ## hoistList takes a target item ID
     ## and builds an array of all of its children
@@ -138,11 +138,14 @@ def hoistItem(request,pItem):
     current_sets = ProjectSet.objects.filter(owner = request.user.username)
 
     hoistProj=Item.objects.get(pk=hoistID).project_id 
-
     projObj = Project.objects.get(pk=hoistProj)
 
-    titleCrumbBlurb = str(hoistProj)+':'+projObj.name+"   ("+projObj.set.name+")"
+    if projObj.owner != request.user.username:
+        request.user.message_set.create (message="You do not have permission to access that resource.")
+        return HttpResponseRedirect('/pim1/') 
 
+
+    titleCrumbBlurb = str(hoistProj)+':'+projObj.name+"   ("+projObj.set.name+")"
 
     
     displayList=buildDisplayList(current_projs, hoistProj, 'follows', hoistID,[])
@@ -307,7 +310,7 @@ def buildDisplayList(projectx, projID, ordering, hoistID, useListIDs):
 
 ##################################################################
 
-
+@login_required
 def actionItem(request, pItem, action):
     #sharedMD.logThis(request.user.username,  "item "+ pItem + " to " + action);
     #sharedMD.logThis(request.user.username,  "actionItem request:" + str(request))
@@ -321,7 +324,6 @@ def actionItem(request, pItem, action):
         ajaxRequest = False
     current_projs = Project.objects.filter(projType=1).filter(owner = request.user.username).order_by('name')
     current_sets = ProjectSet.objects.filter(owner = request.user.username)
-
     
     clickedItem = Item.objects.get(pk=pItem)
     clickedProjNum=clickedItem.project.id
@@ -332,6 +334,15 @@ def actionItem(request, pItem, action):
     #assigning project [many to many]...convoluted?.... 
     projIDc=clickedItem.project.id
     projObjc=Project.objects.get(pk=projIDc)
+
+
+    ### SECURITY - permission check
+
+    if projObjc.owner != request.user.username:
+        request.user.message_set.create (message="You do not have permission to access that resource.")
+        sharedMD.logThis("Permission denied, not the owner.")
+        return HttpResponseRedirect('/pim1/') 
+
 
 
     ### ADD ###################################################################
@@ -577,7 +588,7 @@ def actionItem(request, pItem, action):
         return (clickedItem.id)
 
 
-#####################################################(end of actionItem)########
+    ##############################################(end of actionItem)########
 
 @login_required
 def psd(request,pSort,targetProject):
@@ -589,11 +600,12 @@ def psd(request,pSort,targetProject):
     request.session['viewmode'] = 'psd'
 
 
+    ### SECURITY - permission check
     targProjObj = Project.objects.get(pk=targetProject)
 
     if targProjObj.owner != request.user.username:
-        
-        return HttpResponseRedirect('/pim1/homepage/') 
+        request.user.message_set.create (message="You do not have permission to access that resource.")
+        return HttpResponseRedirect('/pim1/') 
 
     
     if pSort=='goo_date': pSort='date_gootask_display'
@@ -611,7 +623,7 @@ def psd(request,pSort,targetProject):
     return render_to_response("pim1_tmpl/items/psd.html", {
         'current_items':displayList,
         'current_projs':current_projs,
-        'current_sets':current_sets,
+        'current_sets':current_sets, 
         'targetProject':targetProject,
         'pSort':pSort,
         'titleCrumbBlurb':titleCrumbBlurb,
@@ -674,10 +686,13 @@ def gridview(request):
 ##################################################################
 @login_required
 def detailItem(request,pItem):
+    # shows a full screen view of one item, non-editable
+    
     sharedMD.logThis(request.user.username, "VIEW: detailItem")
 
     current_projs = Project.objects.filter(projType=1).filter(owner = request.user.username).order_by('name')
     current_sets = ProjectSet.objects.filter(owner = request.user.username)
+
 
     ix=Item.objects.get(pk=pItem)
     #get project to where it can be displayed; was project_s
@@ -685,6 +700,14 @@ def detailItem(request,pItem):
 
     projObj = Project.objects.get(pk=ix.project.id)
 
+
+    ### SECURITY - permission check
+
+    if projObj.owner != request.user.username:
+        request.user.message_set.create (message="You do not have permission to access that resource.")
+        return HttpResponseRedirect('/pim1/') 
+
+    
     titleCrumbBlurb = str(ix.project.id)+':'+projObj.name+"   ("+projObj.set.name+")"
 
 
@@ -860,6 +883,16 @@ def addItem(request, pItem):
     sharedMD.logThis(request.user.username, "VIEW: addItem")
 
     clickedItem=Item.objects.get(pk=pItem)
+
+    ### SECURITY - permission check
+    targProjObj = Project.objects.get(pk=clickedItem.project_id)
+
+    if targProjObj.owner != request.user.username:
+        request.user.message_set.create (message="You do not have permission to access that resource.")
+        return HttpResponseRedirect('/pim1/') 
+
+
+    
     lastItemID=sharedMD.getLastItemID(clickedItem.project_id)
     newItem=DRAGACTIONS.addItem(clickedItem, lastItemID)
     sharedMD.logThis(request.user.username, 'edit new item: ' + str(newItem.id))
@@ -877,6 +910,7 @@ def editItem(request, pItem):
     ### AUTH CHECK
     if projectOwner != request.user.username:
         sharedMD.logThis(request.user.username, "WARNING: attempt to edit item #" + str(pItem) + "in project " + projectName + ".  Not owned by this user!")
+        request.user.message_set.create (message="You do not have permission to access that resource.")
         return HttpResponseRedirect('/pim1/') 
 
 
@@ -932,6 +966,8 @@ def editItem(request, pItem):
                                      
 ############################################################################
 @login_required
+@user_passes_test(sharedMD.validate_maint_membership,login_url='/pim1/')
+
 def importfile(request):
     sharedMD.logThis(request.user.username, "VIEW: importfile")
 
@@ -1163,6 +1199,7 @@ def draglist(request, proj_id):
 
     if request.user.username != Project.objects.get(id=proj_id).owner:
         sharedMD.logThis(request.user.username, "      Invalid user for this project, aborting.")
+        request.user.message_set.create (message="You do not have permission to access that resource.")
         return HttpResponseRedirect('/pim1/') 
     
 
@@ -1238,15 +1275,23 @@ def xhr_actions(request):
     lockStatus = sharedMD.testLock(request.user.username)
 
     if lockStatus != 'no lock':
-        sharedMD.logThis(request.user.username, "         ==> Lock exists:" + str(lockStatus))
+        sharedMD.logThis(request.user.username, "         ==> LOCK FILE exists:" + str(lockStatus))
         
         lockInfo=simplejson.dumps(['LOCKED']+[lockStatus])
         return HttpResponse(lockInfo, mimetype=mimetypex)
     
-
+    
 
     ## dragmove should also get refactored to the external library
     clickedItem=Item.objects.get(pk=actionRequest['ci'])
+
+
+    ## security - PERMISSION CHECK
+    if clickedItem.project.owner != request.user.username:
+        request.user.message_set.create (message="You do not have permission to access that resource.")
+        return HttpResponseRedirect('/pim1/') 
+
+
 
     ## set lock
     sharedMD.createLock(request.user.username, actionRequest['ajaxAction']+"  Proj:"+str(clickedItem.project_id)+" ci:"+str(clickedItem.id) +"  ti:"+ str(actionRequest['ti']) )
@@ -1344,6 +1389,11 @@ def drag_move(request, CIid, TIid):
         sharedMD.logThis(request.user.username, '    updating:'+str(updateThese))
         return(updateThese) 
 
+    if CI.owner != request.user.username:
+        sharedMD.logThis(request.user.username, '== WARNING: drag_move of item not belonging to this user.')
+        #request.user.message_set.create (message="You don't own that item.")
+        updateThese = DRAGACTIONS.updateIDsDecorate([CI.id, TI.id])
+        return(updateThese) 
  
     lastItemID=sharedMD.getLastItemID(CI.project_id)
 
@@ -1443,6 +1493,7 @@ def returnMarker(Itemx):
         return("&bull;")
 #############################################################################
 
+@login_required 
 def uploadItems(request):
     current_projs = Project.objects.filter(projType=1).filter(owner = request.user.username).order_by('name')
     current_sets = ProjectSet.objects.filter(owner = request.user.username)
@@ -1462,6 +1513,15 @@ def uploadItems(request):
             
             projectID = form.cleaned_data['projectID']
             sharedMD.logThis(request.user.username,"VIEW: item import, "+str(len(allLines))+" items, project "+str(projectID));            
+
+
+            ### SECURITY - permission check
+            targProjObj = Project.objects.get(pk=projectID)
+
+            if targProjObj.owner != request.user.username:
+                request.user.message_set.create (message="You do not have permission to upload to that project.")
+                return HttpResponseRedirect('/pim1/uploaditems/') 
+
  
             isBinary = False
             for lx in allLines:
@@ -1470,14 +1530,15 @@ def uploadItems(request):
 
             ## subvert the data to deliver warning messages
             if isBinary:
-
-                warning = 'WARNING! You attempted to upload binary data. Please upload only simple text files. File: ' + uploadedFileName 
+                request.user.message_set.create (message='WARNING! You attempted to upload binary data. Please upload only simple text files. File: ' + uploadedFileName )
                 sharedMD.logThis(request.user.username,'WARNING! Attempt to load binary file. File: ' + uploadedFileName +'  project: '+str(projectID));                     
-
+                return HttpResponseRedirect('/pim1/uploaditems')
+            
                 ## 50 items is about 2k, min
             elif uploadedFileSize > 30000:
-                warning = 'WARNING! You attempted to upload a file that was too damn big! Try something less ambitious, please.  File: ' + uploadedFileName 
-                sharedMD.logThis(request.user.username,' WARNING! Attempt to load large file. File: ' + uploadedFileName +'  project: '+str(projectID));      
+                request.user.message_set.create (message='WARNING! You attempted to upload a file that was too damn big! Try something less ambitious, please.  File: ' + uploadedFileName )
+                sharedMD.logThis(request.user.username,' WARNING! Attempt to load large file. File: ' + uploadedFileName +'  project: '+str(projectID));
+                return HttpResponseRedirect('/pim1/uploaditems')
             else:
 
                 for thisItemTitle in allLines:
@@ -1488,6 +1549,7 @@ def uploadItems(request):
                     newItem.title = thisItemTitle
                     newItem.parent='0'
                     newItem.indentLevel='0'
+                    newItem.owner = request.user.username
                     newItem.save()
 
             #return HttpResponseRedirect('/pim1/uploaditems')
@@ -1509,7 +1571,7 @@ def uploadItems(request):
 
 
 #############################################################################
-    
+@login_required    
 def csvDownload(request, projectID):
               
     sharedMD.logThis(request.user.username, ' csvDownload ==> project:'+ str(projectID))
@@ -1518,6 +1580,11 @@ def csvDownload(request, projectID):
     pnum="%04d" % int(projectID)
     suggestedFilename="P"+pnum+'-'+fhandle+'-'+datetime.datetime.now().strftime("%Y%m%d_%H%M%S")+'.csv'
 
+    targProjObj = Project.objects.get(pk=projectID)
+
+    if targProjObj.owner != request.user.username:
+        request.user.message_set.create (message="You do not have permission to access that resource.")
+        return HttpResponseRedirect('/pim1/') 
     
     #see: https://docs.djangoproject.com/en/1.2/howto/outputting-csv/
     
@@ -1547,6 +1614,9 @@ def csvDownload(request, projectID):
     return response
 
 #############################################################################
+@login_required
+@user_passes_test(sharedMD.validate_maint_membership,login_url='/pim1/')
+
 def backupdata(request):
     sharedMD.logThis(request.user.username, "VIEW: backupdata")
     
@@ -1639,6 +1709,8 @@ def backupdata(request):
 
 #############################################################################
 @login_required
+@user_passes_test(sharedMD.validate_maint_membership,login_url='/pim1/')
+
 def healthcheck(request, proj_id):
     sharedMD.logThis(request.user.username, "VIEW: healthcheck")
 
@@ -1675,10 +1747,10 @@ def createProject(request):
     sharedMD.logThis(request.user.username, "VIEW: createProject")
 
     class addProjectForm(forms.Form):
-        newProjectName =  forms.CharField(max_length = 120)
-        newProjectColor = forms.CharField(max_length = 8)
+        newProjectName =  forms.CharField(max_length = 120, label = "project name")
+        newProjectColor = forms.CharField(max_length = 8, label = "background color")
         #newProjectOwner = forms.CharField(max_length = 30)
-        newProjProjectSet = forms.ModelChoiceField(queryset = ProjectSet.objects.filter(owner = request.user.username ))
+        newProjProjectSet = forms.ModelChoiceField(queryset = ProjectSet.objects.filter(owner = request.user.username ), label = "project set")
         ## was ....objects.all()
         #newProjProjectSetOwner = forms.CharField(max_length = 30)
 
@@ -1791,6 +1863,8 @@ def createProjectSet(request):
 
 ######################################################################
 @login_required
+@user_passes_test(sharedMD.validate_maint_membership,login_url='/pim1/')
+
 def maintPage(request, pLockRequest):
     sharedMD.logThis(request.user.username, "VIEW: maintPage")
     

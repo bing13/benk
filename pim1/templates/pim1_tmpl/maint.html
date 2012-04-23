@@ -5,12 +5,14 @@
 <div class="maintcontent">
 
 
+
+<div class="maintLinks">
+
+
 <h3>maint</h3>
 
 <p>various and sundry maintenance features</p>
 
-
-<div class="maintLinks">
 
 <ul>
 	     <li><a href="/pim1/addproject/">add project</a> </li>
@@ -40,21 +42,9 @@
 
 </div>
 
-<div class="addProjList backUpFileList">
-
-<table >
-
-{% for cx in current_projs %}
-
-<tr><td>{{ cx.id }}</td><td> {{cx.name}}</td><td> {{cx.set}}</td><td  style="background:{{ cx.color }};">{{cx.color}}</td><td><a href="/pim1/showchains/{{ cx.id }}/">sc</a></td></tr>
-
-{% endfor %}
 
 
-
-</table>
-
-</div>
+    {% include "pim1_tmpl/project_table_incl.html" %}
 
 
 <div class="maintLogLines">

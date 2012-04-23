@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<div class="homecontent">
+<div class="maintcontent">
 
 
   <h3>add a project set</h3>
@@ -19,26 +19,14 @@
     </table>
     <input type="submit" value="Submit" />
 
+  <p>For project background color, enter a valid hex color or color name. See <a href="http://www.w3schools.com/html/html_colornames.asp">this guide</a>.</p>
 
     </form>
     </div>
 
-    <div class="addProjList backUpFileList">
-
-    <h4>project sets</h4>
-    <table >
-    <tr><th>id</th><th>name</th><th>color</th></tr>
-    {% for cs in current_sets %}
-
-    <tr><td>{{ cs.id }}</td><td> {{cs.name}}</td><td style="background:{{ cs.color }};"> {{cs.color}}</td></tr>
-
-    {% endfor %}
 
 
-
-    </table>
-    </div>
-
+    {% include "pim1_tmpl/project_table_incl.html" %}
 
 
 </div>

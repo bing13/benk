@@ -18,7 +18,7 @@ urlpatterns = patterns('',
     url(r'^pim1/$','pim1.pengine.views.homepage'),
     url(r'^pim1/index.html','pim1.pengine.views.homepage'),
     url(r'^$', 'pim1.pengine.views.homepage'),
-    url(r'^pim1/list-items/$','pim1.pengine.views.itemlist',{'proj_id':'0'}),
+    #url(r'^pim1/list-items/$','pim1.pengine.views.itemlist',{'proj_id':'0'}),
     url(r'^pim1/drag/(?P<proj_id>\d+)/$','pim1.pengine.views.draglist'),                       
     url(r'^pim1/grid-view/$','pim1.pengine.views.gridview'),
     url(r'^pim1/list-items/hoist/(?P<pItem>\d+)/$','pim1.pengine.views.hoistItem'),
@@ -26,7 +26,7 @@ urlpatterns = patterns('',
     url(r'^pim1/psd/(?P<pSort>\w+)/(?P<targetProject>\w+)/$','pim1.pengine.views.psd'),
 
     ## see https://docs.djangoproject.com/en/1.3/intro/tutorial03/#design-your-urls               
-    url(r'^pim1/projdetail/(?P<proj_id>\d+)/$','pim1.pengine.views.itemlist'),       
+    #url(r'^pim1/projdetail/(?P<proj_id>\d+)/$','pim1.pengine.views.itemlist'),       
 
     url(r'^pim1/item/detail/(?P<pItem>\d+)/$','pim1.pengine.views.detailItem'),
     url(r'^pim1/item/edititem/(?P<pItem>\d+)/$','pim1.pengine.views.editItem'),

@@ -118,12 +118,18 @@
 
   <div id="messageLine">
     <span class="dj_error">
-    {% if error_message %}<strong>{{ error_message }}</strong>{% endif %}
+    {% if error_message %}{{ error_message }} {% endif %}
+    {% if messages %}  
+
+        {% for mx in  messages %} {{ mx }} {% endfor %}
+
+    {% endif %}
     </span>    
 
     <span class="selected_item_msg">&nbsp;</span>
     <span class="xhr_lock_error">&nbsp;</span> 
     <span class="user_data">{{ user.username }} ({{ user.first_name }} {{ user.last_name }})</span>
+
 
   </div>
 

@@ -1,0 +1,20 @@
+    <div class="addProjList backUpFileList">
+      <h4>projects</h4>
+    <table >
+    <tr><th>id</th><th>name</th><th>set</th><th>color</th><th>integrity check</th></tr>
+    {% for cx in current_projs %}
+
+    <tr><td>{{ cx.id }}</td><td> {{cx.name}}</td><td> {{cx.set}}</td>
+    <td style="background:{{ cx.color }};"> {{cx.color}}</td>
+      <td><a href="/pim1/showchains/{{ cx.id }}/">integrity check</a></td>
+    </tr>
+
+    {% endfor %}
+
+
+
+    </table>
+
+
+    </div>
+
