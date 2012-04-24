@@ -1,9 +1,14 @@
 from django.conf.urls.defaults import *
 # was ...patterns, include, url (instead of *)
 
+from django.views.generic.simple import direct_to_template
+
+
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 admin.autodiscover()
+
+
 
 urlpatterns = patterns('',
     # Examples:
@@ -51,8 +56,12 @@ urlpatterns = patterns('',
     url(r'^pim1/showchains/(?P<proj_id>\d+)/$','pim1.pengine.views.showChains'),
     url(r'^pim1/repairchain/(?P<proj_id>\d+)/$','pim1.pengine.views.repairChain'),                       
                        
-    url(r'^pim1/addproject/$','pim1.pengine.views.createProject'),
-    url(r'^pim1/addprojectset/$','pim1.pengine.views.createProjectSet'),                       
+    url(r'^pim1/addproject/$','pim1.pengine.views.createOrEditProject',{'projID':0}),
+    url(r'^pim1/editproject/(?P<projID>\d+)/$','pim1.pengine.views.createOrEditProject'),
+
+
+    url(r'^pim1/addprojectset/$','pim1.pengine.views.createOrEditProjectSet',{'projsetID':0}),
+    url(r'^pim1/editprojectset/(?P<projsetID>\d+)/$','pim1.pengine.views.createOrEditProjectSet'),
 
     url(r'^pim1/maint/(?P<pLockRequest>\w+)/$','pim1.pengine.views.maintPage'),
     url(r'^pim1/maint/$','pim1.pengine.views.maintPage',{'pLockRequest':'no'}),
@@ -65,6 +74,7 @@ urlpatterns = patterns('',
 
     url(r'^accounts/login/$', 'django.contrib.auth.views.login', {'template_name': 'pim1_tmpl/login.html'}),
     url(r'^accounts/logout/$', 'django.contrib.auth.views.logout', {'template_name': 'pim1_tmpl/logout.html'}),
+    url(r'^accounts/profile/$',  'pim1.pengine.views.profilePage',  ) , 
     url(r'^pim1/uploaditems/$','pim1.pengine.views.uploadItems'),
     url(r'^pim1/help/(?P<helpSection>\w+)/$','pim1.pengine.views.help'),
     url(r'^pim1/help/$','pim1.pengine.views.help',{ 'helpSection':''}),                       

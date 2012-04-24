@@ -1,0 +1,18 @@
+{% extends "pim1_tmpl/pim1_base.html" %}
+
+{% block content %}
+
+<div class="maintcontent">
+
+
+  <h3>welcome, {{ user.first_name }}.</h3>
+
+
+
+
+    {% include "pim1_tmpl/project_table_incl.html" %}
+
+</div>
+
+{% endblock %}
+ 

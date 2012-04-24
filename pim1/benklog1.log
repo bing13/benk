@@ -16136,3 +16136,934 @@ and 5th item is here.
 2012/04/23  12:05:20	djangosuper	VIEW: maintPage
 2012/04/23  12:05:57	djangosuper	VIEW: maintPage
 2012/04/23  12:07:15	djangosuper	VIEW: maintPage
+2012/04/23  12:29:38	djangosuper	VIEW: xhr_actions
+2012/04/23  12:29:38	djangosuper	<QueryDict: {u'ci': [u'5833'], u'FADpriority': [u'0'], u'FADhtmlBody': [u''], u'FADstatus': [u'0'], u'ti': [u'0'], u'ajaxAction': [u'fastAdd'], u'FADtitle': [u'prevent showchain when < 3 items in project']}>
+2012/04/23  12:29:38	djangosuper	=====> xhr_actions: =AJAX request, ci=5833  ti=0  ajaxAction: fastAdd
+2012/04/23  12:29:38	---	Last item ID:4574
+2012/04/23  12:29:38	---	VIEW: drag_actions => fastAdd
+2012/04/23  12:29:38	---	fastAdd for 5833  prevent showchain when < 3 items in project
+2012/04/23  12:29:38	---	NEW FA item ID=None
+2012/04/23  12:29:39	---	   fastadded item ID = 6364
+2012/04/23  12:29:39	---	  deco for: 6364
+2012/04/23  12:29:39	---	  deco for: 5833
+2012/04/23  12:29:39	---	  deco for: 6054
+2012/04/23  12:29:39	---	  deco for: 6164
+2012/04/23  12:29:39	---	lock removed
+2012/04/23  12:29:54	djangosuper	VIEW: xhr_actions
+2012/04/23  12:29:54	djangosuper	<QueryDict: {u'ci': [u'6233'], u'ajaxAction': [u'archiveThisItem'], u'ti': [u'0']}>
+2012/04/23  12:29:54	djangosuper	=====> xhr_actions: =AJAX request, ci=6233  ti=0  ajaxAction: archiveThisItem
+2012/04/23  12:29:54	---	Last item ID:4574
+2012/04/23  12:29:54	---	sMDflk=> findLastKid lastKid=0
+2012/04/23  12:29:54	---	Last item ID:6232
+2012/04/23  12:29:55	---	  deco for: 6081
+2012/04/23  12:29:55	---	  deco for: 6081
+2012/04/23  12:29:55	---	  deco for: 5954
+2012/04/23  12:29:55	---	==> archivePair moved item 6233  to proj: 15
+2012/04/23  12:29:55	---	lock removed
+2012/04/23  12:30:01	djangosuper	VIEW: xhr_actions
+2012/04/23  12:30:01	djangosuper	<QueryDict: {u'ci': [u'6234'], u'datax': [u'2'], u'ajaxAction': [u'prioritySelected'], u'ti': [u'0']}>
+2012/04/23  12:30:01	djangosuper	=====> xhr_actions: =AJAX request, ci=6234  ti=0  ajaxAction: prioritySelected
+2012/04/23  12:30:01	---	Last item ID:4574
+2012/04/23  12:30:01	---	  deco for: 6234
+2012/04/23  12:30:01	---	lock removed
+2012/04/23  12:30:04	djangosuper	VIEW: xhr_actions
+2012/04/23  12:30:04	djangosuper	<QueryDict: {u'ci': [u'6081'], u'datax': [u'3'], u'ajaxAction': [u'prioritySelected'], u'ti': [u'0']}>
+2012/04/23  12:30:04	djangosuper	=====> xhr_actions: =AJAX request, ci=6081  ti=0  ajaxAction: prioritySelected
+2012/04/23  12:30:04	---	Last item ID:4574
+2012/04/23  12:30:04	---	  deco for: 6081
+2012/04/23  12:30:04	---	lock removed
+2012/04/23  12:30:14	djangosuper	VIEW: xhr_actions
+2012/04/23  12:30:14	djangosuper	<QueryDict: {u'ci': [u'6087'], u'datax': [u'2'], u'ajaxAction': [u'prioritySelected'], u'ti': [u'0']}>
+2012/04/23  12:30:14	djangosuper	=====> xhr_actions: =AJAX request, ci=6087  ti=0  ajaxAction: prioritySelected
+2012/04/23  12:30:14	---	Last item ID:4574
+2012/04/23  12:30:14	---	  deco for: 6087
+2012/04/23  12:30:14	---	lock removed
+2012/04/23  12:30:17	djangosuper	VIEW: xhr_actions
+2012/04/23  12:30:17	djangosuper	<QueryDict: {u'ci': [u'6087'], u'datax': [u'2'], u'ajaxAction': [u'statusSelected'], u'ti': [u'0']}>
+2012/04/23  12:30:17	djangosuper	=====> xhr_actions: =AJAX request, ci=6087  ti=0  ajaxAction: statusSelected
+2012/04/23  12:30:17	---	Last item ID:4574
+2012/04/23  12:30:17	---	  deco for: 6087
+2012/04/23  12:30:17	---	lock removed
+2012/04/23  12:30:25	djangosuper	VIEW: xhr_actions
+2012/04/23  12:30:25	djangosuper	<QueryDict: {u'ci': [u'6063'], u'datax': [u'2'], u'ajaxAction': [u'prioritySelected'], u'ti': [u'0']}>
+2012/04/23  12:30:25	djangosuper	=====> xhr_actions: =AJAX request, ci=6063  ti=0  ajaxAction: prioritySelected
+2012/04/23  12:30:25	---	Last item ID:4574
+2012/04/23  12:30:25	---	  deco for: 6063
+2012/04/23  12:30:25	---	lock removed
+2012/04/23  12:30:26	djangosuper	VIEW: xhr_actions
+2012/04/23  12:30:26	djangosuper	<QueryDict: {u'ci': [u'6063'], u'datax': [u'2'], u'ajaxAction': [u'statusSelected'], u'ti': [u'0']}>
+2012/04/23  12:30:26	djangosuper	=====> xhr_actions: =AJAX request, ci=6063  ti=0  ajaxAction: statusSelected
+2012/04/23  12:30:26	---	Last item ID:4574
+2012/04/23  12:30:26	---	  deco for: 6063
+2012/04/23  12:30:26	---	lock removed
+2012/04/23  15:15:10	jmoss	VIEW: today
+2012/04/23  15:15:10	---	   Entering buildDisplayList
+2012/04/23  15:15:10	---	      ..queries done...
+2012/04/23  15:15:11	---	      ....parent list built...
+2012/04/23  15:15:11	---	      .....ix built.....
+2012/04/23  15:15:11	---	   Exiting buildDisplayList
+2012/04/23  15:16:29	djangosuper	VIEW: today
+2012/04/23  15:16:29	---	   Entering buildDisplayList
+2012/04/23  15:16:29	---	      ..queries done...
+2012/04/23  15:16:29	---	      ....parent list built...
+2012/04/23  15:16:29	---	      .....ix built.....
+2012/04/23  15:16:29	---	   Exiting buildDisplayList
+2012/04/23  15:16:33	djangosuper	VIEW: draglist
+2012/04/23  15:16:33	djangosuper	     Proj 5
+2012/04/23  15:16:33	---	   Entering buildDisplayList
+2012/04/23  15:16:33	---	      ..queries done...
+2012/04/23  15:16:33	---	      ....parent list built...
+2012/04/23  15:16:33	---	      .....ix built.....
+2012/04/23  15:16:33	---	      ...built followhash....
+2012/04/23  15:16:33	---	      .....displayList built...
+2012/04/23  15:16:33	---	   Exiting buildDisplayList
+2012/04/23  15:16:51		VIEW: homepage
+2012/04/23  15:17:15	djangosuper	VIEW: xhr_actions
+2012/04/23  15:17:15	djangosuper	<QueryDict: {u'ci': [u'6090'], u'FADpriority': [u'0'], u'FADhtmlBody': [u''], u'FADstatus': [u'0'], u'ti': [u'0'], u'ajaxAction': [u'fastAdd'], u'FADtitle': [u'when you are logged out, the "log out" link in the header should be \'log in"']}>
+2012/04/23  15:17:15	djangosuper	=====> xhr_actions: =AJAX request, ci=6090  ti=0  ajaxAction: fastAdd
+2012/04/23  15:17:15	---	Last item ID:4574
+2012/04/23  15:17:15	---	VIEW: drag_actions => fastAdd
+2012/04/23  15:17:15	---	fastAdd for 6090  when you are logged out, the "log out" link in the header should be 'log in"
+2012/04/23  15:17:15	---	NEW FA item ID=None
+2012/04/23  15:17:15	---	   fastadded item ID = 6365
+2012/04/23  15:17:15	---	  deco for: 6365
+2012/04/23  15:17:15	---	  deco for: 6090
+2012/04/23  15:17:15	---	  deco for: 6087
+2012/04/23  15:17:15	---	  deco for: 6096
+2012/04/23  15:17:15	---	lock removed
+2012/04/23  15:21:23		VIEW: homepage
+2012/04/23  15:21:33	djangosuper	VIEW: draglist
+2012/04/23  15:21:33	djangosuper	     Proj 5
+2012/04/23  15:21:33	---	   Entering buildDisplayList
+2012/04/23  15:21:33	---	      ..queries done...
+2012/04/23  15:21:33	---	      ....parent list built...
+2012/04/23  15:21:33	---	      .....ix built.....
+2012/04/23  15:21:33	---	      ...built followhash....
+2012/04/23  15:21:33	---	      .....displayList built...
+2012/04/23  15:21:33	---	   Exiting buildDisplayList
+2012/04/23  15:21:46	djangosuper	VIEW: xhr_actions
+2012/04/23  15:21:46	djangosuper	<QueryDict: {u'ci': [u'6365'], u'ajaxAction': [u'archiveThisItem'], u'ti': [u'0']}>
+2012/04/23  15:21:46	djangosuper	=====> xhr_actions: =AJAX request, ci=6365  ti=0  ajaxAction: archiveThisItem
+2012/04/23  15:21:46	---	Last item ID:4574
+2012/04/23  15:21:46	---	sMDflk=> findLastKid lastKid=0
+2012/04/23  15:21:46	---	Last item ID:6233
+2012/04/23  15:21:46	---	  deco for: 5953
+2012/04/23  15:21:46	---	  deco for: 6090
+2012/04/23  15:21:46	---	  deco for: 6096
+2012/04/23  15:21:46	---	==> archivePair moved item 6365  to proj: 15
+2012/04/23  15:21:46	---	lock removed
+2012/04/23  15:24:45	jmoss	VIEW: homepage
+2012/04/23  15:24:50	jmoss	VIEW: managePage
+2012/04/23  15:24:53	jmoss	VIEW: createProject
+2012/04/23  15:34:42	jmoss	VIEW: homepage
+2012/04/23  15:40:18	jmoss	VIEW: profile
+2012/04/23  15:43:45	jmoss	VIEW: profile
+2012/04/23  15:46:07	jmoss	VIEW: profile
+2012/04/23  15:46:24	jmoss	VIEW: showchains
+2012/04/23  15:46:24	jmoss	ShowChains: Proj 41======================================
+2012/04/23  15:46:24	jmoss	            Found these un-followed items: [6353L]
+2012/04/23  15:46:25	jmoss	            Tables w/dupes removed:[[6049L, 6352L, 6353L]]
+2012/04/23  15:50:39	jmoss	VIEW: showchains
+2012/04/23  15:50:39	jmoss	ShowChains: Proj 41======================================
+2012/04/23  15:50:39	jmoss	            Found these un-followed items: [6353L]
+2012/04/23  15:50:39	jmoss	            Tables w/dupes removed:[[6049L, 6352L, 6353L]]
+2012/04/23  15:51:33	jmoss	VIEW: managePage
+2012/04/23  15:51:35	jmoss	VIEW: createProject
+2012/04/23  16:40:29	djangosuper	VIEW: createProject
+2012/04/23  16:40:42	jmoss	VIEW: createProject
+2012/04/23  16:41:04	jmoss	VIEW: createProject
+2012/04/23  16:44:11	jmoss	VIEW: createProject
+2012/04/23  16:44:21	jmoss	VIEW: createProject
+2012/04/23  16:44:47	djangosuper	VIEW: createProject
+2012/04/23  16:45:30	djangosuper	VIEW: createProject
+2012/04/23  16:45:58	djangosuper	VIEW: maintPage
+2012/04/23  16:46:02	djangosuper	VIEW: createProject
+2012/04/23  16:46:21	djangosuper	VIEW: createProject
+2012/04/23  16:47:22	djangosuper	VIEW: createProject
+2012/04/23  16:47:32	djangosuper	VIEW: createProject
+2012/04/23  16:47:58	jmoss	VIEW: createProject
+2012/04/23  16:48:09	jmoss	VIEW: createProject
+2012/04/23  16:51:59	jmoss	VIEW: createProject
+2012/04/23  16:52:13	jmoss	VIEW: createProject
+2012/04/23  16:55:44	jmoss	VIEW: createProject
+2012/04/23  16:55:53	jmoss	VIEW: createProject
+2012/04/23  16:55:53	jmoss	creating project: new form 5projset = another special set
+2012/04/23  16:55:54	jmoss	VIEW: draglist
+2012/04/23  16:55:54	jmoss	     Proj 50
+2012/04/23  16:55:54	---	   Entering buildDisplayList
+2012/04/23  16:55:54	---	      ..queries done...
+2012/04/23  16:55:54	---	      ....parent list built...
+2012/04/23  16:55:54	---	      .....ix built.....
+2012/04/23  16:55:54	---	      ...built followhash....
+2012/04/23  16:55:54	---	      .....displayList built...
+2012/04/23  16:55:54	---	   Exiting buildDisplayList
+2012/04/23  16:56:10	jmoss	VIEW: xhr_actions
+2012/04/23  16:56:10	jmoss	<QueryDict: {u'ci': [u'6366'], u'FADpriority': [u'0'], u'FADhtmlBody': [u''], u'FADstatus': [u'0'], u'ti': [u'0'], u'ajaxAction': [u'fastAdd'], u'FADtitle': [u'another tiem']}>
+2012/04/23  16:56:10	jmoss	=====> xhr_actions: =AJAX request, ci=6366  ti=0  ajaxAction: fastAdd
+2012/04/23  16:56:10	---	Last item ID:6366
+2012/04/23  16:56:10	---	VIEW: drag_actions => fastAdd
+2012/04/23  16:56:10	---	fastAdd for 6366  another tiem
+2012/04/23  16:56:10	---	Item has no follower: ID6366
+2012/04/23  16:56:10	---	NEW FA item ID=None
+2012/04/23  16:56:10	---	   fastadded item ID = 6368
+2012/04/23  16:56:10	---	  deco for: 6368
+2012/04/23  16:56:10	---	  deco for: 6366
+2012/04/23  16:56:10	---	lock removed
+2012/04/23  16:56:18	jmoss	VIEW: xhr_actions
+2012/04/23  16:56:18	jmoss	<QueryDict: {u'ci': [u'6368'], u'FADpriority': [u'0'], u'FADhtmlBody': [u''], u'FADstatus': [u'0'], u'ti': [u'0'], u'ajaxAction': [u'fastAdd'], u'FADtitle': [u'first form-ative success']}>
+2012/04/23  16:56:18	jmoss	=====> xhr_actions: =AJAX request, ci=6368  ti=0  ajaxAction: fastAdd
+2012/04/23  16:56:18	---	Last item ID:6368
+2012/04/23  16:56:18	---	VIEW: drag_actions => fastAdd
+2012/04/23  16:56:18	---	fastAdd for 6368  first form-ative success
+2012/04/23  16:56:18	---	Item has no follower: ID6368
+2012/04/23  16:56:18	---	NEW FA item ID=None
+2012/04/23  16:56:18	---	   fastadded item ID = 6369
+2012/04/23  16:56:18	---	  deco for: 6369
+2012/04/23  16:56:18	---	  deco for: 6368
+2012/04/23  16:56:18	---	  deco for: 6366
+2012/04/23  16:56:18	---	lock removed
+2012/04/23  16:56:22	jmoss	VIEW: managePage
+2012/04/23  16:57:05	jmoss	VIEW: createProject
+2012/04/23  16:57:13	jmoss	VIEW: createProject
+2012/04/23  16:57:47	jmoss	VIEW: createProject
+2012/04/23  17:00:50	jmoss	VIEW: managePage
+2012/04/23  17:00:52	jmoss	VIEW: createProject
+2012/04/23  17:01:04	jmoss	VIEW: createProject
+2012/04/23  17:03:33	jmoss	VIEW: createProject
+2012/04/23  17:03:45	jmoss	VIEW: createProject
+2012/04/23  17:04:44	jmoss	VIEW: createProject
+2012/04/23  17:05:12	jmoss	VIEW: createProject
+2012/04/23  17:08:04	jmoss	VIEW: createProject
+2012/04/23  17:12:02	jmoss	VIEW: createProject
+2012/04/23  17:12:11	jmoss	VIEW: createProject
+2012/04/23  17:12:11	jmoss	creating project: new form 5projset = another special set
+2012/04/23  17:12:11	jmoss	VIEW: draglist
+2012/04/23  17:12:11	jmoss	     Proj 52
+2012/04/23  17:12:11	---	   Entering buildDisplayList
+2012/04/23  17:12:11	---	      ..queries done...
+2012/04/23  17:12:11	---	      ....parent list built...
+2012/04/23  17:12:11	---	      .....ix built.....
+2012/04/23  17:12:11	---	      ...built followhash....
+2012/04/23  17:12:11	---	      .....displayList built...
+2012/04/23  17:12:11	---	   Exiting buildDisplayList
+2012/04/23  17:21:40	jmoss	VIEW: managePage
+2012/04/23  17:21:41	jmoss	VIEW: createProject
+2012/04/23  17:22:02	jmoss	VIEW: createProject
+2012/04/23  17:22:30	jmoss	VIEW: createProject
+2012/04/23  17:22:30	jmoss	creating project: JM project 1projset = Jeff set 2
+2012/04/23  17:22:30	jmoss	VIEW: draglist
+2012/04/23  17:22:30	jmoss	     Proj 54
+2012/04/23  17:22:30	---	   Entering buildDisplayList
+2012/04/23  17:22:30	---	      ..queries done...
+2012/04/23  17:22:30	---	      ....parent list built...
+2012/04/23  17:22:30	---	      .....ix built.....
+2012/04/23  17:22:30	---	      ...built followhash....
+2012/04/23  17:22:30	---	      .....displayList built...
+2012/04/23  17:22:30	---	   Exiting buildDisplayList
+2012/04/23  17:23:25	jmoss	VIEW: draglist
+2012/04/23  17:23:25	jmoss	     Proj 54
+2012/04/23  17:23:25	---	   Entering buildDisplayList
+2012/04/23  17:23:25	---	      ..queries done...
+2012/04/23  17:23:25	---	      ....parent list built...
+2012/04/23  17:23:25	---	      .....ix built.....
+2012/04/23  17:23:25	---	      ...built followhash....
+2012/04/23  17:23:25	---	      .....displayList built...
+2012/04/23  17:23:25	---	   Exiting buildDisplayList
+2012/04/23  17:23:38	jmoss	VIEW: xhr_actions
+2012/04/23  17:23:38	jmoss	<QueryDict: {u'ci': [u'6372'], u'FADpriority': [u'0'], u'FADhtmlBody': [u''], u'FADstatus': [u'0'], u'ti': [u'0'], u'ajaxAction': [u'fastAdd'], u'FADtitle': [u'This one is Project ID = 54']}>
+2012/04/23  17:23:38	jmoss	=====> xhr_actions: =AJAX request, ci=6372  ti=0  ajaxAction: fastAdd
+2012/04/23  17:23:38	---	Last item ID:6372
+2012/04/23  17:23:38	---	VIEW: drag_actions => fastAdd
+2012/04/23  17:23:38	---	fastAdd for 6372  This one is Project ID = 54
+2012/04/23  17:23:39	---	Item has no follower: ID6372
+2012/04/23  17:23:39	---	NEW FA item ID=None
+2012/04/23  17:23:39	---	   fastadded item ID = 6374
+2012/04/23  17:23:39	---	  deco for: 6374
+2012/04/23  17:23:39	---	  deco for: 6372
+2012/04/23  17:23:39	---	lock removed
+2012/04/23  17:23:44	jmoss	VIEW: draglist
+2012/04/23  17:23:44	jmoss	     Proj 54
+2012/04/23  17:23:44	---	   Entering buildDisplayList
+2012/04/23  17:23:44	---	      ..queries done...
+2012/04/23  17:23:44	---	      ....parent list built...
+2012/04/23  17:23:44	---	      .....ix built.....
+2012/04/23  17:23:44	---	      ...built followhash....
+2012/04/23  17:23:44	---	      .....displayList built...
+2012/04/23  17:23:44	---	   Exiting buildDisplayList
+2012/04/23  17:23:57	jmoss	VIEW: draglist
+2012/04/23  17:23:57	jmoss	     Proj 50
+2012/04/23  17:23:57	---	   Entering buildDisplayList
+2012/04/23  17:23:57	---	      ..queries done...
+2012/04/23  17:23:57	---	      ....parent list built...
+2012/04/23  17:23:57	---	      .....ix built.....
+2012/04/23  17:23:57	---	      ...built followhash....
+2012/04/23  17:23:57	---	      .....displayList built...
+2012/04/23  17:23:57	---	   Exiting buildDisplayList
+2012/04/23  17:24:01	jmoss	VIEW: draglist
+2012/04/23  17:24:01	jmoss	     Proj 50
+2012/04/23  17:24:01	---	   Entering buildDisplayList
+2012/04/23  17:24:01	---	      ..queries done...
+2012/04/23  17:24:01	---	      ....parent list built...
+2012/04/23  17:24:01	---	      .....ix built.....
+2012/04/23  17:24:01	---	      ...built followhash....
+2012/04/23  17:24:01	---	      .....displayList built...
+2012/04/23  17:24:01	---	   Exiting buildDisplayList
+2012/04/23  17:24:26	jmoss	VIEW: managePage
+2012/04/23  17:24:27	jmoss	VIEW: createProject
+2012/04/23  17:24:49	jmoss	VIEW: createProject
+2012/04/23  17:25:18	jmoss	VIEW: createProject
+2012/04/23  17:25:18	jmoss	creating project: new form 5projset = another special set
+2012/04/23  17:25:18	jmoss	VIEW: draglist
+2012/04/23  17:25:18	jmoss	     Proj 56
+2012/04/23  17:25:18	---	   Entering buildDisplayList
+2012/04/23  17:25:18	---	      ..queries done...
+2012/04/23  17:25:18	---	      ....parent list built...
+2012/04/23  17:25:18	---	      .....ix built.....
+2012/04/23  17:25:18	---	      ...built followhash....
+2012/04/23  17:25:18	---	      .....displayList built...
+2012/04/23  17:25:18	---	   Exiting buildDisplayList
+2012/04/23  17:25:26	jmoss	VIEW: draglist
+2012/04/23  17:25:26	jmoss	     Proj 56
+2012/04/23  17:25:26	---	   Entering buildDisplayList
+2012/04/23  17:25:26	---	      ..queries done...
+2012/04/23  17:25:26	---	      ....parent list built...
+2012/04/23  17:25:26	---	      .....ix built.....
+2012/04/23  17:25:26	---	      ...built followhash....
+2012/04/23  17:25:26	---	      .....displayList built...
+2012/04/23  17:25:26	---	   Exiting buildDisplayList
+2012/04/23  17:25:27	jmoss	VIEW: draglist
+2012/04/23  17:25:27	jmoss	     Proj 56
+2012/04/23  17:25:27	---	   Entering buildDisplayList
+2012/04/23  17:25:27	---	      ..queries done...
+2012/04/23  17:25:27	---	      ....parent list built...
+2012/04/23  17:25:27	---	      .....ix built.....
+2012/04/23  17:25:27	---	      ...built followhash....
+2012/04/23  17:25:27	---	      .....displayList built...
+2012/04/23  17:25:27	---	   Exiting buildDisplayList
+2012/04/23  17:25:30	jmoss	VIEW: draglist
+2012/04/23  17:25:30	jmoss	     Proj 52
+2012/04/23  17:25:30	---	   Entering buildDisplayList
+2012/04/23  17:25:30	---	      ..queries done...
+2012/04/23  17:25:30	---	      ....parent list built...
+2012/04/23  17:25:30	---	      .....ix built.....
+2012/04/23  17:25:30	---	      ...built followhash....
+2012/04/23  17:25:30	---	      .....displayList built...
+2012/04/23  17:25:30	---	   Exiting buildDisplayList
+2012/04/23  17:25:32	jmoss	VIEW: draglist
+2012/04/23  17:25:32	jmoss	     Proj 56
+2012/04/23  17:25:32	---	   Entering buildDisplayList
+2012/04/23  17:25:32	---	      ..queries done...
+2012/04/23  17:25:32	---	      ....parent list built...
+2012/04/23  17:25:32	---	      .....ix built.....
+2012/04/23  17:25:32	---	      ...built followhash....
+2012/04/23  17:25:32	---	      .....displayList built...
+2012/04/23  17:25:32	---	   Exiting buildDisplayList
+2012/04/23  17:25:40	jmoss	VIEW: xhr_actions
+2012/04/23  17:25:40	jmoss	<QueryDict: {u'ci': [u'6375'], u'FADpriority': [u'0'], u'FADhtmlBody': [u''], u'FADstatus': [u'0'], u'ti': [u'0'], u'ajaxAction': [u'fastAdd'], u'FADtitle': [u'how can this be??? 56']}>
+2012/04/23  17:25:40	jmoss	=====> xhr_actions: =AJAX request, ci=6375  ti=0  ajaxAction: fastAdd
+2012/04/23  17:25:40	---	Last item ID:6375
+2012/04/23  17:25:40	---	VIEW: drag_actions => fastAdd
+2012/04/23  17:25:40	---	fastAdd for 6375  how can this be??? 56
+2012/04/23  17:25:40	---	Item has no follower: ID6375
+2012/04/23  17:25:40	---	NEW FA item ID=None
+2012/04/23  17:25:40	---	   fastadded item ID = 6377
+2012/04/23  17:25:40	---	  deco for: 6377
+2012/04/23  17:25:40	---	  deco for: 6375
+2012/04/23  17:25:40	---	lock removed
+2012/04/23  17:25:42	jmoss	VIEW: draglist
+2012/04/23  17:25:42	jmoss	     Proj 52
+2012/04/23  17:25:42	---	   Entering buildDisplayList
+2012/04/23  17:25:42	---	      ..queries done...
+2012/04/23  17:25:42	---	      ....parent list built...
+2012/04/23  17:25:42	---	      .....ix built.....
+2012/04/23  17:25:42	---	      ...built followhash....
+2012/04/23  17:25:42	---	      .....displayList built...
+2012/04/23  17:25:42	---	   Exiting buildDisplayList
+2012/04/23  17:25:44	jmoss	VIEW: draglist
+2012/04/23  17:25:44	jmoss	     Proj 52
+2012/04/23  17:25:44	---	   Entering buildDisplayList
+2012/04/23  17:25:44	---	      ..queries done...
+2012/04/23  17:25:44	---	      ....parent list built...
+2012/04/23  17:25:44	---	      .....ix built.....
+2012/04/23  17:25:44	---	      ...built followhash....
+2012/04/23  17:25:44	---	      .....displayList built...
+2012/04/23  17:25:44	---	   Exiting buildDisplayList
+2012/04/23  17:25:46	jmoss	VIEW: draglist
+2012/04/23  17:25:46	jmoss	     Proj 50
+2012/04/23  17:25:46	---	   Entering buildDisplayList
+2012/04/23  17:25:46	---	      ..queries done...
+2012/04/23  17:25:46	---	      ....parent list built...
+2012/04/23  17:25:46	---	      .....ix built.....
+2012/04/23  17:25:46	---	      ...built followhash....
+2012/04/23  17:25:46	---	      .....displayList built...
+2012/04/23  17:25:46	---	   Exiting buildDisplayList
+2012/04/23  17:25:48	jmoss	VIEW: draglist
+2012/04/23  17:25:48	jmoss	     Proj 52
+2012/04/23  17:25:48	---	   Entering buildDisplayList
+2012/04/23  17:25:48	---	      ..queries done...
+2012/04/23  17:25:48	---	      ....parent list built...
+2012/04/23  17:25:48	---	      .....ix built.....
+2012/04/23  17:25:48	---	      ...built followhash....
+2012/04/23  17:25:48	---	      .....displayList built...
+2012/04/23  17:25:48	---	   Exiting buildDisplayList
+2012/04/23  17:25:50	jmoss	VIEW: draglist
+2012/04/23  17:25:50	jmoss	     Proj 52
+2012/04/23  17:25:50	---	   Entering buildDisplayList
+2012/04/23  17:25:50	---	      ..queries done...
+2012/04/23  17:25:50	---	      ....parent list built...
+2012/04/23  17:25:50	---	      .....ix built.....
+2012/04/23  17:25:50	---	      ...built followhash....
+2012/04/23  17:25:50	---	      .....displayList built...
+2012/04/23  17:25:50	---	   Exiting buildDisplayList
+2012/04/23  17:25:51	jmoss	VIEW: draglist
+2012/04/23  17:25:51	jmoss	     Proj 56
+2012/04/23  17:25:51	---	   Entering buildDisplayList
+2012/04/23  17:25:51	---	      ..queries done...
+2012/04/23  17:25:51	---	      ....parent list built...
+2012/04/23  17:25:51	---	      .....ix built.....
+2012/04/23  17:25:51	---	      ...built followhash....
+2012/04/23  17:25:51	---	      .....displayList built...
+2012/04/23  17:25:51	---	   Exiting buildDisplayList
+2012/04/23  17:27:10	jmoss	VIEW: managePage
+2012/04/23  17:27:12	jmoss	VIEW: createProject
+2012/04/23  17:27:32	jmoss	VIEW: createProject
+2012/04/23  17:27:32	jmoss	editing project: 50  new form 5projset:another special set
+2012/04/23  17:29:57	jmoss	VIEW: draglist
+2012/04/23  17:29:57	jmoss	     Proj 54
+2012/04/23  17:29:57	---	   Entering buildDisplayList
+2012/04/23  17:29:57	---	      ..queries done...
+2012/04/23  17:29:57	---	      ....parent list built...
+2012/04/23  17:29:57	---	      .....ix built.....
+2012/04/23  17:29:57	---	      ...built followhash....
+2012/04/23  17:29:57	---	      .....displayList built...
+2012/04/23  17:29:57	---	   Exiting buildDisplayList
+2012/04/23  17:35:41	jmoss	VIEW: managePage
+2012/04/23  17:35:58	jmoss	VIEW: createProject
+2012/04/23  17:37:21	jmoss	VIEW: createProject
+2012/04/23  17:38:00	jmoss	VIEW: createProject
+2012/04/23  17:38:24	jmoss	VIEW: createProject
+2012/04/23  17:38:38	jmoss	VIEW: draglist
+2012/04/23  17:38:38	jmoss	     Proj 56
+2012/04/23  17:38:38	---	   Entering buildDisplayList
+2012/04/23  17:38:38	---	      ..queries done...
+2012/04/23  17:38:38	---	      ....parent list built...
+2012/04/23  17:38:38	---	      .....ix built.....
+2012/04/23  17:38:38	---	      ...built followhash....
+2012/04/23  17:38:38	---	      .....displayList built...
+2012/04/23  17:38:38	---	   Exiting buildDisplayList
+2012/04/23  17:38:57	jmoss	VIEW: createOrEditProject
+2012/04/23  17:39:13	jmoss	VIEW: createOrEditProject
+2012/04/23  17:39:13	jmoss	editing project: 52  new form 5 well, 52projset:another special set
+2012/04/23  17:41:00	jmoss	VIEW: managePage
+2012/04/23  17:41:03	jmoss	VIEW: createOrEditProject
+2012/04/23  17:41:14	jmoss	VIEW: createOrEditProject
+2012/04/23  17:41:32	jmoss	VIEW: createOrEditProject
+2012/04/23  17:41:32	jmoss	editing project: 43  Another GREAT new projectprojset:Jeff set 2
+2012/04/23  17:41:32	jmoss	VIEW: draglist
+2012/04/23  17:41:32	jmoss	     Proj 43
+2012/04/23  17:41:32	---	   Entering buildDisplayList
+2012/04/23  17:41:32	---	      ..queries done...
+2012/04/23  17:41:32	---	      ....parent list built...
+2012/04/23  17:41:32	---	      .....ix built.....
+2012/04/23  17:41:32	---	      ...built followhash....
+2012/04/23  17:41:32	---	      .....displayList built...
+2012/04/23  17:41:32	---	   Exiting buildDisplayList
+2012/04/23  17:41:40	jmoss	VIEW: draglist
+2012/04/23  17:41:40	jmoss	     Proj 43
+2012/04/23  17:41:40	---	   Entering buildDisplayList
+2012/04/23  17:41:40	---	      ..queries done...
+2012/04/23  17:41:40	---	      ....parent list built...
+2012/04/23  17:41:40	---	      .....ix built.....
+2012/04/23  17:41:40	---	      ...built followhash....
+2012/04/23  17:41:40	---	      .....displayList built...
+2012/04/23  17:41:40	---	   Exiting buildDisplayList
+2012/04/23  17:41:59	jmoss	VIEW: managePage
+2012/04/23  17:43:56	jmoss	VIEW: createOrEditProject
+2012/04/23  17:44:04	jmoss	VIEW: createOrEditProject
+2012/04/23  17:44:07	jmoss	VIEW: createOrEditProject
+2012/04/23  17:44:07	jmoss	editing project: 43  Another GREAT new projectprojset:another special set
+2012/04/23  17:44:07	jmoss	VIEW: draglist
+2012/04/23  17:44:07	jmoss	     Proj 43
+2012/04/23  17:44:07	---	   Entering buildDisplayList
+2012/04/23  17:44:07	---	      ..queries done...
+2012/04/23  17:44:07	---	      ....parent list built...
+2012/04/23  17:44:07	---	      .....ix built.....
+2012/04/23  17:44:07	---	      ...built followhash....
+2012/04/23  17:44:07	---	      .....displayList built...
+2012/04/23  17:44:07	---	   Exiting buildDisplayList
+2012/04/23  17:44:32	jmoss	VIEW: managePage
+2012/04/23  17:44:35	jmoss	VIEW: createOrEditProject
+2012/04/23  17:44:43	jmoss	VIEW: createOrEditProject
+2012/04/23  17:45:03	jmoss	VIEW: createOrEditProject
+2012/04/23  17:45:03	jmoss	editing project: 54  Space Cityprojset:another special set
+2012/04/23  17:45:03	jmoss	VIEW: draglist
+2012/04/23  17:45:03	jmoss	     Proj 54
+2012/04/23  17:45:03	---	   Entering buildDisplayList
+2012/04/23  17:45:03	---	      ..queries done...
+2012/04/23  17:45:03	---	      ....parent list built...
+2012/04/23  17:45:03	---	      .....ix built.....
+2012/04/23  17:45:03	---	      ...built followhash....
+2012/04/23  17:45:03	---	      .....displayList built...
+2012/04/23  17:45:03	---	   Exiting buildDisplayList
+2012/04/23  17:45:22	jmoss	VIEW: xhr_actions
+2012/04/23  17:45:22	jmoss	<QueryDict: {u'ci': [u'6374'], u'FADpriority': [u'0'], u'FADhtmlBody': [u''], u'FADstatus': [u'0'], u'ti': [u'0'], u'ajaxAction': [u'fastAdd'], u'FADtitle': [u'far out']}>
+2012/04/23  17:45:22	jmoss	=====> xhr_actions: =AJAX request, ci=6374  ti=0  ajaxAction: fastAdd
+2012/04/23  17:45:22	---	Last item ID:6374
+2012/04/23  17:45:22	---	VIEW: drag_actions => fastAdd
+2012/04/23  17:45:22	---	fastAdd for 6374  far out
+2012/04/23  17:45:22	---	Item has no follower: ID6374
+2012/04/23  17:45:22	---	NEW FA item ID=None
+2012/04/23  17:45:22	---	   fastadded item ID = 6378
+2012/04/23  17:45:22	---	  deco for: 6378
+2012/04/23  17:45:22	---	  deco for: 6374
+2012/04/23  17:45:22	---	  deco for: 6372
+2012/04/23  17:45:22	---	lock removed
+2012/04/23  17:50:50	jmoss	VIEW: createOrEditProject
+2012/04/23  17:51:10	jmoss	VIEW: createOrEditProject
+2012/04/23  17:51:49	jmoss	VIEW: draglist
+2012/04/23  17:51:49	jmoss	     Proj 33
+2012/04/23  17:51:49	---	   Entering buildDisplayList
+2012/04/23  17:51:49	---	      ..queries done...
+2012/04/23  17:51:49	---	      ....parent list built...
+2012/04/23  17:51:49	---	      .....ix built.....
+2012/04/23  17:51:49	---	      ...built followhash....
+2012/04/23  17:51:49	---	      .....displayList built...
+2012/04/23  17:51:49	---	   Exiting buildDisplayList
+2012/04/23  17:53:55	jmoss	VIEW: createOrEditProject
+2012/04/23  17:54:12	jmoss	VIEW: createOrEditProject
+2012/04/23  17:55:14	jmoss	VIEW: createOrEditProject
+2012/04/23  17:55:25	jmoss	VIEW: createOrEditProject
+2012/04/23  17:56:24	jmoss	VIEW: createOrEditProject
+2012/04/23  17:56:24	jmoss	    ...building form, projID=43
+2012/04/23  17:56:27	jmoss	VIEW: createOrEditProject
+2012/04/23  17:56:27	jmoss	    ...building form, projID=50
+2012/04/23  17:56:48	jmoss	VIEW: createOrEditProject
+2012/04/23  17:56:48	jmoss	    ...building form, projID=50
+2012/04/23  17:56:54	jmoss	VIEW: createOrEditProject
+2012/04/23  17:56:54	jmoss	    ...building form, projID=39
+2012/04/23  17:57:04	jmoss	VIEW: createOrEditProject
+2012/04/23  17:57:04	jmoss	    ...building form, projID=50
+2012/04/23  17:57:11	jmoss	VIEW: createOrEditProject
+2012/04/23  17:57:11	jmoss	editing project: 50  new form FIFTYprojset:Jeff Set 1
+2012/04/23  17:57:12	jmoss	VIEW: draglist
+2012/04/23  17:57:12	jmoss	     Proj 50
+2012/04/23  17:57:12	---	   Entering buildDisplayList
+2012/04/23  17:57:12	---	      ..queries done...
+2012/04/23  17:57:12	---	      ....parent list built...
+2012/04/23  17:57:12	---	      .....ix built.....
+2012/04/23  17:57:12	---	      ...built followhash....
+2012/04/23  17:57:12	---	      .....displayList built...
+2012/04/23  17:57:12	---	   Exiting buildDisplayList
+2012/04/23  17:57:23	jmoss	VIEW: managePage
+2012/04/23  17:57:24	jmoss	VIEW: createOrEditProject
+2012/04/23  17:57:24	jmoss	    ...building form, projID=0
+2012/04/23  17:57:33	jmoss	VIEW: createOrEditProject
+2012/04/23  17:57:33	jmoss	    ...building form, projID=50
+2012/04/23  17:57:38	jmoss	VIEW: draglist
+2012/04/23  17:57:38	jmoss	     Proj 50
+2012/04/23  17:57:38	---	   Entering buildDisplayList
+2012/04/23  17:57:38	---	      ..queries done...
+2012/04/23  17:57:38	---	      ....parent list built...
+2012/04/23  17:57:38	---	      .....ix built.....
+2012/04/23  17:57:38	---	      ...built followhash....
+2012/04/23  17:57:38	---	      .....displayList built...
+2012/04/23  17:57:38	---	   Exiting buildDisplayList
+2012/04/23  17:57:40	jmoss	VIEW: draglist
+2012/04/23  17:57:40	jmoss	     Proj 51
+2012/04/23  17:57:40	---	   Entering buildDisplayList
+2012/04/23  17:57:40	---	      ..queries done...
+2012/04/23  17:57:40	---	      ....parent list built...
+2012/04/23  17:57:40	---	      .....ix built.....
+2012/04/23  17:57:40	---	      ...built followhash....
+2012/04/23  17:57:40	---	      .....displayList built...
+2012/04/23  17:57:40	---	   Exiting buildDisplayList
+2012/04/23  17:57:46	jmoss	VIEW: draglist
+2012/04/23  17:57:46	jmoss	     Proj 50
+2012/04/23  17:57:46	---	   Entering buildDisplayList
+2012/04/23  17:57:46	---	      ..queries done...
+2012/04/23  17:57:46	---	      ....parent list built...
+2012/04/23  17:57:46	---	      .....ix built.....
+2012/04/23  17:57:46	---	      ...built followhash....
+2012/04/23  17:57:46	---	      .....displayList built...
+2012/04/23  17:57:46	---	   Exiting buildDisplayList
+2012/04/23  17:58:10	djangosuper	VIEW: createOrEditProject
+2012/04/23  17:58:10	djangosuper	    ...building form, projID=0
+2012/04/23  17:58:12	djangosuper	VIEW: draglist
+2012/04/23  17:58:12	djangosuper	     Proj 5
+2012/04/23  17:58:12	---	   Entering buildDisplayList
+2012/04/23  17:58:12	---	      ..queries done...
+2012/04/23  17:58:12	---	      ....parent list built...
+2012/04/23  17:58:13	---	      .....ix built.....
+2012/04/23  17:58:13	---	      ...built followhash....
+2012/04/23  17:58:13	---	      .....displayList built...
+2012/04/23  17:58:13	---	   Exiting buildDisplayList
+2012/04/23  17:58:33	djangosuper	VIEW: xhr_actions
+2012/04/23  17:58:33	djangosuper	<QueryDict: {u'ci': [u'6364'], u'FADpriority': [u'0'], u'FADhtmlBody': [u''], u'FADstatus': [u'0'], u'ti': [u'0'], u'ajaxAction': [u'fastAdd'], u'FADtitle': [u'when you change the name of a project,it should rename the archive as well.']}>
+2012/04/23  17:58:33	djangosuper	=====> xhr_actions: =AJAX request, ci=6364  ti=0  ajaxAction: fastAdd
+2012/04/23  17:58:33	---	Last item ID:4574
+2012/04/23  17:58:33	---	VIEW: drag_actions => fastAdd
+2012/04/23  17:58:33	---	fastAdd for 6364  when you change the name of a project,it should rename the archive as well.
+2012/04/23  17:58:33	---	NEW FA item ID=None
+2012/04/23  17:58:33	---	   fastadded item ID = 6379
+2012/04/23  17:58:34	---	  deco for: 6379
+2012/04/23  17:58:34	---	  deco for: 6364
+2012/04/23  17:58:34	---	  deco for: 5833
+2012/04/23  17:58:34	---	  deco for: 6164
+2012/04/23  17:58:34	---	lock removed
+2012/04/23  17:58:38	djangosuper	VIEW: xhr_actions
+2012/04/23  17:58:38	djangosuper	<QueryDict: {u'ci': [u'6379'], u'datax': [u'3'], u'ajaxAction': [u'prioritySelected'], u'ti': [u'0']}>
+2012/04/23  17:58:38	djangosuper	=====> xhr_actions: =AJAX request, ci=6379  ti=0  ajaxAction: prioritySelected
+2012/04/23  17:58:38	---	Last item ID:4574
+2012/04/23  17:58:38	---	  deco for: 6379
+2012/04/23  17:58:38	---	lock removed
+2012/04/23  17:58:40	djangosuper	VIEW: xhr_actions
+2012/04/23  17:58:40	djangosuper	<QueryDict: {u'ci': [u'6379'], u'datax': [u'5'], u'ajaxAction': [u'statusSelected'], u'ti': [u'0']}>
+2012/04/23  17:58:40	djangosuper	=====> xhr_actions: =AJAX request, ci=6379  ti=0  ajaxAction: statusSelected
+2012/04/23  17:58:40	---	Last item ID:4574
+2012/04/23  17:58:40	---	  deco for: 6379
+2012/04/23  17:58:40	---	lock removed
+2012/04/23  17:58:46	jmoss	VIEW: managePage
+2012/04/23  17:59:03	jmoss	VIEW: createOrEditProject
+2012/04/23  17:59:03	jmoss	    ...building form, projID=0
+2012/04/23  18:00:06	jmoss	VIEW: managePage
+2012/04/23  18:00:29	jmoss	VIEW: managePage
+2012/04/23  18:00:53	jmoss	VIEW: managePage
+2012/04/23  18:01:03	jmoss	VIEW: createProjectSet
+2012/04/23  18:03:54	jmoss	VIEW: managePage
+2012/04/23  18:03:56	jmoss	VIEW: createProjectSet
+2012/04/23  18:16:49	jmoss	VIEW: managePage
+2012/04/23  18:16:52	jmoss	VIEW: managePage
+2012/04/23  18:23:59	jmoss	VIEW: managePage
+2012/04/23  18:24:03	jmoss	VIEW: createOrEditProjectSet
+2012/04/23  18:25:32	jmoss	VIEW: createOrEditProjectSet
+2012/04/23  18:26:41	jmoss	VIEW: createOrEditProjectSet
+2012/04/23  18:27:20	jmoss	VIEW: createOrEditProjectSet
+2012/04/23  18:27:43	jmoss	VIEW: createOrEditProjectSet
+2012/04/23  18:28:53	jmoss	VIEW: createOrEditProjectSet
+2012/04/23  18:30:53	jmoss	VIEW: createOrEditProjectSet
+2012/04/23  18:31:19	jmoss	VIEW: createOrEditProjectSet
+2012/04/23  18:31:27	jmoss	VIEW: createOrEditProjectSet
+2012/04/23  18:32:12	jmoss	VIEW: createOrEditProjectSet
+2012/04/23  18:32:16	jmoss	VIEW: createOrEditProjectSet
+2012/04/23  18:32:41	jmoss	VIEW: createOrEditProjectSet
+2012/04/23  18:33:46	jmoss	VIEW: createOrEditProjectSet
+2012/04/23  18:33:49	jmoss	VIEW: createOrEditProject
+2012/04/23  18:33:49	jmoss	    ...building form, projID=35
+2012/04/23  18:34:13	jmoss	VIEW: createOrEditProjectSet
+2012/04/23  18:34:23	jmoss	VIEW: createOrEditProjectSet
+2012/04/23  18:34:23	jmoss	    editing projectSet: 6  Glorious Second Setprojset:6
+2012/04/23  18:35:07	jmoss	VIEW: createOrEditProjectSet
+2012/04/23  18:35:09	jmoss	VIEW: createOrEditProjectSet
+2012/04/23  18:35:22	jmoss	VIEW: createOrEditProjectSet
+2012/04/23  18:35:22	jmoss	    editing projectSet: 6  Secondary Gloryprojset:6
+2012/04/23  18:36:09	jmoss	VIEW: managePage
+2012/04/23  18:36:11	jmoss	VIEW: createOrEditProjectSet
+2012/04/23  18:36:21	jmoss	VIEW: createOrEditProjectSet
+2012/04/23  18:36:21	jmoss	    editing projectSet: 6  Glory Of Secondprojset:6
+2012/04/23  18:36:21	jmoss	VIEW: createOrEditProjectSet
+2012/04/23  18:36:32	jmoss	VIEW: managePage
+2012/04/23  18:37:07	djangosuper	VIEW: maintPage
+2012/04/23  18:39:22	djangosuper	VIEW: maintPage
+2012/04/23  18:39:35	djangosuper	VIEW: maintPage
+2012/04/23  18:40:35	jmoss	VIEW: managePage
+2012/04/23  18:40:45	jmoss	VIEW: managePage
+2012/04/23  18:41:00	jmoss	VIEW: managePage
+2012/04/23  18:41:38	jmoss	VIEW: createOrEditProjectSet
+2012/04/23  18:41:44	jmoss	VIEW: createOrEditProjectSet
+2012/04/23  18:41:44	jmoss	    editing projectSet: 7  another special setprojset:7
+2012/04/23  18:41:44	jmoss	VIEW: createOrEditProjectSet
+2012/04/23  18:41:48	jmoss	VIEW: createOrEditProjectSet
+2012/04/23  18:42:21	jmoss	VIEW: createOrEditProjectSet
+2012/04/23  18:42:36	jmoss	VIEW: createOrEditProjectSet
+2012/04/23  18:42:54	jmoss	VIEW: createOrEditProjectSet
+2012/04/23  18:43:06	jmoss	VIEW: createOrEditProjectSet
+2012/04/23  18:43:47	jmoss	VIEW: createOrEditProjectSet
+2012/04/23  18:43:58	jmoss	VIEW: createOrEditProjectSet
+2012/04/23  18:43:58	jmoss	    editing projectSet: 7  another special setprojset:7
+2012/04/23  18:43:58	jmoss	VIEW: createOrEditProjectSet
+2012/04/23  18:47:39	jmoss	VIEW: createOrEditProjectSet
+2012/04/23  18:47:46	jmoss	VIEW: createOrEditProjectSet
+2012/04/23  18:47:46	jmoss	    editing projectSet: was ONE, not NOTprojset:5
+2012/04/23  18:47:46	jmoss	VIEW: createOrEditProjectSet
+2012/04/23  18:49:40	djangosuper	VIEW: draglist
+2012/04/23  18:49:40	djangosuper	     Proj 7
+2012/04/23  18:49:40	---	   Entering buildDisplayList
+2012/04/23  18:49:40	---	      ..queries done...
+2012/04/23  18:49:41	---	      ....parent list built...
+2012/04/23  18:49:47	---	      .....ix built.....
+2012/04/23  18:49:47	---	      ...built followhash....
+2012/04/23  18:49:47	---	      .....displayList built...
+2012/04/23  18:49:47	---	   Exiting buildDisplayList
+2012/04/23  18:51:01	djangosuper	VIEW: draglist
+2012/04/23  18:51:01	djangosuper	     Proj 7
+2012/04/23  18:51:01	---	   Entering buildDisplayList
+2012/04/23  18:51:01	---	      ..queries done...
+2012/04/23  18:51:01	---	      ....parent list built...
+2012/04/23  18:51:03	---	      .....ix built.....
+2012/04/23  18:51:03	---	      ...built followhash....
+2012/04/23  18:51:03	---	      .....displayList built...
+2012/04/23  18:51:03	---	   Exiting buildDisplayList
+2012/04/23  18:51:13	jmoss	VIEW: createOrEditProjectSet
+2012/04/23  18:51:21	jmoss	VIEW: createOrEditProjectSet
+2012/04/23  18:51:34	jmoss	VIEW: createOrEditProjectSet
+2012/04/23  18:51:34	jmoss	    editing projectSet: J Set One   projset:5
+2012/04/23  18:51:35	jmoss	VIEW: createOrEditProjectSet
+2012/04/23  18:51:49	jmoss	VIEW: createOrEditProject
+2012/04/23  18:51:49	jmoss	    ...building form, projID=56
+2012/04/23  18:52:31	jmoss	VIEW: createOrEditProject
+2012/04/23  18:52:31	jmoss	editing project: 56  J Project 56projset:another special set
+2012/04/23  18:52:31	jmoss	VIEW: createOrEditProject
+2012/04/23  18:52:31	jmoss	    ...building form, projID=0
+2012/04/23  18:52:45	djangosuper	VIEW: maintPage
+2012/04/23  18:52:54	djangosuper	VIEW: createOrEditProject
+2012/04/23  18:52:54	djangosuper	    ...building form, projID=7
+2012/04/23  18:53:09	djangosuper	VIEW: createOrEditProject
+2012/04/23  18:53:09	djangosuper	editing project: 7  PMO generalprojset:work
+2012/04/23  18:53:09	djangosuper	VIEW: createOrEditProject
+2012/04/23  18:53:09	djangosuper	    ...building form, projID=0
+2012/04/23  18:53:12	djangosuper	VIEW: draglist
+2012/04/23  18:53:12	djangosuper	     Proj 7
+2012/04/23  18:53:12	---	   Entering buildDisplayList
+2012/04/23  18:53:12	---	      ..queries done...
+2012/04/23  18:53:12	---	      ....parent list built...
+2012/04/23  18:53:14	---	      .....ix built.....
+2012/04/23  18:53:14	---	      ...built followhash....
+2012/04/23  18:53:14	---	      .....displayList built...
+2012/04/23  18:53:14	---	   Exiting buildDisplayList
+2012/04/23  18:53:27	djangosuper	VIEW: createOrEditProject
+2012/04/23  18:53:27	djangosuper	    ...building form, projID=2
+2012/04/23  18:53:47	djangosuper	VIEW: createOrEditProject
+2012/04/23  18:53:47	djangosuper	editing project: 2  CHOICEprojset:work
+2012/04/23  18:53:47	djangosuper	VIEW: createOrEditProject
+2012/04/23  18:53:47	djangosuper	    ...building form, projID=0
+2012/04/23  18:53:56	djangosuper	VIEW: draglist
+2012/04/23  18:53:56	djangosuper	     Proj 6
+2012/04/23  18:53:56	---	   Entering buildDisplayList
+2012/04/23  18:53:56	---	      ..queries done...
+2012/04/23  18:53:56	---	      ....parent list built...
+2012/04/23  18:53:56	---	      .....ix built.....
+2012/04/23  18:53:56	---	      ...built followhash....
+2012/04/23  18:53:56	---	      .....displayList built...
+2012/04/23  18:53:56	---	   Exiting buildDisplayList
+2012/04/23  18:54:07	djangosuper	VIEW: createOrEditProject
+2012/04/23  18:54:07	djangosuper	    ...building form, projID=6
+2012/04/23  18:54:47	djangosuper	VIEW: createOrEditProject
+2012/04/23  18:54:47	djangosuper	editing project: 6  PMOprojset:work
+2012/04/23  18:54:48	djangosuper	VIEW: createOrEditProject
+2012/04/23  18:54:48	djangosuper	    ...building form, projID=0
+2012/04/23  18:57:02	djangosuper	VIEW: createOrEditProject
+2012/04/23  18:57:02	djangosuper	    ...building form, projID=0
+2012/04/23  18:57:05	djangosuper	VIEW: createOrEditProject
+2012/04/23  18:57:05	djangosuper	    ...building form, projID=0
+2012/04/23  18:57:15	djangosuper	VIEW: draglist
+2012/04/23  18:57:15	djangosuper	     Proj 6
+2012/04/23  18:57:15	---	   Entering buildDisplayList
+2012/04/23  18:57:15	---	      ..queries done...
+2012/04/23  18:57:15	---	      ....parent list built...
+2012/04/23  18:57:15	---	      .....ix built.....
+2012/04/23  18:57:15	---	      ...built followhash....
+2012/04/23  18:57:15	---	      .....displayList built...
+2012/04/23  18:57:15	---	   Exiting buildDisplayList
+2012/04/23  18:57:25	djangosuper	VIEW: createOrEditProject
+2012/04/23  18:57:25	djangosuper	    ...building form, projID=0
+2012/04/23  18:58:02	djangosuper	VIEW: createOrEditProject
+2012/04/23  18:58:02	djangosuper	    ...building form, projID=6
+2012/04/23  18:58:28	djangosuper	VIEW: createOrEditProject
+2012/04/23  18:58:28	djangosuper	editing project: 6  PMOprojset:work
+2012/04/23  18:58:28	djangosuper	VIEW: createOrEditProject
+2012/04/23  18:58:28	djangosuper	    ...building form, projID=0
+2012/04/23  18:58:31	djangosuper	VIEW: draglist
+2012/04/23  18:58:31	djangosuper	     Proj 6
+2012/04/23  18:58:31	---	   Entering buildDisplayList
+2012/04/23  18:58:31	---	      ..queries done...
+2012/04/23  18:58:31	---	      ....parent list built...
+2012/04/23  18:58:31	---	      .....ix built.....
+2012/04/23  18:58:31	---	      ...built followhash....
+2012/04/23  18:58:31	---	      .....displayList built...
+2012/04/23  18:58:31	---	   Exiting buildDisplayList
+2012/04/23  18:58:47	djangosuper	VIEW: createOrEditProject
+2012/04/23  18:58:47	djangosuper	    ...building form, projID=2
+2012/04/23  18:58:50	djangosuper	VIEW: createOrEditProject
+2012/04/23  18:58:50	djangosuper	editing project: 2  CHOICEprojset:work
+2012/04/23  18:58:51	djangosuper	VIEW: createOrEditProject
+2012/04/23  18:58:51	djangosuper	    ...building form, projID=0
+2012/04/23  18:58:54	djangosuper	VIEW: draglist
+2012/04/23  18:58:54	djangosuper	     Proj 2
+2012/04/23  18:58:54	---	   Entering buildDisplayList
+2012/04/23  18:58:54	---	      ..queries done...
+2012/04/23  18:58:54	---	      ....parent list built...
+2012/04/23  18:58:54	---	      .....ix built.....
+2012/04/23  18:58:54	---	      ...built followhash....
+2012/04/23  18:58:54	---	      .....displayList built...
+2012/04/23  18:58:54	---	   Exiting buildDisplayList
+2012/04/23  18:59:07	djangosuper	VIEW: draglist
+2012/04/23  18:59:07	djangosuper	     Proj 5
+2012/04/23  18:59:07	---	   Entering buildDisplayList
+2012/04/23  18:59:07	---	      ..queries done...
+2012/04/23  18:59:07	---	      ....parent list built...
+2012/04/23  18:59:08	---	      .....ix built.....
+2012/04/23  18:59:08	---	      ...built followhash....
+2012/04/23  18:59:08	---	      .....displayList built...
+2012/04/23  18:59:08	---	   Exiting buildDisplayList
+2012/04/23  18:59:20	djangosuper	VIEW: createOrEditProject
+2012/04/23  18:59:20	djangosuper	    ...building form, projID=5
+2012/04/23  18:59:56	djangosuper	VIEW: createOrEditProject
+2012/04/23  18:59:56	djangosuper	editing project: 5  benkprojset:personal
+2012/04/23  18:59:56	djangosuper	VIEW: createOrEditProject
+2012/04/23  18:59:56	djangosuper	    ...building form, projID=0
+2012/04/23  19:00:12	djangosuper	VIEW: createOrEditProject
+2012/04/23  19:00:12	djangosuper	    ...building form, projID=4
+2012/04/23  19:01:04	djangosuper	VIEW: createOrEditProject
+2012/04/23  19:01:04	djangosuper	    ...building form, projID=4
+2012/04/23  19:01:11	djangosuper	VIEW: createOrEditProject
+2012/04/23  19:01:11	djangosuper	    ...building form, projID=4
+2012/04/23  19:01:35	djangosuper	VIEW: createOrEditProject
+2012/04/23  19:01:35	djangosuper	editing project: 4  another Testerprojset:testing
+2012/04/23  19:01:35	djangosuper	VIEW: createOrEditProject
+2012/04/23  19:01:35	djangosuper	    ...building form, projID=0
+2012/04/23  19:01:43	djangosuper	VIEW: createOrEditProject
+2012/04/23  19:01:43	djangosuper	    ...building form, projID=0
+2012/04/23  19:01:52	djangosuper	VIEW: createOrEditProject
+2012/04/23  19:01:52	djangosuper	    ...building form, projID=4
+2012/04/23  19:02:03	djangosuper	VIEW: createOrEditProject
+2012/04/23  19:02:03	djangosuper	editing project: 4  Tester Another oneprojset:testing
+2012/04/23  19:02:03	djangosuper	VIEW: createOrEditProject
+2012/04/23  19:02:03	djangosuper	    ...building form, projID=0
+2012/04/23  19:02:10	djangosuper	VIEW: createOrEditProject
+2012/04/23  19:02:10	djangosuper	    ...building form, projID=8
+2012/04/23  19:02:33	djangosuper	VIEW: createOrEditProject
+2012/04/23  19:02:33	djangosuper	editing project: 8  travelprojset:personal
+2012/04/23  19:02:33	djangosuper	VIEW: createOrEditProject
+2012/04/23  19:02:33	djangosuper	    ...building form, projID=0
+2012/04/23  19:02:38	djangosuper	VIEW: createOrEditProject
+2012/04/23  19:02:38	djangosuper	    ...building form, projID=8
+2012/04/23  19:03:10	djangosuper	VIEW: createOrEditProject
+2012/04/23  19:03:10	djangosuper	editing project: 8  travelprojset:personal
+2012/04/23  19:03:10	djangosuper	VIEW: createOrEditProject
+2012/04/23  19:03:10	djangosuper	    ...building form, projID=0
+2012/04/23  19:03:15	djangosuper	VIEW: draglist
+2012/04/23  19:03:15	djangosuper	     Proj 5
+2012/04/23  19:03:15	---	   Entering buildDisplayList
+2012/04/23  19:03:15	---	      ..queries done...
+2012/04/23  19:03:15	---	      ....parent list built...
+2012/04/23  19:03:15	---	      .....ix built.....
+2012/04/23  19:03:15	---	      ...built followhash....
+2012/04/23  19:03:15	---	      .....displayList built...
+2012/04/23  19:03:15	---	   Exiting buildDisplayList
+2012/04/23  19:03:35	djangosuper	VIEW: createOrEditProject
+2012/04/23  19:03:35	djangosuper	    ...building form, projID=19
+2012/04/23  19:03:55	djangosuper	VIEW: createOrEditProject
+2012/04/23  19:03:55	djangosuper	editing project: 19  Fprojset:personal
+2012/04/23  19:03:55	djangosuper	VIEW: createOrEditProject
+2012/04/23  19:03:55	djangosuper	    ...building form, projID=0
+2012/04/23  19:03:57	djangosuper	VIEW: draglist
+2012/04/23  19:03:57	djangosuper	     Proj 5
+2012/04/23  19:03:57	---	   Entering buildDisplayList
+2012/04/23  19:03:57	---	      ..queries done...
+2012/04/23  19:03:57	---	      ....parent list built...
+2012/04/23  19:03:58	---	      .....ix built.....
+2012/04/23  19:03:58	---	      ...built followhash....
+2012/04/23  19:03:58	---	      .....displayList built...
+2012/04/23  19:03:58	---	   Exiting buildDisplayList
+2012/04/23  19:04:13	djangosuper	VIEW: gridview
+2012/04/23  19:04:13	djangosuper	   cellItems=[5916L, 5606L, 5637L, 5616L, 6066L, 5402L, 5660L, 5949L]
+2012/04/23  19:04:13	---	   Entering buildDisplayList
+2012/04/23  19:04:13	---	      ..queries done...
+2012/04/23  19:04:13	---	      ....parent list built...
+2012/04/23  19:04:13	---	      .....ix built.....
+2012/04/23  19:04:13	---	   Exiting buildDisplayList
+2012/04/23  19:04:13	djangosuper	   cellItems=[6237L, 5435L, 5952L, 5953L, 6015L, 6023L, 6044L, 6063L, 6087L, 6090L, 6234L, 4377L, 4581L, 5104L, 5175L, 5665L, 5672L, 5933L, 6081L, 6379L, 6229L, 4396L, 5002L, 4381L, 5286L, 5395L, 5375L, 5923L, 4621L, 5040L, 5394L, 5655L, 4608L, 4375L, 4531L, 4574L, 5092L, 5619L, 5624L, 5374L, 5609L, 5258L]
+2012/04/23  19:04:13	---	   Entering buildDisplayList
+2012/04/23  19:04:13	---	      ..queries done...
+2012/04/23  19:04:13	---	      ....parent list built...
+2012/04/23  19:04:13	---	      .....ix built.....
+2012/04/23  19:04:13	---	   Exiting buildDisplayList
+2012/04/23  19:04:13	djangosuper	   cellItems=[5671L, 6083L, 5631L, 5605L, 5879L, 5927L, 4585L, 4584L, 4590L, 5060L, 5062L, 5199L, 5411L, 5615L, 4591L, 4592L, 5580L, 1L, 4583L, 5614L, 5877L, 5878L, 5924L, 5958L]
+2012/04/23  19:04:13	---	   Entering buildDisplayList
+2012/04/23  19:04:13	---	      ..queries done...
+2012/04/23  19:04:13	---	      ....parent list built...
+2012/04/23  19:04:13	---	      .....ix built.....
+2012/04/23  19:04:13	---	   Exiting buildDisplayList
+2012/04/23  19:04:13	djangosuper	   cellItems=[4602L, 4607L, 4595L, 5629L, 6079L, 5130L, 5194L, 5617L, 5656L, 5661L, 5803L, 5914L, 5920L, 6027L, 4604L, 4606L, 5201L, 5659L, 5669L, 4605L, 4609L, 4610L, 2384L, 5109L, 5668L, 5804L, 5912L, 5915L]
+2012/04/23  19:04:13	---	   Entering buildDisplayList
+2012/04/23  19:04:13	---	      ..queries done...
+2012/04/23  19:04:13	---	      ....parent list built...
+2012/04/23  19:04:13	---	      .....ix built.....
+2012/04/23  19:04:13	---	   Exiting buildDisplayList
+2012/04/23  19:04:14	djangosuper	   cellItems=[6061L, 6058L, 6060L, 6118L]
+2012/04/23  19:04:14	---	   Entering buildDisplayList
+2012/04/23  19:04:14	---	      ..queries done...
+2012/04/23  19:04:14	---	      ....parent list built...
+2012/04/23  19:04:14	---	      .....ix built.....
+2012/04/23  19:04:14	---	   Exiting buildDisplayList
+2012/04/23  19:04:14	djangosuper	   cellItems=[5589L, 5127L, 5125L, 5409L, 5598L]
+2012/04/23  19:04:14	---	   Entering buildDisplayList
+2012/04/23  19:04:14	---	      ..queries done...
+2012/04/23  19:04:14	---	      ....parent list built...
+2012/04/23  19:04:14	---	      .....ix built.....
+2012/04/23  19:04:14	---	   Exiting buildDisplayList
+2012/04/23  19:04:14	djangosuper	   cellItems=[6068L, 6069L, 6073L, 5905L, 5870L, 6072L, 6074L]
+2012/04/23  19:04:14	---	   Entering buildDisplayList
+2012/04/23  19:04:14	---	      ..queries done...
+2012/04/23  19:04:14	---	      ....parent list built...
+2012/04/23  19:04:14	---	      .....ix built.....
+2012/04/23  19:04:14	---	   Exiting buildDisplayList
+2012/04/23  19:04:14	djangosuper	   cellItems=[5662L, 5801L, 5674L, 5736L, 5947L, 5950L, 6065L, 6075L, 6089L, 4397L, 5009L, 5086L, 5056L, 5911L, 6029L, 6076L, 6088L, 4615L, 4629L, 4596L, 5132L, 5396L, 5453L, 5410L, 5667L, 4600L, 4601L, 4599L, 5095L, 4386L, 4999L, 5053L, 5055L, 5189L, 5191L, 5673L, 5962L]
+2012/04/23  19:04:14	---	   Entering buildDisplayList
+2012/04/23  19:04:14	---	      ..queries done...
+2012/04/23  19:04:14	---	      ....parent list built...
+2012/04/23  19:04:14	---	      .....ix built.....
+2012/04/23  19:04:14	---	   Exiting buildDisplayList
+2012/04/23  19:04:14	djangosuper	   cellItems=[4646L, 4672L, 4671L, 4670L, 4669L, 4668L, 4665L, 4666L, 4667L, 4661L, 4662L]
+2012/04/23  19:04:14	---	   Entering buildDisplayList
+2012/04/23  19:04:14	---	      ..queries done...
+2012/04/23  19:04:14	---	      ....parent list built...
+2012/04/23  19:04:14	---	      .....ix built.....
+2012/04/23  19:04:14	---	   Exiting buildDisplayList
+2012/04/23  19:04:14	djangosuper	   cellItems=[5967L, 6064L, 5875L, 5663L, 5670L]
+2012/04/23  19:04:14	---	   Entering buildDisplayList
+2012/04/23  19:04:15	---	      ..queries done...
+2012/04/23  19:04:15	---	      ....parent list built...
+2012/04/23  19:04:15	---	      .....ix built.....
+2012/04/23  19:04:15	---	   Exiting buildDisplayList
+2012/04/23  19:04:15	djangosuper	   cellItems=[2468L, 2469L, 2470L, 2471L, 2472L, 2473L, 2474L, 2475L, 2476L, 2477L, 2478L]
+2012/04/23  19:04:15	---	   Entering buildDisplayList
+2012/04/23  19:04:15	---	      ..queries done...
+2012/04/23  19:04:15	---	      ....parent list built...
+2012/04/23  19:04:15	---	      .....ix built.....
+2012/04/23  19:04:15	---	   Exiting buildDisplayList
+2012/04/23  19:04:15	djangosuper	   cellItems=[5641L]
+2012/04/23  19:04:15	---	   Entering buildDisplayList
+2012/04/23  19:04:15	---	      ..queries done...
+2012/04/23  19:04:15	---	      ....parent list built...
+2012/04/23  19:04:15	---	      .....ix built.....
+2012/04/23  19:04:15	---	   Exiting buildDisplayList
+2012/04/23  19:04:15	djangosuper	   cellItems=[6091L, 6092L, 6093L, 6094L, 6095L, 5987L, 5979L, 5989L, 5980L, 5984L, 6071L, 6004L, 6022L, 4301L, 6003L, 6001L, 6002L, 5998L, 5999L, 6000L, 5997L, 5995L, 5996L]
+2012/04/23  19:04:15	---	   Entering buildDisplayList
+2012/04/23  19:04:15	---	      ..queries done...
+2012/04/23  19:04:15	---	      ....parent list built...
+2012/04/23  19:04:16	---	      .....ix built.....
+2012/04/23  19:04:16	---	   Exiting buildDisplayList
+2012/04/23  19:04:16	djangosuper	   cellItems=[5000L, 5001L, 5005L, 5006L, 5007L, 5083L, 5100L, 5596L, 5102L, 5106L]
+2012/04/23  19:04:16	---	   Entering buildDisplayList
+2012/04/23  19:04:16	---	      ..queries done...
+2012/04/23  19:04:16	---	      ....parent list built...
+2012/04/23  19:04:16	---	      .....ix built.....
+2012/04/23  19:04:16	---	   Exiting buildDisplayList
+2012/04/23  19:04:16	djangosuper	   cellItems=[5600L, 5897L, 5900L, 6018L, 5047L, 5116L, 5599L, 5595L, 5593L, 5592L, 5591L, 5625L, 5961L, 5951L]
+2012/04/23  19:04:16	---	   Entering buildDisplayList
+2012/04/23  19:04:16	---	      ..queries done...
+2012/04/23  19:04:16	---	      ....parent list built...
+2012/04/23  19:04:17	---	      .....ix built.....
+2012/04/23  19:04:17	---	   Exiting buildDisplayList
+2012/04/23  19:04:27	djangosuper	VIEW: createOrEditProject
+2012/04/23  19:04:27	djangosuper	    ...building form, projID=0
+2012/04/23  19:05:02	djangosuper	VIEW: createOrEditProject
+2012/04/23  19:05:02	djangosuper	    ...building form, projID=0
+2012/04/23  19:05:09	djangosuper	VIEW: maintPage
+2012/04/23  19:05:19	djangosuper	VIEW: createOrEditProjectSet
+2012/04/23  19:05:33	djangosuper	VIEW: maintPage
+2012/04/23  19:05:44	djangosuper	VIEW: showchains
+2012/04/23  19:05:44	djangosuper	ShowChains: Proj 5======================================
+2012/04/23  19:05:44	djangosuper	            Found these un-followed items: [4574L]
+2012/04/23  19:05:46	djangosuper	            Tables w/dupes removed:[[4375L, 6229L, 5953L, 6234L, 6081L, 5954L, 6235L, 6087L, 6090L, 6096L, 4381L, 6044L, 5955L, 6080L, 6063L, 6054L, 5833L, 6364L, 6379L, 6164L, 6237L, 6236L, 6015L, 6023L, 5977L, 5619L, 5978L, 5959L, 6231L, 5384L, 4531L, 5952L, 5880L, 5963L, 5609L, 5435L, 5258L, 5394L, 4396L, 5374L, 5957L, 5834L, 5672L, 5665L, 5175L, 4377L, 6084L, 6085L, 5934L, 6162L, 5923L, 6163L, 5040L, 5931L, 5286L, 5375L, 4581L, 5104L, 4608L, 5655L, 5092L, 5929L, 5002L, 4621L, 5395L, 5624L, 6230L, 5933L, 4574L]]

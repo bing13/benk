@@ -3,15 +3,15 @@
     <div class="addProjList backUpFileList">
       <h4>projects</h4>
     <table >
-    <tr><th>id</th><th>project name</th><th>project<br/> set</th><th>background<br/> color</th><th>integrity<br/> check</th></tr>
+    <tr><th>list</th><th>click to edit project</th><th>click to edit <br/> project set</th><th>integrity<br/> check</th></tr>
     {% for cx in current_projs %}
 
     <tr>
-      <td>{{ cx.id }}</td>
-      <td><a href="/pim1/drag/{{ cx.id }}/"> {{cx.name}} </a></td>
-      <td> {{cx.set}}</td>
-      <td style="background:{{ cx.color }};"> {{cx.color}}</td>
-      <td><a href="/pim1/showchains/{{ cx.id }}/">integrity check</a></td>
+      <td><a href="/pim1/drag/{{ cx.id }}/">{{ cx.id }}</a></td>
+      <td style="background:{{ cx.color }};" ><a href="/pim1/editproject/{{ cx.id }}/"> {{cx.name}} </a></td>
+      <td style="background:{{ cx.set.color }};" ><a href="/pim1/editprojectset/{{ cx.set.id }}/"> {{cx.set}} </a></td>
+
+      <td><a href="/pim1/showchains/{{ cx.id }}/">&nbsp;&nbsp;&rarr;</a></td>
     </tr>
 
     {% endfor %}

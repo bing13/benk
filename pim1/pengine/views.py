@@ -55,7 +55,8 @@ class ssearchForm(forms.Form):
 
 class addProjectSetForm(forms.Form):
     newProjectSetName =  forms.CharField(max_length = 120, label = "project set name")
-    newProjectSetColor = forms.CharField(max_length = 8, label = "background color")
+    newProjectSetColor = forms.CharField(max_length = 24, label = "background color")
+    newProjectSetIDhidden = forms.IntegerField(widget = forms.HiddenInput, required=False )
     ##newProjectSetOwner = forms.CharField(max_length = 30)
 
 class UploadFileForm(forms.Form):
@@ -1743,12 +1744,17 @@ def healthcheck(request, proj_id):
 ###########################################################################
 
 @login_required
-def createProject(request):
-    sharedMD.logThis(request.user.username, "VIEW: createProject")
+def createOrEditProject(request, projID):
+
+    ## projID = 0 means "new project". Otherwise, the ID of the project to edit
+    
+    sharedMD.logThis(request.user.username, "VIEW: createOrEditProject")
 
     class addProjectForm(forms.Form):
+        # projIDhidden must be optional, b/c for a new form its empty to start
+        projIDhidden = forms.IntegerField(widget = forms.HiddenInput, required=False )
         newProjectName =  forms.CharField(max_length = 120, label = "project name")
-        newProjectColor = forms.CharField(max_length = 8, label = "background color")
+        newProjectColor = forms.CharField(max_length = 24, label = "background color")
         #newProjectOwner = forms.CharField(max_length = 30)
         newProjProjectSet = forms.ModelChoiceField(queryset = ProjectSet.objects.filter(owner = request.user.username ), label = "project set")
         ## was ....objects.all()
@@ -1762,53 +1768,77 @@ def createProject(request):
  
     if request.method == 'POST': # If the form has been posted...
         form = addProjectForm(request.POST) # A form bound to the POST data
+        
         if form.is_valid(): # All validation rules pass
             # Process the data in form.cleaned_data
-
+            if form.cleaned_data.has_key('projIDhidden'):
+                projIDhidden = form.cleaned_data['projIDhidden']
+            else:
+                projIDhidden = 0
             newProjectName = form.cleaned_data['newProjectName']
             newProjectSet = form.cleaned_data['newProjProjectSet']
             newProjectColor = form.cleaned_data['newProjectColor']
             #newProjectOwner = form.cleaned_data['newProjectOwner']
-            sharedMD.logThis(request.user.username,  "creating project: "+newProjectName + "projset = "+str(newProjectSet))
 
-            newProjectObject = Project(name = newProjectName, color = newProjectColor, \
-                                       set = newProjectSet, projType = 1, \
-                                       owner = request.user.username )
-            newProjectObject.save()
+            if projIDhidden == 0:
+                sharedMD.logThis(request.user.username,  "creating project: "+newProjectName + "projset = "+str(newProjectSet))
+
+                newProjectObject = Project(name = newProjectName, color = newProjectColor, \
+                                           set = newProjectSet, projType = 1, \
+                                           owner = request.user.username )
+                newProjectObject.save()
              
-            newArchiveProj = Project(name = newProjectName + " ARCHIVE", color = "#cccccc",\
-                                     set = newProjectSet, projType = 3, \
-                                     archivePair = newProjectObject , \
-                                     owner = request.user.username )
+                newArchiveProj = Project(name = newProjectName + " ARCHIVE", color = "#cccccc",\
+                                         set = newProjectSet, projType = 3, \
+                                         archivePair = newProjectObject , \
+                                         owner = request.user.username )
 
-            newArchiveProj.save()
+                newArchiveProj.save()
 
-            newProjectObject.archivePair = newArchiveProj
-            newProjectObject.save()
+                newProjectObject.archivePair = newArchiveProj
+                newProjectObject.save()
 
-            ### create anchor items for both projects
+                ### create anchor items for both projects
 
-            npAnchor = '== ' + newProjectObject.name + ' ANCHOR =='
-            archAnchor =  '== ' + newArchiveProj.name + ' ANCHOR =='
+                npAnchor = '== ' + newProjectObject.name + ' ANCHOR =='
+                archAnchor =  '== ' + newArchiveProj.name + ' ANCHOR =='
 
-            newProjItem = Item(title = npAnchor, priority = '0', status = '0', \
-                               follows = 0,  parent = 0, indentLevel = 0, \
-                               project = newProjectObject, \
-                               owner = request.user.username)
-            newProjItem.save()
+                newProjItem = Item(title = npAnchor, priority = '0', status = '0', \
+                                   follows = 0,  parent = 0, indentLevel = 0, \
+                                   project = newProjectObject, \
+                                   owner = request.user.username)
+                newProjItem.save()
 
-            newArchItem = Item(title = archAnchor, priority = '0', status = '0', \
-                               follows = 0,  parent = 0, indentLevel = 0, \
-                               project = newArchiveProj, \
-                               owner = request.user.username)
-            newArchItem.save()
-
-            
+                newArchItem = Item(title = archAnchor, priority = '0', status = '0', \
+                                   follows = 0,  parent = 0, indentLevel = 0, \
+                                   project = newArchiveProj, \
+                                   owner = request.user.username)
+                newArchItem.save()
+                returnThisID = newProjectObject.id
+                return HttpResponseRedirect('/pim1/drag/'+str(returnThisID) ) 
+            else:
+                sharedMD.logThis(request.user.username,  "editing project: "+str(projIDhidden)+"  "+newProjectName + "projset:"+str(newProjectSet))
+                projectToEdit = Project.objects.get(pk=projIDhidden)
+                
+                projectToEdit.name = newProjectName
+                projectToEdit.set = newProjectSet
+                projectToEdit.color = newProjectColor
+                projectToEdit.save()
+                returnThisID = projectToEdit.id
+                return HttpResponseRedirect('/pim1/addproject/')
 
             # Redirect after POST
-            return HttpResponseRedirect('/pim1/drag/'+str(newProjectObject.id)) 
+
     else:
-        form = addProjectForm() # An unbound form
+        sharedMD.logThis(request.user.username, "    ...building form, projID="+str(projID))
+    
+        if projID == 0:
+            #projData = { 'projIDhidden': 0 , 'newProjectName':'', 'newProjProjectSet':'', 'newProjectColor':''}
+            form = addProjectForm() # An unbound form
+        else:
+            projObj = Project.objects.get(pk=projID)
+            projData = {'projIDhidden':projID, 'newProjectName':projObj.name, 'newProjectColor':projObj.color, 'newProjProjectSet':projObj.set.id }
+            form = addProjectForm( projData )
 
     return render_to_response('pim1_tmpl/addProject.html', {
                 'form':form,
@@ -1823,8 +1853,8 @@ def createProject(request):
 ###########################################################################
 
 @login_required
-def createProjectSet(request):
-    sharedMD.logThis(request.user.username, "VIEW: createProjectSet")
+def createOrEditProjectSet(request, projsetID):
+    sharedMD.logThis(request.user.username, "VIEW: createOrEditProjectSet")
 
     current_projs = Project.objects.filter(projType=1).filter(owner = request.user.username).order_by('name')
     current_sets = ProjectSet.objects.filter(owner = request.user.username)
@@ -1834,22 +1864,47 @@ def createProjectSet(request):
  
     if request.method == 'POST': # If the form has been posted...
         form = addProjectSetForm(request.POST) # A form bound to the POST data
+        
         if form.is_valid(): # All validation rules pass
             # Process the data in form.cleaned_data
-
+            if form.cleaned_data.has_key('newProjectSetIDhidden'):
+                newProjectSetIDhidden = form.cleaned_data['newProjectSetIDhidden']
+            else:
+                newProjectSetIDhidden = 0
             newProjectSetName = form.cleaned_data['newProjectSetName']
             newProjectSetColor = form.cleaned_data['newProjectSetColor']
-            sharedMD.logThis(request.user.username,  "creating projectSet: "+newProjectSetName )
 
-            newProjectSetObject = ProjectSet(name = newProjectSetName, color = newProjectSetColor, \
-                                       owner = request.user.username )
-            newProjectSetObject.save()
-            
 
-            # Redirect after POST
-            return HttpResponseRedirect('/pim1/addprojectset') 
+            if newProjectSetIDhidden == 0:
+                sharedMD.logThis(request.user.username,  "    creating projectSet: "+newProjectSetName )
+
+                newProjectSetObject = ProjectSet(name = newProjectSetName, \
+                                                 color = newProjectSetColor, \
+                                                 owner = request.user.username )
+                newProjectSetObject.save()
+                return HttpResponseRedirect('/pim1/addprojectset')            
+             
+            else:
+                
+                sharedMD.logThis(request.user.username,  "    editing projectSet: "+newProjectSetName + "   projset:"+str(newProjectSetIDhidden))
+                projectSetToEdit = ProjectSet.objects.get(pk=newProjectSetIDhidden)
+                  
+                projectSetToEdit.name = newProjectSetName
+                #projectSetToEdit.set = newProjectSet
+                projectSetToEdit.color = newProjectSetColor
+                projectSetToEdit.save()
+                
+                return HttpResponseRedirect('/pim1/addprojectset')            
+
+
     else:
-        form = addProjectSetForm() # An unbound form
+        if projsetID == 0:
+            form = addProjectSetForm() # An unbound form
+        else:
+            projsetObj = ProjectSet.objects.get(pk = projsetID)
+            projsetData = {'newProjectSetIDhidden':projsetID, 'newProjectSetName':projsetObj.name, 'newProjectSetColor':projsetObj.color }
+            form = addProjectSetForm( projsetData )
+            
 
     return render_to_response('pim1_tmpl/addProjectset.html', {
                 'form':form,
@@ -2157,6 +2212,10 @@ def showChains(request, proj_id):
         outx += '<a href="/pim1/repairchain/'+ proj_id +'">execute this repair</a>'
 
         displayTables.append(outx);
+
+    else:
+        outx += '<p><strong>SUMMARY: No chain errors found.</strong></p>'
+        displayTables.append(outx);
     
     displayTables.append("\n<p>fin</p>"); 
     #######################################################
@@ -2302,3 +2361,22 @@ def help(request, helpSection):
         
         'nowx':datetime.datetime.now().strftime("%Y/%m/%d  %H:%M:%S")
         }, context_instance=RequestContext(request) )
+#######################################################
+@login_required
+def profilePage(request):
+    sharedMD.logThis(request.user.username, "VIEW: profile")
+    
+    current_projs = Project.objects.filter(projType=1).filter(owner = request.user.username).order_by('name')
+    current_sets = ProjectSet.objects.filter(owner = request.user.username)
+
+    
+
+    
+    return render_to_response('pim1_tmpl/profile.html', {
+        'titleCrumbBlurb':'user home',
+        'current_projs':current_projs,
+        'current_sets':current_sets,
+        
+        'nowx':datetime.datetime.now().strftime("%Y/%m/%d  %H:%M:%S")
+        }, context_instance=RequestContext(request) )
+

@@ -21,7 +21,7 @@ class ProjectSet(models.Model):
 ##     )
     
     name = models.CharField(max_length=120) #, choices=PROJSET_CHOICES)
-    color = models.CharField(max_length=8)
+    color = models.CharField(max_length=24)
     owner = models.CharField(max_length = 30)
 
     def __unicode__(self):
@@ -29,7 +29,7 @@ class ProjectSet(models.Model):
 
 class Project(models.Model):
     name = models.CharField(max_length = 120)
-    color = models.CharField(max_length = 8)
+    color = models.CharField(max_length = 24)
     archivePair = models.ForeignKey('self', null=True, blank=True)
     set = models.ForeignKey(ProjectSet, null=True)
     owner = models.CharField(max_length = 30)

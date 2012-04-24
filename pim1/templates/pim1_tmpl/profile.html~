@@ -4,13 +4,13 @@
 
 <div class="maintcontent">
 
+
+  <h3>welcome, {{ user.firstname }}</h3>
+
+
+
+
     <div class="addProjForm">
-  <h3>add a project</h3>
-
-
-
-
-
       <p>create a new project, and its archive pair.</p>
 
     <form action="/pim1/addproject/" method="post">
