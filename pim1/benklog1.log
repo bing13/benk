@@ -19938,3 +19938,1457 @@ and 5th item is here.
 2012/04/24  18:04:14	---	      ...built followhash....
 2012/04/24  18:04:14	---	      .....displayList built...
 2012/04/24  18:04:14	---	   Exiting buildDisplayList
+2012/04/24  18:05:53	djangosuper	VIEW: today
+2012/04/24  18:05:53	---	   Entering buildDisplayList
+2012/04/24  18:05:53	---	      ..queries done...
+2012/04/24  18:05:53	---	      ....parent list built...
+2012/04/24  18:05:53	---	      .....ix built.....
+2012/04/24  18:05:53	---	   Exiting buildDisplayList
+2012/04/24  18:06:01	djangosuper	VIEW: gridview
+2012/04/24  18:06:02	djangosuper	   cellItems=[5916L, 5606L, 5637L, 5616L, 6066L, 5402L, 5660L, 5949L]
+2012/04/24  18:06:02	---	   Entering buildDisplayList
+2012/04/24  18:06:02	---	      ..queries done...
+2012/04/24  18:06:02	---	      ....parent list built...
+2012/04/24  18:06:02	---	      .....ix built.....
+2012/04/24  18:06:02	---	   Exiting buildDisplayList
+2012/04/24  18:06:02	djangosuper	   cellItems=[6234L, 6386L, 5435L, 5952L, 6015L, 6023L, 6044L, 6087L, 6090L, 6387L, 4377L, 4581L, 5104L, 5175L, 5665L, 5672L, 5933L, 6081L, 6379L, 6380L, 4396L, 5002L, 4381L, 5286L, 5395L, 5375L, 5923L, 6384L, 4621L, 5040L, 5394L, 5655L, 4608L, 4375L, 4531L, 4574L, 5092L, 5619L, 5624L, 5374L, 5609L, 5258L]
+2012/04/24  18:06:02	---	   Entering buildDisplayList
+2012/04/24  18:06:02	---	      ..queries done...
+2012/04/24  18:06:02	---	      ....parent list built...
+2012/04/24  18:06:02	---	      .....ix built.....
+2012/04/24  18:06:02	---	   Exiting buildDisplayList
+2012/04/24  18:06:02	djangosuper	   cellItems=[5671L, 6083L, 5631L, 5605L, 5879L, 5927L, 4585L, 4584L, 4590L, 5060L, 5062L, 5199L, 5411L, 5615L, 4591L, 4592L, 5580L, 1L, 4583L, 5614L, 5877L, 5878L, 5924L, 5958L]
+2012/04/24  18:06:02	---	   Entering buildDisplayList
+2012/04/24  18:06:02	---	      ..queries done...
+2012/04/24  18:06:02	---	      ....parent list built...
+2012/04/24  18:06:02	---	      .....ix built.....
+2012/04/24  18:06:02	---	   Exiting buildDisplayList
+2012/04/24  18:06:02	djangosuper	   cellItems=[4602L, 4607L, 4595L, 5629L, 6027L, 5130L, 5194L, 5617L, 5656L, 5661L, 5803L, 5914L, 5920L, 6079L, 4604L, 4606L, 5201L, 5659L, 5669L, 4605L, 4609L, 4610L, 2384L, 5109L, 5668L, 5804L, 5912L, 5915L, 6381L, 6382L]
+2012/04/24  18:06:02	---	   Entering buildDisplayList
+2012/04/24  18:06:02	---	      ..queries done...
+2012/04/24  18:06:02	---	      ....parent list built...
+2012/04/24  18:06:02	---	      .....ix built.....
+2012/04/24  18:06:02	---	   Exiting buildDisplayList
+2012/04/24  18:06:02	djangosuper	   cellItems=[6061L, 6058L, 6060L, 6118L]
+2012/04/24  18:06:02	---	   Entering buildDisplayList
+2012/04/24  18:06:02	---	      ..queries done...
+2012/04/24  18:06:02	---	      ....parent list built...
+2012/04/24  18:06:02	---	      .....ix built.....
+2012/04/24  18:06:02	---	   Exiting buildDisplayList
+2012/04/24  18:06:02	djangosuper	   cellItems=[5589L, 5127L, 5125L, 5409L, 5598L]
+2012/04/24  18:06:02	---	   Entering buildDisplayList
+2012/04/24  18:06:02	---	      ..queries done...
+2012/04/24  18:06:02	---	      ....parent list built...
+2012/04/24  18:06:02	---	      .....ix built.....
+2012/04/24  18:06:02	---	   Exiting buildDisplayList
+2012/04/24  18:06:02	djangosuper	   cellItems=[6068L, 6069L, 6073L, 6389L, 6392L, 6394L, 5905L, 5870L, 6072L, 6074L, 6388L, 6391L, 6393L, 6396L, 6397L, 6398L]
+2012/04/24  18:06:02	---	   Entering buildDisplayList
+2012/04/24  18:06:02	---	      ..queries done...
+2012/04/24  18:06:02	---	      ....parent list built...
+2012/04/24  18:06:02	---	      .....ix built.....
+2012/04/24  18:06:02	---	   Exiting buildDisplayList
+2012/04/24  18:06:02	djangosuper	   cellItems=[5662L, 5801L, 5674L, 5736L, 5947L, 5950L, 6065L, 6075L, 6089L, 4397L, 5009L, 5086L, 5056L, 5911L, 6029L, 6076L, 6088L, 4615L, 4629L, 4596L, 5132L, 5396L, 5453L, 5410L, 5667L, 4600L, 4601L, 4599L, 5095L, 4386L, 4999L, 5053L, 5055L, 5189L, 5191L, 5673L, 5962L]
+2012/04/24  18:06:02	---	   Entering buildDisplayList
+2012/04/24  18:06:03	---	      ..queries done...
+2012/04/24  18:06:03	---	      ....parent list built...
+2012/04/24  18:06:03	---	      .....ix built.....
+2012/04/24  18:06:03	---	   Exiting buildDisplayList
+2012/04/24  18:06:03	djangosuper	   cellItems=[4646L, 4672L, 4671L, 4670L, 4669L, 4668L, 4665L, 4666L, 4667L, 4661L, 4662L]
+2012/04/24  18:06:03	---	   Entering buildDisplayList
+2012/04/24  18:06:03	---	      ..queries done...
+2012/04/24  18:06:03	---	      ....parent list built...
+2012/04/24  18:06:03	---	      .....ix built.....
+2012/04/24  18:06:03	---	   Exiting buildDisplayList
+2012/04/24  18:06:03	djangosuper	   cellItems=[5967L, 6064L, 5875L, 5663L, 5670L]
+2012/04/24  18:06:03	---	   Entering buildDisplayList
+2012/04/24  18:06:03	---	      ..queries done...
+2012/04/24  18:06:03	---	      ....parent list built...
+2012/04/24  18:06:03	---	      .....ix built.....
+2012/04/24  18:06:03	---	   Exiting buildDisplayList
+2012/04/24  18:06:04	djangosuper	   cellItems=[2468L, 2469L, 2470L, 2471L, 2472L, 2473L, 2474L, 2475L, 2476L, 2477L, 2478L]
+2012/04/24  18:06:04	---	   Entering buildDisplayList
+2012/04/24  18:06:04	---	      ..queries done...
+2012/04/24  18:06:04	---	      ....parent list built...
+2012/04/24  18:06:04	---	      .....ix built.....
+2012/04/24  18:06:04	---	   Exiting buildDisplayList
+2012/04/24  18:06:04	djangosuper	   cellItems=[5641L, 5753L]
+2012/04/24  18:06:04	---	   Entering buildDisplayList
+2012/04/24  18:06:04	---	      ..queries done...
+2012/04/24  18:06:04	---	      ....parent list built...
+2012/04/24  18:06:04	---	      .....ix built.....
+2012/04/24  18:06:04	---	   Exiting buildDisplayList
+2012/04/24  18:06:04	djangosuper	   cellItems=[6091L, 6092L, 6093L, 6094L, 6095L, 5987L, 5979L, 5989L, 5980L, 5984L, 6071L, 6004L, 6022L, 4301L, 6003L, 6001L, 6002L, 5998L, 5999L, 6000L, 5997L, 5995L, 5996L]
+2012/04/24  18:06:04	---	   Entering buildDisplayList
+2012/04/24  18:06:04	---	      ..queries done...
+2012/04/24  18:06:04	---	      ....parent list built...
+2012/04/24  18:06:04	---	      .....ix built.....
+2012/04/24  18:06:04	---	   Exiting buildDisplayList
+2012/04/24  18:06:04	djangosuper	   cellItems=[5000L, 5001L, 5005L, 5006L, 5007L, 5083L, 5100L, 5596L, 5102L, 5106L]
+2012/04/24  18:06:04	---	   Entering buildDisplayList
+2012/04/24  18:06:04	---	      ..queries done...
+2012/04/24  18:06:04	---	      ....parent list built...
+2012/04/24  18:06:04	---	      .....ix built.....
+2012/04/24  18:06:04	---	   Exiting buildDisplayList
+2012/04/24  18:06:04	djangosuper	   cellItems=[5600L, 6390L, 6018L, 5900L, 5047L, 5116L, 5599L, 5595L, 5593L, 5592L, 5591L, 5625L, 5961L, 5951L]
+2012/04/24  18:06:04	---	   Entering buildDisplayList
+2012/04/24  18:06:04	---	      ..queries done...
+2012/04/24  18:06:04	---	      ....parent list built...
+2012/04/24  18:06:04	---	      .....ix built.....
+2012/04/24  18:06:04	---	   Exiting buildDisplayList
+2012/04/24  18:41:29	djangosuper	VIEW: draglist
+2012/04/24  18:41:29	djangosuper	     Proj 2
+2012/04/24  18:41:29	---	   Entering buildDisplayList
+2012/04/24  18:41:29	---	      ..queries done...
+2012/04/24  18:41:29	---	      ....parent list built...
+2012/04/24  18:41:29	---	      .....ix built.....
+2012/04/24  18:41:29	---	      ...built followhash....
+2012/04/24  18:41:29	---	      .....displayList built...
+2012/04/24  18:41:29	---	   Exiting buildDisplayList
+2012/04/24  18:41:32	djangosuper	VIEW: gridview
+2012/04/24  18:41:32	djangosuper	   cellItems=[5916L, 5606L, 5637L, 5616L, 6066L, 5402L, 5660L, 5949L]
+2012/04/24  18:41:32	---	   Entering buildDisplayList
+2012/04/24  18:41:32	---	      ..queries done...
+2012/04/24  18:41:32	---	      ....parent list built...
+2012/04/24  18:41:32	---	      .....ix built.....
+2012/04/24  18:41:32	---	   Exiting buildDisplayList
+2012/04/24  18:41:32	djangosuper	   cellItems=[6234L, 6386L, 5435L, 5952L, 6015L, 6023L, 6044L, 6087L, 6090L, 6387L, 4377L, 4581L, 5104L, 5175L, 5665L, 5672L, 5933L, 6081L, 6379L, 6380L, 4396L, 5002L, 4381L, 5286L, 5395L, 5375L, 5923L, 6384L, 4621L, 5040L, 5394L, 5655L, 4608L, 4375L, 4531L, 4574L, 5092L, 5619L, 5624L, 5374L, 5609L, 5258L]
+2012/04/24  18:41:32	---	   Entering buildDisplayList
+2012/04/24  18:41:32	---	      ..queries done...
+2012/04/24  18:41:32	---	      ....parent list built...
+2012/04/24  18:41:32	---	      .....ix built.....
+2012/04/24  18:41:32	---	   Exiting buildDisplayList
+2012/04/24  18:41:32	djangosuper	   cellItems=[5671L, 6083L, 5631L, 5605L, 5879L, 5927L, 4585L, 4584L, 4590L, 5060L, 5062L, 5199L, 5411L, 5615L, 4591L, 4592L, 5580L, 1L, 4583L, 5614L, 5877L, 5878L, 5924L, 5958L]
+2012/04/24  18:41:32	---	   Entering buildDisplayList
+2012/04/24  18:41:32	---	      ..queries done...
+2012/04/24  18:41:32	---	      ....parent list built...
+2012/04/24  18:41:32	---	      .....ix built.....
+2012/04/24  18:41:32	---	   Exiting buildDisplayList
+2012/04/24  18:41:32	djangosuper	   cellItems=[4602L, 4607L, 4595L, 5629L, 6027L, 5130L, 5194L, 5617L, 5656L, 5661L, 5803L, 5914L, 5920L, 6079L, 4604L, 4606L, 5201L, 5659L, 5669L, 4605L, 4609L, 4610L, 2384L, 5109L, 5668L, 5804L, 5912L, 5915L, 6381L, 6382L]
+2012/04/24  18:41:32	---	   Entering buildDisplayList
+2012/04/24  18:41:32	---	      ..queries done...
+2012/04/24  18:41:32	---	      ....parent list built...
+2012/04/24  18:41:33	---	      .....ix built.....
+2012/04/24  18:41:33	---	   Exiting buildDisplayList
+2012/04/24  18:41:33	djangosuper	   cellItems=[6061L, 6058L, 6060L, 6118L]
+2012/04/24  18:41:33	---	   Entering buildDisplayList
+2012/04/24  18:41:33	---	      ..queries done...
+2012/04/24  18:41:33	---	      ....parent list built...
+2012/04/24  18:41:33	---	      .....ix built.....
+2012/04/24  18:41:33	---	   Exiting buildDisplayList
+2012/04/24  18:41:33	djangosuper	   cellItems=[5589L, 5127L, 5125L, 5409L, 5598L]
+2012/04/24  18:41:33	---	   Entering buildDisplayList
+2012/04/24  18:41:33	---	      ..queries done...
+2012/04/24  18:41:33	---	      ....parent list built...
+2012/04/24  18:41:33	---	      .....ix built.....
+2012/04/24  18:41:33	---	   Exiting buildDisplayList
+2012/04/24  18:41:33	djangosuper	   cellItems=[6068L, 6069L, 6073L, 6389L, 6392L, 6394L, 5905L, 5870L, 6072L, 6074L, 6388L, 6391L, 6393L, 6396L, 6397L, 6398L]
+2012/04/24  18:41:33	---	   Entering buildDisplayList
+2012/04/24  18:41:33	---	      ..queries done...
+2012/04/24  18:41:33	---	      ....parent list built...
+2012/04/24  18:41:33	---	      .....ix built.....
+2012/04/24  18:41:33	---	   Exiting buildDisplayList
+2012/04/24  18:41:33	djangosuper	   cellItems=[5662L, 5801L, 5674L, 5736L, 5947L, 5950L, 6065L, 6075L, 6089L, 4397L, 5009L, 5086L, 5056L, 5911L, 6029L, 6076L, 6088L, 4615L, 4629L, 4596L, 5132L, 5396L, 5453L, 5410L, 5667L, 4600L, 4601L, 4599L, 5095L, 4386L, 4999L, 5053L, 5055L, 5189L, 5191L, 5673L, 5962L]
+2012/04/24  18:41:33	---	   Entering buildDisplayList
+2012/04/24  18:41:33	---	      ..queries done...
+2012/04/24  18:41:33	---	      ....parent list built...
+2012/04/24  18:41:33	---	      .....ix built.....
+2012/04/24  18:41:33	---	   Exiting buildDisplayList
+2012/04/24  18:41:33	djangosuper	   cellItems=[4646L, 4672L, 4671L, 4670L, 4669L, 4668L, 4665L, 4666L, 4667L, 4661L, 4662L]
+2012/04/24  18:41:33	---	   Entering buildDisplayList
+2012/04/24  18:41:33	---	      ..queries done...
+2012/04/24  18:41:33	---	      ....parent list built...
+2012/04/24  18:41:33	---	      .....ix built.....
+2012/04/24  18:41:33	---	   Exiting buildDisplayList
+2012/04/24  18:41:33	djangosuper	   cellItems=[5967L, 6064L, 5875L, 5663L, 5670L]
+2012/04/24  18:41:33	---	   Entering buildDisplayList
+2012/04/24  18:41:33	---	      ..queries done...
+2012/04/24  18:41:33	---	      ....parent list built...
+2012/04/24  18:41:33	---	      .....ix built.....
+2012/04/24  18:41:33	---	   Exiting buildDisplayList
+2012/04/24  18:41:33	djangosuper	   cellItems=[2468L, 2469L, 2470L, 2471L, 2472L, 2473L, 2474L, 2475L, 2476L, 2477L, 2478L]
+2012/04/24  18:41:33	---	   Entering buildDisplayList
+2012/04/24  18:41:34	---	      ..queries done...
+2012/04/24  18:41:34	---	      ....parent list built...
+2012/04/24  18:41:34	---	      .....ix built.....
+2012/04/24  18:41:34	---	   Exiting buildDisplayList
+2012/04/24  18:41:34	djangosuper	   cellItems=[5641L, 5753L]
+2012/04/24  18:41:34	---	   Entering buildDisplayList
+2012/04/24  18:41:34	---	      ..queries done...
+2012/04/24  18:41:34	---	      ....parent list built...
+2012/04/24  18:41:34	---	      .....ix built.....
+2012/04/24  18:41:34	---	   Exiting buildDisplayList
+2012/04/24  18:41:34	djangosuper	   cellItems=[6091L, 6092L, 6093L, 6094L, 6095L, 5987L, 5979L, 5989L, 5980L, 5984L, 6071L, 6004L, 6022L, 4301L, 6003L, 6001L, 6002L, 5998L, 5999L, 6000L, 5997L, 5995L, 5996L]
+2012/04/24  18:41:34	---	   Entering buildDisplayList
+2012/04/24  18:41:34	---	      ..queries done...
+2012/04/24  18:41:34	---	      ....parent list built...
+2012/04/24  18:41:34	---	      .....ix built.....
+2012/04/24  18:41:34	---	   Exiting buildDisplayList
+2012/04/24  18:41:34	djangosuper	   cellItems=[5000L, 5001L, 5005L, 5006L, 5007L, 5083L, 5100L, 5596L, 5102L, 5106L]
+2012/04/24  18:41:34	---	   Entering buildDisplayList
+2012/04/24  18:41:34	---	      ..queries done...
+2012/04/24  18:41:34	---	      ....parent list built...
+2012/04/24  18:41:34	---	      .....ix built.....
+2012/04/24  18:41:34	---	   Exiting buildDisplayList
+2012/04/24  18:41:34	djangosuper	   cellItems=[5600L, 6390L, 6018L, 5900L, 5047L, 5116L, 5599L, 5595L, 5593L, 5592L, 5591L, 5625L, 5961L, 5951L]
+2012/04/24  18:41:34	---	   Entering buildDisplayList
+2012/04/24  18:41:34	---	      ..queries done...
+2012/04/24  18:41:34	---	      ....parent list built...
+2012/04/24  18:41:34	---	      .....ix built.....
+2012/04/24  18:41:34	---	   Exiting buildDisplayList
+2012/04/24  18:41:38	djangosuper	VIEW: today
+2012/04/24  18:41:38	---	   Entering buildDisplayList
+2012/04/24  18:41:38	---	      ..queries done...
+2012/04/24  18:41:38	---	      ....parent list built...
+2012/04/24  18:41:39	---	      .....ix built.....
+2012/04/24  18:41:39	---	   Exiting buildDisplayList
+2012/04/24  18:41:41	djangosuper	VIEW: draglist
+2012/04/24  18:41:41	djangosuper	     Proj 5
+2012/04/24  18:41:41	---	   Entering buildDisplayList
+2012/04/24  18:41:41	---	      ..queries done...
+2012/04/24  18:41:42	---	      ....parent list built...
+2012/04/24  18:41:42	---	      .....ix built.....
+2012/04/24  18:41:42	---	      ...built followhash....
+2012/04/24  18:41:42	---	      .....displayList built...
+2012/04/24  18:41:42	---	   Exiting buildDisplayList
+2012/04/24  19:16:16	djangosuper	VIEW: draglist
+2012/04/24  19:16:16	djangosuper	     Proj 5
+2012/04/24  19:16:16	---	   Entering buildDisplayList
+2012/04/24  19:16:16	---	      ..queries done...
+2012/04/24  19:16:16	---	      ....parent list built...
+2012/04/24  19:16:16	---	      .....ix built.....
+2012/04/24  19:16:16	---	      ...built followhash....
+2012/04/24  19:16:16	---	      .....displayList built...
+2012/04/24  19:16:16	---	   Exiting buildDisplayList
+2012/04/24  19:22:10	djangosuper	VIEW: xhr_actions
+2012/04/24  19:22:10	djangosuper	<QueryDict: {u'ci': [u'6096'], u'datax': [u'3'], u'ajaxAction': [u'prioritySelected'], u'ti': [u'0']}>
+2012/04/24  19:22:10	djangosuper	=====> xhr_actions: =AJAX request, ci=6096  ti=0  ajaxAction: prioritySelected
+2012/04/24  19:22:12	---	Last item ID:4574
+2012/04/24  19:22:12	---	  deco for: 6096
+2012/04/24  19:22:12	---	lock removed
+2012/04/24  19:22:14	djangosuper	VIEW: xhr_actions
+2012/04/24  19:22:14	djangosuper	<QueryDict: {u'ci': [u'6380'], u'datax': [u'2'], u'ajaxAction': [u'prioritySelected'], u'ti': [u'0']}>
+2012/04/24  19:22:14	djangosuper	=====> xhr_actions: =AJAX request, ci=6380  ti=0  ajaxAction: prioritySelected
+2012/04/24  19:22:14	---	Last item ID:4574
+2012/04/24  19:22:14	---	  deco for: 6380
+2012/04/24  19:22:14	---	lock removed
+2012/04/24  19:22:27	djangosuper	VIEW: xhr_actions
+2012/04/24  19:22:27	djangosuper	<QueryDict: {u'ci': [u'6387'], u'ajaxAction': [u'moveUp'], u'ti': [u'0']}>
+2012/04/24  19:22:27	djangosuper	=====> xhr_actions: =AJAX request, ci=6387  ti=0  ajaxAction: moveUp
+2012/04/24  19:22:27	---	Last item ID:4574
+2012/04/24  19:22:27	---	sMDflk=> findLastKid lastKid=0
+2012/04/24  19:22:27	---	  moving among children of 4375
+2012/04/24  19:22:27	---	  TI:  6081
+2012/04/24  19:22:27	---	sMDflk=> findLastKid lastKid=0
+2012/04/24  19:22:27	---	  deco for: 6387
+2012/04/24  19:22:27	---	  deco for: 6081
+2012/04/24  19:22:27	---	  deco for: 6380
+2012/04/24  19:22:27	---	  deco for: 6387
+2012/04/24  19:22:27	---	  deco for: 5954
+2012/04/24  19:22:27	---	lock removed
+2012/04/24  19:30:35	djangosuper	VIEW: today
+2012/04/24  19:30:35	---	   Entering buildDisplayList
+2012/04/24  19:30:35	---	      ..queries done...
+2012/04/24  19:30:35	---	      ....parent list built...
+2012/04/24  19:30:36	---	      .....ix built.....
+2012/04/24  19:30:36	---	   Exiting buildDisplayList
+2012/04/24  19:32:21	djangosuper	Edit item: Formset generated, pItem=6235
+2012/04/24  19:34:12	djangosuper	VIEW: xhr_actions
+2012/04/24  19:34:12	djangosuper	<QueryDict: {u'ci': [u'5286'], u'FADpriority': [u'0'], u'FADhtmlBody': [u''], u'FADstatus': [u'0'], u'ti': [u'0'], u'ajaxAction': [u'fastAdd'], u'FADtitle': [u'GENERAL']}>
+2012/04/24  19:34:12	djangosuper	=====> xhr_actions: =AJAX request, ci=5286  ti=0  ajaxAction: fastAdd
+2012/04/24  19:34:12	---	Last item ID:4574
+2012/04/24  19:34:12	---	VIEW: drag_actions => fastAdd
+2012/04/24  19:34:12	---	fastAdd for 5286  GENERAL
+2012/04/24  19:34:12	---	NEW FA item ID=None
+2012/04/24  19:34:12	---	   fastadded item ID = 6399
+2012/04/24  19:34:12	---	  deco for: 6399
+2012/04/24  19:34:12	---	  deco for: 5286
+2012/04/24  19:34:12	---	  deco for: 5931
+2012/04/24  19:34:12	---	  deco for: 5375
+2012/04/24  19:34:12	---	lock removed
+2012/04/24  19:34:17	djangosuper	VIEW: xhr_actions
+2012/04/24  19:34:17	djangosuper	<QueryDict: {u'ci': [u'5375'], u'datax': [u''], u'ajaxAction': [u'demote'], u'ti': [u'0']}>
+2012/04/24  19:34:17	djangosuper	=====> xhr_actions: =AJAX request, ci=5375  ti=0  ajaxAction: demote
+2012/04/24  19:34:17	---	Last item ID:4574
+2012/04/24  19:34:17	---	sMDflk=> findLastKid lastKid=0
+2012/04/24  19:34:17	---	  deco for: 5375
+2012/04/24  19:34:17	---	  deco for: 6399
+2012/04/24  19:34:17	---	lock removed
+2012/04/24  19:34:22	djangosuper	VIEW: xhr_actions
+2012/04/24  19:34:22	djangosuper	<QueryDict: {u'ci': [u'5104'], u'datax': [u''], u'ajaxAction': [u'dragKid'], u'ti': [u'6399']}>
+2012/04/24  19:34:22	djangosuper	=====> xhr_actions: =AJAX request, ci=5104  ti=6399  ajaxAction: dragKid
+2012/04/24  19:34:22	---	Last item ID:4574
+2012/04/24  19:34:22	djangosuper	VIEW: drag_move
+2012/04/24  19:34:22	djangosuper	 ====dragmove=> CIid:TIid    5104:6399
+2012/04/24  19:34:22	---	Last item ID:4574
+2012/04/24  19:34:22	---	sMDflk=> findLastKid lastKid=0
+2012/04/24  19:34:22	djangosuper	DragMove=> CI saved
+2012/04/24  19:34:22	djangosuper	dragmove=> targetFollowerID:5375  targetFollower.follows:6399  lastkid:0
+2012/04/24  19:34:22	djangosuper	 => targetFollower.follows=5104
+2012/04/24  19:34:22	---	lock removed
+2012/04/24  19:34:24	djangosuper	VIEW: xhr_actions
+2012/04/24  19:34:24	djangosuper	<QueryDict: {u'ci': [u'5286'], u'datax': [u''], u'ajaxAction': [u'dragKid'], u'ti': [u'6399']}>
+2012/04/24  19:34:24	djangosuper	=====> xhr_actions: =AJAX request, ci=5286  ti=6399  ajaxAction: dragKid
+2012/04/24  19:34:24	---	Last item ID:4574
+2012/04/24  19:34:24	djangosuper	VIEW: drag_move
+2012/04/24  19:34:24	djangosuper	 ====dragmove=> CIid:TIid    5286:6399
+2012/04/24  19:34:24	---	Last item ID:4574
+2012/04/24  19:34:24	---	sMDflk=> findLastKid lastKid=0
+2012/04/24  19:34:24	djangosuper	DragMove=> CI saved
+2012/04/24  19:34:24	djangosuper	dragmove=> targetFollowerID:5104  targetFollower.follows:6399  lastkid:0
+2012/04/24  19:34:24	djangosuper	 => targetFollower.follows=5286
+2012/04/24  19:34:24	---	lock removed
+2012/04/24  19:34:27	djangosuper	VIEW: xhr_actions
+2012/04/24  19:34:27	djangosuper	<QueryDict: {u'ci': [u'5931'], u'datax': [u''], u'ajaxAction': [u'dragKid'], u'ti': [u'6399']}>
+2012/04/24  19:34:27	djangosuper	=====> xhr_actions: =AJAX request, ci=5931  ti=6399  ajaxAction: dragKid
+2012/04/24  19:34:27	---	Last item ID:4574
+2012/04/24  19:34:27	djangosuper	VIEW: drag_move
+2012/04/24  19:34:27	djangosuper	 ====dragmove=> CIid:TIid    5931:6399
+2012/04/24  19:34:27	---	Last item ID:4574
+2012/04/24  19:34:27	---	sMDflk=> findLastKid lastKid=0
+2012/04/24  19:34:27	djangosuper	DragMove=> CI saved
+2012/04/24  19:34:27	djangosuper	dragmove=> targetFollowerID:5286  targetFollower.follows:6399  lastkid:0
+2012/04/24  19:34:27	djangosuper	 => targetFollower.follows=5931
+2012/04/24  19:34:27	---	lock removed
+2012/04/24  19:34:29	djangosuper	VIEW: xhr_actions
+2012/04/24  19:34:29	djangosuper	<QueryDict: {u'ci': [u'5040'], u'datax': [u''], u'ajaxAction': [u'dragKid'], u'ti': [u'6399']}>
+2012/04/24  19:34:29	djangosuper	=====> xhr_actions: =AJAX request, ci=5040  ti=6399  ajaxAction: dragKid
+2012/04/24  19:34:29	---	Last item ID:4574
+2012/04/24  19:34:29	djangosuper	VIEW: drag_move
+2012/04/24  19:34:29	djangosuper	 ====dragmove=> CIid:TIid    5040:6399
+2012/04/24  19:34:29	---	Last item ID:4574
+2012/04/24  19:34:29	---	sMDflk=> findLastKid lastKid=0
+2012/04/24  19:34:29	djangosuper	DragMove=> CI saved
+2012/04/24  19:34:29	djangosuper	dragmove=> targetFollowerID:5931  targetFollower.follows:6399  lastkid:0
+2012/04/24  19:34:29	djangosuper	 => targetFollower.follows=5040
+2012/04/24  19:34:29	---	lock removed
+2012/04/24  19:34:32	djangosuper	VIEW: xhr_actions
+2012/04/24  19:34:32	djangosuper	<QueryDict: {u'ci': [u'5934'], u'datax': [u''], u'ajaxAction': [u'dragKid'], u'ti': [u'6399']}>
+2012/04/24  19:34:32	djangosuper	=====> xhr_actions: =AJAX request, ci=5934  ti=6399  ajaxAction: dragKid
+2012/04/24  19:34:32	---	Last item ID:4574
+2012/04/24  19:34:32	djangosuper	VIEW: drag_move
+2012/04/24  19:34:32	djangosuper	 ====dragmove=> CIid:TIid    5934:6399
+2012/04/24  19:34:32	---	Last item ID:4574
+2012/04/24  19:34:32	---	sMDflk=> findLastKid lastKid=0
+2012/04/24  19:34:32	djangosuper	DragMove=> CI saved
+2012/04/24  19:34:32	djangosuper	dragmove=> targetFollowerID:5040  targetFollower.follows:6399  lastkid:0
+2012/04/24  19:34:32	djangosuper	 => targetFollower.follows=5934
+2012/04/24  19:34:32	---	lock removed
+2012/04/24  19:34:51	djangosuper	VIEW: xhr_actions
+2012/04/24  19:34:51	djangosuper	<QueryDict: {u'ci': [u'4608'], u'datax': [u''], u'ajaxAction': [u'dragKid'], u'ti': [u'6399']}>
+2012/04/24  19:34:51	djangosuper	=====> xhr_actions: =AJAX request, ci=4608  ti=6399  ajaxAction: dragKid
+2012/04/24  19:34:51	---	Last item ID:4574
+2012/04/24  19:34:51	djangosuper	VIEW: drag_move
+2012/04/24  19:34:51	djangosuper	 ====dragmove=> CIid:TIid    4608:6399
+2012/04/24  19:34:51	---	Last item ID:4574
+2012/04/24  19:34:51	---	sMDflk=> findLastKid lastKid=0
+2012/04/24  19:34:51	djangosuper	DragMove=> CI saved
+2012/04/24  19:34:51	djangosuper	dragmove=> targetFollowerID:5934  targetFollower.follows:6399  lastkid:0
+2012/04/24  19:34:51	djangosuper	 => targetFollower.follows=4608
+2012/04/24  19:34:51	---	lock removed
+2012/04/24  19:34:53	djangosuper	VIEW: xhr_actions
+2012/04/24  19:34:53	djangosuper	<QueryDict: {u'ci': [u'5655'], u'datax': [u''], u'ajaxAction': [u'dragKid'], u'ti': [u'4608']}>
+2012/04/24  19:34:53	djangosuper	=====> xhr_actions: =AJAX request, ci=5655  ti=4608  ajaxAction: dragKid
+2012/04/24  19:34:53	---	Last item ID:4574
+2012/04/24  19:34:53	djangosuper	VIEW: drag_move
+2012/04/24  19:34:53	djangosuper	 ====dragmove=> CIid:TIid    5655:4608
+2012/04/24  19:34:53	---	Last item ID:4574
+2012/04/24  19:34:53	---	sMDflk=> findLastKid lastKid=0
+2012/04/24  19:34:53	djangosuper	DragMove=> CI saved
+2012/04/24  19:34:53	djangosuper	dragmove=> targetFollowerID:5934  targetFollower.follows:4608  lastkid:0
+2012/04/24  19:34:53	djangosuper	 => targetFollower.follows=5655
+2012/04/24  19:34:53	---	lock removed
+2012/04/24  19:34:54	djangosuper	VIEW: xhr_actions
+2012/04/24  19:34:54	djangosuper	<QueryDict: {u'ci': [u'6399'], u'datax': [u''], u'ajaxAction': [u'dragKid'], u'ti': [u'4608']}>
+2012/04/24  19:34:54	djangosuper	=====> xhr_actions: =AJAX request, ci=6399  ti=4608  ajaxAction: dragKid
+2012/04/24  19:34:55	---	Last item ID:4574
+2012/04/24  19:34:55	djangosuper	VIEW: drag_move
+2012/04/24  19:34:55	djangosuper	 ====dragmove=> CIid:TIid    6399:4608
+2012/04/24  19:34:55	---	Last item ID:4574
+2012/04/24  19:34:55	---	sMDflk=> findLastKid lastKid=5375
+2012/04/24  19:34:55	djangosuper	DragMove=> CI saved
+2012/04/24  19:34:55	djangosuper	dragmove=> targetFollowerID:5655  targetFollower.follows:4608  lastkid:5375
+2012/04/24  19:34:55	djangosuper	 dm=>kidList = [4608L, 5655L, 5934L, 5040L, 5931L, 5286L, 5104L, 5375L]
+2012/04/24  19:35:07	djangosuper	VIEW: draglist
+2012/04/24  19:35:07	djangosuper	     Proj 5
+2012/04/24  19:35:07	---	   Entering buildDisplayList
+2012/04/24  19:35:07	---	      ..queries done...
+2012/04/24  19:35:08	---	      ....parent list built...
+2012/04/24  19:35:08	---	      .....ix built.....
+2012/04/24  19:35:08	---	      ...built followhash....
+2012/04/24  19:35:08	---	      .....displayList built...
+2012/04/24  19:35:08	---	   Exiting buildDisplayList
+2012/04/24  19:35:37	djangosuper	VIEW: maintPage
+2012/04/24  19:35:41	djangosuper	VIEW: showchains
+2012/04/24  19:35:41	djangosuper	ShowChains: Proj 5======================================
+2012/04/24  19:35:41	djangosuper	            Found these un-followed items: [4574L]
+2012/04/24  19:35:43	djangosuper	            Tables w/dupes removed:[[4375L, 6229L, 6234L, 6096L, 6380L, 6387L, 6081L, 5954L, 6087L, 6235L, 6090L, 6383L, 6385L, 4381L, 6044L, 6384L, 5955L, 6080L, 5833L, 6364L, 6379L, 6164L, 6236L, 6015L, 6023L, 5977L, 5619L, 5978L, 5959L, 6231L, 5384L, 4531L, 5952L, 6386L, 5880L, 5963L, 5609L, 5435L, 5258L, 5394L, 4396L, 5374L, 5957L, 5834L, 5672L, 5665L, 5175L, 4377L, 6084L, 6085L, 6162L, 5923L, 6163L, 4581L, 5092L, 5929L, 5002L, 4621L, 5395L, 5624L, 6230L, 5933L, 4574L]]
+2012/04/24  19:37:14	djangosuper	VIEW: draglist
+2012/04/24  19:37:14	djangosuper	     Proj 5
+2012/04/24  19:37:14	---	   Entering buildDisplayList
+2012/04/24  19:37:14	---	      ..queries done...
+2012/04/24  19:37:14	---	      ....parent list built...
+2012/04/24  19:37:14	---	      .....ix built.....
+2012/04/24  19:37:14	---	      ...built followhash....
+2012/04/24  19:37:14	---	      .....displayList built...
+2012/04/24  19:37:14	---	   Exiting buildDisplayList
+2012/04/24  19:37:22	djangosuper	Edit item: Formset generated, pItem=4574
+2012/04/24  19:37:43	djangosuper	Edit item: Formset generated, pItem=6399
+2012/04/24  19:38:01	djangosuper	 dm=>kidx / indentL = 4608/28312
+2012/04/24  19:38:01	djangosuper	 dm=>kidx / indentL = 5655/3
+2012/04/24  19:38:01	djangosuper	 dm=>kidx / indentL = 5934/2
+2012/04/24  19:38:01	djangosuper	 dm=>kidx / indentL = 5040/2
+2012/04/24  19:38:01	djangosuper	 dm=>kidx / indentL = 5931/2
+2012/04/24  19:38:01	djangosuper	 dm=>kidx / indentL = 5286/2
+2012/04/24  19:38:01	djangosuper	 dm=>kidx / indentL = 5104/2
+2012/04/24  19:38:01	djangosuper	 dm=>kidx / indentL = 5375/2
+2012/04/24  19:38:01	djangosuper	 => targetFollower.follows=5375
+2012/04/24  19:38:01	---	lock removed
+2012/04/24  19:38:06	djangosuper	VIEW: draglist
+2012/04/24  19:38:06	djangosuper	     Proj 5
+2012/04/24  19:38:06	---	   Entering buildDisplayList
+2012/04/24  19:38:07	---	      ..queries done...
+2012/04/24  19:38:07	---	      ....parent list built...
+2012/04/24  19:38:07	---	      .....ix built.....
+2012/04/24  19:38:07	---	      ...built followhash....
+2012/04/24  19:38:07	---	      .....displayList built...
+2012/04/24  19:38:07	---	   Exiting buildDisplayList
+2012/04/24  19:38:18	djangosuper	VIEW: showchains
+2012/04/24  19:38:18	djangosuper	ShowChains: Proj 5======================================
+2012/04/24  19:38:18	djangosuper	            Found these un-followed items: [4608L]
+2012/04/24  19:38:21	djangosuper	            Tables w/dupes removed:[[4375L, 6229L, 6234L, 6096L, 6380L, 6387L, 6081L, 5954L, 6087L, 6235L, 6090L, 6383L, 6385L, 4381L, 6044L, 6384L, 5955L, 6080L, 5833L, 6364L, 6379L, 6164L, 6236L, 6015L, 6023L, 5977L, 5619L, 5978L, 5959L, 6231L, 5384L, 4531L, 5952L, 6386L, 5880L, 5963L, 5609L, 5435L, 5258L, 5394L, 4396L, 5374L, 5957L, 5834L, 5672L, 5665L, 5175L, 4377L, 6084L, 6085L, 6162L, 5923L, 6163L, 4581L, 5092L, 5929L, 5002L, 4621L, 5395L, 5624L, 6230L, 5933L, 4574L, 6399L, 4608L]]
+2012/04/24  19:40:25	djangosuper	VIEW: draglist
+2012/04/24  19:40:25	djangosuper	     Proj 5
+2012/04/24  19:40:25	---	   Entering buildDisplayList
+2012/04/24  19:40:25	---	      ..queries done...
+2012/04/24  19:40:25	---	      ....parent list built...
+2012/04/24  19:40:25	---	      .....ix built.....
+2012/04/24  19:40:25	---	      ...built followhash....
+2012/04/24  19:40:25	---	      .....displayList built...
+2012/04/24  19:40:25	---	   Exiting buildDisplayList
+2012/04/24  19:40:34	djangosuper	VIEW: showchains
+2012/04/24  19:40:34	djangosuper	ShowChains: Proj 5======================================
+2012/04/24  19:40:34	djangosuper	            Found these un-followed items: [5375L]
+2012/04/24  19:40:36	djangosuper	            Tables w/dupes removed:[[4375L, 6229L, 6234L, 6096L, 6380L, 6387L, 6081L, 5954L, 6087L, 6235L, 6090L, 6383L, 6385L, 4381L, 6044L, 6384L, 5955L, 6080L, 5833L, 6364L, 6379L, 6164L, 6236L, 6015L, 6023L, 5977L, 5619L, 5978L, 5959L, 6231L, 5384L, 4531L, 5952L, 6386L, 5880L, 5963L, 5609L, 5435L, 5258L, 5394L, 4396L, 5374L, 5957L, 5834L, 5672L, 5665L, 5175L, 4377L, 6084L, 6085L, 6162L, 5923L, 6163L, 4581L, 5092L, 5929L, 5002L, 4621L, 5395L, 5624L, 6230L, 5933L, 4574L, 6399L, 4608L, 5655L, 5934L, 5040L, 5931L, 5286L, 5104L, 5375L]]
+2012/04/24  19:41:37	djangosuper	VIEW: xhr_actions
+2012/04/24  19:41:37	djangosuper	<QueryDict: {u'ci': [u'6386'], u'FADpriority': [u'0'], u'FADhtmlBody': [u''], u'FADstatus': [u'0'], u'ti': [u'0'], u'ajaxAction': [u'fastAdd'], u'FADtitle': [u'BAD benk corruption, again, just from moving too fast. Showchain reported lots of "not in chain 0" items, but didn\'t list two chain tables, and offered no fix.']}>
+2012/04/24  19:41:37	djangosuper	=====> xhr_actions: =AJAX request, ci=6386  ti=0  ajaxAction: fastAdd
+2012/04/24  19:41:37	---	Last item ID:5375
+2012/04/24  19:41:37	---	VIEW: drag_actions => fastAdd
+2012/04/24  19:41:37	---	fastAdd for 6386  BAD benk corruption, again, just from moving too fast. Showchain reported lots of "not in chain 0" items, but didn't list two chain tables, and offered no fix.
+2012/04/24  19:41:37	---	NEW FA item ID=None
+2012/04/24  19:41:37	---	   fastadded item ID = 6400
+2012/04/24  19:41:37	---	  deco for: 6400
+2012/04/24  19:41:37	---	  deco for: 6386
+2012/04/24  19:41:37	---	  deco for: 5952
+2012/04/24  19:41:37	---	  deco for: 5880
+2012/04/24  19:41:37	---	lock removed
+2012/04/24  19:41:42	djangosuper	VIEW: xhr_actions
+2012/04/24  19:41:42	djangosuper	<QueryDict: {u'ci': [u'6400'], u'datax': [u'1'], u'ajaxAction': [u'prioritySelected'], u'ti': [u'0']}>
+2012/04/24  19:41:42	djangosuper	=====> xhr_actions: =AJAX request, ci=6400  ti=0  ajaxAction: prioritySelected
+2012/04/24  19:41:42	---	Last item ID:5375
+2012/04/24  19:41:42	---	  deco for: 6400
+2012/04/24  19:41:42	---	lock removed
+2012/04/24  19:41:43	djangosuper	VIEW: xhr_actions
+2012/04/24  19:41:43	djangosuper	<QueryDict: {u'ci': [u'6400'], u'datax': [u'1'], u'ajaxAction': [u'statusSelected'], u'ti': [u'0']}>
+2012/04/24  19:41:43	djangosuper	=====> xhr_actions: =AJAX request, ci=6400  ti=0  ajaxAction: statusSelected
+2012/04/24  19:41:43	---	Last item ID:5375
+2012/04/24  19:41:43	---	  deco for: 6400
+2012/04/24  19:41:43	---	lock removed
+2012/04/24  19:42:28	djangosuper	VIEW: xhr_actions
+2012/04/24  19:42:28	djangosuper	<QueryDict: {u'ci': [u'6399'], u'datax': [u''], u'ajaxAction': [u'promote'], u'ti': [u'0']}>
+2012/04/24  19:42:28	djangosuper	=====> xhr_actions: =AJAX request, ci=6399  ti=0  ajaxAction: promote
+2012/04/24  19:42:28	---	Last item ID:5375
+2012/04/24  19:42:28	---	sMDflk=> findLastKid lastKid=4608
+2012/04/24  19:42:28	---	Promoting: 6399
+2012/04/24  19:42:28	---	converting subsequent items to children starting at: 4608
+2012/04/24  19:42:28	---	converting subsequent items to children...
+2012/04/24  19:42:28	---	converting subsequent items to children...
+2012/04/24  19:42:28	---	converting subsequent items to children...
+2012/04/24  19:42:28	---	converting subsequent items to children...
+2012/04/24  19:42:28	---	converting subsequent items to children...
+2012/04/24  19:42:28	---	converting subsequent items to children...
+2012/04/24  19:42:28	---	  deco for: 6399
+2012/04/24  19:42:28	---	  deco for: 4574
+2012/04/24  19:42:28	---	  deco for: 4608
+2012/04/24  19:42:28	---	lock removed
+2012/04/24  19:42:30	djangosuper	VIEW: xhr_actions
+2012/04/24  19:42:30	djangosuper	<QueryDict: {u'ci': [u'5655'], u'datax': [u''], u'ajaxAction': [u'promote'], u'ti': [u'0']}>
+2012/04/24  19:42:30	djangosuper	=====> xhr_actions: =AJAX request, ci=5655  ti=0  ajaxAction: promote
+2012/04/24  19:42:30	---	Last item ID:5375
+2012/04/24  19:42:30	---	sMDflk=> findLastKid lastKid=0
+2012/04/24  19:42:30	---	Promoting: 5655
+2012/04/24  19:42:30	---	converting subsequent items to children starting at: 5655
+2012/04/24  19:42:30	---	  deco for: 5655
+2012/04/24  19:42:30	---	  deco for: 4608
+2012/04/24  19:42:30	---	lock removed
+2012/04/24  19:42:33	djangosuper	VIEW: xhr_actions
+2012/04/24  19:42:33	djangosuper	<QueryDict: {u'ci': [u'5934'], u'datax': [u''], u'ajaxAction': [u'promote'], u'ti': [u'0']}>
+2012/04/24  19:42:33	djangosuper	=====> xhr_actions: =AJAX request, ci=5934  ti=0  ajaxAction: promote
+2012/04/24  19:42:33	---	Last item ID:5375
+2012/04/24  19:42:33	---	sMDflk=> findLastKid lastKid=0
+2012/04/24  19:42:33	---	Promoting: 5934
+2012/04/24  19:42:33	---	converting subsequent items to children starting at: 5934
+2012/04/24  19:42:33	---	converting subsequent items to children...
+2012/04/24  19:42:33	---	converting subsequent items to children...
+2012/04/24  19:42:33	---	converting subsequent items to children...
+2012/04/24  19:42:33	---	converting subsequent items to children...
+2012/04/24  19:42:33	---	  deco for: 5934
+2012/04/24  19:42:33	---	  deco for: 5655
+2012/04/24  19:42:33	---	  deco for: 5040
+2012/04/24  19:42:33	---	  deco for: 5931
+2012/04/24  19:42:33	---	  deco for: 5286
+2012/04/24  19:42:33	---	  deco for: 5104
+2012/04/24  19:42:33	---	lock removed
+2012/04/24  19:42:35	djangosuper	VIEW: xhr_actions
+2012/04/24  19:42:35	djangosuper	<QueryDict: {u'ci': [u'5934'], u'datax': [u''], u'ajaxAction': [u'demote'], u'ti': [u'0']}>
+2012/04/24  19:42:35	djangosuper	=====> xhr_actions: =AJAX request, ci=5934  ti=0  ajaxAction: demote
+2012/04/24  19:42:35	---	Last item ID:5375
+2012/04/24  19:42:35	---	sMDflk=> findLastKid lastKid=5375
+2012/04/24  19:42:35	---	  deco for: 5934
+2012/04/24  19:42:35	---	  deco for: 5655
+2012/04/24  19:42:35	---	  deco for: 5040
+2012/04/24  19:42:35	---	  deco for: 5931
+2012/04/24  19:42:35	---	  deco for: 5286
+2012/04/24  19:42:36	---	  deco for: 5104
+2012/04/24  19:42:36	---	  deco for: 5375
+2012/04/24  19:42:36	---	lock removed
+2012/04/24  19:42:37	djangosuper	VIEW: xhr_actions
+2012/04/24  19:42:37	djangosuper	<QueryDict: {u'ci': [u'5040'], u'datax': [u''], u'ajaxAction': [u'promote'], u'ti': [u'0']}>
+2012/04/24  19:42:37	djangosuper	=====> xhr_actions: =AJAX request, ci=5040  ti=0  ajaxAction: promote
+2012/04/24  19:42:37	---	Last item ID:5375
+2012/04/24  19:42:37	---	sMDflk=> findLastKid lastKid=0
+2012/04/24  19:42:37	---	Promoting: 5040
+2012/04/24  19:42:37	---	converting subsequent items to children starting at: 5040
+2012/04/24  19:42:37	---	converting subsequent items to children...
+2012/04/24  19:42:37	---	converting subsequent items to children...
+2012/04/24  19:42:37	---	converting subsequent items to children...
+2012/04/24  19:42:37	---	  deco for: 5040
+2012/04/24  19:42:37	---	  deco for: 5934
+2012/04/24  19:42:37	---	  deco for: 5931
+2012/04/24  19:42:37	---	  deco for: 5286
+2012/04/24  19:42:37	---	  deco for: 5104
+2012/04/24  19:42:37	---	lock removed
+2012/04/24  19:42:38	djangosuper	VIEW: xhr_actions
+2012/04/24  19:42:38	djangosuper	<QueryDict: {u'ci': [u'5931'], u'datax': [u''], u'ajaxAction': [u'promote'], u'ti': [u'0']}>
+2012/04/24  19:42:38	djangosuper	=====> xhr_actions: =AJAX request, ci=5931  ti=0  ajaxAction: promote
+2012/04/24  19:42:38	---	Last item ID:5375
+2012/04/24  19:42:38	---	sMDflk=> findLastKid lastKid=0
+2012/04/24  19:42:38	---	Promoting: 5931
+2012/04/24  19:42:38	---	converting subsequent items to children starting at: 5931
+2012/04/24  19:42:38	---	converting subsequent items to children...
+2012/04/24  19:42:38	---	converting subsequent items to children...
+2012/04/24  19:42:38	---	  deco for: 5931
+2012/04/24  19:42:38	---	  deco for: 5040
+2012/04/24  19:42:38	---	  deco for: 5286
+2012/04/24  19:42:38	---	  deco for: 5104
+2012/04/24  19:42:38	---	lock removed
+2012/04/24  19:42:39	djangosuper	VIEW: xhr_actions
+2012/04/24  19:42:39	djangosuper	<QueryDict: {u'ci': [u'5286'], u'datax': [u''], u'ajaxAction': [u'promote'], u'ti': [u'0']}>
+2012/04/24  19:42:39	djangosuper	=====> xhr_actions: =AJAX request, ci=5286  ti=0  ajaxAction: promote
+2012/04/24  19:42:40	---	Last item ID:5375
+2012/04/24  19:42:40	---	sMDflk=> findLastKid lastKid=0
+2012/04/24  19:42:40	---	Promoting: 5286
+2012/04/24  19:42:40	---	converting subsequent items to children starting at: 5286
+2012/04/24  19:42:40	---	converting subsequent items to children...
+2012/04/24  19:42:40	---	  deco for: 5286
+2012/04/24  19:42:40	---	  deco for: 5931
+2012/04/24  19:42:40	---	  deco for: 5104
+2012/04/24  19:42:40	---	lock removed
+2012/04/24  19:42:40	djangosuper	VIEW: xhr_actions
+2012/04/24  19:42:40	djangosuper	<QueryDict: {u'ci': [u'5104'], u'datax': [u''], u'ajaxAction': [u'promote'], u'ti': [u'0']}>
+2012/04/24  19:42:40	djangosuper	=====> xhr_actions: =AJAX request, ci=5104  ti=0  ajaxAction: promote
+2012/04/24  19:42:41	---	Last item ID:5375
+2012/04/24  19:42:41	---	sMDflk=> findLastKid lastKid=5375
+2012/04/24  19:42:41	---	Promoting: 5104
+2012/04/24  19:42:41	---	converting subsequent items to children starting at: 5104
+2012/04/24  19:42:41	---	  deco for: 5104
+2012/04/24  19:42:41	---	  deco for: 5286
+2012/04/24  19:42:41	---	lock removed
+2012/04/24  19:42:42	djangosuper	VIEW: xhr_actions
+2012/04/24  19:42:42	djangosuper	<QueryDict: {u'ci': [u'5375'], u'datax': [u''], u'ajaxAction': [u'promote'], u'ti': [u'0']}>
+2012/04/24  19:42:42	djangosuper	=====> xhr_actions: =AJAX request, ci=5375  ti=0  ajaxAction: promote
+2012/04/24  19:42:42	---	Last item ID:5375
+2012/04/24  19:42:42	---	sMDflk=> findLastKid lastKid=0
+2012/04/24  19:42:42	---	Promoting: 5375
+2012/04/24  19:42:52	djangosuper	VIEW: xhr_actions
+2012/04/24  19:42:52	djangosuper	<QueryDict: {u'ci': [u'4574'], u'datax': [u''], u'ajaxAction': [u'dragKid'], u'ti': [u'5375']}>
+2012/04/24  19:42:52	djangosuper	=====> xhr_actions: =AJAX request, ci=4574  ti=5375  ajaxAction: dragKid
+2012/04/24  19:42:52	djangosuper	         ==> LOCK FILE exists:['Locked:\tdjangosuper\t2012:04:24  19:42:42 ::\tpromote  Proj:5 ci:5375  ti:0']
+2012/04/24  19:43:10	djangosuper	VIEW: maintPage
+2012/04/24  19:43:13	djangosuper	VIEW: maintPage
+2012/04/24  19:43:13	---	lock removed
+2012/04/24  19:43:16	djangosuper	VIEW: draglist
+2012/04/24  19:43:16	djangosuper	     Proj 5
+2012/04/24  19:43:16	---	   Entering buildDisplayList
+2012/04/24  19:43:16	---	      ..queries done...
+2012/04/24  19:43:16	---	      ....parent list built...
+2012/04/24  19:43:16	---	      .....ix built.....
+2012/04/24  19:43:16	---	      ...built followhash....
+2012/04/24  19:43:16	---	      .....displayList built...
+2012/04/24  19:43:16	---	   Exiting buildDisplayList
+2012/04/24  19:43:27	djangosuper	VIEW: xhr_actions
+2012/04/24  19:43:27	djangosuper	<QueryDict: {u'ci': [u'4574'], u'datax': [u''], u'ajaxAction': [u'dragKid'], u'ti': [u'5375']}>
+2012/04/24  19:43:27	djangosuper	=====> xhr_actions: =AJAX request, ci=4574  ti=5375  ajaxAction: dragKid
+2012/04/24  19:43:27	---	Last item ID:5375
+2012/04/24  19:43:27	djangosuper	VIEW: drag_move
+2012/04/24  19:43:27	djangosuper	 ====dragmove=> CIid:TIid    4574:5375
+2012/04/24  19:43:27	---	Last item ID:5375
+2012/04/24  19:43:38	djangosuper	VIEW: xhr_actions
+2012/04/24  19:43:38	djangosuper	<QueryDict: {u'ci': [u'5040'], u'datax': [u''], u'ajaxAction': [u'demote'], u'ti': [u'0']}>
+2012/04/24  19:43:38	djangosuper	=====> xhr_actions: =AJAX request, ci=5040  ti=0  ajaxAction: demote
+2012/04/24  19:43:38	djangosuper	         ==> LOCK FILE exists:['Locked:\tdjangosuper\t2012:04:24  19:43:27 ::\tdragKid  Proj:5 ci:4574  ti:5375']
+2012/04/24  19:43:46	djangosuper	VIEW: maintPage
+2012/04/24  19:43:46	---	lock removed
+2012/04/24  19:43:51	djangosuper	VIEW: draglist
+2012/04/24  19:43:51	djangosuper	     Proj 5
+2012/04/24  19:43:51	---	   Entering buildDisplayList
+2012/04/24  19:43:51	---	      ..queries done...
+2012/04/24  19:43:51	---	      ....parent list built...
+2012/04/24  19:43:51	---	      .....ix built.....
+2012/04/24  19:43:51	---	      ...built followhash....
+2012/04/24  19:43:51	---	      .....displayList built...
+2012/04/24  19:43:51	---	   Exiting buildDisplayList
+2012/04/24  19:44:23	djangosuper	VIEW: xhr_actions
+2012/04/24  19:44:23	djangosuper	<QueryDict: {u'ci': [u'4396'], u'FADpriority': [u'0'], u'FADhtmlBody': [u''], u'FADstatus': [u'0'], u'ti': [u'0'], u'ajaxAction': [u'fastAdd'], u'FADtitle': [u'filelock problems after trying to promote the last item, drag onto it, etc.']}>
+2012/04/24  19:44:23	djangosuper	=====> xhr_actions: =AJAX request, ci=4396  ti=0  ajaxAction: fastAdd
+2012/04/24  19:44:23	---	Last item ID:5375
+2012/04/24  19:44:23	---	VIEW: drag_actions => fastAdd
+2012/04/24  19:44:23	---	fastAdd for 4396  filelock problems after trying to promote the last item, drag onto it, etc.
+2012/04/24  19:44:23	---	NEW FA item ID=None
+2012/04/24  19:44:23	---	   fastadded item ID = 6401
+2012/04/24  19:44:23	---	  deco for: 6401
+2012/04/24  19:44:23	---	  deco for: 4396
+2012/04/24  19:44:23	---	  deco for: 5394
+2012/04/24  19:44:23	---	  deco for: 5374
+2012/04/24  19:44:23	---	lock removed
+2012/04/24  19:44:37	djangosuper	VIEW: xhr_actions
+2012/04/24  19:44:37	djangosuper	<QueryDict: {u'ci': [u'5375'], u'datax': [u''], u'ajaxAction': [u'dragKid'], u'ti': [u'6399']}>
+2012/04/24  19:44:37	djangosuper	=====> xhr_actions: =AJAX request, ci=5375  ti=6399  ajaxAction: dragKid
+2012/04/24  19:44:37	---	Last item ID:5375
+2012/04/24  19:44:37	djangosuper	VIEW: drag_move
+2012/04/24  19:44:37	djangosuper	 ====dragmove=> CIid:TIid    5375:6399
+2012/04/24  19:44:37	---	Last item ID:5375
+2012/04/24  19:44:37	---	sMDflk=> findLastKid lastKid=0
+2012/04/24  19:44:37	djangosuper	DragMove=> CI saved
+2012/04/24  19:44:37	djangosuper	dragmove=> targetFollowerID:4608  targetFollower.follows:6399  lastkid:0
+2012/04/24  19:44:37	djangosuper	 => targetFollower.follows=5375
+2012/04/24  19:44:37	---	lock removed
+2012/04/24  19:44:46	djangosuper	VIEW: xhr_actions
+2012/04/24  19:44:46	djangosuper	<QueryDict: {u'ci': [u'6399'], u'datax': [u''], u'ajaxAction': [u'dragPeer'], u'ti': [u'4581']}>
+2012/04/24  19:44:46	djangosuper	=====> xhr_actions: =AJAX request, ci=6399  ti=4581  ajaxAction: dragPeer
+2012/04/24  19:44:46	---	Last item ID:5104
+2012/04/24  19:44:46	---	Last item ID:5104
+2012/04/24  19:44:46	---	sMDflk=> findLastKid lastKid=5104
+2012/04/24  19:44:46	---	sMDflk=> findLastKid lastKid=0
+2012/04/24  19:44:46	---	==> drag_Peer, CI / TI:6399/4581
+2012/04/24  19:44:47	---	  deco for: 6163
+2012/04/24  19:44:47	---	  deco for: 4581
+2012/04/24  19:44:47	---	  deco for: 6399
+2012/04/24  19:44:47	---	  deco for: 4581
+2012/04/24  19:44:47	---	  deco for: 5375
+2012/04/24  19:44:47	---	  deco for: 4608
+2012/04/24  19:44:47	---	  deco for: 5655
+2012/04/24  19:44:47	---	  deco for: 5934
+2012/04/24  19:44:47	---	  deco for: 5040
+2012/04/24  19:44:47	---	  deco for: 5931
+2012/04/24  19:44:47	---	  deco for: 5286
+2012/04/24  19:44:47	---	  deco for: 5104
+2012/04/24  19:44:47	---	lock removed
+2012/04/24  19:44:52	djangosuper	VIEW: xhr_actions
+2012/04/24  19:44:52	djangosuper	<QueryDict: {u'ci': [u'5655'], u'datax': [u''], u'ajaxAction': [u'demote'], u'ti': [u'0']}>
+2012/04/24  19:44:52	djangosuper	=====> xhr_actions: =AJAX request, ci=5655  ti=0  ajaxAction: demote
+2012/04/24  19:44:52	---	Last item ID:4574
+2012/04/24  19:44:52	---	sMDflk=> findLastKid lastKid=0
+2012/04/24  19:44:52	---	  deco for: 5655
+2012/04/24  19:44:52	---	  deco for: 4608
+2012/04/24  19:44:52	---	lock removed
+2012/04/24  19:44:53	djangosuper	VIEW: xhr_actions
+2012/04/24  19:44:53	djangosuper	<QueryDict: {u'ci': [u'5655'], u'datax': [u''], u'ajaxAction': [u'promote'], u'ti': [u'0']}>
+2012/04/24  19:44:53	djangosuper	=====> xhr_actions: =AJAX request, ci=5655  ti=0  ajaxAction: promote
+2012/04/24  19:44:53	---	Last item ID:4574
+2012/04/24  19:44:53	---	sMDflk=> findLastKid lastKid=0
+2012/04/24  19:44:53	---	Promoting: 5655
+2012/04/24  19:44:53	---	converting subsequent items to children starting at: 5655
+2012/04/24  19:44:53	---	  deco for: 5655
+2012/04/24  19:44:53	---	  deco for: 4608
+2012/04/24  19:44:53	---	lock removed
+2012/04/24  19:45:13	djangosuper	VIEW: xhr_actions
+2012/04/24  19:45:13	djangosuper	<QueryDict: {u'ci': [u'5395'], u'datax': [u''], u'ajaxAction': [u'dragPeer'], u'ti': [u'5104']}>
+2012/04/24  19:45:13	djangosuper	=====> xhr_actions: =AJAX request, ci=5395  ti=5104  ajaxAction: dragPeer
+2012/04/24  19:45:13	---	Last item ID:4574
+2012/04/24  19:45:13	---	Last item ID:4574
+2012/04/24  19:45:13	---	sMDflk=> findLastKid lastKid=0
+2012/04/24  19:45:13	---	sMDflk=> findLastKid lastKid=0
+2012/04/24  19:45:13	---	==> drag_Peer, CI / TI:5395/5104
+2012/04/24  19:45:13	---	  deco for: 5624
+2012/04/24  19:45:13	---	  deco for: 5286
+2012/04/24  19:45:13	---	  deco for: 5104
+2012/04/24  19:45:13	---	  deco for: 5395
+2012/04/24  19:45:13	---	  deco for: 5104
+2012/04/24  19:45:13	---	lock removed
+2012/04/24  19:45:18	djangosuper	VIEW: xhr_actions
+2012/04/24  19:45:18	djangosuper	<QueryDict: {u'ci': [u'5624'], u'datax': [u''], u'ajaxAction': [u'dragPeer'], u'ti': [u'5395']}>
+2012/04/24  19:45:18	djangosuper	=====> xhr_actions: =AJAX request, ci=5624  ti=5395  ajaxAction: dragPeer
+2012/04/24  19:45:18	---	Last item ID:4574
+2012/04/24  19:45:18	---	Last item ID:4574
+2012/04/24  19:45:18	---	sMDflk=> findLastKid lastKid=0
+2012/04/24  19:45:18	---	sMDflk=> findLastKid lastKid=0
+2012/04/24  19:45:18	---	==> drag_Peer, CI / TI:5624/5395
+2012/04/24  19:45:18	---	  deco for: 6230
+2012/04/24  19:45:18	---	  deco for: 5104
+2012/04/24  19:45:18	---	  deco for: 5395
+2012/04/24  19:45:18	---	  deco for: 5624
+2012/04/24  19:45:18	---	  deco for: 5395
+2012/04/24  19:45:18	---	lock removed
+2012/04/24  19:45:47	djangosuper	VIEW: xhr_actions
+2012/04/24  19:45:47	djangosuper	<QueryDict: {u'ci': [u'5286'], u'datax': [u''], u'ajaxAction': [u'dragPeer'], u'ti': [u'5384']}>
+2012/04/24  19:45:47	djangosuper	=====> xhr_actions: =AJAX request, ci=5286  ti=5384  ajaxAction: dragPeer
+2012/04/24  19:45:47	---	Last item ID:4574
+2012/04/24  19:45:47	---	Last item ID:4574
+2012/04/24  19:45:47	---	sMDflk=> findLastKid lastKid=0
+2012/04/24  19:45:47	---	sMDflk=> findLastKid lastKid=0
+2012/04/24  19:45:47	---	==> drag_Peer, CI / TI:5286/5384
+2012/04/24  19:45:47	---	  deco for: 5104
+2012/04/24  19:45:47	---	  deco for: 6231
+2012/04/24  19:45:47	---	  deco for: 5384
+2012/04/24  19:45:47	---	  deco for: 5286
+2012/04/24  19:45:47	---	  deco for: 5384
+2012/04/24  19:45:47	---	lock removed
+2012/04/24  19:46:09	djangosuper	VIEW: xhr_actions
+2012/04/24  19:46:09	djangosuper	<QueryDict: {u'ci': [u'6015'], u'datax': [u''], u'ajaxAction': [u'dragPeer'], u'ti': [u'6080']}>
+2012/04/24  19:46:09	djangosuper	=====> xhr_actions: =AJAX request, ci=6015  ti=6080  ajaxAction: dragPeer
+2012/04/24  19:46:09	---	Last item ID:4574
+2012/04/24  19:46:09	---	Last item ID:4574
+2012/04/24  19:46:09	---	sMDflk=> findLastKid lastKid=5978
+2012/04/24  19:46:09	---	sMDflk=> findLastKid lastKid=0
+2012/04/24  19:46:09	---	==> drag_Peer, CI / TI:6015/6080
+2012/04/24  19:46:09	---	  deco for: 5959
+2012/04/24  19:46:09	---	  deco for: 5955
+2012/04/24  19:46:09	---	  deco for: 6080
+2012/04/24  19:46:09	---	  deco for: 6015
+2012/04/24  19:46:09	---	  deco for: 6080
+2012/04/24  19:46:09	---	  deco for: 6023
+2012/04/24  19:46:10	---	  deco for: 5977
+2012/04/24  19:46:10	---	  deco for: 5619
+2012/04/24  19:46:10	---	  deco for: 5978
+2012/04/24  19:46:10	---	lock removed
+2012/04/24  19:46:12	djangosuper	VIEW: xhr_actions
+2012/04/24  19:46:12	djangosuper	<QueryDict: {u'ci': [u'6015'], u'datax': [u''], u'ajaxAction': [u'promote'], u'ti': [u'0']}>
+2012/04/24  19:46:12	djangosuper	=====> xhr_actions: =AJAX request, ci=6015  ti=0  ajaxAction: promote
+2012/04/24  19:46:12	---	Last item ID:4574
+2012/04/24  19:46:12	---	sMDflk=> findLastKid lastKid=5978
+2012/04/24  19:46:12	---	Promoting: 6015
+2012/04/24  19:46:12	---	converting subsequent items to children starting at: 5978
+2012/04/24  19:46:12	---	converting subsequent items to children...
+2012/04/24  19:46:12	---	converting subsequent items to children...
+2012/04/24  19:46:12	---	converting subsequent items to children...
+2012/04/24  19:46:12	---	converting subsequent items to children...
+2012/04/24  19:46:12	---	converting subsequent items to children...
+2012/04/24  19:46:12	---	converting subsequent items to children...
+2012/04/24  19:46:12	---	converting subsequent items to children...
+2012/04/24  19:46:12	---	converting subsequent items to children...
+2012/04/24  19:46:12	---	converting subsequent items to children...
+2012/04/24  19:46:12	---	converting subsequent items to children...
+2012/04/24  19:46:12	---	converting subsequent items to children...
+2012/04/24  19:46:12	---	converting subsequent items to children...
+2012/04/24  19:46:13	---	converting subsequent items to children...
+2012/04/24  19:46:13	---	converting subsequent items to children...
+2012/04/24  19:46:13	---	converting subsequent items to children...
+2012/04/24  19:46:13	---	converting subsequent items to children...
+2012/04/24  19:46:13	---	converting subsequent items to children...
+2012/04/24  19:46:13	---	converting subsequent items to children...
+2012/04/24  19:46:13	---	converting subsequent items to children...
+2012/04/24  19:46:13	---	converting subsequent items to children...
+2012/04/24  19:46:13	---	converting subsequent items to children...
+2012/04/24  19:46:13	---	converting subsequent items to children...
+2012/04/24  19:46:13	---	converting subsequent items to children...
+2012/04/24  19:46:13	---	converting subsequent items to children...
+2012/04/24  19:46:13	---	converting subsequent items to children...
+2012/04/24  19:46:13	---	converting subsequent items to children...
+2012/04/24  19:46:13	---	converting subsequent items to children...
+2012/04/24  19:46:13	---	converting subsequent items to children...
+2012/04/24  19:46:13	---	converting subsequent items to children...
+2012/04/24  19:46:13	---	converting subsequent items to children...
+2012/04/24  19:46:13	---	converting subsequent items to children...
+2012/04/24  19:46:13	---	converting subsequent items to children...
+2012/04/24  19:46:13	---	converting subsequent items to children...
+2012/04/24  19:46:13	---	converting subsequent items to children...
+2012/04/24  19:46:13	---	converting subsequent items to children...
+2012/04/24  19:46:13	---	converting subsequent items to children...
+2012/04/24  19:46:13	---	converting subsequent items to children...
+2012/04/24  19:46:13	---	converting subsequent items to children...
+2012/04/24  19:46:13	---	converting subsequent items to children...
+2012/04/24  19:46:13	---	converting subsequent items to children...
+2012/04/24  19:46:13	---	converting subsequent items to children...
+2012/04/24  19:46:13	---	converting subsequent items to children...
+2012/04/24  19:46:13	---	converting subsequent items to children...
+2012/04/24  19:46:13	---	converting subsequent items to children...
+2012/04/24  19:46:13	---	converting subsequent items to children...
+2012/04/24  19:46:13	---	converting subsequent items to children...
+2012/04/24  19:46:13	---	converting subsequent items to children...
+2012/04/24  19:46:13	---	converting subsequent items to children...
+2012/04/24  19:46:13	---	converting subsequent items to children...
+2012/04/24  19:46:13	---	converting subsequent items to children...
+2012/04/24  19:46:13	---	  deco for: 6015
+2012/04/24  19:46:13	---	  deco for: 6080
+2012/04/24  19:46:13	---	  deco for: 6023
+2012/04/24  19:46:15	---	  deco for: 5977
+2012/04/24  19:46:15	---	  deco for: 5619
+2012/04/24  19:46:15	---	  deco for: 5978
+2012/04/24  19:46:15	---	lock removed
+2012/04/24  19:46:17	djangosuper	VIEW: xhr_actions
+2012/04/24  19:46:17	djangosuper	<QueryDict: {u'ci': [u'6015'], u'datax': [u''], u'ajaxAction': [u'promote'], u'ti': [u'0']}>
+2012/04/24  19:46:17	djangosuper	=====> xhr_actions: =AJAX request, ci=6015  ti=0  ajaxAction: promote
+2012/04/24  19:46:17	---	Last item ID:4574
+2012/04/24  19:46:17	---	sMDflk=> findLastKid lastKid=5978
+2012/04/24  19:46:17	---	Promoting: 6015
+2012/04/24  19:46:17	---	converting subsequent items to children starting at: 5978
+2012/04/24  19:46:17	---	  deco for: 6015
+2012/04/24  19:46:17	---	  deco for: 6080
+2012/04/24  19:46:17	---	  deco for: 6023
+2012/04/24  19:46:17	---	  deco for: 5977
+2012/04/24  19:46:17	---	  deco for: 5619
+2012/04/24  19:46:17	---	  deco for: 5978
+2012/04/24  19:46:17	---	lock removed
+2012/04/24  19:46:26	djangosuper	VIEW: xhr_actions
+2012/04/24  19:46:26	djangosuper	<QueryDict: {u'ci': [u'5952'], u'datax': [u''], u'ajaxAction': [u'dragPeer'], u'ti': [u'6015']}>
+2012/04/24  19:46:26	djangosuper	=====> xhr_actions: =AJAX request, ci=5952  ti=6015  ajaxAction: dragPeer
+2012/04/24  19:46:27	---	Last item ID:4574
+2012/04/24  19:46:27	---	Last item ID:4574
+2012/04/24  19:46:27	---	sMDflk=> findLastKid lastKid=5435
+2012/04/24  19:46:27	---	sMDflk=> findLastKid lastKid=5978
+2012/04/24  19:46:27	---	==> drag_Peer, CI / TI:5952/6015
+2012/04/24  19:46:28	---	  deco for: 5258
+2012/04/24  19:46:28	---	  deco for: 6080
+2012/04/24  19:46:28	---	  deco for: 6015
+2012/04/24  19:46:28	---	  deco for: 6023
+2012/04/24  19:46:28	---	  deco for: 5977
+2012/04/24  19:46:28	---	  deco for: 5619
+2012/04/24  19:46:28	---	  deco for: 5978
+2012/04/24  19:46:28	---	  deco for: 5952
+2012/04/24  19:46:28	---	  deco for: 5978
+2012/04/24  19:46:28	---	  deco for: 6386
+2012/04/24  19:46:28	---	  deco for: 6400
+2012/04/24  19:46:28	---	  deco for: 5880
+2012/04/24  19:46:28	---	  deco for: 5963
+2012/04/24  19:46:28	---	  deco for: 5609
+2012/04/24  19:46:28	---	  deco for: 5435
+2012/04/24  19:46:28	---	lock removed
+2012/04/24  19:46:39	djangosuper	VIEW: xhr_actions
+2012/04/24  19:46:39	djangosuper	<QueryDict: {u'ci': [u'6015'], u'datax': [u''], u'ajaxAction': [u'moveDown'], u'ti': [u'0']}>
+2012/04/24  19:46:39	djangosuper	=====> xhr_actions: =AJAX request, ci=6015  ti=0  ajaxAction: moveDown
+2012/04/24  19:46:39	---	Last item ID:4574
+2012/04/24  19:46:39	---	sMDflk=> findLastKid lastKid=5978
+2012/04/24  19:46:39	---	  moving among children of 0
+2012/04/24  19:46:40	---	  TI:  5952
+2012/04/24  19:46:40	---	sMDflk=> findLastKid lastKid=5435
+2012/04/24  19:46:40	---	  deco for: 5435
+2012/04/24  19:46:40	---	  deco for: 6015
+2012/04/24  19:46:40	---	  deco for: 6023
+2012/04/24  19:46:40	---	  deco for: 5977
+2012/04/24  19:46:40	---	  deco for: 5619
+2012/04/24  19:46:40	---	  deco for: 5978
+2012/04/24  19:46:40	---	  deco for: 6080
+2012/04/24  19:46:40	---	  deco for: 5952
+2012/04/24  19:46:40	---	  deco for: 6386
+2012/04/24  19:46:40	---	  deco for: 6400
+2012/04/24  19:46:40	---	  deco for: 5880
+2012/04/24  19:46:40	---	  deco for: 5963
+2012/04/24  19:46:40	---	  deco for: 5609
+2012/04/24  19:46:40	---	  deco for: 5435
+2012/04/24  19:46:40	---	  deco for: 5833
+2012/04/24  19:46:40	---	lock removed
+2012/04/24  19:46:58	djangosuper	VIEW: xhr_actions
+2012/04/24  19:46:58	djangosuper	<QueryDict: {u'ci': [u'5952'], u'FADpriority': [u'0'], u'FADhtmlBody': [u''], u'FADstatus': [u'0'], u'ti': [u'0'], u'ajaxAction': [u'fastAdd'], u'FADtitle': [u'Examples']}>
+2012/04/24  19:46:58	djangosuper	=====> xhr_actions: =AJAX request, ci=5952  ti=0  ajaxAction: fastAdd
+2012/04/24  19:46:58	---	Last item ID:4574
+2012/04/24  19:46:58	---	VIEW: drag_actions => fastAdd
+2012/04/24  19:46:58	---	fastAdd for 5952  Examples
+2012/04/24  19:46:58	---	NEW FA item ID=None
+2012/04/24  19:46:58	---	   fastadded item ID = 6402
+2012/04/24  19:46:58	---	  deco for: 6402
+2012/04/24  19:46:58	---	  deco for: 5952
+2012/04/24  19:46:58	---	  deco for: 6080
+2012/04/24  19:46:58	---	  deco for: 6386
+2012/04/24  19:46:58	---	lock removed
+2012/04/24  19:47:08	djangosuper	VIEW: xhr_actions
+2012/04/24  19:47:08	djangosuper	<QueryDict: {u'ci': [u'6386'], u'datax': [u''], u'ajaxAction': [u'demote'], u'ti': [u'0']}>
+2012/04/24  19:47:08	djangosuper	=====> xhr_actions: =AJAX request, ci=6386  ti=0  ajaxAction: demote
+2012/04/24  19:47:08	---	Last item ID:4574
+2012/04/24  19:47:08	---	sMDflk=> findLastKid lastKid=0
+2012/04/24  19:47:08	---	  deco for: 6386
+2012/04/24  19:47:08	---	  deco for: 6402
+2012/04/24  19:47:08	---	lock removed
+2012/04/24  19:47:09	djangosuper	VIEW: xhr_actions
+2012/04/24  19:47:09	djangosuper	<QueryDict: {u'ci': [u'6400'], u'datax': [u''], u'ajaxAction': [u'demote'], u'ti': [u'0']}>
+2012/04/24  19:47:09	djangosuper	=====> xhr_actions: =AJAX request, ci=6400  ti=0  ajaxAction: demote
+2012/04/24  19:47:09	---	Last item ID:4574
+2012/04/24  19:47:09	---	sMDflk=> findLastKid lastKid=0
+2012/04/24  19:47:09	---	  deco for: 6400
+2012/04/24  19:47:09	---	  deco for: 6386
+2012/04/24  19:47:09	---	lock removed
+2012/04/24  19:47:10	djangosuper	VIEW: xhr_actions
+2012/04/24  19:47:10	djangosuper	<QueryDict: {u'ci': [u'5880'], u'datax': [u''], u'ajaxAction': [u'demote'], u'ti': [u'0']}>
+2012/04/24  19:47:10	djangosuper	=====> xhr_actions: =AJAX request, ci=5880  ti=0  ajaxAction: demote
+2012/04/24  19:47:10	---	Last item ID:4574
+2012/04/24  19:47:10	---	sMDflk=> findLastKid lastKid=0
+2012/04/24  19:47:10	---	  deco for: 5880
+2012/04/24  19:47:10	---	  deco for: 6400
+2012/04/24  19:47:10	---	lock removed
+2012/04/24  19:47:12	djangosuper	VIEW: xhr_actions
+2012/04/24  19:47:12	djangosuper	<QueryDict: {u'ci': [u'5963'], u'datax': [u''], u'ajaxAction': [u'demote'], u'ti': [u'0']}>
+2012/04/24  19:47:12	djangosuper	=====> xhr_actions: =AJAX request, ci=5963  ti=0  ajaxAction: demote
+2012/04/24  19:47:12	---	Last item ID:4574
+2012/04/24  19:47:12	---	sMDflk=> findLastKid lastKid=0
+2012/04/24  19:47:12	---	  deco for: 5963
+2012/04/24  19:47:12	---	  deco for: 5880
+2012/04/24  19:47:12	---	lock removed
+2012/04/24  19:47:20	djangosuper	VIEW: xhr_actions
+2012/04/24  19:47:20	djangosuper	<QueryDict: {u'ci': [u'5609'], u'datax': [u''], u'ajaxAction': [u'dragKid'], u'ti': [u'6015']}>
+2012/04/24  19:47:20	djangosuper	=====> xhr_actions: =AJAX request, ci=5609  ti=6015  ajaxAction: dragKid
+2012/04/24  19:47:20	---	Last item ID:4574
+2012/04/24  19:47:20	djangosuper	VIEW: drag_move
+2012/04/24  19:47:20	djangosuper	 ====dragmove=> CIid:TIid    5609:6015
+2012/04/24  19:47:20	---	Last item ID:4574
+2012/04/24  19:47:20	---	sMDflk=> findLastKid lastKid=0
+2012/04/24  19:47:20	djangosuper	DragMove=> CI saved
+2012/04/24  19:47:20	djangosuper	dragmove=> targetFollowerID:6023  targetFollower.follows:6015  lastkid:0
+2012/04/24  19:47:20	djangosuper	 => targetFollower.follows=5609
+2012/04/24  19:47:20	---	lock removed
+2012/04/24  19:47:24	djangosuper	VIEW: xhr_actions
+2012/04/24  19:47:24	djangosuper	<QueryDict: {u'ci': [u'5435'], u'datax': [u''], u'ajaxAction': [u'demote'], u'ti': [u'0']}>
+2012/04/24  19:47:24	djangosuper	=====> xhr_actions: =AJAX request, ci=5435  ti=0  ajaxAction: demote
+2012/04/24  19:47:24	---	Last item ID:4574
+2012/04/24  19:47:24	---	sMDflk=> findLastKid lastKid=0
+2012/04/24  19:47:24	---	  deco for: 5435
+2012/04/24  19:47:24	---	  deco for: 5963
+2012/04/24  19:47:24	---	lock removed
+2012/04/24  19:47:29	djangosuper	VIEW: xhr_actions
+2012/04/24  19:47:29	djangosuper	<QueryDict: {u'ci': [u'6015'], u'datax': [u''], u'ajaxAction': [u'demote'], u'ti': [u'0']}>
+2012/04/24  19:47:29	djangosuper	=====> xhr_actions: =AJAX request, ci=6015  ti=0  ajaxAction: demote
+2012/04/24  19:47:29	---	Last item ID:4574
+2012/04/24  19:47:29	---	sMDflk=> findLastKid lastKid=5978
+2012/04/24  19:47:29	---	  deco for: 6015
+2012/04/24  19:47:29	---	  deco for: 5435
+2012/04/24  19:47:29	---	  deco for: 5609
+2012/04/24  19:47:29	---	  deco for: 6023
+2012/04/24  19:47:29	---	  deco for: 5977
+2012/04/24  19:47:29	---	  deco for: 5619
+2012/04/24  19:47:29	---	  deco for: 5978
+2012/04/24  19:47:29	---	lock removed
+2012/04/24  19:47:33	djangosuper	VIEW: draglist
+2012/04/24  19:47:33	djangosuper	     Proj 5
+2012/04/24  19:47:33	---	   Entering buildDisplayList
+2012/04/24  19:47:33	---	      ..queries done...
+2012/04/24  19:47:33	---	      ....parent list built...
+2012/04/24  19:47:34	---	      .....ix built.....
+2012/04/24  19:47:34	---	      ...built followhash....
+2012/04/24  19:47:34	---	      .....displayList built...
+2012/04/24  19:47:34	---	   Exiting buildDisplayList
+2012/04/24  19:47:51	djangosuper	VIEW: xhr_actions
+2012/04/24  19:47:51	djangosuper	<QueryDict: {u'ci': [u'5384'], u'datax': [u''], u'ajaxAction': [u'dragKid'], u'ti': [u'4531']}>
+2012/04/24  19:47:51	djangosuper	=====> xhr_actions: =AJAX request, ci=5384  ti=4531  ajaxAction: dragKid
+2012/04/24  19:47:51	---	Last item ID:4574
+2012/04/24  19:47:51	djangosuper	VIEW: drag_move
+2012/04/24  19:47:51	djangosuper	 ====dragmove=> CIid:TIid    5384:4531
+2012/04/24  19:47:51	---	Last item ID:4574
+2012/04/24  19:47:51	---	sMDflk=> findLastKid lastKid=0
+2012/04/24  19:47:51	djangosuper	DragMove=> CI saved
+2012/04/24  19:47:51	djangosuper	dragmove=> targetFollowerID:5258  targetFollower.follows:4531  lastkid:0
+2012/04/24  19:47:51	djangosuper	 => targetFollower.follows=5384
+2012/04/24  19:47:51	---	lock removed
+2012/04/24  19:47:59	djangosuper	VIEW: xhr_actions
+2012/04/24  19:47:59	djangosuper	<QueryDict: {u'ci': [u'5959'], u'datax': [u''], u'ajaxAction': [u'dragKid'], u'ti': [u'4531']}>
+2012/04/24  19:47:59	djangosuper	=====> xhr_actions: =AJAX request, ci=5959  ti=4531  ajaxAction: dragKid
+2012/04/24  19:47:59	---	Last item ID:4574
+2012/04/24  19:47:59	djangosuper	VIEW: drag_move
+2012/04/24  19:47:59	djangosuper	 ====dragmove=> CIid:TIid    5959:4531
+2012/04/24  19:47:59	---	Last item ID:4574
+2012/04/24  19:47:59	---	sMDflk=> findLastKid lastKid=0
+2012/04/24  19:47:59	djangosuper	DragMove=> CI saved
+2012/04/24  19:47:59	djangosuper	dragmove=> targetFollowerID:5384  targetFollower.follows:4531  lastkid:0
+2012/04/24  19:47:59	djangosuper	 => targetFollower.follows=5959
+2012/04/24  19:47:59	---	lock removed
+2012/04/24  19:48:36	djangosuper	VIEW: xhr_actions
+2012/04/24  19:48:36	djangosuper	<QueryDict: {u'ci': [u'5619'], u'datax': [u''], u'ajaxAction': [u'dragKid'], u'ti': [u'6015']}>
+2012/04/24  19:48:36	djangosuper	=====> xhr_actions: =AJAX request, ci=5619  ti=6015  ajaxAction: dragKid
+2012/04/24  19:48:36	---	Last item ID:4574
+2012/04/24  19:48:36	djangosuper	VIEW: drag_move
+2012/04/24  19:48:36	djangosuper	 ====dragmove=> CIid:TIid    5619:6015
+2012/04/24  19:48:36	---	Last item ID:4574
+2012/04/24  19:48:36	---	sMDflk=> findLastKid lastKid=0
+2012/04/24  19:48:36	djangosuper	DragMove=> CI saved
+2012/04/24  19:48:36	djangosuper	dragmove=> targetFollowerID:5609  targetFollower.follows:6015  lastkid:0
+2012/04/24  19:48:36	djangosuper	 => targetFollower.follows=5619
+2012/04/24  19:48:36	---	lock removed
+2012/04/24  19:48:40	djangosuper	VIEW: draglist
+2012/04/24  19:48:40	djangosuper	     Proj 5
+2012/04/24  19:48:40	---	   Entering buildDisplayList
+2012/04/24  19:48:40	---	      ..queries done...
+2012/04/24  19:48:40	---	      ....parent list built...
+2012/04/24  19:48:40	---	      .....ix built.....
+2012/04/24  19:48:40	---	      ...built followhash....
+2012/04/24  19:48:40	---	      .....displayList built...
+2012/04/24  19:48:40	---	   Exiting buildDisplayList
+2012/04/24  19:48:48	djangosuper	Edit item: Formset generated, pItem=6023
+2012/04/24  19:48:57	djangosuper	   Formset saved: [<Item: Test showchain/repairchain more extensively, and IMPROVE>]
+2012/04/24  19:48:57	djangosuper	VIEW: draglist
+2012/04/24  19:48:57	djangosuper	     Proj 5
+2012/04/24  19:48:57	---	   Entering buildDisplayList
+2012/04/24  19:48:57	---	      ..queries done...
+2012/04/24  19:48:57	---	      ....parent list built...
+2012/04/24  19:48:57	---	      .....ix built.....
+2012/04/24  19:48:57	---	      ...built followhash....
+2012/04/24  19:48:57	---	      .....displayList built...
+2012/04/24  19:48:57	---	   Exiting buildDisplayList
+2012/04/24  19:49:22	djangosuper	VIEW: xhr_actions
+2012/04/24  19:49:22	djangosuper	<QueryDict: {u'ci': [u'5374'], u'FADpriority': [u'0'], u'FADhtmlBody': [u''], u'FADstatus': [u'0'], u'ti': [u'0'], u'ajaxAction': [u'fastAdd'], u'FADtitle': [u'Major\n']}>
+2012/04/24  19:49:22	djangosuper	=====> xhr_actions: =AJAX request, ci=5374  ti=0  ajaxAction: fastAdd
+2012/04/24  19:49:22	---	Last item ID:4574
+2012/04/24  19:49:22	---	VIEW: drag_actions => fastAdd
+2012/04/24  19:49:22	---	fastAdd for 5374  Major
+
+2012/04/24  19:49:22	---	NEW FA item ID=None
+2012/04/24  19:49:22	---	   fastadded item ID = 6403
+2012/04/24  19:49:22	---	  deco for: 6403
+2012/04/24  19:49:22	---	  deco for: 5374
+2012/04/24  19:49:22	---	  deco for: 6401
+2012/04/24  19:49:22	---	  deco for: 5957
+2012/04/24  19:49:22	---	lock removed
+2012/04/24  19:49:25	djangosuper	VIEW: xhr_actions
+2012/04/24  19:49:25	djangosuper	<QueryDict: {u'ci': [u'4377'], u'datax': [u''], u'ajaxAction': [u'dragKid'], u'ti': [u'6403']}>
+2012/04/24  19:49:25	djangosuper	=====> xhr_actions: =AJAX request, ci=4377  ti=6403  ajaxAction: dragKid
+2012/04/24  19:49:26	---	Last item ID:4574
+2012/04/24  19:49:26	djangosuper	VIEW: drag_move
+2012/04/24  19:49:26	djangosuper	 ====dragmove=> CIid:TIid    4377:6403
+2012/04/24  19:49:26	---	Last item ID:4574
+2012/04/24  19:49:26	---	sMDflk=> findLastKid lastKid=0
+2012/04/24  19:49:26	djangosuper	DragMove=> CI saved
+2012/04/24  19:49:26	djangosuper	dragmove=> targetFollowerID:5957  targetFollower.follows:6403  lastkid:0
+2012/04/24  19:49:26	djangosuper	 => targetFollower.follows=4377
+2012/04/24  19:49:26	---	lock removed
+2012/04/24  19:49:29	djangosuper	VIEW: xhr_actions
+2012/04/24  19:49:29	djangosuper	<QueryDict: {u'ci': [u'5957'], u'datax': [u''], u'ajaxAction': [u'dragKid'], u'ti': [u'6399']}>
+2012/04/24  19:49:29	djangosuper	=====> xhr_actions: =AJAX request, ci=5957  ti=6399  ajaxAction: dragKid
+2012/04/24  19:49:29	---	Last item ID:4574
+2012/04/24  19:49:29	djangosuper	VIEW: drag_move
+2012/04/24  19:49:29	djangosuper	 ====dragmove=> CIid:TIid    5957:6399
+2012/04/24  19:49:29	---	Last item ID:4574
+2012/04/24  19:49:29	---	sMDflk=> findLastKid lastKid=0
+2012/04/24  19:49:29	djangosuper	DragMove=> CI saved
+2012/04/24  19:49:29	djangosuper	dragmove=> targetFollowerID:5375  targetFollower.follows:6399  lastkid:0
+2012/04/24  19:49:29	djangosuper	 => targetFollower.follows=5957
+2012/04/24  19:49:29	---	lock removed
+2012/04/24  19:49:32	djangosuper	VIEW: xhr_actions
+2012/04/24  19:49:32	djangosuper	<QueryDict: {u'ci': [u'4581'], u'datax': [u''], u'ajaxAction': [u'dragKid'], u'ti': [u'6403']}>
+2012/04/24  19:49:32	djangosuper	=====> xhr_actions: =AJAX request, ci=4581  ti=6403  ajaxAction: dragKid
+2012/04/24  19:49:32	---	Last item ID:4574
+2012/04/24  19:49:32	djangosuper	VIEW: drag_move
+2012/04/24  19:49:32	djangosuper	 ====dragmove=> CIid:TIid    4581:6403
+2012/04/24  19:49:32	---	Last item ID:4574
+2012/04/24  19:49:32	---	sMDflk=> findLastKid lastKid=0
+2012/04/24  19:49:32	djangosuper	DragMove=> CI saved
+2012/04/24  19:49:32	djangosuper	dragmove=> targetFollowerID:4377  targetFollower.follows:6403  lastkid:0
+2012/04/24  19:49:32	djangosuper	 => targetFollower.follows=4581
+2012/04/24  19:49:32	---	lock removed
+2012/04/24  19:49:46	djangosuper	VIEW: xhr_actions
+2012/04/24  19:49:46	djangosuper	<QueryDict: {u'ci': [u'5834'], u'datax': [u''], u'ajaxAction': [u'dragKid'], u'ti': [u'6084']}>
+2012/04/24  19:49:46	djangosuper	=====> xhr_actions: =AJAX request, ci=5834  ti=6084  ajaxAction: dragKid
+2012/04/24  19:49:46	---	Last item ID:4574
+2012/04/24  19:49:46	djangosuper	VIEW: drag_move
+2012/04/24  19:49:46	djangosuper	 ====dragmove=> CIid:TIid    5834:6084
+2012/04/24  19:49:46	---	Last item ID:4574
+2012/04/24  19:49:46	---	sMDflk=> findLastKid lastKid=5175
+2012/04/24  19:49:46	djangosuper	DragMove=> CI saved
+2012/04/24  19:49:46	djangosuper	dragmove=> targetFollowerID:6085  targetFollower.follows:6084  lastkid:5175
+2012/04/24  19:49:46	djangosuper	 dm=>kidList = [5672L, 5665L, 5175L]
+2012/04/24  19:49:46	djangosuper	 dm=>kidx / indentL = 5672/3
+2012/04/24  19:49:46	djangosuper	 dm=>kidx / indentL = 5665/3
+2012/04/24  19:49:47	djangosuper	 dm=>kidx / indentL = 5175/3
+2012/04/24  19:49:47	djangosuper	 => targetFollower.follows=5175
+2012/04/24  19:49:47	---	lock removed
+2012/04/24  19:49:49	djangosuper	VIEW: draglist
+2012/04/24  19:49:49	djangosuper	     Proj 5
+2012/04/24  19:49:49	---	   Entering buildDisplayList
+2012/04/24  19:49:49	---	      ..queries done...
+2012/04/24  19:49:49	---	      ....parent list built...
+2012/04/24  19:49:49	---	      .....ix built.....
+2012/04/24  19:49:49	---	      ...built followhash....
+2012/04/24  19:49:49	---	      .....displayList built...
+2012/04/24  19:49:49	---	   Exiting buildDisplayList
+2012/04/24  19:50:05	djangosuper	VIEW: xhr_actions
+2012/04/24  19:50:05	djangosuper	<QueryDict: {u'ci': [u'5929'], u'ajaxAction': [u'archiveThisItem'], u'ti': [u'0']}>
+2012/04/24  19:50:05	djangosuper	=====> xhr_actions: =AJAX request, ci=5929  ti=0  ajaxAction: archiveThisItem
+2012/04/24  19:50:05	---	Last item ID:4574
+2012/04/24  19:50:05	---	sMDflk=> findLastKid lastKid=0
+2012/04/24  19:50:05	---	Last item ID:6395
+2012/04/24  19:50:05	---	  deco for: 5092
+2012/04/24  19:50:05	---	  deco for: 5092
+2012/04/24  19:50:05	---	  deco for: 5002
+2012/04/24  19:50:05	---	==> archivePair moved item 5929  to proj: 15
+2012/04/24  19:50:05	---	lock removed
+2012/04/24  19:50:21	djangosuper	VIEW: xhr_actions
+2012/04/24  19:50:21	djangosuper	<QueryDict: {u'ci': [u'6085'], u'datax': [u''], u'ajaxAction': [u'dragKid'], u'ti': [u'6084']}>
+2012/04/24  19:50:21	djangosuper	=====> xhr_actions: =AJAX request, ci=6085  ti=6084  ajaxAction: dragKid
+2012/04/24  19:50:21	---	Last item ID:4574
+2012/04/24  19:50:21	djangosuper	VIEW: drag_move
+2012/04/24  19:50:21	djangosuper	 ====dragmove=> CIid:TIid    6085:6084
+2012/04/24  19:50:21	---	Last item ID:4574
+2012/04/24  19:50:21	---	sMDflk=> findLastKid lastKid=0
+2012/04/24  19:50:21	djangosuper	DragMove=> CI saved
+2012/04/24  19:50:21	djangosuper	dragmove=> targetFollowerID:5834  targetFollower.follows:6084  lastkid:0
+2012/04/24  19:50:21	djangosuper	 => targetFollower.follows=6085
+2012/04/24  19:50:21	---	lock removed
+2012/04/24  19:55:44	djangosuper	VIEW: xhr_actions
+2012/04/24  19:55:44	djangosuper	<QueryDict: {u'ci': [u'6403'], u'FADpriority': [u'1'], u'FADhtmlBody': [u"<p>The key distinguishing feature of to-do's is that they eventually <em>disappear</em>.\nThey lose their organization, their context. </p>\n\n<p>Notes are a permanent resource. And they are quite large, potentially, and have structure. What would make a good note feature for benk?</p>\n\n<ul>\n<li>permanence</li>\n<li>convenient full-screen, wysiwyg display</li>\n<li>good searching</li>\n</ul>\n<p>One approach would be to make notes a <em>different</em> type of item, but <em>still associated with a project</em>. they wouldn't retire, perhaps would be index differently. \n<ul>\n<li>every item is a to-do or a note</li>\n<li>a note does not archive(??)</li>\n<li>notes have their own display. </li>\n<li>notes do not have priority or status fields</li>\n<li><strong>what else would make you not think twice about pushing <em>all</em> your notes in benk?</li>\n<li></li>\n<li></li>\n<li></li>\n\n</ul>"], u'FADstatus': [u'3'], u'ti': [u'0'], u'ajaxAction': [u'fastAdd'], u'FADtitle': [u"To-do's versus notes / information items"]}>
+2012/04/24  19:55:44	djangosuper	=====> xhr_actions: =AJAX request, ci=6403  ti=0  ajaxAction: fastAdd
+2012/04/24  19:55:44	---	Last item ID:4574
+2012/04/24  19:55:44	---	VIEW: drag_actions => fastAdd
+2012/04/24  19:55:44	---	fastAdd for 6403  To-do's versus notes / information items
+2012/04/24  19:55:44	---	NEW FA item ID=None
+2012/04/24  19:55:44	---	   fastadded item ID = 6404
+2012/04/24  19:55:44	---	  deco for: 6404
+2012/04/24  19:55:45	---	  deco for: 6403
+2012/04/24  19:55:45	---	  deco for: 5374
+2012/04/24  19:55:45	---	  deco for: 4581
+2012/04/24  19:55:45	---	lock removed
+2012/04/24  19:55:55	djangosuper	VIEW: xhr_actions
+2012/04/24  19:55:55	djangosuper	<QueryDict: {u'ci': [u'6404'], u'datax': [u'8'], u'ajaxAction': [u'statusSelected'], u'ti': [u'0']}>
+2012/04/24  19:55:55	djangosuper	=====> xhr_actions: =AJAX request, ci=6404  ti=0  ajaxAction: statusSelected
+2012/04/24  19:55:55	---	Last item ID:4574
+2012/04/24  19:55:55	---	  deco for: 6404
+2012/04/24  19:55:55	---	lock removed
+2012/04/24  19:56:22	djangosuper	Edit item: Formset generated, pItem=6400
+2012/04/24  19:56:43	djangosuper	   Formset saved: [<Item: BAD benk corruption, again, just from moving too fast. Showchain reported lots of "not in chain 0" items, but didn't list two chain tables, and offered no fix. Seemed to be circular fragment.>]
+2012/04/24  19:56:43	djangosuper	VIEW: draglist
+2012/04/24  19:56:43	djangosuper	     Proj 5
+2012/04/24  19:56:43	---	   Entering buildDisplayList
+2012/04/24  19:56:43	---	      ..queries done...
+2012/04/24  19:56:43	---	      ....parent list built...
+2012/04/24  19:56:43	---	      .....ix built.....
+2012/04/24  19:56:43	---	      ...built followhash....
+2012/04/24  19:56:43	---	      .....displayList built...
+2012/04/24  19:56:43	---	   Exiting buildDisplayList
+2012/04/24  19:56:51	djangosuper	Edit item: Formset generated, pItem=6404
+2012/04/24  19:57:06	djangosuper	   Formset saved: [<Item: To-do's versus notes / information items>]
+2012/04/24  19:57:06	djangosuper	VIEW: draglist
+2012/04/24  19:57:06	djangosuper	     Proj 5
+2012/04/24  19:57:06	---	   Entering buildDisplayList
+2012/04/24  19:57:06	---	      ..queries done...
+2012/04/24  19:57:06	---	      ....parent list built...
+2012/04/24  19:57:06	---	      .....ix built.....
+2012/04/24  19:57:06	---	      ...built followhash....
+2012/04/24  19:57:06	---	      .....displayList built...
+2012/04/24  19:57:06	---	   Exiting buildDisplayList
+2012/04/24  19:57:34	djangosuper	Edit item: Formset generated, pItem=6404
+2012/04/24  20:00:23	djangosuper	   Formset saved: [<Item: To-do's versus notes / information items>]
+2012/04/24  20:00:23	djangosuper	VIEW: draglist
+2012/04/24  20:00:23	djangosuper	     Proj 5
+2012/04/24  20:00:23	---	   Entering buildDisplayList
+2012/04/24  20:00:23	---	      ..queries done...
+2012/04/24  20:00:23	---	      ....parent list built...
+2012/04/24  20:00:24	---	      .....ix built.....
+2012/04/24  20:00:24	---	      ...built followhash....
+2012/04/24  20:00:24	---	      .....displayList built...
+2012/04/24  20:00:24	---	   Exiting buildDisplayList
+2012/04/24  20:05:32	djangosuper	VIEW: draglist
+2012/04/24  20:05:32	djangosuper	     Proj 27
+2012/04/24  20:05:32	---	   Entering buildDisplayList
+2012/04/24  20:05:32	---	      ..queries done...
+2012/04/24  20:05:32	---	      ....parent list built...
+2012/04/24  20:05:32	---	      .....ix built.....
+2012/04/24  20:05:32	---	      ...built followhash....
+2012/04/24  20:05:32	---	      .....displayList built...
+2012/04/24  20:05:32	---	   Exiting buildDisplayList
+2012/04/24  20:05:35	djangosuper	VIEW: draglist
+2012/04/24  20:05:35	djangosuper	     Proj 4
+2012/04/24  20:05:35	---	   Entering buildDisplayList
+2012/04/24  20:05:35	---	      ..queries done...
+2012/04/24  20:05:35	---	      ....parent list built...
+2012/04/24  20:05:35	---	      .....ix built.....
+2012/04/24  20:05:35	---	      ...built followhash....
+2012/04/24  20:05:35	---	      .....displayList built...
+2012/04/24  20:05:35	---	   Exiting buildDisplayList
+2012/04/24  20:05:48	djangosuper	VIEW: draglist
+2012/04/24  20:05:48	djangosuper	     Proj 4
+2012/04/24  20:05:48	---	   Entering buildDisplayList
+2012/04/24  20:05:48	---	      ..queries done...
+2012/04/24  20:05:48	---	      ....parent list built...
+2012/04/24  20:05:48	---	      .....ix built.....
+2012/04/24  20:05:48	---	      ...built followhash....
+2012/04/24  20:05:48	---	      .....displayList built...
+2012/04/24  20:05:48	---	   Exiting buildDisplayList
+2012/04/24  20:05:53	djangosuper	VIEW: draglist
+2012/04/24  20:05:53	djangosuper	     Proj 4
+2012/04/24  20:05:53	---	   Entering buildDisplayList
+2012/04/24  20:05:53	---	      ..queries done...
+2012/04/24  20:05:53	---	      ....parent list built...
+2012/04/24  20:05:53	---	      .....ix built.....
+2012/04/24  20:05:53	---	      ...built followhash....
+2012/04/24  20:05:53	---	      .....displayList built...
+2012/04/24  20:05:53	---	   Exiting buildDisplayList
+2012/04/24  20:07:54	djangosuper	VIEW: draglist
+2012/04/24  20:07:54	djangosuper	     Proj 4
+2012/04/24  20:07:54	---	   Entering buildDisplayList
+2012/04/24  20:07:54	---	      ..queries done...
+2012/04/24  20:07:54	---	      ....parent list built...
+2012/04/24  20:07:54	---	      .....ix built.....
+2012/04/24  20:07:54	---	      ...built followhash....
+2012/04/24  20:07:54	---	      .....displayList built...
+2012/04/24  20:07:54	---	   Exiting buildDisplayList
+2012/04/24  20:08:03	djangosuper	VIEW: xhr_actions
+2012/04/24  20:08:03	djangosuper	<QueryDict: {u'ci': [u'5998'], u'FADpriority': [u'0'], u'FADhtmlBody': [u''], u'FADstatus': [u'0'], u'ti': [u'0'], u'ajaxAction': [u'fastAdd'], u'FADtitle': [u'yo mo']}>
+2012/04/24  20:08:03	djangosuper	=====> xhr_actions: =AJAX request, ci=5998  ti=0  ajaxAction: fastAdd
+2012/04/24  20:08:03	---	Last item ID:6004
+2012/04/24  20:08:03	---	VIEW: drag_actions => fastAdd
+2012/04/24  20:08:03	---	fastAdd for 5998  yo mo
+2012/04/24  20:08:03	---	NEW FA item ID=None
+2012/04/24  20:08:04	---	   fastadded item ID = 6405
+2012/04/24  20:08:04	---	  deco for: 6405
+2012/04/24  20:08:04	---	  deco for: 5998
+2012/04/24  20:08:04	---	  deco for: 5997
+2012/04/24  20:08:04	---	  deco for: 5999
+2012/04/24  20:08:04	---	lock removed
+2012/04/24  20:08:18	djangosuper	VIEW: xhr_actions
+2012/04/24  20:08:18	djangosuper	<QueryDict: {u'ci': [u'6022'], u'FADpriority': [u'0'], u'FADhtmlBody': [u''], u'FADstatus': [u'0'], u'ti': [u'0'], u'ajaxAction': [u'fastAdd'], u'FADtitle': [u'kkk']}>
+2012/04/24  20:08:18	djangosuper	=====> xhr_actions: =AJAX request, ci=6022  ti=0  ajaxAction: fastAdd
+2012/04/24  20:08:18	---	Last item ID:6004
+2012/04/24  20:08:18	---	VIEW: drag_actions => fastAdd
+2012/04/24  20:08:18	---	fastAdd for 6022  kkk
+2012/04/24  20:08:18	---	NEW FA item ID=None
+2012/04/24  20:08:18	---	   fastadded item ID = 6406
+2012/04/24  20:08:18	---	  deco for: 6406
+2012/04/24  20:08:18	---	  deco for: 6022
+2012/04/24  20:08:18	---	  deco for: 4301
+2012/04/24  20:08:18	---	  deco for: 6093
+2012/04/24  20:08:18	---	lock removed
+2012/04/24  20:10:01	djangosuper	VIEW: draglist
+2012/04/24  20:10:01	djangosuper	     Proj 4
+2012/04/24  20:10:01	---	   Entering buildDisplayList
+2012/04/24  20:10:01	---	      ..queries done...
+2012/04/24  20:10:01	---	      ....parent list built...
+2012/04/24  20:10:01	---	      .....ix built.....
+2012/04/24  20:10:01	---	      ...built followhash....
+2012/04/24  20:10:01	---	      .....displayList built...
+2012/04/24  20:10:01	---	   Exiting buildDisplayList
+2012/04/24  20:15:30	djangosuper	VIEW: xhr_actions
+2012/04/24  20:15:30	djangosuper	<QueryDict: {u'ci': [u'5999'], u'ajaxAction': [u'demote'], u'ti': [u'0']}>
+2012/04/24  20:15:30	djangosuper	=====> xhr_actions: =AJAX request, ci=5999  ti=0  ajaxAction: demote
+2012/04/24  20:15:30	---	Last item ID:6004
+2012/04/24  20:15:30	---	sMDflk=> findLastKid lastKid=0
+2012/04/24  20:15:30	---	  deco for: 5999
+2012/04/24  20:15:30	---	  deco for: 6405
+2012/04/24  20:15:30	---	lock removed
+2012/04/24  20:19:16	djangosuper	VIEW: xhr_actions
+2012/04/24  20:19:16	djangosuper	<QueryDict: {u'ci': [u'5999'], u'ajaxAction': [u'promote'], u'ti': [u'0']}>
+2012/04/24  20:19:16	djangosuper	=====> xhr_actions: =AJAX request, ci=5999  ti=0  ajaxAction: promote
+2012/04/24  20:19:16	---	Last item ID:6004
+2012/04/24  20:19:16	---	sMDflk=> findLastKid lastKid=0
+2012/04/24  20:19:16	---	Promoting: 5999
+2012/04/24  20:19:16	---	converting subsequent items to children starting at: 5999
+2012/04/24  20:19:16	---	  deco for: 5999
+2012/04/24  20:19:16	---	  deco for: 6405
+2012/04/24  20:19:16	---	lock removed
+2012/04/24  20:19:41	djangosuper	VIEW: xhr_actions
+2012/04/24  20:19:41	djangosuper	<QueryDict: {u'ci': [u'5994'], u'ajaxAction': [u'moveUp'], u'ti': [u'0']}>
+2012/04/24  20:19:41	djangosuper	=====> xhr_actions: =AJAX request, ci=5994  ti=0  ajaxAction: moveUp
+2012/04/24  20:19:41	---	Last item ID:6004
+2012/04/24  20:19:41	---	sMDflk=> findLastKid lastKid=0
+2012/04/24  20:19:41	---	  moving among children of 5983
+2012/04/24  20:19:41	---	  TI:  5989
+2012/04/24  20:19:41	---	sMDflk=> findLastKid lastKid=0
+2012/04/24  20:19:42	---	  deco for: 5994
+2012/04/24  20:19:42	---	  deco for: 5989
+2012/04/24  20:19:42	---	  deco for: 5983
+2012/04/24  20:19:42	---	  deco for: 5994
+2012/04/24  20:19:42	---	  deco for: 5995
+2012/04/24  20:19:42	---	lock removed
+2012/04/24  20:22:06	djangosuper	VIEW: draglist
+2012/04/24  20:22:06	djangosuper	     Proj 4
+2012/04/24  20:22:06	---	   Entering buildDisplayList
+2012/04/24  20:22:06	---	      ..queries done...
+2012/04/24  20:22:06	---	      ....parent list built...
+2012/04/24  20:22:06	---	      .....ix built.....
+2012/04/24  20:22:06	---	      ...built followhash....
+2012/04/24  20:22:06	---	      .....displayList built...
+2012/04/24  20:22:06	---	   Exiting buildDisplayList
+2012/04/24  20:22:15	djangosuper	VIEW: xhr_actions
+2012/04/24  20:22:15	djangosuper	<QueryDict: {u'ci': [u'5999'], u'ajaxAction': [u'demote'], u'ti': [u'0']}>
+2012/04/24  20:22:15	djangosuper	=====> xhr_actions: =AJAX request, ci=5999  ti=0  ajaxAction: demote
+2012/04/24  20:22:15	---	Last item ID:6004
+2012/04/24  20:22:15	---	sMDflk=> findLastKid lastKid=0
+2012/04/24  20:22:15	---	  deco for: 5999
+2012/04/24  20:22:15	---	  deco for: 6405
+2012/04/24  20:22:15	---	lock removed
+2012/04/24  20:22:18	djangosuper	VIEW: xhr_actions
+2012/04/24  20:22:18	djangosuper	<QueryDict: {u'ci': [u'5999'], u'ajaxAction': [u'promote'], u'ti': [u'0']}>
+2012/04/24  20:22:18	djangosuper	=====> xhr_actions: =AJAX request, ci=5999  ti=0  ajaxAction: promote
+2012/04/24  20:22:18	---	Last item ID:6004
+2012/04/24  20:22:18	---	sMDflk=> findLastKid lastKid=0
+2012/04/24  20:22:18	---	Promoting: 5999
+2012/04/24  20:22:18	---	converting subsequent items to children starting at: 5999
+2012/04/24  20:22:18	---	  deco for: 5999
+2012/04/24  20:22:18	---	  deco for: 6405
+2012/04/24  20:22:18	---	lock removed
+2012/04/24  20:37:55	djangosuper	VIEW: draglist
+2012/04/24  20:37:55	djangosuper	     Proj 4
+2012/04/24  20:37:55	---	   Entering buildDisplayList
+2012/04/24  20:37:55	---	      ..queries done...
+2012/04/24  20:37:55	---	      ....parent list built...
+2012/04/24  20:37:55	---	      .....ix built.....
+2012/04/24  20:37:55	---	      ...built followhash....
+2012/04/24  20:37:55	---	      .....displayList built...
+2012/04/24  20:37:55	---	   Exiting buildDisplayList
+2012/04/24  20:39:20	djangosuper	VIEW: draglist
+2012/04/24  20:39:20	djangosuper	     Proj 4
+2012/04/24  20:39:20	---	   Entering buildDisplayList
+2012/04/24  20:39:20	---	      ..queries done...
+2012/04/24  20:39:20	---	      ....parent list built...
+2012/04/24  20:39:20	---	      .....ix built.....
+2012/04/24  20:39:20	---	      ...built followhash....
+2012/04/24  20:39:20	---	      .....displayList built...
+2012/04/24  20:39:20	---	   Exiting buildDisplayList
+2012/04/24  20:47:17	djangosuper	VIEW: draglist
+2012/04/24  20:47:17	djangosuper	     Proj 4
+2012/04/24  20:47:17	---	   Entering buildDisplayList
+2012/04/24  20:47:17	---	      ..queries done...
+2012/04/24  20:47:17	---	      ....parent list built...
+2012/04/24  20:47:17	---	      .....ix built.....
+2012/04/24  20:47:17	---	      ...built followhash....
+2012/04/24  20:47:17	---	      .....displayList built...
+2012/04/24  20:47:17	---	   Exiting buildDisplayList
+2012/04/24  20:48:17	djangosuper	VIEW: draglist
+2012/04/24  20:48:17	djangosuper	     Proj 4
+2012/04/24  20:48:17	---	   Entering buildDisplayList
+2012/04/24  20:48:17	---	      ..queries done...
+2012/04/24  20:48:17	---	      ....parent list built...
+2012/04/24  20:48:17	---	      .....ix built.....
+2012/04/24  20:48:17	---	      ...built followhash....
+2012/04/24  20:48:17	---	      .....displayList built...
+2012/04/24  20:48:17	---	   Exiting buildDisplayList
+2012/04/24  20:48:46	djangosuper	VIEW: draglist
+2012/04/24  20:48:46	djangosuper	     Proj 4
+2012/04/24  20:48:46	---	   Entering buildDisplayList
+2012/04/24  20:48:46	---	      ..queries done...
+2012/04/24  20:48:46	---	      ....parent list built...
+2012/04/24  20:48:46	---	      .....ix built.....
+2012/04/24  20:48:46	---	      ...built followhash....
+2012/04/24  20:48:46	---	      .....displayList built...
+2012/04/24  20:48:46	---	   Exiting buildDisplayList
+2012/04/24  20:49:21	djangosuper	VIEW: draglist
+2012/04/24  20:49:21	djangosuper	     Proj 4
+2012/04/24  20:49:21	---	   Entering buildDisplayList
+2012/04/24  20:49:21	---	      ..queries done...
+2012/04/24  20:49:21	---	      ....parent list built...
+2012/04/24  20:49:21	---	      .....ix built.....
+2012/04/24  20:49:21	---	      ...built followhash....
+2012/04/24  20:49:21	---	      .....displayList built...
+2012/04/24  20:49:21	---	   Exiting buildDisplayList
+2012/04/24  20:52:39	djangosuper	VIEW: draglist
+2012/04/24  20:52:39	djangosuper	     Proj 4
+2012/04/24  20:52:39	---	   Entering buildDisplayList
+2012/04/24  20:52:39	---	      ..queries done...
+2012/04/24  20:52:39	---	      ....parent list built...
+2012/04/24  20:52:40	---	      .....ix built.....
+2012/04/24  20:52:40	---	      ...built followhash....
+2012/04/24  20:52:40	---	      .....displayList built...
+2012/04/24  20:52:40	---	   Exiting buildDisplayList
+2012/04/24  20:52:53	djangosuper	VIEW: xhr_actions
+2012/04/24  20:52:53	djangosuper	<QueryDict: {u'ci': [u'6405'], u'ajaxAction': [u'demote'], u'ti': [u'0']}>
+2012/04/24  20:52:53	djangosuper	=====> xhr_actions: =AJAX request, ci=6405  ti=0  ajaxAction: demote
+2012/04/24  20:52:53	---	Last item ID:6004
+2012/04/24  20:52:54	---	sMDflk=> findLastKid lastKid=0
+2012/04/24  20:52:54	---	  deco for: 6405
+2012/04/24  20:52:54	---	  deco for: 5998
+2012/04/24  20:52:54	---	lock removed
+2012/04/24  20:52:56	djangosuper	VIEW: xhr_actions
+2012/04/24  20:52:56	djangosuper	<QueryDict: {u'ci': [u'6405'], u'ajaxAction': [u'promote'], u'ti': [u'0']}>
+2012/04/24  20:52:56	djangosuper	=====> xhr_actions: =AJAX request, ci=6405  ti=0  ajaxAction: promote
+2012/04/24  20:52:56	---	Last item ID:6004
+2012/04/24  20:52:56	---	sMDflk=> findLastKid lastKid=0
+2012/04/24  20:52:56	---	Promoting: 6405
+2012/04/24  20:52:56	---	converting subsequent items to children starting at: 6405
+2012/04/24  20:52:56	---	  deco for: 6405
+2012/04/24  20:52:56	---	  deco for: 5998
+2012/04/24  20:52:56	---	lock removed
+2012/04/24  20:52:58	djangosuper	VIEW: xhr_actions
+2012/04/24  20:52:58	djangosuper	<QueryDict: {u'ci': [u'6405'], u'ajaxAction': [u'moveDown'], u'ti': [u'0']}>
+2012/04/24  20:52:58	djangosuper	=====> xhr_actions: =AJAX request, ci=6405  ti=0  ajaxAction: moveDown
+2012/04/24  20:52:58	---	Last item ID:6004
+2012/04/24  20:52:58	---	sMDflk=> findLastKid lastKid=0
+2012/04/24  20:52:58	---	  moving among children of 5983
+2012/04/24  20:52:58	---	  TI:  5999
+2012/04/24  20:52:58	---	sMDflk=> findLastKid lastKid=0
+2012/04/24  20:52:58	---	  deco for: 5999
+2012/04/24  20:52:58	---	  deco for: 6405
+2012/04/24  20:52:58	---	  deco for: 5998
+2012/04/24  20:52:58	---	  deco for: 5999
+2012/04/24  20:52:58	---	  deco for: 6091
+2012/04/24  20:52:58	---	lock removed
+2012/04/24  20:53:00	djangosuper	VIEW: xhr_actions
+2012/04/24  20:53:00	djangosuper	<QueryDict: {u'ci': [u'6405'], u'ajaxAction': [u'demote'], u'ti': [u'0']}>
+2012/04/24  20:53:00	djangosuper	=====> xhr_actions: =AJAX request, ci=6405  ti=0  ajaxAction: demote
+2012/04/24  20:53:00	---	Last item ID:6004
+2012/04/24  20:53:00	---	sMDflk=> findLastKid lastKid=0
+2012/04/24  20:53:00	---	  deco for: 6405
+2012/04/24  20:53:00	---	  deco for: 5999
+2012/04/24  20:53:00	---	lock removed
+2012/04/24  20:56:04	djangosuper	VIEW: draglist
+2012/04/24  20:56:04	djangosuper	     Proj 4
+2012/04/24  20:56:04	---	   Entering buildDisplayList
+2012/04/24  20:56:04	---	      ..queries done...
+2012/04/24  20:56:04	---	      ....parent list built...
+2012/04/24  20:56:04	---	      .....ix built.....
+2012/04/24  20:56:04	---	      ...built followhash....
+2012/04/24  20:56:04	---	      .....displayList built...
+2012/04/24  20:56:04	---	   Exiting buildDisplayList
+2012/04/24  20:56:20	djangosuper	VIEW: draglist
+2012/04/24  20:56:20	djangosuper	     Proj 4
+2012/04/24  20:56:20	---	   Entering buildDisplayList
+2012/04/24  20:56:20	---	      ..queries done...
+2012/04/24  20:56:20	---	      ....parent list built...
+2012/04/24  20:56:20	---	      .....ix built.....
+2012/04/24  20:56:20	---	      ...built followhash....
+2012/04/24  20:56:20	---	      .....displayList built...
+2012/04/24  20:56:20	---	   Exiting buildDisplayList
+2012/04/24  20:57:16	djangosuper	VIEW: draglist
+2012/04/24  20:57:16	djangosuper	     Proj 4
+2012/04/24  20:57:16	---	   Entering buildDisplayList
+2012/04/24  20:57:16	---	      ..queries done...
+2012/04/24  20:57:16	---	      ....parent list built...
+2012/04/24  20:57:16	---	      .....ix built.....
+2012/04/24  20:57:16	---	      ...built followhash....
+2012/04/24  20:57:16	---	      .....displayList built...
+2012/04/24  20:57:16	---	   Exiting buildDisplayList
+2012/04/24  21:00:01	djangosuper	VIEW: draglist
+2012/04/24  21:00:01	djangosuper	     Proj 4
+2012/04/24  21:00:01	---	   Entering buildDisplayList
+2012/04/24  21:00:01	---	      ..queries done...
+2012/04/24  21:00:01	---	      ....parent list built...
+2012/04/24  21:00:01	---	      .....ix built.....
+2012/04/24  21:00:01	---	      ...built followhash....
+2012/04/24  21:00:01	---	      .....displayList built...
+2012/04/24  21:00:01	---	   Exiting buildDisplayList
+2012/04/24  21:01:03	djangosuper	VIEW: draglist
+2012/04/24  21:01:03	djangosuper	     Proj 4
+2012/04/24  21:01:03	---	   Entering buildDisplayList
+2012/04/24  21:01:03	---	      ..queries done...
+2012/04/24  21:01:03	---	      ....parent list built...
+2012/04/24  21:01:03	---	      .....ix built.....
+2012/04/24  21:01:03	---	      ...built followhash....
+2012/04/24  21:01:03	---	      .....displayList built...
+2012/04/24  21:01:03	---	   Exiting buildDisplayList
+2012/04/24  21:01:12	djangosuper	VIEW: xhr_actions
+2012/04/24  21:01:12	djangosuper	<QueryDict: {u'ci': [u'5996'], u'ajaxAction': [u'demote'], u'ti': [u'0']}>
+2012/04/24  21:01:12	djangosuper	=====> xhr_actions: =AJAX request, ci=5996  ti=0  ajaxAction: demote
+2012/04/24  21:01:12	---	Last item ID:6004
+2012/04/24  21:01:12	---	sMDflk=> findLastKid lastKid=0
+2012/04/24  21:01:12	---	  deco for: 5996
+2012/04/24  21:01:12	---	  deco for: 5991
+2012/04/24  21:01:12	---	lock removed
+2012/04/24  21:01:15	djangosuper	VIEW: xhr_actions
+2012/04/24  21:01:15	djangosuper	<QueryDict: {u'ci': [u'5996'], u'ajaxAction': [u'demote'], u'ti': [u'0']}>
+2012/04/24  21:01:15	djangosuper	=====> xhr_actions: =AJAX request, ci=5996  ti=0  ajaxAction: demote
+2012/04/24  21:01:15	---	Last item ID:6004
+2012/04/24  21:01:15	---	Can't demote further, item 5996
+2012/04/24  21:01:15	---	lock removed
