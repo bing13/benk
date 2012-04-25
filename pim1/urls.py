@@ -37,7 +37,7 @@ urlpatterns = patterns('',
     url(r'^pim1/item/edititem/(?P<pItem>\d+)/$','pim1.pengine.views.editItem'),
 
     url(r'^pim1/item/add/(?P<pItem>\d+)/$','pim1.pengine.views.addItem'),
-    url(r'^pim1/item/delete/(?P<pItem>\d+)/$','pim1.pengine.views.actionItem',{'action':'delete'}),
+    url(r'^pim1/item/deleteINACTIVE/(?P<pItem>\d+)/$','pim1.pengine.views.actionItem',{'action':'delete'}),
     url(r'^pim1/item/demote/(?P<pItem>\d+)/$','pim1.pengine.views.actionItem',{'action':'demote'}),
     url(r'^pim1/item/promote/(?P<pItem>\d+)/$','pim1.pengine.views.actionItem',{'action':'promote'}),
     url(r'^pim1/item/moveup/(?P<pItem>\d+)/$','pim1.pengine.views.actionItem',{'action':'moveup'}),

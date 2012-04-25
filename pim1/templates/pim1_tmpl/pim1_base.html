@@ -17,8 +17,28 @@
 
     <script type="text/javascript" src="http://media.bernardhecker.com/pim1/static/js/dragdrop.js"></script>
     <script type="text/javascript" src="http://media.bernardhecker.com/pim1/static/js/items.js"></script>
+
+
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-22766026-1']);
+  _gaq.push(['_setDomainName', 'none']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
                              
-    <title>{% block title %}{{ titleCrumbBlurb }} - benk{% endblock %}</title>
+    <title>{% block title %}{{ titleCrumbBlurb }} [ {{ user.username }} ]- benk{% endblock %}</title>
 </head>
 
 <body class="background-dropx" onLoad="toggleSimple();hideClass('noteBody');showAProjSet('{{ thisSet }}')" > 

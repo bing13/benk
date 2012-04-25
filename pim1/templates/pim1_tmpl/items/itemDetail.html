@@ -7,7 +7,7 @@
     <table class="item_table">
     {% for ci in current_items %}
 
-     <tr class="items"><td class="titlecol itemtd" colspan="3"><strong>({{ci.id}}) <a href="/pim1/admin/pengine/item/{{ci.id}}/">{{ ci.title }}</strong></a></td></tr>
+     <tr class="items"><td class="titlecol itemtd" colspan="3"><a href="/pim1/item/edititem/{{ ci.id }}">{{ci.id}}:  {{ ci.title }}</a></td></tr>
 
      <tr class="items"><td class="itemtd">project: {{ ci.project.id}}: <strong>{{ ci.project }}</strong>   /   set:{{ ci.project.set.id}}: {{ ci.project.set }}
 	</td>
@@ -48,8 +48,6 @@
 
 
 
-
-    <tr  class="items"> <td "actionArrows">delete? <a href="/pim1/item/delete/{{ ci.id }}">&otimes;</a></td></tr>
 
     {% endfor %}
 

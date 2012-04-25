@@ -208,7 +208,9 @@ style="border: 2px solid grey;"
 	    <div id="itemControlPanel" onmouseout='hideICP();'>
 	      <ul>
 		 <li id="icpFastAdd" ><a href="#"  onClick='to be replaced by javascript'>add</a> </li>
-		 <li id="icpArchive"><a href="#"   onClick='to be replaced by javascript'>archive</a></li>
+		 <li id="icpArchive"><a href="#"   onClick='to be replaced by javascript'>
+{% if current_items.0.project.projType == '3' %}un{% endif %}archive</a></li>
+
 		 <li id="icpHoist"><a href="to be replaced by javascript"  onClick='hideICP();'>hoist</a></li>
 
 		 <li id="icpMoveUp"><a href="#"  onClick='to be replaced by JS'>&uarr;</a></li>
