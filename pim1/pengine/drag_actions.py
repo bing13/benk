@@ -27,7 +27,7 @@ class dragOps():
             if id != 0 :
                 sharedMD.logThis('---',  "  deco for: "+ str(id))
                 thisItem=Item.objects.get(pk=id)
-                decoratedItems.append([thisItem.id, thisItem.follows, thisItem.title, thisItem.parent, thisItem.indentLevel, thisItem.priority, thisItem.status, thisItem.HTMLnoteBody, sharedMD.returnMarker(self, thisItem), thisItem.statusText()])
+                decoratedItems.append([thisItem.id, thisItem.follows, thisItem.title, thisItem.parent, thisItem.indentLevel, thisItem.priority, thisItem.status, thisItem.HTMLnoteBody, sharedMD.returnMarker(thisItem), thisItem.statusText()])
 
                 ## am concerned that other places where this list is build won't have statusText()
                 
@@ -92,28 +92,192 @@ class dragOps():
             #sharedMD.logThis("updateListIDs deco: "+str(self.updateIDsDecorate(updateListIDs)))
             return(self.updateIDsDecorate(updateListIDs))
 
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# drag_move
+ 
+    #@login_required
+    def drag_move(self, request, CIid, TIid):
+        sharedMD.logThis(request.user.username, "VIEW: drag_move")
+
+        CI=Item.objects.get(pk=CIid)
+        TI=Item.objects.get(pk=TIid)
+        sharedMD.logThis(request.user.username, "     ====dragMove=> CIid:TIid    "+str(CIid)+":"+str(TIid))
+
+        #### check for valid owner ##############
+        if CI.owner != request.user.username:
+            sharedMD.logThis(request.user.username, '     == WARNING: drag_move of item not belonging to this user.')
+            #request.user.message_set.create (message="You don't own that item.")
+            updateThese = self.updateIDsDecorate([CI.id, TI.id])
+            return(updateThese) 
+
+
+        #### check for invalid actions ####################
+
+        moveWarning = ''
+
+        #### can't drag CI onto item it followers
+        if CI.follows == TI.id:
+            moveWarning = '== WARNING: drag_move of item onto item it follows is invalid. Not executing.'
+
+        #### CAN drag CI onto item that follows it (if TI is not also a kid)
+        #if CI.id == TI.follows:
+        #    moveWarning = '== WARNING: drag_move of item onto item following it is invalid. Not executing.'
+
+        #### can't drag onto self 
+        if CI.id == TI.id:
+            moveWarning = '== WARNING: drag_move of item onto SELF is invalid.  Not executing.'
+
+
+        #### can't drag onto your kid
+        if TI.parent == CI.id:
+            moveWarning = '== WARNING: drag_move of item onto CHILD is invalid.  Not executing.'
+
+
+
+        if moveWarning != '':
+            ###ABORT
+            sharedMD.logThis(request.user.username, '     ' + moveWarning)
+            updateThese = self.updateIDsDecorate([CI.id, TI.id])
+            return(updateThese) 
+
+
+        #############################################
+
+
+        lastItemID=sharedMD.getLastItemID(CI.project_id)
+
+        origCIparent=CI.parent
+        origCIfollow=CI.follows
+
+        origTIparent=TI.parent
+        origTIfollow=TI.follows
+
+        ### if TI is lastItem, don't try to find its follower
+        if TI.id != lastItemID:
+            targetFollower = Item.objects.get(follows=TIid)
+
+        lastKidID,kidList=sharedMD.findLastKid(CI, lastItemID)
+
+        ## stitch up the item that followed the CI (or its last kid), and the one that preceded it
+        if CIid != lastItemID and lastKidID != lastItemID:
+            if lastKidID == 0:
+                followedCIorKid = Item.objects.get(follows=CIid)
+            else:
+                followedCIorKid = Item.objects.get(follows=lastKidID)
+            followedCIorKid.follows = origCIfollow
+            followedCIorKid.save()
+
+        #sharedMD.logThis(request.user.username, "DragMove=> stitch around CI done")
+        ## now insert the moved item into it's new position
+        CI.parent = TIid;  ## was origTIparent
+        CI.follows = TIid;
+        CI.indentLevel = TI.indentLevel+1
+        CI.save()
+        sharedMD.logThis(request.user.username, "     DragMove=> CI saved")
+
+        ## item that followed the target now must follow the CI, or the CI's last child (if any)
+
+        if TI.id != lastItemID:
+            if lastKidID == 0:
+                targetFollower.follows=CI.id
+                targetFollower.save()
+            else:
+                targetFollower.follows=lastKidID
+                targetFollower.save()
+
+            sharedMD.logThis(request.user.username, '     dragmove=> targetFollowerID:'+str(targetFollower.id)+'  targetFollower.follows:'+str(targetFollower.follows) + '  lastkid:'+str(lastKidID))
+
+        ##  correct indentLevel, since parent indent might have changed
+        sharedMD.logThis(request.user.username, '      dm=>kidList = '+str(kidList))
+
+        kidItems=[]
+        for kidx in kidList:
+            #kidx used to be kidpair[]
+            thisKid=Item.objects.get(pk=kidx)
+            thisKid.indentLevel = sharedMD.countIndent(thisKid)
+            thisKid.save()
+            sharedMD.logThis(request.user.username, '      dm=>kidx / indentL = '+str(thisKid.id)+"/"+str(thisKid.indentLevel))
+
+
+            #### extend kidItems (formerly kidPair( -- add the info JS refreshItem function will need
+
+            kidItems.append([thisKid.id, thisKid.follows, thisKid.title, thisKid.parent, thisKid.indentLevel, thisKid.priority, thisKid.status, thisKid.HTMLnoteBody, sharedMD.returnMarker(thisKid), thisKid.statusText()])
+
+        parentKidUpdate = []
+
+        parentKidUpdate.append([CI.id, CI.follows, CI.title, CI.parent, CI.indentLevel,CI.priority, CI.status, CI.HTMLnoteBody,sharedMD.returnMarker(CI),CI.statusText() ] )
+
+        ## when drag-moving in CLOSE QUARTERS, an item like TI might go stale, b/c
+        ## it was changed by, ex., b/c it was ALSO CI follower or some such. SO for
+        ## now, let's get a fresh TI to write out.
+
+        newTI=Item.objects.get(pk=TI.id)
+
+        parentKidUpdate.append([newTI.id, newTI.follows, newTI.title, newTI.parent, newTI.indentLevel,newTI.priority, newTI.status,  newTI.HTMLnoteBody, sharedMD.returnMarker(newTI), newTI.statusText() ] )
+
+        ## have to refresh the CI's parent, in case it's marker has changed w/ the move
+        ## IF the parent != 0
+
+        if origCIparent != 0:
+            CIparent=Item.objects.get(pk=origCIparent)
+            parentKidUpdate.append([CIparent.id, CIparent.follows, CIparent.title, CIparent.parent, CIparent.indentLevel, CIparent.priority, CIparent.status, CIparent.HTMLnoteBody, sharedMD.returnMarker(CIparent), CIparent.statusText()] )
+
+        parentKidUpdate += kidItems
+
+        return(parentKidUpdate)
+
 
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # drag_peer
 
-    def drag_peer(self,clickedItemID,targetItemID):
+    def drag_peer(self,request, clickedItemID,targetItemID):
 
         clickedItem = Item.objects.get(pk=clickedItemID)
         targetItem = Item.objects.get(pk=targetItemID)
-
+        sharedMD.logThis(request.user.username, "     ====dragPeer=> CIid:TIid    "+str(clickedItemID)+":"+str(targetItemID))
+        
         CIfollowed = clickedItem.follows
 
-  
-        if clickedItem.follows == targetItem.id:
-            ## invalid move
-            sharedMD.logThis('---', '== WARNING: drag_peer of item onto item it follows is invalid. Not executing.')
+        #### check for valid owner ##############
+        if clickedItem.owner != request.user.username:
+            sharedMD.logThis(request.user.username, '     == WARNING: drag_peer of item not belonging to this user.')
             updateThese = self.updateIDsDecorate([clickedItem.id, targetItem.id])
-            sharedMD.logThis('---', '    updating:'+str(updateThese))
-       
             return(updateThese) 
 
 
+        #### check for invalid actions ####################
+
+        moveWarning = ''
+
+        #### can't drag CI onto item it followers
+        if clickedItem.follows == targetItem.id:
+            moveWarning = '== WARNING: drag_move of item onto item it follows is invalid. Not executing.'
+
+        #### CAN drag CI onto item that follows it (if TI is not also a kid)
+        #if CI.id == TI.follows:
+        #    moveWarning = '== WARNING: drag_move of item onto item following it is invalid. Not executing.'
+
+        #### can't drag onto self 
+        if clickedItem.id == targetItem.id:
+            moveWarning = '== WARNING: drag_move of item onto SELF is invalid.  Not executing.'
+
+
+        #### can't drag onto your kid
+        if targetItem.parent == clickedItem.id:
+            moveWarning = '== WARNING: drag_move of item onto CHILD is invalid.  Not executing.'
+
+
+
+        if moveWarning != '':
+            ###ABORT
+            sharedMD.logThis(request.user.username, '     ' + moveWarning)
+            updateThese = self.updateIDsDecorate([clickedItem.id, targetItem.id])
+            return(updateThese) 
+
+
+        #############################################
+        
     
         lastItemID=sharedMD.getLastItemID(clickedItem.project_id)
         lastKidofCI, CIkidList = sharedMD.findLastKid(clickedItem, lastItemID)
@@ -127,7 +291,7 @@ class dragOps():
         else:
             lastCIkidFollower = -999
 
-        sharedMD.logThis('---',  "==> drag_Peer, CI / TI:"+str(clickedItem.id)+"/"+str(targetItem.id))
+        sharedMD.logThis(request.user.username,  "    ==> drag_Peer, CI / TI:"+str(clickedItem.id)+"/"+str(targetItem.id))
  
 
         followOK = False 
@@ -359,124 +523,6 @@ class dragOps():
 
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-# OLDmoveDown
-
-    def OLDmoveDown(self,clickedItem,  lastItemID):
-        
-        ### may wish to remodel so it looks like "moveup", which uses the findLastKid method
-
-        lastKidofCI, kidList = sharedMD.findLastKid(clickedItem, lastItemID)
-        
-        if clickedItem.id == lastItemID or lastKidofCI == lastItemID:
-            sharedMD.logThis('---',  "==> Clicked item is last item or last parent, no move:ci, lk, liID "+str(clickedItem.id) +"  " + str(lastKidofCI) + '  ' + str(lastItemID))
-        else:
-            #ciFollower=Item.objects.get(follows=clickedItem.id)
-            if lastKidofCI !=0:
-                fciFollower=Item.objects.get(follows=lastKidofCI)
-            else:
-                fciFollower=Item.objects.get(follows=clickedItem.id)
-                
-            lastKidOfFollower,kidList = sharedMD.findLastKid(fciFollower, lastItemID)
-            
-            if lastKidOfFollower==0:
-                bottomToSwap= fciFollower
-            else:
-                bottomToSwap= Item.objects.get(pk=lastKidOfFollower)
-
-            ## swap them
-            fciFollower.follows=clickedItem.follows
-            clickedItem.follows=bottomToSwap.id
-
-            if bottomToSwap.id != lastItemID:
-                bottomFollower=  Item.objects.get(follows=bottomToSwap.id)
-                #bottomFollower.follows = clickedItem.id
-                if lastKidofCI==0:
-                    bottomFollower.follows = clickedItem.id
-                else:
-                    bottomFollower.follows = lastKidofCI
-                bottomFollower.save()
-
-
-
-            clickedItem.indentLevel = sharedMD.countIndent(clickedItem)
-
-
-            clickedItem.save()
-            fciFollower.save()
-
-            updateListIDs=[clickedItem.id, clickedItem.follows, bottomToSwap.id, bottomFollower.id ] + kidList
-            return(self.updateIDsDecorate(updateListIDs))
-
-# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-# OLDpromote
-
-    def OLDpromote(self,clickedItem,  lastItemID):
-
-        runKids='no'
-        lastKidID,kidList=sharedMD.findLastKid(clickedItem, lastItemID)
-        CIoriginalParent=clickedItem.parent
-
-        if clickedItem.parent ==  0:
-            sharedMD.logThis('---',  "CAN'T PROMOTE TOP-LEVEL "+ str(clickedItem.id))
-
-        else:
-            ### Deal with parent assignments first
-
-            sharedMD.logThis('---', "Promoting: " +str(clickedItem.id))
-            indx=Item.objects.get(pk=clickedItem.follows)
-            while indx.indentLevel >= clickedItem.indentLevel:
-                indx=Item.objects.get(pk=indx.follows)
-            clickedItem.parent=indx.parent
-
-            ### Now promote the parent
-            clickedItem.indentLevel -= 1
-            clickedItem.save()
-            runKids='yes'
-
-        if runKids == 'yes' and clickedItem.id != lastItemID:
-
-            ## now deal with  the kids
-
-            # if items following the promotee are of the same level, we have to turn
-            # the consecutive run of a same level/parent items into children (parent, indent)
-            
-                if Item.objects.get(follows=clickedItem.id).parent == CIoriginalParent:
-                    sharedMD.logThis('---', "converting subsequent items to children...")
-                    indx = Item.objects.get(follows=clickedItem.id)
-                    while indx.parent == CIoriginalParent:
-                        indx.parent=clickedItem.id
-                        indx.save()
-                        if indx.id != lastItemID:
-                            indx=Item.objects.get(follows=indx.id)
-                        else:
-                            indx.parent='LAST ITEM - BAIL'
-
-                else:
-                    # promotee has real kids
-                    sharedMD.logThis('---', "k-promote: LastKidID="+str(lastKidID))
-                    if lastKidID != 0:
-                        thisItem=Item.objects.get(follows=clickedItem.id)
-                        while thisItem.id != lastKidID:
-                            thisItem.indentLevel -= 1;
-                            thisItem.save()
-                            thisItem=Item.objects.get(follows=thisItem.id)
-
-                        #pick up the last child, since it increments after the action
-                        thisItem.indentLevel -= 1
-                        thisItem.save()
-
-        ciKidCount = Item.objects.filter(parent=clickedItem.id).count()
-        kidsIDs = []
-        if (ciKidCount > 0):
-            kidsIDva = Item.objects.filter(parent=clickedItem.id).values_list('id',flat=True)
-
-        kidsIDs += kidsIDva
-        ## now for refresh
-
-        updateListIDs=[clickedItem.id, clickedItem.follows ] + kidsIDs
-        return(self.updateIDsDecorate(updateListIDs))
-
-# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # promote
 
     def promote(self,clickedItem,  lastItemID):
@@ -495,45 +541,40 @@ class dragOps():
             clickedItem.indentLevel = sharedMD.countIndent(clickedItem)
             clickedItem.save()
 
-            ## fix my kids:
+            ## fix CI's kids indentLevel:
             for k in kidList:
                 ko=Item.objects.get(pk=k)
                 ko.indentLevel = sharedMD.countIndent(ko)
                 ko.save()
 
-            if lastKidID != lastItemID and lastKidID != 0:
-                kidnapStart = lastKidID
-            else:
-                kidnapStart = clickedItem.id
+            if clickedItem.id != lastItemID:
 
-            indx =  Item.objects.get(follows = kidnapStart)
+                ######################KIDNAP####################################################
+                ## if items following the promotee have CI's original parent, AND we haven't
+                ## hit an item with the same parent as the CI's NEW parent, then kidnap it
+                ## (i.e., the CI is it's new parent)
+                ## No need to fix indent level, kidnapped items remain as before
 
-            ######################KIDNAP####################################################
-            ## if items following the promotee have CI's original parent, AND we haven't
-            ## hit an item with the same parent as the CI's NEW parent, then kidnap it
-            ## (i.e., the CI is it's new parent)
-            ## No need to fix indent level, kidnapped items remain as before
+                if lastKidID != lastItemID and lastKidID != 0:
+                    kidnapStart = lastKidID
+                else:
+                    kidnapStart = clickedItem.id
 
-            sharedMD.logThis('---', "converting subsequent items to children starting at: "+str(kidnapStart))
-               
-            while (indx.id != lastItemID) and (indx.parent != clickedItem.parent):
-                sharedMD.logThis('---', "converting subsequent items to children...")
-                if (indx.parent == CIoriginalParent):
-                    indx.parent = clickedItem.id
-                    
-                    indx.save()
-                    kidList.append(indx.id)
-                indx = Item.objects.get(follows = indx.id)
-            #    
-            ##############################################################################
-                
+                indx =  Item.objects.get(follows = kidnapStart)
 
-        #ciKidCount = Item.objects.filter(parent=clickedItem.id).count()
-        #kidsIDs = []
-        #if (ciKidCount > 0):
-        #    kidsIDva = Item.objects.filter(parent=clickedItem.id).values_list('id',flat=True)
 
-        #kidsIDs += kidsIDva
+                sharedMD.logThis('---', "converting subsequent items to children starting at: "+str(kidnapStart))
+
+                while (indx.id != lastItemID) and (indx.parent != clickedItem.parent):
+                    sharedMD.logThis('---', "converting subsequent items to children...")
+                    if (indx.parent == CIoriginalParent):
+                        indx.parent = clickedItem.id
+
+                        indx.save()
+                        kidList.append(indx.id)
+                    indx = Item.objects.get(follows = indx.id)
+ 
+
         ## now for refresh
 
         updateListIDs=[clickedItem.id, clickedItem.follows ] + kidList

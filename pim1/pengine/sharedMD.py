@@ -36,8 +36,10 @@ def validate_maint_membership(user):
 
 def validate_project(proj_id):
     allItems = Item.objects.filter(project=proj_id)
+
     ## find items that have duplicate followers
     allFollows=Item.objects.filter(project=proj_id).order_by('follows').values_list('follows', flat=True)
+
     # values_list doesn't return a normal array, consequently
     # .count() is buggy, so we trasfer to a normal array
     allFollowsArray = []
@@ -85,7 +87,7 @@ def countIndent(anItem):
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # returnMarker
 
-def returnMarker(self,itemx):
+def returnMarker(itemx):
         ## returns a plus or bullet, depending upon if Item has kids or not
         if len( Item.objects.filter(parent=itemx.id) ) > 0:
             return("+")

@@ -1,0 +1,40 @@
+BEGIN;
+CREATE TABLE `pengine_projectset` (
+    `id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    `name` varchar(120) NOT NULL,
+    `color` varchar(24) NOT NULL,
+    `owner` varchar(30) NOT NULL
+)
+;
+CREATE TABLE `pengine_project` (
+    `id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    `name` varchar(120) NOT NULL,
+    `color` varchar(24) NOT NULL,
+    `archivePair_id` integer,
+    `set_id` integer,
+    `owner` varchar(30) NOT NULL,
+    `projType` varchar(20) NOT NULL
+)
+;
+ALTER TABLE `pengine_project` ADD CONSTRAINT `set_id_refs_id_20ba3596` FOREIGN KEY (`set_id`) REFERENCES `pengine_projectset` (`id`);
+ALTER TABLE `pengine_project` ADD CONSTRAINT `archivePair_id_refs_id_3b5fe105` FOREIGN KEY (`archivePair_id`) REFERENCES `pengine_project` (`id`);
+CREATE TABLE `pengine_item` (
+    `id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    `project_id` integer,
+    `date_created` datetime NOT NULL,
+    `date_mod` datetime NOT NULL,
+    `owner` varchar(30) NOT NULL,
+    `IS_import_ID` integer,
+    `date_gootask_display` datetime,
+    `HTMLnoteBody` longtext NOT NULL,
+    `title` varchar(200) NOT NULL,
+    `gtask_id` varchar(100) NOT NULL,
+    `follows` integer,
+    `parent` integer,
+    `indentLevel` integer,
+    `priority` varchar(20) NOT NULL,
+    `status` varchar(20) NOT NULL
+)
+;
+ALTER TABLE `pengine_item` ADD CONSTRAINT `project_id_refs_id_b1121a4e` FOREIGN KEY (`project_id`) REFERENCES `pengine_project` (`id`);
+COMMIT;

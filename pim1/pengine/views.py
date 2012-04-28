@@ -1263,16 +1263,18 @@ def xhr_actions(request):
 
     
     actionRequest=request.GET
-    sharedMD.logThis(request.user.username, str(actionRequest))
+    ##sharedMD.logThis(request.user.username, str(actionRequest))
     message = 'nix'
-    
+
+    ### make sure it's an AJAX request
     if request.is_ajax():
-        message = "AJAX request, ci="+str(actionRequest['ci'])+"  ti="+str(actionRequest['ti']+"  ajaxAction: "+actionRequest['ajaxAction'])
+        message = "AJAX request: "+actionRequest['ajaxAction']+'  ci='+str(actionRequest['ci'])+"  ti="+str(actionRequest['ti'])
+        sharedMD.logThis(request.user.username, "=====> xhr_actions: ="+message)
     else:
-        message = "Not an AJAX request"
-
-    sharedMD.logThis(request.user.username, "=====> xhr_actions: ="+message)
-
+        message = "Not an AJAX request.  Action:"+actionRequest['ajaxAction']+'  ci='+str(actionRequest['ci'])+"  ti="+str(actionRequest['ti'])
+        sharedMD.logThis(request.user.username, "=====> xhr_actions: ="+message)
+        return HttpResponse(simplejson.dumps(['NOT_AJAX']+[message]), mimetype=mimetypex)
+        
     lockStatus = sharedMD.testLock(request.user.username)
 
     if lockStatus != 'no lock':
@@ -1282,8 +1284,6 @@ def xhr_actions(request):
         return HttpResponse(lockInfo, mimetype=mimetypex)
     
     
-
-    ## dragmove should also get refactored to the external library
     clickedItem=Item.objects.get(pk=actionRequest['ci'])
 
 
@@ -1303,11 +1303,11 @@ def xhr_actions(request):
 
     if actionRequest['ajaxAction'] == 'dragKid':
         #BEWARE - if you require login on drag_move, the next line will fail. User/int decorator
-        refreshThese= drag_move(request, int(actionRequest['ci']),int(actionRequest['ti']));
-
+        refreshThese= DRAGACTIONS.drag_move(request, int(actionRequest['ci']),int(actionRequest['ti']));
+ 
     # this is where the shift-drag action should go
     elif actionRequest['ajaxAction']== 'dragPeer':
-        refreshThese= DRAGACTIONS.drag_peer(int(actionRequest['ci']), int(actionRequest['ti']))
+        refreshThese= DRAGACTIONS.drag_peer(request, int(actionRequest['ci']), int(actionRequest['ti']))
 
     elif actionRequest['ajaxAction']== 'moveUp':
         refreshThese=DRAGACTIONS.moveUp(clickedItem,  lastItemID)
@@ -1356,12 +1356,13 @@ def xhr_actions(request):
         sharedMD.logThis(request.user.username, "+++ERROR+++. Uncaught actionRequest['ajaxAction']:"+actionRequest['ajaxAction'])
         refreshThese=[]
 
-
+    ### test project validity, release lock if clean
     validateResult = sharedMD.validate_project(clickedItem.project_id)
     if validateResult == 'No errors':
         sharedMD.releaseLock(request.user.username);
     else:
-        pass;
+        sharedMD.logThis("     VALIDATE_PROJECT found errors. Lock not cleared.");
+
 
     if actionRequest['ajaxAction']== 'fastAdd':
         jRefresh=simplejson.dumps(refreshThese+[newItemTemplate])
@@ -1372,126 +1373,6 @@ def xhr_actions(request):
         return HttpResponse(jRefresh, mimetype=mimetypex)
         
 
-######################################################################
-#@login_required
-def drag_move(request, CIid, TIid):
-    sharedMD.logThis(request.user.username, "VIEW: drag_move")
-    # clicked item ID, target item ID
-
-    CI=Item.objects.get(pk=CIid)
-    TI=Item.objects.get(pk=TIid)
-    sharedMD.logThis(request.user.username, " ====dragmove=> CIid:TIid    "+str(CIid)+":"+str(TIid))
-    
-    if CI.follows == TI.id:
-        ## invalid move
-        sharedMD.logThis(request.user.username, '== WARNING: drag_move of item onto item it follows is invalid. Not executing.')
-
-        updateThese = DRAGACTIONS.updateIDsDecorate([CI.id, TI.id])
-        sharedMD.logThis(request.user.username, '    updating:'+str(updateThese))
-        return(updateThese) 
-
-    if CI.owner != request.user.username:
-        sharedMD.logThis(request.user.username, '== WARNING: drag_move of item not belonging to this user.')
-        #request.user.message_set.create (message="You don't own that item.")
-        updateThese = DRAGACTIONS.updateIDsDecorate([CI.id, TI.id])
-        return(updateThese) 
- 
-    lastItemID=sharedMD.getLastItemID(CI.project_id)
-
-    origCIparent=CI.parent
-    origCIfollow=CI.follows
-
-    origTIparent=TI.parent
-    origTIfollow=TI.follows
-
-    targetFollower = Item.objects.get(follows=TIid)
-
-    lastKidID,kidList=sharedMD.findLastKid(CI, lastItemID)
-
-    ## stitch up the item that followed the CI (or its last kid), and the one that preceded it
-    if CIid != lastItemID and lastKidID != lastItemID:
-        if lastKidID == 0:
-            followedCIorKid = Item.objects.get(follows=CIid)
-        else:
-            followedCIorKid = Item.objects.get(follows=lastKidID)
-        followedCIorKid.follows = origCIfollow
-        followedCIorKid.save()
-        
-    #sharedMD.logThis(request.user.username, "DragMove=> stitch around CI done")
-    ## now insert the moved item into it's new position
-    CI.parent = TIid;  ## was origTIparent
-    CI.follows = TIid;
-    CI.indentLevel = TI.indentLevel+1
-    CI.save()
-    sharedMD.logThis(request.user.username, "DragMove=> CI saved")
-    
-    ## item that followed the target now must follow the CI, or the CI's last child (if any)
-
-    sharedMD.logThis(request.user.username, 'dragmove=> targetFollowerID:'+str(targetFollower.id)+'  targetFollower.follows:'+str(targetFollower.follows) + '  lastkid:'+str(lastKidID))
-    ## at this point tF.follows is previous one, 
-
-
-    kidItems=[]
-    
-    if lastKidID == 0:
-        targetFollower.follows=CI.id
-        targetFollower.save()
-    else:
-        targetFollower.follows=lastKidID
-        targetFollower.save()
-
-        ## also correct indentLevel, since parent indent might have changed
-        sharedMD.logThis(request.user.username, ' dm=>kidList = '+str(kidList))
-
-
-        
-        for kidx in kidList:
-            #kidx used to be kidpair[]
-            thisKid=Item.objects.get(pk=kidx)
-            thisKid.indentLevel = sharedMD.countIndent(thisKid)
-            thisKid.save()
-            sharedMD.logThis(request.user.username, ' dm=>kidx / indentL = '+str(thisKid.id)+"/"+str(thisKid.indentLevel))
-
-            
-            #extend kidItems (formerly kidPair( -- add the info JS refreshItem function will need
-            
-            kidItems.append([thisKid.id, thisKid.follows, thisKid.title, thisKid.parent, thisKid.indentLevel, thisKid.priority, thisKid.status, thisKid.HTMLnoteBody, returnMarker(thisKid), thisKid.statusText()])
-            # 2/5/12 thisKid.statusText move inside of array bracket
-            #sharedMD.logThis(request.user.username, ' => kidPair '+str(thisKid.id)+": "+str(kidPair))
-
-    
-    sharedMD.logThis(request.user.username, ' => targetFollower.follows='+str(targetFollower.follows))
-    
-    parentKidUpdate = []
-
-    parentKidUpdate.append([CI.id, CI.follows, CI.title, CI.parent, CI.indentLevel,CI.priority, CI.status, CI.HTMLnoteBody,returnMarker(CI),CI.statusText() ] )
-
-    ## when drag-moving in CLOSE QUARTERS, and item like TI might go stale, b/c
-    ## it was changed by, ex., b/c it was ALSO CI follower or some such. SO for
-    ## now, let's get a fresh TI to write out.
-
-    newTI=Item.objects.get(pk=TI.id)
-
-    parentKidUpdate.append([newTI.id, newTI.follows, newTI.title, newTI.parent, newTI.indentLevel,newTI.priority, newTI.status,  newTI.HTMLnoteBody, returnMarker(newTI), newTI.statusText() ] )
-
-    ## have to refresh the CI's parent, in case it's marker has changed w/ the move
-    ## IF the parent != 0
-
-    if origCIparent != 0:
-        CIparent=Item.objects.get(pk=origCIparent)
-        parentKidUpdate.append([CIparent.id, CIparent.follows, CIparent.title, CIparent.parent, CIparent.indentLevel, CIparent.priority, CIparent.status, CIparent.HTMLnoteBody, returnMarker(CIparent), CIparent.statusText()] )
-   
-    parentKidUpdate += kidItems
-
-    return(parentKidUpdate)
-
-#############################################################################
-def returnMarker(Itemx):
-    ## returns a plus or bullet, depending upon if Item has kids or not
-    if len( Item.objects.filter(parent=Itemx.id) ) > 0:
-        return("+")
-    else:
-        return("&bull;")
 #############################################################################
 
 @login_required 
