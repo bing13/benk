@@ -1361,9 +1361,16 @@ def xhr_actions(request):
     if validateResult == 'No errors':
         sharedMD.releaseLock(request.user.username);
     else:
-        sharedMD.logThis("     VALIDATE_PROJECT found errors. Lock not cleared.");
+        sharedMD.logThis("     VALIDATE_PROJECT found errors: %s " % str(validateResult));
+        #http://docs.python.org/library/exceptions.html#exceptions.RuntimeError
+        raise RuntimeError("Project did not validate. Reverting action.")
+        sharedMD.logThis("     Exception raised. ");
 
+        sharedMD.releaseLock(request.user.username);
+        sharedMD.logThis("     Lock cleared. ");    
 
+        request.user.message_set.create (message="Action did not validate. Please reload page and try again.")
+        
     if actionRequest['ajaxAction']== 'fastAdd':
         jRefresh=simplejson.dumps(refreshThese+[newItemTemplate])
         return HttpResponse(jRefresh, mimetype=mimetypex)

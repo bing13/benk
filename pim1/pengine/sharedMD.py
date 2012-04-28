@@ -36,14 +36,40 @@ def validate_maint_membership(user):
 
 def validate_project(proj_id):
     allItems = Item.objects.filter(project=proj_id)
+    totalErrorMsg = ''
 
-    ## find items that have duplicate followers
+
     allFollows=Item.objects.filter(project=proj_id).order_by('follows').values_list('follows', flat=True)
 
     # values_list doesn't return a normal array, consequently
     # .count() is buggy, so we trasfer to a normal array
     allFollowsArray = []
     allFollowsArray += allFollows
+    
+
+    #################################################################
+    ## make sure the length of follower chain = total # of items in the project
+
+    #start with anchor
+    try:
+        ix = Item.objects.get(project = proj_id, follows = 0)
+    except:
+        totalErrorMsg = "Couldn't get anchor, possible duplicate 0 followers"
+    else:
+        followCount = 0
+        stillHaveItems = True
+        while stillHaveItems:
+            try:
+                ix = Item.objects.get(follows = ix.id)
+                followCount += 1
+            except:
+                stillHaveItems = False
+            
+        if followCount + 1 != len(allFollowsArray):
+            totalErrorMsg += "// Follow count (%s) != item count (%s) % (followCount + 1, allFollowsArray.count())"
+    
+    #################################################################
+    ## find items that have duplicate followers
     followedByMultiples = []
 
     for x in allFollowsArray:
@@ -53,8 +79,7 @@ def validate_project(proj_id):
             followedByMultiples.append(x)
 
     if len(followedByMultiples) > 0:
-        logThis('---', " * * * * * * * * VALIDATE ERROR * * * * * * * ");
-        totalErrorMsg = ''
+
 
         for f in followedByMultiples:
             multiFollows= Item.objects.filter(follows=f)
@@ -63,9 +88,18 @@ def validate_project(proj_id):
                 mfString += str(k.id) + ":" + k.title[:50] + ',';
             logThis('---', "[%s is followed by %s]" % (f, mfString[:-1]));
             totalErrorMsg += "[%s is followed by %s]" % (f, mfString[:-1]) + '\n';
-        return(totalErrorMsg);
-    else:
+
+    ##############################################################
+            
+    if totalErrorMsg == '':
         return("No errors");
+    else:        
+        logThis('---', " * * * * * * * * VALIDATE ERROR * * * * * * * ");
+        logThis('---', " * * * " + totalErrorMsg);
+
+        return(totalErrorMsg);
+
+
     
 
 

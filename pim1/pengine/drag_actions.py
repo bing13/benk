@@ -25,7 +25,7 @@ class dragOps():
         decoratedItems=[]
         for id in IDlist:
             if id != 0 :
-                sharedMD.logThis('---',  "  deco for: "+ str(id))
+                #sharedMD.logThis('---',  "  deco for: "+ str(id))
                 thisItem=Item.objects.get(pk=id)
                 decoratedItems.append([thisItem.id, thisItem.follows, thisItem.title, thisItem.parent, thisItem.indentLevel, thisItem.priority, thisItem.status, thisItem.HTMLnoteBody, sharedMD.returnMarker(thisItem), thisItem.statusText()])
 
