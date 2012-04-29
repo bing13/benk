@@ -208,7 +208,7 @@ def buildDisplayList(projectx, projID, ordering, hoistID, useListIDs):
     ### Build the parent list
     ixList=[]
     jxHash={}
-    sharedMD.logThis('---', "      ..queries done...")
+    #sharedMD.logThis('---', "      ..queries done...")
 
 
     parentList=[] ## list of all items that are parents
@@ -217,7 +217,7 @@ def buildDisplayList(projectx, projID, ordering, hoistID, useListIDs):
 
     ###SLOW BLOCK BEGINS########################################################################
         
-    sharedMD.logThis('---', "      ....parent list built...")
+    #sharedMD.logThis('---', "      ....parent list built...")
     ### get project string to where it can be displayed    
     for ix in items2List:
         
@@ -244,7 +244,7 @@ def buildDisplayList(projectx, projID, ordering, hoistID, useListIDs):
             ix.isParent=False
             
 
-    sharedMD.logThis('---',  "      .....ix built.....")
+    #sharedMD.logThis('---',  "      .....ix built.....")
 
     displayList=[]
     followHash={}
@@ -293,7 +293,7 @@ def buildDisplayList(projectx, projID, ordering, hoistID, useListIDs):
             
         currentID = 0
 
-        sharedMD.logThis('---',  "      ...built followhash....")
+        #sharedMD.logThis('---',  "      ...built followhash....")
 
         ## OK, now follow the chain of who follows whom, starting with whoever follows Parent ID = 0
         while  followHash.has_key(currentID):
@@ -302,7 +302,7 @@ def buildDisplayList(projectx, projID, ordering, hoistID, useListIDs):
 
         # theoretically, having no followHash key for currentID means you're on the last item
         # but beware re: data integrity / lost items
-        sharedMD.logThis('---',  "      .....displayList built...")
+        #sharedMD.logThis('---',  "      .....displayList built...")
     else:
 
         displayList=ixList
@@ -318,10 +318,10 @@ def actionItem(request, pItem, action):
     sharedMD.logThis(request.user.username, "VIEW: ")
 
     if request.is_ajax():
-        sharedMD.logThis(request.user.username,  "AJAX request,item " + pItem + " to " + action);
+        sharedMD.logThis(request.user.username,  "actionItem: AJAX request,item " + pItem + " to " + action);
         ajaxRequest = True
     else:
-        sharedMD.logThis(request.user.username,  "Not an AJAX request"+ pItem + " to " + action);
+        sharedMD.logThis(request.user.username,  "actionItem: Not an AJAX request"+ pItem + " to " + action);
         ajaxRequest = False
     current_projs = Project.objects.filter(projType=1).filter(owner = request.user.username).order_by('name')
     current_sets = ProjectSet.objects.filter(owner = request.user.username)
@@ -1268,10 +1268,10 @@ def xhr_actions(request):
 
     ### make sure it's an AJAX request
     if request.is_ajax():
-        message = "AJAX request: "+actionRequest['ajaxAction']+'  ci='+str(actionRequest['ci'])+"  ti="+str(actionRequest['ti'])
+        message = "xhr:AJAX request: "+actionRequest['ajaxAction']+'  ci='+str(actionRequest['ci'])+"  ti="+str(actionRequest['ti'])
         sharedMD.logThis(request.user.username, "=====> xhr_actions: ="+message)
     else:
-        message = "Not an AJAX request.  Action:"+actionRequest['ajaxAction']+'  ci='+str(actionRequest['ci'])+"  ti="+str(actionRequest['ti'])
+        message = "xhr:Not an AJAX request.  Action:"+actionRequest['ajaxAction']+'  ci='+str(actionRequest['ci'])+"  ti="+str(actionRequest['ti'])
         sharedMD.logThis(request.user.username, "=====> xhr_actions: ="+message)
         return HttpResponse(simplejson.dumps(['NOT_AJAX']+[message]), mimetype=mimetypex)
         
@@ -1304,7 +1304,7 @@ def xhr_actions(request):
     if actionRequest['ajaxAction'] == 'dragKid':
         #BEWARE - if you require login on drag_move, the next line will fail. User/int decorator
         refreshThese= DRAGACTIONS.drag_move(request, int(actionRequest['ci']),int(actionRequest['ti']));
- 
+  
     # this is where the shift-drag action should go
     elif actionRequest['ajaxAction']== 'dragPeer':
         refreshThese= DRAGACTIONS.drag_peer(request, int(actionRequest['ci']), int(actionRequest['ti']))
@@ -1357,19 +1357,22 @@ def xhr_actions(request):
         refreshThese=[]
 
     ### test project validity, release lock if clean
-    validateResult = sharedMD.validate_project(clickedItem.project_id)
+    validateResult = sharedMD.validate_project(request, clickedItem.project_id)
     if validateResult == 'No errors':
         sharedMD.releaseLock(request.user.username);
     else:
-        sharedMD.logThis("     VALIDATE_PROJECT found errors: %s " % str(validateResult));
+        sharedMD.logThis(request.user.username, "     VALIDATE_PROJECT found errors: %s " % str(validateResult));
         #http://docs.python.org/library/exceptions.html#exceptions.RuntimeError
-        raise RuntimeError("Project did not validate. Reverting action.")
-        sharedMD.logThis("     Exception raised. ");
+        try:
+            raise RuntimeError("Project did not validate. Reverting action.")
+        except RuntimeError:
+            
+            sharedMD.logThis(request.user.username, "     Exception raised. ");
 
         sharedMD.releaseLock(request.user.username);
-        sharedMD.logThis("     Lock cleared. ");    
+        sharedMD.logThis(request.user.username, "     Lock cleared. ");    
 
-        request.user.message_set.create (message="Action did not validate. Please reload page and try again.")
+        #request.user.message_set.create (message="Action did not validate. Please reload page and try again.")
         
     if actionRequest['ajaxAction']== 'fastAdd':
         jRefresh=simplejson.dumps(refreshThese+[newItemTemplate])
@@ -1842,6 +1845,46 @@ def maintPage(request, pLockRequest):
         'nowx':datetime.datetime.now().strftime("%Y/%m/%d  %H:%M:%S")
         }, context_instance=RequestContext(request) )
 
+######################################################################
+@login_required
+@user_passes_test(sharedMD.validate_maint_membership,login_url='/pim1/')
+
+def linearizePage(request, flattenMe):
+    sharedMD.logThis(request.user.username, "VIEW: linearizePage, proj=%s" % flattenMe)
+    
+    current_projs = Project.objects.filter(projType=1).filter(owner = request.user.username).order_by('name')
+    current_sets = ProjectSet.objects.filter(owner = request.user.username)
+
+    if flattenMe != "0":
+        ### flatten project flattenMe
+        allItems = Item.objects.filter(project = flattenMe).order_by('follows')
+
+        firstRegular = True
+        for ix in allItems[1:]:  ## anchor should be first, skip that one.
+            if firstRegular:
+                firstRegular = False
+                ix.follows = allItems[0].id
+                ix.save()
+                ixLast = ix
+            else:
+                ix.follows = ixLast.id
+                ix.parent = 0;
+                ix.indentLevel = 0;
+                ix.save()
+                ixLast = ix;
+
+        sharedMD.logThis(request.user.username, "     Completed linearizePage, proj=%s" % flattenMe)
+
+        return HttpResponseRedirect('/pim1/drag/'+str(flattenMe)) 
+
+
+    return render_to_response('pim1_tmpl/linearize.html', {
+        'titleCrumbBlurb':'linearize page',
+        'current_projs':current_projs,
+        'current_sets':current_sets,
+        
+        'nowx':datetime.datetime.now().strftime("%Y/%m/%d  %H:%M:%S")
+        }, context_instance=RequestContext(request) )
 
 ######################################################################
 @login_required
@@ -1869,6 +1912,10 @@ def managePage(request, pLockRequest):
         }, context_instance=RequestContext(request) )
 
 ###########################################################################
+
+
+
+
 @login_required
 def today(request):
 

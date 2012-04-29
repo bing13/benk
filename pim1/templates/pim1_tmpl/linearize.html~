@@ -9,9 +9,9 @@
 <div class="maintLinks">
 
 
-<h3>maint</h3>
+<h3>linearize</h3>
 
-<p>various and sundry maintenance features</p>
+<p>last ditch to straighten out follow references</p>
 
 
 <ul>
@@ -19,8 +19,6 @@
 	     <li><a href="/pim1/addprojectset/">add project set</a> </li>
 	     <li><a href="/pim1/importfile">import</a>  </li>
 	     <li><a href="/pim1/admin">django admin</a> </li>
-	     <li><a href="/pim1/linearize">linearize</a> </li>
-
 </ul>
 
 

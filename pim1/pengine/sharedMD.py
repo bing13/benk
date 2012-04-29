@@ -34,7 +34,7 @@ def validate_maint_membership(user):
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # validate_project
 
-def validate_project(proj_id):
+def validate_project(request, proj_id):
     allItems = Item.objects.filter(project=proj_id)
     totalErrorMsg = ''
 
@@ -56,17 +56,25 @@ def validate_project(proj_id):
     except:
         totalErrorMsg = "Couldn't get anchor, possible duplicate 0 followers"
     else:
-        followCount = 0
-        stillHaveItems = True
-        while stillHaveItems:
-            try:
-                ix = Item.objects.get(follows = ix.id)
-                followCount += 1
-            except:
-                stillHaveItems = False
+      
+        allFollowList = Item.objects.filter(project = proj_id).values_list('follows')
+        allFollowSet = set(allFollowList)
+        if len(allFollowSet) != len(allFollowsArray):
+             totalErrorMsg += "// Follow count (%s) != item count (%s)" % (followCount + 1, len(allFollowsArray))
+    
+        
+## ### the following seemed to work, but was toooo slooooow ###########
+##         followCount = 0
+##         stillHaveItems = True
+##         while stillHaveItems:
+##             try:
+##                 ix = Item.objects.get(follows = ix.id)
+##                 followCount += 1
+##             except:
+##                 stillHaveItems = False
             
-        if followCount + 1 != len(allFollowsArray):
-            totalErrorMsg += "// Follow count (%s) != item count (%s) % (followCount + 1, allFollowsArray.count())"
+##         if followCount + 1 != len(allFollowsArray):
+##             totalErrorMsg += "// Follow count (%s) != item count (%s)" % (followCount + 1, len(allFollowsArray))
     
     #################################################################
     ## find items that have duplicate followers
@@ -86,7 +94,7 @@ def validate_project(proj_id):
             mfString='';
             for k in multiFollows:
                 mfString += str(k.id) + ":" + k.title[:50] + ',';
-            logThis('---', "[%s is followed by %s]" % (f, mfString[:-1]));
+            logThis(request.user.username, "[%s is followed by %s]" % (f, mfString[:-1]));
             totalErrorMsg += "[%s is followed by %s]" % (f, mfString[:-1]) + '\n';
 
     ##############################################################
@@ -94,9 +102,10 @@ def validate_project(proj_id):
     if totalErrorMsg == '':
         return("No errors");
     else:        
-        logThis('---', " * * * * * * * * VALIDATE ERROR * * * * * * * ");
-        logThis('---', " * * * " + totalErrorMsg);
-
+        logThis(request.user.username, " * * * * * * * * VALIDATE ERROR * * * * * * * ");
+        logThis(request.user.username, " * * * " + totalErrorMsg);
+        request.user.message_set.create (message="VALIDATION ERROR.  Action reverted.")
+        
         return(totalErrorMsg);
 
 

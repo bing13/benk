@@ -5,7 +5,7 @@
 
 from django.contrib.auth.decorators import login_required
 
-from pim1.pengine.models import Item, Project
+from pim1.pengine.models import Item, Project, ProjectSet
 import sharedMD
 
 
@@ -252,20 +252,27 @@ class dragOps():
 
         #### can't drag CI onto item it followers
         if clickedItem.follows == targetItem.id:
-            moveWarning = '== WARNING: drag_move of item onto item it follows is invalid. Not executing.'
+            moveWarning = '== WARNING: drag_peer of item onto item it follows is invalid. Not executing.'
 
+        ### TEMPORARILY INVALIDATED DRAG_PEER ONTO OWN PARENT  #######
+        ### peer-drag to own parent should be possible
+        ### but it's erroring: TI ends up following itself
+        ##
+        ### probably b/c the parent and the CI both could have kids,
+        ### and establishing lastkids etc might get confused.
+        ### NEEDS UNCOMMENTING + DEBUGGING
         #### CAN drag CI onto item that follows it (if TI is not also a kid)
-        #if CI.id == TI.follows:
-        #    moveWarning = '== WARNING: drag_move of item onto item following it is invalid. Not executing.'
+        if clickedItem.parent == targetItem.id:
+            moveWarning = '== WARNING: drag_peer of item onto its parent is temporarily invalid. Not executing, sorry.'
 
         #### can't drag onto self 
         if clickedItem.id == targetItem.id:
-            moveWarning = '== WARNING: drag_move of item onto SELF is invalid.  Not executing.'
+            moveWarning = '== WARNING: drag_peer of item onto SELF is invalid.  Not executing.'
 
 
         #### can't drag onto your kid
         if targetItem.parent == clickedItem.id:
-            moveWarning = '== WARNING: drag_move of item onto CHILD is invalid.  Not executing.'
+            moveWarning = '== WARNING: drag_peer of item onto CHILD is invalid.  Not executing.'
 
 
 
@@ -279,7 +286,7 @@ class dragOps():
         #############################################
         
     
-        lastItemID=sharedMD.getLastItemID(clickedItem.project_id)
+        lastItemID = sharedMD.getLastItemID(clickedItem.project_id)
         lastKidofCI, CIkidList = sharedMD.findLastKid(clickedItem, lastItemID)
         lastKidofTI, TIkidList = sharedMD.findLastKid(targetItem, lastItemID)
 
