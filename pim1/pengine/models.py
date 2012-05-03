@@ -90,6 +90,7 @@ class Item(models.Model):
         ('1', 'WIP'),
         ('2', 'Next'),
         ('3', 'Cold'),
+        ('4', 'Ongoing'),
         ('5', 'Hold'),
         ('6', 'Cancelled'),
         ('8', 'Ref'),        

@@ -98,6 +98,9 @@ class dragOps():
     #@login_required
     def drag_move(self, request, CIid, TIid):
         sharedMD.logThis(request.user.username, "VIEW: drag_move")
+        request.session['viewmode'] = 'drag_move'
+    
+
 
         CI=Item.objects.get(pk=CIid)
         TI=Item.objects.get(pk=TIid)
@@ -873,6 +876,7 @@ class dragOps():
   <option value="1" >WIP</option>
   <option value="2" >Next</option>
   <option value="3" >Cold</option>
+  <option value="4" >Ongoing</option>
   <option value="5" >Hold</option>
   <option value="6" >Cancelled</option>
   <option value="8" >Ref</option>

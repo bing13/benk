@@ -113,6 +113,12 @@ style="border: 2px solid grey;"
   <option value="3" >Cold</option>
 {% endif %}
 
+{% if ci.status == "4" %}
+  <option value="4" selected="selected">Ongoing</option>
+{% else %}
+  <option value="4" >Ongoing</option>
+{% endif %}
+
 {% if ci.status == "5" %}
   <option value="5" selected="selected">Hold</option>
 {% else %}
@@ -185,10 +191,12 @@ style="border: 2px solid grey;"
     </span>  <!-- itemDragContentBlock -->
 
 
-
-
           <div id="notebody_{{ ci.id }}" class="noteBody">
-            <div class="noteWrapper">{{ ci.HTMLnoteBody|safe|default:" " }}</div>
+	   {% if '<p>' in ci.HTMLnoteBody or '<dl>' in ci.HTMLnoteBody or '<li>' in ci.HTMLnoteBody or '<br/>' in ci.HTMLnoteBody  %}
+	    <div class="noteWrapper">{{ ci.HTMLnoteBody|safe|default:" " }}</div>
+	    {% else %}
+            <div class="noteWrapper"><pre>{{ ci.HTMLnoteBody|wordwrap:120|safe|default:" " }}</pre></div>
+	    {% endif %}
           </div>       
 
   </div>      <!--  .itemsdrag -->

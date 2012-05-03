@@ -1929,9 +1929,9 @@ def today(request):
     #current_projs = Project.objects.filter(projType=1).order_by('name')
     #current_sets = ProjectSet.objects.all()
 
-    todayIDs = Item.objects.filter(priority=1).filter(project__projType=1, owner = request.user.username).order_by('project__name')
+    todayIDs = Item.objects.filter(priority__gte=1, priority__lt=3).filter(project__projType=1, owner = request.user.username).values_list('id', flat=True).order_by('project__name', 'priority')
 
-    displayList =  buildDisplayList(current_projs,0,'project__name',0,todayIDs)
+    displayList =  buildDisplayList(current_projs,0,'provided',0,todayIDs)
 
     titleCrumbBlurb = "TODAY "
     return render_to_response("pim1_tmpl/items/psd.html", {
