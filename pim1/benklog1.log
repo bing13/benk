@@ -5675,3 +5675,1096 @@
 2012/05/02  20:37:51	djangosuper	     Proj 27
 2012/05/02  20:37:51	---	   Entering buildDisplayList
 2012/05/02  20:37:52	---	   Exiting buildDisplayList
+2012/05/02  20:41:14	djangosuper	VIEW: draglist
+2012/05/02  20:41:14	djangosuper	     Proj 19
+2012/05/02  20:41:14	---	   Entering buildDisplayList
+2012/05/02  20:41:14	---	   Exiting buildDisplayList
+2012/05/02  22:02:46	djangosuper	VIEW: today
+2012/05/02  22:02:46	---	   Entering buildDisplayList
+2012/05/02  22:02:49	---	   Exiting buildDisplayList
+2012/05/02  22:03:04	djangosuper	VIEW: draglist
+2012/05/02  22:03:04	djangosuper	     Proj 9
+2012/05/02  22:03:04	---	   Entering buildDisplayList
+2012/05/02  22:03:04	---	   Exiting buildDisplayList
+2012/05/02  22:03:23	djangosuper	Edit item: Formset generated, pItem=6458
+2012/05/02  22:03:39	djangosuper	   Formset saved: [<Item: APPLY S <=  FLAG FOR Niz!!!>]
+2012/05/02  22:03:39	djangosuper	VIEW: draglist
+2012/05/02  22:03:39	djangosuper	     Proj 9
+2012/05/02  22:03:39	---	   Entering buildDisplayList
+2012/05/02  22:03:39	---	   Exiting buildDisplayList
+2012/05/02  22:03:46	djangosuper	VIEW: xhr_actions
+2012/05/02  22:03:46	djangosuper	=====> xhr_actions: =xhr:AJAX request: moveUp  ci=6455  ti=0
+2012/05/02  22:03:46	---	Last item ID:5595
+2012/05/02  22:03:47	---	sMDflk=> findLastKid lastKid=0
+2012/05/02  22:03:47	---	  moving among children of 5591
+2012/05/02  22:03:47	---	  TI:  6456
+2012/05/02  22:03:47	---	sMDflk=> findLastKid lastKid=0
+2012/05/02  22:03:47	---	lock removed
+2012/05/02  22:03:48	djangosuper	VIEW: xhr_actions
+2012/05/02  22:03:48	djangosuper	=====> xhr_actions: =xhr:AJAX request: moveUp  ci=6455  ti=0
+2012/05/02  22:03:48	---	Last item ID:5595
+2012/05/02  22:03:48	---	sMDflk=> findLastKid lastKid=0
+2012/05/02  22:03:48	---	  moving among children of 5591
+2012/05/02  22:03:48	---	  TI:  5951
+2012/05/02  22:03:48	---	sMDflk=> findLastKid lastKid=0
+2012/05/02  22:03:48	---	lock removed
+2012/05/02  22:04:06	djangosuper	VIEW: xhr_actions
+2012/05/02  22:04:06	djangosuper	=====> xhr_actions: =xhr:AJAX request: moveUp  ci=5625  ti=0
+2012/05/02  22:04:07	---	Last item ID:5595
+2012/05/02  22:04:07	---	sMDflk=> findLastKid lastKid=0
+2012/05/02  22:04:07	---	  moving among children of 5591
+2012/05/02  22:04:07	---	  TI:  5961
+2012/05/02  22:04:07	---	sMDflk=> findLastKid lastKid=0
+2012/05/02  22:04:07	---	lock removed
+2012/05/02  22:04:08	djangosuper	VIEW: xhr_actions
+2012/05/02  22:04:08	djangosuper	=====> xhr_actions: =xhr:AJAX request: moveUp  ci=5625  ti=0
+2012/05/02  22:04:08	---	Last item ID:5595
+2012/05/02  22:04:08	---	sMDflk=> findLastKid lastKid=0
+2012/05/02  22:04:08	---	  moving among children of 5591
+2012/05/02  22:04:08	---	  TI:  6077
+2012/05/02  22:04:08	---	sMDflk=> findLastKid lastKid=0
+2012/05/02  22:04:09	---	lock removed
+2012/05/02  22:04:22	djangosuper	VIEW: draglist
+2012/05/02  22:04:22	djangosuper	     Proj 9
+2012/05/02  22:04:22	---	   Entering buildDisplayList
+2012/05/02  22:04:22	---	   Exiting buildDisplayList
+2012/05/03  06:39:03	djangosuper	VIEW: xhr_actions
+2012/05/03  06:39:04	djangosuper	=====> xhr_actions: =xhr:AJAX request: fastAdd  ci=5127  ti=0
+2012/05/03  06:39:04	---	Last item ID:5598
+2012/05/03  06:39:04	---	VIEW: drag_actions => fastAdd
+2012/05/03  06:39:04	---	fastAdd for 5127  Niz re:S1
+2012/05/03  06:39:05	---	NEW FA item ID=None
+2012/05/03  06:39:05	---	   fastadded item ID = 6472
+2012/05/03  06:39:06	---	lock removed
+2012/05/03  06:39:25	djangosuper	VIEW: xhr_actions
+2012/05/03  06:39:25	djangosuper	=====> xhr_actions: =xhr:AJAX request: fastAdd  ci=5409  ti=0
+2012/05/03  06:39:25	---	Last item ID:5598
+2012/05/03  06:39:25	---	VIEW: drag_actions => fastAdd
+2012/05/03  06:39:25	---	fastAdd for 5409  apples vs oranges
+2012/05/03  06:39:25	---	NEW FA item ID=None
+2012/05/03  06:39:25	---	   fastadded item ID = 6473
+2012/05/03  06:39:26	---	lock removed
+2012/05/03  06:39:29	djangosuper	Edit item: Formset generated, pItem=6473
+2012/05/03  06:46:13	djangosuper	   Formset saved: [<Item: apples vs oranges>]
+2012/05/03  06:46:13	djangosuper	VIEW: draglist
+2012/05/03  06:46:13	djangosuper	     Proj 19
+2012/05/03  06:46:13	---	   Entering buildDisplayList
+2012/05/03  06:46:14	---	   Exiting buildDisplayList
+2012/05/03  06:46:19	djangosuper	VIEW: xhr_actions
+2012/05/03  06:46:19	djangosuper	=====> xhr_actions: =xhr:AJAX request: prioritySelected  ci=6473  ti=0
+2012/05/03  06:46:19	---	Last item ID:5598
+2012/05/03  06:46:19	---	lock removed
+2012/05/03  06:46:44	djangosuper	VIEW: today
+2012/05/03  06:46:44	---	   Entering buildDisplayList
+2012/05/03  06:46:45	---	   Exiting buildDisplayList
+2012/05/03  06:48:31	djangosuper	VIEW: draglist
+2012/05/03  06:48:31	djangosuper	     Proj 5
+2012/05/03  06:48:31	---	   Entering buildDisplayList
+2012/05/03  06:48:31	---	   Exiting buildDisplayList
+2012/05/03  06:48:38	djangosuper	VIEW: xhr_actions
+2012/05/03  06:48:38	djangosuper	=====> xhr_actions: =xhr:AJAX request: archiveThisItem  ci=6466  ti=0
+2012/05/03  06:48:39	---	Last item ID:4574
+2012/05/03  06:48:39	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  06:48:39	---	Last item ID:6459
+2012/05/03  06:48:39	---	==> archivePair moved item 6466  to proj: 15
+2012/05/03  06:48:39	---	lock removed
+2012/05/03  06:49:16	djangosuper	VIEW: xhr_actions
+2012/05/03  06:49:16	djangosuper	=====> xhr_actions: =xhr:AJAX request: fastAdd  ci=6399  ti=0
+2012/05/03  06:49:16	---	Last item ID:4574
+2012/05/03  06:49:16	---	VIEW: drag_actions => fastAdd
+2012/05/03  06:49:16	---	fastAdd for 6399  make projectSet JS filter apply to the body of the TODAY display (so you can focus on work vs other)
+2012/05/03  06:49:16	---	NEW FA item ID=None
+2012/05/03  06:49:16	---	   fastadded item ID = 6474
+2012/05/03  06:49:16	---	lock removed
+2012/05/03  06:49:25	djangosuper	VIEW: today
+2012/05/03  06:49:25	---	   Entering buildDisplayList
+2012/05/03  06:49:25	---	   Exiting buildDisplayList
+2012/05/03  06:49:57	djangosuper	VIEW: draglist
+2012/05/03  06:49:57	djangosuper	     Proj 19
+2012/05/03  06:49:57	---	   Entering buildDisplayList
+2012/05/03  06:49:57	---	   Exiting buildDisplayList
+2012/05/03  06:50:17	djangosuper	VIEW: detailItem
+2012/05/03  06:50:36	djangosuper	Edit item: Formset generated, pItem=6473
+2012/05/03  06:51:44	djangosuper	   Formset saved: [<Item: apples vs oranges>]
+2012/05/03  06:51:44	djangosuper	VIEW: draglist
+2012/05/03  06:51:44	djangosuper	     Proj 19
+2012/05/03  06:51:44	---	   Entering buildDisplayList
+2012/05/03  06:51:44	---	   Exiting buildDisplayList
+2012/05/03  06:51:50	djangosuper	Edit item: Formset generated, pItem=5589
+2012/05/03  06:52:08	djangosuper	VIEW: draglist
+2012/05/03  06:52:08	djangosuper	     Proj 19
+2012/05/03  06:52:08	---	   Entering buildDisplayList
+2012/05/03  06:52:08	---	   Exiting buildDisplayList
+2012/05/03  06:52:20	djangosuper	VIEW: xhr_actions
+2012/05/03  06:52:20	djangosuper	=====> xhr_actions: =xhr:AJAX request: archiveThisItem  ci=5589  ti=0
+2012/05/03  06:52:20	---	Last item ID:5598
+2012/05/03  06:52:21	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  06:52:21	---	Last item ID:5126
+2012/05/03  06:52:21	---	==> archivePair moved item 5589  to proj: 20
+2012/05/03  06:52:21	---	lock removed
+2012/05/03  06:52:37	djangosuper	VIEW: today
+2012/05/03  06:52:37	---	   Entering buildDisplayList
+2012/05/03  06:52:38	---	   Exiting buildDisplayList
+2012/05/03  06:52:46	djangosuper	VIEW: draglist
+2012/05/03  06:52:46	djangosuper	     Proj 9
+2012/05/03  06:52:46	---	   Entering buildDisplayList
+2012/05/03  06:52:46	---	   Exiting buildDisplayList
+2012/05/03  09:21:34	djangosuper	VIEW: homepage
+2012/05/03  09:44:20	djangosuper	VIEW: draglist
+2012/05/03  09:44:20	djangosuper	     Proj 9
+2012/05/03  09:44:20	---	   Entering buildDisplayList
+2012/05/03  09:44:20	---	   Exiting buildDisplayList
+2012/05/03  09:44:25	djangosuper	Edit item: Formset generated, pItem=5951
+2012/05/03  12:41:23	djangosuper	VIEW: today
+2012/05/03  12:41:23	---	   Entering buildDisplayList
+2012/05/03  12:41:26	---	   Exiting buildDisplayList
+2012/05/03  12:41:50	djangosuper	VIEW: draglist
+2012/05/03  12:41:50	djangosuper	     Proj 19
+2012/05/03  12:41:50	---	   Entering buildDisplayList
+2012/05/03  12:41:50	---	   Exiting buildDisplayList
+2012/05/03  12:42:15	djangosuper	VIEW: xhr_actions
+2012/05/03  12:42:15	djangosuper	=====> xhr_actions: =xhr:AJAX request: prioritySelected  ci=6472  ti=0
+2012/05/03  12:42:15	---	Last item ID:5598
+2012/05/03  12:42:16	---	lock removed
+2012/05/03  12:42:19	djangosuper	VIEW: xhr_actions
+2012/05/03  12:42:19	djangosuper	=====> xhr_actions: =xhr:AJAX request: statusSelected  ci=6472  ti=0
+2012/05/03  12:42:19	---	Last item ID:5598
+2012/05/03  12:42:19	---	lock removed
+2012/05/03  12:42:28	djangosuper	Edit item: Formset generated, pItem=6473
+2012/05/03  12:43:13	djangosuper	VIEW: today
+2012/05/03  12:43:13	---	   Entering buildDisplayList
+2012/05/03  12:43:13	---	   Exiting buildDisplayList
+2012/05/03  12:43:36	djangosuper	VIEW: draglist
+2012/05/03  12:43:36	djangosuper	     Proj 19
+2012/05/03  12:43:36	---	   Entering buildDisplayList
+2012/05/03  12:43:37	---	   Exiting buildDisplayList
+2012/05/03  12:43:53	djangosuper	Edit item: Formset generated, pItem=6473
+2012/05/03  12:45:11	djangosuper	   Formset saved: [<Item: apples vs oranges>]
+2012/05/03  12:45:13	djangosuper	VIEW: draglist
+2012/05/03  12:45:13	djangosuper	     Proj 19
+2012/05/03  12:45:13	---	   Entering buildDisplayList
+2012/05/03  12:45:13	---	   Exiting buildDisplayList
+2012/05/03  12:45:30	djangosuper	VIEW: homepage
+2012/05/03  16:19:42	djangosuper	VIEW: gridview
+2012/05/03  16:19:42	djangosuper	   cellItems=[5916L, 5606L, 5616L, 5637L, 6066L, 5402L, 5660L, 5949L]
+2012/05/03  16:19:42	---	   Entering buildDisplayList
+2012/05/03  16:19:42	---	   Exiting buildDisplayList
+2012/05/03  16:19:42	djangosuper	   cellItems=[6414L, 6420L, 6015L, 6090L, 6231L, 6234L, 4377L, 4581L, 5435L, 5609L, 5933L, 5952L, 6023L, 6081L, 6087L, 6096L, 4381L, 5002L, 5104L, 5286L, 5395L, 6044L, 4621L, 5040L, 5175L, 5655L, 5923L, 6163L, 4375L, 4531L, 4574L, 4608L, 5092L, 5258L, 5374L, 5384L, 5619L, 5624L]
+2012/05/03  16:19:42	---	   Entering buildDisplayList
+2012/05/03  16:19:43	---	   Exiting buildDisplayList
+2012/05/03  16:19:43	djangosuper	   cellItems=[5671L, 6083L, 4584L, 4585L, 4590L, 5060L, 5062L, 5199L, 5411L, 5605L, 5615L, 5631L, 4591L, 4592L, 5580L, 1L, 4583L, 5614L, 5877L, 5878L, 5879L, 5924L, 5958L]
+2012/05/03  16:19:43	---	   Entering buildDisplayList
+2012/05/03  16:19:43	---	   Exiting buildDisplayList
+2012/05/03  16:19:43	djangosuper	   cellItems=[4602L, 6027L, 6409L, 6468L, 4607L, 5617L, 5629L, 5656L, 5661L, 6469L, 4604L, 5130L, 5669L, 6407L, 2384L, 4605L, 4609L, 5803L, 4610L, 5109L, 5668L, 5912L, 5915L, 6381L, 6470L]
+2012/05/03  16:19:43	---	   Entering buildDisplayList
+2012/05/03  16:19:43	---	   Exiting buildDisplayList
+2012/05/03  16:19:43	djangosuper	   cellItems=[6061L, 6058L, 6060L, 6118L]
+2012/05/03  16:19:43	---	   Entering buildDisplayList
+2012/05/03  16:19:44	---	   Exiting buildDisplayList
+2012/05/03  16:19:44	djangosuper	   cellItems=[5127L, 6473L, 6472L, 5125L, 5409L, 5598L]
+2012/05/03  16:19:44	---	   Entering buildDisplayList
+2012/05/03  16:19:44	---	   Exiting buildDisplayList
+2012/05/03  16:19:44	djangosuper	   cellItems=[6388L, 6396L, 6460L, 6462L, 6471L, 6394L, 6461L, 6463L, 6467L, 5905L, 6074L, 6428L, 5870L, 6072L, 6073L, 6393L, 6427L, 6464L, 6465L]
+2012/05/03  16:19:44	---	   Entering buildDisplayList
+2012/05/03  16:19:44	---	   Exiting buildDisplayList
+2012/05/03  16:19:44	djangosuper	   cellItems=[5662L, 5801L, 5947L, 5950L, 6065L, 4596L, 4615L, 4629L, 5009L, 5132L, 5396L, 5410L, 5667L, 5736L, 5911L, 4600L, 4601L, 5056L, 6088L, 4386L, 4397L, 4599L, 4999L, 5053L, 5055L, 5086L, 5095L, 5189L, 5191L]
+2012/05/03  16:19:44	---	   Entering buildDisplayList
+2012/05/03  16:19:45	---	   Exiting buildDisplayList
+2012/05/03  16:19:45	djangosuper	   cellItems=[4646L, 4630L, 4631L, 4632L, 4633L, 4634L, 4635L, 4636L, 4637L, 4638L, 4639L]
+2012/05/03  16:19:45	---	   Entering buildDisplayList
+2012/05/03  16:19:45	---	   Exiting buildDisplayList
+2012/05/03  16:19:45	djangosuper	   cellItems=[5967L, 6064L, 5663L, 5670L, 5875L]
+2012/05/03  16:19:45	---	   Entering buildDisplayList
+2012/05/03  16:19:45	---	   Exiting buildDisplayList
+2012/05/03  16:19:49	djangosuper	   cellItems=[2468L, 2469L, 2470L, 2471L, 2472L, 2473L, 2474L, 2475L, 2476L, 2477L, 2478L]
+2012/05/03  16:19:49	---	   Entering buildDisplayList
+2012/05/03  16:19:49	---	   Exiting buildDisplayList
+2012/05/03  16:19:49	djangosuper	   cellItems=[6441L, 5641L, 6438L, 6440L, 6442L, 6443L, 6445L, 6446L, 6447L, 6448L, 6449L]
+2012/05/03  16:19:49	---	   Entering buildDisplayList
+2012/05/03  16:19:50	---	   Exiting buildDisplayList
+2012/05/03  16:19:50	djangosuper	   cellItems=[5883L, 5979L, 5980L, 5984L, 5989L, 6071L, 6004L, 6022L, 5987L, 4301L, 5981L, 5982L, 5983L, 5985L, 5988L, 5990L, 5992L, 5993L, 5995L]
+2012/05/03  16:19:50	---	   Entering buildDisplayList
+2012/05/03  16:19:50	---	   Exiting buildDisplayList
+2012/05/03  16:19:50	djangosuper	   cellItems=[6444L, 5000L, 5001L, 5005L, 5006L, 5007L, 5083L, 5100L, 5102L, 5106L, 5112L]
+2012/05/03  16:19:50	---	   Entering buildDisplayList
+2012/05/03  16:19:51	---	   Exiting buildDisplayList
+2012/05/03  16:19:51	djangosuper	   cellItems=[5600L, 6458L, 5951L, 6018L, 6390L, 5900L, 5047L, 5116L, 5591L, 5592L, 5593L, 5595L, 5599L, 5625L, 5961L, 6077L]
+2012/05/03  16:19:51	---	   Entering buildDisplayList
+2012/05/03  16:19:51	---	   Exiting buildDisplayList
+2012/05/03  18:07:52	djangosuper	VIEW: draglist
+2012/05/03  18:07:52	djangosuper	     Proj 9
+2012/05/03  18:07:52	---	   Entering buildDisplayList
+2012/05/03  18:07:52	---	   Exiting buildDisplayList
+2012/05/03  18:07:52	djangosuper	VIEW: draglist
+2012/05/03  18:07:52	djangosuper	     Proj 19
+2012/05/03  18:07:52	---	   Entering buildDisplayList
+2012/05/03  18:07:52	---	   Exiting buildDisplayList
+2012/05/03  18:08:11	djangosuper	VIEW: draglist
+2012/05/03  18:08:11	djangosuper	     Proj 5
+2012/05/03  18:08:11	---	   Entering buildDisplayList
+2012/05/03  18:08:12	---	   Exiting buildDisplayList
+2012/05/03  18:14:23	djangosuper	VIEW: xhr_actions
+2012/05/03  18:14:23	djangosuper	=====> xhr_actions: =xhr:AJAX request: archiveThisItem  ci=6458  ti=0
+2012/05/03  18:14:23	---	Last item ID:5595
+2012/05/03  18:14:24	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  18:14:24	---	Last item ID:5897
+2012/05/03  18:14:24	---	==> archivePair moved item 6458  to proj: 16
+2012/05/03  18:14:24	---	lock removed
+2012/05/03  18:14:29	djangosuper	Edit item: Formset generated, pItem=6455
+2012/05/03  18:14:39	djangosuper	   Formset saved: [<Item: retrieve keens>]
+2012/05/03  18:14:39	djangosuper	VIEW: draglist
+2012/05/03  18:14:39	djangosuper	     Proj 9
+2012/05/03  18:14:39	---	   Entering buildDisplayList
+2012/05/03  18:14:39	---	   Exiting buildDisplayList
+2012/05/03  18:14:42	djangosuper	Edit item: Formset generated, pItem=5951
+2012/05/03  18:14:49	djangosuper	   Formset saved: [<Item: retrieve blue luggage>]
+2012/05/03  18:14:49	djangosuper	VIEW: draglist
+2012/05/03  18:14:49	djangosuper	     Proj 9
+2012/05/03  18:14:49	---	   Entering buildDisplayList
+2012/05/03  18:14:49	---	   Exiting buildDisplayList
+2012/05/03  18:14:55	djangosuper	VIEW: xhr_actions
+2012/05/03  18:14:55	djangosuper	=====> xhr_actions: =xhr:AJAX request: archiveThisItem  ci=6456  ti=0
+2012/05/03  18:14:55	---	Last item ID:5595
+2012/05/03  18:14:55	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  18:14:55	---	Last item ID:6458
+2012/05/03  18:14:55	---	==> archivePair moved item 6456  to proj: 16
+2012/05/03  18:14:55	---	lock removed
+2012/05/03  18:14:58	djangosuper	VIEW: xhr_actions
+2012/05/03  18:14:58	djangosuper	=====> xhr_actions: =xhr:AJAX request: archiveThisItem  ci=6077  ti=0
+2012/05/03  18:14:58	---	Last item ID:5595
+2012/05/03  18:14:58	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  18:14:58	---	Last item ID:6456
+2012/05/03  18:14:58	---	==> archivePair moved item 6077  to proj: 16
+2012/05/03  18:14:58	---	lock removed
+2012/05/03  18:15:04	djangosuper	VIEW: draglist
+2012/05/03  18:15:04	djangosuper	     Proj 9
+2012/05/03  18:15:04	---	   Entering buildDisplayList
+2012/05/03  18:15:04	---	   Exiting buildDisplayList
+2012/05/03  18:15:06	djangosuper	Edit item: Formset generated, pItem=5600
+2012/05/03  18:18:47	djangosuper	Edit item: Formset generated, pItem=5600
+2012/05/03  18:19:22	djangosuper	   Formset saved: [<Item: see www.hhs.state.tx.us>]
+2012/05/03  18:19:22	djangosuper	VIEW: draglist
+2012/05/03  18:19:22	djangosuper	     Proj 9
+2012/05/03  18:19:22	---	   Entering buildDisplayList
+2012/05/03  18:19:22	---	   Exiting buildDisplayList
+2012/05/03  19:25:10	djangosuper	VIEW: draglist
+2012/05/03  19:25:10	djangosuper	     Proj 5
+2012/05/03  19:25:10	---	   Entering buildDisplayList
+2012/05/03  19:25:11	---	   Exiting buildDisplayList
+2012/05/03  19:26:22	djangosuper	VIEW: xhr_actions
+2012/05/03  19:26:22	djangosuper	=====> xhr_actions: =xhr:AJAX request: fastAdd  ci=6096  ti=0
+2012/05/03  19:26:22	---	Last item ID:4574
+2012/05/03  19:26:22	---	VIEW: drag_actions => fastAdd
+2012/05/03  19:26:22	---	fastAdd for 6096  get Git rationalized
+2012/05/03  19:26:23	---	NEW FA item ID=None
+2012/05/03  19:26:24	---	   fastadded item ID = 6475
+2012/05/03  19:26:24	---	lock removed
+2012/05/03  19:26:40	djangosuper	VIEW: draglist
+2012/05/03  19:26:40	djangosuper	     Proj 4
+2012/05/03  19:26:40	---	   Entering buildDisplayList
+2012/05/03  19:26:41	---	   Exiting buildDisplayList
+2012/05/03  19:26:51	djangosuper	VIEW: xhr_actions
+2012/05/03  19:26:51	djangosuper	=====> xhr_actions: =xhr:AJAX request: dragPeer  ci=6094  ti=6093
+2012/05/03  19:26:51	---	Last item ID:6436
+2012/05/03  19:26:51	djangosuper	     ====dragPeer=> CIid:TIid    6094:6093
+2012/05/03  19:26:51	---	Last item ID:6436
+2012/05/03  19:26:51	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  19:26:51	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  19:26:52	djangosuper	    ==> drag_Peer, CI / TI:6094/6093
+2012/05/03  19:26:52	---	lock removed
+2012/05/03  19:26:57	djangosuper	VIEW: xhr_actions
+2012/05/03  19:26:57	djangosuper	=====> xhr_actions: =xhr:AJAX request: dragPeer  ci=5984  ti=6094
+2012/05/03  19:26:58	---	Last item ID:6436
+2012/05/03  19:26:58	djangosuper	     ====dragPeer=> CIid:TIid    5984:6094
+2012/05/03  19:26:58	---	Last item ID:6436
+2012/05/03  19:26:58	---	sMDflk=> findLastKid lastKid=5993
+2012/05/03  19:26:58	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  19:26:58	djangosuper	    ==> drag_Peer, CI / TI:5984/6094
+2012/05/03  19:26:59	---	lock removed
+2012/05/03  19:27:12	djangosuper	VIEW: xhr_actions
+2012/05/03  19:27:12	djangosuper	=====> xhr_actions: =xhr:AJAX request: dragPeer  ci=5981  ti=6094
+2012/05/03  19:27:12	---	Last item ID:6436
+2012/05/03  19:27:12	djangosuper	     ====dragPeer=> CIid:TIid    5981:6094
+2012/05/03  19:27:13	---	Last item ID:6436
+2012/05/03  19:27:13	---	sMDflk=> findLastKid lastKid=5996
+2012/05/03  19:27:13	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  19:27:13	djangosuper	    ==> drag_Peer, CI / TI:5981/6094
+2012/05/03  19:27:14	---	lock removed
+2012/05/03  19:27:29	djangosuper	VIEW: xhr_actions
+2012/05/03  19:27:29	djangosuper	=====> xhr_actions: =xhr:AJAX request: dragPeer  ci=5995  ti=6094
+2012/05/03  19:27:29	---	Last item ID:6436
+2012/05/03  19:27:29	djangosuper	     ====dragPeer=> CIid:TIid    5995:6094
+2012/05/03  19:27:29	---	Last item ID:6436
+2012/05/03  19:27:29	---	sMDflk=> findLastKid lastKid=5989
+2012/05/03  19:27:29	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  19:27:29	djangosuper	    ==> drag_Peer, CI / TI:5995/6094
+2012/05/03  19:27:30	---	lock removed
+2012/05/03  19:28:44	djangosuper	VIEW: xhr_actions
+2012/05/03  19:28:44	djangosuper	=====> xhr_actions: =xhr:AJAX request: dragPeer  ci=5983  ti=6094
+2012/05/03  19:28:44	---	Last item ID:6436
+2012/05/03  19:28:44	djangosuper	     ====dragPeer=> CIid:TIid    5983:6094
+2012/05/03  19:28:44	---	Last item ID:6436
+2012/05/03  19:28:45	---	sMDflk=> findLastKid lastKid=6091
+2012/05/03  19:28:45	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  19:28:45	djangosuper	    ==> drag_Peer, CI / TI:5983/6094
+2012/05/03  19:28:46	---	lock removed
+2012/05/03  19:29:07	djangosuper	VIEW: draglist
+2012/05/03  19:29:07	djangosuper	     Proj 4
+2012/05/03  19:29:07	---	   Entering buildDisplayList
+2012/05/03  19:29:07	---	   Exiting buildDisplayList
+2012/05/03  19:29:12	djangosuper	VIEW: xhr_actions
+2012/05/03  19:29:12	djangosuper	=====> xhr_actions: =xhr:AJAX request: dragKid  ci=5981  ti=6094
+2012/05/03  19:29:12	---	Last item ID:6436
+2012/05/03  19:29:12	djangosuper	VIEW: drag_move
+2012/05/03  19:29:12	djangosuper	     ====dragMove=> CIid:TIid    5981:6094
+2012/05/03  19:29:12	---	Last item ID:6436
+2012/05/03  19:29:12	---	sMDflk=> findLastKid lastKid=5996
+2012/05/03  19:29:12	djangosuper	     DragMove=> CI saved
+2012/05/03  19:29:12	djangosuper	     dragmove=> targetFollowerID:5983  targetFollower.follows:5996  lastkid:5996
+2012/05/03  19:29:12	djangosuper	      dm=>kidList = [5996L]
+2012/05/03  19:29:12	djangosuper	      dm=>kidx / indentL = 5996/2
+2012/05/03  19:29:12	---	lock removed
+2012/05/03  19:29:17	djangosuper	VIEW: xhr_actions
+2012/05/03  19:29:17	djangosuper	=====> xhr_actions: =xhr:AJAX request: dragKid  ci=5995  ti=6094
+2012/05/03  19:29:17	---	Last item ID:6436
+2012/05/03  19:29:17	djangosuper	VIEW: drag_move
+2012/05/03  19:29:17	djangosuper	     ====dragMove=> CIid:TIid    5995:6094
+2012/05/03  19:29:17	---	Last item ID:6436
+2012/05/03  19:29:18	---	sMDflk=> findLastKid lastKid=5989
+2012/05/03  19:29:18	djangosuper	     DragMove=> CI saved
+2012/05/03  19:29:18	djangosuper	     dragmove=> targetFollowerID:5981  targetFollower.follows:5989  lastkid:5989
+2012/05/03  19:29:18	djangosuper	      dm=>kidList = [5989L]
+2012/05/03  19:29:18	djangosuper	      dm=>kidx / indentL = 5989/2
+2012/05/03  19:29:18	---	lock removed
+2012/05/03  19:29:29	djangosuper	VIEW: xhr_actions
+2012/05/03  19:29:29	djangosuper	=====> xhr_actions: =xhr:AJAX request: dragPeer  ci=6004  ti=6093
+2012/05/03  19:29:29	---	Last item ID:6436
+2012/05/03  19:29:29	djangosuper	     ====dragPeer=> CIid:TIid    6004:6093
+2012/05/03  19:29:29	---	Last item ID:6436
+2012/05/03  19:29:29	---	sMDflk=> findLastKid lastKid=6091
+2012/05/03  19:29:29	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  19:29:29	djangosuper	    ==> drag_Peer, CI / TI:6004/6093
+2012/05/03  19:29:30	---	lock removed
+2012/05/03  19:29:45	djangosuper	Edit item: Formset generated, pItem=6004
+2012/05/03  19:29:52	djangosuper	VIEW: xhr_actions
+2012/05/03  19:29:52	djangosuper	=====> xhr_actions: =xhr:AJAX request: dragKid  ci=5989  ti=6094
+2012/05/03  19:29:52	---	Last item ID:6436
+2012/05/03  19:29:52	djangosuper	VIEW: drag_move
+2012/05/03  19:29:52	djangosuper	     ====dragMove=> CIid:TIid    5989:6094
+2012/05/03  19:29:52	---	Last item ID:6436
+2012/05/03  19:29:53	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  19:29:53	djangosuper	     DragMove=> CI saved
+2012/05/03  19:29:53	djangosuper	     dragmove=> targetFollowerID:5995  targetFollower.follows:5989  lastkid:0
+2012/05/03  19:29:53	djangosuper	      dm=>kidList = []
+2012/05/03  19:29:53	---	lock removed
+2012/05/03  19:30:03	djangosuper	VIEW: xhr_actions
+2012/05/03  19:30:03	djangosuper	=====> xhr_actions: =xhr:AJAX request: dragKid  ci=5996  ti=5989
+2012/05/03  19:30:04	---	Last item ID:6436
+2012/05/03  19:30:04	djangosuper	VIEW: drag_move
+2012/05/03  19:30:04	djangosuper	     ====dragMove=> CIid:TIid    5996:5989
+2012/05/03  19:30:04	---	Last item ID:6436
+2012/05/03  19:30:04	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  19:30:04	djangosuper	     DragMove=> CI saved
+2012/05/03  19:30:04	djangosuper	     dragmove=> targetFollowerID:5995  targetFollower.follows:5996  lastkid:0
+2012/05/03  19:30:04	djangosuper	      dm=>kidList = []
+2012/05/03  19:30:04	---	lock removed
+2012/05/03  19:30:35	djangosuper	VIEW: draglist
+2012/05/03  19:30:35	djangosuper	     Proj 4
+2012/05/03  19:30:35	---	   Entering buildDisplayList
+2012/05/03  19:30:35	---	   Exiting buildDisplayList
+2012/05/03  19:30:43	djangosuper	VIEW: xhr_actions
+2012/05/03  19:30:43	djangosuper	=====> xhr_actions: =xhr:AJAX request: dragKid  ci=5996  ti=6093
+2012/05/03  19:30:43	---	Last item ID:6436
+2012/05/03  19:30:43	djangosuper	VIEW: drag_move
+2012/05/03  19:30:43	djangosuper	     ====dragMove=> CIid:TIid    5996:6093
+2012/05/03  19:30:44	---	Last item ID:6436
+2012/05/03  19:30:44	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  19:30:44	djangosuper	     DragMove=> CI saved
+2012/05/03  19:30:44	djangosuper	     dragmove=> targetFollowerID:6004  targetFollower.follows:5996  lastkid:0
+2012/05/03  19:30:44	djangosuper	      dm=>kidList = []
+2012/05/03  19:30:44	---	lock removed
+2012/05/03  19:30:50	djangosuper	VIEW: xhr_actions
+2012/05/03  19:30:50	djangosuper	=====> xhr_actions: =xhr:AJAX request: dragKid  ci=5995  ti=5996
+2012/05/03  19:30:50	---	Last item ID:6436
+2012/05/03  19:30:50	djangosuper	VIEW: drag_move
+2012/05/03  19:30:50	djangosuper	     ====dragMove=> CIid:TIid    5995:5996
+2012/05/03  19:30:50	---	Last item ID:6436
+2012/05/03  19:30:50	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  19:30:50	djangosuper	     DragMove=> CI saved
+2012/05/03  19:30:50	djangosuper	     dragmove=> targetFollowerID:6004  targetFollower.follows:5995  lastkid:0
+2012/05/03  19:30:50	djangosuper	      dm=>kidList = []
+2012/05/03  19:30:50	---	lock removed
+2012/05/03  19:30:59	djangosuper	VIEW: xhr_actions
+2012/05/03  19:30:59	djangosuper	=====> xhr_actions: =xhr:AJAX request: dragKid  ci=5999  ti=6093
+2012/05/03  19:30:59	---	Last item ID:6436
+2012/05/03  19:30:59	djangosuper	VIEW: drag_move
+2012/05/03  19:30:59	djangosuper	     ====dragMove=> CIid:TIid    5999:6093
+2012/05/03  19:30:59	---	Last item ID:6436
+2012/05/03  19:30:59	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  19:30:59	djangosuper	     DragMove=> CI saved
+2012/05/03  19:30:59	djangosuper	     dragmove=> targetFollowerID:5996  targetFollower.follows:5999  lastkid:0
+2012/05/03  19:30:59	djangosuper	      dm=>kidList = []
+2012/05/03  19:30:59	---	lock removed
+2012/05/03  19:31:04	djangosuper	VIEW: xhr_actions
+2012/05/03  19:31:04	djangosuper	=====> xhr_actions: =xhr:AJAX request: dragKid  ci=6001  ti=6093
+2012/05/03  19:31:04	---	Last item ID:6436
+2012/05/03  19:31:04	djangosuper	VIEW: drag_move
+2012/05/03  19:31:04	djangosuper	     ====dragMove=> CIid:TIid    6001:6093
+2012/05/03  19:31:04	---	Last item ID:6436
+2012/05/03  19:31:04	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  19:31:04	djangosuper	     DragMove=> CI saved
+2012/05/03  19:31:04	djangosuper	     dragmove=> targetFollowerID:5999  targetFollower.follows:6001  lastkid:0
+2012/05/03  19:31:04	djangosuper	      dm=>kidList = []
+2012/05/03  19:31:04	---	lock removed
+2012/05/03  19:31:18	djangosuper	VIEW: xhr_actions
+2012/05/03  19:31:18	djangosuper	=====> xhr_actions: =xhr:AJAX request: dragPeer  ci=6095  ti=6091
+2012/05/03  19:31:18	---	Last item ID:6436
+2012/05/03  19:31:18	djangosuper	     ====dragPeer=> CIid:TIid    6095:6091
+2012/05/03  19:31:18	---	Last item ID:6436
+2012/05/03  19:31:18	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  19:31:18	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  19:31:18	djangosuper	    ==> drag_Peer, CI / TI:6095/6091
+2012/05/03  19:31:19	---	lock removed
+2012/05/03  19:31:26	djangosuper	VIEW: xhr_actions
+2012/05/03  19:31:26	djangosuper	=====> xhr_actions: =xhr:AJAX request: dragPeer  ci=6000  ti=6091
+2012/05/03  19:31:26	---	Last item ID:6436
+2012/05/03  19:31:26	djangosuper	     ====dragPeer=> CIid:TIid    6000:6091
+2012/05/03  19:31:26	---	Last item ID:6436
+2012/05/03  19:31:26	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  19:31:26	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  19:31:26	djangosuper	    ==> drag_Peer, CI / TI:6000/6091
+2012/05/03  19:31:26	---	lock removed
+2012/05/03  19:31:36	djangosuper	VIEW: draglist
+2012/05/03  19:31:36	djangosuper	     Proj 4
+2012/05/03  19:31:36	---	   Entering buildDisplayList
+2012/05/03  19:31:37	---	   Exiting buildDisplayList
+2012/05/03  19:31:45	djangosuper	VIEW: xhr_actions
+2012/05/03  19:31:45	djangosuper	=====> xhr_actions: =xhr:AJAX request: dragKid  ci=5981  ti=6091
+2012/05/03  19:31:45	---	Last item ID:6436
+2012/05/03  19:31:45	djangosuper	VIEW: drag_move
+2012/05/03  19:31:45	djangosuper	     ====dragMove=> CIid:TIid    5981:6091
+2012/05/03  19:31:45	---	Last item ID:6436
+2012/05/03  19:31:46	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  19:31:46	djangosuper	     DragMove=> CI saved
+2012/05/03  19:31:46	djangosuper	     dragmove=> targetFollowerID:6000  targetFollower.follows:5981  lastkid:0
+2012/05/03  19:31:46	djangosuper	      dm=>kidList = []
+2012/05/03  19:31:46	---	lock removed
+2012/05/03  19:31:51	djangosuper	VIEW: xhr_actions
+2012/05/03  19:31:51	djangosuper	=====> xhr_actions: =xhr:AJAX request: dragPeer  ci=5997  ti=5999
+2012/05/03  19:31:51	---	Last item ID:6436
+2012/05/03  19:31:51	djangosuper	     ====dragPeer=> CIid:TIid    5997:5999
+2012/05/03  19:31:51	---	Last item ID:6436
+2012/05/03  19:31:52	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  19:31:52	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  19:31:52	djangosuper	    ==> drag_Peer, CI / TI:5997/5999
+2012/05/03  19:31:52	---	lock removed
+2012/05/03  19:31:59	djangosuper	VIEW: xhr_actions
+2012/05/03  19:31:59	djangosuper	=====> xhr_actions: =xhr:AJAX request: dragPeer  ci=6002  ti=5981
+2012/05/03  19:31:59	---	Last item ID:6436
+2012/05/03  19:31:59	djangosuper	     ====dragPeer=> CIid:TIid    6002:5981
+2012/05/03  19:31:59	---	Last item ID:6436
+2012/05/03  19:31:59	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  19:31:59	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  19:31:59	djangosuper	    ==> drag_Peer, CI / TI:6002/5981
+2012/05/03  19:31:59	---	lock removed
+2012/05/03  19:32:05	djangosuper	VIEW: draglist
+2012/05/03  19:32:05	djangosuper	     Proj 4
+2012/05/03  19:32:05	---	   Entering buildDisplayList
+2012/05/03  19:32:05	---	   Exiting buildDisplayList
+2012/05/03  19:32:57	djangosuper	VIEW: xhr_actions
+2012/05/03  19:32:57	djangosuper	=====> xhr_actions: =xhr:AJAX request: dragKid  ci=5989  ti=6002
+2012/05/03  19:32:57	---	Last item ID:6436
+2012/05/03  19:32:57	djangosuper	VIEW: drag_move
+2012/05/03  19:32:57	djangosuper	     ====dragMove=> CIid:TIid    5989:6002
+2012/05/03  19:32:57	---	Last item ID:6436
+2012/05/03  19:32:57	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  19:32:57	djangosuper	     DragMove=> CI saved
+2012/05/03  19:32:57	djangosuper	     dragmove=> targetFollowerID:6000  targetFollower.follows:5989  lastkid:0
+2012/05/03  19:32:57	djangosuper	      dm=>kidList = []
+2012/05/03  19:32:57	---	lock removed
+2012/05/03  19:33:05	djangosuper	VIEW: xhr_actions
+2012/05/03  19:33:05	djangosuper	=====> xhr_actions: =xhr:AJAX request: dragPeer  ci=5989  ti=5999
+2012/05/03  19:33:05	---	Last item ID:6436
+2012/05/03  19:33:05	djangosuper	     ====dragPeer=> CIid:TIid    5989:5999
+2012/05/03  19:33:05	---	Last item ID:6436
+2012/05/03  19:33:05	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  19:33:05	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  19:33:05	djangosuper	    ==> drag_Peer, CI / TI:5989/5999
+2012/05/03  19:33:06	---	lock removed
+2012/05/03  19:33:18	djangosuper	VIEW: xhr_actions
+2012/05/03  19:33:18	djangosuper	=====> xhr_actions: =xhr:AJAX request: dragPeer  ci=6095  ti=6001
+2012/05/03  19:33:18	---	Last item ID:6436
+2012/05/03  19:33:18	djangosuper	     ====dragPeer=> CIid:TIid    6095:6001
+2012/05/03  19:33:19	---	Last item ID:6436
+2012/05/03  19:33:19	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  19:33:19	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  19:33:19	djangosuper	    ==> drag_Peer, CI / TI:6095/6001
+2012/05/03  19:33:19	---	lock removed
+2012/05/03  19:33:25	djangosuper	VIEW: xhr_actions
+2012/05/03  19:33:25	djangosuper	=====> xhr_actions: =xhr:AJAX request: dragPeer  ci=5985  ti=5999
+2012/05/03  19:33:25	---	Last item ID:6436
+2012/05/03  19:33:25	djangosuper	     ====dragPeer=> CIid:TIid    5985:5999
+2012/05/03  19:33:25	---	Last item ID:6436
+2012/05/03  19:33:26	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  19:33:26	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  19:33:26	djangosuper	    ==> drag_Peer, CI / TI:5985/5999
+2012/05/03  19:33:27	---	lock removed
+2012/05/03  19:33:30	djangosuper	VIEW: draglist
+2012/05/03  19:33:30	djangosuper	     Proj 4
+2012/05/03  19:33:30	---	   Entering buildDisplayList
+2012/05/03  19:33:31	---	   Exiting buildDisplayList
+2012/05/03  19:36:43	djangosuper	VIEW: draglist
+2012/05/03  19:36:43	djangosuper	     Proj 4
+2012/05/03  19:36:43	---	   Entering buildDisplayList
+2012/05/03  19:36:43	---	   Exiting buildDisplayList
+2012/05/03  19:36:48	djangosuper	VIEW: xhr_actions
+2012/05/03  19:36:48	djangosuper	=====> xhr_actions: =xhr:AJAX request: dragKid  ci=5996  ti=6095
+2012/05/03  19:36:48	---	Last item ID:6436
+2012/05/03  19:36:48	djangosuper	VIEW: drag_move
+2012/05/03  19:36:48	djangosuper	     ====dragMove=> CIid:TIid    5996:6095
+2012/05/03  19:36:48	---	Last item ID:6436
+2012/05/03  19:36:48	---	sMDflk=> findLastKid lastKid=5995
+2012/05/03  19:36:48	djangosuper	     DragMove=> CI saved
+2012/05/03  19:36:48	djangosuper	     dragmove=> targetFollowerID:5999  targetFollower.follows:5995  lastkid:5995
+2012/05/03  19:36:48	djangosuper	      dm=>kidList = [5995L]
+2012/05/03  19:36:48	djangosuper	      dm=>kidx / indentL = 5995/3
+2012/05/03  19:36:48	---	lock removed
+2012/05/03  19:37:10	djangosuper	VIEW: xhr_actions
+2012/05/03  19:37:10	djangosuper	=====> xhr_actions: =xhr:AJAX request: dragKid  ci=5981  ti=6001
+2012/05/03  19:37:10	---	Last item ID:6436
+2012/05/03  19:37:10	djangosuper	VIEW: drag_move
+2012/05/03  19:37:10	djangosuper	     ====dragMove=> CIid:TIid    5981:6001
+2012/05/03  19:37:10	---	Last item ID:6436
+2012/05/03  19:37:10	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  19:37:10	djangosuper	     DragMove=> CI saved
+2012/05/03  19:37:10	djangosuper	     dragmove=> targetFollowerID:6095  targetFollower.follows:5981  lastkid:0
+2012/05/03  19:37:10	djangosuper	      dm=>kidList = []
+2012/05/03  19:37:10	---	lock removed
+2012/05/03  19:38:00	djangosuper	VIEW: draglist
+2012/05/03  19:38:00	djangosuper	     Proj 4
+2012/05/03  19:38:00	---	   Entering buildDisplayList
+2012/05/03  19:38:00	---	   Exiting buildDisplayList
+2012/05/03  19:38:05	djangosuper	VIEW: xhr_actions
+2012/05/03  19:38:05	djangosuper	=====> xhr_actions: =xhr:AJAX request: dragKid  ci=5995  ti=5985
+2012/05/03  19:38:05	---	Last item ID:6436
+2012/05/03  19:38:05	djangosuper	VIEW: drag_move
+2012/05/03  19:38:05	djangosuper	     ====dragMove=> CIid:TIid    5995:5985
+2012/05/03  19:38:05	---	Last item ID:6436
+2012/05/03  19:38:06	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  19:38:06	djangosuper	     DragMove=> CI saved
+2012/05/03  19:38:06	djangosuper	     dragmove=> targetFollowerID:5989  targetFollower.follows:5995  lastkid:0
+2012/05/03  19:38:06	djangosuper	      dm=>kidList = []
+2012/05/03  19:38:06	---	lock removed
+2012/05/03  19:38:17	djangosuper	VIEW: xhr_actions
+2012/05/03  19:38:17	djangosuper	=====> xhr_actions: =xhr:AJAX request: dragPeer  ci=5997  ti=5981
+2012/05/03  19:38:17	---	Last item ID:6436
+2012/05/03  19:38:17	djangosuper	     ====dragPeer=> CIid:TIid    5997:5981
+2012/05/03  19:38:17	---	Last item ID:6436
+2012/05/03  19:38:17	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  19:38:17	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  19:38:17	djangosuper	    ==> drag_Peer, CI / TI:5997/5981
+2012/05/03  19:38:18	---	lock removed
+2012/05/03  19:38:26	djangosuper	VIEW: xhr_actions
+2012/05/03  19:38:26	djangosuper	=====> xhr_actions: =xhr:AJAX request: dragPeer  ci=6094  ti=5981
+2012/05/03  19:38:26	---	Last item ID:6436
+2012/05/03  19:38:26	djangosuper	     ====dragPeer=> CIid:TIid    6094:5981
+2012/05/03  19:38:26	---	Last item ID:6436
+2012/05/03  19:38:26	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  19:38:26	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  19:38:26	djangosuper	    ==> drag_Peer, CI / TI:6094/5981
+2012/05/03  19:38:27	---	lock removed
+2012/05/03  19:38:55	djangosuper	VIEW: xhr_actions
+2012/05/03  19:38:55	djangosuper	=====> xhr_actions: =xhr:AJAX request: dragPeer  ci=5995  ti=6094
+2012/05/03  19:38:55	---	Last item ID:6436
+2012/05/03  19:38:55	djangosuper	     ====dragPeer=> CIid:TIid    5995:6094
+2012/05/03  19:38:55	---	Last item ID:6436
+2012/05/03  19:38:55	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  19:38:56	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  19:38:56	djangosuper	    ==> drag_Peer, CI / TI:5995/6094
+2012/05/03  19:38:56	---	lock removed
+2012/05/03  19:42:39	djangosuper	VIEW: draglist
+2012/05/03  19:42:39	djangosuper	     Proj 4
+2012/05/03  19:42:39	---	   Entering buildDisplayList
+2012/05/03  19:42:40	---	   Exiting buildDisplayList
+2012/05/03  19:42:48	djangosuper	VIEW: xhr_actions
+2012/05/03  19:42:48	djangosuper	=====> xhr_actions: =xhr:AJAX request: dragKid  ci=5995  ti=5981
+2012/05/03  19:42:48	---	Last item ID:6436
+2012/05/03  19:42:48	djangosuper	VIEW: drag_move
+2012/05/03  19:42:48	djangosuper	     ====dragMove=> CIid:TIid    5995:5981
+2012/05/03  19:42:48	---	Last item ID:6436
+2012/05/03  19:42:48	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  19:42:48	djangosuper	     DragMove=> CI saved
+2012/05/03  19:42:48	djangosuper	     dragmove=> targetFollowerID:6094  targetFollower.follows:5995  lastkid:0
+2012/05/03  19:42:48	djangosuper	      dm=>kidList = []
+2012/05/03  19:42:48	---	lock removed
+2012/05/03  19:44:11	djangosuper	VIEW: draglist
+2012/05/03  19:44:11	djangosuper	     Proj 4
+2012/05/03  19:44:11	---	   Entering buildDisplayList
+2012/05/03  19:44:11	---	   Exiting buildDisplayList
+2012/05/03  19:44:16	djangosuper	VIEW: xhr_actions
+2012/05/03  19:44:16	djangosuper	=====> xhr_actions: =xhr:AJAX request: dragKid  ci=5999  ti=5995
+2012/05/03  19:44:16	---	Last item ID:6436
+2012/05/03  19:44:16	djangosuper	VIEW: drag_move
+2012/05/03  19:44:16	djangosuper	     ====dragMove=> CIid:TIid    5999:5995
+2012/05/03  19:44:16	---	Last item ID:6436
+2012/05/03  19:44:16	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  19:44:16	djangosuper	     DragMove=> CI saved
+2012/05/03  19:44:16	djangosuper	     dragmove=> targetFollowerID:6094  targetFollower.follows:5999  lastkid:0
+2012/05/03  19:44:16	djangosuper	      dm=>kidList = []
+2012/05/03  19:44:16	---	lock removed
+2012/05/03  19:45:40	djangosuper	VIEW: draglist
+2012/05/03  19:45:40	djangosuper	     Proj 4
+2012/05/03  19:45:40	---	   Entering buildDisplayList
+2012/05/03  19:45:40	---	   Exiting buildDisplayList
+2012/05/03  19:45:46	djangosuper	VIEW: xhr_actions
+2012/05/03  19:45:46	djangosuper	=====> xhr_actions: =xhr:AJAX request: dragKid  ci=5999  ti=6001
+2012/05/03  19:45:46	---	Last item ID:6436
+2012/05/03  19:45:46	djangosuper	VIEW: drag_move
+2012/05/03  19:45:46	djangosuper	     ====dragMove=> CIid:TIid    5999:6001
+2012/05/03  19:45:46	---	Last item ID:6436
+2012/05/03  19:45:46	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  19:45:46	djangosuper	     DragMove=> CI saved
+2012/05/03  19:45:46	djangosuper	     dragmove=> targetFollowerID:5981  targetFollower.follows:5999  lastkid:0
+2012/05/03  19:45:46	djangosuper	      dm=>kidList = []
+2012/05/03  19:45:46	---	lock removed
+2012/05/03  20:00:26	djangosuper	VIEW: draglist
+2012/05/03  20:00:26	djangosuper	     Proj 4
+2012/05/03  20:00:26	---	   Entering buildDisplayList
+2012/05/03  20:00:26	---	   Exiting buildDisplayList
+2012/05/03  20:00:34	djangosuper	VIEW: xhr_actions
+2012/05/03  20:00:34	djangosuper	=====> xhr_actions: =xhr:AJAX request: dragKid  ci=6002  ti=6094
+2012/05/03  20:00:34	---	Last item ID:6436
+2012/05/03  20:00:34	djangosuper	VIEW: drag_move
+2012/05/03  20:00:34	djangosuper	     ====dragMove=> CIid:TIid    6002:6094
+2012/05/03  20:00:34	---	Last item ID:6436
+2012/05/03  20:00:38	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  20:00:39	djangosuper	     DragMove=> CI saved
+2012/05/03  20:00:39	djangosuper	     dragmove=> targetFollowerID:5997  targetFollower.follows:6002  lastkid:0
+2012/05/03  20:00:39	djangosuper	      dm=>kidList = []
+2012/05/03  20:00:39	---	lock removed
+2012/05/03  20:00:53	djangosuper	VIEW: xhr_actions
+2012/05/03  20:00:53	djangosuper	=====> xhr_actions: =xhr:AJAX request: dragPeer  ci=5989  ti=5999
+2012/05/03  20:00:53	---	Last item ID:6436
+2012/05/03  20:00:53	djangosuper	     ====dragPeer=> CIid:TIid    5989:5999
+2012/05/03  20:00:53	---	Last item ID:6436
+2012/05/03  20:00:53	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  20:00:53	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  20:00:54	djangosuper	    ==> drag_Peer, CI / TI:5989/5999
+2012/05/03  20:00:54	---	lock removed
+2012/05/03  20:01:04	djangosuper	VIEW: xhr_actions
+2012/05/03  20:01:04	djangosuper	=====> xhr_actions: =xhr:AJAX request: dragPeer  ci=6000  ti=5989
+2012/05/03  20:01:04	---	Last item ID:6436
+2012/05/03  20:01:04	djangosuper	     ====dragPeer=> CIid:TIid    6000:5989
+2012/05/03  20:01:04	---	Last item ID:6436
+2012/05/03  20:01:04	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  20:01:04	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  20:01:04	djangosuper	    ==> drag_Peer, CI / TI:6000/5989
+2012/05/03  20:01:05	---	lock removed
+2012/05/03  20:03:34	djangosuper	VIEW: draglist
+2012/05/03  20:03:34	djangosuper	     Proj 4
+2012/05/03  20:03:34	---	   Entering buildDisplayList
+2012/05/03  20:03:34	---	   Exiting buildDisplayList
+2012/05/03  20:03:40	djangosuper	VIEW: xhr_actions
+2012/05/03  20:03:40	djangosuper	=====> xhr_actions: =xhr:AJAX request: dragKid  ci=5995  ti=6001
+2012/05/03  20:03:40	---	Last item ID:6436
+2012/05/03  20:03:40	djangosuper	VIEW: drag_move
+2012/05/03  20:03:41	djangosuper	     ====dragMove=> CIid:TIid    5995:6001
+2012/05/03  20:03:41	---	Last item ID:6436
+2012/05/03  20:03:41	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  20:03:41	djangosuper	     DragMove=> CI saved
+2012/05/03  20:03:41	djangosuper	     dragmove=> targetFollowerID:5999  targetFollower.follows:5995  lastkid:0
+2012/05/03  20:03:41	djangosuper	      dm=>kidList = []
+2012/05/03  20:03:41	---	lock removed
+2012/05/03  20:03:47	djangosuper	VIEW: xhr_actions
+2012/05/03  20:03:47	djangosuper	=====> xhr_actions: =xhr:AJAX request: dragKid  ci=6002  ti=6001
+2012/05/03  20:03:47	---	Last item ID:6436
+2012/05/03  20:03:47	djangosuper	VIEW: drag_move
+2012/05/03  20:03:47	djangosuper	     ====dragMove=> CIid:TIid    6002:6001
+2012/05/03  20:03:47	---	Last item ID:6436
+2012/05/03  20:03:47	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  20:03:47	djangosuper	     DragMove=> CI saved
+2012/05/03  20:03:47	djangosuper	     dragmove=> targetFollowerID:5995  targetFollower.follows:6002  lastkid:0
+2012/05/03  20:03:47	djangosuper	      dm=>kidList = []
+2012/05/03  20:03:47	---	lock removed
+2012/05/03  20:03:59	djangosuper	VIEW: xhr_actions
+2012/05/03  20:03:59	djangosuper	=====> xhr_actions: =xhr:AJAX request: dragPeer  ci=5980  ti=6092
+2012/05/03  20:03:59	---	Last item ID:6436
+2012/05/03  20:03:59	djangosuper	     ====dragPeer=> CIid:TIid    5980:6092
+2012/05/03  20:03:59	---	Last item ID:6436
+2012/05/03  20:03:59	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  20:03:59	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  20:03:59	djangosuper	    ==> drag_Peer, CI / TI:5980/6092
+2012/05/03  20:04:02	---	lock removed
+2012/05/03  20:04:07	djangosuper	VIEW: xhr_actions
+2012/05/03  20:04:07	djangosuper	=====> xhr_actions: =xhr:AJAX request: dragPeer  ci=6405  ti=6092
+2012/05/03  20:04:07	---	Last item ID:6436
+2012/05/03  20:04:07	djangosuper	     ====dragPeer=> CIid:TIid    6405:6092
+2012/05/03  20:04:07	---	Last item ID:6436
+2012/05/03  20:04:07	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  20:04:07	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  20:04:07	djangosuper	    ==> drag_Peer, CI / TI:6405/6092
+2012/05/03  20:04:08	---	lock removed
+2012/05/03  20:08:37	djangosuper	VIEW: draglist
+2012/05/03  20:08:37	djangosuper	     Proj 4
+2012/05/03  20:08:38	---	   Entering buildDisplayList
+2012/05/03  20:08:38	---	   Exiting buildDisplayList
+2012/05/03  20:08:46	djangosuper	VIEW: xhr_actions
+2012/05/03  20:08:46	djangosuper	=====> xhr_actions: =xhr:AJAX request: dragKid  ci=5996  ti=6001
+2012/05/03  20:08:46	---	Last item ID:6436
+2012/05/03  20:08:46	djangosuper	VIEW: drag_move
+2012/05/03  20:08:46	djangosuper	     ====dragMove=> CIid:TIid    5996:6001
+2012/05/03  20:08:46	---	Last item ID:6436
+2012/05/03  20:08:46	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  20:08:46	djangosuper	     DragMove=> CI saved
+2012/05/03  20:08:46	djangosuper	     dragmove=> targetFollowerID:6002  targetFollower.follows:5996  lastkid:0
+2012/05/03  20:08:46	djangosuper	      dm=>kidList = []
+2012/05/03  20:08:47	---	lock removed
+2012/05/03  20:09:48	djangosuper	VIEW: draglist
+2012/05/03  20:09:48	djangosuper	     Proj 4
+2012/05/03  20:09:48	---	   Entering buildDisplayList
+2012/05/03  20:09:48	---	   Exiting buildDisplayList
+2012/05/03  20:09:52	djangosuper	VIEW: xhr_actions
+2012/05/03  20:09:52	djangosuper	=====> xhr_actions: =xhr:AJAX request: dragKid  ci=6094  ti=6001
+2012/05/03  20:09:52	---	Last item ID:6436
+2012/05/03  20:09:52	djangosuper	VIEW: drag_move
+2012/05/03  20:09:52	djangosuper	     ====dragMove=> CIid:TIid    6094:6001
+2012/05/03  20:09:52	---	Last item ID:6436
+2012/05/03  20:09:52	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  20:09:53	djangosuper	     DragMove=> CI saved
+2012/05/03  20:09:53	djangosuper	     dragmove=> targetFollowerID:5996  targetFollower.follows:6094  lastkid:0
+2012/05/03  20:09:53	djangosuper	      dm=>kidList = []
+2012/05/03  20:09:53	---	lock removed
+2012/05/03  20:10:02	djangosuper	VIEW: xhr_actions
+2012/05/03  20:10:02	djangosuper	=====> xhr_actions: =xhr:AJAX request: dragPeer  ci=5981  ti=5996
+2012/05/03  20:10:02	---	Last item ID:6436
+2012/05/03  20:10:02	djangosuper	     ====dragPeer=> CIid:TIid    5981:5996
+2012/05/03  20:10:02	---	Last item ID:6436
+2012/05/03  20:10:02	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  20:10:02	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  20:10:02	djangosuper	    ==> drag_Peer, CI / TI:5981/5996
+2012/05/03  20:10:03	---	lock removed
+2012/05/03  20:10:18	djangosuper	VIEW: draglist
+2012/05/03  20:10:18	djangosuper	     Proj 4
+2012/05/03  20:10:18	---	   Entering buildDisplayList
+2012/05/03  20:10:18	---	   Exiting buildDisplayList
+2012/05/03  20:10:23	djangosuper	VIEW: xhr_actions
+2012/05/03  20:10:23	djangosuper	=====> xhr_actions: =xhr:AJAX request: dragKid  ci=6095  ti=5981
+2012/05/03  20:10:24	---	Last item ID:6436
+2012/05/03  20:10:24	djangosuper	VIEW: drag_move
+2012/05/03  20:10:24	djangosuper	     ====dragMove=> CIid:TIid    6095:5981
+2012/05/03  20:10:24	---	Last item ID:6436
+2012/05/03  20:10:24	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  20:10:24	djangosuper	     DragMove=> CI saved
+2012/05/03  20:10:24	djangosuper	     dragmove=> targetFollowerID:6002  targetFollower.follows:6095  lastkid:0
+2012/05/03  20:10:24	djangosuper	      dm=>kidList = []
+2012/05/03  20:10:24	---	lock removed
+2012/05/03  20:10:30	djangosuper	VIEW: xhr_actions
+2012/05/03  20:10:30	djangosuper	=====> xhr_actions: =xhr:AJAX request: dragPeer  ci=6095  ti=6000
+2012/05/03  20:10:30	---	Last item ID:6436
+2012/05/03  20:10:30	djangosuper	     ====dragPeer=> CIid:TIid    6095:6000
+2012/05/03  20:10:30	---	Last item ID:6436
+2012/05/03  20:10:30	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  20:10:30	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  20:10:30	djangosuper	    ==> drag_Peer, CI / TI:6095/6000
+2012/05/03  20:10:31	---	lock removed
+2012/05/03  20:10:39	djangosuper	VIEW: xhr_actions
+2012/05/03  20:10:39	djangosuper	=====> xhr_actions: =xhr:AJAX request: dragPeer  ci=6000  ti=5996
+2012/05/03  20:10:39	---	Last item ID:6436
+2012/05/03  20:10:39	djangosuper	     ====dragPeer=> CIid:TIid    6000:5996
+2012/05/03  20:10:39	---	Last item ID:6436
+2012/05/03  20:10:39	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  20:10:39	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  20:10:39	djangosuper	    ==> drag_Peer, CI / TI:6000/5996
+2012/05/03  20:10:40	---	lock removed
+2012/05/03  20:11:06	djangosuper	VIEW: draglist
+2012/05/03  20:11:06	djangosuper	     Proj 4
+2012/05/03  20:11:06	---	   Entering buildDisplayList
+2012/05/03  20:11:06	---	   Exiting buildDisplayList
+2012/05/03  20:11:11	djangosuper	VIEW: xhr_actions
+2012/05/03  20:11:11	djangosuper	=====> xhr_actions: =xhr:AJAX request: dragKid  ci=5989  ti=5996
+2012/05/03  20:11:11	---	Last item ID:6436
+2012/05/03  20:11:11	djangosuper	VIEW: drag_move
+2012/05/03  20:11:11	djangosuper	     ====dragMove=> CIid:TIid    5989:5996
+2012/05/03  20:11:11	---	Last item ID:6436
+2012/05/03  20:11:11	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  20:11:11	djangosuper	     DragMove=> CI saved
+2012/05/03  20:11:11	djangosuper	     dragmove=> targetFollowerID:6000  targetFollower.follows:5989  lastkid:0
+2012/05/03  20:11:11	djangosuper	      dm=>kidList = []
+2012/05/03  20:11:11	---	lock removed
+2012/05/03  20:11:22	djangosuper	VIEW: xhr_actions
+2012/05/03  20:11:22	djangosuper	=====> xhr_actions: =xhr:AJAX request: dragPeer  ci=6095  ti=5989
+2012/05/03  20:11:22	---	Last item ID:6436
+2012/05/03  20:11:22	djangosuper	     ====dragPeer=> CIid:TIid    6095:5989
+2012/05/03  20:11:22	---	Last item ID:6436
+2012/05/03  20:11:22	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  20:11:22	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  20:11:22	djangosuper	    ==> drag_Peer, CI / TI:6095/5989
+2012/05/03  20:11:23	---	lock removed
+2012/05/03  20:11:29	djangosuper	VIEW: xhr_actions
+2012/05/03  20:11:29	djangosuper	=====> xhr_actions: =xhr:AJAX request: dragPeer  ci=5999  ti=6091
+2012/05/03  20:11:29	---	Last item ID:6436
+2012/05/03  20:11:29	djangosuper	     ====dragPeer=> CIid:TIid    5999:6091
+2012/05/03  20:11:29	---	Last item ID:6436
+2012/05/03  20:11:29	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  20:11:29	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  20:11:29	djangosuper	    ==> drag_Peer, CI / TI:5999/6091
+2012/05/03  20:11:30	---	lock removed
+2012/05/03  20:11:47	djangosuper	VIEW: xhr_actions
+2012/05/03  20:11:47	djangosuper	=====> xhr_actions: =xhr:AJAX request: dragKid  ci=5995  ti=6094
+2012/05/03  20:11:47	---	Last item ID:6436
+2012/05/03  20:11:47	djangosuper	VIEW: drag_move
+2012/05/03  20:11:47	djangosuper	     ====dragMove=> CIid:TIid    5995:6094
+2012/05/03  20:11:47	---	Last item ID:6436
+2012/05/03  20:11:47	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  20:11:47	djangosuper	     DragMove=> CI saved
+2012/05/03  20:11:47	djangosuper	     dragmove=> targetFollowerID:5996  targetFollower.follows:5995  lastkid:0
+2012/05/03  20:11:47	djangosuper	      dm=>kidList = []
+2012/05/03  20:11:48	---	lock removed
+2012/05/03  20:12:09	djangosuper	VIEW: xhr_actions
+2012/05/03  20:12:09	djangosuper	=====> xhr_actions: =xhr:AJAX request: dragKid  ci=5981  ti=6094
+2012/05/03  20:12:09	---	Last item ID:6436
+2012/05/03  20:12:09	djangosuper	VIEW: drag_move
+2012/05/03  20:12:09	djangosuper	     ====dragMove=> CIid:TIid    5981:6094
+2012/05/03  20:12:09	---	Last item ID:6436
+2012/05/03  20:12:10	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  20:12:10	djangosuper	     DragMove=> CI saved
+2012/05/03  20:12:10	djangosuper	     dragmove=> targetFollowerID:5995  targetFollower.follows:5981  lastkid:0
+2012/05/03  20:12:10	djangosuper	      dm=>kidList = []
+2012/05/03  20:12:10	---	lock removed
+2012/05/03  20:12:16	djangosuper	VIEW: xhr_actions
+2012/05/03  20:12:16	djangosuper	=====> xhr_actions: =xhr:AJAX request: dragPeer  ci=6002  ti=5981
+2012/05/03  20:12:16	---	Last item ID:6436
+2012/05/03  20:12:16	djangosuper	     ====dragPeer=> CIid:TIid    6002:5981
+2012/05/03  20:12:17	---	Last item ID:6436
+2012/05/03  20:12:17	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  20:12:17	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  20:12:17	djangosuper	    ==> drag_Peer, CI / TI:6002/5981
+2012/05/03  20:12:17	---	lock removed
+2012/05/03  20:12:26	djangosuper	VIEW: xhr_actions
+2012/05/03  20:12:26	djangosuper	=====> xhr_actions: =xhr:AJAX request: dragPeer  ci=6091  ti=6094
+2012/05/03  20:12:26	---	Last item ID:6436
+2012/05/03  20:12:26	djangosuper	     ====dragPeer=> CIid:TIid    6091:6094
+2012/05/03  20:12:26	---	Last item ID:6436
+2012/05/03  20:12:26	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  20:12:27	---	sMDflk=> findLastKid lastKid=5995
+2012/05/03  20:12:27	djangosuper	    ==> drag_Peer, CI / TI:6091/6094
+2012/05/03  20:12:28	---	lock removed
+2012/05/03  20:17:00	djangosuper	VIEW: draglist
+2012/05/03  20:17:00	djangosuper	     Proj 4
+2012/05/03  20:17:00	---	   Entering buildDisplayList
+2012/05/03  20:17:00	---	   Exiting buildDisplayList
+2012/05/03  20:17:05	djangosuper	VIEW: xhr_actions
+2012/05/03  20:17:05	djangosuper	=====> xhr_actions: =xhr:AJAX request: dragKid  ci=5995  ti=6001
+2012/05/03  20:17:05	---	Last item ID:6436
+2012/05/03  20:17:05	djangosuper	VIEW: drag_move
+2012/05/03  20:17:05	djangosuper	     ====dragMove=> CIid:TIid    5995:6001
+2012/05/03  20:17:05	---	Last item ID:6436
+2012/05/03  20:17:05	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  20:17:05	djangosuper	     DragMove=> CI saved
+2012/05/03  20:17:05	djangosuper	     dragmove=> targetFollowerID:6094  targetFollower.follows:5995  lastkid:0
+2012/05/03  20:17:05	djangosuper	      dm=>kidList = []
+2012/05/03  20:17:05	---	lock removed
+2012/05/03  20:17:08	djangosuper	VIEW: xhr_actions
+2012/05/03  20:17:08	djangosuper	=====> xhr_actions: =xhr:AJAX request: dragKid  ci=6002  ti=6001
+2012/05/03  20:17:08	---	Last item ID:6436
+2012/05/03  20:17:08	djangosuper	VIEW: drag_move
+2012/05/03  20:17:08	djangosuper	     ====dragMove=> CIid:TIid    6002:6001
+2012/05/03  20:17:08	---	Last item ID:6436
+2012/05/03  20:17:09	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  20:17:09	djangosuper	     DragMove=> CI saved
+2012/05/03  20:17:09	djangosuper	     dragmove=> targetFollowerID:5995  targetFollower.follows:6002  lastkid:0
+2012/05/03  20:17:09	djangosuper	      dm=>kidList = []
+2012/05/03  20:17:09	---	lock removed
+2012/05/03  20:17:16	djangosuper	VIEW: xhr_actions
+2012/05/03  20:17:16	djangosuper	=====> xhr_actions: =xhr:AJAX request: dragPeer  ci=5997  ti=6094
+2012/05/03  20:17:16	---	Last item ID:6436
+2012/05/03  20:17:16	djangosuper	     ====dragPeer=> CIid:TIid    5997:6094
+2012/05/03  20:17:16	---	Last item ID:6436
+2012/05/03  20:17:16	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  20:17:16	---	sMDflk=> findLastKid lastKid=5981
+2012/05/03  20:17:16	djangosuper	    ==> drag_Peer, CI / TI:5997/6094
+2012/05/03  20:17:17	---	lock removed
+2012/05/03  20:17:31	djangosuper	VIEW: xhr_actions
+2012/05/03  20:17:31	djangosuper	=====> xhr_actions: =xhr:AJAX request: dragPeer  ci=5999  ti=6002
+2012/05/03  20:17:31	---	Last item ID:6436
+2012/05/03  20:17:31	djangosuper	     ====dragPeer=> CIid:TIid    5999:6002
+2012/05/03  20:17:31	---	Last item ID:6436
+2012/05/03  20:17:31	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  20:17:31	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  20:17:31	djangosuper	    ==> drag_Peer, CI / TI:5999/6002
+2012/05/03  20:17:32	---	lock removed
+2012/05/03  20:18:11	djangosuper	VIEW: xhr_actions
+2012/05/03  20:18:11	djangosuper	=====> xhr_actions: =xhr:AJAX request: prioritySelected  ci=6454  ti=0
+2012/05/03  20:18:11	---	Last item ID:4574
+2012/05/03  20:18:11	---	lock removed
+2012/05/03  20:20:57	djangosuper	VIEW: draglist
+2012/05/03  20:20:57	djangosuper	     Proj 4
+2012/05/03  20:20:57	---	   Entering buildDisplayList
+2012/05/03  20:20:57	---	   Exiting buildDisplayList
+2012/05/03  20:21:05	djangosuper	VIEW: xhr_actions
+2012/05/03  20:21:05	djangosuper	=====> xhr_actions: =xhr:AJAX request: dragPeer  ci=6095  ti=5999
+2012/05/03  20:21:05	---	Last item ID:6436
+2012/05/03  20:21:05	djangosuper	     ====dragPeer=> CIid:TIid    6095:5999
+2012/05/03  20:21:05	---	Last item ID:6436
+2012/05/03  20:21:05	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  20:21:05	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  20:21:05	djangosuper	    ==> drag_Peer, CI / TI:6095/5999
+2012/05/03  20:21:06	---	lock removed
+2012/05/03  20:21:15	djangosuper	VIEW: draglist
+2012/05/03  20:21:15	djangosuper	     Proj 4
+2012/05/03  20:21:15	---	   Entering buildDisplayList
+2012/05/03  20:21:15	---	   Exiting buildDisplayList
+2012/05/03  20:21:22	djangosuper	VIEW: xhr_actions
+2012/05/03  20:21:22	djangosuper	=====> xhr_actions: =xhr:AJAX request: dragPeer  ci=5983  ti=5999
+2012/05/03  20:21:22	---	Last item ID:6436
+2012/05/03  20:21:22	djangosuper	     ====dragPeer=> CIid:TIid    5983:5999
+2012/05/03  20:21:22	---	Last item ID:6436
+2012/05/03  20:21:22	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  20:21:22	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  20:21:22	djangosuper	    ==> drag_Peer, CI / TI:5983/5999
+2012/05/03  20:21:23	---	lock removed
+2012/05/03  20:21:27	djangosuper	VIEW: draglist
+2012/05/03  20:21:27	djangosuper	     Proj 4
+2012/05/03  20:21:27	---	   Entering buildDisplayList
+2012/05/03  20:21:28	---	   Exiting buildDisplayList
+2012/05/03  20:21:33	djangosuper	VIEW: xhr_actions
+2012/05/03  20:21:33	djangosuper	=====> xhr_actions: =xhr:AJAX request: dragKid  ci=6000  ti=5999
+2012/05/03  20:21:33	---	Last item ID:6436
+2012/05/03  20:21:33	djangosuper	VIEW: drag_move
+2012/05/03  20:21:33	djangosuper	     ====dragMove=> CIid:TIid    6000:5999
+2012/05/03  20:21:33	---	Last item ID:6436
+2012/05/03  20:21:33	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  20:21:33	djangosuper	     DragMove=> CI saved
+2012/05/03  20:21:33	djangosuper	     dragmove=> targetFollowerID:5983  targetFollower.follows:6000  lastkid:0
+2012/05/03  20:21:33	djangosuper	      dm=>kidList = []
+2012/05/03  20:21:34	---	lock removed
+2012/05/03  20:24:02	djangosuper	VIEW: draglist
+2012/05/03  20:24:02	djangosuper	     Proj 4
+2012/05/03  20:24:02	---	   Entering buildDisplayList
+2012/05/03  20:24:02	---	   Exiting buildDisplayList
+2012/05/03  20:25:19	djangosuper	VIEW: draglist
+2012/05/03  20:25:19	djangosuper	     Proj 4
+2012/05/03  20:25:19	---	   Entering buildDisplayList
+2012/05/03  20:25:19	---	   Exiting buildDisplayList
+2012/05/03  20:25:25	djangosuper	VIEW: xhr_actions
+2012/05/03  20:25:25	djangosuper	=====> xhr_actions: =xhr:AJAX request: dragKid  ci=6091  ti=5999
+2012/05/03  20:25:25	---	Last item ID:6436
+2012/05/03  20:25:25	djangosuper	VIEW: drag_move
+2012/05/03  20:25:25	djangosuper	     ====dragMove=> CIid:TIid    6091:5999
+2012/05/03  20:25:25	---	Last item ID:6436
+2012/05/03  20:25:25	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  20:25:25	djangosuper	     DragMove=> CI saved
+2012/05/03  20:25:25	djangosuper	     dragmove=> targetFollowerID:6000  targetFollower.follows:6091  lastkid:0
+2012/05/03  20:25:25	djangosuper	      dm=>kidList = []
+2012/05/03  20:25:25	---	lock removed
+2012/05/03  20:25:30	djangosuper	VIEW: xhr_actions
+2012/05/03  20:25:30	djangosuper	=====> xhr_actions: =xhr:AJAX request: dragKid  ci=5981  ti=5999
+2012/05/03  20:25:30	---	Last item ID:6436
+2012/05/03  20:25:30	djangosuper	VIEW: drag_move
+2012/05/03  20:25:30	djangosuper	     ====dragMove=> CIid:TIid    5981:5999
+2012/05/03  20:25:30	---	Last item ID:6436
+2012/05/03  20:25:30	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  20:25:30	djangosuper	     DragMove=> CI saved
+2012/05/03  20:25:30	djangosuper	     dragmove=> targetFollowerID:6091  targetFollower.follows:5981  lastkid:0
+2012/05/03  20:25:30	djangosuper	      dm=>kidList = []
+2012/05/03  20:25:31	---	lock removed
+2012/05/03  20:25:37	djangosuper	VIEW: xhr_actions
+2012/05/03  20:25:37	djangosuper	=====> xhr_actions: =xhr:AJAX request: dragPeer  ci=6094  ti=6002
+2012/05/03  20:25:37	---	Last item ID:6436
+2012/05/03  20:25:37	djangosuper	     ====dragPeer=> CIid:TIid    6094:6002
+2012/05/03  20:25:37	---	Last item ID:6436
+2012/05/03  20:25:37	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  20:25:37	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  20:25:37	djangosuper	    ==> drag_Peer, CI / TI:6094/6002
+2012/05/03  20:25:38	---	lock removed
+2012/05/03  20:25:43	djangosuper	VIEW: xhr_actions
+2012/05/03  20:25:43	djangosuper	=====> xhr_actions: =xhr:AJAX request: dragKid  ci=6004  ti=6091
+2012/05/03  20:25:43	---	Last item ID:6436
+2012/05/03  20:25:43	djangosuper	VIEW: drag_move
+2012/05/03  20:25:43	djangosuper	     ====dragMove=> CIid:TIid    6004:6091
+2012/05/03  20:25:43	---	Last item ID:6436
+2012/05/03  20:25:44	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  20:25:44	djangosuper	     DragMove=> CI saved
+2012/05/03  20:25:44	djangosuper	     dragmove=> targetFollowerID:6000  targetFollower.follows:6004  lastkid:0
+2012/05/03  20:25:44	djangosuper	      dm=>kidList = []
+2012/05/03  20:25:44	---	lock removed
+2012/05/03  20:25:52	djangosuper	VIEW: xhr_actions
+2012/05/03  20:25:52	djangosuper	=====> xhr_actions: =xhr:AJAX request: dragKid  ci=5997  ti=6094
+2012/05/03  20:25:53	---	Last item ID:6436
+2012/05/03  20:25:53	djangosuper	VIEW: drag_move
+2012/05/03  20:25:53	djangosuper	     ====dragMove=> CIid:TIid    5997:6094
+2012/05/03  20:25:53	---	Last item ID:6436
+2012/05/03  20:25:53	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  20:25:53	djangosuper	     DragMove=> CI saved
+2012/05/03  20:25:53	djangosuper	     dragmove=> targetFollowerID:5999  targetFollower.follows:5997  lastkid:0
+2012/05/03  20:25:53	djangosuper	      dm=>kidList = []
+2012/05/03  20:25:53	---	lock removed
+2012/05/03  20:25:58	djangosuper	VIEW: xhr_actions
+2012/05/03  20:25:58	djangosuper	=====> xhr_actions: =xhr:AJAX request: dragPeer  ci=5997  ti=6002
+2012/05/03  20:25:59	---	Last item ID:6436
+2012/05/03  20:25:59	djangosuper	     ====dragPeer=> CIid:TIid    5997:6002
+2012/05/03  20:25:59	---	Last item ID:6436
+2012/05/03  20:25:59	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  20:25:59	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  20:25:59	djangosuper	    ==> drag_Peer, CI / TI:5997/6002
+2012/05/03  20:26:00	---	lock removed
+2012/05/03  20:26:05	djangosuper	VIEW: xhr_actions
+2012/05/03  20:26:05	djangosuper	=====> xhr_actions: =xhr:AJAX request: dragKid  ci=6095  ti=5981
+2012/05/03  20:26:05	---	Last item ID:6436
+2012/05/03  20:26:05	djangosuper	VIEW: drag_move
+2012/05/03  20:26:05	djangosuper	     ====dragMove=> CIid:TIid    6095:5981
+2012/05/03  20:26:05	---	Last item ID:6436
+2012/05/03  20:26:05	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  20:26:05	djangosuper	     DragMove=> CI saved
+2012/05/03  20:26:06	djangosuper	     dragmove=> targetFollowerID:6091  targetFollower.follows:6095  lastkid:0
+2012/05/03  20:26:06	djangosuper	      dm=>kidList = []
+2012/05/03  20:26:06	---	lock removed
+2012/05/03  20:26:15	djangosuper	VIEW: xhr_actions
+2012/05/03  20:26:15	djangosuper	=====> xhr_actions: =xhr:AJAX request: archiveThisItem  ci=6454  ti=0
+2012/05/03  20:26:15	---	Last item ID:4574
+2012/05/03  20:26:15	---	sMDflk=> findLastKid lastKid=0
+2012/05/03  20:26:15	---	Last item ID:6466
+2012/05/03  20:26:16	---	==> archivePair moved item 6454  to proj: 15
+2012/05/03  20:26:16	---	lock removed
+2012/05/03  20:29:48	djangosuper	VIEW: today
+2012/05/03  20:29:48	---	   Entering buildDisplayList
+2012/05/03  20:29:48	---	   Exiting buildDisplayList
+2012/05/03  20:31:59	djangosuper	VIEW: today
+2012/05/03  20:31:59	---	   Entering buildDisplayList
+2012/05/03  20:32:00	---	   Exiting buildDisplayList
+2012/05/03  20:32:14	djangosuper	VIEW: today
+2012/05/03  20:32:14	---	   Entering buildDisplayList
+2012/05/03  20:32:14	---	   Exiting buildDisplayList
+2012/05/03  20:38:27	djangosuper	VIEW: today
+2012/05/03  20:38:27	---	   Entering buildDisplayList
+2012/05/03  20:38:27	---	   Exiting buildDisplayList
+2012/05/03  20:41:23	djangosuper	VIEW: today
+2012/05/03  20:41:23	---	   Entering buildDisplayList
+2012/05/03  20:41:23	---	   Exiting buildDisplayList
+2012/05/03  20:43:57	djangosuper	VIEW: today
+2012/05/03  20:43:57	---	   Entering buildDisplayList
+2012/05/03  20:43:57	---	   Exiting buildDisplayList
+2012/05/03  20:46:13	djangosuper	VIEW: today
+2012/05/03  20:46:13	---	   Entering buildDisplayList
+2012/05/03  20:46:15	---	   Exiting buildDisplayList
+2012/05/03  20:46:45	djangosuper	VIEW: today
+2012/05/03  20:46:45	---	   Entering buildDisplayList
+2012/05/03  20:46:47	---	   Exiting buildDisplayList
+2012/05/03  20:48:11	djangosuper	VIEW: today
+2012/05/03  20:48:11	---	   Entering buildDisplayList
+2012/05/03  20:48:11	---	   Exiting buildDisplayList
+2012/05/03  20:51:17	djangosuper	VIEW: today
+2012/05/03  20:51:17	---	   Entering buildDisplayList
+2012/05/03  20:51:18	---	   Exiting buildDisplayList
+2012/05/03  20:51:37	djangosuper	VIEW: today
+2012/05/03  20:51:37	---	   Entering buildDisplayList
+2012/05/03  20:51:38	---	   Exiting buildDisplayList
+2012/05/03  20:56:06	djangosuper	VIEW: today
+2012/05/03  20:56:06	---	   Entering buildDisplayList
+2012/05/03  20:56:06	---	   Exiting buildDisplayList
+2012/05/03  20:56:35	djangosuper	VIEW: today
+2012/05/03  20:56:35	---	   Entering buildDisplayList
+2012/05/03  20:56:36	---	   Exiting buildDisplayList
+2012/05/03  20:56:41	djangosuper	VIEW: today
+2012/05/03  20:56:41	---	   Entering buildDisplayList
+2012/05/03  20:56:42	---	   Exiting buildDisplayList

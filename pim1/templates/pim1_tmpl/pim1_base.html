@@ -20,12 +20,16 @@
 
 
 
+
+
+                             
+    <title>{% block title %}{{ titleCrumbBlurb }} [ {{ user.username }} ]- benk{% endblock %}</title>
+
 <script type="text/javascript">
 
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-22766026-1']);
-  _gaq.push(['_setDomainName', 'none']);
-  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_setDomainName', 'bernardhecker.com']);
   _gaq.push(['_trackPageview']);
 
   (function() {
@@ -33,15 +37,11 @@
     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
+
 </script>
-
-
-
-                             
-    <title>{% block title %}{{ titleCrumbBlurb }} [ {{ user.username }} ]- benk{% endblock %}</title>
 </head>
 
-<body class="background-dropx" onLoad="toggleSimple();hideClass('noteBody');showAProjSet('{{ thisSet }}')" > 
+<body class="background-dropx" onLoad="hideClass('noteBody');showAProjSet('{{ thisSet|default:"0" }}')" > 
 
     <div id="headerx">
         {% block headerx %}
