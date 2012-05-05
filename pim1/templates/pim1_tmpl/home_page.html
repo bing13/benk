@@ -8,12 +8,36 @@
 
 
 {% block content %}
+
 <div class="homecontent">
 
 
-<h3>Welcome to Benk</h3>
+<h3>your projects</h3>
+
+    <div class="homeProjList">
+
+       {% for ps in current_sets %}
+       {% if ps.name != "retired" %}
+	 <dl class="homeSetColumn">
+	      <dt>{{ ps.name }}</dt>
+		<dd>
+		{% for px in current_projs %}
+
+		  {% if px.set = ps %}
+		      <a href="/pim1/drag/{{ px.id}}/">{{ px.name }}</a>, 
+		  {% endif %}
+
+		{% endfor %}
+		</dd>
+	  </dl>
+       {% endif %}
+       {% endfor %}
 
 
+    </div>
+
+
+<div class="clear">
 
 <ul class="homePageMainList">
 <li>please see the short <a href="/pim1/help/#getting_started">getting started</a> help section, and related info.</li>
@@ -21,9 +45,12 @@
 <li> <em>no warranties, use at your own risk</em>. </li>
 
 </ul>
+</div>
+
+<p class="mailtoLine">Thank you for your <a href="mailto:bhadmin13@bernardhecker.com?Subject=benk%20feedback">feedback</a>!</p>
 
 
-<p class="mailtoLine">Thank you for your <a href="mailto:bhadmin13@bernardhecker.com?Subject=benk%20feedback">feedback</a>!
+
 
 </div>
 {% endblock %}

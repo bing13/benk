@@ -2,10 +2,13 @@
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
+
+  <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+
     <link rel="stylesheet" href="http://media.bernardhecker.com/pim1/static/css/main_style.css" media="Screen" />
     <link rel="stylesheet" href="http://media.bernardhecker.com/pim1/static/css/dragdrop.css"  />
 
-    <link type="text/css" rel="stylesheet" href="http://media.bernardhecker.com/pim1/static/css/mobile_main.css" media="handheld" />
+    <link type="text/css" rel="stylesheet" href="http://media.bernardhecker.com/pim1/static/css/mobile_main.css" media="only screen and (max-device-width: 880px) and (min-device-width: 320px)" />
 
     <link type="text/css" rel="stylesheet" href="http://media.bernardhecker.com/pim1/static/css/print.css" media="print" />
 
@@ -65,8 +68,8 @@
 
 	     {% if  user.username = "djangosuper" %}
     	     <li><a href="/pim1/maint/">maint</a> |</li>
-	     <li><a href="/pim1/serialize">backup</a> | </li>
-	     <li><a href="/pim1/healthcheck/0">health</a> | </li>
+	     <li class="nomobile"><a href="/pim1/serialize">backup</a> | </li>
+	     <li class="nomobile"><a href="/pim1/healthcheck/0">health</a> | </li>
 
 
 	       {% else %}
@@ -166,6 +169,7 @@
 {{ nowx }}
 </div>
 
+<p class="mobile_blurb">mobile view</p>
 
 </body>
 </html>

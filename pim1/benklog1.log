@@ -6768,3 +6768,1151 @@
 2012/05/03  20:56:41	djangosuper	VIEW: today
 2012/05/03  20:56:41	---	   Entering buildDisplayList
 2012/05/03  20:56:42	---	   Exiting buildDisplayList
+2012/05/03  21:04:07	djangosuper	VIEW: gridview
+2012/05/03  21:04:07	djangosuper	   cellItems=[5916L, 5606L, 5616L, 5637L, 6066L, 5402L, 5660L, 5949L]
+2012/05/03  21:04:07	---	   Entering buildDisplayList
+2012/05/03  21:04:07	---	   Exiting buildDisplayList
+2012/05/03  21:04:07	djangosuper	   cellItems=[6414L, 6420L, 6015L, 6090L, 6231L, 6234L, 4377L, 4581L, 5435L, 5609L, 5933L, 5952L, 6023L, 6081L, 6087L, 6096L, 4381L, 5002L, 5104L, 5286L, 5395L, 6044L, 4621L, 5040L, 5175L, 5655L, 5923L, 6163L, 4375L, 4531L, 4574L, 4608L, 5092L, 5258L, 5374L, 5384L, 5619L, 5624L]
+2012/05/03  21:04:07	---	   Entering buildDisplayList
+2012/05/03  21:04:07	---	   Exiting buildDisplayList
+2012/05/03  21:04:07	djangosuper	   cellItems=[5671L, 6083L, 4584L, 4585L, 4590L, 5060L, 5062L, 5199L, 5411L, 5605L, 5615L, 5631L, 4591L, 4592L, 5580L, 1L, 4583L, 5614L, 5877L, 5878L, 5879L, 5924L, 5958L]
+2012/05/03  21:04:07	---	   Entering buildDisplayList
+2012/05/03  21:04:07	---	   Exiting buildDisplayList
+2012/05/03  21:04:07	djangosuper	   cellItems=[4602L, 6027L, 6409L, 6468L, 4607L, 5617L, 5629L, 5656L, 5661L, 6469L, 4604L, 5130L, 5669L, 6407L, 2384L, 4605L, 4609L, 5803L, 4610L, 5109L, 5668L, 5912L, 5915L, 6381L, 6470L]
+2012/05/03  21:04:07	---	   Entering buildDisplayList
+2012/05/03  21:04:07	---	   Exiting buildDisplayList
+2012/05/03  21:04:08	djangosuper	   cellItems=[6061L, 6058L, 6060L, 6118L]
+2012/05/03  21:04:08	---	   Entering buildDisplayList
+2012/05/03  21:04:08	---	   Exiting buildDisplayList
+2012/05/03  21:04:08	djangosuper	   cellItems=[5127L, 6473L, 6472L, 5125L, 5409L, 5598L]
+2012/05/03  21:04:08	---	   Entering buildDisplayList
+2012/05/03  21:04:08	---	   Exiting buildDisplayList
+2012/05/03  21:04:08	djangosuper	   cellItems=[6388L, 6396L, 6460L, 6462L, 6471L, 6394L, 6461L, 6463L, 6467L, 5905L, 6074L, 6428L, 5870L, 6072L, 6073L, 6393L, 6427L, 6464L, 6465L]
+2012/05/03  21:04:08	---	   Entering buildDisplayList
+2012/05/03  21:04:08	---	   Exiting buildDisplayList
+2012/05/03  21:04:08	djangosuper	   cellItems=[5662L, 5801L, 5947L, 5950L, 6065L, 4596L, 4615L, 4629L, 5009L, 5132L, 5396L, 5410L, 5667L, 5736L, 5911L, 4600L, 4601L, 5056L, 6088L, 4386L, 4397L, 4599L, 4999L, 5053L, 5055L, 5086L, 5095L, 5189L, 5191L]
+2012/05/03  21:04:08	---	   Entering buildDisplayList
+2012/05/03  21:04:08	---	   Exiting buildDisplayList
+2012/05/03  21:04:08	djangosuper	   cellItems=[4646L, 4630L, 4631L, 4632L, 4633L, 4634L, 4635L, 4636L, 4637L, 4638L, 4639L]
+2012/05/03  21:04:08	---	   Entering buildDisplayList
+2012/05/03  21:04:08	---	   Exiting buildDisplayList
+2012/05/03  21:04:08	djangosuper	   cellItems=[5967L, 6064L, 5663L, 5670L, 5875L]
+2012/05/03  21:04:08	---	   Entering buildDisplayList
+2012/05/03  21:04:08	---	   Exiting buildDisplayList
+2012/05/03  21:04:10	djangosuper	   cellItems=[2468L, 2469L, 2470L, 2471L, 2472L, 2473L, 2474L, 2475L, 2476L, 2477L, 2478L]
+2012/05/03  21:04:10	---	   Entering buildDisplayList
+2012/05/03  21:04:10	---	   Exiting buildDisplayList
+2012/05/03  21:04:10	djangosuper	   cellItems=[6441L, 5641L, 6438L, 6440L, 6442L, 6443L, 6445L, 6446L, 6447L, 6448L, 6449L]
+2012/05/03  21:04:10	---	   Entering buildDisplayList
+2012/05/03  21:04:10	---	   Exiting buildDisplayList
+2012/05/03  21:04:11	djangosuper	   cellItems=[5883L, 5979L, 5980L, 5984L, 5989L, 6071L, 6004L, 6022L, 5987L, 4301L, 5981L, 5982L, 5983L, 5985L, 5988L, 5990L, 5992L, 5993L, 5995L]
+2012/05/03  21:04:11	---	   Entering buildDisplayList
+2012/05/03  21:04:11	---	   Exiting buildDisplayList
+2012/05/03  21:04:11	djangosuper	   cellItems=[6444L, 5000L, 5001L, 5005L, 5006L, 5007L, 5083L, 5100L, 5102L, 5106L, 5112L]
+2012/05/03  21:04:11	---	   Entering buildDisplayList
+2012/05/03  21:04:11	---	   Exiting buildDisplayList
+2012/05/03  21:04:11	djangosuper	   cellItems=[5600L, 5951L, 6018L, 6390L, 5900L, 5047L, 5116L, 5591L, 5592L, 5593L, 5595L, 5599L, 5625L, 5961L, 6455L]
+2012/05/03  21:04:11	---	   Entering buildDisplayList
+2012/05/03  21:04:11	---	   Exiting buildDisplayList
+2012/05/03  21:08:52	djangosuper	VIEW: draglist
+2012/05/03  21:08:52	djangosuper	     Proj 9
+2012/05/03  21:08:52	---	   Entering buildDisplayList
+2012/05/03  21:08:52	---	   Exiting buildDisplayList
+2012/05/03  22:03:06	djangosuper	VIEW: today
+2012/05/03  22:03:06	---	   Entering buildDisplayList
+2012/05/03  22:03:08	---	   Exiting buildDisplayList
+2012/05/03  22:03:39	djangosuper	VIEW: xhr_actions
+2012/05/03  22:03:39	djangosuper	=====> xhr_actions: =xhr:AJAX request: prioritySelected  ci=6231  ti=0
+2012/05/03  22:03:39	---	Last item ID:4574
+2012/05/03  22:03:40	---	lock removed
+2012/05/03  22:03:43	djangosuper	VIEW: xhr_actions
+2012/05/03  22:03:43	djangosuper	=====> xhr_actions: =xhr:AJAX request: statusSelected  ci=6231  ti=0
+2012/05/03  22:03:43	---	Last item ID:4574
+2012/05/03  22:03:43	---	lock removed
+2012/05/04  07:23:53	djangosuper	VIEW: today
+2012/05/04  07:23:53	---	   Entering buildDisplayList
+2012/05/04  07:23:57	---	   Exiting buildDisplayList
+2012/05/04  07:24:18	djangosuper	VIEW: draglist
+2012/05/04  07:24:18	djangosuper	     Proj 9
+2012/05/04  07:24:18	---	   Entering buildDisplayList
+2012/05/04  07:24:18	---	   Exiting buildDisplayList
+2012/05/04  07:24:42	djangosuper	VIEW: xhr_actions
+2012/05/04  07:24:42	djangosuper	=====> xhr_actions: =xhr:AJAX request: fastAdd  ci=6390  ti=0
+2012/05/04  07:24:42	---	Last item ID:5595
+2012/05/04  07:24:42	---	VIEW: drag_actions => fastAdd
+2012/05/04  07:24:42	---	fastAdd for 6390  dentist, toothpaste
+2012/05/04  07:24:42	---	NEW FA item ID=None
+2012/05/04  07:24:43	---	   fastadded item ID = 6476
+2012/05/04  07:24:43	---	lock removed
+2012/05/04  07:24:49	djangosuper	VIEW: psd
+2012/05/04  07:24:49	---	   Entering buildDisplayList
+2012/05/04  07:24:50	---	   Exiting buildDisplayList
+2012/05/04  07:25:01	djangosuper	VIEW: draglist
+2012/05/04  07:25:01	djangosuper	     Proj 9
+2012/05/04  07:25:01	---	   Entering buildDisplayList
+2012/05/04  07:25:01	---	   Exiting buildDisplayList
+2012/05/04  07:25:04	djangosuper	VIEW: psd
+2012/05/04  07:25:04	---	   Entering buildDisplayList
+2012/05/04  07:25:04	---	   Exiting buildDisplayList
+2012/05/04  07:25:28	djangosuper	VIEW: gridview
+2012/05/04  07:25:28	djangosuper	   cellItems=[5916L, 5606L, 5616L, 5637L, 6066L, 5402L, 5660L, 5949L]
+2012/05/04  07:25:28	---	   Entering buildDisplayList
+2012/05/04  07:25:28	---	   Exiting buildDisplayList
+2012/05/04  07:25:28	djangosuper	   cellItems=[6414L, 6420L, 6015L, 6090L, 6234L, 4377L, 4581L, 5435L, 5609L, 5933L, 5952L, 6023L, 6081L, 6087L, 6096L, 4381L, 5002L, 5104L, 5286L, 5395L, 6044L, 4621L, 5040L, 5175L, 5655L, 5923L, 6163L, 4375L, 4531L, 4574L, 4608L, 5092L, 5258L, 5374L, 5384L, 5619L, 5624L]
+2012/05/04  07:25:28	---	   Entering buildDisplayList
+2012/05/04  07:25:28	---	   Exiting buildDisplayList
+2012/05/04  07:25:28	djangosuper	   cellItems=[5671L, 6083L, 4584L, 4585L, 4590L, 5060L, 5062L, 5199L, 5411L, 5605L, 5615L, 5631L, 4591L, 4592L, 5580L, 1L, 4583L, 5614L, 5877L, 5878L, 5879L, 5924L, 5958L]
+2012/05/04  07:25:28	---	   Entering buildDisplayList
+2012/05/04  07:25:28	---	   Exiting buildDisplayList
+2012/05/04  07:25:29	djangosuper	   cellItems=[4602L, 6027L, 6409L, 6468L, 4607L, 5617L, 5629L, 5656L, 5661L, 6469L, 4604L, 5130L, 5669L, 6407L, 2384L, 4605L, 4609L, 5803L, 4610L, 5109L, 5668L, 5912L, 5915L, 6381L, 6470L]
+2012/05/04  07:25:29	---	   Entering buildDisplayList
+2012/05/04  07:25:29	---	   Exiting buildDisplayList
+2012/05/04  07:25:29	djangosuper	   cellItems=[6061L, 6058L, 6060L, 6118L]
+2012/05/04  07:25:29	---	   Entering buildDisplayList
+2012/05/04  07:25:29	---	   Exiting buildDisplayList
+2012/05/04  07:25:29	djangosuper	   cellItems=[5127L, 6473L, 6472L, 5125L, 5409L, 5598L]
+2012/05/04  07:25:29	---	   Entering buildDisplayList
+2012/05/04  07:25:29	---	   Exiting buildDisplayList
+2012/05/04  07:25:29	djangosuper	   cellItems=[6388L, 6396L, 6460L, 6462L, 6471L, 6394L, 6461L, 6463L, 6467L, 5905L, 6074L, 6428L, 5870L, 6072L, 6073L, 6393L, 6427L, 6464L, 6465L]
+2012/05/04  07:25:29	---	   Entering buildDisplayList
+2012/05/04  07:25:29	---	   Exiting buildDisplayList
+2012/05/04  07:25:29	djangosuper	   cellItems=[5662L, 5801L, 5947L, 5950L, 6065L, 4596L, 4615L, 4629L, 5009L, 5132L, 5396L, 5410L, 5667L, 5736L, 5911L, 4600L, 4601L, 5056L, 6088L, 4386L, 4397L, 4599L, 4999L, 5053L, 5055L, 5086L, 5095L, 5189L, 5191L]
+2012/05/04  07:25:29	---	   Entering buildDisplayList
+2012/05/04  07:25:29	---	   Exiting buildDisplayList
+2012/05/04  07:25:30	djangosuper	   cellItems=[4646L, 4630L, 4631L, 4632L, 4633L, 4634L, 4635L, 4636L, 4637L, 4638L, 4639L]
+2012/05/04  07:25:30	---	   Entering buildDisplayList
+2012/05/04  07:25:30	---	   Exiting buildDisplayList
+2012/05/04  07:25:30	djangosuper	   cellItems=[5967L, 6064L, 5663L, 5670L, 5875L]
+2012/05/04  07:25:30	---	   Entering buildDisplayList
+2012/05/04  07:25:30	---	   Exiting buildDisplayList
+2012/05/04  07:25:31	djangosuper	   cellItems=[2468L, 2469L, 2470L, 2471L, 2472L, 2473L, 2474L, 2475L, 2476L, 2477L, 2478L]
+2012/05/04  07:25:31	---	   Entering buildDisplayList
+2012/05/04  07:25:31	---	   Exiting buildDisplayList
+2012/05/04  07:25:31	djangosuper	   cellItems=[6441L, 5641L, 6438L, 6440L, 6442L, 6443L, 6445L, 6446L, 6447L, 6448L, 6449L]
+2012/05/04  07:25:31	---	   Entering buildDisplayList
+2012/05/04  07:25:31	---	   Exiting buildDisplayList
+2012/05/04  07:25:32	djangosuper	   cellItems=[5883L, 5979L, 5980L, 5984L, 5989L, 6071L, 6004L, 6022L, 5987L, 4301L, 5981L, 5982L, 5983L, 5985L, 5988L, 5990L, 5992L, 5993L, 5995L]
+2012/05/04  07:25:32	---	   Entering buildDisplayList
+2012/05/04  07:25:32	---	   Exiting buildDisplayList
+2012/05/04  07:25:32	djangosuper	   cellItems=[6444L, 5000L, 5001L, 5005L, 5006L, 5007L, 5083L, 5100L, 5102L, 5106L, 5112L]
+2012/05/04  07:25:32	---	   Entering buildDisplayList
+2012/05/04  07:25:32	---	   Exiting buildDisplayList
+2012/05/04  07:25:33	djangosuper	   cellItems=[5600L, 6476L, 5951L, 6018L, 6390L, 5900L, 5047L, 5116L, 5591L, 5592L, 5593L, 5595L, 5599L, 5625L, 5961L, 6455L]
+2012/05/04  07:25:33	---	   Entering buildDisplayList
+2012/05/04  07:25:33	---	   Exiting buildDisplayList
+2012/05/04  08:35:10	djangosuper	VIEW: gridview
+2012/05/04  08:35:10	djangosuper	VIEW: draglist
+2012/05/04  08:35:10	djangosuper	     Proj 2
+2012/05/04  08:35:10	---	   Entering buildDisplayList
+2012/05/04  08:35:10	djangosuper	   cellItems=[5916L, 5606L, 5616L, 5637L, 6066L, 5402L, 5660L, 5949L]
+2012/05/04  08:35:10	---	   Entering buildDisplayList
+2012/05/04  08:35:10	---	   Exiting buildDisplayList
+2012/05/04  08:35:10	---	   Exiting buildDisplayList
+2012/05/04  08:35:10	djangosuper	   cellItems=[6414L, 6420L, 6015L, 6090L, 6234L, 4377L, 4581L, 5435L, 5609L, 5933L, 5952L, 6023L, 6081L, 6087L, 6096L, 4381L, 5002L, 5104L, 5286L, 5395L, 6044L, 4621L, 5040L, 5175L, 5655L, 5923L, 6163L, 4375L, 4531L, 4574L, 4608L, 5092L, 5258L, 5374L, 5384L, 5619L, 5624L]
+2012/05/04  08:35:10	---	   Entering buildDisplayList
+2012/05/04  08:35:11	---	   Exiting buildDisplayList
+2012/05/04  08:35:11	djangosuper	VIEW: draglist
+2012/05/04  08:35:11	djangosuper	     Proj 31
+2012/05/04  08:35:11	---	   Entering buildDisplayList
+2012/05/04  08:35:11	djangosuper	   cellItems=[5671L, 6083L, 4584L, 4585L, 4590L, 5060L, 5062L, 5199L, 5411L, 5605L, 5615L, 5631L, 4591L, 4592L, 5580L, 1L, 4583L, 5614L, 5877L, 5878L, 5879L, 5924L, 5958L]
+2012/05/04  08:35:11	---	   Entering buildDisplayList
+2012/05/04  08:35:11	---	   Exiting buildDisplayList
+2012/05/04  08:35:11	---	   Exiting buildDisplayList
+2012/05/04  08:35:11	djangosuper	   cellItems=[4602L, 6027L, 6409L, 6468L, 4607L, 5617L, 5629L, 5656L, 5661L, 6469L, 4604L, 5130L, 5669L, 6407L, 2384L, 4605L, 4609L, 5803L, 4610L, 5109L, 5668L, 5912L, 5915L, 6381L, 6470L]
+2012/05/04  08:35:11	---	   Entering buildDisplayList
+2012/05/04  08:35:11	---	   Exiting buildDisplayList
+2012/05/04  08:35:11	djangosuper	   cellItems=[6061L, 6058L, 6060L, 6118L]
+2012/05/04  08:35:11	---	   Entering buildDisplayList
+2012/05/04  08:35:11	---	   Exiting buildDisplayList
+2012/05/04  08:35:11	djangosuper	   cellItems=[5127L, 6473L, 6472L, 5125L, 5409L, 5598L]
+2012/05/04  08:35:11	---	   Entering buildDisplayList
+2012/05/04  08:35:12	---	   Exiting buildDisplayList
+2012/05/04  08:35:12	djangosuper	   cellItems=[6388L, 6396L, 6460L, 6462L, 6471L, 6394L, 6461L, 6463L, 6467L, 5905L, 6074L, 6428L, 5870L, 6072L, 6073L, 6393L, 6427L, 6464L, 6465L]
+2012/05/04  08:35:12	---	   Entering buildDisplayList
+2012/05/04  08:35:12	---	   Exiting buildDisplayList
+2012/05/04  08:35:12	djangosuper	   cellItems=[5662L, 5801L, 5947L, 5950L, 6065L, 4596L, 4615L, 4629L, 5009L, 5132L, 5396L, 5410L, 5667L, 5736L, 5911L, 4600L, 4601L, 5056L, 6088L, 4386L, 4397L, 4599L, 4999L, 5053L, 5055L, 5086L, 5095L, 5189L, 5191L]
+2012/05/04  08:35:12	---	   Entering buildDisplayList
+2012/05/04  08:35:12	---	   Exiting buildDisplayList
+2012/05/04  08:35:12	djangosuper	   cellItems=[4646L, 4630L, 4631L, 4632L, 4633L, 4634L, 4635L, 4636L, 4637L, 4638L, 4639L]
+2012/05/04  08:35:12	---	   Entering buildDisplayList
+2012/05/04  08:35:13	---	   Exiting buildDisplayList
+2012/05/04  08:35:13	djangosuper	   cellItems=[5967L, 6064L, 5663L, 5670L, 5875L]
+2012/05/04  08:35:13	---	   Entering buildDisplayList
+2012/05/04  08:35:13	---	   Exiting buildDisplayList
+2012/05/04  08:35:13	djangosuper	   cellItems=[2468L, 2469L, 2470L, 2471L, 2472L, 2473L, 2474L, 2475L, 2476L, 2477L, 2478L]
+2012/05/04  08:35:13	---	   Entering buildDisplayList
+2012/05/04  08:35:13	---	   Exiting buildDisplayList
+2012/05/04  08:35:13	djangosuper	   cellItems=[6441L, 5641L, 6438L, 6440L, 6442L, 6443L, 6445L, 6446L, 6447L, 6448L, 6449L]
+2012/05/04  08:35:13	---	   Entering buildDisplayList
+2012/05/04  08:35:13	---	   Exiting buildDisplayList
+2012/05/04  08:35:14	djangosuper	   cellItems=[5883L, 5979L, 5980L, 5984L, 5989L, 6071L, 6004L, 6022L, 5987L, 4301L, 5981L, 5982L, 5983L, 5985L, 5988L, 5990L, 5992L, 5993L, 5995L]
+2012/05/04  08:35:14	---	   Entering buildDisplayList
+2012/05/04  08:35:14	---	   Exiting buildDisplayList
+2012/05/04  08:35:14	djangosuper	   cellItems=[6444L, 5000L, 5001L, 5005L, 5006L, 5007L, 5083L, 5100L, 5102L, 5106L, 5112L]
+2012/05/04  08:35:14	---	   Entering buildDisplayList
+2012/05/04  08:35:14	---	   Exiting buildDisplayList
+2012/05/04  08:35:14	djangosuper	   cellItems=[5600L, 6476L, 5951L, 6018L, 6390L, 5900L, 5047L, 5116L, 5591L, 5592L, 5593L, 5595L, 5599L, 5625L, 5961L, 6455L]
+2012/05/04  08:35:14	---	   Entering buildDisplayList
+2012/05/04  08:35:14	---	   Exiting buildDisplayList
+2012/05/04  13:34:11	djangosuper	VIEW: xhr_actions
+2012/05/04  13:34:12	djangosuper	=====> xhr_actions: =xhr:AJAX request: fastAdd  ci=6027  ti=0
+2012/05/04  13:34:12	---	Last item ID:4609
+2012/05/04  13:34:12	---	VIEW: drag_actions => fastAdd
+2012/05/04  13:34:12	---	fastAdd for 6027  BH to test alerts workflow in dev
+2012/05/04  13:34:14	---	NEW FA item ID=None
+2012/05/04  13:34:14	---	   fastadded item ID = 6477
+2012/05/04  13:34:14	---	lock removed
+2012/05/04  13:34:19	djangosuper	VIEW: xhr_actions
+2012/05/04  13:34:19	djangosuper	=====> xhr_actions: =xhr:AJAX request: prioritySelected  ci=6477  ti=0
+2012/05/04  13:34:19	---	Last item ID:4609
+2012/05/04  13:34:19	---	lock removed
+2012/05/04  13:34:20	djangosuper	VIEW: xhr_actions
+2012/05/04  13:34:20	djangosuper	=====> xhr_actions: =xhr:AJAX request: statusSelected  ci=6477  ti=0
+2012/05/04  13:34:20	---	Last item ID:4609
+2012/05/04  13:34:20	---	lock removed
+2012/05/04  17:21:14	djangosuper	VIEW: draglist
+2012/05/04  17:21:14	djangosuper	     Proj 31
+2012/05/04  17:21:14	---	   Entering buildDisplayList
+2012/05/04  17:21:14	---	   Exiting buildDisplayList
+2012/05/05  07:39:29	djangosuper	VIEW: gridview
+2012/05/05  07:39:29	djangosuper	   cellItems=[5916L, 5606L, 5616L, 5637L, 6066L, 5402L, 5660L, 5949L]
+2012/05/05  07:39:29	---	   Entering buildDisplayList
+2012/05/05  07:39:29	---	   Exiting buildDisplayList
+2012/05/05  07:39:29	djangosuper	   cellItems=[6414L, 6420L, 6015L, 6090L, 6234L, 4377L, 4581L, 5435L, 5609L, 5933L, 5952L, 6023L, 6081L, 6087L, 6096L, 4381L, 5002L, 5104L, 5286L, 5395L, 6044L, 4621L, 5040L, 5175L, 5655L, 5923L, 6163L, 4375L, 4531L, 4574L, 4608L, 5092L, 5258L, 5374L, 5384L, 5619L, 5624L]
+2012/05/05  07:39:29	---	   Entering buildDisplayList
+2012/05/05  07:39:29	---	   Exiting buildDisplayList
+2012/05/05  07:39:30	djangosuper	   cellItems=[5671L, 6083L, 4584L, 4585L, 4590L, 5060L, 5062L, 5199L, 5411L, 5605L, 5615L, 5631L, 4591L, 4592L, 5580L, 1L, 4583L, 5614L, 5877L, 5878L, 5879L, 5924L, 5958L]
+2012/05/05  07:39:30	---	   Entering buildDisplayList
+2012/05/05  07:39:30	---	   Exiting buildDisplayList
+2012/05/05  07:39:30	djangosuper	   cellItems=[4602L, 6027L, 6409L, 6468L, 6477L, 4607L, 5617L, 5629L, 5656L, 5661L, 6469L, 4604L, 5130L, 5669L, 6407L, 2384L, 4605L, 4609L, 5803L, 4610L, 5109L, 5668L, 5912L, 5915L, 6381L, 6470L]
+2012/05/05  07:39:30	---	   Entering buildDisplayList
+2012/05/05  07:39:30	---	   Exiting buildDisplayList
+2012/05/05  07:39:30	djangosuper	   cellItems=[6061L, 6058L, 6060L, 6118L]
+2012/05/05  07:39:30	---	   Entering buildDisplayList
+2012/05/05  07:39:30	---	   Exiting buildDisplayList
+2012/05/05  07:39:30	djangosuper	   cellItems=[5127L, 6473L, 6472L, 5125L, 5409L, 5598L]
+2012/05/05  07:39:30	---	   Entering buildDisplayList
+2012/05/05  07:39:30	---	   Exiting buildDisplayList
+2012/05/05  07:39:30	djangosuper	   cellItems=[6388L, 6396L, 6460L, 6462L, 6471L, 6394L, 6461L, 6463L, 6467L, 5905L, 6074L, 6428L, 5870L, 6072L, 6073L, 6393L, 6427L, 6464L, 6465L]
+2012/05/05  07:39:30	---	   Entering buildDisplayList
+2012/05/05  07:39:30	---	   Exiting buildDisplayList
+2012/05/05  07:39:30	djangosuper	   cellItems=[5662L, 5801L, 5947L, 5950L, 6065L, 4596L, 4615L, 4629L, 5009L, 5132L, 5396L, 5410L, 5667L, 5736L, 5911L, 4600L, 4601L, 5056L, 6088L, 4386L, 4397L, 4599L, 4999L, 5053L, 5055L, 5086L, 5095L, 5189L, 5191L]
+2012/05/05  07:39:30	---	   Entering buildDisplayList
+2012/05/05  07:39:31	---	   Exiting buildDisplayList
+2012/05/05  07:39:31	djangosuper	   cellItems=[4646L, 4630L, 4631L, 4632L, 4633L, 4634L, 4635L, 4636L, 4637L, 4638L, 4639L]
+2012/05/05  07:39:31	---	   Entering buildDisplayList
+2012/05/05  07:39:31	---	   Exiting buildDisplayList
+2012/05/05  07:39:31	djangosuper	   cellItems=[5967L, 6064L, 5663L, 5670L, 5875L]
+2012/05/05  07:39:31	---	   Entering buildDisplayList
+2012/05/05  07:39:31	---	   Exiting buildDisplayList
+2012/05/05  07:39:34	djangosuper	   cellItems=[2468L, 2469L, 2470L, 2471L, 2472L, 2473L, 2474L, 2475L, 2476L, 2477L, 2478L]
+2012/05/05  07:39:34	---	   Entering buildDisplayList
+2012/05/05  07:39:34	---	   Exiting buildDisplayList
+2012/05/05  07:39:34	djangosuper	   cellItems=[6441L, 5641L, 6438L, 6440L, 6442L, 6443L, 6445L, 6446L, 6447L, 6448L, 6449L]
+2012/05/05  07:39:34	---	   Entering buildDisplayList
+2012/05/05  07:39:34	---	   Exiting buildDisplayList
+2012/05/05  07:39:34	djangosuper	   cellItems=[5883L, 5979L, 5980L, 5984L, 5989L, 6071L, 6004L, 6022L, 5987L, 4301L, 5981L, 5982L, 5983L, 5985L, 5988L, 5990L, 5992L, 5993L, 5995L]
+2012/05/05  07:39:34	---	   Entering buildDisplayList
+2012/05/05  07:39:34	---	   Exiting buildDisplayList
+2012/05/05  07:39:34	djangosuper	   cellItems=[6444L, 5000L, 5001L, 5005L, 5006L, 5007L, 5083L, 5100L, 5102L, 5106L, 5112L]
+2012/05/05  07:39:34	---	   Entering buildDisplayList
+2012/05/05  07:39:34	---	   Exiting buildDisplayList
+2012/05/05  07:39:34	djangosuper	   cellItems=[5600L, 6476L, 5951L, 6018L, 6390L, 5900L, 5047L, 5116L, 5591L, 5592L, 5593L, 5595L, 5599L, 5625L, 5961L, 6455L]
+2012/05/05  07:39:34	---	   Entering buildDisplayList
+2012/05/05  07:39:34	---	   Exiting buildDisplayList
+2012/05/05  07:42:38	djangosuper	VIEW: gridview
+2012/05/05  07:42:38	djangosuper	   cellItems=[5916L, 5606L, 5616L, 5637L, 6066L, 5402L, 5660L, 5949L]
+2012/05/05  07:42:38	---	   Entering buildDisplayList
+2012/05/05  07:42:39	---	   Exiting buildDisplayList
+2012/05/05  07:42:39	djangosuper	   cellItems=[6414L, 6420L, 6015L, 6090L, 6234L, 4377L, 4581L, 5435L, 5609L, 5933L, 5952L, 6023L, 6081L, 6087L, 6096L, 4381L, 5002L, 5104L, 5286L, 5395L, 6044L, 4621L, 5040L, 5175L, 5655L, 5923L, 6163L, 4375L, 4531L, 4574L, 4608L, 5092L, 5258L, 5374L, 5384L, 5619L, 5624L]
+2012/05/05  07:42:39	---	   Entering buildDisplayList
+2012/05/05  07:42:39	---	   Exiting buildDisplayList
+2012/05/05  07:42:39	djangosuper	   cellItems=[5671L, 6083L, 4584L, 4585L, 4590L, 5060L, 5062L, 5199L, 5411L, 5605L, 5615L, 5631L, 4591L, 4592L, 5580L, 1L, 4583L, 5614L, 5877L, 5878L, 5879L, 5924L, 5958L]
+2012/05/05  07:42:39	---	   Entering buildDisplayList
+2012/05/05  07:42:39	---	   Exiting buildDisplayList
+2012/05/05  07:42:39	djangosuper	   cellItems=[4602L, 6027L, 6409L, 6468L, 6477L, 4607L, 5617L, 5629L, 5656L, 5661L, 6469L, 4604L, 5130L, 5669L, 6407L, 2384L, 4605L, 4609L, 5803L, 4610L, 5109L, 5668L, 5912L, 5915L, 6381L, 6470L]
+2012/05/05  07:42:39	---	   Entering buildDisplayList
+2012/05/05  07:42:39	---	   Exiting buildDisplayList
+2012/05/05  07:42:39	djangosuper	   cellItems=[6061L, 6058L, 6060L, 6118L]
+2012/05/05  07:42:39	---	   Entering buildDisplayList
+2012/05/05  07:42:39	---	   Exiting buildDisplayList
+2012/05/05  07:42:39	djangosuper	   cellItems=[5127L, 6473L, 6472L, 5125L, 5409L, 5598L]
+2012/05/05  07:42:39	---	   Entering buildDisplayList
+2012/05/05  07:42:39	---	   Exiting buildDisplayList
+2012/05/05  07:42:39	djangosuper	   cellItems=[6388L, 6396L, 6460L, 6462L, 6471L, 6394L, 6461L, 6463L, 6467L, 5905L, 6074L, 6428L, 5870L, 6072L, 6073L, 6393L, 6427L, 6464L, 6465L]
+2012/05/05  07:42:39	---	   Entering buildDisplayList
+2012/05/05  07:42:40	---	   Exiting buildDisplayList
+2012/05/05  07:42:40	djangosuper	   cellItems=[5662L, 5801L, 5947L, 5950L, 6065L, 4596L, 4615L, 4629L, 5009L, 5132L, 5396L, 5410L, 5667L, 5736L, 5911L, 4600L, 4601L, 5056L, 6088L, 4386L, 4397L, 4599L, 4999L, 5053L, 5055L, 5086L, 5095L, 5189L, 5191L]
+2012/05/05  07:42:40	---	   Entering buildDisplayList
+2012/05/05  07:42:40	---	   Exiting buildDisplayList
+2012/05/05  07:42:40	djangosuper	   cellItems=[4646L, 4630L, 4631L, 4632L, 4633L, 4634L, 4635L, 4636L, 4637L, 4638L, 4639L]
+2012/05/05  07:42:40	---	   Entering buildDisplayList
+2012/05/05  07:42:40	---	   Exiting buildDisplayList
+2012/05/05  07:42:40	djangosuper	   cellItems=[5967L, 6064L, 5663L, 5670L, 5875L]
+2012/05/05  07:42:40	---	   Entering buildDisplayList
+2012/05/05  07:42:40	---	   Exiting buildDisplayList
+2012/05/05  07:42:40	djangosuper	   cellItems=[2468L, 2469L, 2470L, 2471L, 2472L, 2473L, 2474L, 2475L, 2476L, 2477L, 2478L]
+2012/05/05  07:42:40	---	   Entering buildDisplayList
+2012/05/05  07:42:40	---	   Exiting buildDisplayList
+2012/05/05  07:42:40	djangosuper	   cellItems=[6441L, 5641L, 6438L, 6440L, 6442L, 6443L, 6445L, 6446L, 6447L, 6448L, 6449L]
+2012/05/05  07:42:40	---	   Entering buildDisplayList
+2012/05/05  07:42:40	---	   Exiting buildDisplayList
+2012/05/05  07:42:41	djangosuper	   cellItems=[5883L, 5979L, 5980L, 5984L, 5989L, 6071L, 6004L, 6022L, 5987L, 4301L, 5981L, 5982L, 5983L, 5985L, 5988L, 5990L, 5992L, 5993L, 5995L]
+2012/05/05  07:42:41	---	   Entering buildDisplayList
+2012/05/05  07:42:41	---	   Exiting buildDisplayList
+2012/05/05  07:42:41	djangosuper	   cellItems=[6444L, 5000L, 5001L, 5005L, 5006L, 5007L, 5083L, 5100L, 5102L, 5106L, 5112L]
+2012/05/05  07:42:41	---	   Entering buildDisplayList
+2012/05/05  07:42:41	---	   Exiting buildDisplayList
+2012/05/05  07:42:41	djangosuper	   cellItems=[5600L, 6476L, 5951L, 6018L, 6390L, 5900L, 5047L, 5116L, 5591L, 5592L, 5593L, 5595L, 5599L, 5625L, 5961L, 6455L]
+2012/05/05  07:42:41	---	   Entering buildDisplayList
+2012/05/05  07:42:41	---	   Exiting buildDisplayList
+2012/05/05  07:50:08	djangosuper	VIEW: draglist
+2012/05/05  07:50:08	djangosuper	     Proj 5
+2012/05/05  07:50:08	---	   Entering buildDisplayList
+2012/05/05  07:50:09	---	   Exiting buildDisplayList
+2012/05/05  07:50:58	djangosuper	VIEW: xhr_actions
+2012/05/05  07:50:58	djangosuper	=====> xhr_actions: =xhr:AJAX request: dragKid  ci=6457  ti=4531
+2012/05/05  07:50:59	---	Last item ID:4574
+2012/05/05  07:50:59	djangosuper	VIEW: drag_move
+2012/05/05  07:50:59	djangosuper	     ====dragMove=> CIid:TIid    6457:4531
+2012/05/05  07:50:59	---	Last item ID:4574
+2012/05/05  07:50:59	---	sMDflk=> findLastKid lastKid=0
+2012/05/05  07:50:59	djangosuper	     DragMove=> CI saved
+2012/05/05  07:50:59	djangosuper	     dragmove=> targetFollowerID:5286  targetFollower.follows:6457  lastkid:0
+2012/05/05  07:50:59	djangosuper	      dm=>kidList = []
+2012/05/05  07:50:59	---	lock removed
+2012/05/05  07:52:15	djangosuper	VIEW: xhr_actions
+2012/05/05  07:52:15	djangosuper	=====> xhr_actions: =xhr:AJAX request: archiveThisItem  ci=6474  ti=0
+2012/05/05  07:52:15	---	Last item ID:4574
+2012/05/05  07:52:16	---	sMDflk=> findLastKid lastKid=0
+2012/05/05  07:52:16	---	Last item ID:6454
+2012/05/05  07:52:16	---	==> archivePair moved item 6474  to proj: 15
+2012/05/05  07:52:16	---	lock removed
+2012/05/05  07:52:32	djangosuper	VIEW: xhr_actions
+2012/05/05  07:52:32	djangosuper	=====> xhr_actions: =xhr:AJAX request: moveDown  ci=4381  ti=0
+2012/05/05  07:52:32	---	Last item ID:4574
+2012/05/05  07:52:32	---	sMDflk=> findLastKid lastKid=0
+2012/05/05  07:52:32	---	  moving among children of 6399
+2012/05/05  07:52:32	---	  TI:  6385
+2012/05/05  07:52:32	---	sMDflk=> findLastKid lastKid=0
+2012/05/05  07:52:33	---	lock removed
+2012/05/05  07:53:04	djangosuper	VIEW: xhr_actions
+2012/05/05  07:53:04	djangosuper	=====> xhr_actions: =xhr:AJAX request: archiveThisItem  ci=5957  ti=0
+2012/05/05  07:53:04	---	Last item ID:4574
+2012/05/05  07:53:04	---	sMDflk=> findLastKid lastKid=0
+2012/05/05  07:53:04	---	Last item ID:6474
+2012/05/05  07:53:04	---	==> archivePair moved item 5957  to proj: 15
+2012/05/05  07:53:04	---	lock removed
+2012/05/05  08:40:26	djangosuper	VIEW: draglist
+2012/05/05  08:40:26	djangosuper	     Proj 4
+2012/05/05  08:40:26	---	   Entering buildDisplayList
+2012/05/05  08:40:26	---	   Exiting buildDisplayList
+2012/05/05  08:40:33	djangosuper	VIEW: xhr_actions
+2012/05/05  08:40:33	djangosuper	=====> xhr_actions: =xhr:AJAX request: dragKid  ci=6095  ti=6093
+2012/05/05  08:40:33	---	Last item ID:6436
+2012/05/05  08:40:33	djangosuper	VIEW: drag_move
+2012/05/05  08:40:33	djangosuper	     ====dragMove=> CIid:TIid    6095:6093
+2012/05/05  08:40:33	---	Last item ID:6436
+2012/05/05  08:40:35	---	sMDflk=> findLastKid lastKid=0
+2012/05/05  08:40:35	djangosuper	     DragMove=> CI saved
+2012/05/05  08:40:35	djangosuper	     dragmove=> targetFollowerID:6001  targetFollower.follows:6095  lastkid:0
+2012/05/05  08:40:35	djangosuper	      dm=>kidList = []
+2012/05/05  08:40:35	---	lock removed
+2012/05/05  08:40:39	djangosuper	VIEW: xhr_actions
+2012/05/05  08:40:39	djangosuper	=====> xhr_actions: =xhr:AJAX request: dragKid  ci=5995  ti=6095
+2012/05/05  08:40:39	---	Last item ID:6436
+2012/05/05  08:40:39	djangosuper	VIEW: drag_move
+2012/05/05  08:40:39	djangosuper	     ====dragMove=> CIid:TIid    5995:6095
+2012/05/05  08:40:39	---	Last item ID:6436
+2012/05/05  08:40:39	---	sMDflk=> findLastKid lastKid=0
+2012/05/05  08:40:39	djangosuper	     DragMove=> CI saved
+2012/05/05  08:40:39	djangosuper	     dragmove=> targetFollowerID:6001  targetFollower.follows:5995  lastkid:0
+2012/05/05  08:40:39	djangosuper	      dm=>kidList = []
+2012/05/05  08:40:39	---	lock removed
+2012/05/05  08:40:44	djangosuper	VIEW: xhr_actions
+2012/05/05  08:40:44	djangosuper	=====> xhr_actions: =xhr:AJAX request: dragPeer  ci=6004  ti=6095
+2012/05/05  08:40:44	---	Last item ID:6436
+2012/05/05  08:40:44	djangosuper	     ====dragPeer=> CIid:TIid    6004:6095
+2012/05/05  08:40:44	---	Last item ID:6436
+2012/05/05  08:40:44	---	sMDflk=> findLastKid lastKid=0
+2012/05/05  08:40:45	---	sMDflk=> findLastKid lastKid=5995
+2012/05/05  08:40:45	djangosuper	    ==> drag_Peer, CI / TI:6004/6095
+2012/05/05  08:40:45	---	lock removed
+2012/05/05  08:40:54	djangosuper	VIEW: xhr_actions
+2012/05/05  08:40:54	djangosuper	=====> xhr_actions: =xhr:AJAX request: dragKid  ci=5980  ti=5989
+2012/05/05  08:40:54	---	Last item ID:6436
+2012/05/05  08:40:54	djangosuper	VIEW: drag_move
+2012/05/05  08:40:54	djangosuper	     ====dragMove=> CIid:TIid    5980:5989
+2012/05/05  08:40:54	---	Last item ID:6436
+2012/05/05  08:40:54	---	sMDflk=> findLastKid lastKid=0
+2012/05/05  08:40:54	djangosuper	     DragMove=> CI saved
+2012/05/05  08:40:54	djangosuper	     dragmove=> targetFollowerID:5985  targetFollower.follows:5980  lastkid:0
+2012/05/05  08:40:54	djangosuper	      dm=>kidList = []
+2012/05/05  08:40:55	---	lock removed
+2012/05/05  08:40:58	djangosuper	VIEW: draglist
+2012/05/05  08:40:58	djangosuper	     Proj 4
+2012/05/05  08:40:58	---	   Entering buildDisplayList
+2012/05/05  08:40:58	---	   Exiting buildDisplayList
+2012/05/05  08:44:13	djangosuper	VIEW: today
+2012/05/05  08:44:13	---	   Entering buildDisplayList
+2012/05/05  08:44:13	---	   Exiting buildDisplayList
+2012/05/05  08:44:16	djangosuper	VIEW: homepage
+2012/05/05  08:49:30	djangosuper	VIEW: homepage
+2012/05/05  08:49:57	djangosuper	VIEW: homepage
+2012/05/05  08:50:24	djangosuper	VIEW: homepage
+2012/05/05  08:50:44	djangosuper	VIEW: homepage
+2012/05/05  08:51:08	djangosuper	VIEW: homepage
+2012/05/05  08:51:25	djangosuper	VIEW: homepage
+2012/05/05  08:51:48	djangosuper	VIEW: homepage
+2012/05/05  08:51:58	djangosuper	VIEW: homepage
+2012/05/05  08:52:00	djangosuper	VIEW: homepage
+2012/05/05  08:53:15	djangosuper	VIEW: homepage
+2012/05/05  08:53:31	djangosuper	VIEW: homepage
+2012/05/05  08:55:54	djangosuper	VIEW: homepage
+2012/05/05  08:56:04	djangosuper	VIEW: homepage
+2012/05/05  08:56:36	djangosuper	VIEW: today
+2012/05/05  08:56:36	---	   Entering buildDisplayList
+2012/05/05  08:56:36	---	   Exiting buildDisplayList
+2012/05/05  08:56:44	djangosuper	VIEW: draglist
+2012/05/05  08:56:44	djangosuper	     Proj 4
+2012/05/05  08:56:44	---	   Entering buildDisplayList
+2012/05/05  08:56:44	---	   Exiting buildDisplayList
+2012/05/05  08:57:11	djangosuper	VIEW: homepage
+2012/05/05  08:57:14	djangosuper	VIEW: draglist
+2012/05/05  08:57:14	djangosuper	     Proj 2
+2012/05/05  08:57:14	---	   Entering buildDisplayList
+2012/05/05  08:57:14	---	   Exiting buildDisplayList
+2012/05/05  08:57:48	djangosuper	VIEW: homepage
+2012/05/05  09:42:58	djangosuper	VIEW: homepage
+2012/05/05  09:44:30	djangosuper	VIEW: homepage
+2012/05/05  09:45:21	djangosuper	VIEW: homepage
+2012/05/05  09:46:12	djangosuper	VIEW: homepage
+2012/05/05  09:46:43	djangosuper	VIEW: homepage
+2012/05/05  09:47:10	djangosuper	VIEW: homepage
+2012/05/05  09:47:25	djangosuper	VIEW: homepage
+2012/05/05  09:48:56	djangosuper	VIEW: homepage
+2012/05/05  09:49:12	djangosuper	VIEW: homepage
+2012/05/05  09:49:45	djangosuper	VIEW: homepage
+2012/05/05  09:50:03	djangosuper	VIEW: homepage
+2012/05/05  09:50:16	djangosuper	VIEW: homepage
+2012/05/05  09:50:34	djangosuper	VIEW: homepage
+2012/05/05  09:53:26	djangosuper	VIEW: homepage
+2012/05/05  09:53:40	djangosuper	VIEW: homepage
+2012/05/05  09:55:11	djangosuper	VIEW: homepage
+2012/05/05  09:56:47	djangosuper	VIEW: homepage
+2012/05/05  09:57:30	djangosuper	VIEW: homepage
+2012/05/05  09:57:51	djangosuper	VIEW: homepage
+2012/05/05  09:59:23	djangosuper	VIEW: homepage
+2012/05/05  10:00:48	djangosuper	VIEW: homepage
+2012/05/05  10:01:36	djangosuper	VIEW: homepage
+2012/05/05  10:01:54	djangosuper	VIEW: homepage
+2012/05/05  10:02:25	djangosuper	VIEW: homepage
+2012/05/05  10:02:46	djangosuper	VIEW: homepage
+2012/05/05  10:03:08	djangosuper	VIEW: homepage
+2012/05/05  10:03:40	djangosuper	VIEW: homepage
+2012/05/05  10:03:51	djangosuper	VIEW: homepage
+2012/05/05  10:04:03	djangosuper	VIEW: homepage
+2012/05/05  10:04:13	djangosuper	VIEW: draglist
+2012/05/05  10:04:13	djangosuper	     Proj 9
+2012/05/05  10:04:13	---	   Entering buildDisplayList
+2012/05/05  10:04:13	---	   Exiting buildDisplayList
+2012/05/05  11:48:49	djangosuper	VIEW: homepage
+2012/05/05  11:49:02	djangosuper	VIEW: homepage
+2012/05/05  11:55:33	djangosuper	VIEW: draglist
+2012/05/05  11:55:33	djangosuper	     Proj 27
+2012/05/05  11:55:33	---	   Entering buildDisplayList
+2012/05/05  11:55:33	---	   Exiting buildDisplayList
+2012/05/05  11:56:54	djangosuper	VIEW: draglist
+2012/05/05  11:56:54	djangosuper	     Proj 27
+2012/05/05  11:56:54	---	   Entering buildDisplayList
+2012/05/05  11:56:54	---	   Exiting buildDisplayList
+2012/05/05  11:57:16	djangosuper	VIEW: homepage
+2012/05/05  11:57:20	djangosuper	VIEW: homepage
+2012/05/05  11:58:05	djangosuper	VIEW: homepage
+2012/05/05  11:58:11	djangosuper	VIEW: homepage
+2012/05/05  11:58:27	djangosuper	VIEW: homepage
+2012/05/05  11:58:39	djangosuper	VIEW: homepage
+2012/05/05  11:59:08	djangosuper	VIEW: homepage
+2012/05/05  11:59:13	djangosuper	VIEW: homepage
+2012/05/05  11:59:35	djangosuper	VIEW: homepage
+2012/05/05  11:59:38	djangosuper	VIEW: homepage
+2012/05/05  12:00:03	djangosuper	VIEW: homepage
+2012/05/05  12:00:08	djangosuper	VIEW: homepage
+2012/05/05  12:02:30	djangosuper	VIEW: homepage
+2012/05/05  12:02:37	djangosuper	VIEW: homepage
+2012/05/05  12:02:59	djangosuper	VIEW: homepage
+2012/05/05  12:03:09	djangosuper	VIEW: homepage
+2012/05/05  12:03:29	djangosuper	VIEW: homepage
+2012/05/05  12:04:03	djangosuper	VIEW: homepage
+2012/05/05  12:04:19	djangosuper	VIEW: homepage
+2012/05/05  12:06:20	djangosuper	VIEW: homepage
+2012/05/05  12:07:38	djangosuper	VIEW: homepage
+2012/05/05  12:08:09	djangosuper	VIEW: homepage
+2012/05/05  12:08:12	djangosuper	VIEW: homepage
+2012/05/05  12:09:16	djangosuper	VIEW: homepage
+2012/05/05  12:09:19	djangosuper	VIEW: homepage
+2012/05/05  12:09:38	djangosuper	VIEW: homepage
+2012/05/05  12:09:53	djangosuper	VIEW: homepage
+2012/05/05  12:09:56	djangosuper	VIEW: maintPage
+2012/05/05  12:09:58	djangosuper	VIEW: homepage
+2012/05/05  12:10:11	djangosuper	VIEW: homepage
+2012/05/05  12:10:14	djangosuper	VIEW: homepage
+2012/05/05  12:10:22	djangosuper	VIEW: homepage
+2012/05/05  12:10:54	djangosuper	VIEW: homepage
+2012/05/05  12:10:57	djangosuper	VIEW: homepage
+2012/05/05  12:11:04	djangosuper	VIEW: homepage
+2012/05/05  12:11:10	djangosuper	VIEW: homepage
+2012/05/05  12:15:32	djangosuper	VIEW: homepage
+2012/05/05  12:15:53	djangosuper	VIEW: homepage
+2012/05/05  12:16:55	djangosuper	VIEW: homepage
+2012/05/05  12:19:23	djangosuper	VIEW: homepage
+2012/05/05  12:19:30	djangosuper	VIEW: homepage
+2012/05/05  12:19:43	djangosuper	VIEW: homepage
+2012/05/05  12:20:14	djangosuper	VIEW: homepage
+2012/05/05  12:21:03	djangosuper	VIEW: homepage
+2012/05/05  12:21:12	djangosuper	VIEW: homepage
+2012/05/05  12:21:54	djangosuper	VIEW: homepage
+2012/05/05  12:22:22	djangosuper	VIEW: homepage
+2012/05/05  12:23:44	djangosuper	VIEW: homepage
+2012/05/05  12:23:57	djangosuper	VIEW: homepage
+2012/05/05  12:24:32	djangosuper	VIEW: homepage
+2012/05/05  12:24:34	djangosuper	VIEW: homepage
+2012/05/05  12:25:08	djangosuper	VIEW: maintPage
+2012/05/05  12:25:37	djangosuper	VIEW: homepage
+2012/05/05  12:25:42	djangosuper	VIEW: maintPage
+2012/05/05  12:25:50	djangosuper	VIEW: draglist
+2012/05/05  12:25:50	djangosuper	     Proj 5
+2012/05/05  12:25:50	---	   Entering buildDisplayList
+2012/05/05  12:25:50	---	   Exiting buildDisplayList
+2012/05/05  12:25:58	djangosuper	VIEW: homepage
+2012/05/05  12:42:07	djangosuper	VIEW: homepage
+2012/05/05  12:43:44	djangosuper	VIEW: homepage
+2012/05/05  13:50:28	djangosuper	VIEW: homepage
+2012/05/05  13:50:29	djangosuper	VIEW: homepage
+2012/05/05  13:51:28	djangosuper	VIEW: homepage
+2012/05/05  13:51:48	djangosuper	VIEW: homepage
+2012/05/05  13:52:35	djangosuper	VIEW: homepage
+2012/05/05  13:54:20	djangosuper	VIEW: homepage
+2012/05/05  13:55:07	djangosuper	VIEW: homepage
+2012/05/05  13:55:14	djangosuper	VIEW: homepage
+2012/05/05  13:55:39	djangosuper	VIEW: homepage
+2012/05/05  13:56:47	djangosuper	VIEW: homepage
+2012/05/05  13:57:00	djangosuper	VIEW: homepage
+2012/05/05  13:57:05	djangosuper	VIEW: homepage
+2012/05/05  13:57:14	djangosuper	VIEW: homepage
+2012/05/05  13:57:27	djangosuper	VIEW: homepage
+2012/05/05  13:57:41	djangosuper	VIEW: homepage
+2012/05/05  13:58:23	djangosuper	VIEW: homepage
+2012/05/05  13:58:28	djangosuper	VIEW: homepage
+2012/05/05  13:59:20	djangosuper	VIEW: homepage
+2012/05/05  13:59:26	djangosuper	VIEW: homepage
+2012/05/05  14:02:51	djangosuper	VIEW: homepage
+2012/05/05  14:04:03	djangosuper	VIEW: homepage
+2012/05/05  14:04:45	djangosuper	VIEW: homepage
+2012/05/05  14:05:05	djangosuper	VIEW: homepage
+2012/05/05  14:05:29	djangosuper	VIEW: homepage
+2012/05/05  14:06:00	djangosuper	VIEW: homepage
+2012/05/05  14:06:24	djangosuper	VIEW: homepage
+2012/05/05  14:08:26	djangosuper	VIEW: homepage
+2012/05/05  14:09:15	djangosuper	VIEW: homepage
+2012/05/05  14:09:32	djangosuper	VIEW: homepage
+2012/05/05  14:09:41	djangosuper	VIEW: draglist
+2012/05/05  14:09:41	djangosuper	     Proj 27
+2012/05/05  14:09:41	---	   Entering buildDisplayList
+2012/05/05  14:09:41	---	   Exiting buildDisplayList
+2012/05/05  14:09:48	djangosuper	VIEW: homepage
+2012/05/05  14:12:00	djangosuper	VIEW: homepage
+2012/05/05  14:12:26	djangosuper	VIEW: draglist
+2012/05/05  14:12:26	djangosuper	     Proj 31
+2012/05/05  14:12:26	---	   Entering buildDisplayList
+2012/05/05  14:12:26	---	   Exiting buildDisplayList
+2012/05/05  14:13:25	djangosuper	VIEW: psd
+2012/05/05  14:13:25	---	   Entering buildDisplayList
+2012/05/05  14:13:25	---	   Exiting buildDisplayList
+2012/05/05  14:13:43	djangosuper	VIEW: homepage
+2012/05/05  14:14:15	djangosuper	VIEW: draglist
+2012/05/05  14:14:15	djangosuper	     Proj 27
+2012/05/05  14:14:15	---	   Entering buildDisplayList
+2012/05/05  14:14:15	---	   Exiting buildDisplayList
+2012/05/05  14:14:58	djangosuper	VIEW: draglist
+2012/05/05  14:14:58	djangosuper	     Proj 27
+2012/05/05  14:14:58	---	   Entering buildDisplayList
+2012/05/05  14:14:58	---	   Exiting buildDisplayList
+2012/05/05  14:17:03	djangosuper	VIEW: draglist
+2012/05/05  14:17:03	djangosuper	     Proj 27
+2012/05/05  14:17:03	---	   Entering buildDisplayList
+2012/05/05  14:17:03	---	   Exiting buildDisplayList
+2012/05/05  14:17:52	djangosuper	VIEW: homepage
+2012/05/05  14:18:28	djangosuper	VIEW: draglist
+2012/05/05  14:18:28	djangosuper	     Proj 27
+2012/05/05  14:18:28	---	   Entering buildDisplayList
+2012/05/05  14:18:28	---	   Exiting buildDisplayList
+2012/05/05  14:19:44	djangosuper	VIEW: draglist
+2012/05/05  14:19:44	djangosuper	     Proj 27
+2012/05/05  14:19:44	---	   Entering buildDisplayList
+2012/05/05  14:19:44	---	   Exiting buildDisplayList
+2012/05/05  14:21:32	djangosuper	VIEW: draglist
+2012/05/05  14:21:32	djangosuper	     Proj 27
+2012/05/05  14:21:32	---	   Entering buildDisplayList
+2012/05/05  14:21:32	---	   Exiting buildDisplayList
+2012/05/05  14:23:09	djangosuper	VIEW: draglist
+2012/05/05  14:23:09	djangosuper	     Proj 27
+2012/05/05  14:23:09	---	   Entering buildDisplayList
+2012/05/05  14:23:09	---	   Exiting buildDisplayList
+2012/05/05  14:23:59	djangosuper	VIEW: draglist
+2012/05/05  14:23:59	djangosuper	     Proj 27
+2012/05/05  14:23:59	---	   Entering buildDisplayList
+2012/05/05  14:23:59	---	   Exiting buildDisplayList
+2012/05/05  14:24:58	djangosuper	VIEW: draglist
+2012/05/05  14:24:58	djangosuper	     Proj 27
+2012/05/05  14:24:58	---	   Entering buildDisplayList
+2012/05/05  14:24:59	---	   Exiting buildDisplayList
+2012/05/05  14:26:11	djangosuper	VIEW: draglist
+2012/05/05  14:26:11	djangosuper	     Proj 27
+2012/05/05  14:26:11	---	   Entering buildDisplayList
+2012/05/05  14:26:11	---	   Exiting buildDisplayList
+2012/05/05  14:26:26	djangosuper	VIEW: draglist
+2012/05/05  14:26:26	djangosuper	     Proj 4
+2012/05/05  14:26:26	---	   Entering buildDisplayList
+2012/05/05  14:26:26	---	   Exiting buildDisplayList
+2012/05/05  14:28:02	djangosuper	VIEW: draglist
+2012/05/05  14:28:02	djangosuper	     Proj 4
+2012/05/05  14:28:02	---	   Entering buildDisplayList
+2012/05/05  14:28:02	---	   Exiting buildDisplayList
+2012/05/05  14:30:34	djangosuper	VIEW: homepage
+2012/05/05  14:31:10	djangosuper	VIEW: homepage
+2012/05/05  14:31:15	djangosuper	VIEW: draglist
+2012/05/05  14:31:15	djangosuper	     Proj 27
+2012/05/05  14:31:15	---	   Entering buildDisplayList
+2012/05/05  14:31:16	---	   Exiting buildDisplayList
+2012/05/05  14:32:10	djangosuper	VIEW: draglist
+2012/05/05  14:32:10	djangosuper	     Proj 27
+2012/05/05  14:32:10	---	   Entering buildDisplayList
+2012/05/05  14:32:10	---	   Exiting buildDisplayList
+2012/05/05  14:32:22	djangosuper	VIEW: draglist
+2012/05/05  14:32:22	djangosuper	     Proj 27
+2012/05/05  14:32:22	---	   Entering buildDisplayList
+2012/05/05  14:32:22	---	   Exiting buildDisplayList
+2012/05/05  14:32:29	djangosuper	VIEW: draglist
+2012/05/05  14:32:29	djangosuper	     Proj 27
+2012/05/05  14:32:29	---	   Entering buildDisplayList
+2012/05/05  14:32:29	---	   Exiting buildDisplayList
+2012/05/05  14:32:44	djangosuper	VIEW: draglist
+2012/05/05  14:32:44	djangosuper	     Proj 27
+2012/05/05  14:32:44	---	   Entering buildDisplayList
+2012/05/05  14:32:44	---	   Exiting buildDisplayList
+2012/05/05  14:32:47	djangosuper	VIEW: draglist
+2012/05/05  14:32:47	djangosuper	     Proj 27
+2012/05/05  14:32:47	---	   Entering buildDisplayList
+2012/05/05  14:32:47	---	   Exiting buildDisplayList
+2012/05/05  14:33:19	djangosuper	VIEW: draglist
+2012/05/05  14:33:19	djangosuper	     Proj 27
+2012/05/05  14:33:19	---	   Entering buildDisplayList
+2012/05/05  14:33:19	---	   Exiting buildDisplayList
+2012/05/05  14:33:44	djangosuper	VIEW: draglist
+2012/05/05  14:33:44	djangosuper	     Proj 27
+2012/05/05  14:33:44	---	   Entering buildDisplayList
+2012/05/05  14:33:44	---	   Exiting buildDisplayList
+2012/05/05  14:34:16	djangosuper	VIEW: draglist
+2012/05/05  14:34:16	djangosuper	     Proj 27
+2012/05/05  14:34:16	---	   Entering buildDisplayList
+2012/05/05  14:34:16	---	   Exiting buildDisplayList
+2012/05/05  14:37:52	djangosuper	VIEW: homepage
+2012/05/05  14:37:59	djangosuper	VIEW: draglist
+2012/05/05  14:37:59	djangosuper	     Proj 4
+2012/05/05  14:37:59	---	   Entering buildDisplayList
+2012/05/05  14:37:59	---	   Exiting buildDisplayList
+2012/05/05  14:40:51	djangosuper	VIEW: draglist
+2012/05/05  14:40:51	djangosuper	     Proj 4
+2012/05/05  14:40:51	---	   Entering buildDisplayList
+2012/05/05  14:40:51	---	   Exiting buildDisplayList
+2012/05/05  14:41:12	djangosuper	VIEW: draglist
+2012/05/05  14:41:12	djangosuper	     Proj 27
+2012/05/05  14:41:12	---	   Entering buildDisplayList
+2012/05/05  14:41:12	---	   Exiting buildDisplayList
+2012/05/05  14:41:16	djangosuper	VIEW: draglist
+2012/05/05  14:41:16	djangosuper	     Proj 4
+2012/05/05  14:41:16	---	   Entering buildDisplayList
+2012/05/05  14:41:16	---	   Exiting buildDisplayList
+2012/05/05  14:41:30	djangosuper	VIEW: draglist
+2012/05/05  14:41:30	djangosuper	     Proj 27
+2012/05/05  14:41:30	---	   Entering buildDisplayList
+2012/05/05  14:41:30	---	   Exiting buildDisplayList
+2012/05/05  14:43:46	djangosuper	VIEW: draglist
+2012/05/05  14:43:46	djangosuper	     Proj 27
+2012/05/05  14:43:46	---	   Entering buildDisplayList
+2012/05/05  14:43:46	---	   Exiting buildDisplayList
+2012/05/05  14:43:57	djangosuper	VIEW: draglist
+2012/05/05  14:43:57	djangosuper	     Proj 27
+2012/05/05  14:43:57	---	   Entering buildDisplayList
+2012/05/05  14:43:57	---	   Exiting buildDisplayList
+2012/05/05  14:45:54	djangosuper	VIEW: homepage
+2012/05/05  14:46:27	djangosuper	VIEW: homepage
+2012/05/05  14:46:40	djangosuper	VIEW: draglist
+2012/05/05  14:46:40	djangosuper	     Proj 27
+2012/05/05  14:46:40	---	   Entering buildDisplayList
+2012/05/05  14:46:40	---	   Exiting buildDisplayList
+2012/05/05  14:47:38	djangosuper	VIEW: draglist
+2012/05/05  14:47:38	djangosuper	     Proj 27
+2012/05/05  14:47:38	---	   Entering buildDisplayList
+2012/05/05  14:47:38	---	   Exiting buildDisplayList
+2012/05/05  14:48:03	djangosuper	VIEW: draglist
+2012/05/05  14:48:03	djangosuper	     Proj 4
+2012/05/05  14:48:03	---	   Entering buildDisplayList
+2012/05/05  14:48:04	---	   Exiting buildDisplayList
+2012/05/05  14:49:30	djangosuper	VIEW: draglist
+2012/05/05  14:49:30	djangosuper	     Proj 4
+2012/05/05  14:49:30	---	   Entering buildDisplayList
+2012/05/05  14:49:31	---	   Exiting buildDisplayList
+2012/05/05  14:50:33	djangosuper	VIEW: draglist
+2012/05/05  14:50:33	djangosuper	     Proj 4
+2012/05/05  14:50:33	---	   Entering buildDisplayList
+2012/05/05  14:50:33	---	   Exiting buildDisplayList
+2012/05/05  14:50:46	djangosuper	VIEW: draglist
+2012/05/05  14:50:46	djangosuper	     Proj 4
+2012/05/05  14:50:46	---	   Entering buildDisplayList
+2012/05/05  14:50:46	---	   Exiting buildDisplayList
+2012/05/05  14:50:58	djangosuper	VIEW: homepage
+2012/05/05  14:51:09	djangosuper	VIEW: homepage
+2012/05/05  14:51:53	djangosuper	VIEW: draglist
+2012/05/05  14:51:53	djangosuper	     Proj 27
+2012/05/05  14:51:53	---	   Entering buildDisplayList
+2012/05/05  14:51:53	---	   Exiting buildDisplayList
+2012/05/05  14:52:26	djangosuper	VIEW: xhr_actions
+2012/05/05  14:52:26	djangosuper	=====> xhr_actions: =xhr:AJAX request: prioritySelected  ci=6449  ti=0
+2012/05/05  14:52:26	---	Last item ID:6449
+2012/05/05  14:52:27	---	lock removed
+2012/05/05  14:52:55	djangosuper	VIEW: xhr_actions
+2012/05/05  14:52:55	djangosuper	=====> xhr_actions: =xhr:AJAX request: prioritySelected  ci=6441  ti=0
+2012/05/05  14:52:55	---	Last item ID:6449
+2012/05/05  14:52:55	---	lock removed
+2012/05/05  14:53:04	djangosuper	VIEW: xhr_actions
+2012/05/05  14:53:04	djangosuper	=====> xhr_actions: =xhr:AJAX request: prioritySelected  ci=6441  ti=0
+2012/05/05  14:53:04	---	Last item ID:6449
+2012/05/05  14:53:04	---	lock removed
+2012/05/05  14:53:24	djangosuper	VIEW: draglist
+2012/05/05  14:53:24	djangosuper	     Proj 27
+2012/05/05  14:53:24	---	   Entering buildDisplayList
+2012/05/05  14:53:24	---	   Exiting buildDisplayList
+2012/05/05  14:54:00	djangosuper	Edit item: Formset generated, pItem=6448
+2012/05/05  14:55:00	djangosuper	VIEW: draglist
+2012/05/05  14:55:00	djangosuper	     Proj 27
+2012/05/05  14:55:00	---	   Entering buildDisplayList
+2012/05/05  14:55:00	---	   Exiting buildDisplayList
+2012/05/05  14:55:34	djangosuper	VIEW: draglist
+2012/05/05  14:55:34	djangosuper	     Proj 27
+2012/05/05  14:55:34	---	   Entering buildDisplayList
+2012/05/05  14:55:34	---	   Exiting buildDisplayList
+2012/05/05  14:55:46	djangosuper	VIEW: draglist
+2012/05/05  14:55:46	djangosuper	     Proj 27
+2012/05/05  14:55:46	---	   Entering buildDisplayList
+2012/05/05  14:55:46	---	   Exiting buildDisplayList
+2012/05/05  14:57:19	djangosuper	VIEW: draglist
+2012/05/05  14:57:19	djangosuper	     Proj 27
+2012/05/05  14:57:19	---	   Entering buildDisplayList
+2012/05/05  14:57:19	---	   Exiting buildDisplayList
+2012/05/05  14:58:15	djangosuper	VIEW: draglist
+2012/05/05  14:58:15	djangosuper	     Proj 27
+2012/05/05  14:58:15	---	   Entering buildDisplayList
+2012/05/05  14:58:15	---	   Exiting buildDisplayList
+2012/05/05  14:58:21	djangosuper	VIEW: draglist
+2012/05/05  14:58:21	djangosuper	     Proj 27
+2012/05/05  14:58:21	---	   Entering buildDisplayList
+2012/05/05  14:58:21	---	   Exiting buildDisplayList
+2012/05/05  14:58:25	djangosuper	VIEW: draglist
+2012/05/05  14:58:25	djangosuper	     Proj 27
+2012/05/05  14:58:25	---	   Entering buildDisplayList
+2012/05/05  14:58:25	---	   Exiting buildDisplayList
+2012/05/05  14:58:33	djangosuper	VIEW: draglist
+2012/05/05  14:58:33	djangosuper	     Proj 27
+2012/05/05  14:58:33	---	   Entering buildDisplayList
+2012/05/05  14:58:33	---	   Exiting buildDisplayList
+2012/05/05  14:58:42	djangosuper	VIEW: draglist
+2012/05/05  14:58:42	djangosuper	     Proj 4
+2012/05/05  14:58:42	---	   Entering buildDisplayList
+2012/05/05  14:58:43	---	   Exiting buildDisplayList
+2012/05/05  14:58:50	djangosuper	VIEW: draglist
+2012/05/05  14:58:50	djangosuper	     Proj 27
+2012/05/05  14:58:50	---	   Entering buildDisplayList
+2012/05/05  14:58:50	---	   Exiting buildDisplayList
+2012/05/05  14:58:56	djangosuper	VIEW: homepage
+2012/05/05  14:59:03	djangosuper	VIEW: homepage
+2012/05/05  14:59:11	djangosuper	VIEW: draglist
+2012/05/05  14:59:11	djangosuper	     Proj 27
+2012/05/05  14:59:11	---	   Entering buildDisplayList
+2012/05/05  14:59:11	---	   Exiting buildDisplayList
+2012/05/05  15:04:30	djangosuper	VIEW: draglist
+2012/05/05  15:04:30	djangosuper	     Proj 27
+2012/05/05  15:04:30	---	   Entering buildDisplayList
+2012/05/05  15:04:30	---	   Exiting buildDisplayList
+2012/05/05  15:04:36	djangosuper	VIEW: draglist
+2012/05/05  15:04:36	djangosuper	     Proj 27
+2012/05/05  15:04:36	---	   Entering buildDisplayList
+2012/05/05  15:04:36	---	   Exiting buildDisplayList
+2012/05/05  15:04:40	djangosuper	Edit item: Formset generated, pItem=6443
+2012/05/05  15:04:45	djangosuper	   Formset saved: []
+2012/05/05  15:04:45	djangosuper	VIEW: draglist
+2012/05/05  15:04:45	djangosuper	     Proj 27
+2012/05/05  15:04:45	---	   Entering buildDisplayList
+2012/05/05  15:04:45	---	   Exiting buildDisplayList
+2012/05/05  15:05:32	djangosuper	VIEW: draglist
+2012/05/05  15:05:32	djangosuper	     Proj 27
+2012/05/05  15:05:32	---	   Entering buildDisplayList
+2012/05/05  15:05:32	---	   Exiting buildDisplayList
+2012/05/05  15:05:40	djangosuper	VIEW: draglist
+2012/05/05  15:05:40	djangosuper	     Proj 27
+2012/05/05  15:05:40	---	   Entering buildDisplayList
+2012/05/05  15:05:40	---	   Exiting buildDisplayList
+2012/05/05  15:05:44	djangosuper	VIEW: draglist
+2012/05/05  15:05:44	djangosuper	     Proj 27
+2012/05/05  15:05:44	---	   Entering buildDisplayList
+2012/05/05  15:05:44	---	   Exiting buildDisplayList
+2012/05/05  15:05:47	djangosuper	VIEW: draglist
+2012/05/05  15:05:47	djangosuper	     Proj 27
+2012/05/05  15:05:47	---	   Entering buildDisplayList
+2012/05/05  15:05:48	---	   Exiting buildDisplayList
+2012/05/05  15:05:54	djangosuper	VIEW: draglist
+2012/05/05  15:05:54	djangosuper	     Proj 27
+2012/05/05  15:05:54	---	   Entering buildDisplayList
+2012/05/05  15:05:54	---	   Exiting buildDisplayList
+2012/05/05  15:06:12	djangosuper	VIEW: draglist
+2012/05/05  15:06:12	djangosuper	     Proj 27
+2012/05/05  15:06:12	---	   Entering buildDisplayList
+2012/05/05  15:06:12	---	   Exiting buildDisplayList
+2012/05/05  15:06:21	djangosuper	VIEW: draglist
+2012/05/05  15:06:21	djangosuper	     Proj 27
+2012/05/05  15:06:21	---	   Entering buildDisplayList
+2012/05/05  15:06:21	---	   Exiting buildDisplayList
+2012/05/05  15:06:25	djangosuper	VIEW: draglist
+2012/05/05  15:06:25	djangosuper	     Proj 27
+2012/05/05  15:06:25	---	   Entering buildDisplayList
+2012/05/05  15:06:25	---	   Exiting buildDisplayList
+2012/05/05  15:06:36	djangosuper	VIEW: homepage
+2012/05/05  15:06:40	djangosuper	VIEW: homepage
+2012/05/05  15:06:48	djangosuper	VIEW: draglist
+2012/05/05  15:06:48	djangosuper	     Proj 27
+2012/05/05  15:06:48	---	   Entering buildDisplayList
+2012/05/05  15:06:48	---	   Exiting buildDisplayList
+2012/05/05  15:06:54	djangosuper	VIEW: draglist
+2012/05/05  15:06:54	djangosuper	     Proj 27
+2012/05/05  15:06:54	---	   Entering buildDisplayList
+2012/05/05  15:06:54	---	   Exiting buildDisplayList
+2012/05/05  15:09:21	djangosuper	VIEW: draglist
+2012/05/05  15:09:21	djangosuper	     Proj 27
+2012/05/05  15:09:21	---	   Entering buildDisplayList
+2012/05/05  15:09:21	---	   Exiting buildDisplayList
+2012/05/05  15:11:38	djangosuper	VIEW: homepage
+2012/05/05  15:11:43	djangosuper	VIEW: draglist
+2012/05/05  15:11:43	djangosuper	     Proj 27
+2012/05/05  15:11:43	---	   Entering buildDisplayList
+2012/05/05  15:11:44	---	   Exiting buildDisplayList
+2012/05/05  15:12:24	djangosuper	VIEW: draglist
+2012/05/05  15:12:24	djangosuper	     Proj 27
+2012/05/05  15:12:24	---	   Entering buildDisplayList
+2012/05/05  15:12:24	---	   Exiting buildDisplayList
+2012/05/05  15:12:33	djangosuper	Edit item: Formset generated, pItem=6447
+2012/05/05  15:14:26	djangosuper	VIEW: homepage
+2012/05/05  15:14:35	djangosuper	VIEW: draglist
+2012/05/05  15:14:35	djangosuper	     Proj 4
+2012/05/05  15:14:35	---	   Entering buildDisplayList
+2012/05/05  15:14:35	---	   Exiting buildDisplayList
+2012/05/05  15:15:58	djangosuper	VIEW: draglist
+2012/05/05  15:15:58	djangosuper	     Proj 27
+2012/05/05  15:15:58	---	   Entering buildDisplayList
+2012/05/05  15:15:58	---	   Exiting buildDisplayList
+2012/05/05  15:16:46	djangosuper	VIEW: draglist
+2012/05/05  15:16:46	djangosuper	     Proj 47
+2012/05/05  15:16:46	---	   Entering buildDisplayList
+2012/05/05  15:16:46	---	   Exiting buildDisplayList
+2012/05/05  15:17:01	djangosuper	VIEW: homepage
+2012/05/05  15:17:08	djangosuper	VIEW: homepage
+2012/05/05  15:17:18	djangosuper	VIEW: draglist
+2012/05/05  15:17:18	djangosuper	     Proj 27
+2012/05/05  15:17:18	---	   Entering buildDisplayList
+2012/05/05  15:17:18	---	   Exiting buildDisplayList
+2012/05/05  15:17:32	djangosuper	VIEW: draglist
+2012/05/05  15:17:32	djangosuper	     Proj 27
+2012/05/05  15:17:32	---	   Entering buildDisplayList
+2012/05/05  15:17:32	---	   Exiting buildDisplayList
+2012/05/05  15:18:11	djangosuper	VIEW: draglist
+2012/05/05  15:18:11	djangosuper	     Proj 27
+2012/05/05  15:18:11	---	   Entering buildDisplayList
+2012/05/05  15:18:11	---	   Exiting buildDisplayList
+2012/05/05  15:18:19	djangosuper	VIEW: draglist
+2012/05/05  15:18:19	djangosuper	     Proj 27
+2012/05/05  15:18:19	---	   Entering buildDisplayList
+2012/05/05  15:18:19	---	   Exiting buildDisplayList
+2012/05/05  15:19:29	djangosuper	VIEW: draglist
+2012/05/05  15:19:29	djangosuper	     Proj 27
+2012/05/05  15:19:29	---	   Entering buildDisplayList
+2012/05/05  15:19:29	---	   Exiting buildDisplayList
+2012/05/05  15:24:50	djangosuper	VIEW: draglist
+2012/05/05  15:24:50	djangosuper	     Proj 27
+2012/05/05  15:24:50	---	   Entering buildDisplayList
+2012/05/05  15:24:50	---	   Exiting buildDisplayList
+2012/05/05  15:25:10	djangosuper	Edit item: Formset generated, pItem=6441
+2012/05/05  15:25:33	djangosuper	   Formset saved: [<Item: i've got a loverly red pencil box>]
+2012/05/05  15:25:34	djangosuper	VIEW: draglist
+2012/05/05  15:25:34	djangosuper	     Proj 27
+2012/05/05  15:25:34	---	   Entering buildDisplayList
+2012/05/05  15:25:34	---	   Exiting buildDisplayList
+2012/05/05  15:25:45	djangosuper	VIEW: draglist
+2012/05/05  15:25:45	djangosuper	     Proj 4
+2012/05/05  15:25:45	---	   Entering buildDisplayList
+2012/05/05  15:25:45	---	   Exiting buildDisplayList
+2012/05/05  15:25:55	djangosuper	VIEW: maintPage
+2012/05/05  15:26:03	djangosuper	VIEW: homepage
+2012/05/05  15:26:24	djangosuper	VIEW: draglist
+2012/05/05  15:26:24	djangosuper	     Proj 9
+2012/05/05  15:26:24	---	   Entering buildDisplayList
+2012/05/05  15:26:24	---	   Exiting buildDisplayList
+2012/05/05  15:27:46	djangosuper	VIEW: draglist
+2012/05/05  15:27:46	djangosuper	     Proj 27
+2012/05/05  15:27:46	---	   Entering buildDisplayList
+2012/05/05  15:27:46	---	   Exiting buildDisplayList
+2012/05/05  15:28:10	djangosuper	VIEW: draglist
+2012/05/05  15:28:10	djangosuper	     Proj 9
+2012/05/05  15:28:10	---	   Entering buildDisplayList
+2012/05/05  15:28:10	---	   Exiting buildDisplayList
+2012/05/05  15:28:21	djangosuper	VIEW: draglist
+2012/05/05  15:28:21	djangosuper	     Proj 9
+2012/05/05  15:28:21	---	   Entering buildDisplayList
+2012/05/05  15:28:21	---	   Exiting buildDisplayList
+2012/05/05  15:29:03	djangosuper	VIEW: draglist
+2012/05/05  15:29:03	djangosuper	     Proj 9
+2012/05/05  15:29:03	---	   Entering buildDisplayList
+2012/05/05  15:29:03	---	   Exiting buildDisplayList
+2012/05/05  15:32:50	djangosuper	VIEW: draglist
+2012/05/05  15:32:50	djangosuper	     Proj 9
+2012/05/05  15:32:50	---	   Entering buildDisplayList
+2012/05/05  15:32:50	---	   Exiting buildDisplayList
+2012/05/05  15:33:19	djangosuper	VIEW: draglist
+2012/05/05  15:33:19	djangosuper	     Proj 9
+2012/05/05  15:33:19	---	   Entering buildDisplayList
+2012/05/05  15:33:19	---	   Exiting buildDisplayList
+2012/05/05  15:33:55	djangosuper	VIEW: draglist
+2012/05/05  15:33:55	djangosuper	     Proj 9
+2012/05/05  15:33:55	---	   Entering buildDisplayList
+2012/05/05  15:33:55	---	   Exiting buildDisplayList
+2012/05/05  15:34:40	djangosuper	VIEW: draglist
+2012/05/05  15:34:40	djangosuper	     Proj 9
+2012/05/05  15:34:40	---	   Entering buildDisplayList
+2012/05/05  15:34:40	---	   Exiting buildDisplayList
+2012/05/05  15:36:11	djangosuper	VIEW: draglist
+2012/05/05  15:36:11	djangosuper	     Proj 9
+2012/05/05  15:36:11	---	   Entering buildDisplayList
+2012/05/05  15:36:11	---	   Exiting buildDisplayList
+2012/05/05  15:36:32	djangosuper	VIEW: draglist
+2012/05/05  15:36:32	djangosuper	     Proj 9
+2012/05/05  15:36:32	---	   Entering buildDisplayList
+2012/05/05  15:36:33	---	   Exiting buildDisplayList
+2012/05/05  15:36:54	djangosuper	VIEW: draglist
+2012/05/05  15:36:54	djangosuper	     Proj 9
+2012/05/05  15:36:54	---	   Entering buildDisplayList
+2012/05/05  15:36:54	---	   Exiting buildDisplayList
+2012/05/05  15:37:28	djangosuper	VIEW: draglist
+2012/05/05  15:37:28	djangosuper	     Proj 9
+2012/05/05  15:37:28	---	   Entering buildDisplayList
+2012/05/05  15:37:28	---	   Exiting buildDisplayList
+2012/05/05  15:38:05	djangosuper	VIEW: draglist
+2012/05/05  15:38:05	djangosuper	     Proj 9
+2012/05/05  15:38:05	---	   Entering buildDisplayList
+2012/05/05  15:38:05	---	   Exiting buildDisplayList
+2012/05/05  15:38:15	djangosuper	VIEW: detailItem
+2012/05/05  15:38:45	djangosuper	VIEW: detailItem
+2012/05/05  15:38:53	djangosuper	Edit item: Formset generated, pItem=6438
+2012/05/05  15:40:40	djangosuper	Edit item: Formset generated, pItem=5951
+2012/05/05  15:40:58	djangosuper	VIEW: draglist
+2012/05/05  15:40:58	djangosuper	     Proj 27
+2012/05/05  15:40:58	---	   Entering buildDisplayList
+2012/05/05  15:40:58	---	   Exiting buildDisplayList
+2012/05/05  15:41:13	djangosuper	VIEW: detailItem
+2012/05/05  15:41:41	djangosuper	VIEW: detailItem
+2012/05/05  15:41:53	djangosuper	VIEW: detailItem
+2012/05/05  15:44:42	djangosuper	VIEW: today
+2012/05/05  15:44:42	---	   Entering buildDisplayList
+2012/05/05  15:44:44	---	   Exiting buildDisplayList
+2012/05/05  15:45:28	djangosuper	VIEW: today
+2012/05/05  15:45:28	---	   Entering buildDisplayList
+2012/05/05  15:45:28	---	   Exiting buildDisplayList
+2012/05/05  15:46:04	djangosuper	VIEW: today
+2012/05/05  15:46:04	---	   Entering buildDisplayList
+2012/05/05  15:46:05	---	   Exiting buildDisplayList
+2012/05/05  15:46:17	djangosuper	Edit item: Formset generated, pItem=6420
+2012/05/05  15:46:23	djangosuper	VIEW: homepage
+2012/05/05  15:46:29	djangosuper	VIEW: draglist
+2012/05/05  15:46:29	djangosuper	     Proj 27
+2012/05/05  15:46:29	---	   Entering buildDisplayList
+2012/05/05  15:46:29	---	   Exiting buildDisplayList
+2012/05/05  15:46:36	djangosuper	VIEW: detailItem
+2012/05/05  15:47:07	djangosuper	VIEW: today
+2012/05/05  15:47:07	---	   Entering buildDisplayList
+2012/05/05  15:47:07	---	   Exiting buildDisplayList
+2012/05/05  15:50:27	djangosuper	VIEW: today
+2012/05/05  15:50:27	---	   Entering buildDisplayList
+2012/05/05  15:50:27	---	   Exiting buildDisplayList
+2012/05/05  15:50:39	djangosuper	VIEW: detailItem
+2012/05/05  15:51:06	djangosuper	VIEW: homepage
+2012/05/05  15:51:13	djangosuper	VIEW: draglist
+2012/05/05  15:51:13	djangosuper	     Proj 27
+2012/05/05  15:51:13	---	   Entering buildDisplayList
+2012/05/05  15:51:13	---	   Exiting buildDisplayList
+2012/05/05  15:51:20	djangosuper	VIEW: detailItem
+2012/05/05  15:51:56	djangosuper	VIEW: detailItem
+2012/05/05  15:52:10	djangosuper	VIEW: detailItem
+2012/05/05  15:52:27	djangosuper	VIEW: draglist
+2012/05/05  15:52:27	djangosuper	     Proj 27
+2012/05/05  15:52:27	---	   Entering buildDisplayList
+2012/05/05  15:52:27	---	   Exiting buildDisplayList
+2012/05/05  15:52:31	djangosuper	VIEW: detailItem
+2012/05/05  15:52:38	djangosuper	VIEW: detailItem
+2012/05/05  15:52:56	djangosuper	VIEW: draglist
+2012/05/05  15:52:56	djangosuper	     Proj 2
+2012/05/05  15:52:56	---	   Entering buildDisplayList
+2012/05/05  15:52:56	---	   Exiting buildDisplayList
+2012/05/05  15:54:13	djangosuper	VIEW: draglist
+2012/05/05  15:54:13	djangosuper	     Proj 27
+2012/05/05  15:54:13	---	   Entering buildDisplayList
+2012/05/05  15:54:13	---	   Exiting buildDisplayList
+2012/05/05  15:54:18	djangosuper	VIEW: detailItem
+2012/05/05  15:54:37	djangosuper	VIEW: detailItem
+2012/05/05  15:55:09	djangosuper	VIEW: detailItem
+2012/05/05  15:55:22	djangosuper	VIEW: draglist
+2012/05/05  15:55:22	djangosuper	     Proj 27
+2012/05/05  15:55:22	---	   Entering buildDisplayList
+2012/05/05  15:55:22	---	   Exiting buildDisplayList
+2012/05/05  15:55:28	djangosuper	Edit item: Formset generated, pItem=6447
+2012/05/05  15:55:35	djangosuper	VIEW: detailItem
+2012/05/05  15:55:42	djangosuper	VIEW: detailItem
+2012/05/05  15:56:20	djangosuper	VIEW: draglist
+2012/05/05  15:56:20	djangosuper	     Proj 27
+2012/05/05  15:56:20	---	   Entering buildDisplayList
+2012/05/05  15:56:20	---	   Exiting buildDisplayList
+2012/05/05  15:58:17	djangosuper	VIEW: draglist
+2012/05/05  15:58:17	djangosuper	     Proj 27
+2012/05/05  15:58:17	---	   Entering buildDisplayList
+2012/05/05  15:58:17	---	   Exiting buildDisplayList
+2012/05/05  15:58:30	djangosuper	VIEW: draglist
+2012/05/05  15:58:30	djangosuper	     Proj 4
+2012/05/05  15:58:30	---	   Entering buildDisplayList
+2012/05/05  15:58:31	---	   Exiting buildDisplayList
+2012/05/05  15:58:55	djangosuper	VIEW: draglist
+2012/05/05  15:58:55	djangosuper	     Proj 4
+2012/05/05  15:58:55	---	   Entering buildDisplayList
+2012/05/05  15:58:55	---	   Exiting buildDisplayList
+2012/05/05  15:59:05	djangosuper	VIEW: homepage
+2012/05/05  15:59:52	djangosuper	VIEW: homepage
+2012/05/05  15:59:57	djangosuper	VIEW: homepage
+2012/05/05  16:00:22	djangosuper	VIEW: homepage
+2012/05/05  16:01:08	djangosuper	VIEW: homepage
+2012/05/05  16:01:28	djangosuper	VIEW: homepage
+2012/05/05  16:01:50	djangosuper	VIEW: homepage
+2012/05/05  16:02:07	djangosuper	VIEW: homepage
+2012/05/05  16:03:02	djangosuper	VIEW: homepage
+2012/05/05  16:03:47	djangosuper	VIEW: homepage
+2012/05/05  16:04:29	djangosuper	VIEW: homepage
+2012/05/05  16:04:53	djangosuper	VIEW: draglist
+2012/05/05  16:04:53	djangosuper	     Proj 9
+2012/05/05  16:04:53	---	   Entering buildDisplayList
+2012/05/05  16:04:53	---	   Exiting buildDisplayList
+2012/05/05  16:05:27	djangosuper	VIEW: draglist
+2012/05/05  16:05:27	djangosuper	     Proj 9
+2012/05/05  16:05:27	---	   Entering buildDisplayList
+2012/05/05  16:05:28	---	   Exiting buildDisplayList
+2012/05/05  16:05:49	djangosuper	VIEW: today
+2012/05/05  16:05:49	---	   Entering buildDisplayList
+2012/05/05  16:05:51	---	   Exiting buildDisplayList
+2012/05/05  16:06:05	djangosuper	VIEW: gridview
+2012/05/05  16:06:06	djangosuper	   cellItems=[5916L, 5606L, 5616L, 5637L, 6066L, 5402L, 5660L, 5949L]
+2012/05/05  16:06:06	---	   Entering buildDisplayList
+2012/05/05  16:06:06	---	   Exiting buildDisplayList
+2012/05/05  16:06:06	djangosuper	   cellItems=[6414L, 6420L, 6015L, 6090L, 6234L, 4377L, 4581L, 5435L, 5609L, 5933L, 5952L, 6023L, 6081L, 6087L, 6096L, 4381L, 5002L, 5104L, 5286L, 5395L, 6044L, 4621L, 5040L, 5175L, 5655L, 5923L, 6163L, 4375L, 4531L, 4574L, 4608L, 5092L, 5258L, 5374L, 5384L, 5619L, 5624L]
+2012/05/05  16:06:06	---	   Entering buildDisplayList
+2012/05/05  16:06:06	---	   Exiting buildDisplayList
+2012/05/05  16:06:06	djangosuper	   cellItems=[5671L, 6083L, 4584L, 4585L, 4590L, 5060L, 5062L, 5199L, 5411L, 5605L, 5615L, 5631L, 4591L, 4592L, 5580L, 1L, 4583L, 5614L, 5877L, 5878L, 5879L, 5924L, 5958L]
+2012/05/05  16:06:06	---	   Entering buildDisplayList
+2012/05/05  16:06:06	---	   Exiting buildDisplayList
+2012/05/05  16:06:06	djangosuper	   cellItems=[4602L, 6027L, 6409L, 6468L, 6477L, 4607L, 5617L, 5629L, 5656L, 5661L, 6469L, 4604L, 5130L, 5669L, 6407L, 2384L, 4605L, 4609L, 5803L, 4610L, 5109L, 5668L, 5912L, 5915L, 6381L, 6470L]
+2012/05/05  16:06:06	---	   Entering buildDisplayList
+2012/05/05  16:06:06	---	   Exiting buildDisplayList
+2012/05/05  16:06:06	djangosuper	   cellItems=[6061L, 6058L, 6060L, 6118L]
+2012/05/05  16:06:06	---	   Entering buildDisplayList
+2012/05/05  16:06:07	---	   Exiting buildDisplayList
+2012/05/05  16:06:07	djangosuper	   cellItems=[5127L, 6473L, 6472L, 5125L, 5409L, 5598L]
+2012/05/05  16:06:07	---	   Entering buildDisplayList
+2012/05/05  16:06:07	---	   Exiting buildDisplayList
+2012/05/05  16:06:07	djangosuper	   cellItems=[6388L, 6396L, 6460L, 6462L, 6471L, 6394L, 6461L, 6463L, 6467L, 5905L, 6074L, 6428L, 5870L, 6072L, 6073L, 6393L, 6427L, 6464L, 6465L]
+2012/05/05  16:06:07	---	   Entering buildDisplayList
+2012/05/05  16:06:07	---	   Exiting buildDisplayList
+2012/05/05  16:06:07	djangosuper	   cellItems=[5662L, 5801L, 5947L, 5950L, 6065L, 4596L, 4615L, 4629L, 5009L, 5132L, 5396L, 5410L, 5667L, 5736L, 5911L, 4600L, 4601L, 5056L, 6088L, 4386L, 4397L, 4599L, 4999L, 5053L, 5055L, 5086L, 5095L, 5189L, 5191L]
+2012/05/05  16:06:07	---	   Entering buildDisplayList
+2012/05/05  16:06:07	---	   Exiting buildDisplayList
+2012/05/05  16:06:07	djangosuper	   cellItems=[4646L, 4630L, 4631L, 4632L, 4633L, 4634L, 4635L, 4636L, 4637L, 4638L, 4639L]
+2012/05/05  16:06:07	---	   Entering buildDisplayList
+2012/05/05  16:06:07	---	   Exiting buildDisplayList
+2012/05/05  16:06:07	djangosuper	   cellItems=[5967L, 6064L, 5663L, 5670L, 5875L]
+2012/05/05  16:06:07	---	   Entering buildDisplayList
+2012/05/05  16:06:07	---	   Exiting buildDisplayList
+2012/05/05  16:06:09	djangosuper	   cellItems=[2468L, 2469L, 2470L, 2471L, 2472L, 2473L, 2474L, 2475L, 2476L, 2477L, 2478L]
+2012/05/05  16:06:09	---	   Entering buildDisplayList
+2012/05/05  16:06:09	---	   Exiting buildDisplayList
+2012/05/05  16:06:09	djangosuper	   cellItems=[5641L, 6441L, 6449L, 6438L, 6440L, 6442L, 6443L, 6445L, 6446L, 6447L, 6448L]
+2012/05/05  16:06:09	---	   Entering buildDisplayList
+2012/05/05  16:06:09	---	   Exiting buildDisplayList
+2012/05/05  16:06:09	djangosuper	   cellItems=[5883L, 5979L, 5980L, 5984L, 5989L, 6071L, 6004L, 6022L, 5987L, 4301L, 5981L, 5982L, 5983L, 5985L, 5988L, 5990L, 5992L, 5993L, 5995L]
+2012/05/05  16:06:09	---	   Entering buildDisplayList
+2012/05/05  16:06:09	---	   Exiting buildDisplayList
+2012/05/05  16:06:09	djangosuper	   cellItems=[6444L, 5000L, 5001L, 5005L, 5006L, 5007L, 5083L, 5100L, 5102L, 5106L, 5112L]
+2012/05/05  16:06:09	---	   Entering buildDisplayList
+2012/05/05  16:06:09	---	   Exiting buildDisplayList
+2012/05/05  16:06:10	djangosuper	   cellItems=[5600L, 6476L, 5951L, 6018L, 6390L, 5900L, 5047L, 5116L, 5591L, 5592L, 5593L, 5595L, 5599L, 5625L, 5961L, 6455L]
+2012/05/05  16:06:10	---	   Entering buildDisplayList
+2012/05/05  16:06:10	---	   Exiting buildDisplayList
+2012/05/05  16:06:49	djangosuper	VIEW: homepage
+2012/05/05  16:06:54	djangosuper	VIEW: gridview
+2012/05/05  16:06:55	djangosuper	   cellItems=[5916L, 5606L, 5616L, 5637L, 6066L, 5402L, 5660L, 5949L]
+2012/05/05  16:06:55	---	   Entering buildDisplayList
+2012/05/05  16:06:55	---	   Exiting buildDisplayList
+2012/05/05  16:06:55	djangosuper	   cellItems=[6414L, 6420L, 6015L, 6090L, 6234L, 4377L, 4581L, 5435L, 5609L, 5933L, 5952L, 6023L, 6081L, 6087L, 6096L, 4381L, 5002L, 5104L, 5286L, 5395L, 6044L, 4621L, 5040L, 5175L, 5655L, 5923L, 6163L, 4375L, 4531L, 4574L, 4608L, 5092L, 5258L, 5374L, 5384L, 5619L, 5624L]
+2012/05/05  16:06:55	---	   Entering buildDisplayList
+2012/05/05  16:06:55	---	   Exiting buildDisplayList
+2012/05/05  16:06:55	djangosuper	   cellItems=[5671L, 6083L, 4584L, 4585L, 4590L, 5060L, 5062L, 5199L, 5411L, 5605L, 5615L, 5631L, 4591L, 4592L, 5580L, 1L, 4583L, 5614L, 5877L, 5878L, 5879L, 5924L, 5958L]
+2012/05/05  16:06:55	---	   Entering buildDisplayList
+2012/05/05  16:06:55	---	   Exiting buildDisplayList
+2012/05/05  16:06:55	djangosuper	   cellItems=[4602L, 6027L, 6409L, 6468L, 6477L, 4607L, 5617L, 5629L, 5656L, 5661L, 6469L, 4604L, 5130L, 5669L, 6407L, 2384L, 4605L, 4609L, 5803L, 4610L, 5109L, 5668L, 5912L, 5915L, 6381L, 6470L]
+2012/05/05  16:06:55	---	   Entering buildDisplayList
+2012/05/05  16:06:55	---	   Exiting buildDisplayList
+2012/05/05  16:06:55	djangosuper	   cellItems=[6061L, 6058L, 6060L, 6118L]
+2012/05/05  16:06:55	---	   Entering buildDisplayList
+2012/05/05  16:06:55	---	   Exiting buildDisplayList
+2012/05/05  16:06:55	djangosuper	   cellItems=[5127L, 6473L, 6472L, 5125L, 5409L, 5598L]
+2012/05/05  16:06:55	---	   Entering buildDisplayList
+2012/05/05  16:06:55	---	   Exiting buildDisplayList
+2012/05/05  16:06:55	djangosuper	   cellItems=[6388L, 6396L, 6460L, 6462L, 6471L, 6394L, 6461L, 6463L, 6467L, 5905L, 6074L, 6428L, 5870L, 6072L, 6073L, 6393L, 6427L, 6464L, 6465L]
+2012/05/05  16:06:55	---	   Entering buildDisplayList
+2012/05/05  16:06:55	---	   Exiting buildDisplayList
+2012/05/05  16:06:55	djangosuper	   cellItems=[5662L, 5801L, 5947L, 5950L, 6065L, 4596L, 4615L, 4629L, 5009L, 5132L, 5396L, 5410L, 5667L, 5736L, 5911L, 4600L, 4601L, 5056L, 6088L, 4386L, 4397L, 4599L, 4999L, 5053L, 5055L, 5086L, 5095L, 5189L, 5191L]
+2012/05/05  16:06:55	---	   Entering buildDisplayList
+2012/05/05  16:06:55	---	   Exiting buildDisplayList
+2012/05/05  16:06:56	djangosuper	   cellItems=[4646L, 4630L, 4631L, 4632L, 4633L, 4634L, 4635L, 4636L, 4637L, 4638L, 4639L]
+2012/05/05  16:06:56	---	   Entering buildDisplayList
+2012/05/05  16:06:56	---	   Exiting buildDisplayList
+2012/05/05  16:06:56	djangosuper	   cellItems=[5967L, 6064L, 5663L, 5670L, 5875L]
+2012/05/05  16:06:56	---	   Entering buildDisplayList
+2012/05/05  16:06:56	---	   Exiting buildDisplayList
+2012/05/05  16:06:56	djangosuper	   cellItems=[2468L, 2469L, 2470L, 2471L, 2472L, 2473L, 2474L, 2475L, 2476L, 2477L, 2478L]
+2012/05/05  16:06:56	---	   Entering buildDisplayList
+2012/05/05  16:06:56	---	   Exiting buildDisplayList
+2012/05/05  16:06:56	djangosuper	   cellItems=[5641L, 6441L, 6449L, 6438L, 6440L, 6442L, 6443L, 6445L, 6446L, 6447L, 6448L]
+2012/05/05  16:06:56	---	   Entering buildDisplayList
+2012/05/05  16:06:56	---	   Exiting buildDisplayList
+2012/05/05  16:06:56	djangosuper	   cellItems=[5883L, 5979L, 5980L, 5984L, 5989L, 6071L, 6004L, 6022L, 5987L, 4301L, 5981L, 5982L, 5983L, 5985L, 5988L, 5990L, 5992L, 5993L, 5995L]
+2012/05/05  16:06:56	---	   Entering buildDisplayList
+2012/05/05  16:06:56	---	   Exiting buildDisplayList
+2012/05/05  16:06:56	djangosuper	   cellItems=[6444L, 5000L, 5001L, 5005L, 5006L, 5007L, 5083L, 5100L, 5102L, 5106L, 5112L]
+2012/05/05  16:06:56	---	   Entering buildDisplayList
+2012/05/05  16:06:56	---	   Exiting buildDisplayList
+2012/05/05  16:06:56	djangosuper	   cellItems=[5600L, 6476L, 5951L, 6018L, 6390L, 5900L, 5047L, 5116L, 5591L, 5592L, 5593L, 5595L, 5599L, 5625L, 5961L, 6455L]
+2012/05/05  16:06:56	---	   Entering buildDisplayList
+2012/05/05  16:06:56	---	   Exiting buildDisplayList
+2012/05/05  16:07:04	djangosuper	Edit item: Formset generated, pItem=6477
