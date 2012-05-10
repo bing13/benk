@@ -11,6 +11,8 @@
 
 {% if request.session.viewmode  != 'today' %}
 
+
+
 <div class="headline">Sorted by <strong>{{ pSort }}</strong>
 
   <span class="psdSortLinks">sort [ 
@@ -143,6 +145,13 @@ date created
     <option value="3" >Cold</option>
   {% endif %}
 
+
+  {% if ci.status == "4" %}
+  <option value="4" selected="selected">Ongoing</option>
+  {% else %}
+  <option value="4" >Ongoing</option>
+  {% endif %}
+
   {% if ci.status == "5" %}
     <option value="5" selected="selected">Hold</option>
   {% else %}
@@ -198,17 +207,22 @@ date created
 
         <td class="itemtd note_cell_psd">
 	  {% if ci.HTMLnoteBody|length > 2 %}
-  	    <span onClick="toggleLI('notebody_{{ci.id}}');" class="noteplus"><img src="http://media.bernardhecker.com/pim1/static/images/itemlistwidget.gif"></span>
-	    <span id="notebody_{{ci.id}}" class="noteBody">{{ ci.HTMLnoteBody|safe|default:" --- " }}</span>
+  	    <span onClick="toggleNoteBodyTableRow('notebody_{{ci.id}}');" class="noteplus">&oplus;</span>
+
           {% endif %}
       </td>
         
 
         </tr>
+    <tr class="psd_note_row" id="notebody_{{ci.id}}" >
+       <td colspan=7  class="psd_noteBody" >{{ ci.HTMLnoteBody|safe|default:" --- " }}</td>
+
+    </tr>
     {% endfor %}
     </table>
 
-<p onLoad="showAllProj();"/>
+<!-- p onLoad="showAllProj();  "/-->
+
 
 
 
