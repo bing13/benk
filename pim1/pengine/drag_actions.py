@@ -974,3 +974,15 @@ class dragOps():
 
  
         return(self.updateIDsDecorate([CI.id]))
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# doOrderSelected   ## for the pop-up boxes
+
+    def doOrderSelected(self,  CI,  dValue):
+
+        CI.doOrder = dValue;
+
+        CI.save()
+
+ 
+        return(self.updateIDsDecorate([CI.id]))

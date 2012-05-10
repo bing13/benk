@@ -32,24 +32,41 @@
 
 {% endif %}
 
+
 {% if current_items %}
 
+
     <table class="psd_table item_table">
-    <tr class="item_table_header"><th>id</th><th>p/f:c</th><th class="titlecol">title</th><th>priority</th><th>status</th>
-<th>
 
-{% if 'date' in pSort %}
-{{ pSort }}
-{% endif %}
+    <tr class="item_table_header">
+      {% if request.session.viewmode  == 'today' %}
+      <th><span class="doLink" onClick="toggleDoOrder('doOrder');">next</span>/<span class="doLink"  onClick="toggleDoOrder('restore');">all</span></th>
 
-{% if 'date' not in pSort %}
-date created
-{% endif %}
-</th>
+      {% else %}
+      <th>id</th><th>p/f:c</th>
+      {% endif %}
 
 
-<th>note</th></tr>
+      <th class="titlecol">title</th><th>priority</th><th>status</th>
+      <th>
+
+	{% if 'date' in pSort %}
+	{{ pSort }}
+	{% endif %}
+
+	{% if 'date' not in pSort %}
+	date created
+	{% endif %}
+      </th>
+
+
+      <th>note</th>
+</tr>
     
+
+<!-- ===================================================== -->
+
+
     {% for ci in current_items %}
     {% ifchanged %}
         <tr  class="psd_projectheader_row tr_set_{{ ci.project.set.id }}" style="background: {{ ci.project.color }};" >
@@ -61,12 +78,69 @@ date created
 
         <tr class="items tr_set_{{ ci.project.set.id }}" id = {{ ci.id }} >
 
+      {% if request.session.viewmode  == 'today' %}
+
+	 <td class="itemtd id_cell_psd">
+
+   <select class="doOrderSelect doOrder_{{ ci.do_order }}" onChange="doOrderSelected({{ ci.id }});"  />
+   {% if ci.doOrder == "" %}
+     <option value="" selected="selected"></option>
+   {% else %}
+     <option value="" ></option>
+   {% endif %}
+   {% if ci.doOrder == 1 %}
+     <option value="1" selected="selected">1</option>
+   {% else %}
+     <option value="1" >1</option>
+   {% endif %}
+
+   {% if ci.doOrder == 2 %}
+     <option value="2" selected="selected">2</option>
+   {% else %}
+     <option value="2" >2</option>
+   {% endif %}
+
+   {% if ci.doOrder == 3 %}
+     <option value="3" selected="selected">3</option>
+   {% else %}
+     <option value="3" >3</option>
+   {% endif %}
+
+   {% if ci.doOrder == 4 %}
+     <option value="4" selected="selected">4</option>
+   {% else %}
+     <option value="4" >4</option>
+   {% endif %}
+
+   {% if ci.doOrder == 5 %}
+     <option value="5" selected="selected">5</option>
+   {% else %}
+     <option value="5" >5</option>
+   {% endif %}
+
+   {% if ci.doOrder == 6 %}
+    <option value="6" selected="selected">6</option>
+  {% else %}
+    <option value="6" >6</option>
+  {% endif %}
+
+</select>
 
 
+</td>
+
+
+
+
+
+      {% else %}
 	 <td class="itemtd id_cell_psd">{{ci.id}}&nbsp;</td>
 
 
-	 <td class="itemtd pfi_cell_psd">{{ci.parent}}/{{ci.follows}}:<span class="indent">{{ci.indentLevel}}</span></td>
+	 <td class="itemtd pfi_cell_psd">{{ci.parent}}/{{ci.follows}}:<span class="indent">{{ci.indentLevel}}</span></td> 
+      {% endif %}
+
+
 {% comment %}
 	 <td class="itemtd">
 	   <ul class="projname">

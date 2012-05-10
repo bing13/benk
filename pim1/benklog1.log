@@ -8762,3 +8762,215 @@
 2012/05/09  17:05:11	---	Last item ID:6231
 2012/05/09  17:05:11	---	==> archivePair moved item 6385  to proj: 15
 2012/05/09  17:05:11	---	lock removed
+2012/05/09  17:07:16	djangosuper	VIEW: xhr_actions
+2012/05/09  17:07:16	djangosuper	=====> xhr_actions: =xhr:AJAX request: prioritySelected  ci=6394  ti=0
+2012/05/09  17:07:16	---	Last item ID:6464
+2012/05/09  17:07:16	---	lock removed
+2012/05/09  17:30:31	djangosuper	VIEW: draglist
+2012/05/09  17:30:31	djangosuper	     Proj 31
+2012/05/09  17:30:31	---	   Entering buildDisplayList
+2012/05/09  17:30:31	---	   Exiting buildDisplayList
+2012/05/09  17:30:36	djangosuper	Edit item: Formset generated, pItem=6467
+2012/05/09  17:30:50	djangosuper	   Formset saved: [<Item: Post staff outages in Base Camp; experiment with it>]
+2012/05/09  17:30:50	djangosuper	VIEW: draglist
+2012/05/09  17:30:50	djangosuper	     Proj 31
+2012/05/09  17:30:50	---	   Entering buildDisplayList
+2012/05/09  17:30:50	---	   Exiting buildDisplayList
+2012/05/09  17:30:56	djangosuper	Edit item: Formset generated, pItem=6467
+2012/05/09  17:31:04	djangosuper	   Formset saved: [<Item: Post staff outages in Base Camp; experiment with it. Good travel task.>]
+2012/05/09  17:31:05	djangosuper	VIEW: draglist
+2012/05/09  17:31:05	djangosuper	     Proj 31
+2012/05/09  17:31:05	---	   Entering buildDisplayList
+2012/05/09  17:31:06	---	   Exiting buildDisplayList
+2012/05/09  17:32:49	djangosuper	VIEW: draglist
+2012/05/09  17:32:49	djangosuper	     Proj 2
+2012/05/09  17:32:49	---	   Entering buildDisplayList
+2012/05/09  17:32:49	---	   Exiting buildDisplayList
+2012/05/09  17:32:52	djangosuper	VIEW: draglist
+2012/05/09  17:32:52	djangosuper	     Proj 1
+2012/05/09  17:32:52	---	   Entering buildDisplayList
+2012/05/09  17:32:52	---	   Exiting buildDisplayList
+2012/05/09  17:32:54	djangosuper	VIEW: draglist
+2012/05/09  17:32:54	djangosuper	     Proj 21
+2012/05/09  17:32:54	---	   Entering buildDisplayList
+2012/05/09  17:32:54	---	   Exiting buildDisplayList
+2012/05/09  17:32:56	djangosuper	VIEW: today
+2012/05/09  17:32:56	---	   Entering buildDisplayList
+2012/05/09  17:32:56	---	   Exiting buildDisplayList
+2012/05/09  17:33:28	djangosuper	VIEW: xhr_actions
+2012/05/09  17:33:28	djangosuper	=====> xhr_actions: =xhr:AJAX request: dragKid  ci=5175  ti=5834
+2012/05/09  17:33:28	---	Last item ID:4574
+2012/05/09  17:33:28	djangosuper	VIEW: drag_move
+2012/05/09  17:33:28	djangosuper	     ====dragMove=> CIid:TIid    5175:5834
+2012/05/09  17:33:28	---	Last item ID:4574
+2012/05/09  17:33:28	---	sMDflk=> findLastKid lastKid=0
+2012/05/09  17:33:28	djangosuper	     DragMove=> CI saved
+2012/05/09  17:33:28	djangosuper	     dragmove=> targetFollowerID:5672  targetFollower.follows:5175  lastkid:0
+2012/05/09  17:33:28	djangosuper	      dm=>kidList = []
+2012/05/09  17:33:29	---	lock removed
+2012/05/09  18:16:41	djangosuper	VIEW: draglist
+2012/05/09  18:16:41	djangosuper	     Proj 5
+2012/05/09  18:16:41	---	   Entering buildDisplayList
+2012/05/09  18:16:42	---	   Exiting buildDisplayList
+2012/05/09  18:16:55	djangosuper	VIEW: today
+2012/05/09  18:16:55	---	   Entering buildDisplayList
+2012/05/09  18:16:57	---	   Exiting buildDisplayList
+2012/05/09  18:30:01	djangosuper	VIEW: today
+2012/05/09  18:30:01	---	   Entering buildDisplayList
+2012/05/09  18:30:03	---	   Exiting buildDisplayList
+2012/05/09  18:33:26	djangosuper	VIEW: today
+2012/05/09  18:33:26	---	   Entering buildDisplayList
+2012/05/09  18:33:26	---	   Exiting buildDisplayList
+2012/05/09  18:33:37	djangosuper	VIEW: draglist
+2012/05/09  18:33:37	djangosuper	     Proj 27
+2012/05/09  18:33:37	---	   Entering buildDisplayList
+2012/05/09  18:33:37	---	   Exiting buildDisplayList
+2012/05/09  18:33:45	djangosuper	Edit item: Formset generated, pItem=6438
+2012/05/09  18:33:57	djangosuper	   Formset saved: [<Item: whoo whoo>]
+2012/05/09  18:33:57	djangosuper	VIEW: draglist
+2012/05/09  18:33:57	djangosuper	     Proj 27
+2012/05/09  18:33:57	---	   Entering buildDisplayList
+2012/05/09  18:33:57	---	   Exiting buildDisplayList
+2012/05/09  18:34:16	djangosuper	VIEW: draglist
+2012/05/09  18:34:16	djangosuper	     Proj 8
+2012/05/09  18:34:16	---	   Entering buildDisplayList
+2012/05/09  18:34:16	---	   Exiting buildDisplayList
+2012/05/09  18:34:21	djangosuper	VIEW: today
+2012/05/09  18:34:21	---	   Entering buildDisplayList
+2012/05/09  18:34:21	---	   Exiting buildDisplayList
+2012/05/09  18:37:23	djangosuper	VIEW: today
+2012/05/09  18:37:23	---	   Entering buildDisplayList
+2012/05/09  18:37:23	---	   Exiting buildDisplayList
+2012/05/09  18:37:40	djangosuper	VIEW: today
+2012/05/09  18:37:40	---	   Entering buildDisplayList
+2012/05/09  18:37:40	---	   Exiting buildDisplayList
+2012/05/09  18:39:08	djangosuper	VIEW: today
+2012/05/09  18:39:08	---	   Entering buildDisplayList
+2012/05/09  18:39:09	---	   Exiting buildDisplayList
+2012/05/09  18:39:28	djangosuper	VIEW: today
+2012/05/09  18:39:28	---	   Entering buildDisplayList
+2012/05/09  18:39:29	---	   Exiting buildDisplayList
+2012/05/09  18:39:32	djangosuper	VIEW: draglist
+2012/05/09  18:39:32	djangosuper	     Proj 5
+2012/05/09  18:39:32	---	   Entering buildDisplayList
+2012/05/09  18:39:32	---	   Exiting buildDisplayList
+2012/05/09  18:39:37	djangosuper	VIEW: psd
+2012/05/09  18:39:37	---	   Entering buildDisplayList
+2012/05/09  18:39:37	---	   Exiting buildDisplayList
+2012/05/09  18:52:42	djangosuper	VIEW: today
+2012/05/09  18:52:42	---	   Entering buildDisplayList
+2012/05/09  18:52:44	---	   Exiting buildDisplayList
+2012/05/09  18:53:40	djangosuper	VIEW: today
+2012/05/09  18:53:40	---	   Entering buildDisplayList
+2012/05/09  18:53:41	---	   Exiting buildDisplayList
+2012/05/09  18:54:18	djangosuper	VIEW: xhr_actions
+2012/05/09  18:54:18	djangosuper	=====> xhr_actions: =xhr:AJAX request: doOrderSelected  ci=6478  ti=0
+2012/05/09  18:54:18	---	Last item ID:4609
+2012/05/09  18:54:18	djangosuper	+++ERROR+++. Uncaught actionRequest['ajaxAction']:doOrderSelected
+2012/05/09  18:54:18	---	lock removed
+2012/05/09  18:54:47	djangosuper	VIEW: today
+2012/05/09  18:54:47	---	   Entering buildDisplayList
+2012/05/09  18:54:48	---	   Exiting buildDisplayList
+2012/05/09  18:55:15	djangosuper	VIEW: xhr_actions
+2012/05/09  18:55:15	djangosuper	=====> xhr_actions: =xhr:AJAX request: doOrderSelected  ci=6027  ti=0
+2012/05/09  18:55:15	---	Last item ID:4609
+2012/05/09  18:55:15	---	lock removed
+2012/05/09  18:55:30	djangosuper	VIEW: xhr_actions
+2012/05/09  18:55:30	djangosuper	=====> xhr_actions: =xhr:AJAX request: doOrderSelected  ci=6478  ti=0
+2012/05/09  18:55:30	---	Last item ID:4609
+2012/05/09  18:55:30	---	lock removed
+2012/05/09  18:55:43	djangosuper	VIEW: xhr_actions
+2012/05/09  18:55:43	djangosuper	=====> xhr_actions: =xhr:AJAX request: doOrderSelected  ci=6477  ti=0
+2012/05/09  18:55:43	---	Last item ID:4609
+2012/05/09  18:55:43	---	lock removed
+2012/05/09  18:55:59	djangosuper	VIEW: xhr_actions
+2012/05/09  18:55:59	djangosuper	=====> xhr_actions: =xhr:AJAX request: doOrderSelected  ci=6482  ti=0
+2012/05/09  18:55:59	---	Last item ID:6464
+2012/05/09  18:56:00	---	lock removed
+2012/05/09  18:56:09	djangosuper	VIEW: xhr_actions
+2012/05/09  18:56:09	djangosuper	=====> xhr_actions: =xhr:AJAX request: doOrderSelected  ci=6488  ti=0
+2012/05/09  18:56:09	---	Last item ID:6464
+2012/05/09  18:56:09	---	lock removed
+2012/05/09  18:56:23	djangosuper	VIEW: xhr_actions
+2012/05/09  18:56:23	djangosuper	=====> xhr_actions: =xhr:AJAX request: statusSelected  ci=6461  ti=0
+2012/05/09  18:56:23	---	Last item ID:6464
+2012/05/09  18:56:23	---	lock removed
+2012/05/09  18:56:31	djangosuper	VIEW: xhr_actions
+2012/05/09  18:56:31	djangosuper	=====> xhr_actions: =xhr:AJAX request: doOrderSelected  ci=5801  ti=0
+2012/05/09  18:56:31	---	Last item ID:4629
+2012/05/09  18:56:32	---	lock removed
+2012/05/09  18:56:45	djangosuper	Edit item: Formset generated, pItem=5916
+2012/05/09  18:56:51	djangosuper	VIEW: today
+2012/05/09  18:56:51	---	   Entering buildDisplayList
+2012/05/09  18:56:51	---	   Exiting buildDisplayList
+2012/05/09  18:58:10	djangosuper	VIEW: today
+2012/05/09  18:58:10	---	   Entering buildDisplayList
+2012/05/09  18:58:11	---	   Exiting buildDisplayList
+2012/05/09  19:00:16	djangosuper	VIEW: today
+2012/05/09  19:00:16	---	   Entering buildDisplayList
+2012/05/09  19:00:17	---	   Exiting buildDisplayList
+2012/05/09  19:00:52	djangosuper	VIEW: today
+2012/05/09  19:00:52	---	   Entering buildDisplayList
+2012/05/09  19:00:53	---	   Exiting buildDisplayList
+2012/05/09  19:01:41	djangosuper	VIEW: today
+2012/05/09  19:01:41	---	   Entering buildDisplayList
+2012/05/09  19:01:42	---	   Exiting buildDisplayList
+2012/05/09  19:05:42	djangosuper	VIEW: today
+2012/05/09  19:05:42	---	   Entering buildDisplayList
+2012/05/09  19:05:43	---	   Exiting buildDisplayList
+2012/05/09  19:06:06	djangosuper	VIEW: today
+2012/05/09  19:06:06	---	   Entering buildDisplayList
+2012/05/09  19:06:07	---	   Exiting buildDisplayList
+2012/05/09  19:06:23	djangosuper	VIEW: today
+2012/05/09  19:06:23	---	   Entering buildDisplayList
+2012/05/09  19:06:23	---	   Exiting buildDisplayList
+2012/05/09  19:09:51	djangosuper	VIEW: xhr_actions
+2012/05/09  19:09:51	djangosuper	=====> xhr_actions: =xhr:AJAX request: doOrderSelected  ci=6027  ti=0
+2012/05/09  19:09:51	---	Last item ID:4609
+2012/05/09  19:09:52	---	lock removed
+2012/05/09  19:27:58	djangosuper	VIEW: today
+2012/05/09  19:27:58	---	   Entering buildDisplayList
+2012/05/09  19:27:59	---	   Exiting buildDisplayList
+2012/05/09  19:28:31	djangosuper	VIEW: today
+2012/05/09  19:28:31	---	   Entering buildDisplayList
+2012/05/09  19:28:31	---	   Exiting buildDisplayList
+2012/05/09  19:28:56	djangosuper	VIEW: today
+2012/05/09  19:28:56	---	   Entering buildDisplayList
+2012/05/09  19:28:57	---	   Exiting buildDisplayList
+2012/05/09  19:29:12	djangosuper	VIEW: today
+2012/05/09  19:29:12	---	   Entering buildDisplayList
+2012/05/09  19:29:13	---	   Exiting buildDisplayList
+2012/05/09  19:29:24	djangosuper	VIEW: today
+2012/05/09  19:29:24	---	   Entering buildDisplayList
+2012/05/09  19:29:25	---	   Exiting buildDisplayList
+2012/05/09  19:30:42	djangosuper	VIEW: today
+2012/05/09  19:30:42	---	   Entering buildDisplayList
+2012/05/09  19:30:42	---	   Exiting buildDisplayList
+2012/05/09  19:32:27	djangosuper	VIEW: today
+2012/05/09  19:32:27	---	   Entering buildDisplayList
+2012/05/09  19:32:27	---	   Exiting buildDisplayList
+2012/05/09  19:32:47	djangosuper	VIEW: today
+2012/05/09  19:32:47	---	   Entering buildDisplayList
+2012/05/09  19:32:47	---	   Exiting buildDisplayList
+2012/05/09  19:34:01	djangosuper	VIEW: today
+2012/05/09  19:34:01	---	   Entering buildDisplayList
+2012/05/09  19:34:02	---	   Exiting buildDisplayList
+2012/05/09  19:35:29	djangosuper	VIEW: xhr_actions
+2012/05/09  19:35:29	djangosuper	=====> xhr_actions: =xhr:AJAX request: doOrderSelected  ci=6027  ti=0
+2012/05/09  19:35:29	---	Last item ID:4609
+2012/05/09  19:35:31	---	lock removed
+2012/05/09  19:38:01	djangosuper	VIEW: today
+2012/05/09  19:38:01	---	   Entering buildDisplayList
+2012/05/09  19:38:02	---	   Exiting buildDisplayList
+2012/05/09  19:38:30	djangosuper	VIEW: today
+2012/05/09  19:38:30	---	   Entering buildDisplayList
+2012/05/09  19:38:31	---	   Exiting buildDisplayList
+2012/05/09  19:38:51	djangosuper	VIEW: today
+2012/05/09  19:38:51	---	   Entering buildDisplayList
+2012/05/09  19:38:52	---	   Exiting buildDisplayList
+2012/05/09  19:39:29	djangosuper	VIEW: today
+2012/05/09  19:39:29	---	   Entering buildDisplayList
+2012/05/09  19:39:30	---	   Exiting buildDisplayList
+2012/05/09  19:40:34	djangosuper	VIEW: today
+2012/05/09  19:40:34	---	   Entering buildDisplayList
+2012/05/09  19:40:35	---	   Exiting buildDisplayList

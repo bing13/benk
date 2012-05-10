@@ -78,6 +78,10 @@ class Item(models.Model):
 
     indentLevel = models.IntegerField(null=True, blank=True)
 
+    doOrder = models.IntegerField(null=True, blank=True)
+
+    
+
     PRIORITY_CHOICES = (
         ('1', 'TODAY'),
         ('2', 'Urgent'),        

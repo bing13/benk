@@ -1344,6 +1344,9 @@ def xhr_actions(request):
     elif actionRequest['ajaxAction']== 'statusSelected':
         refreshThese=DRAGACTIONS.statusSelected(clickedItem, actionRequest['datax'])
 
+    elif actionRequest['ajaxAction']== 'doOrderSelected':
+        refreshThese=DRAGACTIONS.doOrderSelected(clickedItem, actionRequest['datax'])
+
 
 
 
