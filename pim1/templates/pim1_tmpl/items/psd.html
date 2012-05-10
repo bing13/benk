@@ -84,7 +84,7 @@
 
    <select class="doOrderSelect doOrder_{{ ci.do_order }}" onChange="doOrderSelected({{ ci.id }});"  />
    {% if ci.doOrder == "" %}
-     <option value="" selected="selected"></option>
+     <option value="-9" selected="selected"></option>
    {% else %}
      <option value="" ></option>
    {% endif %}
