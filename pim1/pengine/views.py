@@ -895,7 +895,7 @@ def addItem(request, pItem):
 
     
     lastItemID=sharedMD.getLastItemID(clickedItem.project_id)
-    newItem=DRAGACTIONS.addItem(clickedItem, lastItemID)
+    newItem=DRAGACTIONS.addItem(request, clickedItem, lastItemID)
     sharedMD.logThis(request.user.username, 'edit new item: ' + str(newItem.id))
     #follow does not work, no idea why
     return HttpResponseRedirect('/pim1/item/edititem/'+str(newItem.id))
@@ -1440,7 +1440,7 @@ def uploadItems(request):
                     lastItemID=sharedMD.getLastItemID(projectID)                
                     clickedItem = Item.objects.get(pk=lastItemID) ## i.e., add it to the bottom
 
-                    newItem=DRAGACTIONS.addItem(clickedItem, lastItemID)
+                    newItem=DRAGACTIONS.addItem(request, clickedItem, lastItemID)
                     newItem.title = thisItemTitle
                     newItem.parent='0'
                     newItem.indentLevel='0'

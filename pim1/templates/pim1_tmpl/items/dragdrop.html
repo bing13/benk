@@ -158,7 +158,7 @@ style="border: 2px solid grey;"
          <a class="itemControlWidget" id="itemControl_{{ ci.id }}" onMouseover="itemControlWidget('{{ ci.id }}')">&raquo;</a>
 
 
-
+	 <a class="add_static" href="/pim1/item/add/{{ ci.id }}">&raquo;</a>
 
            </span>
 
@@ -166,12 +166,11 @@ style="border: 2px solid grey;"
 
 
 
-
    <span class="itemDragContentBlock">
 <span class="print_prioStat">{{ ci.priorityText }}:{{ ci.statusText }}</span>
         <div class="itemdrag titleContainer">
 	     
-	      <div  class="indentHolder indent_{{ ci.indentLevel }} {% if ci.isParent %} parentItem {% endif %}">
+	      <div  class="indentHolder indent_{{ ci.indentLevel }} {% if ci.isParent %} parentItem  {% endif %}">
 		 <a href="/pim1/item/edititem/{{ ci.id }}" class="{{ci.statusText}} titlelink" >
                     <span class="marker">{{ ci.outlineBullet|safe }}</span><span class="titletext"> {{ ci.title }}</span></a> 
 	      </div> 

@@ -24,13 +24,21 @@ class dragOps():
     def updateIDsDecorate(self, IDlist):
         decoratedItems=[]
         for id in IDlist:
+            isParent = 'nix';
             if id != 0 :
                 #sharedMD.logThis('---',  "  deco for: "+ str(id))
                 thisItem=Item.objects.get(pk=id)
-                decoratedItems.append([thisItem.id, thisItem.follows, thisItem.title, thisItem.parent, thisItem.indentLevel, thisItem.priority, thisItem.status, thisItem.HTMLnoteBody, sharedMD.returnMarker(thisItem), thisItem.statusText()])
+
+                if len(Item.objects.filter(parent=id)) > 0:
+                    isParent = True;
+                else:
+                    isParent = False;
+
+                
+                decoratedItems.append([thisItem.id, thisItem.follows, thisItem.title, thisItem.parent, thisItem.indentLevel, thisItem.priority, thisItem.status, thisItem.HTMLnoteBody, sharedMD.returnMarker(thisItem), thisItem.statusText(), isParent])
 
                 ## am concerned that other places where this list is build won't have statusText()
-                
+        
         return(decoratedItems)
 
 
@@ -204,11 +212,23 @@ class dragOps():
 
             #### extend kidItems (formerly kidPair( -- add the info JS refreshItem function will need
 
-            kidItems.append([thisKid.id, thisKid.follows, thisKid.title, thisKid.parent, thisKid.indentLevel, thisKid.priority, thisKid.status, thisKid.HTMLnoteBody, sharedMD.returnMarker(thisKid), thisKid.statusText()])
+            if len(Item.objects.filter(parent=thisKid.id)) > 0:
+                isParent = True;
+            else:
+                isParent = False;
+
+ 
+
+            kidItems.append([thisKid.id, thisKid.follows, thisKid.title, thisKid.parent, thisKid.indentLevel, thisKid.priority, thisKid.status, thisKid.HTMLnoteBody, sharedMD.returnMarker(thisKid), thisKid.statusText(), isParent])
 
         parentKidUpdate = []
 
-        parentKidUpdate.append([CI.id, CI.follows, CI.title, CI.parent, CI.indentLevel,CI.priority, CI.status, CI.HTMLnoteBody,sharedMD.returnMarker(CI),CI.statusText() ] )
+        if len(Item.objects.filter(parent=CI.id)) > 0:
+            isParent = True;
+        else:
+            isParent = False;
+
+        parentKidUpdate.append([CI.id, CI.follows, CI.title, CI.parent, CI.indentLevel,CI.priority, CI.status, CI.HTMLnoteBody,sharedMD.returnMarker(CI),CI.statusText(), isParent ] )
 
         ## when drag-moving in CLOSE QUARTERS, an item like TI might go stale, b/c
         ## it was changed by, ex., b/c it was ALSO CI follower or some such. SO for
@@ -216,14 +236,28 @@ class dragOps():
 
         newTI=Item.objects.get(pk=TI.id)
 
-        parentKidUpdate.append([newTI.id, newTI.follows, newTI.title, newTI.parent, newTI.indentLevel,newTI.priority, newTI.status,  newTI.HTMLnoteBody, sharedMD.returnMarker(newTI), newTI.statusText() ] )
+        if len(Item.objects.filter(parent = newTI.id)) > 0:
+            isParent = True;
+        else:
+            isParent = False;
+
+  
+        parentKidUpdate.append([newTI.id, newTI.follows, newTI.title, newTI.parent, newTI.indentLevel,newTI.priority, newTI.status,  newTI.HTMLnoteBody, sharedMD.returnMarker(newTI), newTI.statusText(), isParent ] )
 
         ## have to refresh the CI's parent, in case it's marker has changed w/ the move
         ## IF the parent != 0
 
         if origCIparent != 0:
+            
             CIparent=Item.objects.get(pk=origCIparent)
-            parentKidUpdate.append([CIparent.id, CIparent.follows, CIparent.title, CIparent.parent, CIparent.indentLevel, CIparent.priority, CIparent.status, CIparent.HTMLnoteBody, sharedMD.returnMarker(CIparent), CIparent.statusText()] )
+
+            if len(Item.objects.filter(parent=CIparent.id)) > 0:
+                isParent = True;
+            else:
+                isParent = False;
+
+            
+            parentKidUpdate.append([CIparent.id, CIparent.follows, CIparent.title, CIparent.parent, CIparent.indentLevel, CIparent.priority, CIparent.status, CIparent.HTMLnoteBody, sharedMD.returnMarker(CIparent), CIparent.statusText(), isParent ] )
 
         parentKidUpdate += kidItems
 
@@ -627,17 +661,17 @@ class dragOps():
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # newItem
 
-    def addItem(self,  clickedItem,  lastItemID):
+    def addItem(self, request, clickedItem,  lastItemID):
 
         ## find the item that was following clickedItem
         try:
             oldFollower = Item.objects.get(follows=clickedItem.id)
             follower=True
         except:
-            sharedMD.logThis('---',  "Item has no follower: ID" + str(clickedItem.id))
+            sharedMD.logThis(request.user.username,  "Item has no follower: ID" + str(clickedItem.id))
             follower=False
 
-        newItem = Item(title="",priority='0', status='0', \
+        newItem = Item(owner=request.user.username, title="",priority='0', status='0', \
            follows=clickedItem.id, parent=clickedItem.parent, indentLevel=clickedItem.indentLevel)
         newItem.project=clickedItem.project
 
