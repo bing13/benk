@@ -43,6 +43,7 @@ import drag_actions, sharedMD, checkHealth;
 LOGFILE = '/home/bhadmin13/dx.bernardhecker.com/pim1/benklog1.log'
 IMPORTDIR='/home/bhadmin13/dx.bernardhecker.com/pim1/benk_imports/'
 BACKUPDIR='/home/bhadmin13/dx.bernardhecker.com/pim1/benk_backups/'
+QUICKNOTEDIR = '/home/bhadmin13/dx.bernardhecker.com/pim1/quicknotes/'
 
 ## https://docs.djangoproject.com/en/1.2/topics/forms/
 ## https://docs.djangoproject.com/en/1.3/intro/tutorial04/
@@ -1217,6 +1218,8 @@ def draglist(request, proj_id):
     titleCrumbBlurb = str(proj_id)+':'+projObj.name+"   ("+projObj.set.name+")"
     totalProjItems = Item.objects.filter(project=proj_id).count()
 
+
+
     return render_to_response("pim1_tmpl/items/dragdrop.html", {
 
         'titleCrumbBlurb':titleCrumbBlurb,
@@ -1226,7 +1229,8 @@ def draglist(request, proj_id):
 
         'nowx':datetime.datetime.now().strftime("%Y/%m/%d  %H:%M:%S"),
         'thisSet':projObj.set.id,
-        'totalProjItems':totalProjItems,        
+        'totalProjItems':totalProjItems,
+       
         }, context_instance=RequestContext(request) )
 
 
@@ -1283,6 +1287,33 @@ def xhr_actions(request):
         lockInfo=simplejson.dumps(['LOCKED']+[lockStatus])
         return HttpResponse(lockInfo, mimetype=mimetypex)
     
+
+
+    elif actionRequest['ajaxAction'] == 'getQuicknote':
+        
+        ## open, reading quicknotes
+        QN = open(QUICKNOTEDIR+'quicknote.txt', 'r')
+        quicknote = QN.readlines()
+        QN.close;
+        quickText = ''
+        for q in quicknote:
+            quickText = quickText + q
+
+        quickNoteText = simplejson.dumps(['getQuicknote']+[quickText])
+        return HttpResponse(quickNoteText, mimetype=mimetypex);
+
+    elif actionRequest['ajaxAction'] == 'putQuicknote':
+        QN = open(QUICKNOTEDIR+'quicknote.txt', 'w')
+        QN.write(actionRequest['datax']);
+        QN.close;
+
+        qbname = datetime.datetime.now().strftime("%Y:%m:%d_%H:%M:%S_") + 'quicknote.bkp'
+        QBACK = open(QUICKNOTEDIR+qbname, 'w')
+        QBACK.write(actionRequest['datax']);
+        QBACK.close;
+        
+        quickNoteText = simplejson.dumps(['saveQuicknote']+['nix'])        
+        return HttpResponse(quickNoteText, mimetype=mimetypex);
     
     clickedItem=Item.objects.get(pk=actionRequest['ci'])
 
@@ -1353,6 +1384,7 @@ def xhr_actions(request):
     elif actionRequest['ajaxAction']== 'fastAdd':
         
         refreshThese,newItemTemplate=DRAGACTIONS.fastAdd(clickedItem, actionRequest['FADtitle'], actionRequest['FADstatus'], actionRequest['FADpriority'], actionRequest['FADhtmlBody'] )
+
 
 
     else:
