@@ -5,4 +5,8 @@ pim1/benk_imports
 pim1/benk_backups
 
 # ignore log files
-*.log
+pim1/*.log
+pim1/quicknotes/*/*.bkp
+
+# ignore lock files
+pim1/locks/*
