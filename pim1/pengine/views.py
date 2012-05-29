@@ -1292,7 +1292,7 @@ def xhr_actions(request):
     elif actionRequest['ajaxAction'] == 'getQuicknote':
         
         ## open, reading quicknotes
-        QN = open(QUICKNOTEDIR+'quicknote.txt', 'r')
+        QN = open(QUICKNOTEDIR+'/'+request.user.username+'/quicknote.txt', 'r')
         quicknote = QN.readlines()
         QN.close;
         quickText = ''
@@ -1303,12 +1303,12 @@ def xhr_actions(request):
         return HttpResponse(quickNoteText, mimetype=mimetypex);
 
     elif actionRequest['ajaxAction'] == 'putQuicknote':
-        QN = open(QUICKNOTEDIR+'quicknote.txt', 'w')
+        QN = open(QUICKNOTEDIR+'/'+request.user.username+'/quicknote.txt', 'w')
         QN.write(actionRequest['datax']);
         QN.close;
 
         qbname = datetime.datetime.now().strftime("%Y:%m:%d_%H:%M:%S_") + 'quicknote.bkp'
-        QBACK = open(QUICKNOTEDIR+qbname, 'w')
+        QBACK = open(QUICKNOTEDIR+'/'+request.user.username+'/'+qbname, 'w')
         QBACK.write(actionRequest['datax']);
         QBACK.close;
         
