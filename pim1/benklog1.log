@@ -13433,3 +13433,643 @@
 2012/05/29  08:33:49	djangosuper	=====> xhr_actions: =xhr:AJAX request: putQuicknote  ci=0  ti=0
 2012/05/29  08:33:57	djangosuper	VIEW: xhr_actions
 2012/05/29  08:33:57	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/29  08:39:12	djangosuper	VIEW: xhr_actions
+2012/05/29  08:39:12	djangosuper	=====> xhr_actions: =xhr:AJAX request: putQuicknote  ci=0  ti=0
+2012/05/29  08:39:32	djangosuper	VIEW: today
+2012/05/29  08:39:32	---	   Entering buildDisplayList
+2012/05/29  08:39:32	---	   Exiting buildDisplayList
+2012/05/29  08:39:33	djangosuper	VIEW: xhr_actions
+2012/05/29  08:39:33	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/29  08:53:21	djangosuper	VIEW: draglist
+2012/05/29  08:53:21	djangosuper	     Proj 47
+2012/05/29  08:53:21	---	   Entering buildDisplayList
+2012/05/29  08:53:21	---	   Exiting buildDisplayList
+2012/05/29  08:53:33	djangosuper	VIEW: xhr_actions
+2012/05/29  08:53:33	djangosuper	=====> xhr_actions: =xhr:AJAX request: putQuicknote  ci=0  ti=0
+2012/05/29  08:59:02	djangosuper	VIEW: draglist
+2012/05/29  08:59:02	djangosuper	     Proj 31
+2012/05/29  08:59:02	---	   Entering buildDisplayList
+2012/05/29  08:59:02	---	   Exiting buildDisplayList
+2012/05/29  08:59:03	djangosuper	VIEW: xhr_actions
+2012/05/29  08:59:03	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/29  08:59:03	djangosuper	VIEW: xhr_actions
+2012/05/29  08:59:03	djangosuper	=====> xhr_actions: =xhr:AJAX request: putQuicknote  ci=0  ti=0
+2012/05/29  08:59:15	djangosuper	VIEW: xhr_actions
+2012/05/29  08:59:15	djangosuper	=====> xhr_actions: =xhr:AJAX request: putQuicknote  ci=0  ti=0
+2012/05/29  08:59:49	djangosuper	VIEW: xhr_actions
+2012/05/29  08:59:49	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/29  08:59:58	djangosuper	VIEW: xhr_actions
+2012/05/29  08:59:58	djangosuper	=====> xhr_actions: =xhr:AJAX request: putQuicknote  ci=0  ti=0
+2012/05/29  09:00:06	djangosuper	VIEW: xhr_actions
+2012/05/29  09:00:06	djangosuper	=====> xhr_actions: =xhr:AJAX request: putQuicknote  ci=0  ti=0
+2012/05/29  09:00:08	djangosuper	VIEW: xhr_actions
+2012/05/29  09:00:08	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/29  09:00:09	djangosuper	VIEW: xhr_actions
+2012/05/29  09:00:09	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/29  09:00:13	djangosuper	VIEW: draglist
+2012/05/29  09:00:13	djangosuper	     Proj 31
+2012/05/29  09:00:13	---	   Entering buildDisplayList
+2012/05/29  09:00:13	---	   Exiting buildDisplayList
+2012/05/29  09:00:14	djangosuper	VIEW: xhr_actions
+2012/05/29  09:00:14	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/29  09:00:16	djangosuper	VIEW: xhr_actions
+2012/05/29  09:00:16	djangosuper	=====> xhr_actions: =xhr:AJAX request: putQuicknote  ci=0  ti=0
+2012/05/29  09:00:21	djangosuper	VIEW: xhr_actions
+2012/05/29  09:00:21	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/29  09:00:30	djangosuper	VIEW: xhr_actions
+2012/05/29  09:00:30	djangosuper	=====> xhr_actions: =xhr:AJAX request: putQuicknote  ci=0  ti=0
+2012/05/29  09:00:36	djangosuper	Edit item: Formset generated, pItem=6118
+2012/05/29  09:00:37	djangosuper	VIEW: xhr_actions
+2012/05/29  09:00:37	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/29  09:00:41	djangosuper	VIEW: xhr_actions
+2012/05/29  09:00:41	djangosuper	=====> xhr_actions: =xhr:AJAX request: putQuicknote  ci=0  ti=0
+2012/05/29  09:00:42	djangosuper	VIEW: xhr_actions
+2012/05/29  09:00:42	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/29  09:00:45	djangosuper	VIEW: xhr_actions
+2012/05/29  09:00:45	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/29  09:07:31	djangosuper	VIEW: xhr_actions
+2012/05/29  09:07:31	djangosuper	=====> xhr_actions: =xhr:AJAX request: putQuicknote  ci=0  ti=0
+2012/05/29  09:12:27	djangosuper	VIEW: xhr_actions
+2012/05/29  09:12:27	djangosuper	=====> xhr_actions: =xhr:AJAX request: putQuicknote  ci=0  ti=0
+2012/05/29  09:13:01	djangosuper	VIEW: xhr_actions
+2012/05/29  09:13:01	djangosuper	=====> xhr_actions: =xhr:AJAX request: putQuicknote  ci=0  ti=0
+2012/05/29  09:13:02	djangosuper	VIEW: xhr_actions
+2012/05/29  09:13:02	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/29  09:13:04	djangosuper	VIEW: xhr_actions
+2012/05/29  09:13:04	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/29  09:13:27	djangosuper	VIEW: xhr_actions
+2012/05/29  09:13:27	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/29  09:14:13	djangosuper	VIEW: draglist
+2012/05/29  09:14:13	djangosuper	     Proj 31
+2012/05/29  09:14:13	---	   Entering buildDisplayList
+2012/05/29  09:14:13	---	   Exiting buildDisplayList
+2012/05/29  09:14:14	djangosuper	VIEW: xhr_actions
+2012/05/29  09:14:14	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/29  09:14:19	djangosuper	VIEW: xhr_actions
+2012/05/29  09:14:19	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/29  09:17:36	djangosuper	VIEW: draglist
+2012/05/29  09:17:36	djangosuper	     Proj 47
+2012/05/29  09:17:36	---	   Entering buildDisplayList
+2012/05/29  09:17:36	---	   Exiting buildDisplayList
+2012/05/29  09:17:36	djangosuper	VIEW: xhr_actions
+2012/05/29  09:17:36	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/29  09:17:47	djangosuper	VIEW: xhr_actions
+2012/05/29  09:17:47	djangosuper	=====> xhr_actions: =xhr:AJAX request: putQuicknote  ci=0  ti=0
+2012/05/29  09:18:04	djangosuper	VIEW: draglist
+2012/05/29  09:18:04	djangosuper	     Proj 47
+2012/05/29  09:18:04	---	   Entering buildDisplayList
+2012/05/29  09:18:04	---	   Exiting buildDisplayList
+2012/05/29  09:18:06	djangosuper	VIEW: xhr_actions
+2012/05/29  09:18:06	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/29  09:18:29	djangosuper	VIEW: xhr_actions
+2012/05/29  09:18:29	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/29  09:18:34	djangosuper	VIEW: xhr_actions
+2012/05/29  09:18:34	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/29  09:18:43	djangosuper	VIEW: xhr_actions
+2012/05/29  09:18:43	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/29  09:19:05	djangosuper	VIEW: xhr_actions
+2012/05/29  09:19:05	djangosuper	=====> xhr_actions: =xhr:AJAX request: putQuicknote  ci=0  ti=0
+2012/05/29  09:19:19	djangosuper	VIEW: draglist
+2012/05/29  09:19:19	djangosuper	     Proj 47
+2012/05/29  09:19:19	---	   Entering buildDisplayList
+2012/05/29  09:19:19	---	   Exiting buildDisplayList
+2012/05/29  09:19:21	djangosuper	VIEW: xhr_actions
+2012/05/29  09:19:21	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/29  09:19:27	djangosuper	VIEW: xhr_actions
+2012/05/29  09:19:27	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/29  09:19:35	djangosuper	VIEW: xhr_actions
+2012/05/29  09:19:35	djangosuper	=====> xhr_actions: =xhr:AJAX request: putQuicknote  ci=0  ti=0
+2012/05/29  09:19:37	djangosuper	VIEW: xhr_actions
+2012/05/29  09:19:37	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/29  09:19:42	djangosuper	VIEW: draglist
+2012/05/29  09:19:42	djangosuper	     Proj 47
+2012/05/29  09:19:42	---	   Entering buildDisplayList
+2012/05/29  09:19:42	---	   Exiting buildDisplayList
+2012/05/29  09:19:43	djangosuper	VIEW: xhr_actions
+2012/05/29  09:19:43	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/29  09:19:52	djangosuper	VIEW: draglist
+2012/05/29  09:19:52	djangosuper	     Proj 47
+2012/05/29  09:19:52	---	   Entering buildDisplayList
+2012/05/29  09:19:52	---	   Exiting buildDisplayList
+2012/05/29  09:19:54	djangosuper	VIEW: xhr_actions
+2012/05/29  09:19:54	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/29  09:20:04	djangosuper	VIEW: xhr_actions
+2012/05/29  09:20:04	djangosuper	=====> xhr_actions: =xhr:AJAX request: putQuicknote  ci=0  ti=0
+2012/05/29  09:20:09	djangosuper	VIEW: xhr_actions
+2012/05/29  09:20:09	djangosuper	=====> xhr_actions: =xhr:AJAX request: putQuicknote  ci=0  ti=0
+2012/05/29  09:20:13	djangosuper	VIEW: draglist
+2012/05/29  09:20:13	djangosuper	     Proj 47
+2012/05/29  09:20:13	---	   Entering buildDisplayList
+2012/05/29  09:20:13	---	   Exiting buildDisplayList
+2012/05/29  09:20:15	djangosuper	VIEW: xhr_actions
+2012/05/29  09:20:15	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/29  09:21:34	djangosuper	VIEW: xhr_actions
+2012/05/29  09:21:34	djangosuper	=====> xhr_actions: =xhr:AJAX request: putQuicknote  ci=0  ti=0
+2012/05/29  09:21:35	djangosuper	VIEW: xhr_actions
+2012/05/29  09:21:35	djangosuper	=====> xhr_actions: =xhr:AJAX request: putQuicknote  ci=0  ti=0
+2012/05/29  09:22:02	djangosuper	VIEW: xhr_actions
+2012/05/29  09:22:02	djangosuper	=====> xhr_actions: =xhr:AJAX request: putQuicknote  ci=0  ti=0
+2012/05/29  09:22:03	djangosuper	VIEW: xhr_actions
+2012/05/29  09:22:03	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/29  09:22:10	djangosuper	VIEW: xhr_actions
+2012/05/29  09:22:10	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/29  09:22:18	djangosuper	VIEW: xhr_actions
+2012/05/29  09:22:18	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/29  09:23:10	djangosuper	VIEW: xhr_actions
+2012/05/29  09:23:10	djangosuper	=====> xhr_actions: =xhr:AJAX request: putQuicknote  ci=0  ti=0
+2012/05/29  09:23:10	djangosuper	VIEW: xhr_actions
+2012/05/29  09:23:10	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/29  09:23:23	djangosuper	VIEW: xhr_actions
+2012/05/29  09:23:23	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/29  09:23:25	djangosuper	VIEW: xhr_actions
+2012/05/29  09:23:25	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/29  09:23:51	djangosuper	VIEW: xhr_actions
+2012/05/29  09:23:51	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/29  09:24:01	djangosuper	VIEW: xhr_actions
+2012/05/29  09:24:01	djangosuper	=====> xhr_actions: =xhr:AJAX request: putQuicknote  ci=0  ti=0
+2012/05/29  09:24:02	djangosuper	VIEW: xhr_actions
+2012/05/29  09:24:02	djangosuper	=====> xhr_actions: =xhr:AJAX request: putQuicknote  ci=0  ti=0
+2012/05/29  09:24:03	djangosuper	VIEW: xhr_actions
+2012/05/29  09:24:03	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/29  09:31:13	djangosuper	VIEW: draglist
+2012/05/29  09:31:13	djangosuper	     Proj 47
+2012/05/29  09:31:13	---	   Entering buildDisplayList
+2012/05/29  09:31:13	---	   Exiting buildDisplayList
+2012/05/29  09:31:15	djangosuper	VIEW: xhr_actions
+2012/05/29  09:31:15	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/29  09:31:59	djangosuper	VIEW: xhr_actions
+2012/05/29  09:31:59	djangosuper	=====> xhr_actions: =xhr:AJAX request: putQuicknote  ci=0  ti=0
+2012/05/29  09:32:05	djangosuper	VIEW: draglist
+2012/05/29  09:32:05	djangosuper	     Proj 31
+2012/05/29  09:32:05	---	   Entering buildDisplayList
+2012/05/29  09:32:05	---	   Exiting buildDisplayList
+2012/05/29  09:32:06	djangosuper	VIEW: xhr_actions
+2012/05/29  09:32:06	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/29  09:32:18	djangosuper	VIEW: draglist
+2012/05/29  09:32:18	djangosuper	     Proj 47
+2012/05/29  09:32:18	---	   Entering buildDisplayList
+2012/05/29  09:32:19	---	   Exiting buildDisplayList
+2012/05/29  09:32:21	djangosuper	VIEW: xhr_actions
+2012/05/29  09:32:21	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/29  09:32:48	djangosuper	VIEW: xhr_actions
+2012/05/29  09:32:48	djangosuper	=====> xhr_actions: =xhr:AJAX request: putQuicknote  ci=0  ti=0
+2012/05/29  09:32:54	djangosuper	VIEW: xhr_actions
+2012/05/29  09:32:54	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/29  09:33:08	djangosuper	VIEW: xhr_actions
+2012/05/29  09:33:08	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/29  09:33:14	djangosuper	VIEW: xhr_actions
+2012/05/29  09:33:14	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/29  09:33:26	djangosuper	VIEW: xhr_actions
+2012/05/29  09:33:26	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/29  09:34:16	djangosuper	VIEW: draglist
+2012/05/29  09:34:16	djangosuper	     Proj 47
+2012/05/29  09:34:16	---	   Entering buildDisplayList
+2012/05/29  09:34:16	---	   Exiting buildDisplayList
+2012/05/29  09:34:18	djangosuper	VIEW: xhr_actions
+2012/05/29  09:34:18	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/29  09:34:27	djangosuper	VIEW: draglist
+2012/05/29  09:34:27	djangosuper	     Proj 31
+2012/05/29  09:34:27	---	   Entering buildDisplayList
+2012/05/29  09:34:27	---	   Exiting buildDisplayList
+2012/05/29  09:34:28	djangosuper	VIEW: xhr_actions
+2012/05/29  09:34:28	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/29  09:34:46	djangosuper	VIEW: xhr_actions
+2012/05/29  09:34:46	djangosuper	=====> xhr_actions: =xhr:AJAX request: putQuicknote  ci=0  ti=0
+2012/05/29  09:34:50	djangosuper	VIEW: xhr_actions
+2012/05/29  09:34:50	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/29  09:35:00	djangosuper	VIEW: xhr_actions
+2012/05/29  09:35:00	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/29  09:35:04	djangosuper	VIEW: xhr_actions
+2012/05/29  09:35:04	djangosuper	=====> xhr_actions: =xhr:AJAX request: putQuicknote  ci=0  ti=0
+2012/05/29  09:35:10	djangosuper	VIEW: xhr_actions
+2012/05/29  09:35:10	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/29  09:35:25	djangosuper	VIEW: xhr_actions
+2012/05/29  09:35:25	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/29  09:35:28	djangosuper	VIEW: xhr_actions
+2012/05/29  09:35:28	djangosuper	=====> xhr_actions: =xhr:AJAX request: putQuicknote  ci=0  ti=0
+2012/05/29  09:35:32	djangosuper	VIEW: xhr_actions
+2012/05/29  09:35:32	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/29  09:36:12	djangosuper	VIEW: xhr_actions
+2012/05/29  09:36:12	djangosuper	=====> xhr_actions: =xhr:AJAX request: putQuicknote  ci=0  ti=0
+2012/05/29  09:36:26	djangosuper	VIEW: xhr_actions
+2012/05/29  09:36:26	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/29  10:18:05	djangosuper	VIEW: draglist
+2012/05/29  10:18:05	djangosuper	     Proj 4
+2012/05/29  10:18:05	---	   Entering buildDisplayList
+2012/05/29  10:18:05	---	   Exiting buildDisplayList
+2012/05/29  10:18:06	djangosuper	VIEW: xhr_actions
+2012/05/29  10:18:06	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/29  10:18:20	djangosuper	VIEW: xhr_actions
+2012/05/29  10:18:20	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/29  11:56:38	djangosuper	VIEW: today
+2012/05/29  11:56:38	---	   Entering buildDisplayList
+2012/05/29  11:56:39	---	   Exiting buildDisplayList
+2012/05/29  11:56:40	djangosuper	VIEW: xhr_actions
+2012/05/29  11:56:40	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/29  11:56:47	djangosuper	VIEW: draglist
+2012/05/29  11:56:47	djangosuper	     Proj 31
+2012/05/29  11:56:47	---	   Entering buildDisplayList
+2012/05/29  11:56:47	---	   Exiting buildDisplayList
+2012/05/29  11:56:48	djangosuper	VIEW: xhr_actions
+2012/05/29  11:56:48	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/29  11:57:06	djangosuper	VIEW: xhr_actions
+2012/05/29  11:57:06	djangosuper	=====> xhr_actions: =xhr:AJAX request: putQuicknote  ci=0  ti=0
+2012/05/29  11:57:51	djangosuper	VIEW: xhr_actions
+2012/05/29  11:57:51	djangosuper	=====> xhr_actions: =xhr:AJAX request: archiveThisItem  ci=6531  ti=0
+2012/05/29  11:57:51	---	Last item ID:6464
+2012/05/29  11:57:52	---	sMDflk=> findLastKid lastKid=0
+2012/05/29  11:57:52	---	Last item ID:6506
+2012/05/29  11:57:53	---	==> archivePair moved item 6531  to proj: 32
+2012/05/29  11:57:53	---	lock removed
+2012/05/29  11:57:57	djangosuper	VIEW: xhr_actions
+2012/05/29  11:57:57	djangosuper	=====> xhr_actions: =xhr:AJAX request: promote  ci=6507  ti=0
+2012/05/29  11:57:57	---	Last item ID:6464
+2012/05/29  11:57:57	---	sMDflk=> findLastKid lastKid=0
+2012/05/29  11:57:57	---	Promoting: 6507
+2012/05/29  11:57:57	---	converting subsequent items to children starting at: 6507
+2012/05/29  11:57:58	---	lock removed
+2012/05/29  11:58:13	djangosuper	Edit item: Formset generated, pItem=6525
+2012/05/29  11:58:13	djangosuper	VIEW: xhr_actions
+2012/05/29  11:58:13	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/29  11:58:22	djangosuper	   Formset saved: [<Item: close loop w/Andy re: possibly needing help a la SSO>]
+2012/05/29  11:58:23	djangosuper	VIEW: draglist
+2012/05/29  11:58:23	djangosuper	     Proj 31
+2012/05/29  11:58:23	---	   Entering buildDisplayList
+2012/05/29  11:58:23	---	   Exiting buildDisplayList
+2012/05/29  11:58:23	djangosuper	VIEW: xhr_actions
+2012/05/29  11:58:23	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/29  11:59:19	djangosuper	Edit item: Formset generated, pItem=6526
+2012/05/29  11:59:19	djangosuper	VIEW: xhr_actions
+2012/05/29  11:59:19	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/29  11:59:46	djangosuper	   Formset saved: [<Item: issues required for issue PDFs>]
+2012/05/29  11:59:46	djangosuper	VIEW: draglist
+2012/05/29  11:59:46	djangosuper	     Proj 31
+2012/05/29  11:59:46	---	   Entering buildDisplayList
+2012/05/29  11:59:46	---	   Exiting buildDisplayList
+2012/05/29  11:59:46	djangosuper	VIEW: xhr_actions
+2012/05/29  11:59:46	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/29  11:59:58	djangosuper	Edit item: Formset generated, pItem=6526
+2012/05/29  11:59:58	djangosuper	VIEW: xhr_actions
+2012/05/29  11:59:58	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/29  12:00:18	djangosuper	   Formset saved: [<Item: backfile has vol/iss/pg resource IDs>]
+2012/05/29  12:00:19	djangosuper	VIEW: draglist
+2012/05/29  12:00:19	djangosuper	     Proj 31
+2012/05/29  12:00:19	---	   Entering buildDisplayList
+2012/05/29  12:00:19	---	   Exiting buildDisplayList
+2012/05/29  12:00:19	djangosuper	VIEW: xhr_actions
+2012/05/29  12:00:19	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/29  12:00:28	djangosuper	VIEW: xhr_actions
+2012/05/29  12:00:28	djangosuper	=====> xhr_actions: =xhr:AJAX request: promote  ci=6529  ti=0
+2012/05/29  12:00:28	---	Last item ID:6464
+2012/05/29  12:00:28	---	sMDflk=> findLastKid lastKid=0
+2012/05/29  12:00:28	---	Promoting: 6529
+2012/05/29  12:00:28	---	converting subsequent items to children starting at: 6529
+2012/05/29  12:00:28	---	lock removed
+2012/05/29  12:00:35	djangosuper	VIEW: xhr_actions
+2012/05/29  12:00:35	djangosuper	=====> xhr_actions: =xhr:AJAX request: moveUp  ci=6522  ti=0
+2012/05/29  12:00:35	---	Last item ID:6464
+2012/05/29  12:00:35	---	sMDflk=> findLastKid lastKid=0
+2012/05/29  12:00:35	---	  moving among children of 6527
+2012/05/29  12:00:35	---	  TI:  6529
+2012/05/29  12:00:35	---	sMDflk=> findLastKid lastKid=0
+2012/05/29  12:00:36	---	lock removed
+2012/05/29  12:00:37	djangosuper	VIEW: xhr_actions
+2012/05/29  12:00:37	djangosuper	=====> xhr_actions: =xhr:AJAX request: moveUp  ci=6522  ti=0
+2012/05/29  12:00:37	---	Last item ID:6464
+2012/05/29  12:00:37	---	sMDflk=> findLastKid lastKid=0
+2012/05/29  12:00:37	---	  moving among children of 6527
+2012/05/29  12:00:37	---	  TI:  6526
+2012/05/29  12:00:37	---	sMDflk=> findLastKid lastKid=0
+2012/05/29  12:00:38	---	lock removed
+2012/05/29  12:00:46	djangosuper	VIEW: xhr_actions
+2012/05/29  12:00:46	djangosuper	=====> xhr_actions: =xhr:AJAX request: fastAdd  ci=6522  ti=0
+2012/05/29  12:00:46	---	Last item ID:6464
+2012/05/29  12:00:46	---	VIEW: drag_actions => fastAdd
+2012/05/29  12:00:46	---	fastAdd for 6522  issues required for issue PDFs
+2012/05/29  12:00:46	---	NEW FA item ID=None
+2012/05/29  12:00:46	---	   fastadded item ID = 6543
+2012/05/29  12:00:48	---	lock removed
+2012/05/29  12:00:57	djangosuper	VIEW: xhr_actions
+2012/05/29  12:00:57	djangosuper	=====> xhr_actions: =xhr:AJAX request: prioritySelected  ci=6527  ti=0
+2012/05/29  12:00:57	---	Last item ID:6464
+2012/05/29  12:00:57	---	lock removed
+2012/05/29  12:00:59	djangosuper	VIEW: xhr_actions
+2012/05/29  12:00:59	djangosuper	=====> xhr_actions: =xhr:AJAX request: statusSelected  ci=6527  ti=0
+2012/05/29  12:00:59	---	Last item ID:6464
+2012/05/29  12:00:59	---	lock removed
+2012/05/29  12:01:03	djangosuper	VIEW: xhr_actions
+2012/05/29  12:01:03	djangosuper	=====> xhr_actions: =xhr:AJAX request: prioritySelected  ci=6527  ti=0
+2012/05/29  12:01:03	---	Last item ID:6464
+2012/05/29  12:01:03	---	lock removed
+2012/05/29  12:01:05	djangosuper	VIEW: xhr_actions
+2012/05/29  12:01:05	djangosuper	=====> xhr_actions: =xhr:AJAX request: statusSelected  ci=6527  ti=0
+2012/05/29  12:01:05	---	Last item ID:6464
+2012/05/29  12:01:06	---	lock removed
+2012/05/29  12:01:07	djangosuper	VIEW: xhr_actions
+2012/05/29  12:01:07	djangosuper	=====> xhr_actions: =xhr:AJAX request: prioritySelected  ci=6522  ti=0
+2012/05/29  12:01:07	---	Last item ID:6464
+2012/05/29  12:01:08	---	lock removed
+2012/05/29  12:01:10	djangosuper	VIEW: xhr_actions
+2012/05/29  12:01:10	djangosuper	=====> xhr_actions: =xhr:AJAX request: statusSelected  ci=6522  ti=0
+2012/05/29  12:01:10	---	Last item ID:6464
+2012/05/29  12:01:10	---	lock removed
+2012/05/29  14:22:09	djangosuper	VIEW: xhr_actions
+2012/05/29  14:22:09	djangosuper	=====> xhr_actions: =xhr:AJAX request: putQuicknote  ci=0  ti=0
+2012/05/29  15:43:46	djangosuper	VIEW: xhr_actions
+2012/05/29  15:43:46	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/29  15:45:59	djangosuper	VIEW: xhr_actions
+2012/05/29  15:45:59	djangosuper	=====> xhr_actions: =xhr:AJAX request: putQuicknote  ci=0  ti=0
+2012/05/29  15:47:02	djangosuper	VIEW: draglist
+2012/05/29  15:47:02	djangosuper	     Proj 47
+2012/05/29  15:47:02	---	   Entering buildDisplayList
+2012/05/29  15:47:02	---	   Exiting buildDisplayList
+2012/05/29  15:47:04	djangosuper	VIEW: xhr_actions
+2012/05/29  15:47:04	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/29  15:47:15	djangosuper	VIEW: xhr_actions
+2012/05/29  15:47:15	djangosuper	=====> xhr_actions: =xhr:AJAX request: putQuicknote  ci=0  ti=0
+2012/05/29  15:47:19	djangosuper	VIEW: xhr_actions
+2012/05/29  15:47:19	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/29  15:47:57	djangosuper	VIEW: xhr_actions
+2012/05/29  15:47:57	djangosuper	=====> xhr_actions: =xhr:AJAX request: putQuicknote  ci=0  ti=0
+2012/05/29  15:48:01	djangosuper	VIEW: xhr_actions
+2012/05/29  15:48:01	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/29  15:51:11	djangosuper	VIEW: xhr_actions
+2012/05/29  15:51:11	djangosuper	=====> xhr_actions: =xhr:AJAX request: fastAdd  ci=6485  ti=0
+2012/05/29  15:51:11	---	Last item ID:6464
+2012/05/29  15:51:11	---	VIEW: drag_actions => fastAdd
+2012/05/29  15:51:11	---	fastAdd for 6485  When MM returns on 2 June, as if v-issue model allows an article to be in more than 1 v-issue
+2012/05/29  15:51:12	---	NEW FA item ID=None
+2012/05/29  15:51:12	---	   fastadded item ID = 6544
+2012/05/29  15:51:12	---	lock removed
+2012/05/29  15:51:20	djangosuper	VIEW: xhr_actions
+2012/05/29  15:51:20	djangosuper	=====> xhr_actions: =xhr:AJAX request: prioritySelected  ci=6544  ti=0
+2012/05/29  15:51:20	---	Last item ID:6464
+2012/05/29  15:51:20	---	lock removed
+2012/05/29  15:51:22	djangosuper	VIEW: xhr_actions
+2012/05/29  15:51:22	djangosuper	=====> xhr_actions: =xhr:AJAX request: statusSelected  ci=6544  ti=0
+2012/05/29  15:51:22	---	Last item ID:6464
+2012/05/29  15:51:23	---	lock removed
+2012/05/29  16:04:21	djangosuper	VIEW: today
+2012/05/29  16:04:21	---	   Entering buildDisplayList
+2012/05/29  16:04:23	---	   Exiting buildDisplayList
+2012/05/29  16:04:24	djangosuper	VIEW: xhr_actions
+2012/05/29  16:04:24	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/29  16:04:51	djangosuper	VIEW: draglist
+2012/05/29  16:04:51	djangosuper	     Proj 2
+2012/05/29  16:04:51	---	   Entering buildDisplayList
+2012/05/29  16:04:52	---	   Exiting buildDisplayList
+2012/05/29  16:04:52	djangosuper	VIEW: xhr_actions
+2012/05/29  16:04:52	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/29  16:20:11	djangosuper	VIEW: today
+2012/05/29  16:20:11	---	   Entering buildDisplayList
+2012/05/29  16:20:12	---	   Exiting buildDisplayList
+2012/05/29  16:20:12	djangosuper	VIEW: xhr_actions
+2012/05/29  16:20:12	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/29  16:20:29	djangosuper	VIEW: xhr_actions
+2012/05/29  16:20:29	djangosuper	=====> xhr_actions: =xhr:AJAX request: prioritySelected  ci=6481  ti=0
+2012/05/29  16:20:29	---	Last item ID:4609
+2012/05/29  16:20:30	---	lock removed
+2012/05/29  16:20:36	djangosuper	VIEW: xhr_actions
+2012/05/29  16:20:36	djangosuper	=====> xhr_actions: =xhr:AJAX request: statusSelected  ci=6481  ti=0
+2012/05/29  16:20:36	---	Last item ID:4609
+2012/05/29  16:20:37	---	lock removed
+2012/05/29  16:20:39	djangosuper	Edit item: Formset generated, pItem=6481
+2012/05/29  16:20:40	djangosuper	VIEW: xhr_actions
+2012/05/29  16:20:40	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/29  16:21:02	djangosuper	   Formset saved: [<Item: replace CRO2  iPhone App, post-launch>]
+2012/05/29  16:21:02	djangosuper	VIEW: today
+2012/05/29  16:21:02	---	   Entering buildDisplayList
+2012/05/29  16:21:05	---	   Exiting buildDisplayList
+2012/05/29  16:21:05	djangosuper	VIEW: xhr_actions
+2012/05/29  16:21:05	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/29  16:21:22	djangosuper	VIEW: xhr_actions
+2012/05/29  16:21:22	djangosuper	=====> xhr_actions: =xhr:AJAX request: prioritySelected  ci=6514  ti=0
+2012/05/29  16:21:22	---	Last item ID:5595
+2012/05/29  16:21:22	---	lock removed
+2012/05/29  16:21:24	djangosuper	VIEW: xhr_actions
+2012/05/29  16:21:24	djangosuper	=====> xhr_actions: =xhr:AJAX request: statusSelected  ci=6514  ti=0
+2012/05/29  16:21:24	---	Last item ID:5595
+2012/05/29  16:21:24	---	lock removed
+2012/05/29  16:21:27	djangosuper	VIEW: xhr_actions
+2012/05/29  16:21:27	djangosuper	=====> xhr_actions: =xhr:AJAX request: prioritySelected  ci=5951  ti=0
+2012/05/29  16:21:27	---	Last item ID:5595
+2012/05/29  16:21:27	---	lock removed
+2012/05/29  16:21:29	djangosuper	VIEW: xhr_actions
+2012/05/29  16:21:29	djangosuper	=====> xhr_actions: =xhr:AJAX request: statusSelected  ci=5951  ti=0
+2012/05/29  16:21:29	---	Last item ID:5595
+2012/05/29  16:21:29	---	lock removed
+2012/05/29  16:21:38	djangosuper	VIEW: xhr_actions
+2012/05/29  16:21:38	djangosuper	=====> xhr_actions: =xhr:AJAX request: prioritySelected  ci=6541  ti=0
+2012/05/29  16:21:38	---	Last item ID:4574
+2012/05/29  16:21:38	---	lock removed
+2012/05/29  16:21:39	djangosuper	VIEW: xhr_actions
+2012/05/29  16:21:39	djangosuper	=====> xhr_actions: =xhr:AJAX request: statusSelected  ci=6541  ti=0
+2012/05/29  16:21:40	---	Last item ID:4574
+2012/05/29  16:21:40	---	lock removed
+2012/05/29  16:21:54	djangosuper	VIEW: xhr_actions
+2012/05/29  16:21:54	djangosuper	=====> xhr_actions: =xhr:AJAX request: prioritySelected  ci=6027  ti=0
+2012/05/29  16:21:54	---	Last item ID:4609
+2012/05/29  16:21:54	---	lock removed
+2012/05/29  16:21:57	djangosuper	VIEW: xhr_actions
+2012/05/29  16:21:57	djangosuper	=====> xhr_actions: =xhr:AJAX request: statusSelected  ci=6027  ti=0
+2012/05/29  16:21:57	---	Last item ID:4609
+2012/05/29  16:21:57	---	lock removed
+2012/05/29  16:22:03	djangosuper	VIEW: xhr_actions
+2012/05/29  16:22:03	djangosuper	=====> xhr_actions: =xhr:AJAX request: prioritySelected  ci=5661  ti=0
+2012/05/29  16:22:03	---	Last item ID:4609
+2012/05/29  16:22:04	---	lock removed
+2012/05/29  16:22:40	djangosuper	VIEW: xhr_actions
+2012/05/29  16:22:40	djangosuper	=====> xhr_actions: =xhr:AJAX request: prioritySelected  ci=5410  ti=0
+2012/05/29  16:22:40	---	Last item ID:4629
+2012/05/29  16:22:41	---	lock removed
+2012/05/29  16:22:42	djangosuper	VIEW: xhr_actions
+2012/05/29  16:22:42	djangosuper	=====> xhr_actions: =xhr:AJAX request: statusSelected  ci=5410  ti=0
+2012/05/29  16:22:43	---	Last item ID:4629
+2012/05/29  16:22:43	---	lock removed
+2012/05/29  16:24:17	djangosuper	VIEW: xhr_actions
+2012/05/29  16:24:17	djangosuper	=====> xhr_actions: =xhr:AJAX request: doOrderSelected  ci=6519  ti=0
+2012/05/29  16:24:17	---	Last item ID:4629
+2012/05/29  16:24:17	---	lock removed
+2012/05/29  16:39:42	djangosuper	VIEW: xhr_actions
+2012/05/29  16:39:42	djangosuper	=====> xhr_actions: =xhr:AJAX request: doOrderSelected  ci=6530  ti=0
+2012/05/29  16:39:42	---	Last item ID:6464
+2012/05/29  16:39:43	---	lock removed
+2012/05/29  16:39:58	djangosuper	VIEW: xhr_actions
+2012/05/29  16:39:58	djangosuper	=====> xhr_actions: =xhr:AJAX request: doOrderSelected  ci=6234  ti=0
+2012/05/29  16:39:58	---	Last item ID:4574
+2012/05/29  16:41:21	djangosuper	VIEW: draglist
+2012/05/29  16:41:21	djangosuper	     Proj 6
+2012/05/29  16:41:21	---	   Entering buildDisplayList
+2012/05/29  16:41:21	---	   Exiting buildDisplayList
+2012/05/29  16:41:21	djangosuper	VIEW: xhr_actions
+2012/05/29  16:41:21	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/29  16:41:21	djangosuper	         ==> LOCK FILE exists:['Locked:\tdjangosuper\t2012:05:29  16:39:58 ::\tdoOrderSelected  Proj:5 ci:6234  ti:0']
+2012/05/29  16:41:51	djangosuper	VIEW: maintPage
+2012/05/29  16:41:51	djangosuper	VIEW: xhr_actions
+2012/05/29  16:41:51	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/29  16:41:51	djangosuper	         ==> LOCK FILE exists:['Locked:\tdjangosuper\t2012:05:29  16:39:58 ::\tdoOrderSelected  Proj:5 ci:6234  ti:0']
+2012/05/29  16:41:52	djangosuper	VIEW: maintPage
+2012/05/29  16:41:52	---	lock removed
+2012/05/29  16:41:53	djangosuper	VIEW: xhr_actions
+2012/05/29  16:41:53	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/29  16:42:02	djangosuper	VIEW: draglist
+2012/05/29  16:42:02	djangosuper	     Proj 6
+2012/05/29  16:42:02	---	   Entering buildDisplayList
+2012/05/29  16:42:02	---	   Exiting buildDisplayList
+2012/05/29  16:42:03	djangosuper	VIEW: xhr_actions
+2012/05/29  16:42:03	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/29  16:42:40	djangosuper	VIEW: xhr_actions
+2012/05/29  16:42:40	djangosuper	=====> xhr_actions: =xhr:AJAX request: putQuicknote  ci=0  ti=0
+2012/05/29  16:43:22	djangosuper	VIEW: xhr_actions
+2012/05/29  16:43:22	djangosuper	=====> xhr_actions: =xhr:AJAX request: putQuicknote  ci=0  ti=0
+2012/05/29  16:43:33	djangosuper	VIEW: xhr_actions
+2012/05/29  16:43:33	djangosuper	=====> xhr_actions: =xhr:AJAX request: prioritySelected  ci=6029  ti=0
+2012/05/29  16:43:33	---	Last item ID:4629
+2012/05/29  16:43:33	---	lock removed
+2012/05/29  16:43:41	djangosuper	VIEW: xhr_actions
+2012/05/29  16:43:41	djangosuper	=====> xhr_actions: =xhr:AJAX request: putQuicknote  ci=0  ti=0
+2012/05/29  16:48:03	djangosuper	VIEW: xhr_actions
+2012/05/29  16:48:03	djangosuper	=====> xhr_actions: =xhr:AJAX request: putQuicknote  ci=0  ti=0
+2012/05/29  17:39:43	djangosuper	VIEW: draglist
+2012/05/29  17:39:43	djangosuper	     Proj 5
+2012/05/29  17:39:43	---	   Entering buildDisplayList
+2012/05/29  17:39:43	---	   Exiting buildDisplayList
+2012/05/29  17:39:44	djangosuper	VIEW: xhr_actions
+2012/05/29  17:39:44	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/30  07:38:18	djangosuper	VIEW: today
+2012/05/30  07:38:18	---	   Entering buildDisplayList
+2012/05/30  07:38:19	---	   Exiting buildDisplayList
+2012/05/30  07:38:20	djangosuper	VIEW: xhr_actions
+2012/05/30  07:38:20	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/30  07:38:33	djangosuper	VIEW: xhr_actions
+2012/05/30  07:38:33	djangosuper	=====> xhr_actions: =xhr:AJAX request: doOrderSelected  ci=6234  ti=0
+2012/05/30  07:38:33	---	Last item ID:4574
+2012/05/30  07:39:01	djangosuper	VIEW: draglist
+2012/05/30  07:39:01	djangosuper	     Proj 5
+2012/05/30  07:39:01	---	   Entering buildDisplayList
+2012/05/30  07:39:02	---	   Exiting buildDisplayList
+2012/05/30  07:39:03	djangosuper	VIEW: xhr_actions
+2012/05/30  07:39:03	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/30  07:39:03	djangosuper	         ==> LOCK FILE exists:['Locked:\tdjangosuper\t2012:05:30  07:38:33 ::\tdoOrderSelected  Proj:5 ci:6234  ti:0']
+2012/05/30  07:39:27	djangosuper	VIEW: maintPage
+2012/05/30  07:39:28	djangosuper	VIEW: xhr_actions
+2012/05/30  07:39:28	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/30  07:39:28	djangosuper	         ==> LOCK FILE exists:['Locked:\tdjangosuper\t2012:05:30  07:38:33 ::\tdoOrderSelected  Proj:5 ci:6234  ti:0']
+2012/05/30  07:40:26	djangosuper	VIEW: maintPage
+2012/05/30  07:40:26	---	lock removed
+2012/05/30  07:40:26	djangosuper	VIEW: xhr_actions
+2012/05/30  07:40:26	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/30  07:40:37	djangosuper	VIEW: today
+2012/05/30  07:40:37	---	   Entering buildDisplayList
+2012/05/30  07:40:37	---	   Exiting buildDisplayList
+2012/05/30  07:40:38	djangosuper	VIEW: xhr_actions
+2012/05/30  07:40:38	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/30  07:40:42	djangosuper	VIEW: xhr_actions
+2012/05/30  07:40:42	djangosuper	=====> xhr_actions: =xhr:AJAX request: doOrderSelected  ci=6234  ti=0
+2012/05/30  07:40:42	---	Last item ID:4574
+2012/05/30  07:40:53	djangosuper	VIEW: maintPage
+2012/05/30  07:40:53	---	lock removed
+2012/05/30  07:40:53	djangosuper	VIEW: xhr_actions
+2012/05/30  07:40:53	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/30  07:40:59	djangosuper	VIEW: today
+2012/05/30  07:40:59	---	   Entering buildDisplayList
+2012/05/30  07:40:59	---	   Exiting buildDisplayList
+2012/05/30  07:41:00	djangosuper	VIEW: xhr_actions
+2012/05/30  07:41:00	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/30  07:41:06	djangosuper	VIEW: xhr_actions
+2012/05/30  07:41:06	djangosuper	=====> xhr_actions: =xhr:AJAX request: doOrderSelected  ci=6234  ti=0
+2012/05/30  07:41:06	---	Last item ID:4574
+2012/05/30  07:41:12	djangosuper	VIEW: maintPage
+2012/05/30  07:41:12	djangosuper	VIEW: xhr_actions
+2012/05/30  07:41:12	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/30  07:41:12	djangosuper	         ==> LOCK FILE exists:['Locked:\tdjangosuper\t2012:05:30  07:41:06 ::\tdoOrderSelected  Proj:5 ci:6234  ti:0']
+2012/05/30  07:41:25	djangosuper	VIEW: maintPage
+2012/05/30  07:41:25	---	lock removed
+2012/05/30  07:41:25	djangosuper	VIEW: xhr_actions
+2012/05/30  07:41:25	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/30  07:41:33	djangosuper	VIEW: xhr_actions
+2012/05/30  07:41:33	djangosuper	=====> xhr_actions: =xhr:AJAX request: prioritySelected  ci=6234  ti=0
+2012/05/30  07:41:33	---	Last item ID:4574
+2012/05/30  07:41:34	---	lock removed
+2012/05/30  07:41:57	djangosuper	VIEW: xhr_actions
+2012/05/30  07:41:57	djangosuper	=====> xhr_actions: =xhr:Not an AJAX request.  Action:doOrderSelected  ci=6234  ti=0
+2012/05/30  07:42:55	djangosuper	VIEW: xhr_actions
+2012/05/30  07:42:55	djangosuper	=====> xhr_actions: =xhr:Not an AJAX request.  Action:doOrderSelected  ci=6234  ti=0
+2012/05/30  07:45:31	djangosuper	VIEW: today
+2012/05/30  07:45:31	---	   Entering buildDisplayList
+2012/05/30  07:45:31	---	   Exiting buildDisplayList
+2012/05/30  07:45:32	djangosuper	VIEW: xhr_actions
+2012/05/30  07:45:32	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/30  07:45:49	djangosuper	VIEW: maintPage
+2012/05/30  07:45:49	---	no lock file, no action taken
+2012/05/30  07:45:49	djangosuper	VIEW: xhr_actions
+2012/05/30  07:45:49	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/30  07:45:54	djangosuper	VIEW: xhr_actions
+2012/05/30  07:45:54	djangosuper	=====> xhr_actions: =xhr:AJAX request: doOrderSelected  ci=6090  ti=0
+2012/05/30  07:45:54	---	Last item ID:4574
+2012/05/30  07:45:55	---	lock removed
+2012/05/30  07:46:03	djangosuper	VIEW: xhr_actions
+2012/05/30  07:46:03	djangosuper	=====> xhr_actions: =xhr:AJAX request: doOrderSelected  ci=6414  ti=0
+2012/05/30  07:46:03	---	Last item ID:4574
+2012/05/30  07:46:03	---	lock removed
+2012/05/30  07:46:13	djangosuper	VIEW: xhr_actions
+2012/05/30  07:46:13	djangosuper	=====> xhr_actions: =xhr:AJAX request: doOrderSelected  ci=6090  ti=0
+2012/05/30  07:46:13	---	Last item ID:4574
+2012/05/30  07:46:46	djangosuper	VIEW: maintPage
+2012/05/30  07:46:46	---	lock removed
+2012/05/30  07:46:46	djangosuper	VIEW: xhr_actions
+2012/05/30  07:46:46	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/30  07:46:54	djangosuper	VIEW: xhr_actions
+2012/05/30  07:46:54	djangosuper	=====> xhr_actions: =xhr:AJAX request: archiveThisItem  ci=6541  ti=0
+2012/05/30  07:46:54	---	Last item ID:4574
+2012/05/30  07:46:54	---	sMDflk=> findLastKid lastKid=0
+2012/05/30  07:46:54	---	Last item ID:6489
+2012/05/30  07:46:54	---	==> archivePair moved item 6541  to proj: 15
+2012/05/30  07:46:54	---	lock removed
+2012/05/30  07:48:00	djangosuper	VIEW: xhr_actions
+2012/05/30  07:48:00	djangosuper	=====> xhr_actions: =xhr:AJAX request: statusSelected  ci=6090  ti=0
+2012/05/30  07:48:00	---	Last item ID:4574
+2012/05/30  07:48:00	---	lock removed
+2012/05/30  07:48:03	djangosuper	VIEW: today
+2012/05/30  07:48:03	---	   Entering buildDisplayList
+2012/05/30  07:48:03	---	   Exiting buildDisplayList
+2012/05/30  07:48:04	djangosuper	VIEW: xhr_actions
+2012/05/30  07:48:04	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/30  07:48:11	djangosuper	VIEW: xhr_actions
+2012/05/30  07:48:11	djangosuper	=====> xhr_actions: =xhr:AJAX request: statusSelected  ci=6090  ti=0
+2012/05/30  07:48:11	---	Last item ID:4574
+2012/05/30  07:48:11	---	lock removed
+2012/05/30  07:50:51	djangosuper	VIEW: today
+2012/05/30  07:50:51	---	   Entering buildDisplayList
+2012/05/30  07:50:52	---	   Exiting buildDisplayList
+2012/05/30  07:50:52	djangosuper	VIEW: xhr_actions
+2012/05/30  07:50:52	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/30  07:51:16	djangosuper	VIEW: xhr_actions
+2012/05/30  07:51:16	djangosuper	=====> xhr_actions: =xhr:AJAX request: doOrderSelected  ci=6090  ti=0
+2012/05/30  07:51:16	---	Last item ID:4574
+2012/05/30  07:51:16	---	lock removed
+2012/05/30  07:51:29	djangosuper	VIEW: xhr_actions
+2012/05/30  07:51:29	djangosuper	=====> xhr_actions: =xhr:AJAX request: doOrderSelected  ci=6414  ti=0
+2012/05/30  07:51:29	---	Last item ID:4574
+2012/05/30  07:51:29	---	lock removed
+2012/05/30  07:53:32	djangosuper	VIEW: today
+2012/05/30  07:53:32	---	   Entering buildDisplayList
+2012/05/30  07:53:32	---	   Exiting buildDisplayList
+2012/05/30  07:53:33	djangosuper	VIEW: xhr_actions
+2012/05/30  07:53:33	djangosuper	=====> xhr_actions: =xhr:AJAX request: getQuicknote  ci=0  ti=0
+2012/05/30  07:53:43	djangosuper	VIEW: xhr_actions
+2012/05/30  07:53:43	djangosuper	=====> xhr_actions: =xhr:AJAX request: doOrderSelected  ci=6090  ti=0
+2012/05/30  07:53:43	---	Last item ID:4574
+2012/05/30  07:53:43	---	lock removed
+2012/05/30  07:53:45	djangosuper	VIEW: xhr_actions
+2012/05/30  07:53:45	djangosuper	=====> xhr_actions: =xhr:AJAX request: doOrderSelected  ci=6414  ti=0
+2012/05/30  07:53:45	---	Last item ID:4574
+2012/05/30  07:53:45	---	lock removed
+2012/05/30  07:53:48	djangosuper	VIEW: xhr_actions
+2012/05/30  07:53:48	djangosuper	=====> xhr_actions: =xhr:AJAX request: doOrderSelected  ci=6090  ti=0
+2012/05/30  07:53:48	---	Last item ID:4574
+2012/05/30  07:53:48	---	lock removed
+2012/05/30  07:53:50	djangosuper	VIEW: xhr_actions
+2012/05/30  07:53:50	djangosuper	=====> xhr_actions: =xhr:AJAX request: doOrderSelected  ci=6414  ti=0
+2012/05/30  07:53:50	---	Last item ID:4574
+2012/05/30  07:53:50	---	lock removed

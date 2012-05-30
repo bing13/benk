@@ -83,10 +83,11 @@
 	 <td class="itemtd id_cell_psd">
 
    <select class="doOrderSelect doOrder_{{ ci.do_order }}" onChange="doOrderSelected({{ ci.id }});"  />
-   {% if ci.doOrder == "" %}
-     <option value="-9" selected="selected"></option>
+
+   {% if ci.doOrder == "0" %}
+     <option value="0" selected="selected"></option>
    {% else %}
-     <option value="" ></option>
+     <option value="0" ></option>
    {% endif %}
    {% if ci.doOrder == 1 %}
      <option value="1" selected="selected">1</option>
