@@ -113,6 +113,7 @@
   </select>
 </form>
 
+<span class="qn_toggle" onClick="quicknoteToggle();">&there4;</span>
  
 <!-- here's the default project list, which can be overridden  -->    
 <!-- in the calling html template -->
@@ -158,6 +159,20 @@
 
 
   </div>
+
+<!-- quicknote -->
+<div class="quicknote">
+
+<form>
+  <textarea id="quicknote" onchange='saveQuicknote();' >
+  </textarea><span  class="refreshQuicknote"  onClick="actionJax(0,0,'getQuicknote','');">refresh</span>
+</form>
+
+
+
+
+</div>  <!-- close quicknote -->
+
 
     <div id="mcontent">
         {% block content %}{% endblock %}

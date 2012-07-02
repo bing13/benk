@@ -1,0 +1,30 @@
+look in
+~/python_pkgs/lib/python2.5/site-packages/
+
+PYTHONPATH must be extended to include any new ones. Had to screw with 
+this for httplib b/c I don't have permissions to install into the 
+dreamhost standard python module dir's.
+
+
+
+=======================================================
+EASY_INSTALL
+
+easy_install --install-dir=/home/bhadmin13/python_pkgs/lib/python2.5/site-packages google-api-python-client
+easy_install --install-dir=/home/bhadmin13/python_pkgs/lib/python2.5/site-packages oauth2client
+
+
+
+NOTE: easy_install will search PyPi for latest version of the bundle, you don't have to download it locally.  http://pypi.python.org/pypi
+
+==
+http://packages.python.org/distribute/easy_install.html#use-virtualenv
+easy_install help
+
+
+--install-dir=DIR, -d DIR
+Set the installation directory. It is up to you to ensure that this
+directory is on sys.path at runtime, and to use
+pkg_resources.require() to enable the installed package(s) that you
+need.
+

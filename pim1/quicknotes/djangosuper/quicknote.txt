@@ -1,15 +1,10 @@
-REMEMBER TO MOUSE OUT.
+test
 
-+ decide how to share the MPP file for JW meeting
+1. Sud. - out this week re: VJ
+2. CRO slam
+3. JW CME staffing, etc
+4. JW site build commencement
+5. pnet
+6. get SOLR status from Alex;  comparison to FAST; migration notions
 
-- go to seminar
-- send RGH the forms
-- OSH
 
-+ bump up JW testing ? October? for search, analytics, e-commerce, etc.
-
-* Perf Eval sig 
-
-- james re: agile 
-
- 

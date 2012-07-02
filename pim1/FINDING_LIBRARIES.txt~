@@ -1,0 +1,9 @@
+look in
+~/python_pkgs
+
+ex.,
+/lib/python2.5/site-packages/
+
+PYTHONPATH must be extended to include any new ones. Had to screw with 
+this for httplib b/c I don't have permissions to install into the 
+dreamhost standard python module dir's.

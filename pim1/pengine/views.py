@@ -6,12 +6,13 @@
 ##  ex., Item.objects.filter(project=1).exclude(id = 1).delete()
 
 from django.http import HttpResponse, HttpResponseRedirect
-from django.template import Context, loader
+
 from django.shortcuts import render_to_response
 from django.core.context_processors import csrf
 from django.views.decorators.csrf import csrf_protect
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.contrib.auth.views import login, logout
+#from django.template import Context, loader
 from django.template import RequestContext
 
 from django import forms
@@ -30,14 +31,25 @@ import datetime, sys, simplejson, codecs, csv
 #sys.path.append('C:\\Users\\Bernard\\Documents\\python64\\library');
 
 #DreamHost - UNIX
-sys.path.append('/home/bhadmin13/dx.bernardhecker.com/pim1/library');
+#sys.path.append('/home/bhadmin13/dx.bernardhecker.com/pim1/library');
 
-import gooOps, dirlist, south;
-from rfc3339 import rfc3339;
+# paths to the modules I installed locally
+# shouldn't have to do this to the specific egg files. Complicated b/c
+# I can't install to standard (dreamhost) module location
+eggPaths = ['/home/bhadmin13/python_pkgs/lib/python2.5/site-packages/httplib2-0.7.4-py2.5.egg', '/home/bhadmin13/python_pkgs/lib/python2.5/site-packages/python_gflags-2.0-py2.5.egg','/home/bhadmin13/python_pkgs/lib/python2.5/site-packages/google_api_python_client-1.0c2-py2.5.egg', '/home/bhadmin13/python_pkgs/lib/python2.5/site-packages/oauth2client-1.0c2-py2.5.egg' ]
+
 
 import drag_actions, sharedMD, checkHealth;
 
-#import test1;
+#sharedMD.logThis('init',str(sys.path))
+
+sys.path += eggPaths
+
+import  httplib
+import gflags
+import gooOps, dirlist, south;
+from rfc3339 import rfc3339;
+
 
 
 LOGFILE = '/home/bhadmin13/dx.bernardhecker.com/pim1/benklog1.log'
@@ -738,11 +750,103 @@ def gooTaskUpdate(request):
 
     benkId = u'MDA5MTI3NjgzODg0MDUzMjk1MTI6MTk1Mjg0MjA0Mzow'
     GOOTASK=gooOps.gooOps()
-    serviceConn=GOOTASK.taskAPIconnect()
+    sharedMD.logThis(request.user.username, "   ... instantiating service connector")
+
+    serviceConn, redirX=GOOTASK.taskAPIconnect(request)
+
+    sharedMD.logThis(request.user.username, "   ...serviceConn="+serviceConn)
+    #77777
+    ## get tasks from  tasklist=benk from google
+    sharedMD.logThis('gooOps','....user()='+str(request.user.user_id()))
+
+    if redirX != '':
+        return(HttpResponseRedirect(serviceConn))
+    
+
+    gootasks = serviceConn.tasks().list(tasklist=benkId).execute()
+    gooTaskIdList=[]
+
+    sharedMD.logThis(request.user.username, "   ...gootasks loop")
+
+
+    for g in gootasks['items']:
+        gooTaskIdList.append(g['id'])
+
+    sharedMD.logThis(request.user.username,  "gooTaskIdList="+str(gooTaskIdList))
+
+    ## update all items that have google task display dates
+    pushableItems=Item.objects.filter(date_gootask_display__gte=datetime.date(2000, 1, 1), owner = request.user.username)
+    #newIds=GTO.pushBenkToGooTasks(TASKLISTNAME, USER, pushableItems)
+
+    # RFC 3339 timestamp
+    resultIDs=[]
+
+    for x in pushableItems:
+        task = { 
+                 'title': x.title, 
+                 'notes': x.HTMLnoteBody,  
+                 'due': rfc3339(x.date_gootask_display, utc=True)
+                }
+
+        ## the rfc3339.py module doesn't include fractions of seconds(?), 
+        ## which the API seems to require(!)
+        task['due'] = task['due'][:-1]+'.000Z'
+
+        if x.gtask_id in gooTaskIdList:
+            task['id']=x.gtask_id
+            result = serviceConn.tasks().update(tasklist=benkId, task=x.gtask_id, body=task).execute()
+            resultIDs.append( (result['id'],'update') )
+        else:
+            result = serviceConn.tasks().insert(tasklist=benkId, body=task).execute()
+            resultIDs.append( (result['id'],'create') )
+            x.gtask_id=result['id']
+            x.save()
+
+    # bypassing builddisplaylist, since it only filters by project
+    # ...oops, we need to adorn it with project and ???
+    
+    current_projs = Project.objects.filter(projType=1).order_by('name')
+    current_sets = ProjectSet.objects.all()
+
+    displayList =  buildDisplayList(current_projs,'0','-date_gootask_display',0,[])
+
+    return render_to_response("pim1_tmpl/items/psd.html", {
+
+        'pSort':'-date_gootask_display',
+        'current_items':displayList,
+        'current_projs':current_projs,
+        'current_sets':current_sets,
+
+        'nowx':datetime.datetime.now().strftime("%Y/%m/%d  %H:%M:%S"),
+        'pagecrumb': "Google task date sort"        
+    }, context_instance=RequestContext(request) )
+
+ 
+##################################################################
+@login_required
+def gooTaskUpdateOLD(request):
+
+    sharedMD.logThis(request.user.username, "VIEW: gooTaskUpdate")
+
+    request.session['viewmode'] = 'psd'
+
+
+    benkId = u'MDA5MTI3NjgzODg0MDUzMjk1MTI6MTk1Mjg0MjA0Mzow'
+    GOOTASK=gooOps.gooOps()
+    sharedMD.logThis(request.user.username, "   ... instantiating service connector")
+
+    serviceConn=GOOTASK.taskAPIconnect(request)
+
+    sharedMD.logThis(request.user.username, "   ...calling connector")
+
+
 
     ## get tasks from  tasklist=benk from google
     gootasks = serviceConn.tasks().list(tasklist=benkId).execute()
     gooTaskIdList=[]
+
+    sharedMD.logThis(request.user.username, "   ...gootasks loop")
+
 
     for g in gootasks['items']:
         gooTaskIdList.append(g['id'])
@@ -922,8 +1026,9 @@ def editItem(request, pItem):
     # model formsets
     ###https://docs.djangoproject.com/en/1.2/topics/forms/modelforms/#using-a-model-formset-in-a-view
     
-    itemFormSet = forms.models.modelformset_factory(Item, max_num=0,fields=("title","priority","status","HTMLnoteBody"));
+    itemFormSet = forms.models.modelformset_factory(Item, max_num=0,fields=("title","priority","status","HTMLnoteBody", 'date_gootask_display'));
     #exclude=('IS_import_ID', 'gtask_id', 'project', 'date_gootask_display', 'owner', 'follows', 'parent', 'indentLevel'))
+    #u'2011-10-28T00:00:00.000Z'
 
     
     ## "field" and "exclude" operands supported

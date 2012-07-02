@@ -4,18 +4,124 @@ class gooOps():
     def __init__(self):
         temp = None
 
-    def taskAPIconnect(self):
+
+
+    def WSAtaskAPIconnect(self, request):
+        ##
+        # if we decide to revive the gTask link-up, implement
+        # OAuth 2 for Web Servers, and integrate it properly with Benk accounts.
+
+        # ++ probably store OAuth credentials in the Django user object.
+        
+        # see https://code.google.com/p/google-api-python-client/wiki/OAuth2
+        # https://developers.google.com/accounts/docs/OAuth2WebServer
+
+
+        
         '''Build service object for interacting with Tasks API. Will refactor as other services
            are brought into use.'''
+
+        from django.http import HttpResponse, HttpResponseRedirect
+
+        import sys
+        sys.path.append('/home/bhadmin13/dx.bernardhecker.com/pim1/pengine')
+
+
+
+        import sharedMD
+        import httplib2  #, gflags
         
-        import gflags
-        import httplib2 
-     
+        from apiclient.discovery import build
+        from oauth2client.file import Storage
+        from oauth2client.client import OAuth2WebServerFlow
+        from oauth2client.tools import run
+
+        sharedMD.logThis('gooOps','gooOps: imported modules')
+        
+
+        #FLAGS = gflags.FLAGS
+    
+
+        # check that creditionals are valid
+        storage = Storage('tasks.dat')
+        credentials = storage.get()
+        sharedMD.logThis('gooOps','...credentials created')
+
+
+        #userx = 'agent.x39'  ##users.get_current_user()
+        #credentials = StorageByKeyName(Credentials, userx, 'credentials').get()
+
+        
+        if credentials is None or credentials.invalid == True:
+            sharedMD.logThis('gooOps','...credentials invalid, running new flow')
+            # Flow object for authentication (OAuth 2.0)
+            # using a web auth flow, rather than the previous application workflow
+            WEBFLOW = OAuth2WebServerFlow(
+                client_id='979231898847-rkbun6eifu79anm57i45acbfghah9d81.apps.googleusercontent.com',
+                client_secret='O7Vm-yRICLR2WyI8C5o7jUrg',
+                scope='https://www.googleapis.com/auth/tasks',
+                user_agent='Task2ss/0.01')
+
+            sharedMD.logThis('gooOps','....WEBFLOW created' )
+
+            
+            #credentials = run(WEBFLOW, storage)
+            #sharedMD.logThis('gooOps','...credentials created')
+
+            callback = 'http://dx.bernardhecker.com/pim1/item/gooUpdate'
+            authorize_url = WEBFLOW.step1_get_authorize_url(callback)
+            sharedMD.logThis('gooOps','...authorize_url:'+authorize_url)
+            
+            return ('',HttpResponseRedirect(authorize_url) )
+
+
+        else:
+            sharedMD.logThis('gooOps','credentials OK...')
+
+
+            # Create httplib2.Http object, authorize
+            http = httplib2.Http()
+            http = credentials.authorize(http)
+
+            sharedMD.logThis('gooOps','...http authorized')
+        
+            # instantiate service object
+            # developerKey seems deprecated, using application key 
+            service = build(serviceName='tasks', version='v1', http=http, developerKey='AIzaSyCQb3rbzyEqshlSSAI4tko19ao0PPTVtro')
+
+
+            sharedMD.logThis('gooOps','...service built')
+
+
+            return(service,'')
+    
+
+
+    #######################################################
+    # original, non-interactive
+    def taskAPIconnect(self, request):
+        # original, from Tasks doc's
+        #   worked last year from PC-based implementation
+        # .. https://developers.google.com/google-apps/tasks/instantiate
+        
+        '''Build service object for interacting with Tasks API. Will refactor as other services
+           are brought into use.'''
+
+
+        import sys
+        sys.path.append('/home/bhadmin13/dx.bernardhecker.com/pim1/pengine')
+
+        import sharedMD
+        import httplib2, gflags
+        
         from apiclient.discovery import build
         from oauth2client.file import Storage
         from oauth2client.client import OAuth2WebServerFlow
         from oauth2client.tools import run
     
+        sharedMD.logThis('gooOps','gooOps: imported modules')
+        
+
         FLAGS = gflags.FLAGS
     
 
@@ -27,20 +133,36 @@ class gooOps():
             scope='https://www.googleapis.com/auth/tasks',
             user_agent='Task2ss/0.01')
 
+        sharedMD.logThis('gooOps','FLOW created')
+
         # check that creditionals are valid
         storage = Storage('tasks.dat')
         credentials = storage.get()
+
+        sharedMD.logThis('gooOps','credentials created...')
+
+        ### HANGS here  now####
         if credentials is None or credentials.invalid == True:
           credentials = run(FLOW, storage)
+
+        sharedMD.logThis('gooOps','flow run...')
+
 
         # Create httplib2.Http object, authorize
         http = httplib2.Http()
         http = credentials.authorize(http)
 
+        sharedMD.logThis('gooOps','...http authorized')
+        
+
         # instantiate service object
         # developerKey seems deprecated, using application key 
         service = build(serviceName='tasks', version='v1', http=http,
                developerKey='AIzaSyCQb3rbzyEqshlSSAI4tko19ao0PPTVtro')
+
+
+        sharedMD.logThis('gooOps','...service built')
+
 
         return(service)
     
