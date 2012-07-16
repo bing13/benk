@@ -1402,7 +1402,7 @@ def xhr_actions(request):
         QN.close;
         quickText = ''
         for q in quicknote:
-            quickText = quickText + q
+            quickText += q
 
         quickNoteText = simplejson.dumps(['getQuicknote']+[quickText])
         return HttpResponse(quickNoteText, mimetype=mimetypex);
@@ -1412,12 +1412,14 @@ def xhr_actions(request):
         QN.write(actionRequest['datax']);
         QN.close;
 
-        qbname = datetime.datetime.now().strftime("%Y:%m:%d_%H:%M:%S_") + 'quicknote.bkp'
+        timestampx = datetime.datetime.now().strftime("%Y:%m:%d %H:%M:%S") 
+
+        qbname = datetime.datetime.now().strftime("%Y:%m:%d_%H:%M:%S_")  + 'quicknote.bkp'
         QBACK = open(QUICKNOTEDIR+'/'+request.user.username+'/'+qbname, 'w')
         QBACK.write(actionRequest['datax']);
         QBACK.close;
         
-        quickNoteText = simplejson.dumps(['saveQuicknote']+['nix'])        
+        quickNoteText = simplejson.dumps(['saveQuicknote']+[ timestampx ])        
         return HttpResponse(quickNoteText, mimetype=mimetypex);
     
     clickedItem=Item.objects.get(pk=actionRequest['ci'])
