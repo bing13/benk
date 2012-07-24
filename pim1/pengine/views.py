@@ -650,6 +650,9 @@ def psd(request,pSort,targetProject):
 def gridview(request):
     sharedMD.logThis(request.user.username, "VIEW: gridview")
 
+    request.session['viewmode'] = 'gridview'
+
+
     ITEMS_PER_CELL = 10;
     current_projs = Project.objects.filter(projType=1).filter(owner = request.user.username).order_by('name')
     current_sets = ProjectSet.objects.filter(owner = request.user.username)
@@ -1045,6 +1048,8 @@ def editItem(request, pItem):
             return HttpResponseRedirect('/pim1/psd/date_mod/' + str(itemProject) + '/#' + str(pItem))
         elif request.session['viewmode'] == 'ssearch':
             return HttpResponseRedirect('/pim1/search/?searchfx=' + request.session['searchterm'])
+        elif request.session['viewmode'] == 'gridview':
+            return HttpResponseRedirect('/pim1/grid-view')
        
         else:
             return HttpResponseRedirect('/pim1/drag/'+str(itemProject)+'/#'+str(pItem))
