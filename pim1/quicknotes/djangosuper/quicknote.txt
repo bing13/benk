@@ -1,12 +1,9 @@
-- CRO: final cost equations: prepare final figures .    
-= ED: request priority (PNAS, MtgABs) MEETING  
-- CRO: Tm re keeping off portal (Evan, JD: exclude list)and CJ search (TM) 
-- VUSAL => GET QA RESOURCE NAMED FOR UAT   
-- ANDY => JW staffing x 2
-- CRO: JL, then MAF/IB re KWIC  
-- PNAS redesign, other assignments
+- CRO: codify financials; ACCELERATE 20K BILLING THIS FY
+- JW: VJ loading, H1O sunset requirement
+= CRO: MM status for Monday call
+- JW: CJ CME write-up!
+- JW: KS new MPP file, review!
+- JW: AA, who to invite to A/C mtg
+
 - migrate QB PMO to GooDocs, w/Forms, AppScript
-- JW site build commencement
 - SudP re: VJ mig (AdV to set up call to find out if this can even fit this year)
-- get SOLR status from Alex;  comparison to FAST; migration notions
-- F: examples of custom changes requested; env supportive vs competitive; 

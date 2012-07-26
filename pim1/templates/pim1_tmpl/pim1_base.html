@@ -164,7 +164,7 @@
 <div id="quicknoteWrapper">
 
 <form>
-  <textarea id="quicknote" onchange='saveQuicknote();' >
+  <textarea id="quicknote" onchange='saveQuicknote();' onblur='leaveQuicknote();' onfocus='enterQuicknote();'  >
   </textarea><span  class="refreshQuicknote"  onClick="actionJax(0,0,'getQuicknote','');">refresh</span>
 </form>
 
