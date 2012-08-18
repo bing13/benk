@@ -1,0 +1,55 @@
+{% extends "pim1_tmpl/pim1_base.html" %}
+
+
+{% block xxprojlist %}
+<li><a href="">place holder 1</a></li>
+<li><a href="">place holder 2</a></li>
+{% endblock %}
+
+
+{% block content %}
+
+<div class="searchform">
+
+
+<h3>advanced search</h3>
+
+    <div class="homeProjList">
+
+       {% for ps in current_sets %}
+       {% if ps.name != "retired" %}
+	 <dl class="homeSetColumn">
+	      <dt>{{ ps.name }}</dt>
+		<dd>
+		{% for px in current_projs %}
+
+		  {% if px.set = ps %}
+		      <a href="/pim1/drag/{{ px.id}}/">{{ px.name }}</a>, 
+		  {% endif %}
+
+		{% endfor %}
+		</dd>
+	  </dl>
+       {% endif %}
+       {% endfor %}
+
+
+    </div>
+
+
+<div class="clear">
+  <span class="ssearch">
+    <form action="/pim1/search/" method="get">
+      {% csrf_token %}
+      <input type="text" name="searchfx" id="searchfx" />
+      
+      <input type="submit" value="search" />
+    </form>
+  </span>
+
+</div>
+
+
+</div>
+{% endblock %}
+ 

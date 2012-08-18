@@ -6,8 +6,28 @@
 
 {% if searchterm %}
 <h5>searching: {{ searchterm }}</h5>
-{% endif %}
+<ul class="searchParmList">
+<li>sets: 
+{% for sp in searchsets %}
+  {{ sp }},
+{% endfor %}
 
+</li>
+<li>project types:
+{% for sp in searchprojtypes %}
+  {{ sp }},
+{% endfor %}
+
+</li>
+<li>projects: 
+{% for sp in searchprojs %}
+  {{ sp }},
+{% endfor %}
+
+</li>
+</ul>
+{% endif %}
+ 
 
 {% if request.session.viewmode  != 'today' %}
 
@@ -61,6 +81,10 @@
 
 
       <th>note</th>
+      {% if searchterm %}
+      <th>type</th>
+      {% endif %}
+
 </tr>
     
 
@@ -70,7 +94,14 @@
     {% for ci in current_items %}
     {% ifchanged %}
         <tr  class="psd_projectheader_row tr_set_{{ ci.project.set.id }}" style="background: {{ ci.project.color }};" >
-        <td class="psd_projheader" colspan="7"><a href="/pim1/drag/{{ ci.project.id }}">{{ ci.projectForOrdering }}</a>
+        
+	{% if searchterm %}
+	  <td class="psd_projheader" colspan="8">
+	{% else %}
+	  <td class="psd_projheader" colspan="7">
+	{% endif %}
+	
+<a href="/pim1/drag/{{ ci.project.id }}">{{ ci.projectForOrdering }}</a>
 	<span class="sortViewLinkMain"><a href="/pim1/drag/{{ ci.project.id }}">go to main view</a></span></td>
 </tr>{% endifchanged %}
 
@@ -286,11 +317,17 @@
 
           {% endif %}
       </td>
-        
+      {% if searchterm %}
+      <td>{{ ci.project.projType}}</td>
+      {% endif %}   
 
         </tr>
     <tr class="psd_note_row" id="notebody_{{ci.id}}" >
        <td colspan=7  class="psd_noteBody" >{{ ci.HTMLnoteBody|safe|default:" --- " }}</td>
+
+
+     
+
 
     </tr>
     {% endfor %}

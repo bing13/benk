@@ -1,9 +1,12 @@
-- CRO: codify financials; ACCELERATE 20K BILLING THIS FY
-- JW: VJ loading, H1O sunset requirement
-= CRO: MM status for Monday call
-- JW: CJ CME write-up!
-- JW: KS new MPP file, review!
-- JW: AA, who to invite to A/C mtg
+- JW: CJ CME write-up, then schedule resources; CME WRITE-UP for MMS.
+= ROUNDS: EK (site); TC (pnas); TM (h2o a/c maint)
+- JW: H1O site [issn's, maint domain]
+- PMO: add'l for TC NOW (pnas; more sunset; )
 
-- migrate QB PMO to GooDocs, w/Forms, AppScript
-- SudP re: VJ mig (AdV to set up call to find out if this can even fit this year)
+- JW: TM - re: domain qx, and a/c maint functions
+
+- JW: set up big dedupe H10 project...  
+- JW: sprint planning; sizing; ordering backlog
+
+- JW: cut ticket to create a/c web service
+- SudP re: VJ mig (AdV to set up call to find out if this can even fit this year)..

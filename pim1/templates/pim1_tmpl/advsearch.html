@@ -1,0 +1,75 @@
+{% extends "pim1_tmpl/pim1_base.html" %}
+
+
+{% block content %}
+
+
+
+
+<h3>advanced search</h3>
+
+
+<div class="advSearchForm">
+    <form action="/pim1/search/" method="get">
+      {% csrf_token %}
+
+
+
+      <table >
+      <tr>
+	<td>
+	  <h4>sets</h4>
+ 
+	  {% for ps in current_sets %}
+          <span class="searchFormMultiChoices">
+            <input type="checkbox" name="sx_sets" value ="{{ ps.id }}">{{ ps.name }} 
+          </span>
+	  {% endfor %}
+	</td>
+
+ 
+  
+	<td>
+           
+	  <h4>project types</h4>
+	  
+	  {% comment %} https://docs.djangoproject.com/en/1.3/ref/templates/builtins/#ref-templates-builtins-tags {% endcomment %}
+	  {% for key, val in search_projtypes.items %}
+	  <span class="searchFormMultiChoices">     
+            <input type="checkbox" name="sx_projtypes" value ="{{ key }}">{{ val }}
+	  </span>
+	  {% endfor %}
+	  </td>
+
+	<td>
+	  <h4>projects</h4>
+ 
+	  {% for px in searchable_projs %}
+	  <span class="searchFormMultiChoices">
+            <input type="checkbox" name="sx_projs" value ="{{ px.id }}">{{ px.name }}
+	  </span>	
+	  {% endfor %}
+	  </td>
+  
+
+      </tr>
+      <tr>
+	<td colspan="3">
+	  <input type="text" name="searchfx" id="searchfx" />
+	  <input type="submit" value="search" />
+	  
+	</td>
+	
+      </tr>
+      </table>
+
+
+    </form>
+
+
+
+
+
+</div>
+{% endblock %}
+ 

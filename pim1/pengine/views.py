@@ -66,6 +66,11 @@ class ImportForm(forms.Form):
 class ssearchForm(forms.Form):
     searchfx=forms.CharField(max_length=200)
 
+class ssearchForm2(forms.Form):
+    searchfx=forms.CharField(max_length=200)
+
+
+
 class addProjectSetForm(forms.Form):
     newProjectSetName =  forms.CharField(max_length = 120, label = "project set name")
     newProjectSetColor = forms.CharField(max_length = 24, label = "background color")
@@ -922,11 +927,50 @@ def example_task():
 
 #############################################################################
 @login_required
+def advsearch(request):
+    ### draws the advanced search form
+    sharedMD.logThis(request.user.username, "VIEW: advsearch")
+
+
+    request.session['viewmode'] = 'advsearch'
+
+    current_projs = Project.objects.filter(projType=1).filter(owner = request.user.username).order_by('name')
+    current_sets = ProjectSet.objects.filter(owner = request.user.username)
+
+    c = {}
+    c.update(csrf(request))
+
+
+    searchable_projs = Project.objects.filter(owner = request.user.username).order_by('name')
+
+    ## search_projtypes
+
+    search_projtype_lookup = { '1':'normal','3':'archive', '2':'retired' };
+
+    return render_to_response("pim1_tmpl/advsearch.html", {
+        
+
+        'current_projs':current_projs,
+        'current_sets':current_sets,
+        'searchable_projs':searchable_projs,
+        'search_projtypes':search_projtype_lookup,
+
+        'nowx':datetime.datetime.now().strftime("%Y/%m/%d  %H:%M:%S"),
+        'titleCrumbBlurb':'advanced search',
+        'error_message':'',
+
+        
+        }, context_instance=RequestContext(request) )
+
+#############################################################################
+@login_required
 def ssearch(request):
     sharedMD.logThis(request.user.username, "VIEW: search")
 
 
     request.session['viewmode'] = 'ssearch'
+    sharedMD.logThis(request.user.username, "search req:"+str(request.GET));
+
 
     current_projs = Project.objects.filter(projType=1).filter(owner = request.user.username).order_by('name')
     current_sets = ProjectSet.objects.filter(owner = request.user.username)
@@ -935,13 +979,45 @@ def ssearch(request):
     c.update(csrf(request))
     error_message=''
     searchTerm=''
+
+    
+    ##handle search parameters coming from adv form.
+    ##if the user selects none for one of these, it really means "all"
+    if 'sx_sets' in request.GET:
+        search_sets = request.GET.getlist('sx_sets')
+    else:
+        search_sets=ProjectSet.objects.filter(owner = request.user.username)
+        
+    if 'sx_projtypes' in request.GET:
+        search_projtypes = request.GET.getlist('sx_projtypes')
+    else:
+        #search_projtypes = Project.objects.values_list('projType',flat=True).distinct()
+        search_projtypes = [1] ; #i.e., if not specified, do no search archived items
+
+
+    ## if projects are explicitly selected, used them
+    ## otherwise, if archive or retired types are selected, include all projects
+    ## otherwise just use normal projects
+
+    if 'sx_projs' in request.GET:
+        search_projs = request.GET.getlist('sx_projs')
+    elif ('2' in search_projtypes or  '3' in search_projtypes):                
+        search_projs = Project.objects.filter(owner = request.user.username).order_by('name')
+    else:
+        search_projs = Project.objects.filter(projType=1).filter(owner = request.user.username).order_by('name')
+
+    ##################
+    sharedMD.logThis(request.user.username, "search sets:"+str(search_sets)+ "   search proj types:"+str(search_projtypes)+ "   search projs:"+str(search_projs)  );
      
     if request.method == 'GET':
         sform = ssearchForm(request.GET)
         if sform.is_valid():
             searchTerm=sform.cleaned_data['searchfx']
             sharedMD.logThis(request.user.username, "Search term="+searchTerm)
-
+            #mysets=sform.cleaned_data['sx_sets']
+            ### OOOPS. this new field is not in the form. Can't add it to the form easily, b/c
+            ## you need to query the db to find out what the "choices" are.
+            
             request.session['searchterm'] = searchTerm
 
             ## Execute the search ##
@@ -951,8 +1027,9 @@ def ssearch(request):
             #titleHits=Item.objects.filter(title__icontains=searchTerm)
             #noteHits=Item.objects.filter(HTMLnoteBody__icontains=searchTerm)
 
-            titleHits = Item.objects.filter(project__projType=1, owner = request.user.username, title__icontains=searchTerm)
-            noteHits  = Item.objects.filter(project__projType=1, owner = request.user.username, HTMLnoteBody__icontains=searchTerm)
+            # removed project__projType=1,
+            titleHits = Item.objects.filter( owner = request.user.username, title__icontains=searchTerm, project__set__in=search_sets, project__projType__in=search_projtypes, project__id__in=search_projs)
+            noteHits  = Item.objects.filter( owner = request.user.username, HTMLnoteBody__icontains=searchTerm, project__set__in=search_sets, project__projType__in=search_projtypes, project__id__in=search_projs  )
             
             ## enumerate the hit IDs
             totalHits=[]
@@ -971,9 +1048,15 @@ def ssearch(request):
             error_message="Form was not valid, search term = "
             displayList=['Form not valid, no results to display']
 
+
+            #sx_req
     return render_to_response("pim1_tmpl/items/psd.html", {
         
         'searchterm':searchTerm,
+        'searchsets':search_sets,
+        'searchprojs':search_projs,
+        'searchprojtypes':search_projtypes,
+
         'current_items':displayList,
         'current_projs':current_projs,
         'current_sets':current_sets,
@@ -1046,8 +1129,13 @@ def editItem(request, pItem):
             return HttpResponseRedirect('/pim1/today/')
         elif request.session['viewmode'] == 'psd':
             return HttpResponseRedirect('/pim1/psd/date_mod/' + str(itemProject) + '/#' + str(pItem))
-        elif request.session['viewmode'] == 'ssearch':
+        elif request.session['viewmode'] == 'ssearch' :
             return HttpResponseRedirect('/pim1/search/?searchfx=' + request.session['searchterm'])
+
+        elif request.session['viewmode'] == 'advsearch':
+            return HttpResponseRedirect('/pim1/search/?searchfx=' + request.session['searchterm'])
+
+        
         elif request.session['viewmode'] == 'gridview':
             return HttpResponseRedirect('/pim1/grid-view')
        

@@ -22,21 +22,23 @@ $(window).load(function(){
 
     {% for ci in displayList %}
         {% ifchanged %}
-            </div></div>
-            <div class="gridCell  all_set  set_{{ ci.project.set.id }}">
+            </div><hr class="gridview_print_view_only"/></div>
+            <div class="gridCell all_set set_{{ ci.project.set.id }}">
               <div class="projheader"  style="background:{{ ci.project.color }};"><a href="/pim1/drag/{{ ci.project.id }}">{{ ci.projectForOrdering }}</a></div>
 	      <div class="gridItemList">
         {% endifchanged %}
 
-  	         <div class="itemd">{# {{ ci.id }} #}
-		   <img class="priority_block_{{ ci.priority }}" src="http://media.bernardhecker.com/images/slivers1p/priority_{{ci.priority}}.gif"/>
-		   {# <span class="priority_block_{{ ci.priority }}"></span> #}
+  	         <div class="itemd gridview_not_print_view" ><img class="priority_block_{{ ci.priority }} " src="http://media.bernardhecker.com/images/slivers1p/priority_{{ci.priority}}.gif"/><a href="/pim1/item/edititem/{{ci.id}}">{{ ci.title }}</a></div>
 
-                   <a href="/pim1/item/edititem/{{ci.id}}">{{ ci.title }}</a> 
+  	         <div class="itemd gridview_print_view_only">{{ ci.priority }}:   {{ ci.title }}</div>
+
 
 		   {# <span class="gridDetail">{{ ci.priority }}:{{ci.priorityText}} /{{ ci.status }}:{{ci.statusText}}</span> #}
-	         </div>
+
+
     {% endfor %}
+
+
 
    </div></div>
 
