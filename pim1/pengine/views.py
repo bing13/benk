@@ -658,13 +658,16 @@ def gridview(request):
     request.session['viewmode'] = 'gridview'
 
 
-    ITEMS_PER_CELL = 10;
+    ITEMS_PER_CELL = 30;## was 10
     current_projs = Project.objects.filter(projType=1).filter(owner = request.user.username).order_by('name')
     current_sets = ProjectSet.objects.filter(owner = request.user.username)
 
     displayList = [] ; 
 
-    for thisProject in current_projs:
+    ## on the grid, exclude sets 3 and 4 (retired and test)
+    display_these_projs = Project.objects.filter(projType=1).filter(owner = request.user.username).exclude(set = 3).exclude(set = 4).order_by('name')
+
+    for thisProject in display_these_projs:
         cellItems = [];
         #(projlist, projID, ordering, hoistID, useList)
 

@@ -1,11 +1,14 @@
+- JW: dedupe: check with Mike Puff
 - JW: CJ CME write-up, then schedule resources; CME WRITE-UP for MMS.
-= ROUNDS: EK (site); TC (pnas); TM (h2o a/c maint)
-- JW: H1O site [issn's, maint domain]
+- JW: Verify a/c matters (AA URL, OB general) 
+
 - PMO: add'l for TC NOW (pnas; more sunset; )
 
-- JW: TM - re: domain qx, and a/c maint functions
+- JW: H1O site [issn's, maint domain]
 
-- JW: set up big dedupe H10 project...  
+- JW: TM - re: domain qx 
+
+- PMO: how to use Jira components? versions? in rapid board
 - JW: sprint planning; sizing; ordering backlog
 
 - JW: cut ticket to create a/c web service

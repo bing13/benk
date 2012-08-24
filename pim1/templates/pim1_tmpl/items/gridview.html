@@ -30,7 +30,7 @@ $(window).load(function(){
 
   	         <div class="itemd gridview_not_print_view" ><img class="priority_block_{{ ci.priority }} " src="http://media.bernardhecker.com/images/slivers1p/priority_{{ci.priority}}.gif"/><a href="/pim1/item/edititem/{{ci.id}}">{{ ci.title }}</a></div>
 
-  	         <div class="itemd gridview_print_view_only">{{ ci.priority }}:   {{ ci.title }}</div>
+  	         <div class="itemd gridview_print_view_only grid_print_priority_{{ci.priority}}">{{ ci.priority }}:   {{ ci.title }}</div>
 
 
 		   {# <span class="gridDetail">{{ ci.priority }}:{{ci.priorityText}} /{{ ci.status }}:{{ci.statusText}}</span> #}
