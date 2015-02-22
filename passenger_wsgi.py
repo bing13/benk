@@ -18,6 +18,8 @@ myapp_directory = cwd + '/pim1'
 sys.path.insert(0,myapp_directory)
 sys.path.append(os.getcwd())
 
+## paste not found as of 2/21/2015, copied it to python_pkgs, added to path, seems to work
+sys.path.append('/home/bhadmin13/python_pkgs/Paste-1.7.5.1')
 
 from paste.exceptions.errormiddleware import ErrorMiddleware
 
